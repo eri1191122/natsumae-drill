@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Day02 英語 スペリングとbe動詞</title>
+<style>
+  :root{--pink:#ff7aa8;--teal:#22b8b0;--ink:#33323a;--gray:#8a8794;--line:#ece9f0;--gold:#ffb547;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{margin:0;font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;background:#fff5f9;color:var(--ink);line-height:1.7;padding:16px 14px 80px;font-size:17px;}
+  .back{display:inline-block;font-size:13px;color:var(--pink);text-decoration:none;margin-bottom:6px;}
+  h1{font-size:20px;margin:4px 0;color:var(--pink);}
+  .meta{font-size:13px;color:var(--gray);margin-bottom:10px;}
+  .flow{display:flex;gap:6px;margin:10px 0 16px;}
+  .flow div{flex:1;background:#fff;border-radius:10px;padding:8px 4px;text-align:center;font-size:11.5px;border:1px solid var(--line);}
+  .flow b{display:block;font-size:15px;color:var(--pink);}
+  .can{background:#f1fbfa;border:2px solid #cfeeec;border-radius:14px;padding:12px 14px;font-size:14px;margin-bottom:14px;}
+  .can b{color:var(--teal);}
+  .sec{font-weight:700;color:var(--gold);margin:18px 0 6px;font-size:15px;}
+  .q{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.04);}
+  .qid{font-size:12px;color:var(--gray);}
+  .qt{font-size:18px;margin:4px 0 10px;}
+  .qt .big{font-size:20px;font-weight:700;}
+  button{font-family:inherit;border:none;border-radius:22px;padding:9px 16px;font-size:14px;font-weight:700;}
+  .show{background:var(--pink);color:#fff;}
+  .ans{display:none;margin-top:10px;background:#fff0f5;border-left:4px solid var(--pink);border-radius:8px;padding:10px 12px;font-size:15px;}
+  .ans.open{display:block;}
+  .ans .a{font-size:18px;font-weight:700;color:var(--pink);}
+  .ans .why{color:#555;font-size:14px;margin-top:4px;}
+  .ans .miss{color:var(--teal);font-size:13px;margin-top:4px;}
+  .grade{margin-top:10px;font-size:13px;color:var(--gray);}
+  .o,.x{width:42px;height:42px;border-radius:50%;border:2px solid var(--line);background:#fff;font-size:20px;}
+  .o.sel{background:var(--teal);color:#fff;border-color:var(--teal);}
+  .x.sel{background:var(--pink);color:#fff;border-color:var(--pink);}
+  .mt{display:none;margin-top:8px;font-size:13px;}
+  .mt.open{display:block;}
+  .mt span{display:inline-block;margin-right:6px;color:var(--gray);}
+  .mt button{padding:6px 12px;font-size:13px;background:#fff;border:1px solid var(--line);color:var(--ink);}
+  .mt button.sel{background:var(--gold);color:#fff;border-color:var(--gold);}
+  .done{display:block;width:100%;background:linear-gradient(90deg,var(--pink),var(--gold));color:#fff;font-size:18px;padding:16px;border-radius:30px;margin-top:20px;}
+  .fin{text-align:center;color:var(--pink);font-size:15px;margin-top:14px;min-height:20px;}
+</style>
+</head>
+<body>
+<a class="back" href="../../index.html">← もどる</a>
+<h1>Day02 ｜ 英語：書ける単語とbe動詞</h1>
+<div class="meta">6/27(土)・30分・スペリング＋be動詞（聞けるけど書けない、を直す）</div>
+
+<div class="flow">
+  <div><b>5分</b>声に出して<br>3回書く</div>
+  <div><b>20分</b>メイン<br>(7問)</div>
+  <div><b>5分</b>丸つけ＋<br>ミス記録</div>
+</div>
+
+<div class="can">
+  💡 <b>今日のコツ</b>：英語は読みのまま書くと×になりやすい。音ではなく<b>「目で見た形のかたまり」</b>で覚える（例：eight＝ei+ght）。<br>
+  be動詞（am / are / is）は「<b>主語が何か</b>」で1つに決まる。下の早見表で覚えよう。
+</div>
+
+<div class="can" style="background:#f1fbfa;border-color:#cfeeec">
+  📌 <b>be動詞の早見表</b><br>
+  I → <b>am</b>　／　You・複数（we, they, 〜s） → <b>are</b>　／　He・She・It・1人や1つ → <b>is</b><br>
+  意味は「＝（です・いる・ある）」。動作（play, study など）には be動詞をつけない。
+</div>
+
+<div class="sec">① ウォームアップ（見て・声に出して・3回書く）</div>
+<div class="q">
+  <div class="qt"><span class="big">eight ／ bear ／ ocean</span><br>（8 ／ クマ ／ 海）</div>
+  <button class="show" onclick="t(this)">読み方のヒント</button>
+  <div class="ans"><span class="a">エイト／ベア／オーシャン</span>
+  <div class="miss">⚠ eight=ei+ght、bear=ea、ocean=oce+an。音より「形」を覚える。</div></div>
+</div>
+
+<div class="sec">② メイン（スペリング＋be動詞）</div>
+
+<div class="q" data-id="E2-1">
+  <div class="qid">E2-1</div>
+  <div class="qt">「白い」を英語で書こう</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">white</span>
+  <div class="why">「ホワイト」の最初は <b>wh</b> のかたまり。w だけにしない。</div>
+  <div class="miss">⚠ wite / howaito にしない。wh-i-te と区切って書く。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'E2-1','o')">○</button><button class="x" onclick="g(this,'E2-1','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="E2-2">
+  <div class="qid">E2-2</div>
+  <div class="qt">「山」を英語で書こう</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">mountain</span><div class="miss">⚠ moun + tain。"mounten" にしない。ai に注意。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'E2-2','o')">○</button><button class="x" onclick="g(this,'E2-2','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="E2-3">
+  <div class="qid">E2-3</div>
+  <div class="qt">「野球」を英語で書こう</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">baseball</span><div class="miss">⚠ base ＋ ball。l は2つ。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'E2-3','o')">○</button><button class="x" onclick="g(this,'E2-3','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="E2-4">
+  <div class="qid">E2-4</div>
+  <div class="qt">( ) に am / are / is を入れよう：<br>I ( ) a student.</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">am</span>
+  <div class="why">主語が <b>I</b> のときの be動詞は、いつでも am ただ1つ。「I am 〜（私は〜です）」とセットで覚える。</div>
+  <div class="miss">⚠ I に is や are は使わない。I am のペアは固定。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'E2-4','o')">○</button><button class="x" onclick="g(this,'E2-4','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="E2-5">
+  <div class="qid">E2-5</div>
+  <div class="qt">You ( ) kind.　／　He ( ) tall.</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">are ／ is</span>
+  <div class="why">You は always <b>are</b>。He / She / It など「1人・1つ」を指す主語は <b>is</b>。早見表のとおり。</div>
+  <div class="miss">⚠ You is にしない。He are にしない。主語を見て表で確認するクセを。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'E2-5','o')">○</button><button class="x" onclick="g(this,'E2-5','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="E2-6">
+  <div class="qid">E2-6</div>
+  <div class="qt">否定文にしよう：I am from Osaka.</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">I am not from Osaka.</span>
+  <div class="why">be動詞の否定は、<b>be動詞のすぐうしろに not</b> を入れるだけ。語順は変えない（am → am not）。</div>
+  <div class="miss">⚠ I not am … や、don't を使うのはまちがい。don't は一般動詞のときに使う。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'E2-6','o')">○</button><button class="x" onclick="g(this,'E2-6','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="E2-7">
+  <div class="qid">E2-7</div>
+  <div class="qt">疑問文にしよう：You are happy.</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">Are you happy?</span>
+  <div class="why">be動詞の疑問文は、<b>be動詞を文のいちばん前</b>に出す（You are → Are you）。最後は ? 。</div>
+  <div class="miss">⚠ ①先頭の A は大文字、②文末は ? を忘れない。Do you happy? としない（happy には be動詞）。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'E2-7','o')">○</button><button class="x" onclick="g(this,'E2-7','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="sec">③ ふりかえり</div>
+<div class="can">✕の単語は <b>誤答キュー</b> にメモ → 明日もう一度書く。3回書いて覚える！</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（Day02 完了）</button>
+<div class="fin" id="fin"></div>
+
+<script>
+const DAY=2;
+function t(b){const a=b.parentNode.querySelector('.ans');a.classList.toggle('open');b.textContent=a.classList.contains('open')?'かくす':'答えを見る';}
+function g(btn,id,v){const box=btn.closest('.q');box.querySelectorAll('.o,.x').forEach(e=>e.classList.remove('sel'));btn.classList.add('sel');localStorage.setItem('d'+DAY+'_'+id,v);const mt=box.querySelector('.mt');v==='x'?mt.classList.add('open'):mt.classList.remove('open');}
+function m(btn){const w=btn.parentNode;w.querySelectorAll('button').forEach(e=>e.classList.remove('sel'));btn.classList.add('sel');}
+function finish(){localStorage.setItem('day'+DAY+'_done','1');document.getElementById('fin').textContent='よくがんばった！チェックがつきました 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=()=>{document.querySelectorAll('.q[data-id]').forEach(box=>{const id=box.dataset.id;const v=localStorage.getItem('d'+DAY+'_'+id);if(v){const b=box.querySelector('.'+v);if(b){b.classList.add('sel');if(v==='x')box.querySelector('.mt').classList.add('open');}}});if(localStorage.getItem('day'+DAY+'_done')==='1')document.getElementById('doneBtn').textContent='✓ 完了ずみ';};
+</script>
+</body>
+</html>

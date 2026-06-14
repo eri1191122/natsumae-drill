@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>復習09 速さ・割合・整数の応用｜約15分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+
+/* もどる */
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+
+/* ヘッダー */
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+
+/* セクション */
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-hd .badge-time{font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;background:rgba(255,255,255,.45);border:1px solid rgba(80,96,112,.12);margin-left:auto}
+.sec-body{padding:16px 20px}
+
+/* 色テーマ */
+.th-red .sec-hd{background:#f7e6e4;border-left:6px solid #d8a09a}
+.th-org .sec-hd{background:#f6eadb;border-left:6px solid #d8b27c}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.th-grn .sec-hd{background:#e7f1e8;border-left:6px solid #9abf9d}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+
+/* 単元バナー */
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+
+/* おさらいカード（常時表示・トグルの外） */
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:14px 0}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai h3{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai h3:first-of-type{margin-top:0}
+.osarai p{font-size:13.5px;color:#4a3d28;margin:3px 0}
+.osarai .ex{background:#fff;border:1px dashed #d9b46d;border-radius:6px;padding:8px 12px;margin:6px 0;font-size:13px;color:#5a4a2a}
+.osarai .ex b{color:#7a4f12}
+.osarai .miss{background:#fff3e8;border-radius:6px;padding:7px 12px;margin:6px 0;font-size:13px;color:#8a5a19}
+.osarai .miss::before{content:"⚠️ ありがちな勘ちがい　";font-weight:800}
+.osarai ul{margin:3px 0 3px 20px}
+.osarai li{font-size:13.5px;color:#4a3d28;margin:2px 0}
+
+/* ボックス類 */
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+
+/* 図を描く欄 */
+.draw{background:#f4f7fb;border:2px dashed #aebfd6;border-radius:8px;padding:14px 16px;margin:10px 0;min-height:120px}
+.draw::before{content:"✏️ ここに図をかこう";display:block;font-size:12px;font-weight:800;color:#3f6f9f;margin-bottom:6px}
+
+/* 数学の1問 */
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:12px 0}
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:18px;font-weight:700;margin:2px 0 4px;color:#31415f}
+.q.calc .qcue{font-size:12px;color:#8a93a0;margin-bottom:6px}
+
+/* 答えボタン・答え枠 */
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .ans-main{font-size:18px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-box .ans-why{font-size:13px;color:#405060;margin:4px 0}
+.ans-box .step{margin:4px 0;font-size:13px}
+.ans-box .step span{display:inline-block;background:#fff;border:1px solid #c9decf;border-radius:4px;padding:1px 8px;margin-right:4px;font-weight:700;color:#3f6f4a;font-size:11px}
+
+/* 自己採点 */
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+
+/* ✕のとき：3回書く */
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+
+/* ミス分類（✕のときだけ） */
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+
+/* 数式・色 */
+.math{font-family:'Courier New',monospace;background:#f2f4f5;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+
+/* 任意マーク */
+.opt{display:inline-block;background:#e7f1e8;color:#3f6f4a;font-size:11px;font-weight:800;padding:1px 8px;border-radius:10px;margin-left:6px;border:1px solid #bcd8be}
+
+/* できたボタン */
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+
+/* 印刷設定 */
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec{break-inside:avoid;page-break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index.html">← もどる</a>
+
+<!-- ページヘッダー -->
+<div class="pg-hd">
+  <div><span class="pg-badge">復習09</span><span class="pg-badge">数学：速さ・割合・整数の応用</span></div>
+  <h1>数学｜速さ・割合・整数の応用</h1>
+  <p>6/26(金)　目安：約15分（数学8問のみ）　対象: 中1</p>
+  <p class="pg-cheer">きょうは速さ・割合・整数の応用だけ・約15分。テストでくやしかったところを、今日ぜんぶ味方にしよう。図をかく問題は線をひくだけでOK。いっしょにいこう！</p>
+</div>
+
+<!-- ============ 数学：速さ・割合・整数の応用 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">数学</span>
+  <span class="unit-name">速さ・割合・整数の応用（8問）　まず自分で解く → 答え・解説を見る</span>
+  <span class="unit-time">目安 15分</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-body">
+
+    <!-- ★常時表示のおさらいカード（トグルの外＝開いたら必ず見える） -->
+    <div class="osarai">
+      <h3>① 速さって何？（ことばの意味）</h3>
+      <p>「速さ」＝<b>1（秒・分・時間）あたりに、どれだけの道のりを進むか</b>。たとえば「秒速8m」＝1秒で8m進む、という意味。速い・おそいを数で表したもの。</p>
+
+      <h3>② 速さの3つの式（は・じ・き）</h3>
+      <ul>
+        <li><b>速さ ＝ 道のり ÷ 時間</b>（み・じ・は の「は」をかくす）</li>
+        <li><b>道のり ＝ 速さ × 時間</b>（「み」をかくす）</li>
+        <li><b>時間 ＝ 道のり ÷ 速さ</b>（「じ」をかくす）</li>
+      </ul>
+      <p>覚え方：丸い「みはじ（道のり・速さ・時間）」の図で、<b>求めたいものを指でかくす</b>と、のこった2つが「かけ算」か「わり算」かを教えてくれる。丸暗記より、毎回かくして組み立てる方がまちがえない。</p>
+
+      <h3>③ グラフの読み方</h3>
+      <p>グラフには<b>たて軸</b>と<b>よこ軸</b>がある。まず「たては何を、よこは何を表すか」を見る（例：たて＝水位cm、よこ＝時間 分）。線の<b>かたむき（ななめ具合）</b>が急なほど、速く増えている。線が<b>折れている所</b>は、増え方（速さ）が変わったサイン。折れ目で前半・後半に区切って考える。</p>
+
+      <h3>④ 割合って何？</h3>
+      <p>「割合」＝あるものが、もとにする量の<b>どれだけ分か</b>を表したもの。<br>
+      <b>割合 ＝ くらべる量 ÷ もとにする量</b>。「○○の3/4」「○割引き」などは、何を「もと（1とみなすもの）」にしているかを必ず先にきめる。<br>
+      「<b>残りの〜</b>」と書いてあったら、全体ではなく<b>のこった部分</b>がもと。ここを取りちがえると総くずれする。</p>
+
+      <h3>⑤ 平均＝合計÷個数</h3>
+      <p><b>平均 ＝ 合計 ÷ 個数</b>。みんなの数をならして「ひとり分にすると何点か」を出す。</p>
+
+      <h3>⑥ 整数の個数（「○以上△以下に□は何個？」）</h3>
+      <p>とびとびにならんだ数（例：偶数は2とび）が何個あるかは、<b>(終わりの数 − はじめの数) ÷ とびはば ＋1</b> で求める。<br>
+      まず (終わり−はじめ)÷とびはば で出るのは「<b>すき間の数</b>」。点（数そのもの）はすき間より1つ多いので、<b>両はしも数に入れて必ず＋1</b>する。偶数なら「とびはば＝2」、ふつうの整数なら「とびはば＝1」。</p>
+      <div class="ex">30以上70以下の偶数は何個？　いっしょに1回。<br>
+        → いちばん小さい偶数は30、いちばん大きいのは70。偶数は2とび。<br>
+        → すき間の数＝(70−30)÷2＝<b>20</b>。<br>
+        → 両はし（30と70）も入れて 20＋1＝<b>21個</b>。</div>
+      <p class="miss">(70−30)÷2＝20 で止めて「20個」としない。それは<b>すき間の数</b>。両はしを含むので＋1する（木を植えるとき、くいの本数はすき間より1本多いのと同じ）。</p>
+
+      <h3>⑦ 平方数にする（素因数を「2個ペア」にする）</h3>
+      <p>まずことば。<b>素数</b>＝1とその数でしか割れない数（2,3,5,7,11…）。<b>素因数分解</b>＝ある数を、素数だけのかけ算の形に分けること（例：12＝2×2×3）。<br>
+      <b>平方数（2乗）</b>＝同じ数を2回かけた数（1,4,9,16,25,36…）。平方数を素因数分解すると、<b>どの素因数もぴったり2個ずつのペア</b>になっている（例：36＝2×2×3×3）。<br>
+      だから「ある数にかけて平方数にする」には、素因数分解して<b>ひとりぼっち（ペアになっていない）素因数</b>を見つけ、それをかけてペアにすればよい。</p>
+      <div class="ex">84を平方数にするには何をかける？　いっしょに1回。<br>
+        → 素因数分解：84＝2×2×3×7＝<b>2²×3×7</b>。<br>
+        → 2はペア。3と7が1個ずつで<b>ひとりぼっち</b>。<br>
+        → 3と7をもう1個ずつ → 3×7＝<b>21</b> をかける。<br>
+        → 確かめ：84×21＝(2×3×7)²＝42²＝1764。ぜんぶペアになった。</div>
+      <p class="miss">84にいきなり数をかけて当てずっぽうで試さない。先に素因数分解して、ペアになっていない素因数だけをかける。3か7の片方だけでは平方数にならない（両方そろえる）。</p>
+
+      <h3>⑧ いっしょに1回（やさしい例）</h3>
+      <div class="ex">100m を 20秒 で走ったときの速さは？<br>
+        → 求めるのは「速さ」。式は <b>速さ＝道のり÷時間</b>。<br>
+        → 100 ÷ 20 ＝ <b>5</b> → <b>秒速5m</b>（1秒で5m進む）。<br>
+        確かめ：秒速5mなら20秒で 5×20＝100m。もとに戻るのでOK。</div>
+
+      <div class="miss">「道のり÷時間」の上下を逆に割らない（20÷100にしない）。「1秒で何m進む？」と声に出すと向きをまちがえにくい。割合では「残りの〜」のときに、全体ではなく残りをもとにする。</div>
+    </div>
+
+    <!-- M-1 速さの3公式 -->
+    <div class="q calc" data-id="M-1">
+      <div class="qnum">問1　L1 基礎　速さの3公式</div>
+      <div class="qbody">次の(1)〜(3)で、どの公式を使うか選ぼう（計算はしなくてよい）。<br>
+        <span class="math">速さ＝道のり÷時間</span>／<span class="math">道のり＝速さ×時間</span>／<span class="math">時間＝道のり÷速さ</span><br>
+        (1) 道のりと時間が分かっていて「速さ」を求めたい。<br>
+        (2) 速さと時間が分かっていて「道のり」を求めたい。<br>
+        (3) 道のりと速さが分かっていて「時間」を求めたい。</div>
+      <div class="qcue">まず「何を求めるか」を指でさしてから ↓</div>
+      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <div class="ans-box">
+        <div class="ans-main">(1) 速さ＝道のり÷時間　(2) 道のり＝速さ×時間　(3) 時間＝道のり÷速さ</div>
+        <div class="step"><span>ステップ1</span>「みはじ（道のり・速さ・時間）」の図で、求めたいものを指で隠す。残った2つの位置が、かけ算か割り算かを教えてくれる。</div>
+        <div class="step"><span>コツ</span>上が道のり、下が「速さ×時間」。上を隠す→道のり＝速さ×時間。下のどちらかを隠す→道のり÷（残り）。</div>
+        <div class="bx bx-link">この3公式は、中1の「比例・反比例」「グラフの読み取り」でそのまま速さの式として出てくる。今「みはじの図」を体に入れておくと、文章題で式を立てる前に迷わなくなる。</div>
+        <div class="bx bx-warn">公式を丸暗記で「÷」と「×」を逆にするのが最大のミス。覚えるのではなく、図で求めたいものを隠して、毎回その場で組み立てる。</div>
+      </div>
+      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
+      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+    </div>
+
+    <!-- M-2 速さの逆算 -->
+    <div class="q calc" data-id="M-2">
+      <div class="qnum">問2　L2 標準　速さを求める</div>
+      <div class="qbody">240m を 30秒 で走りました。このときの速さは秒速何mですか。</div>
+      <svg viewBox="0 0 380 90" style="max-width:380px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="道のり240mを30秒で走る図">
+        <!-- 道のりの横線 -->
+        <line x1="40" y1="50" x2="340" y2="50" stroke="#33485a" stroke-width="2"/>
+        <line x1="40" y1="42" x2="40" y2="58" stroke="#33485a" stroke-width="2"/>
+        <line x1="340" y1="42" x2="340" y2="58" stroke="#33485a" stroke-width="2"/>
+        <!-- スタート・ゴール -->
+        <text x="40" y="74" font-size="13" fill="#31415f" text-anchor="middle">スタート</text>
+        <text x="340" y="74" font-size="13" fill="#31415f" text-anchor="middle">ゴール</text>
+        <!-- 道のりラベル -->
+        <text x="190" y="40" font-size="13" fill="#31415f" text-anchor="middle">道のり 240m</text>
+        <!-- 時間ラベル（矢印） -->
+        <path d="M40 28 L340 28" fill="none" stroke="#9fb8d9" stroke-width="1.5"/>
+        <path d="M40 28 l8 -4 M40 28 l8 4" stroke="#9fb8d9" stroke-width="1.5" fill="none"/>
+        <path d="M340 28 l-8 -4 M340 28 l-8 4" stroke="#9fb8d9" stroke-width="1.5" fill="none"/>
+        <text x="190" y="20" font-size="13" fill="#31415f" text-anchor="middle">30秒</text>
+      </svg>
+      <div class="qcue">まず「何が道のり・時間・速さか」を整理してから ↓</div>
+      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <div class="ans-box">
+        <div class="ans-main">秒速8m（毎秒8m）</div>
+        <div class="step"><span>ステップ1</span>分かっているのは道のり240mと時間30秒。求めるのは速さ → <span class="math">速さ＝道のり÷時間</span>。</div>
+        <div class="step"><span>ステップ2</span>240÷30＝<strong>8</strong> → <strong>秒速8m</strong></div>
+        <div class="step"><span>確かめ</span>秒速8mなら30秒で 8×30＝240m。最初の道のりに戻るのでOK。</div>
+        <div class="bx bx-link">「秒速＝1秒で進む道のり」という意味がつかめると、中学の速さ・グラフで「1あたりの量＝傾き」を読む力につながる。</div>
+        <div class="bx bx-warn">30÷240＝0.125 と上下を逆に割らない。「1秒で何m？」と声に出すと、道のり÷時間の向きを間違えにくい。単位（秒速m）も書く。</div>
+      </div>
+      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
+      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+    </div>
+
+    <!-- M-3 速さグラフ（区間分け）★必修7(2)同型・最重要 -->
+    <div class="q calc" data-id="M-3">
+      <div class="qnum">問3　L3 応用 ★必修テスト同型・最重要　速さの変わるグラフ</div>
+      <div class="qbody">からの水そうに水を入れます。グラフのように、<strong>はじめの10分</strong>は水位が<strong>毎分2cm</strong>ずつ、<strong>10分すぎてから</strong>は<strong>毎分4cm</strong>ずつ上がりました。<br>
+        水位が <strong>32cm</strong> になるのは、入れはじめてから何分後ですか。</div>
+      <svg viewBox="0 0 380 260" style="max-width:380px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="水位の折れ線グラフ：前半は毎分2cm、10分から毎分4cmで上がる">
+        <!-- 軸 -->
+        <line x1="50" y1="20" x2="50" y2="220" stroke="#33485a" stroke-width="2"/>
+        <line x1="50" y1="220" x2="360" y2="220" stroke="#33485a" stroke-width="2"/>
+        <!-- たて目盛り（水位cm 10ごと、4px=1cm相当） -->
+        <line x1="46" y1="180" x2="50" y2="180" stroke="#33485a" stroke-width="2"/>
+        <text x="42" y="184" font-size="13" fill="#31415f" text-anchor="end">10</text>
+        <line x1="46" y1="140" x2="50" y2="140" stroke="#33485a" stroke-width="2"/>
+        <text x="42" y="144" font-size="13" fill="#31415f" text-anchor="end">20</text>
+        <line x1="46" y1="100" x2="50" y2="100" stroke="#33485a" stroke-width="2"/>
+        <text x="42" y="104" font-size="13" fill="#31415f" text-anchor="end">30</text>
+        <text x="36" y="16" font-size="13" fill="#31415f" text-anchor="middle">水位(cm)</text>
+        <!-- よこ目盛り（時間 分 5ごと、10px=1分相当） -->
+        <line x1="100" y1="220" x2="100" y2="224" stroke="#33485a" stroke-width="2"/>
+        <text x="100" y="238" font-size="13" fill="#31415f" text-anchor="middle">5</text>
+        <line x1="150" y1="220" x2="150" y2="224" stroke="#33485a" stroke-width="2"/>
+        <text x="150" y="238" font-size="13" fill="#31415f" text-anchor="middle">10</text>
+        <line x1="200" y1="220" x2="200" y2="224" stroke="#33485a" stroke-width="2"/>
+        <text x="200" y="238" font-size="13" fill="#31415f" text-anchor="middle">15</text>
+        <text x="50" y="238" font-size="13" fill="#31415f" text-anchor="middle">0</text>
+        <text x="350" y="238" font-size="13" fill="#31415f" text-anchor="end">時間(分)</text>
+        <!-- 折れ点(10分,20cm)への補助点線 -->
+        <line x1="150" y1="140" x2="150" y2="220" stroke="#9fb8d9" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <line x1="50" y1="140" x2="150" y2="140" stroke="#9fb8d9" stroke-width="1.5" stroke-dasharray="4 3"/>
+        <!-- 折れ線：前半 0→(10分,20cm) ゆるい傾き(毎分2cm)、後半 急な傾き(毎分4cm) -->
+        <!-- 前半 (50,220)→(150,140)：傾き0.8px/px。後半は2倍の傾き1.6px/px、終点(190,76)=18分,36cm -->
+        <polyline points="50,220 150,140 190,76" fill="none" stroke="#33485a" stroke-width="2.5"/>
+        <circle cx="150" cy="140" r="3.5" fill="#33485a"/>
+        <text x="156" y="134" font-size="13" fill="#31415f">折れ点</text>
+        <!-- 目標水位32cmの水平点線（32cm→y=220-32*4=92） -->
+        <line x1="50" y1="92" x2="360" y2="92" stroke="#d8a09a" stroke-width="1.8" stroke-dasharray="5 3"/>
+        <text x="356" y="86" font-size="13" fill="#9b514d" text-anchor="end">32cm</text>
+        <!-- ？分の矢印（折れ線が32cmと交わる位置 13分=x180） -->
+        <line x1="180" y1="92" x2="180" y2="220" stroke="#9b514d" stroke-width="1.5" stroke-dasharray="3 3"/>
+        <text x="186" y="212" font-size="13" fill="#9b514d">？分</text>
+      </svg>
+      <div class="qcue">まずグラフをかいて、「前半」と「後半」に分けてから ↓</div>
+      <div class="draw">（ヨコ＝時間（分）、タテ＝水位（cm）。0〜10分は毎分2cmで上がる線、10分からは急になって毎分4cmで上がる線をかこう。32cmの線も引いてみよう）</div>
+      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <div class="ans-box">
+        <div class="ans-main">13分後</div>
+        <div class="step"><span>ステップ1（前半）</span>はじめの10分は毎分2cm。10分で 2×10＝<strong>20cm</strong> までしか上がらない。32cmにはまだ届かない → 答えは10分より後。</div>
+        <div class="step"><span>ステップ2（残り）</span>あと必要な水位＝32−20＝<strong>12cm</strong>。</div>
+        <div class="step"><span>ステップ3（後半）</span>後半は毎分4cm。12cm上げるのにかかる時間＝12÷4＝<strong>3分</strong>。</div>
+        <div class="step"><span>ステップ4（合計）</span>10分＋3分＝<strong>13分後</strong>。確かめ：2×10＋4×3＝20＋12＝32cm。合う。</div>
+        <div class="bx bx-link">グラフが途中で折れる＝「速さ（増え方）が変わる」サイン。これは中1〜2のグラフ問題で「区間ごとに別の式を立てる」考え方そのもの。折れ目で区切るクセを今つけておこう。</div>
+        <div class="bx bx-warn">32÷4＝8分 のように、ずっと毎分4cmだと思って一気に割らない。前半（10分で20cm）と後半（残り12cm）に分けて、それぞれの増え方で計算する。</div>
+      </div>
+      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
+      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+    </div>
+
+    <!-- M-4 二段割合（線分図）★必修2(3)同型 -->
+    <div class="q calc" data-id="M-4">
+      <div class="qnum">問4　L2 標準 ★必修テスト同型　二段の割合・線分図</div>
+      <div class="qbody">花だんがあります。全体の <strong>1/3</strong> にチューリップを植え、<strong>残りの 3/4</strong> にパンジーを植えました。<br>
+        何も植えていない部分が <strong>4m²</strong> のとき、花だん全体の面積を求めなさい。</div>
+      <svg viewBox="0 0 380 150" style="max-width:380px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="二段割合の線分図：全体を1/3チューリップ、残り2/3を3/4パンジー・1/4何もなしに区切る">
+        <!-- 全体の帯（幅300：x=40〜340） -->
+        <!-- チューリップ 1/3 → 幅100（x=40〜140） -->
+        <rect x="40" y="50" width="100" height="40" fill="#f7e6e4" stroke="#33485a" stroke-width="2"/>
+        <!-- パンジー：残り2/3の3/4 → 全体の1/2 → 幅150（x=140〜290） -->
+        <rect x="140" y="50" width="150" height="40" fill="#e7f1e8" stroke="#33485a" stroke-width="2"/>
+        <!-- 何もなし：残り2/3の1/4 → 全体の1/6 → 幅50（x=290〜340） -->
+        <rect x="290" y="50" width="50" height="40" fill="#f6eadb" stroke="#33485a" stroke-width="2"/>
+        <!-- 全体ラベル（上の波かっこ的） -->
+        <line x1="40" y1="38" x2="340" y2="38" stroke="#33485a" stroke-width="1.5"/>
+        <line x1="40" y1="34" x2="40" y2="42" stroke="#33485a" stroke-width="1.5"/>
+        <line x1="340" y1="34" x2="340" y2="42" stroke="#33485a" stroke-width="1.5"/>
+        <text x="190" y="30" font-size="13" fill="#31415f" text-anchor="middle">全体（？m²）</text>
+        <!-- 各区画ラベル -->
+        <text x="90" y="74" font-size="13" fill="#31415f" text-anchor="middle">チュー</text>
+        <text x="90" y="106" font-size="13" fill="#31415f" text-anchor="middle">1/3</text>
+        <text x="215" y="74" font-size="13" fill="#31415f" text-anchor="middle">パンジー</text>
+        <text x="215" y="106" font-size="13" fill="#31415f" text-anchor="middle">残りの3/4</text>
+        <text x="315" y="70" font-size="13" fill="#9b514d" text-anchor="middle">何も</text>
+        <text x="315" y="84" font-size="13" fill="#9b514d" text-anchor="middle">なし</text>
+        <text x="315" y="106" font-size="13" fill="#9b514d" text-anchor="middle">残り1/4</text>
+        <!-- 何もなし＝4m² の引き出し -->
+        <line x1="315" y1="90" x2="315" y2="124" stroke="#9b514d" stroke-width="1.5"/>
+        <text x="315" y="138" font-size="13" fill="#9b514d" text-anchor="middle">4m²</text>
+      </svg>
+      <div class="qcue">まず全体を1本の線にして、3つに分けてから ↓</div>
+      <div class="draw">（線を1本ひいて「全体」とする。左から 1/3＝チューリップ、のこり 2/3 をさらに「パンジー（その3/4）」と「何もなし（その1/4）」に分けよう。何もなしの部分が4m²）</div>
+      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <div class="ans-box">
+        <div class="ans-main">24m²</div>
+        <div class="step"><span>ステップ1</span>全体を □ m² とおく。チューリップ＝□×1/3。残り＝□×(1−1/3)＝<strong>□×2/3</strong>。</div>
+        <div class="step"><span>ステップ2</span>パンジーは「残りの3/4」＝2/3×3/4＝<strong>1/2</strong>。何もなしは「残りの1/4」＝2/3×1/4＝2/12＝<strong>1/6</strong>。</div>
+        <div class="step"><span>ステップ3</span>何もなし＝□×1/6＝4 → □＝4×6＝<strong>24m²</strong>。確かめ：チューリップ8＋パンジー12＋何もなし4＝24。合う。</div>
+        <div class="bx bx-link">「全体を□とおいて、最後に逆算して□を出す」流れは、中1の一次方程式そのもの。線分図で全体を分けるクセが、文章題で式を立てる土台になる。</div>
+        <div class="bx bx-warn">「残りの3/4」は全体の3/4ではない。チューリップを植えた後の残り（□×2/3）の3/4。線分図に順番を書いてから、かける相手をまちがえないようにする。</div>
+      </div>
+      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
+      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+    </div>
+
+    <!-- M-5 割合の逆算 -->
+    <div class="q calc" data-id="M-5">
+      <div class="qnum">問5　L3 応用　割合の逆算（もとにする量）</div>
+      <div class="qbody">ある商品が <strong>定価の2割引き</strong> で売られていて、売値は <strong>1200円</strong> でした。定価はいくらですか。</div>
+      <div class="qcue">まず「もとにする量はどっち？」を決めてから ↓</div>
+      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <div class="ans-box">
+        <div class="ans-main">1500円</div>
+        <div class="step"><span>ステップ1</span>もとにする量は「定価」。2割引き＝2割を引いた後の残り。残る割合は 1−0.2＝<strong>0.8</strong>。</div>
+        <div class="step"><span>ステップ2</span>つまり 定価×0.8＝1200。定価を求めるので逆算 → 定価＝1200÷0.8＝<strong>1500円</strong>。</div>
+        <div class="step"><span>確かめ</span>1500×0.8＝1200。売値に戻るのでOK。</div>
+        <div class="bx bx-link">「一部（売値）から全体（定価）を逆算する」発想は、中1の方程式（□を求める）にそのままつながる。もとにする量＝□ と置く感覚の入口。</div>
+        <div class="bx bx-warn">1200÷0.2＝6000 のように「引いた割合」で割らない。残った割合 0.8 で割る。また 1200×0.8＝960 とかけ算にしない。求めるのは「もとにする量」だから割り算。</div>
+      </div>
+      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-5','o')">○</button><button class="x" onclick="g(this,'M-5','x')">✕</button></div>
+      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+    </div>
+
+    <!-- M-6 整数の個数 ★必修2(1)同型 -->
+    <div class="q calc" data-id="M-6">
+      <div class="qnum">問6　L2 標準 ★必修テスト同型　整数の個数</div>
+      <div class="qbody"><strong>30以上70以下</strong> の <strong>偶数</strong> は何個ありますか。</div>
+      <svg viewBox="0 0 380 110" style="max-width:380px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="数直線：30から70までの偶数の点。両端を含むので＋1">
+        <!-- 数直線 -->
+        <line x1="30" y1="55" x2="350" y2="55" stroke="#33485a" stroke-width="2"/>
+        <!-- 偶数の点 30,32,...,70（21点）を等間かくに。x=30→350、間かく=(350-30)/20=16 -->
+        <!-- 中間の点（小さめ） -->
+        <circle cx="46" cy="55" r="3" fill="#33485a"/>
+        <circle cx="62" cy="55" r="3" fill="#33485a"/>
+        <circle cx="78" cy="55" r="3" fill="#33485a"/>
+        <circle cx="94" cy="55" r="3" fill="#33485a"/>
+        <circle cx="110" cy="55" r="3" fill="#33485a"/>
+        <circle cx="126" cy="55" r="3" fill="#33485a"/>
+        <circle cx="142" cy="55" r="3" fill="#33485a"/>
+        <circle cx="158" cy="55" r="3" fill="#33485a"/>
+        <circle cx="174" cy="55" r="3" fill="#33485a"/>
+        <circle cx="190" cy="55" r="3" fill="#33485a"/>
+        <circle cx="206" cy="55" r="3" fill="#33485a"/>
+        <circle cx="222" cy="55" r="3" fill="#33485a"/>
+        <circle cx="238" cy="55" r="3" fill="#33485a"/>
+        <circle cx="254" cy="55" r="3" fill="#33485a"/>
+        <circle cx="270" cy="55" r="3" fill="#33485a"/>
+        <circle cx="286" cy="55" r="3" fill="#33485a"/>
+        <circle cx="302" cy="55" r="3" fill="#33485a"/>
+        <circle cx="318" cy="55" r="3" fill="#33485a"/>
+        <!-- 両端を強調（30と70） -->
+        <circle cx="30" cy="55" r="5.5" fill="#d8a09a" stroke="#9b514d" stroke-width="2"/>
+        <circle cx="350" cy="55" r="5.5" fill="#d8a09a" stroke="#9b514d" stroke-width="2"/>
+        <text x="30" y="80" font-size="13" fill="#9b514d" text-anchor="middle">30</text>
+        <text x="350" y="80" font-size="13" fill="#9b514d" text-anchor="middle">70</text>
+        <!-- すき間と点の違い：両端を含む→＋1 の矢印 -->
+        <text x="190" y="22" font-size="13" fill="#31415f" text-anchor="middle">すき間20 → 点は両はしも入れて＋1</text>
+        <path d="M30 30 Q60 14 80 28" fill="none" stroke="#9b514d" stroke-width="1.5"/>
+        <path d="M350 30 Q320 14 300 28" fill="none" stroke="#9b514d" stroke-width="1.5"/>
+        <text x="190" y="102" font-size="13" fill="#8a93a0" text-anchor="middle">●＝偶数（2とび）</text>
+      </svg>
+      <div class="qcue">まず一番小さい偶数と一番大きい偶数を書き出してから ↓</div>
+      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <div class="ans-box">
+        <div class="ans-main">21個</div>
+        <div class="step"><span>ステップ1</span>はんいの中の偶数は、いちばん小さいのが30、いちばん大きいのが70。偶数は2とびなので、数直線で 30,32,34,…,70 と等間かくにならぶ。</div>
+        <div class="step"><span>ステップ2</span>「とびとびの個数」＝(終わり−はじめ)÷とびはば＋1 → (70−30)÷2＝20。これは「すき間の数」。</div>
+        <div class="step"><span>ステップ3</span>すき間が20なら、両はしの点（30と70）も入れて 20＋1＝<strong>21個</strong>。</div>
+        <div class="bx bx-link">「すき間の数＋1＝点の数」という数え方は、中学の数列・規則性の問題でくり返し使う、いちばん大事な数えルール。</div>
+        <div class="bx bx-warn">(70−30)÷2＝20 で止めて「20個」と答えるのが定番ミス。それは<strong>すき間の数</strong>。両はしを含むので必ず＋1する。木を植える間かくとくいの本数の関係と同じ。</div>
+      </div>
+      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
+      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+    </div>
+
+    <!-- M-7 平方数にする ★期末6(1)同型 -->
+    <div class="q calc" data-id="M-7">
+      <div class="qnum">問7　L2 標準 ★期末テスト同型　平方数にする</div>
+      <div class="qbody"><strong>84</strong> に、できるだけ小さい自然数をかけて、ある整数の<strong>2乗（平方数）</strong>にしたい。<br>
+        どんな数をかければよいですか。</div>
+      <div class="qcue">まず84を素因数分解してから ↓</div>
+      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <div class="ans-box">
+        <div class="ans-main">21（このとき 84×21＝1764＝42²）</div>
+        <div class="step"><span>ステップ1</span>84を素因数分解 → 84＝2×42＝2×2×21＝<strong>2²×3×7</strong>。</div>
+        <div class="step"><span>ステップ2</span>平方数は、すべての素因数が「2個ずつのペア」になっている数。84では 2 はペア（2²）だが、3と7が1個ずつで<strong>ひとりぼっち</strong>。</div>
+        <div class="step"><span>ステップ3</span>3と7をペアにするには、もう1個ずつかける → 3×7＝<strong>21</strong> をかける。</div>
+        <div class="step"><span>確かめ</span>84×21＝2²×3×7×3×7＝2²×3²×7²＝(2×3×7)²＝42²＝<strong>1764</strong>。ぜんぶペアになった。</div>
+        <div class="bx bx-link">平方根（√）を中3で習うとき、この「素因数をペアにする」考え方がそのまま √ を外すルールになる。今が先取りのチャンス。</div>
+        <div class="bx bx-warn">84にいきなり数をかけて試さない。先に素因数分解して「ペアになっていない素因数」を見つけ、それだけをかける。3か7のどちらか片方だけでは平方数にならない。</div>
+      </div>
+      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
+      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+    </div>
+
+    <!-- M-8 平均（基準法）★任意 -->
+    <div class="q calc" data-id="M-8">
+      <div class="qnum">問8　L3 応用　平均（ならし・基準法）<span class="opt">余力があれば</span></div>
+      <div class="qbody">4人の小テストの点を、基準70点とくらべて表しました。基準との差は <strong>＋5, −3, 0, −10</strong> でした。<br>
+        4人の<strong>平均点</strong>は何点ですか。</div>
+      <div class="qcue">まず「基準が70点」だと確認してから ↓</div>
+      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <div class="ans-box">
+        <div class="ans-main">68点</div>
+        <div class="step"><span>ステップ1</span>大きい点を直接足さず、基準70からの差だけ足す（基準法）。差の合計＝＋5−3＋0−10＝<strong>−8</strong>。</div>
+        <div class="step"><span>ステップ2</span>差の平均＝−8÷4＝<strong>−2</strong>。「平均は基準より2点ひくい」という意味。</div>
+        <div class="step"><span>ステップ3</span>平均点＝基準70＋(−2)＝<strong>68点</strong>。確かめ：実点は75・67・70・60、合計272、272÷4＝68。合う。</div>
+        <div class="bx bx-link">大きい数を全部足さず「基準からの小さな差」だけ足す＝計算がぐっと軽くなる。これが復習04でやった「基準法」のうまみ。中学の平均・統計でもそのまま使う。</div>
+        <div class="bx bx-warn">差の平均 −2 をそのまま答えにしない。最後に基準70へ戻す（70＋(−2)）のを忘れない。差を足すとき 0 を抜かさない。</div>
+      </div>
+      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
+      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（復習09 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">きょうは「グラフは折れ目で区切る」「残りの〜でもとにする量が変わる」「個数はすき間＋1」「平方数は素因数をペアに」。テストでくやしかった4つを、ぜんぶ自分の言葉にできた今日は大きな一歩。よくがんばったね。あしたも5分からでOK。</div>
+
+</div>
+
+<script>
+var KEY='fukushu09';
+
+// 答えトグル
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':'答え・解説を見る';
+}
+
+// 自己採点 ○✕
+function g(btn,id,v){
+  var box=btn.closest('.q');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');
+  var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{
+    if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}
+    if(w3)w3.style.display='none';
+  }
+}
+
+// ミス分類
+function m(btn){
+  var w=btn.parentNode;
+  w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+btn.closest('.q').dataset.id+'_m',btn.textContent);
+}
+
+// 完了
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+
+// 復元
+window.onload=function(){
+  document.querySelectorAll('.q').forEach(function(box){
+    var id=box.dataset.id;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var mt=box.querySelector('.mt');
+        if(mt){
+          mt.classList.add('open');
+          var mv=localStorage.getItem(KEY+'_'+id+'_m');
+          if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}
+        }
+        var w3=box.querySelector('.write3');
+        if(w3)w3.style.display='block';
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
+};
+</script>
+</body>
+</html>

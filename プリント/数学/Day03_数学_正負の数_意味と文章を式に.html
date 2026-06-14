@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Day03 数学 正負の数 意味と文章を式に</title>
+<style>
+  :root{--pink:#ff7aa8;--teal:#22b8b0;--ink:#33323a;--gray:#8a8794;--line:#ece9f0;--gold:#ffb547;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{margin:0;font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;background:#f1fbfa;color:var(--ink);line-height:1.7;padding:16px 14px 80px;font-size:17px;}
+  .back{display:inline-block;font-size:13px;color:var(--teal);text-decoration:none;margin-bottom:6px;}
+  h1{font-size:20px;margin:4px 0;color:var(--teal);}
+  .meta{font-size:13px;color:var(--gray);margin-bottom:10px;}
+  .flow{display:flex;gap:6px;margin:10px 0 16px;}
+  .flow div{flex:1;background:#fff;border-radius:10px;padding:8px 4px;text-align:center;font-size:11.5px;border:1px solid var(--line);}
+  .flow b{display:block;font-size:15px;color:var(--teal);}
+  .can{background:#fff7fa;border:2px solid #ffd9e6;border-radius:14px;padding:12px 14px;font-size:14px;margin-bottom:14px;}
+  .can b{color:var(--pink);}
+  .sec{font-weight:700;color:var(--gold);margin:18px 0 6px;font-size:15px;}
+  .q{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.04);}
+  .qid{font-size:12px;color:var(--gray);}
+  .qt{font-size:18px;margin:4px 0 10px;}
+  .qt .big{font-size:20px;font-weight:700;}
+  button{font-family:inherit;border:none;border-radius:22px;padding:9px 16px;font-size:14px;font-weight:700;}
+  .show{background:var(--teal);color:#fff;}
+  .ans{display:none;margin-top:10px;background:#eafaf8;border-left:4px solid var(--teal);border-radius:8px;padding:10px 12px;font-size:15px;}
+  .ans.open{display:block;}
+  .ans .a{font-size:18px;font-weight:700;color:var(--teal);}
+  .ans .why{color:#555;font-size:14px;margin-top:4px;}
+  .ans .miss{color:var(--pink);font-size:13px;margin-top:4px;}
+  .grade{margin-top:10px;font-size:13px;color:var(--gray);}
+  .o,.x{width:42px;height:42px;border-radius:50%;border:2px solid var(--line);background:#fff;font-size:20px;}
+  .o.sel{background:var(--teal);color:#fff;border-color:var(--teal);}
+  .x.sel{background:var(--pink);color:#fff;border-color:var(--pink);}
+  .mt{display:none;margin-top:8px;font-size:13px;}
+  .mt.open{display:block;}
+  .mt span{display:inline-block;margin-right:6px;color:var(--gray);}
+  .mt button{padding:6px 12px;font-size:13px;background:#fff;border:1px solid var(--line);color:var(--ink);}
+  .mt button.sel{background:var(--gold);color:#fff;border-color:var(--gold);}
+  .done{display:block;width:100%;background:linear-gradient(90deg,var(--pink),var(--gold));color:#fff;font-size:18px;padding:16px;border-radius:30px;margin-top:20px;}
+  .fin{text-align:center;color:var(--teal);font-size:15px;margin-top:14px;min-height:20px;}
+  .nl{font-family:monospace;font-size:15px;background:#f7f7fb;border-radius:8px;padding:6px;text-align:center;letter-spacing:1px;}
+</style>
+</head>
+<body>
+<a class="back" href="../../index.html">← もどる</a>
+<h1>Day03 ｜ 数学：意味と「文章を式に」</h1>
+<div class="meta">6/28(日)・30分・正負の数の意味/大小/文章→式（いちばん大事な弱点）</div>
+
+<div class="flow">
+  <div><b>5分</b>ウォーム<br>アップ</div>
+  <div><b>20分</b>メイン<br>(7問)</div>
+  <div><b>5分</b>丸つけ＋<br>ミス記録</div>
+</div>
+
+<div class="can">
+  💡 <b>今日がいちばん大事</b>：模試で「文章を式にする」問題が苦手だったね。<br>
+  計算より「<b>ことばを数の式にほんやくする</b>」練習をしよう。できたら本当に強い。
+</div>
+
+<div class="can" style="background:#eafaf8;border-color:#bfe6e3">
+  📐 <b>文章を式にする3ステップ（先にこれだけ）</b><br>
+  ① <b>どちらを＋にするか決める</b>（上がる・前・増える＝＋／下がる・後ろ・減る＝−）<br>
+  ② 起きたことを<b>順に＋−の数</b>になおす　③ それをつなげて式にする
+</div>
+
+<div class="sec">① ウォームアップ（数直線をイメージ）</div>
+<div class="q">
+  <div class="qt">数直線で、0より左がマイナス。右にいくほど大きい。</div>
+  <div class="nl">−5 −4 −3 −2 −1 &nbsp;0&nbsp; +1 +2 +3 +4 +5</div>
+</div>
+
+<div class="sec">② メイン（意味・大小・文章を式に）</div>
+
+<div class="q" data-id="M3-1">
+  <div class="qid">M3-1</div>
+  <div class="qt"><span class="big">−3 と −5</span>　大きいのはどっち？</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">−3 の方が大きい</span>
+  <div class="why">数の大小は<b>数直線で右にある方が大きい</b>。−3 は −5 より右にあるので −3 が大きい。気温で考えると −3℃ は −5℃ より「あたたかい」と同じ。</div>
+  <div class="miss">⚠ 「5の方が数字が大きいから−5が大きい」は誤り。マイナスがつくと大小は逆向きになる。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M3-1','o')">○</button><button class="x" onclick="g(this,'M3-1','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M3-2">
+  <div class="qid">M3-2</div>
+  <div class="qt"><span class="big">|−7|</span>（−7の絶対値）はいくつ？</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">7</span>
+  <div class="why">絶対値（｜　｜）は「<b>0からどれだけ離れているか</b>＝きょり」。きょりにマイナスはないので、−7 でも答えは 7。</div>
+  <div class="miss">⚠ ｜−7｜＝−7 にしない。｜　｜がついたら符号をはずして＋の数にする。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M3-2','o')">○</button><button class="x" onclick="g(this,'M3-2','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M3-3">
+  <div class="qid">M3-3</div>
+  <div class="qt">−2 より小さい整数を、小さい方から3つ書こう。</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">−3, −4, −5</span>
+  <div class="why">「−2より小さい」＝数直線で−2の左。−2はふくまない。</div>
+  <div class="miss">⚠ −1 や 0 は −2 より大きいので入らない。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M3-3','o')">○</button><button class="x" onclick="g(this,'M3-3','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M3-4">
+  <div class="qid">M3-4（文章→式）</div>
+  <div class="qt">「0℃より 5℃ 低い温度」を、正負の数で表そう。</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">−5℃</span>
+  <div class="why">基準は0℃。<b>「低い」はマイナス</b>なので、0より5低い＝ −5℃。（高い・上がる・増える＝＋／低い・下がる・減る＝−）</div>
+  <div class="miss">⚠ 「5低い」を ＋5℃ や 5℃ と書かない。「低い」の合図でマイナスをつける。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M3-4','o')">○</button><button class="x" onclick="g(this,'M3-4','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M3-5">
+  <div class="qid">M3-5（文章→式）</div>
+  <div class="qt">「+8 を −3 だけ変える」と、いくつになる？ 式と答えを書こう。</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">8 +(−3) = 5</span>
+  <div class="why">「−3だけ変える」＝−3をたす、という意味。だから 8+(−3)。</div>
+  <div class="miss">⚠ 「変える」を引き算と決めつけない。+(−3) と書くと迷わない。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M3-5','o')">○</button><button class="x" onclick="g(this,'M3-5','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M3-6">
+  <div class="qid">M3-6（文章→式）</div>
+  <div class="qt">基準を0として、「3歩前→2歩後ろ→4歩前」。今いる場所は基準から？ 式で。</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">(+3)+(−2)+(+4) = +5</span>
+  <div class="why">①基準（今いる場所）を0にする。②<b>前を＋・後ろを−</b>と決める。③起きた順に：3歩前＝+3、2歩後ろ＝−2、4歩前＝+4。たすと +3−2+4＝<b>+5</b>。だから基準から<b>前に5歩</b>の場所。</div>
+  <div class="miss">⚠ 計算より先に「0はどこ・どちらが＋か」を決める。決めずに式を書くと符号が迷子になる。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M3-6','o')">○</button><button class="x" onclick="g(this,'M3-6','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M3-7">
+  <div class="qid">M3-7（文章→式）</div>
+  <div class="qt">ある数より 5 大きい数が −2 だった。ある数を求めよう。</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">−7</span>
+  <div class="why">求めたいのは「<b>もとの数</b>」。もとの数に5たすと −2 になる、という関係。だから逆に、−2から5を<b>もどす（ひく）</b>→ −2 −5 ＝ −7。たしかめ：−7 ＋5＝−2 ○。</div>
+  <div class="miss">⚠ 「大きい」の言葉につられて −2＋5＝3 としない。聞かれているのは「大きくなる前の数」だから逆向きにもどす。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M3-7','o')">○</button><button class="x" onclick="g(this,'M3-7','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="sec">③ ふりかえり</div>
+<div class="can">
+  文章問題で✕がついたら、まず「どちらを＋にするか」を声に出してから式を書く練習を。<br>
+  ✕は <b>誤答キュー</b> にメモ → 明日・金曜にもう一度。
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（Day03 完了）</button>
+<div class="fin" id="fin"></div>
+
+<script>
+const DAY=3;
+function t(b){const a=b.parentNode.querySelector('.ans');a.classList.toggle('open');b.textContent=a.classList.contains('open')?'答えをかくす':'答えを見る';}
+function g(btn,id,v){const box=btn.closest('.q');box.querySelectorAll('.o,.x').forEach(e=>e.classList.remove('sel'));btn.classList.add('sel');localStorage.setItem('d'+DAY+'_'+id,v);const mt=box.querySelector('.mt');v==='x'?mt.classList.add('open'):mt.classList.remove('open');}
+function m(btn){const w=btn.parentNode;w.querySelectorAll('button').forEach(e=>e.classList.remove('sel'));btn.classList.add('sel');}
+function finish(){localStorage.setItem('day'+DAY+'_done','1');document.getElementById('fin').textContent='よくがんばった！チェックがつきました 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=()=>{document.querySelectorAll('.q[data-id]').forEach(box=>{const id=box.dataset.id;const v=localStorage.getItem('d'+DAY+'_'+id);if(v){const b=box.querySelector('.'+v);if(b){b.classList.add('sel');if(v==='x')box.querySelector('.mt').classList.add('open');}}});if(localStorage.getItem('day'+DAY+'_done')==='1')document.getElementById('doneBtn').textContent='✓ 完了ずみ';};
+</script>
+</body>
+</html>

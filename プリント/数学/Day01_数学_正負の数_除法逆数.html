@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Day01 数学 正負の数 除法・逆数</title>
+<style>
+  :root{--pink:#ff7aa8;--teal:#22b8b0;--ink:#33323a;--gray:#8a8794;--line:#ece9f0;--gold:#ffb547;}
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent;}
+  body{margin:0;font-family:-apple-system,"Hiragino Sans","Yu Gothic",sans-serif;background:#f1fbfa;color:var(--ink);line-height:1.7;padding:16px 14px 80px;font-size:17px;}
+  .back{display:inline-block;font-size:13px;color:var(--teal);text-decoration:none;margin-bottom:6px;}
+  h1{font-size:20px;margin:4px 0;color:var(--teal);}
+  .meta{font-size:13px;color:var(--gray);margin-bottom:10px;}
+  .flow{display:flex;gap:6px;margin:10px 0 16px;}
+  .flow div{flex:1;background:#fff;border-radius:10px;padding:8px 4px;text-align:center;font-size:11.5px;border:1px solid var(--line);}
+  .flow b{display:block;font-size:15px;color:var(--teal);}
+  .can{background:#fff7fa;border:2px solid #ffd9e6;border-radius:14px;padding:12px 14px;font-size:14px;margin-bottom:14px;}
+  .can b{color:var(--pink);}
+  .sec{font-weight:700;color:var(--gold);margin:18px 0 6px;font-size:15px;}
+  .q{background:#fff;border-radius:14px;padding:14px;margin-bottom:12px;box-shadow:0 2px 6px rgba(0,0,0,.04);}
+  .qid{font-size:12px;color:var(--gray);}
+  .qt{font-size:18px;margin:4px 0 10px;}
+  .qt .big{font-size:21px;font-weight:700;}
+  .btns{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+  button{font-family:inherit;border:none;border-radius:22px;padding:9px 16px;font-size:14px;font-weight:700;}
+  .show{background:var(--teal);color:#fff;}
+  .ans{display:none;margin-top:10px;background:#eafaf8;border-left:4px solid var(--teal);border-radius:8px;padding:10px 12px;font-size:15px;}
+  .ans.open{display:block;}
+  .ans .a{font-size:18px;font-weight:700;color:var(--teal);}
+  .ans .why{color:#555;font-size:14px;margin-top:4px;}
+  .ans .miss{color:var(--pink);font-size:13px;margin-top:4px;}
+  .grade{margin-top:10px;font-size:13px;color:var(--gray);}
+  .o,.x{width:42px;height:42px;border-radius:50%;border:2px solid var(--line);background:#fff;font-size:20px;}
+  .o.sel{background:var(--teal);color:#fff;border-color:var(--teal);}
+  .x.sel{background:var(--pink);color:#fff;border-color:var(--pink);}
+  .mt{display:none;margin-top:8px;font-size:13px;}
+  .mt.open{display:block;}
+  .mt span{display:inline-block;margin-right:6px;color:var(--gray);}
+  .mt button{padding:6px 12px;font-size:13px;background:#fff;border:1px solid var(--line);color:var(--ink);}
+  .mt button.sel{background:var(--gold);color:#fff;border-color:var(--gold);}
+  .done{display:block;width:100%;background:linear-gradient(90deg,var(--pink),var(--gold));color:#fff;font-size:18px;padding:16px;border-radius:30px;margin-top:20px;}
+  .fin{text-align:center;color:var(--teal);font-size:15px;margin-top:14px;min-height:20px;}
+</style>
+</head>
+<body>
+<a class="back" href="../../index.html">← もどる</a>
+<h1>Day01 ｜ 数学：わり算と逆数</h1>
+<div class="meta">6/26(金)・30分・正負の数 除法/逆数（L1〜L2）</div>
+
+<div class="flow">
+  <div><b>5分</b>ウォーム<br>アップ</div>
+  <div><b>20分</b>メイン<br>(7問)</div>
+  <div><b>5分</b>丸つけ＋<br>ミス記録</div>
+</div>
+
+<div class="can">
+  💡 <b>今日できるようになること</b><br>
+  ① わり算の<b>符号</b>を、同じか・ちがうかで一瞬で決められる。<br>
+  ② わり算を「<b>逆数（さかさまにした数）のかけ算</b>」になおせる。<br>
+  むずかしく見えても、ルールは2つだけ。今日でスッキリさせよう。
+</div>
+
+<div class="can" style="background:#eafaf8;border-color:#bfe6e3">
+  📐 <b>きょうの2大ルール（先にこれだけ）</b><br>
+  ① <b>符号</b>：同じ符号どうし→答えは ＋ ／ ちがう符号どうし→答えは −<br>
+  ② <b>わり算</b>：÷□ は、□を「逆数」にして ×□ になおせる（符号はそのまま運ぶ）
+</div>
+
+<div class="sec">① ウォームアップ（英単語を3つ書く・声に出してから）</div>
+<div class="q">
+  <div class="qt">次の意味の英単語をノートに書こう：<br>「8」　「白い」　「山」</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">eight ／ white ／ mountain</span>
+  <div class="miss">⚠ eight の gh、mountain の ai を読みのまま書かないこと。</div></div>
+</div>
+
+<div class="sec">② メイン（わり算と逆数）</div>
+
+<div class="q" data-id="M1-1">
+  <div class="qid">M1-1</div>
+  <div class="qt"><span class="big">(−12) ÷ (+3)</span> を計算しよう</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">= −4</span>
+  <div class="why">手順は2つ。①数だけで 12÷3=4。②符号を決める→ −と＋で<b>ちがう符号</b>なので −。あわせて −4。</div></div>
+  <div class="grade">自分でまるつけ → <button class="o" onclick="g(this,'M1-1','o')">○</button><button class="x" onclick="g(this,'M1-1','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C ケアレス</button><button onclick="m(this)">K わからない</button><button onclick="m(this)">A 使えない</button></div>
+</div>
+
+<div class="q" data-id="M1-2">
+  <div class="qid">M1-2</div>
+  <div class="qt"><span class="big">(+20) ÷ (−5)</span></div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">= −4</span>
+  <div class="why">①数だけで 20÷5=4。②＋と−で<b>ちがう符号</b>→ −。あわせて −4。</div>
+  <div class="miss">⚠ わられる数が＋でも、わる数が−なら答えは−。「＋から始まったから＋」ではない。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M1-2','o')">○</button><button class="x" onclick="g(this,'M1-2','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M1-3">
+  <div class="qid">M1-3</div>
+  <div class="qt"><span class="big">(−18) ÷ (−6)</span></div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">= +3</span>
+  <div class="why">18÷6=3、符号は−と−で「同じ符号＝＋」だから ＋3。</div>
+  <div class="miss">⚠ 「マイナスが2つあるから−」ではない。同符号は＋。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M1-3','o')">○</button><button class="x" onclick="g(this,'M1-3','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M1-4">
+  <div class="qid">M1-4</div>
+  <div class="qt"><span class="big">−3/4</span> の逆数は？</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">= −4/3</span>
+  <div class="why">逆数＝「かけたら1になる相手」。分母と分子を入れかえると作れる。−3/4 は上下を入れかえて 4/3、符号−はそのまま運んで −4/3。たしかめ：(−3/4)×(−4/3)=1。</div>
+  <div class="miss">⚠ 入れかえるのは数だけ。符号−は消えない。−4/3 が正解（4/3 ではない）。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M1-4','o')">○</button><button class="x" onclick="g(this,'M1-4','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M1-5">
+  <div class="qid">M1-5</div>
+  <div class="qt"><span class="big">(−2/3) ÷ (+4/5)</span></div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">= −5/6</span>
+  <div class="why">①<b>わる数 4/5</b>を逆数 5/4 にして ×にかえる→ (−2/3)×(5/4)。②数は 2×5/3×4=10/12。③符号は−と＋で<b>ちがう</b>→ −。約分して −5/6。</div>
+  <div class="miss">⚠ 逆数にするのは<b>うしろ（わる数）だけ</b>。前の −2/3 はそのまま。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M1-5','o')">○</button><button class="x" onclick="g(this,'M1-5','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M1-6">
+  <div class="qid">M1-6</div>
+  <div class="qt"><span class="big">(−8) ÷ (−2) ÷ (−2)</span></div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">= −2</span>
+  <div class="why">前から順に：(−8)÷(−2)→同符号で＋、8÷2=4 →＋4。つぎに ＋4÷(−2)→ちがう符号で−、4÷2=2 → −2。<br>はやわざ：−の個数が3個（<b>奇数</b>）→答えは−（偶数個なら＋）。</div>
+  <div class="miss">⚠ 数(8÷2÷2=2)と符号は<b>べつべつ</b>に決める。まとめてやると符号をまちがえやすい。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M1-6','o')">○</button><button class="x" onclick="g(this,'M1-6','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="q" data-id="M1-7">
+  <div class="qid">M1-7（考える問題）</div>
+  <div class="qt">「6 でわること」と「−6 の逆数をかけること」は同じ計算？ 理由も考えよう。</div>
+  <button class="show" onclick="t(this)">答えを見る</button>
+  <div class="ans"><span class="a">ちがう。</span>
+  <div class="why">「6でわる」＝「6の逆数 1/6 をかける」。一方 −6 の逆数は −1/6。符号がちがうので別の計算になる。</div>
+  <div class="miss">⚠ 「÷6＝×1/6」。逆数にするとき数字の符号はそのまま運ぶ。</div></div>
+  <div class="grade">→ <button class="o" onclick="g(this,'M1-7','o')">○</button><button class="x" onclick="g(this,'M1-7','x')">✕</button></div>
+  <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C</button><button onclick="m(this)">K</button><button onclick="m(this)">A</button></div>
+</div>
+
+<div class="sec">③ ふりかえり</div>
+<div class="can">
+  ✕がついた問題は「もんだいID」を <b>誤答キュー</b> にメモ → 明日もう一度。<br>
+  K（わからない）が出たら『正負の数 完全理解テキスト』に少しもどろう。
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（Day01 完了）</button>
+<div class="fin" id="fin"></div>
+
+<script>
+const DAY=1;
+function t(b){const a=b.parentNode.querySelector('.ans');a.classList.toggle('open');b.textContent=a.classList.contains('open')?'答えをかくす':'答えを見る';}
+function g(btn,id,v){
+  const box=btn.closest('.q');
+  box.querySelectorAll('.o,.x').forEach(e=>e.classList.remove('sel'));
+  btn.classList.add('sel');
+  localStorage.setItem('d'+DAY+'_'+id,v);
+  const mt=box.querySelector('.mt');
+  if(v==='x'){mt.classList.add('open');} else {mt.classList.remove('open');}
+}
+function m(btn){
+  const wrap=btn.parentNode;
+  wrap.querySelectorAll('button').forEach(e=>e.classList.remove('sel'));
+  btn.classList.add('sel');
+}
+function finish(){
+  localStorage.setItem('day'+DAY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+// 復元
+window.onload=()=>{
+  document.querySelectorAll('.q[data-id]').forEach(box=>{
+    const id=box.dataset.id; const v=localStorage.getItem('d'+DAY+'_'+id);
+    if(v){const b=box.querySelector('.'+v); if(b){b.classList.add('sel'); if(v==='x')box.querySelector('.mt').classList.add('open');}}
+  });
+  if(localStorage.getItem('day'+DAY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>
