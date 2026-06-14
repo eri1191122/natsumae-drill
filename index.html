@@ -43,6 +43,12 @@
     padding:8px 16px; font-size:14px; font-weight:800; text-decoration:none;}
   .storageWarn{display:none; background:#fff0ef; border:1px solid #e5aaa5; color:#7f3530;
     border-radius:10px; padding:10px 14px; margin-bottom:16px; font-size:13px; font-weight:700;}
+  .installGuide{background:#eef5fb; border:1px solid #bfd2e4; border-radius:12px; margin-bottom:18px; padding:13px 17px;}
+  .installGuide summary{font-weight:900; color:var(--hd-ink); cursor:pointer; min-height:44px; display:flex; align-items:center;}
+  .installGuide ol{margin:4px 0 0 1.4em; color:var(--sub); font-size:13.5px;}
+  .installGuide li{margin-top:5px; padding-left:2px;}
+  .installGuide strong{color:var(--ink);}
+  .offlineStatus{margin-top:10px; padding-top:9px; border-top:1px solid #ccdbe8; color:var(--sub); font-size:13px; font-weight:700;}
 
   /* 週見出し */
   .weekhd{margin:22px 2px 12px; padding:8px 14px; border-radius:10px;
@@ -93,7 +99,7 @@
   button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #1d70b8; outline-offset:3px;}
   @media print{
     body{padding:0; background:#fff;}
-    .today,.doneBtn,.slimDone,.reset,.storageWarn{display:none !important;}
+    .today,.doneBtn,.slimDone,.reset,.storageWarn,.installGuide{display:none !important;}
     .card,.slim,.progwrap,.scope{box-shadow:none; break-inside:avoid;}
   }
   @media (max-width:440px){
@@ -122,6 +128,16 @@
     <h1>🌸 中1 夏前ドリル</h1>
     <p>「その日にやること」が決まっています。目安30分。終わらなければ止めて、残りは直し日に回します。</p>
   </header>
+
+  <details class="installGuide">
+    <summary>iPadでアプリのように使う方法</summary>
+    <ol>
+      <li>このページを<strong>Safari</strong>で開きます。</li>
+      <li>Safariの<strong>共有ボタン</strong>を押し、<strong>「ホーム画面に追加」</strong>を選びます。</li>
+      <li>追加した「夏前ドリル」のアイコンから開きます。初回だけはオンラインで、この画面を開いたまま下の表示を確認してください。</li>
+    </ol>
+    <p class="offlineStatus" id="offlineStatus" role="status">オフライン準備を確認しています...</p>
+  </details>
 
   <div class="storageWarn" id="storageWarn" role="alert">この環境では進捗を保存できません。表示は使えますが、再読み込みするとチェックが消えます。</div>
   <section class="today" id="today" aria-live="polite"></section>
@@ -316,6 +332,30 @@ window.addEventListener('pageshow',render);
 document.addEventListener('visibilitychange',function(){if(!document.hidden) render();});
 render();
 </script>
-<script>if('serviceWorker' in navigator){window.addEventListener('load',function(){navigator.serviceWorker.register('sw.js').catch(function(){});});}</script>
+<script>
+(function(){
+  const status=document.getElementById('offlineStatus');
+  function setStatus(message){if(status) status.textContent=message;}
+  function showConnection(){
+    if(!navigator.onLine) setStatus('現在オフラインです。保存済みのプリントを利用できます。');
+  }
+  window.addEventListener('online',function(){setStatus('オンラインです。オフライン用データを更新できます。');});
+  window.addEventListener('offline',showConnection);
+  if(!('serviceWorker' in navigator)){
+    setStatus('このブラウザはオフライン利用に対応していません。iPadではSafariを使ってください。');
+    return;
+  }
+  window.addEventListener('load',function(){
+    navigator.serviceWorker.register('./sw.js')
+      .then(function(){return navigator.serviceWorker.ready;})
+      .then(function(){
+        const standalone=window.matchMedia('(display-mode: standalone)').matches || window.navigator.standalone===true;
+        setStatus(standalone?'ホーム画面版で起動中です。オフライン準備も完了しています。':'オフライン準備完了。共有ボタンからホーム画面に追加できます。');
+        showConnection();
+      })
+      .catch(function(){setStatus('オフライン準備に失敗しました。オンラインで再読み込みしてください。');});
+  });
+})();
+</script>
 </body>
 </html>
