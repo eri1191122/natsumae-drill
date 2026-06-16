@@ -53,11 +53,12 @@
   <h2 class="sec">📌 ✕の一覧（誤答キューへ写す）</h2>
   <div id="weak" class="note"></div>
 
-  <h2 class="sec">親へ回収（USB保存→PCでダブルクリックで開く）</h2>
+  <h2 class="sec">親へ結果をわたす（いちばんラクな順）</h2>
   <div class="btnrow" style="justify-content:flex-start">
-    <button class="act up" onclick="exportStandalone()">📁 結果ファイル(HTML)を書き出す → USBへ保存</button>
+    <button class="act up" onclick="shareResult()">📲 結果を送る（ワンタップ／AirDropなど）</button>
+    <button class="act" onclick="exportStandalone()">📁 保存してUSBへ（カメラ不要）</button>
   </div>
-  <div class="note" style="margin-top:8px">押すと「結果_日付.html」がダウンロードされます。iPadでは保存先に<b>挿したUSB</b>を選べます（または「ファイル」アプリでUSBへ移動）。PCではそのファイルを<b>ダブルクリックするだけ</b>で集計が開きます（カメラ・ネット不要）。</div>
+  <div class="note" style="margin-top:8px"><b>① いちばんラク：</b>「📲結果を送る」を押す → iPadの共有メニューが出る → <b>AirDrop</b>で親のiPhone/Macに送る（ネットなしでOK）。<br><b>② USB派：</b>「📁保存してUSBへ」→ 保存先で<b>挿したUSB</b>か「ファイル」を選ぶ。<br>どちらも、できた<b>「結果_日付.html」をタップ／ダブルクリック</b>すれば集計が開きます（カメラ・ネット不要）。</div>
 
   <h2 class="sec">持ち運び（上級・端末またぎ生データ）</h2>
   <div class="btnrow" style="justify-content:flex-start">
@@ -146,8 +147,8 @@ function copyOut(){var t=document.getElementById('io');if(!t.value)doExport();t.
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
 function pad(n){return (n<10?'0':'')+n;}
 
-// 結果を「自己完結HTML（PCでダブルクリックで開ける静的ページ）」として書き出す＝親への回収用
-function exportStandalone(){
+// 結果を「自己完結HTML（PC/別端末でそのまま開ける静的ページ）」として組み立てる＝親への受け渡し用
+function buildResultDoc(){
   var to=0,tx=0,dh='',wh='',any=false;
   DAYS.forEach(function(d){
     var t=tally(d.key);var dn=t.o+t.x;if(!dn)return;any=true;to+=t.o;tx+=t.x;
@@ -156,7 +157,7 @@ function exportStandalone(){
     dh+='<div class="day"><div class="nm">'+esc(d.name)+'</div><div class="sc"><span class="o">'+t.o+'○</span> / <span class="x">'+t.x+'✕</span>　'+r+'%</div><div class="xs">'+xt+'</div></div>';
     if(t.xs.length)wh+='<div><b>'+esc(d.name)+'</b>：'+t.xs.map(function(z){return esc(z.gid)+(z.m?'（'+esc(z.m)+'）':'');}).join('、')+'</div>';
   });
-  if(!any){alert('まだ○✕の記録がありません。各プリントで○✕を付けてから書き出してください。');return;}
+  if(!any)return null;
   var tdn=to+tx;var tr=tdn?Math.round(to/tdn*100):0;
   var now=new Date();
   var ts=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate())+'_'+pad(now.getHours())+pad(now.getMinutes());
@@ -176,8 +177,31 @@ function exportStandalone(){
     +dh
     +'<div class="weak">📌 ✕の一覧（誤答キューへ写す）<br>'+(wh||'✕はありません')+'</div>'
     +'</div></body></html>';
-  var blob=new Blob([doc],{type:'text/html'});
-  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='結果_'+ts+'.html';
+  return {ts:ts,html:doc,name:'結果_'+ts+'.html'};
+}
+
+// ① ワンタップで親へ送る（AirDrop・メッセージ・ファイル保存）。オフラインでもAirDropは動く。
+function shareResult(){
+  var r=buildResultDoc();
+  if(!r){alert('まだ○✕の記録がありません。各プリントで○✕を付けてから送ってください。');return;}
+  try{
+    var file=new File([r.html],r.name,{type:'text/html'});
+    if(navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:'毎日プリント 結果',text:'毎日プリントの○✕結果です'}).catch(function(){});
+      return;
+    }
+  }catch(e){}
+  // 共有が使えない端末は保存（ダウンロード）にフォールバック
+  alert('この端末では「送る」が使えないので、保存（ダウンロード）にします。保存先でUSBか「ファイル」を選んでください。');
+  exportStandalone();
+}
+
+// ② 保存してUSB等へ（従来方式・カメラ/ネット不要）
+function exportStandalone(){
+  var r=buildResultDoc();
+  if(!r){alert('まだ○✕の記録がありません。各プリントで○✕を付けてから書き出してください。');return;}
+  var blob=new Blob([r.html],{type:'text/html'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=r.name;
   document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(a.href);},800);
 }
 
