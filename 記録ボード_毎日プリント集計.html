@@ -53,12 +53,16 @@
   <h2 class="sec">📌 ✕の一覧（誤答キューへ写す）</h2>
   <div id="weak" class="note"></div>
 
-  <h2 class="sec">親へ結果をわたす（いちばんラクな順）</h2>
+  <h2 class="sec">親へ結果をわたす（LINEで送るなら上の2つ）</h2>
   <div class="btnrow" style="justify-content:flex-start">
-    <button class="act up" onclick="shareResult()">📲 結果を送る（ワンタップ／AirDropなど）</button>
-    <button class="act" onclick="exportStandalone()">📁 保存してUSBへ（カメラ不要）</button>
+    <button class="act up" onclick="shareImage()">📸 画像で送る（LINE・AirDrop OK）</button>
+    <button class="act up" onclick="shareText()">✍️ 文字で送る／コピー</button>
   </div>
-  <div class="note" style="margin-top:8px"><b>① いちばんラク：</b>「📲結果を送る」を押す → iPadの共有メニューが出る → <b>AirDrop</b>で親のiPhone/Macに送る（ネットなしでOK）。<br><b>② USB派：</b>「📁保存してUSBへ」→ 保存先で<b>挿したUSB</b>か「ファイル」を選ぶ。<br>どちらも、できた<b>「結果_日付.html」をタップ／ダブルクリック</b>すれば集計が開きます（カメラ・ネット不要）。</div>
+  <div class="btnrow" style="justify-content:flex-start;margin-top:8px">
+    <button class="act" onclick="shareResult()">🌐 ページHTMLで送る</button>
+    <button class="act" onclick="exportStandalone()">📁 保存してUSBへ</button>
+  </div>
+  <div class="note" style="margin-top:8px"><b>★LINEで送るなら「📸画像で送る」が確実です。</b>LINEは画像をそのまま送れます（HTMLファイルは「送れない形式」と出ます）。<br>「📸画像で送る」→ 共有メニュー → <b>AirDrop</b>で親のiPhoneへ／または直接<b>LINE</b>へ。iPhoneに届いた画像はLINEでPCへ送れます。<br>文章で十分なら「✍️文字で送る」→ LINEに貼り付けて送信。<br><b>USB派：</b>「📁保存してUSBへ」（HTMLは見やすいがLINE送付は不可）。</div>
 
   <h2 class="sec">持ち運び（上級・端末またぎ生データ）</h2>
   <div class="btnrow" style="justify-content:flex-start">
@@ -203,6 +207,87 @@ function exportStandalone(){
   var blob=new Blob([r.html],{type:'text/html'});
   var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=r.name;
   document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(a.href);},800);
+}
+
+// ===== LINEで送れる形式（画像PNG・文字）=====
+function wrapLines(ctx,text,maxW){
+  var out=[],cur='';
+  for(var i=0;i<text.length;i++){
+    var ch=text.charAt(i);
+    if(ch==='\n'){out.push(cur);cur='';continue;}
+    var t=cur+ch;
+    if(cur&&ctx.measureText(t).width>maxW){out.push(cur);cur=ch;}else cur=t;
+  }
+  out.push(cur);return out;
+}
+function rrect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function gather(){
+  var to=0,tx=0,any=false,rows=[],weak=[];
+  DAYS.forEach(function(d){var t=tally(d.key);var dn=t.o+t.x;if(!dn)return;any=true;to+=t.o;tx+=t.x;
+    var xt=t.xs.length?t.xs.map(function(z){return z.gid+(z.m?'('+z.m+')':'');}).join('、'):'';
+    rows.push({name:d.name,o:t.o,x:t.x,r:Math.round(t.o/dn*100),xt:xt});
+    if(t.xs.length)weak.push(d.name+'：'+xt);
+  });
+  if(!any)return null;
+  var tdn=to+tx;var now=new Date();
+  var ts=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
+  return {to:to,tx:tx,tr:tdn?Math.round(to/tdn*100):0,rows:rows,weak:weak,ts:ts};
+}
+function renderResultCanvas(){
+  var g=gather();if(!g)return null;
+  var W=720,P=28,maxW=W-P*2,dpr=2;
+  var c=document.createElement('canvas');var ctx=c.getContext('2d');
+  var ops=[];
+  ops.push({t:'title',h:50});
+  ops.push({t:'total',h:62});
+  g.rows.forEach(function(r){
+    ops.push({t:'dayhd',h:32,r:r});
+    if(r.xt){ctx.font='400 20px sans-serif';var wl=wrapLines(ctx,'✕：'+r.xt,maxW-12);ops.push({t:'dayx',h:wl.length*26,lines:wl});}
+    ops.push({t:'gap',h:12});
+  });
+  ops.push({t:'weakhd',h:42});
+  ctx.font='400 20px sans-serif';
+  var wlines=[];(g.weak.length?g.weak:['✕はありません']).forEach(function(w){wlines=wlines.concat(wrapLines(ctx,'・'+w,maxW));});
+  ops.push({t:'weak',h:wlines.length*28+6,lines:wlines});
+  var H=P*2;ops.forEach(function(o){H+=o.h;});
+  c.width=W*dpr;c.height=H*dpr;ctx.scale(dpr,dpr);ctx.textBaseline='top';
+  ctx.fillStyle='#f7f8f5';ctx.fillRect(0,0,W,H);
+  var y=P;
+  ops.forEach(function(o){
+    if(o.t==='title'){ctx.fillStyle='#25324a';ctx.font='800 28px sans-serif';ctx.fillText('📊 毎日プリント 結果  '+g.ts,P,y);}
+    else if(o.t==='total'){ctx.fillStyle='#fff';rrect(ctx,P,y,maxW,50,10);ctx.fill();ctx.strokeStyle='#e2e7df';ctx.lineWidth=1;ctx.stroke();ctx.fillStyle='#3f6f9f';ctx.font='900 28px sans-serif';ctx.fillText(g.to+' ○  /  '+g.tx+' ✕     正答率 '+g.tr+'%',P+16,y+11);}
+    else if(o.t==='dayhd'){var r=o.r;ctx.fillStyle='#263238';ctx.font='800 21px sans-serif';ctx.fillText(r.name,P,y);var sc=r.o+'○ / '+r.x+'✕  '+r.r+'%';ctx.font='900 21px sans-serif';var sw=ctx.measureText(sc).width;ctx.fillStyle=r.x?'#c0504a':'#56875b';ctx.fillText(sc,W-P-sw,y);}
+    else if(o.t==='dayx'){ctx.fillStyle='#c0504a';ctx.font='400 20px sans-serif';o.lines.forEach(function(ln,i){ctx.fillText(ln,P+10,y+i*26);});}
+    else if(o.t==='weakhd'){ctx.fillStyle='#25324a';ctx.font='800 22px sans-serif';ctx.fillText('📌 ✕の一覧（復習に使う）',P,y+10);}
+    else if(o.t==='weak'){ctx.fillStyle='#5a4520';ctx.font='400 20px sans-serif';o.lines.forEach(function(ln,i){ctx.fillText(ln,P,y+i*28);});}
+    y+=o.h;
+  });
+  return {canvas:c,name:'結果_'+g.ts+'.png'};
+}
+// 画像で送る＝LINEで送れる・PCで見られる
+function shareImage(){
+  var r=renderResultCanvas();
+  if(!r){alert('まだ○✕の記録がありません。各プリントで○✕を付けてから送ってください。');return;}
+  r.canvas.toBlob(function(blob){
+    if(!blob){alert('画像を作れませんでした。文字で送るをお試しください。');return;}
+    try{var file=new File([blob],r.name,{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file],title:'毎日プリント 結果'}).catch(function(){});return;}
+    }catch(e){}
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=r.name;document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(a.href);},800);
+  },'image/png');
+}
+// 文字で送る＝LINEに貼って送れる
+function buildResultText(){
+  var g=gather();if(!g)return null;
+  var L=[];g.rows.forEach(function(r){L.push(r.name+'  '+r.o+'○/'+r.x+'✕ '+r.r+'%'+(r.xt?('  ✕:'+r.xt):''));});
+  return '📊 毎日プリント 結果 '+g.ts+'\n合計 '+g.to+'○ / '+g.tx+'✕  正答率 '+g.tr+'%\n\n'+L.join('\n')+'\n\n― ✕一覧 ―\n'+(g.weak.length?g.weak.join('\n'):'なし');
+}
+function shareText(){
+  var s=buildResultText();
+  if(!s){alert('まだ○✕の記録がありません。');return;}
+  if(navigator.share){navigator.share({text:s,title:'毎日プリント 結果'}).catch(function(){});return;}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(s).then(function(){alert('コピーしました。LINEに貼り付けて送れます。');}).catch(cpfb);}else cpfb();
+  function cpfb(){var ta=document.getElementById('io');ta.value=s;ta.select();try{document.execCommand('copy');alert('コピーしました。LINEに貼り付けて送れます。');}catch(e){alert('下の枠の文字を長押しでコピーしてください。');}}
 }
 
 // 同一サイト判定の案内
