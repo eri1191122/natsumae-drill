@@ -88,6 +88,11 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
 .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
 
+/* 採点ユニット（小問ごと） */
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+
 /* ✕のとき3回書く（単語・熟語） */
 .write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
 
@@ -153,7 +158,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
@@ -175,7 +180,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- W-1 -->
     <div class="q vocab" data-id="W-1">
-      <div class="qnum-e">単語 ①</div>
+      <div class="qnum-e">問題1｜単語 ①</div>
       <div class="qword">答え・答える</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -185,13 +190,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：question（質問）と対になる必須語。The answer is B.（答えはBです）の形でテスト・授業に毎回出る。</div>
         <div class="bx bx-warn"><strong>w は読まない（黙字）</strong>。「アンサー」と読むが a-n-s-w-e-r と w を書く。<span class="red">anser</span> と w を抜かすのが典型ミス。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- W-2 -->
     <div class="q vocab" data-id="W-2">
-      <div class="qnum-e">単語 ②</div>
+      <div class="qnum-e">問題2｜単語 ②</div>
       <div class="qword">100・百</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -201,13 +208,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：数を表す基本語。two hundred（200）のように複数でも s をつけない使い方が頻出。</div>
         <div class="bx bx-warn">中の <strong>d</strong> を落として <span class="red">hundret</span> や <span class="red">hunred</span> と書くミスが多い。h-u-n-d-r-e-d、d は2か所ある。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- W-3 -->
     <div class="q vocab" data-id="W-3">
-      <div class="qnum-e">単語 ③</div>
+      <div class="qnum-e">問題3｜単語 ③</div>
       <div class="qword">（時間の）分</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -217,13 +226,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：時刻・所要時間で必ず使う。Wait a minute.（ちょっと待って）という会話表現も頻出。</div>
         <div class="bx bx-warn">「ミニット」の音から <span class="red">minit</span> と書きがち。正しくは m-i-n-u-t-e。最後に読まない <strong>e</strong> がつく。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- W-4 -->
     <div class="q vocab" data-id="W-4">
-      <div class="qnum-e">単語 ④</div>
+      <div class="qnum-e">問題4｜単語 ④</div>
       <div class="qword">（時間の）時・1時間</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -233,13 +244,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：時間の長さを表す基本語。half an hour（30分）のように使う。</div>
         <div class="bx bx-warn"><strong>先頭の h は読まない（黙字）</strong>。「アワー」と読むが h-o-u-r と h から書く。<span class="red">our</span>（私たちの）とつづりが似ているので注意。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-4">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- W-5 -->
     <div class="q vocab" data-id="W-5">
-      <div class="qnum-e">単語 ⑤</div>
+      <div class="qnum-e">問題5｜単語 ⑤</div>
       <div class="qword">〜時（ちょうど）</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -249,8 +262,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：時刻を言うとき毎回使う。It's three o'clock.（3時です）。「of the clock」の略。</div>
         <div class="bx bx-warn"><strong>アポストロフィ（'）を忘れない</strong>。o'clock と書く。<span class="red">oclock</span> は不正解。「○時半」のように分まで言うときは使わない（It's 3:30 のみ）。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-5">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
   </div>
@@ -268,7 +283,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- P-1 -->
     <div class="q vocab" data-id="P-1">
-      <div class="qnum-e">熟語 ①</div>
+      <div class="qnum-e">問題6｜熟語 ①</div>
       <div class="qword">〜を待つ</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -278,13 +293,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：日常で毎日使う。I'm waiting for the bus.（バスを待っています）。</div>
         <div class="bx bx-warn"><strong>for を落とさない</strong>。「何を」待つかは for で伝える。<span class="red">wait the bus</span> は×、<span class="grn">wait for the bus</span> が○。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="P-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- P-2 -->
     <div class="q vocab" data-id="P-2">
-      <div class="qnum-e">熟語 ②</div>
+      <div class="qnum-e">問題7｜熟語 ②</div>
       <div class="qword">〜について話す</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -294,13 +311,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：英作文・スピーチで必ず使う。Let's talk about our dreams.（夢について話そう）。</div>
         <div class="bx bx-warn"><strong>about を落とさない</strong>。「何について」は about で伝える。<span class="red">talk our dreams</span> は×、<span class="grn">talk about our dreams</span> が○。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="P-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- P-3 -->
     <div class="q vocab" data-id="P-3">
-      <div class="qnum-e">熟語 ③</div>
+      <div class="qnum-e">問題8｜熟語 ③</div>
       <div class="qword">〜を思いつく</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -310,8 +329,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：アイデアや意見を言うときに使う。Can you think of a good idea?（いい案を思いつける？）。</div>
         <div class="bx bx-warn"><strong>of を落とさない</strong>。think of＝思いつく、think about＝じっくり考える。今は「think of＝思いつく」で覚えてOK。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="P-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
   </div>
@@ -329,7 +350,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- EW-1 -->
     <div class="q writing" data-id="EW-1">
-      <div class="qnum-e">英作文 ①</div>
+      <div class="qnum-e">問題9｜英作文 ①</div>
       <div class="ew-task">📝 この日本語を、英語にして下の線に書こう（文法は自分で考える）</div>
       <div class="ew-jp">「私は学生で、テニスをします。」</div>
       <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
@@ -382,8 +403,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         </div>
         <div class="ans-final"><span>こたえ</span>I am a student and play tennis.</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら、正しい文を3回書こう　＿＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿＿</div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら、正しい文を3回書こう　＿＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿＿</div>
+      </div>
     </div>
 
   </div>
@@ -399,110 +422,117 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   <div class="sec-hd"><h2>1. 倍数・約数</h2><span class="badge-grade">小5</span></div>
   <div class="sec-body">
 
-    <!-- ★おさらいカード：倍数・約数（常に見える） -->
-    <div class="osarai">
-      <h4>① 倍数（ばいすう）って何だっけ？</h4>
-      <p>ある数を<b>1ばい、2ばい、3ばい…</b>していった数。九九の答えだと思えばOK。</p>
-      <div class="ex">3の倍数 ＝ 3, 6, 9, 12, 15, …（3×1, 3×2, 3×3, …）</div>
-
-      <h4>② 約数（やくすう）って何だっけ？</h4>
-      <p>その数を<b>わり切れる</b>数（あまりが0になる数）。</p>
-      <div class="ex">12の約数 ＝ 1, 2, 3, 4, 6, 12（どれで12をわってもあまりが出ない）</div>
-
-      <h4>③ 公倍数・最小公倍数</h4>
-      <p>・<b>公倍数</b>＝2つの数の倍数で、<b>両方に共通</b>するもの。<br>
-         ・<b>最小公倍数</b>＝公倍数の中で<b>いちばん小さい</b>もの。</p>
-      <div class="ex">2の倍数：2,4,<b>6</b>,8,10,<b>12</b>… ／ 3の倍数：3,<b>6</b>,9,<b>12</b>…<br>
-        共通＝6,12,18…（公倍数）／ いちばん小さい＝<b>6</b>（最小公倍数）</div>
-      <p>「同時に」「どちらでもわり切れる」「次に重なるのはいつ」→ <b>最小公倍数</b>の合図。</p>
-
-      <h4>④ 公約数・最大公約数</h4>
-      <p>・<b>公約数</b>＝2つの数の約数で、<b>両方に共通</b>するもの。<br>
-         ・<b>最大公約数</b>＝公約数の中で<b>いちばん大きい</b>もの。</p>
-      <p>「余りなく分ける」「いちばん大きい正方形に切る」→ <b>最大公約数</b>の合図。</p>
-
-      <h4>⑤ 連除法（れんじょほう）＝はしご算のやり方</h4>
-      <p>2つの数を、<b>両方をわり切れる数</b>でたてに同時にわっていく。もう同時にわれなくなったら止める。</p>
-      <div class="ex">24 と 36 のとき：<br>
-        <span class="math">2)24&nbsp;36</span><br>
-        <span class="math">2)12&nbsp;18</span><br>
-        <span class="math">3)&nbsp;6&nbsp;&nbsp;9</span><br>
-        <span class="math">&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;3</span>（2と3はもう同時にわれない→止める）<br>
-        ・<b>最大公約数</b>＝左にならんだ「わった数」だけかける → 2×2×3＝<b>12</b><br>
-        ・<b>最小公倍数</b>＝左の数と下に残った数を<b>ぜんぶ</b>かける → 2×2×3×2×3＝<b>72</b></div>
-      <div class="miss">最大公約数（左だけかける）と最小公倍数（L字でぜんぶかける）を<b>逆にしやすい</b>。「<b>最大は左だけ・最小はぜんぶ</b>」で覚えよう。</div>
-    </div>
-
     <!-- M-1 -->
     <div class="q calc" data-id="M-1">
-      <div class="qnum">問1　L1 基礎</div>
+      <div class="qnum">問題10｜倍数・約数　L1 基礎</div>
       <div class="qbody">24 と 36 の最大公約数と最小公倍数を求めよう。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">最大公約数 12　最小公倍数 72</div>
+        <!-- ★おさらいカード：倍数・約数（答えを見るまで隠す＝この問題のans-box先頭へ移動） -->
+        <div class="osarai">
+          <h4>① 倍数（ばいすう）って何だっけ？</h4>
+          <p>ある数を<b>1ばい、2ばい、3ばい…</b>していった数。九九の答えだと思えばOK。</p>
+          <div class="ex">3の倍数 ＝ 3, 6, 9, 12, 15, …（3×1, 3×2, 3×3, …）</div>
+
+          <h4>② 約数（やくすう）って何だっけ？</h4>
+          <p>その数を<b>わり切れる</b>数（あまりが0になる数）。</p>
+          <div class="ex">12の約数 ＝ 1, 2, 3, 4, 6, 12（どれで12をわってもあまりが出ない）</div>
+
+          <h4>③ 公倍数・最小公倍数</h4>
+          <p>・<b>公倍数</b>＝2つの数の倍数で、<b>両方に共通</b>するもの。<br>
+             ・<b>最小公倍数</b>＝公倍数の中で<b>いちばん小さい</b>もの。</p>
+          <div class="ex">2の倍数：2,4,<b>6</b>,8,10,<b>12</b>… ／ 3の倍数：3,<b>6</b>,9,<b>12</b>…<br>
+            共通＝6,12,18…（公倍数）／ いちばん小さい＝<b>6</b>（最小公倍数）</div>
+          <p>「同時に」「どちらでもわり切れる」「次に重なるのはいつ」→ <b>最小公倍数</b>の合図。</p>
+
+          <h4>④ 公約数・最大公約数</h4>
+          <p>・<b>公約数</b>＝2つの数の約数で、<b>両方に共通</b>するもの。<br>
+             ・<b>最大公約数</b>＝公約数の中で<b>いちばん大きい</b>もの。</p>
+          <p>「余りなく分ける」「いちばん大きい正方形に切る」→ <b>最大公約数</b>の合図。</p>
+
+          <h4>⑤ 連除法（れんじょほう）＝はしご算のやり方</h4>
+          <p>2つの数を、<b>両方をわり切れる数</b>でたてに同時にわっていく。もう同時にわれなくなったら止める。</p>
+          <div class="ex">24 と 36 のとき：<br>
+            <span class="math">2)24&nbsp;36</span><br>
+            <span class="math">2)12&nbsp;18</span><br>
+            <span class="math">3)&nbsp;6&nbsp;&nbsp;9</span><br>
+            <span class="math">&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;3</span>（2と3はもう同時にわれない→止める）<br>
+            ・<b>最大公約数</b>＝左にならんだ「わった数」だけかける → 2×2×3＝<b>12</b><br>
+            ・<b>最小公倍数</b>＝左の数と下に残った数を<b>ぜんぶ</b>かける → 2×2×3×2×3＝<b>72</b></div>
+          <div class="miss">最大公約数（左だけかける）と最小公倍数（L字でぜんぶかける）を<b>逆にしやすい</b>。「<b>最大は左だけ・最小はぜんぶ</b>」で覚えよう。</div>
+        </div>
         <div class="step"><span>連除法</span>両方を割れる数で同時にたてに割る。<span class="math">2)24 36 → 2)12 18 → 3)6 9 → 2 3</span>（2と3はもう同時に割れない＝止める）</div>
         <div class="step"><span>最大公約数</span><strong>左に並んだ「割った数」だけ</strong>かける → 2×2×3＝<strong>12</strong></div>
         <div class="step"><span>最小公倍数</span><strong>左の割った数</strong>と<strong>下に残った数</strong>を全部かける → 2×2×3×2×3＝<strong>72</strong></div>
         <div class="bx bx-link">最大公約数は約分、最小公倍数は通分でそのまま使う。<span class="math">5/12＋7/18</span> で 12 と 18 の最小公倍数 36 が即出せると、中1の正負の分数計算が一気に速くなる。</div>
         <div class="bx bx-warn">最大公約数（左だけかける）と最小公倍数（L字を全部かける）を逆にしがち。「最大は左だけ・最小は全部」で覚える。</div>
+        <div class="ans-final"><span>こたえ</span>最大公約数 12　最小公倍数 72</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-1">
+        <div class="grade"><span class="gq-label">問題10</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- M-2 -->
     <div class="q calc" data-id="M-2">
-      <div class="qnum">問2　L2 標準</div>
+      <div class="qnum">問題11｜倍数・約数　L2 標準</div>
       <div class="qbody">たて 72cm、横 90cm の長方形の紙を、余りが出ないよう<strong>最大の正方形</strong>に切り分けたい。1辺の長さと枚数を求めよう。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">1辺 18cm、枚数 20枚</div>
         <div class="step"><span>判断</span>「余りなく最大の正方形」＝ 72 と 90 の最大公約数を求める合図。</div>
         <div class="step"><span>連除法</span>72 と 90 は 18 で同時に割れる。72÷18＝4、90÷18＝5。</div>
         <div class="step"><span>枚数</span>(72÷18)×(90÷18)＝4×5＝<strong>20枚</strong>、1辺は <strong>18cm</strong>。</div>
         <div class="bx bx-link">「最大の」「余りなく分ける」という言葉は最大公約数の合図。中1以降の文章題でも「条件を式に翻訳する」第一歩がこれ。</div>
         <div class="bx bx-warn">1辺が出せても枚数を「たて÷1辺」だけで止めがち。たて方向×横方向の両方をかける。</div>
+        <div class="ans-final"><span>こたえ</span>1辺 18cm、枚数 20枚</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-2">
+        <div class="grade"><span class="gq-label">問題11</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- M-3 -->
     <div class="q calc" data-id="M-3">
-      <div class="qnum">問3　L2 標準</div>
+      <div class="qnum">問題12｜倍数・約数　L2 標準</div>
       <div class="qbody">3でも5でも割り切れる、100以下の整数はいくつありますか。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">6個</div>
         <div class="step"><span>判断</span>「3でも5でも割り切れる」＝ 3 と 5 の公倍数 → 最小公倍数を周期に数える。</div>
         <div class="step"><span>最小公倍数</span>3と5の最小公倍数は <strong>15</strong>。</div>
         <div class="step"><span>列挙</span>15, 30, 45, 60, 75, 90 → <strong>6個</strong>（105 は 100 超えで入らない）</div>
         <div class="bx bx-link">「AでもBでも」「同時に」「重なる」は最小公倍数の場面。中1のランプ・周期の文章題でそのまま使う発想。</div>
         <div class="bx bx-warn">105 まで数えて7個にしがち。「100以下」の上限を最後に確認する。</div>
+        <div class="ans-final"><span>こたえ</span>6個</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-3">
+        <div class="grade"><span class="gq-label">問題12</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- M-4 -->
     <div class="q calc" data-id="M-4">
-      <div class="qnum">問4　L3 応用</div>
+      <div class="qnum">問題13｜倍数・約数　L3 応用</div>
       <div class="qbody">A・B・Cのランプがあり、Aは6秒、Bは8秒、Cは10秒おきに点滅する。最初に同時点滅した後、次に3つが同時に点滅するのは何秒後か。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">120秒後</div>
         <div class="step"><span>判断</span>「3つが同時」＝ 6・8・10 の最小公倍数。</div>
         <div class="step"><span>6と8</span>6 と 8 の最小公倍数は 24。</div>
         <div class="step"><span>24と10</span>24, 48, 72, 96, <strong>120</strong> … 120 は 10 でも割れる → <strong>120秒後</strong></div>
         <div class="bx bx-link">「次に何かが重なるのはいつか」は中学でも周期の典型問題。3つの数の最小公倍数は「2つずつ」処理すると確実。</div>
         <div class="bx bx-warn">6×8×10＝480 と全部かけてしまうのは誤り（それは公倍数だが最小ではない）。必ず最小を探す。</div>
+        <div class="ans-final"><span>こたえ</span>120秒後</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-4">
+        <div class="grade"><span class="gq-label">問題13</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
   </div>
@@ -518,105 +548,132 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   <div class="sec-hd"><h2>2. 単位換算</h2><span class="badge-grade">小3〜6</span></div>
   <div class="sec-body">
 
-    <!-- ★おさらいカード：単位換算（常に見える） -->
-    <div class="osarai">
-      <h4>① 単位換算（たんいかんさん）って何だっけ？</h4>
-      <p>同じ長さ・かさを、ちがう単位で言いかえること。たとえば「1m」と「100cm」は<b>同じ長さ</b>。</p>
-
-      <h4>② いちばん大事な方向ルール</h4>
-      <p>・<b>大きい単位 → 小さい単位</b>になおすときは <b>かける</b>（数は大きくなる）<br>
-         ・<b>小さい単位 → 大きい単位</b>になおすときは <b>わる</b>（数は小さくなる）</p>
-      <div class="ex">2.5m を cm に（m→cm は小さい単位へ）→ 1m＝100cm だから <b>×100</b> → 250cm<br>
-        3600m を km に（m→km は大きい単位へ）→ 1000m＝1km だから <b>÷1000</b> → 3.6km</div>
-
-      <h4>③ おぼえておく基本の関係</h4>
-      <p>・長さ：1km＝1000m、1m＝100cm、1cm＝10mm<br>
-         ・かさ：1L＝1000mL、<b>1mL＝1cm³</b>（だから 1L＝1000cm³）<br>
-         ・重さ：1kg＝1000g</p>
-
-      <h4>④ 面積は「2回」かける！（ここが大事）</h4>
-      <p>面積は<b>たて×横の2次元</b>。だから倍率も<b>2回</b>かける（2乗する）。</p>
-      <div class="ex">1m＝100cm だけど、1m²＝100×100＝<b>10,000cm²</b>（100倍ではなく10000倍）<br>
-        3m² を cm² に → 3×10,000＝30,000cm²</div>
-      <div class="miss">面積を <span class="ng">3m²＝3×100＝300cm²</span> とするのは大まちがい。面積は<b>たて×横</b>だから 100×100＝10,000倍。倍率を2乗するのを忘れない。</div>
-
-      <h4>⑤ 速さの単位（時速・分速など）</h4>
-      <p>速さは「きょりの単位」と「時間の単位」の<b>両方</b>をそろえてからなおす。1時間＝60分、を使う。</p>
-      <div class="ex">時速18km を 分速○m に →<br>
-        ・きょり：18km＝18,000m（×1000）／ 時間：1時間＝60分<br>
-        ・18,000÷60＝<b>分速300m</b></div>
-      <div class="miss">きょりだけ、または時間だけなおして止めやすい。<b>2つとも</b>そろえてから計算する。</div>
-    </div>
-
     <!-- M-5 -->
     <div class="q calc" data-id="M-5">
-      <div class="qnum">問5　L1 基礎</div>
+      <div class="qnum">問題14・15・16｜単位換算（長さ）　L1 基礎</div>
       <div class="qbody">単位を直そう。(1) <strong>2.5m＝□cm</strong>　(2) <strong>0.08km＝□m</strong>　(3) <strong>3600m＝□km</strong></div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">(1) 250cm　(2) 80m　(3) 3.6km</div>
+        <!-- ★おさらいカード：単位換算（答えを見るまで隠す＝この問題のans-box先頭へ移動） -->
+        <div class="osarai">
+          <h4>① 単位換算（たんいかんさん）って何だっけ？</h4>
+          <p>同じ長さ・かさを、ちがう単位で言いかえること。たとえば「1m」と「100cm」は<b>同じ長さ</b>。</p>
+
+          <h4>② いちばん大事な方向ルール</h4>
+          <p>・<b>大きい単位 → 小さい単位</b>になおすときは <b>かける</b>（数は大きくなる）<br>
+             ・<b>小さい単位 → 大きい単位</b>になおすときは <b>わる</b>（数は小さくなる）</p>
+          <div class="ex">2.5m を cm に（m→cm は小さい単位へ）→ 1m＝100cm だから <b>×100</b> → 250cm<br>
+            3600m を km に（m→km は大きい単位へ）→ 1000m＝1km だから <b>÷1000</b> → 3.6km</div>
+
+          <h4>③ おぼえておく基本の関係</h4>
+          <p>・長さ：1km＝1000m、1m＝100cm、1cm＝10mm<br>
+             ・かさ：1L＝1000mL、<b>1mL＝1cm³</b>（だから 1L＝1000cm³）<br>
+             ・重さ：1kg＝1000g</p>
+
+          <h4>④ 面積は「2回」かける！（ここが大事）</h4>
+          <p>面積は<b>たて×横の2次元</b>。だから倍率も<b>2回</b>かける（2乗する）。</p>
+          <div class="ex">1m＝100cm だけど、1m²＝100×100＝<b>10,000cm²</b>（100倍ではなく10000倍）<br>
+            3m² を cm² に → 3×10,000＝30,000cm²</div>
+          <div class="miss">面積を <span class="ng">3m²＝3×100＝300cm²</span> とするのは大まちがい。面積は<b>たて×横</b>だから 100×100＝10,000倍。倍率を2乗するのを忘れない。</div>
+
+          <h4>⑤ 速さの単位（時速・分速など）</h4>
+          <p>速さは「きょりの単位」と「時間の単位」の<b>両方</b>をそろえてからなおす。1時間＝60分、を使う。</p>
+          <div class="ex">時速18km を 分速○m に →<br>
+            ・きょり：18km＝18,000m（×1000）／ 時間：1時間＝60分<br>
+            ・18,000÷60＝<b>分速300m</b></div>
+          <div class="miss">きょりだけ、または時間だけなおして止めやすい。<b>2つとも</b>そろえてから計算する。</div>
+        </div>
         <div class="step"><span>(1)</span>1m＝100cm → 2.5×100＝<strong>250cm</strong></div>
         <div class="step"><span>(2)</span>1km＝1000m → 0.08×1000＝<strong>80m</strong></div>
         <div class="step"><span>(3)</span>1000m＝1km → 3600÷1000＝<strong>3.6km</strong></div>
         <div class="bx bx-link">中学の速さ・理科の計算で単位換算は前提条件。「大きい単位→小さい単位はかける、逆は割る」の方向感覚が点に直結。</div>
         <div class="bx bx-warn">かける・割るの方向が逆になりがち。「大きくするからかける／小さくするから割る」と言葉で確認。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 250cm　(2) 80m　(3) 3.6km</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-5','o')">○</button><button class="x" onclick="g(this,'M-5','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-5a">
+        <div class="grade"><span class="gq-label">問題14（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5a','o')">○</button><button class="x" onclick="g(this,'M-5a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-5b">
+        <div class="grade"><span class="gq-label">問題15（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5b','o')">○</button><button class="x" onclick="g(this,'M-5b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-5c">
+        <div class="grade"><span class="gq-label">問題16（3）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5c','o')">○</button><button class="x" onclick="g(this,'M-5c','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- M-6 -->
     <div class="q calc" data-id="M-6">
-      <div class="qnum">問6　L2 標準</div>
+      <div class="qnum">問題17・18｜単位換算（面積）　L2 標準</div>
       <div class="qbody">単位を直そう。(1) <strong>3m²＝□cm²</strong>　(2) <strong>4500cm²＝□m²</strong></div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">(1) 30,000cm²　(2) 0.45m²</div>
         <div class="step"><span>確認</span>1m²＝100cm×100cm＝10,000cm²（面積は2乗）</div>
         <div class="step"><span>(1)</span>3×10,000＝<strong>30,000cm²</strong></div>
         <div class="step"><span>(2)</span>4500÷10,000＝<strong>0.45m²</strong></div>
         <div class="bx bx-link">面積の換算倍率は長さの2乗。中学の図形・関数でも「次元が変われば倍率が変わる」感覚はそのまま生きる。</div>
         <div class="bx bx-warn"><span class="red">3m²＝3×100＝300cm²</span> は大間違い。面積は縦×横の2次元なので 100×100＝10,000倍。倍率を2乗する。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 30,000cm²　(2) 0.45m²</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-6a">
+        <div class="grade"><span class="gq-label">問題17（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6a','o')">○</button><button class="x" onclick="g(this,'M-6a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-6b">
+        <div class="grade"><span class="gq-label">問題18（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6b','o')">○</button><button class="x" onclick="g(this,'M-6b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- M-7 -->
     <div class="q calc" data-id="M-7">
-      <div class="qnum">問7　L2 標準</div>
+      <div class="qnum">問題19・20｜単位換算（体積）　L2 標準</div>
       <div class="qbody">単位を直そう。(1) <strong>1.2L＝□mL＝□cm³</strong>　(2) <strong>3500cm³＝□L</strong></div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">(1) 1200mL＝1200cm³　(2) 3.5L</div>
         <div class="step"><span>確認</span>1L＝1000mL、1mL＝1cm³ → 1L＝1000cm³</div>
         <div class="step"><span>(1)</span>1.2×1000＝<strong>1200</strong> → 1200mL、1200cm³</div>
         <div class="step"><span>(2)</span>3500÷1000＝<strong>3.5L</strong></div>
         <div class="bx bx-link">L↔mL↔cm³ は理科の実験（水1mL＝1g）でも使う必須知識。数学と理科の両方で点になる。</div>
         <div class="bx bx-warn">mL と cm³ は同じ量なのに別物と思いがち。1mL＝1cm³ をまず固定する。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 1200mL＝1200cm³　(2) 3.5L</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-7a">
+        <div class="grade"><span class="gq-label">問題19（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7a','o')">○</button><button class="x" onclick="g(this,'M-7a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-7b">
+        <div class="grade"><span class="gq-label">問題20（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7b','o')">○</button><button class="x" onclick="g(this,'M-7b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- M-8 -->
     <div class="q calc" data-id="M-8">
-      <div class="qnum">問8　L3 応用</div>
+      <div class="qnum">問題21・22｜単位換算（速さ）　L3 応用</div>
       <div class="qbody">速さの単位を直そう。(1) <strong>時速18km＝分速□m</strong>　(2) <strong>分速80m＝時速□km</strong></div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">(1) 分速300m　(2) 時速4.8km</div>
         <div class="step"><span>(1)</span>18km＝18,000m（×1000）、1時間＝60分。18,000÷60＝<strong>分速300m</strong></div>
         <div class="step"><span>(2)</span>1分80m → 1時間で 80×60＝4800m。4800÷1000＝<strong>時速4.8km</strong></div>
         <div class="bx bx-link">速さの換算は「距離の単位」と「時間の単位」を両方そろえる。中1の方程式・関数の速さ文章題でこの手順が前提になる。</div>
         <div class="bx bx-warn">距離だけ／時間だけを変えて止めがち。2つの単位を両方そろえてから割る。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 分速300m　(2) 時速4.8km</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-8a">
+        <div class="grade"><span class="gq-label">問題21（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-8a','o')">○</button><button class="x" onclick="g(this,'M-8a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-8b">
+        <div class="grade"><span class="gq-label">問題22（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-8b','o')">○</button><button class="x" onclick="g(this,'M-8b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
   </div>
@@ -631,38 +688,35 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <script>
 var KEY='fukushu05';
 
-// 答えトグル（単語=「答えを見る」/数学=「答え・解説を見る」を保持）
+// 答えトグル
 function t(b){
   var a=b.parentNode.querySelector('.ans-box');
   var open=a.classList.toggle('open');
-  var label=b.getAttribute('data-label')||b.textContent;
-  if(open){b.setAttribute('data-label',label);}
-  b.textContent=open?'とじる':b.getAttribute('data-label');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
 }
 
-// 自己採点 ○✕（単語=write3、数学=ミス分類）
+// 自己採点 ○✕（採点ユニット .gq 単位＝小問ごと）
 function g(btn,id,v){
-  var box=btn.closest('.q');
+  var box=btn.closest('.gq');
   box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
   btn.classList.add('sel');
   localStorage.setItem(KEY+'_'+id,v);
   var mt=box.querySelector('.mt');
   var w3=box.querySelector('.write3');
-  if(v==='x'){
-    if(mt)mt.classList.add('open');
-    if(w3)w3.style.display='block';
-  }else{
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{
     if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}
     if(w3)w3.style.display='none';
   }
 }
 
-// ミス分類
+// ミス分類（.gq の data-gid 単位）
 function m(btn){
   var w=btn.parentNode;
   w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
   btn.classList.add('sel');
-  localStorage.setItem(KEY+'_'+btn.closest('.q').dataset.id+'_m',btn.textContent);
+  localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);
 }
 
 // 完了
@@ -672,10 +726,10 @@ function finish(){
   document.getElementById('doneBtn').textContent='✓ 完了ずみ';
 }
 
-// 復元
+// 復元（.gq＝採点ユニット単位）
 window.onload=function(){
-  document.querySelectorAll('.q').forEach(function(box){
-    var id=box.dataset.id;
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
     if(!id)return;
     var v=localStorage.getItem(KEY+'_'+id);
     if(v){
@@ -686,7 +740,7 @@ window.onload=function(){
         if(mt){
           mt.classList.add('open');
           var mv=localStorage.getItem(KEY+'_'+id+'_m');
-          if(mv)mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});
+          if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}
         }
         var w3=box.querySelector('.write3');
         if(w3)w3.style.display='block';

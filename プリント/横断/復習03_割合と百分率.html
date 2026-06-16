@@ -105,6 +105,11 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 .ans-box .step{margin:4px 0;font-size:13px}
 .ans-box .step span{display:inline-block;background:#fff;border:1px solid #c9decf;border-radius:4px;padding:1px 8px;margin-right:4px;font-weight:700;color:#3f6f4a;font-size:11px}
 
+/* 採点ユニット（小問ごと） */
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+
 /* 自己採点 */
 .grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
 .o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
@@ -146,7 +151,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
@@ -167,7 +172,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   <div class="sec-body">
 
     <div class="q vocab" data-id="W-1">
-      <div class="qnum-e">単語 ①</div>
+      <div class="qnum-e">問題1｜単語 ①</div>
       <div class="qword">兄・弟</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -177,12 +182,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：I have a brother.（兄がいます）と家族の紹介で必ず出る基本語。sister とセットで覚える。</div>
         <div class="bx bx-warn">th は2文字で1つの音（「ざ」の音）。「ブラザー」の音につられて brather としない。bro-ther と2つに区切る。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <div class="q vocab" data-id="W-2">
-      <div class="qnum-e">単語 ②</div>
+      <div class="qnum-e">問題2｜単語 ②</div>
       <div class="qword">姉・妹</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -192,12 +199,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：brother とセットで出る。Do you have a sister?（姉妹はいますか）のように問答で使う。</div>
         <div class="bx bx-warn">語末は -er が正しい。「シスター」の音で sistar と最後を a にしない。sis-ter と区切る。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <div class="q vocab" data-id="W-3">
-      <div class="qnum-e">単語 ③</div>
+      <div class="qnum-e">問題3｜単語 ③</div>
       <div class="qword">人々</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -207,12 +216,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：1語で「2人以上の人」を表す特別な語。最初から複数の意味。many people（たくさんの人々）。</div>
         <div class="bx bx-warn">後ろは -ple。「ピープル」の音で -pole と書かない。p-e-o-p-l-e の6文字、o は前半だけ。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <div class="q vocab" data-id="W-4">
-      <div class="qnum-e">単語 ④</div>
+      <div class="qnum-e">問題4｜単語 ④</div>
       <div class="qword">国・田舎</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -222,12 +233,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：What country are you from?（どこの国の出身ですか）の形で頻出。地理や自己紹介で使う。</div>
         <div class="bx bx-warn">coun のかたまり。「カントリー」の音で cuntry と o を抜かさない。count＋ry と区切ると形が覚えやすい。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-4">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <div class="q vocab" data-id="W-5">
-      <div class="qnum-e">単語 ⑤</div>
+      <div class="qnum-e">問題5｜単語 ⑤</div>
       <div class="qword">都市・市</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -237,8 +250,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：地名や場所の話で頻出。a big city（大きな都市）のように使う。country（国・田舎）と対で覚えるとよい。</div>
         <div class="bx bx-warn">先頭の c は「シ」の音（s の音）。「シティ」だからと siti と書かない。c-i-t-y で、最後は y。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-5">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
   </div>
@@ -255,7 +270,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   <div class="sec-body">
 
     <div class="q vocab" data-id="P-1">
-      <div class="qnum-e">熟語 ①</div>
+      <div class="qnum-e">問題6｜熟語 ①</div>
       <div class="qword">立つ・立ち上がる</div>
       <div class="qhint">英語で書いてみよう（2語・ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -265,12 +280,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：授業や号令でほぼ毎日使う。例: Stand up, please.（立ってください）。sit down の反対。</div>
         <div class="bx bx-warn">stand と up は2語。standup と1語にしない。up という小さい語を落とさない。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="P-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <div class="q vocab" data-id="P-2">
-      <div class="qnum-e">熟語 ②</div>
+      <div class="qnum-e">問題7｜熟語 ②</div>
       <div class="qword">すわる</div>
       <div class="qhint">英語で書いてみよう（2語・ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -280,12 +297,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：stand up の反対。例: Sit down, please.（すわってください）。この2つはセットで即答できるように。</div>
         <div class="bx bx-warn">動作の「すわる」は sit（t は1つ）。seat は「座席（いす）」というモノの名前で別物。down を落とさない。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="P-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <div class="q vocab" data-id="P-3">
-      <div class="qnum-e">熟語 ③</div>
+      <div class="qnum-e">問題8｜熟語 ③</div>
       <div class="qword">（電源を）つける</div>
       <div class="qhint">英語で書いてみよう（2語・ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -295,8 +314,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：テレビ・ライト・エアコンをつける動作で使う。例: Turn on the TV.（テレビをつけて）。反対は turn off。</div>
         <div class="bx bx-warn">電源は turn on。open は扉や窓を「開ける」語で電源には使わない。on という小さい語を落とさない。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="P-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
   </div>
@@ -313,7 +334,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   <div class="sec-body">
 
     <div class="q writing" data-id="EW-1">
-      <div class="qnum-e">英作文 ①</div>
+      <div class="qnum-e">問題9｜英作文 ①</div>
       <div class="ew-task">📝 この日本語を、英語にして下の線に書こう（文法は自分で考える）</div>
       <div class="ew-jp">「私は毎日英語を勉強します。」</div>
       <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
@@ -350,8 +371,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         </div>
         <div class="ans-final"><span>こたえ</span>I study English every day.</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら、正しい文を3回書こう　＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿</div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら、正しい文を3回書こう　＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿</div>
+      </div>
     </div>
 
   </div>
@@ -367,199 +390,225 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   <div class="sec-hd"><h2>まず自分で解く → 答え・解説を見る</h2><span class="badge-grade">小5〜6</span></div>
   <div class="sec-body">
 
-    <!-- ========= おさらい：割合とは ========= -->
-    <div class="osarai">
-      <div class="ot">① 割合（わりあい）って何だっけ？</div>
-      <p><b>意味：</b>割合＝「あるものが、もとにする量の<b>何倍にあたるか</b>」を表す数。「40人のうち14人」なら、14は40の 0.35倍 → 割合は0.35。</p>
-      <p><b>3つのことば：</b></p>
-      <ul>
-        <li><b>もとにする量</b>…基準になるほう（全体や、もとの値段）。「〜の」の前にある数。</li>
-        <li><b>くらべる量</b>…そのうちの一部分（女子の人数など）。</li>
-        <li><b>割合</b>…くらべる量が、もとにする量の何倍か。</li>
-      </ul>
-      <p><b>3つの公式（くもわ）：</b></p>
-      <ol>
-        <li>くらべる量 ＝ もとにする量 × 割合</li>
-        <li>割合 ＝ くらべる量 ÷ もとにする量</li>
-        <li>もとにする量 ＝ くらべる量 ÷ 割合</li>
-      </ol>
-      <p>求めたいものを手で隠すと、残り2つの関係（×か÷か）が見える、と覚えると速い。</p>
-      <div class="ex">「40人の35%が女子」。女子は何人？<br>→ もとにする量＝40（「40人の」の前）、割合＝0.35。<br>→ くらべる量＝もと×割合＝40×0.35＝<b>14人</b>。</div>
-      <div class="miss">「もとにする量」と「くらべる量」の取りちがえが最大のミス。<b>「〜の」の前がもとにする量</b>。先に丸で囲んでから式を作る。</div>
-    </div>
-
-    <!-- ========= おさらい：百分率・歩合 ========= -->
-    <div class="osarai">
-      <div class="ot">② 百分率（%）と歩合（割・分）</div>
-      <p><b>意味：</b>同じ「割合」を、いろんな言い方で表したもの。中身は全部おなじ数。</p>
-      <ul>
-        <li><b>小数</b>…0.35 のような表し方（計算で使うのはコレ）</li>
-        <li><b>百分率（%）</b>…小数を100倍して % をつけたもの。0.35→<b>35%</b></li>
-        <li><b>歩合（ぶあい）</b>…1割＝0.1、1分＝0.01。0.35→<b>3割5分</b></li>
-      </ul>
-      <p><b>変換のやり方：</b>小数→% は <b>×100</b> して%をつける。%→小数 は <b>÷100</b>。</p>
-      <div class="ex">0.72 を%と歩合に。<br>→ 0.72×100＝72 → <b>72%</b>。<br>→ 0.7＝7割、0.02＝2分 → <b>7割2分</b>。</div>
-      <div class="miss">計算するときは必ず<b>小数に直してから</b>。「40×35＝1400」のように%のままかけないこと。35%なら0.35にしてかける。</div>
-    </div>
-
-    <!-- ========= おさらい：割引き・残りの ========= -->
-    <div class="osarai">
-      <div class="ot">③ 「割引き」と「残りの〜」</div>
-      <p><b>割引き：</b>「2割引き」＝2割を<b>引いた後の残り</b>を買う、という意味。残る割合は 1−0.2＝<b>0.8</b>。これをもとの値段にかける。</p>
-      <p><b>残りの〜：</b>「残りの◯」と書いてあったら、全体ではなく<b>取り除いた後に残った数</b>にかける。もとにする量がとちゅうで切りかわる。</p>
-      <div class="ex">定価2,500円の2割引き。<br>→ 残る割合＝1−0.2＝0.8。<br>→ 2500×0.8＝<b>2,000円</b>。（2500×0.2＝500 は「引く額」のほう）</div>
-      <div class="miss">「2割引き＝2割の値段」と読むのは×。「引き」は引いた後の残り。「残りの◯」が出たら、かける相手が全体から残りに変わるサイン。</div>
-    </div>
-
     <!-- 問1 3公式 -->
     <div class="q calc" data-id="M-1">
-      <div class="qnum">問1　L1 基本</div>
+      <div class="qnum">問題10・11・12｜3公式（くもわ）</div>
       <div class="qbody">次の（　）に当てはまる数を求めよう。<br>
         (1) もとにする量は 40、割合は 0.35。くらべる量は（　）。<br>
         (2) くらべる量は 60、もとにする量は 200。割合は（　）。<br>
         (3) くらべる量は 18、割合は 0.6。もとにする量は（　）。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">(1) 14　(2) 0.3　(3) 30</div>
+        <div class="osarai">
+          <div class="ot">① 割合（わりあい）って何だっけ？</div>
+          <p><b>意味：</b>割合＝「あるものが、もとにする量の<b>何倍にあたるか</b>」を表す数。「40人のうち14人」なら、14は40の 0.35倍 → 割合は0.35。</p>
+          <p><b>3つのことば：</b></p>
+          <ul>
+            <li><b>もとにする量</b>…基準になるほう（全体や、もとの値段）。「〜の」の前にある数。</li>
+            <li><b>くらべる量</b>…そのうちの一部分（女子の人数など）。</li>
+            <li><b>割合</b>…くらべる量が、もとにする量の何倍か。</li>
+          </ul>
+          <p><b>3つの公式（くもわ）：</b></p>
+          <ol>
+            <li>くらべる量 ＝ もとにする量 × 割合</li>
+            <li>割合 ＝ くらべる量 ÷ もとにする量</li>
+            <li>もとにする量 ＝ くらべる量 ÷ 割合</li>
+          </ol>
+          <p>求めたいものを手で隠すと、残り2つの関係（×か÷か）が見える、と覚えると速い。</p>
+          <div class="ex">「40人の35%が女子」。女子は何人？<br>→ もとにする量＝40（「40人の」の前）、割合＝0.35。<br>→ くらべる量＝もと×割合＝40×0.35＝<b>14人</b>。</div>
+          <div class="miss">「もとにする量」と「くらべる量」の取りちがえが最大のミス。<b>「〜の」の前がもとにする量</b>。先に丸で囲んでから式を作る。</div>
+        </div>
         <div class="step"><span>ステップ1</span>「くもわ」＝くらべる量・もとにする量・わりあい。求めたいものを手で隠すと、残り2つの関係（×か÷か）が見える。</div>
         <div class="step"><span>解説(1)</span>くらべる量＝もとにする量×割合 → 40×0.35＝<strong>14</strong></div>
         <div class="step"><span>解説(2)</span>割合＝くらべる量÷もとにする量 → 60÷200＝<strong>0.3</strong></div>
         <div class="step"><span>解説(3)</span>もとにする量＝くらべる量÷割合 → 18÷0.6＝<strong>30</strong></div>
         <div class="bx bx-link">この3公式は、中1の「変化の割合」「資料の活用（相対度数）」でそのまま使う。今「くもわの図」を体に入れると、中学の文章題で式を立てる前に迷わなくなる。</div>
         <div class="bx bx-warn">「もとにする量」と「くらべる量」を取り違えるのが最大のミス。「〜の」の前がもとにする量。先に何がもとにする量かを丸で囲んでから式を作る。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 14　(2) 0.3　(3) 30</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-1a">
+        <div class="grade"><span class="gq-label">問題10（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1a','o')">○</button><button class="x" onclick="g(this,'M-1a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-1b">
+        <div class="grade"><span class="gq-label">問題11（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1b','o')">○</button><button class="x" onclick="g(this,'M-1b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-1c">
+        <div class="grade"><span class="gq-label">問題12（3）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1c','o')">○</button><button class="x" onclick="g(this,'M-1c','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- 問2 35% -->
     <div class="q calc" data-id="M-2">
-      <div class="qnum">問2　L2 標準</div>
+      <div class="qnum">問題13｜割合の文章題</div>
       <div class="qbody">あるクラス 40人の 35% が女子です。女子は何人ですか。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">14人</div>
         <div class="step"><span>ステップ1</span>女子は「40人の35%」。もとにする量は40人。くらべる量＝もとにする量×割合。</div>
         <div class="step"><span>ステップ2</span>35%→0.35 に直してから → 40×0.35＝<strong>14</strong></div>
         <div class="bx bx-link">「%を小数に直してからかける」習慣は、中学の確率・相対度数・理科の濃度計算でも一生使う。</div>
         <div class="bx bx-warn">「40×35＝1400」としてしまうミスが続出。%のまま計算しない。必ず 0.35（または 7/20）に直してからかける。</div>
+        <div class="ans-final"><span>こたえ</span>14人</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-2">
+        <div class="grade"><span class="gq-label">問題13</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- 問3 変換 -->
     <div class="q calc" data-id="M-3">
-      <div class="qnum">問3　L1 基本</div>
+      <div class="qnum">問題14・15・16｜小数・百分率・歩合の変換</div>
       <div class="qbody">次を小数・百分率・歩合に変換しよう。<br>
         (1) 0.72　(2) 48%　(3) 2割5分</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">(1) 72%、7割2分　(2) 0.48、4割8分　(3) 0.25、25%</div>
+        <div class="osarai">
+          <div class="ot">② 百分率（%）と歩合（割・分）</div>
+          <p><b>意味：</b>同じ「割合」を、いろんな言い方で表したもの。中身は全部おなじ数。</p>
+          <ul>
+            <li><b>小数</b>…0.35 のような表し方（計算で使うのはコレ）</li>
+            <li><b>百分率（%）</b>…小数を100倍して % をつけたもの。0.35→<b>35%</b></li>
+            <li><b>歩合（ぶあい）</b>…1割＝0.1、1分＝0.01。0.35→<b>3割5分</b></li>
+          </ul>
+          <p><b>変換のやり方：</b>小数→% は <b>×100</b> して%をつける。%→小数 は <b>÷100</b>。</p>
+          <div class="ex">0.72 を%と歩合に。<br>→ 0.72×100＝72 → <b>72%</b>。<br>→ 0.7＝7割、0.02＝2分 → <b>7割2分</b>。</div>
+          <div class="miss">計算するときは必ず<b>小数に直してから</b>。「40×35＝1400」のように%のままかけないこと。35%なら0.35にしてかける。</div>
+        </div>
         <div class="step"><span>ステップ1</span>小数→% は ×100して%をつける。%→小数 は ÷100。1割＝0.1＝10%、1分＝0.01＝1%。</div>
         <div class="step"><span>解説(1)</span>0.72×100＝72 → 72%。0.7＝7割、0.02＝2分 → 7割2分</div>
         <div class="step"><span>解説(2)</span>48÷100＝0.48。0.4＝4割、0.08＝8分 → 4割8分</div>
         <div class="step"><span>解説(3)</span>2割5分＝0.2＋0.05＝0.25。0.25×100＝<strong>25%</strong></div>
         <div class="bx bx-link">小数↔%↔歩合の変換は、中学の資料の活用（相対度数・ヒストグラム）でも必ず出る。0.35↔35%↔3割5分 を反射で言えるように。</div>
         <div class="bx bx-warn">3つは「同じ値を違うことばで表しただけ」。計算に使うときは必ず小数に直す（35%なら0.35）。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 72%、7割2分　(2) 0.48、4割8分　(3) 0.25、25%</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-3a">
+        <div class="grade"><span class="gq-label">問題14（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3a','o')">○</button><button class="x" onclick="g(this,'M-3a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-3b">
+        <div class="grade"><span class="gq-label">問題15（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3b','o')">○</button><button class="x" onclick="g(this,'M-3b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-3c">
+        <div class="grade"><span class="gq-label">問題16（3）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3c','o')">○</button><button class="x" onclick="g(this,'M-3c','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- 問4 割引き -->
     <div class="q calc" data-id="M-4">
-      <div class="qnum">問4　L2 標準</div>
+      <div class="qnum">問題17｜割引き</div>
       <div class="qbody">定価 2,500円の商品が 2割引き で売られています。売値はいくらですか。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">2,000円</div>
+        <div class="osarai">
+          <div class="ot">③ 「割引き」と「残りの〜」</div>
+          <p><b>割引き：</b>「2割引き」＝2割を<b>引いた後の残り</b>を買う、という意味。残る割合は 1−0.2＝<b>0.8</b>。これをもとの値段にかける。</p>
+          <p><b>残りの〜：</b>「残りの◯」と書いてあったら、全体ではなく<b>取り除いた後に残った数</b>にかける。もとにする量がとちゅうで切りかわる。</p>
+          <div class="ex">定価2,500円の2割引き。<br>→ 残る割合＝1−0.2＝0.8。<br>→ 2500×0.8＝<b>2,000円</b>。（2500×0.2＝500 は「引く額」のほう）</div>
+          <div class="miss">「2割引き＝2割の値段」と読むのは×。「引き」は引いた後の残り。「残りの◯」が出たら、かける相手が全体から残りに変わるサイン。</div>
+        </div>
         <div class="step"><span>ステップ1</span>2割引き＝2割を引いた後の残り。残る割合は 1−0.2＝0.8。</div>
         <div class="step"><span>ステップ2</span>2500×0.8＝<strong>2000</strong></div>
         <div class="bx bx-link">「もとにする量を取り違えない」考え方は、中1の文章題（割合・増減）の土台。定価がもとにする量だと先に決めるのがコツ。</div>
         <div class="bx bx-warn">「2割引き＝2割の値段」と読むミスが続出。「引き」は引いた後の残り。残る割合（1−0.2＝0.8）をかける。</div>
+        <div class="ans-final"><span>こたえ</span>2,000円</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-4">
+        <div class="grade"><span class="gq-label">問題17</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- 問5 逆算 -->
     <div class="q calc" data-id="M-5">
-      <div class="qnum">問5　L2 標準</div>
+      <div class="qnum">問題18｜逆算</div>
       <div class="qbody">ある数の 40% が 60 のとき、ある数の 75% はいくつか。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">112.5</div>
         <div class="step"><span>ステップ1</span>60はもとにする量（ある数）の40%。まずもとにする量へ戻す（逆算）。</div>
         <div class="step"><span>ステップ2</span>もとにする量＝くらべる量÷割合 → 40%＝0.4 → 60÷0.4＝<strong>150</strong></div>
         <div class="step"><span>ステップ3</span>75%＝0.75 → 150×0.75＝<strong>112.5</strong></div>
         <div class="bx bx-link">「一部から全体を逆算する」発想は、中1の方程式（□を求める）にそのままつながる。もとにする量＝□ と置く感覚の入口。</div>
         <div class="bx bx-warn">「60÷40＝1.5」と%のまま割るのが典型ミス。40%＝0.4 に直してから 60÷0.4＝150。どれがもとにする量かを先に決める。</div>
+        <div class="ans-final"><span>こたえ</span>112.5</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-5','o')">○</button><button class="x" onclick="g(this,'M-5','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-5">
+        <div class="grade"><span class="gq-label">問題18</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5','o')">○</button><button class="x" onclick="g(this,'M-5','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- 問6 残りの -->
     <div class="q calc" data-id="M-6">
-      <div class="qnum">問6　L2 標準</div>
+      <div class="qnum">問題19｜残りの〜</div>
       <div class="qbody">全体を 100 とする。まず全体の 1/4 を取り除いた。残りはいくつか。<br>
         その 残りの 2/5 を使った。使った量はいくつか。最終的に残るのはいくつか。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">残り 75　使った量 30　最終的に残る量 45</div>
         <div class="step"><span>ステップ1</span>残り＝100×(1−1/4)＝100×3/4＝<strong>75</strong></div>
         <div class="step"><span>ステップ2</span>使った量は「残り75」の2/5 → 75×2/5＝<strong>30</strong>（全体100の2/5＝40 ではない！）</div>
         <div class="step"><span>ステップ3</span>最終的に残る＝75−30＝<strong>45</strong></div>
         <div class="bx bx-link">どれをもとにする量にするかが途中で変わる、という感覚は中1の文章題で式の意味を見失わないために必須。</div>
         <div class="bx bx-warn">「残りの」という3文字が出た瞬間、もとにする量が全体から「残り」に切りかわる。かける相手が変わるサイン。</div>
+        <div class="ans-final"><span>こたえ</span>残り 75　使った量 30　最終的に残る量 45</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-6">
+        <div class="grade"><span class="gq-label">問題19</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- 問7 残りの文章題 -->
     <div class="q calc" data-id="M-7">
-      <div class="qnum">問7　L2 標準</div>
+      <div class="qnum">問題20｜残りの〜（文章題）</div>
       <div class="qbody">花だんがあります。全体の 1/3 にチューリップを植え、残りの 3/4 にパンジーを植えました。<br>
         何も植えていない面積が 4m² のとき、花だん全体の面積を求めなさい。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">24m²</div>
         <div class="step"><span>ステップ1</span>全体を □ m² とおく。チューリップ＝□×1/3。残り＝□×(1−1/3)＝□×2/3。</div>
         <div class="step"><span>ステップ2</span>何も植えない＝残りの(1−3/4)＝□×2/3×1/4 → 2/3×1/4＝2/12＝1/6 → □×1/6</div>
         <div class="step"><span>ステップ3</span>□×1/6＝4 → □＝4×6＝<strong>24</strong></div>
         <div class="bx bx-link">「全体を□とおいて、最後に逆算して□を出す」流れは、中1の一次方程式そのもの。今その形に慣れておこう。</div>
         <div class="bx bx-warn">「残りの3/4」は全体の3/4ではなく、チューリップを植えた後の残り（□×2/3）の3/4。順番を図に書いてから計算する。</div>
+        <div class="ans-final"><span>こたえ</span>24m²</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-7">
+        <div class="grade"><span class="gq-label">問題20</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
     <!-- 問8 残りの文章題 -->
     <div class="q calc" data-id="M-8">
-      <div class="qnum">問8　L2 標準</div>
+      <div class="qnum">問題21｜残りの〜（文章題・検算）</div>
       <div class="qbody">全体が 96m² の土地があります。全体の 1/4 を公園にし、残りの 2/3 を住宅地にしました。<br>
         残った土地（農地）の面積は何m²ですか。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">24m²</div>
         <div class="step"><span>ステップ1</span>公園＝96×1/4＝<strong>24m²</strong>。残り＝96−24＝<strong>72m²</strong></div>
         <div class="step"><span>ステップ2</span>住宅地は「残り72」の2/3 → 72×2/3＝<strong>48m²</strong></div>
         <div class="step"><span>ステップ3</span>農地＝72−48＝<strong>24m²</strong>。検算：24＋48＋24＝96 → 全体に戻るのでOK</div>
         <div class="bx bx-link">「全部足すともとに戻る」検算のクセは、中学で方程式の解を確かめるときと同じ習慣。</div>
         <div class="bx bx-warn">「残りの2/3」は全体96の2/3ではなく、公園を引いた後の72m²の2/3。最後に検算して自分でミスをつかまえる。</div>
+        <div class="ans-final"><span>こたえ</span>24m²</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-8">
+        <div class="grade"><span class="gq-label">問題21</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
   </div>
@@ -574,32 +623,69 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <script>
 var KEY='fukushu03';
 
-function t(b){var a=b.parentNode.querySelector('.ans-box');var calc=b.closest('.q').classList.contains('calc');var open=a.classList.toggle('open');b.textContent=open?'とじる':(calc?'答え・解説を見る':'答えを見る');}
+// 答えトグル
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var label=b.getAttribute('data-label')||b.textContent;
+  if(open){b.setAttribute('data-label',label);}
+  b.textContent=open?'とじる':b.getAttribute('data-label');
+}
 
-function g(btn,id,v){var box=btn.closest('.q');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel')});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
-  var mt=box.querySelector('.mt'); var w3=box.querySelector('.write3');
+// 自己採点 ○✕（採点ユニット .gq 単位＝小問ごと）
+function g(btn,id,v){
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');
+  var w3=box.querySelector('.write3');
   if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
-  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel')});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }}
+  else{
+    if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}
+    if(w3)w3.style.display='none';
+  }
+}
 
-function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel')});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.q').dataset.id+'_m',btn.textContent);}
+// ミス分類（.gq の data-gid 単位）
+function m(btn){
+  var w=btn.parentNode;
+  w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);
+}
 
-function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+// 完了
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
 
+// 復元（.gq＝採点ユニット単位）
 window.onload=function(){
-  document.querySelectorAll('.q').forEach(function(box){
-    var id=box.dataset.id; if(!id)return;
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
     var v=localStorage.getItem(KEY+'_'+id);
     if(v){
-      var b=box.querySelector(v==='o'?'.o':'.x'); if(b)b.classList.add('sel');
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
       if(v==='x'){
-        var mt=box.querySelector('.mt'); if(mt)mt.classList.add('open');
-        var w3=box.querySelector('.write3'); if(w3)w3.style.display='block';
-        var mv=localStorage.getItem(KEY+'_'+id+'_m');
-        if(mv&&mt){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel')});}
+        var mt=box.querySelector('.mt');
+        if(mt){
+          mt.classList.add('open');
+          var mv=localStorage.getItem(KEY+'_'+id+'_m');
+          if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}
+        }
+        var w3=box.querySelector('.write3');
+        if(w3)w3.style.display='block';
       }
     }
   });
-  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
 };
 </script>
 </body>

@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+  ============================================================
+  【週末復習プリント テンプレート（再利用・空欄）】
+  ============================================================
+  目的：平日プリントの「思い出し」復習。全部やり直さない。
+    ・英語（単語・熟語・英作文）＝答えが固定 → 同じ問題を再提示して書かせる（日本語→英語）
+    ・数学＝答えを覚えてしまう → 数値だけ変えた類題を出す（同じ単元・数字替え）
+
+  【使い方】
+   1) このファイルを複製し「週末復習NN_第N週.html」として保存（上書き禁止・新規作成）。
+   2) 下の ★差し替え★ コメントの箇所だけ埋める：
+       ・<title> とヘッダー（週・日付・一言）
+       ・var KEY='weekendNN';  ← NN を2桁の週番号にする（例 weekend01）
+       ・英単語10（W-1〜W-10）：その週の単語の【日本語の意味】だけ出す → 答え・読み・なぜ・⚠
+       ・熟語6（P-1〜P-6）：同上（2語熟語）
+       ・英作文3（EW-1〜EW-3）：その週に出した英作文を再提示（ew-jp に日本語／罫線で書かせる）。番号は 英作文①②③。
+                新動線（00c）：ボタン「解説を読む → こたえへ」→ ans-box が開くと deep（解説）が自動表示
+                → fill（読み取り確認の穴埋め3）→ ans-final（英文の答えは一番下）。旧 step・先頭 ans-main・deep-btn は使わない。
+       ・数学6（M-1〜M-6）：平日プリントと【同じ単元・数字だけ変えた】類題。
+                数学も解く前に解説を出さない：ボタン「解説を読む → こたえへ」→ ans-box が開くと（必要なら .osarai わすれた人へ →）ステップ(.step) → 🔗(.bx-link) → ⚠(.bx-warn) → 答え（ans-final 緑枠・一番下）の順。数学は deep-head・ans-main を置かない（復習02と同じ）。
+                概念の「わすれた人へ／おさらい」があれば、その概念の最初の数学問題の ans-box 先頭（やり方の解説の位置・.osarai）に入れる。上部に開きっぱなしで置かない。
+                【小問ごと○✕（新方式）】1つの数学問題に (1)(2)(3) と小問があるときは、小問ごとに採点ユニット div.gq（data-gid="M-1a"）を分け、それぞれ ○✕＋ミス分類(mt)＋gq-label「問題N（1）」を置く。答え（ans-final）も小問ごとに対応させる。data-gid は M-1a / M-1b / M-1c のように枝番にする。
+       ・通し番号（新方式）：採点する項目を 単語→熟語→英作文→数学小問 の順に「問題1」「問題2」…と通し番号で振る。例 単語=問題1-10／熟語=問題11-16／英作文=問題17-19／数学=問題20-（小問があれば1小問=1番号）。バッジ（.qnum-e / .qnum / .gq-label）に「問題N」を入れる。data-id・data-gid・KEY は変えない。
+   3) data-id は W-*/P-*/EW-*/M-* のまま変えない。小問の採点ユニットは data-gid（M-1a 等）で持つ（localStorage復元の鍵）。○✕・ミス分類は .gq（data-gid）単位で動く。
+   4) 英作文の deep は 00e_英文法まるわかり解説集_正本.md の該当文法 deep をそのままコピペ（必須・常時表示）。
+   5) 数値替えの数学は必ず自分で検算する。
+  ============================================================
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>週末復習NN 第N週｜40分</title><!-- ★差し替え★ -->
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+
+/* もどる */
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+
+/* ヘッダー */
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+
+/* セクション */
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-hd .badge-time{font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;background:rgba(255,255,255,.45);border:1px solid rgba(80,96,112,.12);margin-left:auto}
+.sec-body{padding:16px 20px}
+
+/* 色テーマ */
+.th-red .sec-hd{background:#f7e6e4;border-left:6px solid #d8a09a}
+.th-org .sec-hd{background:#f6eadb;border-left:6px solid #d8b27c}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.th-grn .sec-hd{background:#e7f1e8;border-left:6px solid #9abf9d}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+
+/* 単元バナー */
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+
+/* ボックス類 */
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+
+/* 問題番号バッジ（英語：単語①〜・熟語①〜・英作文①〜） */
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+
+/* おさらいカード（数学：わすれた人へ。ans-box内＝解く前は非表示。上部に開きっぱなしで置かない） */
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:14px 0}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai .ot{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai p{font-size:13.5px;line-height:1.95;color:#5a4520;margin:4px 0}
+.osarai ol,.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.9;color:#5a4520}
+.osarai li{margin:2px 0}
+.osarai .ex{background:#fff;border:1px dashed #e0c98a;border-radius:6px;padding:8px 11px;margin:6px 0;font-size:13.5px;color:#5a4520}
+.osarai .ex::before{content:"✏️ いっしょに1回";display:block;font-size:11px;font-weight:800;color:#8a5a19;margin-bottom:3px}
+.osarai .miss{background:#fdeee6;border-left:4px solid #d8a07a;border-radius:6px;padding:7px 11px;margin:6px 0;font-size:13px;color:#8a4a2a}
+.osarai .miss::before{content:"⚠️ ありがちな勘ちがい";display:block;font-size:11px;font-weight:800;color:#a85a2a;margin-bottom:2px}
+.osarai b{color:#7a4f12}
+
+/* 英作文：書かせる方式 */
+.ew-task{font-size:13px;color:#4c5b70;margin-bottom:6px}
+.ew-jp{font-size:22px;font-weight:900;color:#31415f;background:#fffefb;border:2px solid #c8d4e6;border-left:6px solid #9fb8d9;border-radius:8px;padding:12px 16px;margin:4px 0 10px}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+
+/* 英作文の新動線：解説（常時表示）→ 穴埋め → 答えは最下部 */
+.deep-head{font-size:13px;font-weight:800;color:#5f4b7a;margin-bottom:6px}
+.deep{background:#fbfaff;border:1px solid #e3dcf0;border-radius:8px;padding:12px 14px;font-size:13.5px;line-height:1.95;color:#3a3550} /* 常時表示＝ans-boxが開いたとき出る。display:none にしない */
+.deep p{margin:7px 0}.deep b{color:#4a3a6b}
+.deep table{width:100%;border-collapse:collapse;margin:7px 0;font-size:13px}
+.deep th,.deep td{border:1px solid #e0dcec;padding:5px 8px;text-align:left}.deep th{background:#efeaf7}
+.deep .ng{color:#9b514d;font-weight:800}.deep .ok{color:#3f7a4a;font-weight:800}
+.fill{background:#fff7e8;border:1px solid #e6c98d;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:13.5px}
+.fill-q{font-weight:700;color:#8a5a19}
+.fill-btn{margin-top:6px;background:#d9b46d;color:#fff;border:none;border-radius:16px;padding:5px 12px;font-size:12px;font-weight:800;cursor:pointer}
+.fill-a{display:none;margin-top:6px;font-weight:800;color:#3f7a4a}.fill-a.open{display:block}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+
+/* 英語の1問 */
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:12px 0}
+.q.vocab .qword{font-size:22px;font-weight:900;color:#31415f}
+.q.vocab .qhint{font-size:13px;color:#4c5b70;margin-top:2px}
+
+/* 数学の1問 */
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:18px;font-weight:700;margin:2px 0 4px;color:#31415f}
+.q.calc .qcue{font-size:12px;color:#8a93a0;margin-bottom:6px}
+
+/* 答えボタン・答え枠 */
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .ans-main{font-size:18px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-box .ans-read{font-size:13px;color:#405060;margin-bottom:2px}
+.ans-box .ans-why{font-size:13px;color:#405060;margin:4px 0}
+.ans-box .step{margin:4px 0;font-size:13px}
+.ans-box .step span{display:inline-block;background:#fff;border:1px solid #c9decf;border-radius:4px;padding:1px 8px;margin-right:4px;font-weight:700;color:#3f6f4a;font-size:11px}
+
+/* 採点ユニット（小問ごと） */
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+
+/* 自己採点 */
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+
+/* ✕のとき：3回書く */
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+
+/* ミス分類（✕のときだけ） */
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+
+/* 数式・色 */
+.math{font-family:'Courier New',monospace;background:#f2f4f5;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+
+/* できたボタン */
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+
+/* 印刷設定 */
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .write3{display:block!important}
+  .deep{display:block}
+  .fill-a{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec{break-inside:avoid;page-break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<!-- ページヘッダー ★差し替え★ -->
+<div class="pg-hd">
+  <div><span class="pg-badge">週末復習NN</span><span class="pg-badge">第N週</span><span class="pg-badge">英語＋数学</span></div>
+  <h1>第N週 週末復習（M/D〜M/D）</h1>
+  <p>所要 約40分　対象: 中1</p>
+  <p class="pg-cheer">今週やったことを「思い出して書く」回。英語は同じ問題でしっかり定着、数学は数字を変えた類題で本当の力を確認しよう。</p>
+</div>
+
+<!-- ============ 英語：単語リテスト 10問 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ①</span>
+  <span class="unit-name">単語リテスト（意味 → ノートに英語）10問</span>
+  <span class="unit-time">目安 10分</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>今週の単語を書いて思い出す</h2><span class="badge-grade">中1</span></div>
+  <div class="sec-body">
+
+    <!-- ★単語10問（W-1〜W-10）を埋める。ひな型1つ↓をコピーして使う★ -->
+    <div class="q vocab" data-id="W-1">
+      <div class="qnum-e">問題1｜単語①</div><!-- 通し番号で振る：単語①=問題1 …⑩=問題10。バッジは「問題N｜単語①」の形 -->
+      <div class="qword">（日本語の意味）</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">（英語）</div>
+        <div class="ans-read">読み：（カタカナ）</div>
+        <div class="ans-why">なぜこの語か：（頻出ポイント・短い例文）</div>
+        <div class="bx bx-warn">（スペリングのよくある間違い）</div>
+      </div>
+      <div class="gq" data-gid="W-1"><!-- 英語は1問=1採点ユニット。data-gid は data-id と同じ値にする -->
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- W-2 〜 W-10 を同じ形で並べる（data-id・data-gid を W-2…W-10 に、問題番号を 問題2〜問題10 に変える） -->
+
+  </div>
+</div>
+
+<!-- ============ 英語：熟語リテスト 6問 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ②</span>
+  <span class="unit-name">熟語リテスト（意味 → ノートに英語）6問</span>
+  <span class="unit-time">目安 6分</span>
+</div>
+<div class="sec th-teal">
+  <div class="sec-hd"><h2>今週の熟語を書いて思い出す</h2><span class="badge-grade">中1</span></div>
+  <div class="sec-body">
+
+    <!-- ★熟語6問（P-1〜P-6）を埋める。ひな型1つ↓をコピーして使う★ -->
+    <div class="q vocab" data-id="P-1">
+      <div class="qnum-e">問題11｜熟語①</div><!-- 通し番号で振る：単語10問なら熟語①=問題11 …⑥=問題16。バッジは「問題N｜熟語①」の形 -->
+      <div class="qword">（日本語の意味）</div>
+      <div class="qhint">英語で書いてみよう（2語・ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">（英語2語）</div>
+        <div class="ans-read">読み：（カタカナ）</div>
+        <div class="ans-why">なぜこの語か：（使い方・短い例文）</div>
+        <div class="bx bx-warn">（前置詞など小さい語を落とさない注意）</div>
+      </div>
+      <div class="gq" data-gid="P-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- P-2 〜 P-6 を同じ形で並べる（data-id・data-gid を P-2…P-6 に、問題番号を 問題12〜問題16 に変える） -->
+
+  </div>
+</div>
+
+<!-- ============ 英語：英作文リテスト 3問 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ③</span>
+  <span class="unit-name">英作文リテスト（日本語 → 英語で書く）3問</span>
+  <span class="unit-time">目安 9分</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>今週の英作文をもう一度</h2><span class="badge-grade">中1</span></div>
+  <div class="sec-body">
+
+    <!-- ★英作文3問（EW-1〜EW-3）を埋める。ひな型1つ↓をコピーして使う★ -->
+    <div class="q writing" data-id="EW-1">
+      <div class="qnum-e">問題17｜英作文①</div><!-- 通し番号で振る：単語10＋熟語6なら英作文①=問題17 …③=問題19。バッジは「問題N｜英作文①」の形 -->
+      <div class="ew-task">📝 この日本語を、英語にして下の線に書こう（文法は自分で考える）</div>
+      <div class="ew-jp">「（日本語の文）」</div>
+      <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <!-- ① まず解説（ans-boxを開くと自動表示。別ボタンなし。わかる子は下の答えへ） -->
+        <div class="deep-head">📖 文法のせつめい（読んでから下の答えへ。わかる子は読みとばしてOK）</div>
+        <div class="deep">【deep本文】<!-- 00e_英文法まるわかり解説集_正本.md の該当文法の deep 本文をそのまま入れる（型/表/意味/なぜ/例文/✕→○/つながり/ゴール/⚠綴り）。display:none にしない＝必ず読ませる --></div>
+        <!-- ② 読み取り確認（穴埋め3＝解説を本当に読んだか） -->
+        <div class="fill">
+          <div class="fill-q">✍ よみとり確認：【穴埋め】<!-- 例：主語が I →（①）／You・複数 →（②）／He・She →（③） --></div>
+          <button class="fill-btn" onclick="this.nextElementSibling.classList.toggle('open')">確認の答えを見る</button>
+          <div class="fill-a">【穴埋めの答え】<!-- 例：① am ／ ② are ／ ③ is --></div>
+        </div>
+        <!-- ③ 英文の答えは一番下（解説を通らないと届かない） -->
+        <div class="ans-final"><span>こたえ</span>【答え】</div>
+      </div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら、正しい文を3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- EW-2 〜 EW-3 を同じ形で並べる（data-id・data-gid を EW-2…EW-3、番号を 問題18・問題19／英作文②③ に変える） -->
+
+  </div>
+</div>
+
+<!-- ============ 数学：数値替え類題 6問 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">数学</span>
+  <span class="unit-name">数値替え類題（まず自分で解く → 答え）6問</span>
+  <span class="unit-time">目安 15分</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-hd"><h2>今週の単元を数字を変えて解き直す</h2><span class="badge-grade">中1</span></div>
+  <div class="sec-body">
+
+    <!-- ★数学6問（M-1〜M-6）を埋める。平日と同じ単元・数字だけ変える。ひな型1つ↓をコピーして使う★
+         この単元の最初の問題なら、「わすれた人へ／おさらい」を ans-box 先頭（やり方の解説の位置・.osarai）に入れる。上部に開きっぱなしで置かない。
+         【新方式・小問ごと○✕】小問 (1)(2)(3) があるときは、下のように採点ユニット .gq（data-gid="M-1a/M-1b/M-1c"）を小問の数だけ並べ、それぞれに ○✕＋ミス分類(mt)＋gq-label「問題N（1）」を付ける。答え（ans-final）も小問ごとに対応させる。
+         小問がない1答えの問題なら .gq は1つ（data-gid="M-1"）＋gq-label「問題N」でよい。 -->
+    <div class="q calc" data-id="M-1">
+      <div class="qnum">問題20｜（単元名）</div><!-- 通し番号で振る：英語が問題19まで＝この問題は問題20から。小問があれば1小問=1番号（問題20・21・22…）。バッジは「問題N｜（単元名）」の形 -->
+      <div class="qbody">（数字を変えた問題。小問があれば (1)(2)(3) と書く）</div>
+      <div class="qcue">まず自分で解いてから ↓</div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <!-- 概念の最初の問題なら「わすれた人へ」を .osarai でここに（解く前は非表示＝ans-box内・上部に置かない）。例：osarai の中に ot 見出しと説明 p を入れて1つの div で閉じる。 -->
+        <div class="step"><span>ステップ1</span>（やり方）</div>
+        <div class="step"><span>解説(1)</span>（小問1の途中式 → 答え）</div>
+        <div class="step"><span>解説(2)</span>（小問2の途中式 → 答え）</div>
+        <div class="bx bx-link">（中学数学へどうつながるか）</div>
+        <div class="bx bx-warn">（よくある間違い）</div>
+        <div class="ans-final"><span>こたえ</span>（小問ごとに対応：(1) …　(2) …）</div><!-- 答えは一番下（緑枠）。解説を通らないと届かない -->
+      </div>
+      <!-- 小問ごとの採点ユニット（見本2つ。小問の数だけ並べる。1答えの問題なら下を1つにし gq-label を「問題20」に） -->
+      <div class="gq" data-gid="M-1a">
+        <div class="grade"><span class="gq-label">問題20（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1a','o')">○</button><button class="x" onclick="g(this,'M-1a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-1b">
+        <div class="grade"><span class="gq-label">問題21（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1b','o')">○</button><button class="x" onclick="g(this,'M-1b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+
+    <!-- M-2 〜 M-6 を同じ形で並べる（data-id を M-2…M-6、小問ごとの data-gid を M-2a… に、gq-label と通し番号「問題N」を続けて振る） -->
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（週末復習NN 完了）</button><!-- ★差し替え★ -->
+<div class="fin" id="fin"></div>
+<div class="endcheer">今週やったことを、自分の手でもう一度引き出せたね。覚えている英語は自信に、数字を変えても解けた数学は本物の力。よくがんばった！</div>
+
+</div>
+
+<script>
+var KEY='weekendNN';/* ★差し替え★ 例: weekend01 */
+
+// 答えトグル（最初のラベルを覚えて、閉じたとき元に戻す）
+function t(b){
+  if(!b.dataset.label)b.dataset.label=b.textContent;
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':b.dataset.label;
+}
+
+// 自己採点 ○✕（採点ユニット .gq 単位＝小問ごと）
+function g(btn,id,v){
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');
+  var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{
+    if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}
+    if(w3)w3.style.display='none';
+  }
+}
+
+// ミス分類（.gq の data-gid 単位）
+function m(btn){
+  var w=btn.parentNode;
+  w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);
+}
+
+// 完了
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+
+// 復元（.gq＝採点ユニット単位）
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var mt=box.querySelector('.mt');
+        if(mt){
+          mt.classList.add('open');
+          var mv=localStorage.getItem(KEY+'_'+id+'_m');
+          if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}
+        }
+        var w3=box.querySelector('.write3');
+        if(w3)w3.style.display='block';
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
+};
+</script>
+</body>
+</html>

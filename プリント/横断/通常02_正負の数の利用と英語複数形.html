@@ -104,6 +104,28 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 /* 問題番号バッジ（単語①〜・熟語①〜・英作文①） */
 .qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
 
+/* おさらい（わすれた人へ・ans-box先頭＝解く前は非表示） */
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai .ot{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai p{font-size:13.5px;line-height:1.95;color:#5a4520;margin:4px 0}
+.osarai ol,.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.9;color:#5a4520}
+.osarai li{margin:2px 0}
+.osarai .ex{background:#fff;border:1px dashed #e0c98a;border-radius:6px;padding:8px 11px;margin:6px 0;font-size:13.5px;color:#5a4520}
+.osarai .ex::before{content:"✏️ いっしょに1回";display:block;font-size:11px;font-weight:800;color:#8a5a19;margin-bottom:3px}
+.osarai .miss{background:#fdeee6;border-left:4px solid #d8a07a;border-radius:6px;padding:7px 11px;margin:6px 0;font-size:13px;color:#8a4a2a}
+.osarai .miss::before{content:"⚠️ ありがちな勘ちがい";display:block;font-size:11px;font-weight:800;color:#a85a2a;margin-bottom:2px}
+.osarai b{color:#7a4f12}
+
+/* 英文の答え（一番下） */
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+
+/* 採点ユニット（小問ごと） */
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+
 /* 英作文 新動線：解説（常時表示）→ 穴埋め → 答え最下部 */
 .deep-head{font-size:13px;font-weight:800;color:#5f4b7a;margin-bottom:6px}
 .deep{background:#fbfaff;border:1px solid #e3dcf0;border-radius:8px;padding:12px 14px;font-size:13.5px;line-height:1.95;color:#3a3550} /* 常時表示＝ans-boxが開いたとき出る */
@@ -144,7 +166,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
@@ -165,7 +187,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- 単語1 -->
     <div class="q vocab" data-id="W-1">
-      <div class="qnum-e">単語 ①</div>
+      <div class="qnum-e">問題1｜単語 ①</div>
       <div class="qword">レストラン</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -175,13 +197,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：外食・休日の話で出る基本語。Let's go to a restaurant.（レストランに行こう）。</div>
         <div class="bx bx-warn">真ん中の <span class="red">au</span> と最後の <span class="red">t</span> を落としやすい。「レス-タウ-ラン-ト」と区切って、聞こえない au と t も書く。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- 単語2 -->
     <div class="q vocab" data-id="W-2">
-      <div class="qnum-e">単語 ②</div>
+      <div class="qnum-e">問題2｜単語 ②</div>
       <div class="qword">野菜</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -191,13 +215,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：食べ物・健康の話で頻出。I like vegetables.（野菜が好き）。</div>
         <div class="bx bx-warn">真ん中の <span class="red">a</span>（vege<span class="red">ta</span>ble）はほとんど読まないので落としやすい。「ベジ-タ-ブル」と区切って a を書く。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- 単語3 -->
     <div class="q vocab" data-id="W-3">
-      <div class="qnum-e">単語 ③</div>
+      <div class="qnum-e">問題3｜単語 ③</div>
       <div class="qword">博物館・美術館</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -207,13 +233,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：場所・行き先の話で出る。I went to the museum.（博物館へ行った）。</div>
         <div class="bx bx-warn">se のあとは <span class="red">um</span>。「ミュージアム」の音につられて museam などとしない。「ミュ-ゼ-アム」＝mu-se-um と覚える。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- 単語4 -->
     <div class="q vocab" data-id="W-4">
-      <div class="qnum-e">単語 ④</div>
+      <div class="qnum-e">問題4｜単語 ④</div>
       <div class="qword">8月</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -223,13 +251,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：日付・予定の話で出る月名。My birthday is in August.（誕生日は8月）。</div>
         <div class="bx bx-warn">月の名前は文の途中でも <span class="red">大文字で始める</span>（august ✕ → August ○）。「オー-ガ-スト」＝Au-gust。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-4">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- 単語5 -->
     <div class="q vocab" data-id="W-5">
-      <div class="qnum-e">単語 ⑤</div>
+      <div class="qnum-e">問題5｜単語 ⑤</div>
       <div class="qword">プレゼント・贈り物</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -239,8 +269,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：誕生日・行事の話で出る。I got a present.（プレゼントをもらった）。</div>
         <div class="bx bx-warn">語尾は <span class="red">-sent</span>。「プレゼント」の音でも最後は presento ではなく present。「プレ-セント」＝pre-sent と区切る。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="W-5">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
   </div>
@@ -257,7 +289,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- 熟語1 -->
     <div class="q vocab" data-id="P-1">
-      <div class="qnum-e">熟語 ①</div>
+      <div class="qnum-e">問題6｜熟語 ①</div>
       <div class="qword">～が得意だ</div>
       <div class="qhint">英語（3語の熟語）で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -267,13 +299,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：自己紹介・得意分野の話で頻出。例 I am good at math.（私は数学が得意だ）。</div>
         <div class="bx bx-warn">at を落とさない（good で止めない）。at のうしろは名詞か ～ing（動名詞）。be は主語に合わせて am/are/is に変える。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="P-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- 熟語2 -->
     <div class="q vocab" data-id="P-2">
-      <div class="qnum-e">熟語 ②</div>
+      <div class="qnum-e">問題7｜熟語 ②</div>
       <div class="qword">～に興味がある</div>
       <div class="qhint">英語（3語の熟語）で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -283,13 +317,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：好きなこと・関心の話で出る。例 I am interested in music.（私は音楽に興味がある）。</div>
         <div class="bx bx-warn">interested は最後が <span class="red">ed</span>（interest ＋ ed）。前置詞は <span class="red">in</span>（at や on にしない）。interesting（おもしろい）と混ぜない。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="P-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
     <!-- 熟語3 -->
     <div class="q vocab" data-id="P-3">
-      <div class="qnum-e">熟語 ③</div>
+      <div class="qnum-e">問題8｜熟語 ③</div>
       <div class="qword">例えば</div>
       <div class="qhint">英語（2語の熟語）で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -299,8 +335,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-why">なぜこの語か：例をあげるときの決まり文句。例 I like fruit, for example apples.（果物が好き、例えばりんご）。</div>
         <div class="bx bx-warn">for を落とさない（example だけにしない）。2語セット。example の頭は e（ig という音だが書くのは ex）。</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="P-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
   </div>
@@ -316,7 +354,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   <div class="sec-body">
 
     <div class="q writing" data-id="EW-1">
-      <div class="qnum-e">英作文 ①</div>
+      <div class="qnum-e">問題9｜英作文 ①</div>
       <div class="ew-task">📝 この日本語を、英語にして下の線に書こう（文法は自分で考える）</div>
       <div class="ew-jp">「私は犬を2匹飼っています。」</div>
       <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
@@ -362,8 +400,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         </div>
         <div class="ans-final"><span>こたえ</span>I have two dogs.</div>
       </div>
-      <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
-      <div class="write3">📝 まちがえたら、正しい文を3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら、正しい文を3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
     </div>
 
   </div>
@@ -378,94 +418,117 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <div class="sec th-blue">
   <div class="sec-body">
 
-    <!-- M-1 基準との差で実際の値 → 気温差 -->
+    <!-- M-1 基準との差で実際の値 → 気温差（問題10） -->
     <div class="q calc" data-id="M-1">
-      <div class="qnum">問1　基準との差・気温差</div>
+      <div class="qnum">問題10｜基準との差・気温差</div>
       <div class="qbody">ある日、最高気温は基準20℃より「＋3℃高い」、最低気温は基準20℃より「−5℃低い」。最高気温と最低気温の<strong>気温差</strong>は何℃か。</div>
       <div class="qcue">まず「何を0（基準）にするか」を口に出してから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">8℃</div>
+        <div class="osarai">
+          <div class="ot">⓪ 正負の数の文章題は「まず約束を決める」</div>
+          <p><b>いちばん大事：</b>解き始める前に <b>「何を0（基準）にするか」「どちらを＋（正）にするか」</b>を口に出して決める。これが決まれば文章題は半分解けたも同じ。</p>
+          <p>例：気温なら「基準20℃を0、高い方を＋」。移動なら「地点Oを0、北を＋」。お金なら「先週を0、増えた方を＋」。<b>反対の意味（低い・南・減った）は自動的に −</b>になる。</p>
+          <div class="ot">① 差を求める＝大きい方 − 小さい方</div>
+          <p><b>ひき算は「反対の数のたし算」：</b>−(−5) は「マイナスのマイナス」＝<b>＋5</b>。だから (＋3)−(−5)＝3＋5＝8。<b>基準より上と下にまたがると、差は2つの大きさの和</b>になる。</p>
+          <div class="ex">最高は基準より＋3、最低は基準より−5。<br>→ 気温差＝(＋3)−(−5)＝3＋5＝<b>8℃</b>。<br>（実際は23℃と15℃。23−15＝8。合う。）</div>
+          <div class="miss">3−5＝−2 としない。−(−5) の「マイナスのマイナス」を＋5 に直し忘れている。差はふつうプラスの大きさで答える。</div>
+        </div>
         <div class="step"><span>ステップ1</span>基準20℃を0とし、「高い方」を＋にする。最高は＋3、最低は−5。</div>
         <div class="step"><span>ステップ2</span>気温差＝最高−最低＝(＋3)−(−5)。</div>
         <div class="step"><span>ステップ3</span>(＋3)−(−5)＝3＋5＝<strong>8℃</strong>。（実際の気温で確かめると 23℃と15℃で 23−15＝8℃。合う。）</div>
         <div class="bx bx-link">「差を求める」は大きい方−小さい方。−(−5)が＋5になる＝ひき算は反対数のたし算、という正負のいちばん大事なルールがここで使える。</div>
         <div class="bx bx-warn">3−5＝−2 としない。「差」はふつうプラスの大きさで答える。基準20℃そのものは答えに出てこない（差だけ見る）。</div>
+        <div class="ans-final"><span>こたえ</span>8℃</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-1">
+        <div class="grade"><span class="gq-label">問題10</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- M-2 移動 -->
+    <!-- M-2 移動（問題11） -->
     <div class="q calc" data-id="M-2">
-      <div class="qnum">問2　移動（向きと道のり）</div>
+      <div class="qnum">問題11｜移動（向きと道のり）</div>
       <div class="qbody">地点Oを0として、北へ進むのを正とする。北へ40m進み、次に南へ70m進んだ。いまOから見て、どちら向きに何mのところにいるか。</div>
       <div class="qcue">まず「何を0にして、どちらを正にするか」を決めてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">南へ30m</div>
         <div class="step"><span>ステップ1</span>Oを0、北を正と決める。すると南へ進むのは負。北40m＝＋40、南70m＝−70。</div>
         <div class="step"><span>ステップ2</span>いまの位置＝(＋40)＋(−70)。</div>
         <div class="step"><span>ステップ3</span>(＋40)＋(−70)＝−30。符号が−＝南向き、数は30 → <strong>南へ30m</strong>。（北に40行って南に70戻れば、差し引き南へ30。合う。）</div>
         <div class="bx bx-link">「向き＝符号」「道のり＝数の大きさ」と分けて読む練習。これが正負の文章題の読み方の土台になる。</div>
         <div class="bx bx-warn">40＋70＝110m としない（向きが反対だからたし算で足し合わせるのは誤り）。−30 の「−」を答えのことば（南へ）に直し忘れない。</div>
+        <div class="ans-final"><span>こたえ</span>南へ30m</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-2">
+        <div class="grade"><span class="gq-label">問題11</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- M-3 基準＋増減 -->
+    <!-- M-3 基準＋増減（問題12） -->
     <div class="q calc" data-id="M-3">
-      <div class="qnum">問3　基準とくらべた増減の差</div>
+      <div class="qnum">問題12｜基準とくらべた増減の差</div>
       <div class="qbody">先週の所持金を基準0円とする。今週は「−300円（300円減った）」、先々週は「＋500円」だった。<strong>先々週と今週の差</strong>は何円か。</div>
       <div class="qcue">まず「何を0にするか」を決めてから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">800円</div>
         <div class="step"><span>ステップ1</span>先週を0とし、増えた方を＋にする。先々週＝＋500、今週＝−300。</div>
         <div class="step"><span>ステップ2</span>差＝先々週−今週＝(＋500)−(−300)。</div>
         <div class="step"><span>ステップ3</span>(＋500)−(−300)＝500＋300＝<strong>800円</strong>。（先々週は基準より500多く、今週は300少ない。あいだは500＋300＝800。合う。）</div>
-        <div class="bx bx-link">問1と同じ「−(−300)が＋300」。基準より上と下にまたがると、差は2つの大きさの和になる、という見方ができる。</div>
+        <div class="bx bx-link">問題10と同じ「−(−300)が＋300」。基準より上と下にまたがると、差は2つの大きさの和になる、という見方ができる。</div>
         <div class="bx bx-warn">500−300＝200 としない。−300 の前のひき算で符号が変わって＋300になることを見落とさない。</div>
+        <div class="ans-final"><span>こたえ</span>800円</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-3">
+        <div class="grade"><span class="gq-label">問題12</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- M-4 平均からの差で合計・実点（基準法のうまみ） -->
+    <!-- M-4 平均からの差で合計・実点（基準法のうまみ・問題13） -->
     <div class="q calc" data-id="M-4">
-      <div class="qnum">問4　基準からの差で合計を出す</div>
+      <div class="qnum">問題13｜基準からの差で合計を出す</div>
       <div class="qbody">4人の小テストの点を、基準70点とくらべて表した。4人の差は ＋5, −3, 0, −10 だった。4人の<strong>実際の合計点</strong>は何点か。</div>
       <div class="qcue">まず「何を基準（0）にしたか」を確認してから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">272点</div>
         <div class="step"><span>ステップ1</span>基準70点を0とみている。実点＝70＋（差）。4人ぶんなら 70×4＝280 が「全員ぴったり70点」のときの合計。</div>
         <div class="step"><span>ステップ2</span>差の合計＝＋5−3＋0−10＝−8。</div>
         <div class="step"><span>ステップ3</span>実際の合計＝280＋(−8)＝<strong>272点</strong>。（実点は 75・67・70・60。足すと 272。合う。）</div>
         <div class="bx bx-link">大きい数（75,67,70,60）を直接足さず、基準からの小さな差（＋5,−3,0,−10）だけ足せばよい。これが「基準法」のうまみ＝計算がぐっと軽くなる。平均の単元でもそのまま使う。</div>
         <div class="bx bx-warn">差の合計 −8 をそのまま答えにしない。最後に基準280へ戻す（280＋(−8)）のを忘れない。差の足し算で 0 を抜かさない。</div>
+        <div class="ans-final"><span>こたえ</span>272点</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-4">
+        <div class="grade"><span class="gq-label">問題13</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- M-5 反対の意味・符号化と読み取り -->
+    <!-- M-5 反対の意味・符号化と読み取り（問題14・15） -->
     <div class="q calc" data-id="M-5">
-      <div class="qnum">問5　反対の意味を符号で表す</div>
+      <div class="qnum">問題14・15｜反対の意味を符号で表す</div>
       <div class="qbody">「東へ進むこと」を正とする。<br>(1)「西へ6km進む」を符号つきの数で表そう。<br>(2)「−(−4)km」はどんな移動か、ことばで説明しよう。</div>
       <div class="qcue">まず「どちらを正にするか」を確認してから ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">(1) −6km　(2) 東へ4km進むこと</div>
         <div class="step"><span>ステップ1</span>東が正と決めた → 反対の西は負。</div>
         <div class="step"><span>解説(1)</span>西は負だから「西へ6km」＝<strong>−6km</strong>。</div>
         <div class="step"><span>解説(2)</span>−(−4)＝＋4。＋4km＝東へ4km。だから <strong>東へ4km進むこと</strong>を表す。（−4は西へ4kmのこと。その前の「−」が向きを反対にするので、東へ4kmになる。）</div>
         <div class="bx bx-link">「反対の量は反対の符号」「−(−4)＝＋4＝反対の反対はもと」。符号とことばを行き来する力が、これからの文章題ぜんぶの入口になる。</div>
         <div class="bx bx-warn">(2)で −(−4) を −4（西へ4km）と答えない。マイナスが2つで打ち消し合い、向きはもとの東に戻る。</div>
+        <div class="ans-final"><span>こたえ</span>(1) −6km　(2) 東へ4km進むこと</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-5','o')">○</button><button class="x" onclick="g(this,'M-5','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-5a">
+        <div class="grade"><span class="gq-label">問題14（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5a','o')">○</button><button class="x" onclick="g(this,'M-5a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="M-5b">
+        <div class="grade"><span class="gq-label">問題15（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5b','o')">○</button><button class="x" onclick="g(this,'M-5b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
   </div>
@@ -488,9 +551,9 @@ function t(b){
   b.textContent=open?'とじる':b.dataset.label;
 }
 
-// 自己採点 ○✕
+// 自己採点 ○✕（採点ユニット .gq 単位＝小問ごと）
 function g(btn,id,v){
-  var box=btn.closest('.q');
+  var box=btn.closest('.gq');
   box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
   btn.classList.add('sel');
   localStorage.setItem(KEY+'_'+id,v);
@@ -503,12 +566,12 @@ function g(btn,id,v){
   }
 }
 
-// ミス分類
+// ミス分類（.gq の data-gid 単位）
 function m(btn){
   var w=btn.parentNode;
   w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
   btn.classList.add('sel');
-  localStorage.setItem(KEY+'_'+btn.closest('.q').dataset.id+'_m',btn.textContent);
+  localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);
 }
 
 // 完了
@@ -518,10 +581,10 @@ function finish(){
   document.getElementById('doneBtn').textContent='✓ 完了ずみ';
 }
 
-// 復元
+// 復元（.gq＝採点ユニット単位）
 window.onload=function(){
-  document.querySelectorAll('.q').forEach(function(box){
-    var id=box.dataset.id;
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
     if(!id)return;
     var v=localStorage.getItem(KEY+'_'+id);
     if(v){

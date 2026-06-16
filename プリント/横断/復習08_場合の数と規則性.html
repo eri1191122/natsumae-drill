@@ -43,8 +43,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 .unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
 .unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
 
-/* おさらいカード（常時表示・トグルの外） */
-.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:14px 0}
+/* おさらいカード（問1の答え枠の中／解く前は非表示） */
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 14px}
 .osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
 .osarai h3{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
 .osarai h3:first-of-type{margin-top:0}
@@ -55,6 +55,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 .osarai .miss::before{content:"⚠️ ありがちな勘ちがい　";font-weight:800}
 .osarai ul{margin:3px 0 3px 20px}
 .osarai li{font-size:13.5px;color:#4a3d28;margin:2px 0}
+
+/* 採点ユニット（小問ごと） */
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+
+/* 答え（一番下・緑枠） */
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
 
 /* ボックス類 */
 .bx{border-radius:8px;padding:12px 16px;margin:10px 0}
@@ -78,7 +87,6 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 .ans-btn:hover{background:#536577}
 .ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:6px;font-size:13px}
 .ans-box.open{display:block}
-.ans-box .ans-main{font-size:18px;font-weight:900;color:#315f3e;margin-bottom:6px}
 .ans-box .step{margin:4px 0;font-size:13px}
 .ans-box .step span{display:inline-block;background:#fff;border:1px solid #c9decf;border-radius:4px;padding:1px 8px;margin-right:4px;font-weight:700;color:#3f6f4a;font-size:11px}
 
@@ -125,14 +133,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
   <div><span class="pg-badge">復習08</span><span class="pg-badge">数学：場合の数・規則性・数列</span></div>
   <h1>場合の数・規則性・数列（8問）</h1>
   <p>6/24(水)　対象: 中1</p>
-  <p class="pg-cheer">きょうは場合の数と規則性だけ・約15分。まちがえやすい「4n−4」と「並べる数え方」をここで取り返そう。まず1問ずつ、図をかいてから答えを見ればOK。いっしょにいこう！</p>
+  <p class="pg-cheer">きょうは場合の数と規則性だけ・約15分。全統中で落とした「4n−4」と「並べる数え方」をここで取り返そう。まず1問ずつ、図をかいてから答えを見ればOK。いっしょにいこう！</p>
 </div>
 
 <!-- ============ 数学：場合の数・規則性・数列 ============ -->
@@ -145,59 +153,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   <div class="sec-hd"><h2>まず自分で解く → 答え・解説を見る</h2><span class="badge-grade">小5〜6</span></div>
   <div class="sec-body">
 
-    <!-- ★常時表示のおさらいカード（トグルの外＝開いたら必ず見える） -->
-    <div class="osarai">
-      <h3>① 場合の数って何？（ことばの意味）</h3>
-      <p>「場合の数」＝あることが<b>起こり方が何通りあるか</b>の数。たとえば「コインを投げると、表・裏の2通り」「3人をならべると何通り？」のように、ぜんぶで何パターンあるかを数える。</p>
-
-      <h3>② まずは樹形図や表で「全部かき出す」</h3>
-      <p>こんがらがったら、いきなり計算せずに<b>樹形図（じゅけいず）</b>で全部かき出す。木のえだのように、1番目→2番目→3番目…と枝分かれさせて、いちばん右までの道すじを数える。もれもダブりもなくなる。<br>
-      とくに「<b>2つのもの（箱A・箱Bなど）から1個ずつ</b>」えらぶときは、<b>表</b>がべんり。たて＝箱A、よこ＝箱B にして、マスを全部うめれば（箱Aの数）×（箱Bの数）通りが必ずそろう。マスの中に和や積を書きこめば、最大・最小もひと目で分かる。</p>
-
-      <h3>③ 順列＝「ならべ方」（順番がちがえば別もの）</h3>
-      <p>何人かを1列に<b>ならべる</b>数え方。「ABC」と「BAC」は順番がちがうので<b>別のならべ方</b>として数える。<br>
-      数えるコツ：1番目に使える数 × 2番目に使える数 × … と、かけ算でつなぐ。<b>使ったものはもう使えない</b>ので、かける数は 1つずつ減っていく（例：3人なら 3×2×1）。</p>
-
-      <h3>④ 組合せ＝「えらぶだけ」（順番は関係ない）</h3>
-      <p>係を2人えらぶ、のように<b>順番が関係ない</b>とき。「AとB」も「BとA」も同じ1通り。まず順列で数えてから、ダブった分を割って消す（2人なら÷2）。</p>
-
-      <h3>⑤ 規則性は「1つ分の増え方」を見る</h3>
-      <p>3, 7, 11, 15, … のように数がならんでいたら、<b>となりとの差</b>をしらべる。差がいつも同じ（ここでは＋4）なら、その差が式の前の数になる（4n の形）。あとは1番目に合うように＋□か−□で調整する。</p>
-
-      <h3>⑥ 「重なり」を引く数え方（4n−4 の形）</h3>
-      <p>正方形のわくのように、<b>角（かど）で2つの辺がぶつかる</b>図形を「1辺ずつ」数えると、角を<b>2回</b>数えてしまう。だから、ふつうに数えた数から<b>重なった分を引く</b>。<br>
-      正方形の各辺にn個ずつ石をならべるなら：1辺n個×4辺＝<b>4n</b>。でも4すみは、となり合う2辺の両方で数えていて、それぞれ1回多い。角は4個あるので <b>−4</b>。式は <b>4n−4</b>。</p>
-      <div class="ex">1辺に3個ずつ（n=3）。いっしょに1回。<br>
-        → 4n＝4×3＝12。でも角4個を二重に数えている。<br>
-        → 4n−4＝12−4＝<b>8個</b>。じっさいに外わくの●を数えても8個。合う。</div>
-      <p class="miss">「4n」で止めない。それだと角を2回ずつ数えている。角は4個ぶん多いので必ず−4する（n=3なら8個、12ではない）。</p>
-
-      <h3>⑦ 周期がそろう＝最小公倍数（連除法）</h3>
-      <p>まずことば。<b>倍数</b>＝その数を整数倍した数（6の倍数＝6,12,18…）。<b>公倍数</b>＝いくつかの数に<b>共通</b>の倍数。<b>最小公倍数</b>＝公倍数のうち<b>いちばん小さい</b>もの。<br>
-      「○秒ごと・△秒ごとが<b>次に同時にそろう</b>」＝最小公倍数。求め方は<b>連除法（れんじょほう／はしご算）</b>：いくつかの数を<b>同時にわれる数</b>で順にわっていき、<b>もう同時にわれなくなったら止め</b>、外に出した数と下に残った数を<b>全部かける</b>。</p>
-      <div class="ex">6・8・10秒ごと → 次に同時は？　いっしょに1回。<br>
-        → 2でわる：6,8,10 → 3,4,5（もう同時にわれない）。<br>
-        → 外の2 × 残りの3×4×5＝2×3×4×5＝<b>120</b> → 120秒後。</div>
-      <p class="miss">6×8×10＝480 としない。それも公倍数だが「いちばん小さい」ではない。「次に同時」は<b>最小</b>公倍数。連除法では、もう同時にわれなくなったら止める。</p>
-
-      <h3>⑧ 魔方陣（まほうじん）</h3>
-      <p>マスに数を入れ、<b>たて・よこ・ななめ</b>のどの列の和も<b>同じ</b>になるようにしたもの。その「同じ和」を<b>定和（ていわ）</b>という。<br>
-      とき方：定和がわかっていて、<b>2マスがもう埋まっている列</b>をさがす → 残り1マス＝<b>定和 −（埋まっている2つの和）</b>。これを1マスずつくり返す。最後にすべての列が定和になるか<b>検算</b>する。</p>
-      <div class="ex">3×3、どの列も和15。上の行が「8・ア・6」。いっしょに1回。<br>
-        → 8＋ア＋6＝15 → ア＝15−14＝<b>1</b>。<br>
-        2マス埋まった列から、引き算で1マスずつ決めていく。</div>
-      <p class="miss">あてずっぽうで数を当てはめない。すでに2マス埋まった列を先にさがし、定和から2つの和を引いて残り1マスを出す。最後に全部の列が定和か検算する。</p>
-
-      <h3>⑨ いっしょに1回（やさしい例）</h3>
-      <div class="ex">A・B の2人を1列にならべると何通り？<br>
-        → 1番目に立てるのは A か B の <b>2通り</b>。<br>
-        → 2番目はのこった1人だけ → <b>1通り</b>。<br>
-        → 2 × 1 ＝ <b>2通り</b>（AB と BA）。じっさいに樹形図でかくと、ちゃんと2本の道になる。</div>
-
-      <div class="miss">ならべる数え方で「3×3×3」のように同じ数をかけ続けない。使った人・色はもう使えないので、かける数は 3→2→1 と<b>1ずつ減る</b>。</div>
-    </div>
-
-    <!-- 問1 樹形図 並べる -->
+    <!-- 問題1 樹形図 並べる（おさらいカードはこの答え枠の先頭に同梱＝解く前は非表示） -->
     <div class="q calc" data-id="M-1">
       <div class="qnum">問1　L1 基礎</div>
       <div class="qbody">A・B・C の3人を1列に並べます。並べ方は全部で何通りありますか。<br>樹形図をかいて数えよう。</div>
@@ -205,17 +161,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <text x="30" y="20" font-size="11" fill="#8a93a0">1番目</text>
         <text x="150" y="20" font-size="11" fill="#8a93a0">2番目</text>
         <text x="270" y="20" font-size="11" fill="#8a93a0">3番目…</text>
-        <!-- 1番目 A -->
         <circle cx="40" cy="40" r="13" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
         <text x="40" y="44" font-size="13" fill="#31415f" text-anchor="middle">A</text>
         <line x1="53" y1="40" x2="135" y2="40" stroke="#33485a" stroke-width="2"/>
         <text x="160" y="44" font-size="13" fill="#31415f" text-anchor="middle">B,C…</text>
-        <!-- 1番目 B -->
         <circle cx="40" cy="90" r="13" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
         <text x="40" y="94" font-size="13" fill="#31415f" text-anchor="middle">B</text>
         <line x1="53" y1="90" x2="135" y2="90" stroke="#33485a" stroke-width="2"/>
         <text x="160" y="94" font-size="13" fill="#31415f" text-anchor="middle">A,C…</text>
-        <!-- 1番目 C -->
         <circle cx="40" cy="140" r="13" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
         <text x="40" y="144" font-size="13" fill="#31415f" text-anchor="middle">C</text>
         <line x1="53" y1="140" x2="135" y2="140" stroke="#33485a" stroke-width="2"/>
@@ -224,56 +177,112 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
       </svg>
       <div class="draw">✏️ 樹形図をここにかこう（1番目→2番目→3番目）　＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
       <div class="qcue">まず1番目を決める → 残りを枝分かれ ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">6通り</div>
+        <div class="osarai">
+          <h3>① 場合の数って何？（ことばの意味）</h3>
+          <p>「場合の数」＝あることが<b>起こり方が何通りあるか</b>の数。たとえば「コインを投げると、表・裏の2通り」「3人をならべると何通り？」のように、ぜんぶで何パターンあるかを数える。</p>
+
+          <h3>② まずは樹形図や表で「全部かき出す」</h3>
+          <p>こんがらがったら、いきなり計算せずに<b>樹形図（じゅけいず）</b>で全部かき出す。木のえだのように、1番目→2番目→3番目…と枝分かれさせて、いちばん右までの道すじを数える。もれもダブりもなくなる。<br>
+          とくに「<b>2つのもの（箱A・箱Bなど）から1個ずつ</b>」えらぶときは、<b>表</b>がべんり。たて＝箱A、よこ＝箱B にして、マスを全部うめれば（箱Aの数）×（箱Bの数）通りが必ずそろう。マスの中に和や積を書きこめば、最大・最小もひと目で分かる。</p>
+
+          <h3>③ 順列＝「ならべ方」（順番がちがえば別もの）</h3>
+          <p>何人かを1列に<b>ならべる</b>数え方。「ABC」と「BAC」は順番がちがうので<b>別のならべ方</b>として数える。<br>
+          数えるコツ：1番目に使える数 × 2番目に使える数 × … と、かけ算でつなぐ。<b>使ったものはもう使えない</b>ので、かける数は 1つずつ減っていく（例：3人なら 3×2×1）。</p>
+
+          <h3>④ 組合せ＝「えらぶだけ」（順番は関係ない）</h3>
+          <p>係を2人えらぶ、のように<b>順番が関係ない</b>とき。「AとB」も「BとA」も同じ1通り。まず順列で数えてから、ダブった分を割って消す（2人なら÷2）。</p>
+
+          <h3>⑤ 規則性は「1つ分の増え方」を見る</h3>
+          <p>3, 7, 11, 15, … のように数がならんでいたら、<b>となりとの差</b>をしらべる。差がいつも同じ（ここでは＋4）なら、その差が式の前の数になる（4n の形）。あとは1番目に合うように＋□か−□で調整する。</p>
+
+          <h3>⑥ 「重なり」を引く数え方（4n−4 の形）</h3>
+          <p>正方形のわくのように、<b>角（かど）で2つの辺がぶつかる</b>図形を「1辺ずつ」数えると、角を<b>2回</b>数えてしまう。だから、ふつうに数えた数から<b>重なった分を引く</b>。<br>
+          正方形の各辺にn個ずつ石をならべるなら：1辺n個×4辺＝<b>4n</b>。でも4すみは、となり合う2辺の両方で数えていて、それぞれ1回多い。角は4個あるので <b>−4</b>。式は <b>4n−4</b>。</p>
+          <div class="ex">1辺に3個ずつ（n=3）。いっしょに1回。<br>
+            → 4n＝4×3＝12。でも角4個を二重に数えている。<br>
+            → 4n−4＝12−4＝<b>8個</b>。じっさいに外わくの●を数えても8個。合う。</div>
+          <p class="miss">「4n」で止めない。それだと角を2回ずつ数えている。角は4個ぶん多いので必ず−4する（n=3なら8個、12ではない）。</p>
+
+          <h3>⑦ 周期がそろう＝最小公倍数（連除法）</h3>
+          <p>まずことば。<b>倍数</b>＝その数を整数倍した数（6の倍数＝6,12,18…）。<b>公倍数</b>＝いくつかの数に<b>共通</b>の倍数。<b>最小公倍数</b>＝公倍数のうち<b>いちばん小さい</b>もの。<br>
+          「○秒ごと・△秒ごとが<b>次に同時にそろう</b>」＝最小公倍数。求め方は<b>連除法（れんじょほう／はしご算）</b>：いくつかの数を<b>同時にわれる数</b>で順にわっていき、<b>もう同時にわれなくなったら止め</b>、外に出した数と下に残った数を<b>全部かける</b>。</p>
+          <div class="ex">6・8・10秒ごと → 次に同時は？　いっしょに1回。<br>
+            → 2でわる：6,8,10 → 3,4,5（もう同時にわれない）。<br>
+            → 外の2 × 残りの3×4×5＝2×3×4×5＝<b>120</b> → 120秒後。</div>
+          <p class="miss">6×8×10＝480 としない。それも公倍数だが「いちばん小さい」ではない。「次に同時」は<b>最小</b>公倍数。連除法では、もう同時にわれなくなったら止める。</p>
+
+          <h3>⑧ 魔方陣（まほうじん）</h3>
+          <p>マスに数を入れ、<b>たて・よこ・ななめ</b>のどの列の和も<b>同じ</b>になるようにしたもの。その「同じ和」を<b>定和（ていわ）</b>という。<br>
+          とき方：定和がわかっていて、<b>2マスがもう埋まっている列</b>をさがす → 残り1マス＝<b>定和 −（埋まっている2つの和）</b>。これを1マスずつくり返す。最後にすべての列が定和になるか<b>検算</b>する。</p>
+          <div class="ex">3×3、どの列も和15。上の行が「8・ア・6」。いっしょに1回。<br>
+            → 8＋ア＋6＝15 → ア＝15−14＝<b>1</b>。<br>
+            2マス埋まった列から、引き算で1マスずつ決めていく。</div>
+          <p class="miss">あてずっぽうで数を当てはめない。すでに2マス埋まった列を先にさがし、定和から2つの和を引いて残り1マスを出す。最後に全部の列が定和か検算する。</p>
+
+          <h3>⑨ いっしょに1回（やさしい例）</h3>
+          <div class="ex">A・B の2人を1列にならべると何通り？<br>
+            → 1番目に立てるのは A か B の <b>2通り</b>。<br>
+            → 2番目はのこった1人だけ → <b>1通り</b>。<br>
+            → 2 × 1 ＝ <b>2通り</b>（AB と BA）。じっさいに樹形図でかくと、ちゃんと2本の道になる。</div>
+
+          <div class="miss">ならべる数え方で「3×3×3」のように同じ数をかけ続けない。使った人・色はもう使えないので、かける数は 3→2→1 と<b>1ずつ減る</b>。</div>
+        </div>
         <div class="step"><span>1番目</span>A・B・C のうち誰でもよい → 3通り。</div>
         <div class="step"><span>2番目</span>1番目で使った人以外 → 残り2通り。</div>
         <div class="step"><span>3番目</span>残った1人で決まる → 1通り。3×2×1＝<strong>6通り</strong>（ABC, ACB, BAC, BCA, CAB, CBA）。</div>
         <div class="bx bx-link">「並べる数え方＝1番目×2番目×3番目」は中2の確率の土台。樹形図で枝が減っていくのを目で見ておくと公式に頼らず数えられる。</div>
         <div class="bx bx-warn">3×3×3＝27 としない。使った人はもう使えないので、かける数は 3→2→1 と1ずつ減る。</div>
+        <div class="ans-final"><span>こたえ</span>6通り</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-1">
+        <div class="grade"><span class="gq-label">問題1</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- 問2 4色から3つ並べる ★全統中同型 -->
+    <!-- 問題2 4色から3つ並べる ★全統中同型 -->
     <div class="q calc" data-id="M-2">
       <div class="qnum">問2　L2 標準　★全統中と同じ型・重要</div>
       <div class="qbody">赤・青・黄・緑 の4色から、ちがう3色を選んで1列に並べます。並べ方は何通りありますか。</div>
       <div class="qcue">まず1番目から、使える色が何通りかを順に書こう ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">24通り</div>
         <div class="step"><span>1番目</span>4色のうちどれでもよい → 4通り。</div>
         <div class="step"><span>2番目</span>使った1色以外 → 3通り。</div>
         <div class="step"><span>3番目</span>使った2色以外 → 2通り。4×3×2＝<strong>24通り</strong>（3色で止める。4番目はかけない）。</div>
         <div class="bx bx-link">「4個から3個を並べる」は中学の順列そのもの。何個並べるかでかける個数が決まる、という見方を今つかんでおこう。</div>
         <div class="bx bx-warn">「72通り」と答えるミスが2パターン。①4×3×2×3＝72 のように余計な3をかける（並べるのは3色だけ＝かけ算は3回でストップ）。②4×4×4＝64 や 4³ と全部4でかける（使った色は減るので 4→3→2）。正しくは 4×3×2＝24。</div>
+        <div class="ans-final"><span>こたえ</span>24通り</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-2">
+        <div class="grade"><span class="gq-label">問題2</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- 問3 組合せ 5人から2人 -->
+    <!-- 問題3 組合せ 5人から2人 -->
     <div class="q calc" data-id="M-3">
       <div class="qnum">問3　L2 標準</div>
       <div class="qbody">A・B・C・D・E の5人から、係を2人選びます。選び方は何通りありますか。<br>（順番は関係ありません）</div>
       <div class="qcue">「並べる」のか「選ぶだけ」なのかを先に判断しよう ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">10通り</div>
         <div class="step"><span>まず並べると</span>1人目5通り×2人目4通り＝5×4＝20通り。でもこれは「並べた数」。</div>
         <div class="step"><span>だぶりを消す</span>AとBを選ぶのに AB・BA の2通りを数えてしまっている。順番が関係ないので÷2。</div>
         <div class="step"><span>計算</span>(5×4)÷2＝20÷2＝<strong>10通り</strong>（AB,AC,AD,AE,BC,BD,BE,CD,CE,DE）。</div>
         <div class="bx bx-link">「並べる（順列）」と「選ぶだけ（組合せ）」のちがいは中学でも超重要。選ぶだけなら÷（並べ方の数）でだぶりを消す、と覚えよう。</div>
         <div class="bx bx-warn">順列の20通りのまま答えない。「順番は関係ない」と書いてあったら AB と BA は同じ1通り。2人を選ぶときは÷2を忘れない。</div>
+        <div class="ans-final"><span>こたえ</span>10通り</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-3">
+        <div class="grade"><span class="gq-label">問題3</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- 問4 2つの箱から1個ずつ 和 ★期末6(7)同型 -->
+    <!-- 問題4 2つの箱から1個ずつ 和 ★期末6(7)同型 -->
     <div class="q calc" data-id="M-4">
       <div class="qnum">問4　L3 応用　★期末6(7)と同じ型</div>
       <div class="qbody">箱Aには 2, 5 の2枚、箱Bには 3, 7 の2枚のカードが入っています。<br>箱A・箱Bからそれぞれ1枚ずつ取り出すとき、2枚の数の<strong>和</strong>を全部書き出し、和が<strong>いちばん小さくなる</strong>組を答えなさい。</div>
@@ -283,25 +292,21 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
             <path d="M0,0 L6,3 L0,6 z" fill="#33485a"/>
           </marker>
         </defs>
-        <!-- 箱A -->
         <rect x="30" y="30" width="90" height="90" rx="6" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
         <text x="75" y="24" font-size="13" fill="#31415f" text-anchor="middle">箱A</text>
         <text x="75" y="62" font-size="16" fill="#31415f" text-anchor="middle">2</text>
         <text x="75" y="100" font-size="16" fill="#31415f" text-anchor="middle">5</text>
-        <!-- 箱B -->
         <rect x="240" y="30" width="90" height="90" rx="6" fill="#e7f1e8" stroke="#33485a" stroke-width="2"/>
         <text x="285" y="24" font-size="13" fill="#31415f" text-anchor="middle">箱B</text>
         <text x="285" y="62" font-size="16" fill="#31415f" text-anchor="middle">3</text>
         <text x="285" y="100" font-size="16" fill="#31415f" text-anchor="middle">7</text>
-        <!-- 対応の例（1本だけ） -->
         <line x1="90" y1="57" x2="270" y2="57" stroke="#33485a" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#ar4)"/>
         <text x="180" y="135" font-size="12" fill="#8a93a0" text-anchor="middle">↑ こうやって1枚ずつ結ぶ（残りも全部）</text>
       </svg>
       <div class="draw">✏️ 表をかいて全部の組を書こう（たて=箱A、よこ=箱B）　＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
       <div class="qcue">まず起こりうる組を全部ならべよう ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">和の最小は 5（箱A=2 と 箱B=3 の組）</div>
         <div class="step"><span>全部の組</span>(2,3)→5、(2,7)→9、(5,3)→8、(5,7)→12。組は全部で 2×2＝4通り。</div>
         <div class="fig">      箱B=3   箱B=7
 箱A=2     5       9
@@ -309,53 +314,53 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="step"><span>くらべる</span>和は 5, 9, 8, 12。いちばん小さいのは <strong>5</strong> → 箱Aの小さい数2と箱Bの小さい数3を足した組。</div>
         <div class="bx bx-link">「2つのものを1個ずつ選ぶ＝表で全部書き出す」は中学の確率（さいころ2個など）と全く同じ。表にすればもれもだぶりもなくなる。</div>
         <div class="bx bx-warn">頭の中だけで数えて (2,3) を書き落とすミスが多い。表のマスを全部うめると4通りが必ずそろう。「和が最小」は両方の箱で小さい数どうしを選べばよい。</div>
+        <div class="ans-final"><span>こたえ</span>和の最小は 5（箱A=2 と 箱B=3 の組）</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-4">
+        <div class="grade"><span class="gq-label">問題4</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- 問5 規則性 等差 4n-1 -->
+    <!-- 問題5 規則性 等差 4n-1 -->
     <div class="q calc" data-id="M-5">
       <div class="qnum">問5　L2 標準</div>
       <div class="qbody">3, 7, 11, 15, … と数がならんでいます。<br>n番目の数を n を使った式で表しなさい。</div>
       <div class="qcue">となりとの差はいくつ？ それが手がかり ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">4n − 1</div>
         <div class="step"><span>差を見る</span>7−3＝4、11−7＝4、15−11＝4。差がいつも4＝「4ずつ増える」等差のならび。</div>
         <div class="step"><span>4n で近づける</span>差が4だから 4×n が骨組み。n=1で4、n=2で8、n=3で12…と本物より1だけ大きい。</div>
         <div class="step"><span>ずれを直す</span>どれも1大きいので −1。4n−1。確かめ：n=1→3、n=2→7、n=3→11。<strong>合う</strong>。</div>
         <div class="bx bx-link">「差が一定＝4n の形」「最初の数に合わせて＋□か−□で調整」は中1の文字式・規則性で何度も出る。差を式の前の数にするのがコツ。</div>
         <div class="bx bx-warn">いきなり 4n と答えない。4n は 4,8,12… で本物より1大きい。必ず n=1 を入れて最初の数（3）に合うか確かめ、ずれた分を足し引きする。</div>
+        <div class="ans-final"><span>こたえ</span>4n − 1</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-5','o')">○</button><button class="x" onclick="g(this,'M-5','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-5">
+        <div class="grade"><span class="gq-label">問題5</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5','o')">○</button><button class="x" onclick="g(this,'M-5','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- 問6 正方形の辺に石 4n-4 ★全統中標準1(3)同型 最重要 -->
+    <!-- 問題6 正方形の辺に石 4n-4 ★全統中標準1(3)同型 最重要 -->
     <div class="q calc" data-id="M-6">
       <div class="qnum">問6　L3 応用　★全統中 標準1(3)と同じ型・最重要</div>
       <div class="qbody">正方形の形に、各辺に石を n 個ずつならべます。<br>石は全部で何個になりますか。n を使った式で表しなさい。</div>
       <svg viewBox="-85 0 480 230" style="max-width:480px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="正方形の各辺にn個ずつ石を並べた図（n=3）。角は2辺で共有されダブる">
         <text x="180" y="18" font-size="13" fill="#31415f" text-anchor="middle">n = 3（1辺に3個ずつ）</text>
-        <!-- 正方形の辺 -->
         <rect x="80" y="40" width="160" height="160" fill="none" stroke="#33485a" stroke-width="2"/>
-        <!-- 辺ラベル -->
         <text x="160" y="34" font-size="13" fill="#31415f" text-anchor="middle">n個</text>
         <text x="160" y="222" font-size="13" fill="#31415f" text-anchor="middle">n個</text>
         <text x="58" y="124" font-size="13" fill="#31415f" text-anchor="middle">n個</text>
         <text x="262" y="124" font-size="13" fill="#31415f" text-anchor="middle">n個</text>
-        <!-- 辺の中点の石（角ではない4点） -->
         <circle cx="160" cy="40" r="8" fill="#cfe0f0" stroke="#33485a" stroke-width="2"/>
         <circle cx="160" cy="200" r="8" fill="#cfe0f0" stroke="#33485a" stroke-width="2"/>
         <circle cx="80" cy="120" r="8" fill="#cfe0f0" stroke="#33485a" stroke-width="2"/>
         <circle cx="240" cy="120" r="8" fill="#cfe0f0" stroke="#33485a" stroke-width="2"/>
-        <!-- 4すみの石（赤で強調＝ダブる） -->
         <circle cx="80" cy="40" r="9" fill="#f3c6c2" stroke="#c0392b" stroke-width="2.5"/>
         <circle cx="240" cy="40" r="9" fill="#f3c6c2" stroke="#c0392b" stroke-width="2.5"/>
         <circle cx="80" cy="200" r="9" fill="#f3c6c2" stroke="#c0392b" stroke-width="2.5"/>
         <circle cx="240" cy="200" r="9" fill="#f3c6c2" stroke="#c0392b" stroke-width="2.5"/>
-        <!-- 角の注記矢印 -->
         <line x1="40" y1="30" x2="72" y2="38" stroke="#c0392b" stroke-width="2" stroke-dasharray="4 3"/>
         <text x="36" y="26" font-size="12" fill="#c0392b" text-anchor="end">角＝2つの辺で共有</text>
         <line x1="300" y1="212" x2="248" y2="204" stroke="#c0392b" stroke-width="2" stroke-dasharray="4 3"/>
@@ -369,35 +374,32 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
 外わくだけ。中は数えない。</div>
       <div class="qcue">角の石に注目。何回数えている？ ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">4n − 4</div>
         <div class="step"><span>まず 4n</span>1辺n個 ×4辺＝4n。でもこれだと角の石を二重に数えている。</div>
         <div class="step"><span>角をひく</span>4すみの石は、となり合う2辺の両方で数えられている＝4個ぶん多い。だから −4。式は <strong>4n−4</strong>。</div>
         <div class="step"><span>確かめ</span>n=3 → 4×3−4＝12−4＝<strong>8個</strong>。上の図を数えても●は8個。合う。</div>
         <div class="bx bx-link">「重なって数えた分をひく」考え方は中学の規則性・集合の問題で必須。図で二重に数えた点を指でなぞると、なぜ−4かが体でわかる。</div>
         <div class="bx bx-warn">「4n」と答えるミスが全統中で出た。これは4すみを2回ずつ数えている。角は4個、それぞれ1回多いので −4 が必要。正しくは 4n−4（n=3なら8個、4n=12ではない）。</div>
+        <div class="ans-final"><span>こたえ</span>4n − 4</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-6">
+        <div class="grade"><span class="gq-label">問題6</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- 問7 周期 最小公倍数 連除法 -->
+    <!-- 問題7 周期 最小公倍数 連除法 -->
     <div class="q calc" data-id="M-7">
       <div class="qnum">問7　L2 標準</div>
       <div class="qbody">3つのランプが、6秒・8秒・10秒 ごとに点滅します。<br>3つが同時に点滅したあと、次に同時に点滅するのは何秒後ですか。</div>
       <svg viewBox="0 0 440 130" style="max-width:440px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="連除法（はしご算）で6,8,10を2でわる図">
-        <!-- 割る数 -->
         <text x="40" y="56" font-size="16" fill="#31415f" text-anchor="middle">2</text>
-        <!-- かっこ（はしごの形） -->
         <path d="M58,38 Q66,52 58,66" fill="none" stroke="#33485a" stroke-width="2"/>
-        <!-- 上段 6 8 10 -->
         <text x="100" y="56" font-size="16" fill="#31415f" text-anchor="middle">6</text>
         <text x="170" y="56" font-size="16" fill="#31415f" text-anchor="middle">8</text>
         <text x="245" y="56" font-size="16" fill="#31415f" text-anchor="middle">10</text>
-        <!-- 区切り線 -->
         <line x1="70" y1="72" x2="300" y2="72" stroke="#33485a" stroke-width="2"/>
-        <!-- 下段 3 4 5 -->
         <text x="100" y="98" font-size="16" fill="#31415f" text-anchor="middle">3</text>
         <text x="170" y="98" font-size="16" fill="#31415f" text-anchor="middle">4</text>
         <text x="245" y="98" font-size="16" fill="#31415f" text-anchor="middle">5</text>
@@ -405,9 +407,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <text x="180" y="124" font-size="12" fill="#31415f" text-anchor="middle">外に出した数を全部かける → 2×3×4×5</text>
       </svg>
       <div class="qcue">「同時にそろう」＝公倍数。いちばん小さいのは？ ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">120秒後</div>
         <div class="step"><span>連除法</span>3つを同時にわれる数で順にわる（復習05とつながる）。</div>
         <div class="fig"> 2 ) 6   8  10
  . . . 3   4   5   ← もう同時にわれないので止める
@@ -416,35 +417,33 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="step"><span>計算</span>2×3×4×5＝<strong>120</strong>。だから120秒後に次が同時。</div>
         <div class="bx bx-link">「周期がそろう＝最小公倍数」は中1でも理科の歯車・観覧車などで出る定番。連除法でわれる数を外に出していくやり方を体に入れよう。</div>
         <div class="bx bx-warn">6×8×10＝480 としない。それも公倍数だが「いちばん小さい」ではない。問題が「次に同時」なら最小公倍数。連除法では、もう同時にわれなくなったら止める。</div>
+        <div class="ans-final"><span>こたえ</span>120秒後</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-7">
+        <div class="grade"><span class="gq-label">問題7</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
-    <!-- 問8 魔方陣 ★期末6(9)同型 -->
+    <!-- 問題8 魔方陣 ★期末6(9)同型 -->
     <div class="q calc" data-id="M-8">
       <div class="qnum">問8　L3 応用　★期末6(9)と同じ型</div>
       <div class="qbody">3×3 のマスに 1〜9 を1個ずつ入れ、たて・よこ・ななめのどの3つの和も 15 になるようにします。<br>下のア・イ・ウに入る数を求めなさい。</div>
       <svg viewBox="0 0 390 230" style="max-width:390px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="3×3魔方陣。たて・よこ・ななめの和が15">
-        <!-- 9マスのグリッド：左上(50,30) 各マス70 -->
         <rect x="50" y="30" width="210" height="210" rx="4" fill="#fff" stroke="#33485a" stroke-width="2"/>
         <line x1="120" y1="30" x2="120" y2="240" stroke="#33485a" stroke-width="2"/>
         <line x1="190" y1="30" x2="190" y2="240" stroke="#33485a" stroke-width="2"/>
         <line x1="50" y1="100" x2="260" y2="100" stroke="#33485a" stroke-width="2"/>
         <line x1="50" y1="170" x2="260" y2="170" stroke="#33485a" stroke-width="2"/>
-        <!-- 1行目 8 ア 6 -->
         <text x="85"  y="73"  font-size="18" fill="#31415f" text-anchor="middle">8</text>
         <text x="155" y="73"  font-size="18" fill="#9b514d" font-weight="700" text-anchor="middle">ア</text>
         <text x="225" y="73"  font-size="18" fill="#31415f" text-anchor="middle">6</text>
-        <!-- 2行目 3 5 イ -->
         <text x="85"  y="143" font-size="18" fill="#31415f" text-anchor="middle">3</text>
         <text x="155" y="143" font-size="18" fill="#31415f" text-anchor="middle">5</text>
         <text x="225" y="143" font-size="18" fill="#9b514d" font-weight="700" text-anchor="middle">イ</text>
-        <!-- 3行目 ウ 9 2 -->
         <text x="85"  y="213" font-size="18" fill="#9b514d" font-weight="700" text-anchor="middle">ウ</text>
         <text x="155" y="213" font-size="18" fill="#31415f" text-anchor="middle">9</text>
         <text x="225" y="213" font-size="18" fill="#31415f" text-anchor="middle">2</text>
-        <!-- 和=15 の注記 -->
         <text x="155" y="20" font-size="12" fill="#3f6f4a" text-anchor="middle">よこ・たて・ななめ どれも和は 15</text>
         <text x="300" y="35" font-size="13" fill="#3f6f4a" text-anchor="start">＝15</text>
         <line x1="262" y1="65" x2="296" y2="40" stroke="#9abf9d" stroke-width="2" stroke-dasharray="4 3"/>
@@ -457,18 +456,20 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
  │ ウ │ 9  │ 2  │
  └────┴────┴────┘</div>
       <div class="qcue">和が15の列を1つ見つけて、わかる所から1マスずつ ↓</div>
-      <button class="ans-btn" onclick="t(this)">答え・解説を見る</button>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="ans-main">ア = 1、イ = 7、ウ = 4</div>
         <div class="step"><span>ア（上の行）</span>8 ＋ ア ＋ 6 ＝ 15 → ア ＝ 15 − 14 ＝ <strong>1</strong>。</div>
         <div class="step"><span>イ（まん中の行）</span>3 ＋ 5 ＋ イ ＝ 15 → イ ＝ 15 − 8 ＝ <strong>7</strong>。</div>
         <div class="step"><span>ウ（左の列）</span>8 ＋ 3 ＋ ウ ＝ 15 → ウ ＝ 15 − 11 ＝ <strong>4</strong>。</div>
         <div class="step"><span>全部で検算</span>たて：8+3+4=15／1+5+9=15／6+7+2=15。よこ：8+1+6=15／3+5+7=15／4+9+2=15。ななめ：8+5+2=15／6+5+4=15。<strong>全部15で成立</strong>。1〜9も1個ずつ使っている。</div>
         <div class="bx bx-link">「和が決まっている列から、わかっている数を引いて1マスを出す」は中1方程式（□＝合計−わかっている分）と同じ発想。1マスずつ確実にうめるのがコツ。</div>
         <div class="bx bx-warn">あてずっぽうで数を当てはめない。和が15で、すでに2マス埋まっている列を先にさがす → 15から2つの和を引けば残り1マスが決まる。最後にすべての列が15か検算する。</div>
+        <div class="ans-final"><span>こたえ</span>ア = 1、イ = 7、ウ = 4</div>
       </div>
-      <div class="grade">答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
-      <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      <div class="gq" data-gid="M-8">
+        <div class="grade"><span class="gq-label">問題8</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
 
   </div>
@@ -476,7 +477,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（復習08 完了）</button>
 <div class="fin" id="fin"></div>
-<div class="endcheer">きょうのカギは2つ。「並べるときは使った分だけかける数が減る（4×3×2）」と「外わくの石は角を二重に数えるから 4n−4」。まちがえやすい2問を、今日ここで取り返せた。よくがんばったね。あしたも5分からでOK。</div>
+<div class="endcheer">きょうのカギは2つ。「並べるときは使った分だけかける数が減る（4×3×2）」と「外わくの石は角を二重に数えるから 4n−4」。全統中で落とした2問を、今日ここで取り返せた。よくがんばったね。あしたも5分からでOK。</div>
 
 </div>
 
@@ -487,12 +488,13 @@ var KEY='fukushu08';
 function t(b){
   var a=b.parentNode.querySelector('.ans-box');
   var open=a.classList.toggle('open');
-  b.textContent=open?'とじる':(b.textContent.indexOf('解説')>=0?'答え・解説を見る':'答えを見る');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
 }
 
-// 自己採点 ○✕
+// 自己採点 ○✕（採点ユニット .gq 単位＝小問ごと）
 function g(btn,id,v){
-  var box=btn.closest('.q');
+  var box=btn.closest('.gq');
   box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
   btn.classList.add('sel');
   localStorage.setItem(KEY+'_'+id,v);
@@ -505,12 +507,12 @@ function g(btn,id,v){
   }
 }
 
-// ミス分類
+// ミス分類（.gq の data-gid 単位）
 function m(btn){
   var w=btn.parentNode;
   w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
   btn.classList.add('sel');
-  localStorage.setItem(KEY+'_'+btn.closest('.q').dataset.id+'_m',btn.textContent);
+  localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);
 }
 
 // 完了
@@ -520,10 +522,10 @@ function finish(){
   document.getElementById('doneBtn').textContent='✓ 完了ずみ';
 }
 
-// 復元
+// 復元（.gq＝採点ユニット単位）
 window.onload=function(){
-  document.querySelectorAll('.q').forEach(function(box){
-    var id=box.dataset.id;
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
     if(!id)return;
     var v=localStorage.getItem(KEY+'_'+id);
     if(v){

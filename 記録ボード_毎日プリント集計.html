@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>毎日プリント 集計ボード（○✕は自動で集まる）</title>
+<style>
+  :root{--bg:#f7f8f5;--ink:#263238;--sub:#4c5b70;--card:#fff;--line:#e2e7df;
+    --hd:#e8edf7;--hdbd:#c8d4e6;--hdink:#25324a;--ok:#56875b;--okso:#e7f1e8;--ng:#c0504a;--ngso:#fbe9e7;--acc:#3f6f9f;--mut:#9aa3ad;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding:18px 14px 70px;font-size:16px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  .pg-hd{background:var(--hd);border:1px solid var(--hdbd);border-radius:12px;padding:20px;margin-bottom:14px;}
+  .pg-hd h1{font-size:21px;font-weight:900;color:var(--hdink);}
+  .pg-hd p{font-size:13.5px;color:var(--sub);margin-top:6px;}
+  .warn{background:#fff7e8;border:1px solid #e6c98d;color:#7a5512;border-radius:10px;padding:11px 14px;margin-bottom:14px;font-size:13px;font-weight:700;display:none;}
+  .total{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 2px 8px rgba(67,83,72,.06);text-align:center;}
+  .total .big{font-size:30px;font-weight:900;color:var(--acc);}
+  .total .sub{font-size:14px;color:var(--sub);}
+  .bar{height:16px;background:#eef2ec;border:1px solid #e0e6dd;border-radius:10px;overflow:hidden;margin-top:10px;}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,#9abf9d,#7fae8a);width:0;transition:width .4s;}
+  .btnrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px;}
+  button.act{font-size:13px;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--sub);border-radius:18px;padding:9px 16px;cursor:pointer;}
+  button.up{background:var(--acc);color:#fff;border-color:var(--acc);}
+  .day{background:var(--card);border:1px solid var(--line);border-left:7px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:9px;}
+  .day.done{border-left-color:var(--ok);}
+  .day.none{opacity:.6;border-left-color:var(--mut);}
+  .day .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .day .nm{font-size:15px;font-weight:800;}
+  .day .sc{font-size:14px;font-weight:900;}
+  .day .sc .o{color:var(--ok);} .day .sc .x{color:var(--ng);}
+  .day .xs{margin-top:6px;font-size:13px;color:var(--ng);}
+  .day .xs b{color:var(--ng);}
+  .day .nodata{font-size:12.5px;color:var(--mut);}
+  h2.sec{font-size:15px;font-weight:900;color:var(--hdink);margin:18px 2px 10px;}
+  textarea{width:100%;height:110px;font-size:12px;font-family:monospace;border:1px solid var(--line);border-radius:8px;padding:8px;margin-top:8px;}
+  .note{font-size:12.5px;color:var(--sub);line-height:1.85;margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="pg-hd">
+    <h1>📊 毎日プリント 集計ボード</h1>
+    <p>各プリントで付けた○✕を<b>自動で読み取って合計</b>します。ここで付け直す必要はありません。プリントを解いて○✕を付け、ここを開く（または「集計を更新」）だけ。</p>
+  </header>
+
+  <div class="warn" id="warn"></div>
+
+  <div class="total" id="total"></div>
+
+  <div id="days"></div>
+
+  <h2 class="sec">📌 ✕の一覧（誤答キューへ写す）</h2>
+  <div id="weak" class="note"></div>
+
+  <h2 class="sec">親へ回収（USB保存→PCでダブルクリックで開く）</h2>
+  <div class="btnrow" style="justify-content:flex-start">
+    <button class="act up" onclick="exportStandalone()">📁 結果ファイル(HTML)を書き出す → USBへ保存</button>
+  </div>
+  <div class="note" style="margin-top:8px">押すと「結果_日付.html」がダウンロードされます。iPadでは保存先に<b>挿したUSB</b>を選べます（または「ファイル」アプリでUSBへ移動）。PCではそのファイルを<b>ダブルクリックするだけ</b>で集計が開きます（カメラ・ネット不要）。</div>
+
+  <h2 class="sec">持ち運び（上級・端末またぎ生データ）</h2>
+  <div class="btnrow" style="justify-content:flex-start">
+    <button class="act" onclick="doExport()">📤 書き出す</button>
+    <button class="act" onclick="doImport()">📥 読み込む</button>
+    <button class="act" onclick="copyOut()">コピー</button>
+  </div>
+  <textarea id="io" placeholder="「書き出す」で今の○✕データが出ます。別の端末ではここに貼り付けて「読み込む」。"></textarea>
+
+  <div class="note" id="howto"></div>
+</div>
+
+<script>
+// 毎日プリントと、その中で使われている localStorage の KEY（プリント本体が保存しているキー）。
+var DAYS=[
+ {key:'fukushu01',name:'復習01 小学校算数スタート'},
+ {key:'fukushu02',name:'復習02 分数の計算'},
+ {key:'fukushu03',name:'復習03 割合と百分率'},
+ {key:'fukushu04',name:'復習04 概数と数直線'},
+ {key:'fukushu05',name:'復習05 倍数約数と単位換算'},
+ {key:'fukushu06',name:'復習06 速さと比＋小学校総まとめ'},
+ {key:'weekend01',name:'週末復習01 第1週まとめ'},
+ {key:'fukushu07',name:'復習07 図形(面積・複合図形)'},
+ {key:'fukushu08',name:'復習08 場合の数と規則性'},
+ {key:'fukushu09',name:'復習09 速さと割合の応用'},
+ {key:'mix01',name:'通常01 四則混合＋疑問詞what'},
+ {key:'mix02',name:'通常02 正負の数の利用＋複数形'},
+ {key:'mix03',name:'通常03 英作文と数学ミニ'},
+ {key:'mix04',name:'通常04 正負まとめ＋速さグラフ復習'},
+ {key:'mix05',name:'通常05 文字式の表し方＋三単現'},
+ {key:'mix06',name:'通常06 文字式で数量を表す'},
+ {key:'mix07',name:'通常07 代入と式の値'},
+ {key:'mix08',name:'通常08 一次式の加法減法'},
+ {key:'mix09',name:'通常09 一次式の計算と分配'},
+ {key:'mix10',name:'通常10 文字式の利用(文章を式に)'},
+ {key:'mix11',name:'通常11 夏前総合 正負と文字式'}
+];
+
+// 1日分の○✕を localStorage から数える（プリント本体が保存した KEY_<gid> を読む）
+function tally(key){
+  var o=0,x=0,xs=[];var pre=key+'_';
+  for(var i=0;i<localStorage.length;i++){
+    var k=localStorage.key(i);
+    if(!k||k.indexOf(pre)!==0)continue;
+    var suf=k.slice(pre.length);
+    if(suf==='done'||/_m$/.test(suf))continue; // 完了フラグ・ミス型メモは除外
+    var v=localStorage.getItem(k);
+    if(v==='o')o++;
+    else if(v==='x'){x++;var m=localStorage.getItem(k+'_m')||'';xs.push({gid:suf,m:m});}
+  }
+  return {o:o,x:x,xs:xs};
+}
+
+function render(){
+  var to=0,tx=0;var weakRows=[];
+  var html='';
+  DAYS.forEach(function(d){
+    var t=tally(d.key);var done=t.o+t.x;to+=t.o;tx+=t.x;
+    var cls=done?(t.x?'done':'done'):'none';
+    if(!done){
+      html+='<div class="day none"><div class="top"><span class="nm">'+d.name+'</span><span class="nodata">まだ記録なし</span></div></div>';
+    }else{
+      var rate=Math.round(t.o/done*100);
+      var xtxt=t.xs.length?('✕：'+t.xs.map(function(z){return z.gid+(z.m?'('+z.m+')':'');}).join('、')):'全問○！';
+      html+='<div class="day done"><div class="top"><span class="nm">'+d.name+'</span>'+
+            '<span class="sc"><span class="o">'+t.o+'○</span> / <span class="x">'+t.x+'✕</span>　'+rate+'%</span></div>'+
+            '<div class="xs">'+xtxt+'</div></div>';
+      if(t.xs.length){weakRows.push('<b>'+d.name+'</b>：'+t.xs.map(function(z){return z.gid+(z.m?'('+z.m+')':'');}).join('、'));}
+    }
+  });
+  document.getElementById('days').innerHTML=html;
+  var tdone=to+tx;var trate=tdone?Math.round(to/tdone*100):0;
+  document.getElementById('total').innerHTML=
+    '<div class="big">'+to+' ○ <span style="font-size:18px;color:#c0504a">/ '+tx+' ✕</span></div>'+
+    '<div class="sub">採点ぜんぶで '+tdone+' 問　正答率 '+trate+'%</div>'+
+    '<div class="bar"><i style="width:'+trate+'%"></i></div>'+
+    '<div class="btnrow"><button class="act up" onclick="render()">🔄 集計を更新</button></div>';
+  document.getElementById('weak').innerHTML=weakRows.length?weakRows.join('<br>'):'まだ✕はありません（または記録なし）。';
+}
+
+function doExport(){var o={};for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k)o[k]=localStorage.getItem(k);}document.getElementById('io').value=JSON.stringify(o);}
+function doImport(){try{var o=JSON.parse(document.getElementById('io').value);Object.keys(o).forEach(function(k){localStorage.setItem(k,o[k]);});alert('読み込みました');render();}catch(e){alert('テキストが正しくありません。');}}
+function copyOut(){var t=document.getElementById('io');if(!t.value)doExport();t.select();try{document.execCommand('copy');alert('コピーしました');}catch(e){alert('長押しでコピーしてください');}}
+
+// HTMLエスケープ
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function pad(n){return (n<10?'0':'')+n;}
+
+// 結果を「自己完結HTML（PCでダブルクリックで開ける静的ページ）」として書き出す＝親への回収用
+function exportStandalone(){
+  var to=0,tx=0,dh='',wh='',any=false;
+  DAYS.forEach(function(d){
+    var t=tally(d.key);var dn=t.o+t.x;if(!dn)return;any=true;to+=t.o;tx+=t.x;
+    var r=Math.round(t.o/dn*100);
+    var xt=t.xs.length?('✕：'+t.xs.map(function(z){return esc(z.gid)+(z.m?'（'+esc(z.m)+'）':'');}).join('、')):'全問○';
+    dh+='<div class="day"><div class="nm">'+esc(d.name)+'</div><div class="sc"><span class="o">'+t.o+'○</span> / <span class="x">'+t.x+'✕</span>　'+r+'%</div><div class="xs">'+xt+'</div></div>';
+    if(t.xs.length)wh+='<div><b>'+esc(d.name)+'</b>：'+t.xs.map(function(z){return esc(z.gid)+(z.m?'（'+esc(z.m)+'）':'');}).join('、')+'</div>';
+  });
+  if(!any){alert('まだ○✕の記録がありません。各プリントで○✕を付けてから書き出してください。');return;}
+  var tdn=to+tx;var tr=tdn?Math.round(to/tdn*100):0;
+  var now=new Date();
+  var ts=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate())+'_'+pad(now.getHours())+pad(now.getMinutes());
+  var css='body{font-family:"Hiragino Kaku Gothic ProN","Meiryo",sans-serif;background:#f7f8f5;color:#263238;line-height:1.7;padding:18px 14px 50px}'
+    +'.wrap{max-width:760px;margin:0 auto}h1{font-size:20px;color:#25324a}'
+    +'.total{background:#fff;border:1px solid #e2e7df;border-radius:12px;padding:16px;margin:12px 0;text-align:center}'
+    +'.total .big{font-size:30px;font-weight:900;color:#3f6f9f}.total .sub{font-size:14px;color:#4c5b70}'
+    +'.day{background:#fff;border:1px solid #e2e7df;border-left:7px solid #56875b;border-radius:10px;padding:11px 14px;margin-bottom:8px}'
+    +'.day .nm{font-weight:800}.day .sc{font-weight:900;font-size:14px}.day .o{color:#56875b}.day .x{color:#c0504a}'
+    +'.day .xs{color:#c0504a;font-size:13px;margin-top:4px}'
+    +'.weak{background:#fffdf3;border:1px solid #e6cf8f;border-radius:10px;padding:12px 14px;margin-top:14px;font-size:13px;color:#5a4520;line-height:1.9}';
+  var doc='<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">'
+    +'<meta name="viewport" content="width=device-width,initial-scale=1">'
+    +'<title>毎日プリント 結果 '+ts+'</title><style>'+css+'</style></head><body><div class="wrap">'
+    +'<h1>📊 毎日プリント 結果（書き出し '+ts+'）</h1>'
+    +'<div class="total"><div class="big">'+to+' ○ / '+tx+' ✕</div><div class="sub">採点ぜんぶで '+tdn+' 問・正答率 '+tr+'%</div></div>'
+    +dh
+    +'<div class="weak">📌 ✕の一覧（誤答キューへ写す）<br>'+(wh||'✕はありません')+'</div>'
+    +'</div></body></html>';
+  var blob=new Blob([doc],{type:'text/html'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='結果_'+ts+'.html';
+  document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(a.href);},800);
+}
+
+// 同一サイト判定の案内
+(function(){
+  var w=document.getElementById('warn');
+  var f=(location.protocol==='file:');
+  document.getElementById('howto').innerHTML=
+    '<b>使い方</b><br>① 各プリントを解いて、その中で ○✕ を付ける（ここで付け直さない）<br>'+
+    '② このページを開く／「🔄集計を更新」を押す → 自動で合計が出る<br>'+
+    '③ ✕一覧を <code>01_記録/誤答キュー.md</code> に写す（忘却曲線）<br>'+
+    '④ 別の端末や親へ渡すとき＝「書き出す→コピー」→ 相手側で貼り付け「読み込む」<br><br>'+
+    '<b>大事</b>：この自動集計は「プリントと同じサイトで開いたとき」だけ働きます。'+
+    '<b>公開版（オンライン／ホーム画面に追加したアプリ）で使ってください。</b>'+
+    'USBのファイルを直接開く方式（file://）だと、iPadでは○✕が保存・共有されず自動集計できません。';
+  try{localStorage.setItem('rb_t','1');localStorage.removeItem('rb_t');}catch(e){}
+  if(f){w.style.display='block';w.innerHTML='⚠ いまファイルを直接開いています（file://）。この方式だと各プリントの○✕が共有されず自動集計できません。<b>公開版（オンライン）で開いてください。</b>';}
+})();
+render();
+</script>
+</body>
+</html>
