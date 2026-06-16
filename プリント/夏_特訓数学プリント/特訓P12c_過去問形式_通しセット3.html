@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P12c 特訓選抜 過去問形式 通しセット③｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ 落とし穴";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ 作戦・つながり";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:12px 16px;margin:14px 0}
+.cardbox::before{content:"⏱ 通しの作戦（本番のつもりで）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:6px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13px;line-height:1.9;color:#33433a}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.qtable{border-collapse:collapse;margin:8px 0;font-size:13px}
+.qtable th,.qtable td{border:1px solid #c9cfc6;padding:4px 10px;text-align:center}
+.qtable th{background:#eef1ec;font-weight:800;color:#46524a}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:16px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.pi{font-family:'Times New Roman','Times',serif;font-weight:700;font-style:italic;font-size:1.08em}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:0.9em}
+.frac .n{border-bottom:1.6px solid currentColor;padding:0 4px 1px}
+.frac .d{padding:1px 4px 0}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:38px;height:38px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:17px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P12c</span><span class="pg-badge">数学：総合（実戦③）</span><span class="pg-badge">過去問形式 通し L2-L4</span></div>
+  <h1>特訓選抜 過去問形式 通しセット③｜本番リズムの仕上げ（100点）</h1>
+  <p>夏・特訓対策　目安：約40分（問1〜問12・通し番号／100点）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">3回目の通し。ここまで来たら、時間配分と「前半を確実に・難問は(1)拾い」が体に入っているはず。最後まで気をぬかず、検算まで。終わったら○✕で自己採点して、残った×だけを誤答キューで仕上げよう。</p>
+</div>
+
+<div class="cardbox"><ol>
+  <li>時間を計る（約40分）。前半（大問1・2）は確実に。</li>
+  <li>難問は(1)を拾う（部分点で80点）。</li>
+  <li>答案の作法（途中式・単位・空欄ゼロ・検算）。</li>
+</ol></div>
+
+<!-- 大問1 計算 -->
+<div class="unit-banner"><span class="unit-num">大問1</span><span class="unit-name">計算 L2-L3</span><span class="unit-time">各5点・計25点</span></div>
+<div class="q calc" data-id="1">
+  <div class="qbody">次の計算をしなさい。<br>
+    <span class="lead">問1</span><span class="math">−7＋3×(−4)</span>　<span class="lead">問2</span><span class="math">−2³</span>　<span class="lead">問3</span><span class="math">4(2x−3)</span>　<span class="lead">問4</span><span class="math">7x−4＝4x＋11</span> を解く　<span class="lead">問5</span><span class="math"><span class="frac"><span class="n">x</span><span class="d">2</span></span>−<span class="frac"><span class="n">x</span><span class="d">3</span></span>＝1</span> を解く</div>
+  <div class="note-draw">途中式を書き、最後に検算しよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問1</span>×が先：3×(−4)＝−12。−7−12＝<span class="math">−19</span>。</div>
+    <div class="step"><span>問2</span><span class="math">−2³＝−(2×2×2)＝−8</span>（−は3乗の外）。</div>
+    <div class="step"><span>問3</span><span class="math">8x−12</span>。</div>
+    <div class="step"><span>問4</span>7x−4x＝11＋4 → 3x＝15 → <span class="math">x＝5</span>。検算 35−4＝31＝20＋11○。</div>
+    <div class="step"><span>問5</span>両辺×6：3x−2x＝6 → <span class="math">x＝6</span>。検算 3−2＝1○。</div>
+    <div class="bx bx-warn">問2 <span class="red">−2³ を ＋8 としない</span>（(−2)³なら−8、−2³も−8だが理由が別：−は外）。問1 ×が先。</div>
+    <div class="ans-final"><span>こたえ</span>問1 −19／問2 −8／問3 8x−12／問4 x＝5／問5 x＝6</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span><button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号/計算順</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span><button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号/3乗</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span><button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">分配</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span><button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">移項の符号</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span><button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">分母払い</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+</div>
+
+<!-- 大問2 小問 -->
+<div class="unit-banner"><span class="unit-num">大問2</span><span class="unit-name">小問集合（仮平均・折り返し角・複合図形）L3-L4</span><span class="unit-time">各7点・計21点</span></div>
+<div class="q calc" data-id="2">
+  <div class="qbody">
+    <span class="lead">問6</span>下の表は5人の点数を80点を基準に表したもの。平均点を求めなさい。
+    <table class="qtable"><tr><th>人</th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th></tr><tr><th>基準との差</th><td>＋4</td><td>−2</td><td>＋6</td><td>−3</td><td>0</td></tr></table>
+    <span class="lead">問7</span>長方形の紙テープを1回折り返したとき、折り目と辺がつくる角が70°でした。重なってできる角 x を求めなさい。<br>
+    <span class="lead">問8</span>半径10cmの半円から、直径を底辺・高さ10cmとする三角形を取りのぞいた部分の面積を求めなさい（円周率は<span class="pi">π</span>）。</div>
+  <div class="note-draw">問6は「基準＋差の平均」、問7は「折ると等しい＋錯角」、問8は「半円−三角形」。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問6</span>差の合計＝4−2＋6−3＋0＝＋5。÷5＝＋1。平均＝80＋1＝<span class="math">81点</span>。</div>
+    <div class="step"><span>問7</span>x＝180−70−70＝<span class="math">40°</span>。</div>
+    <div class="step"><span>問8</span>半円＝(10×10×<span class="pi">π</span>)÷2＝50<span class="pi">π</span>。三角形＝20×10÷2＝100（底辺＝直径20）。差＝<span class="math">50<span class="pi">π</span>−100 cm²</span>。</div>
+    <div class="bx bx-warn">問8 <span class="red">三角形の底辺は直径(＝20cm)</span>。<span class="pi">π</span>と数は混ぜない。</div>
+    <div class="ans-final"><span>こたえ</span>問6 81点／問7 40°／問8 50<span class="pi">π</span>−100 cm²</div>
+  </div>
+  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span><button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">仮平均</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7</span><button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">折り返し角</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8★L4</span><button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">複合図形</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+</div>
+
+<!-- 大問3 利用 -->
+<div class="unit-banner"><span class="unit-num">大問3</span><span class="unit-name">方程式の利用（速さ・追いつき）L3</span><span class="unit-time">12点</span></div>
+<div class="q calc" data-id="3">
+  <div class="qbody"><span class="lead">問9</span>妹が分速60mで家を出発し、その15分後に姉が分速90mで追いかけました。姉が出発してから何分後に妹に追いつきますか。</div>
+  <div class="note-draw">追いつき＝2人の道のりが等しい。妹は姉より15分多く歩く。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>立式</span>姉が x 分後に追いつく（妹は x＋15分歩く）。<span class="math">90x＝60(x＋15)</span>。</div>
+    <div class="step"><span>解</span>90x＝60x＋900 → 30x＝900 → x＝30。検算 姉90×30＝2700、妹60×45＝2700○。</div>
+    <div class="ans-final"><span>こたえ</span>30分後</div>
+  </div>
+  <div class="gq" data-gid="q09"><div class="grade"><span class="gq-label">問9</span><button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">時間の取り方(x+15)</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら線分図と式を誤答キューへ</div></div>
+</div>
+
+<!-- 大問4 規則性 -->
+<div class="unit-banner"><span class="unit-num">大問4</span><span class="unit-name">規則性（数列の n 式）L3-L4</span><span class="unit-time">(1)6点(2)6点</span></div>
+<div class="q calc" data-id="4">
+  <div class="qbody"><span class="lead">問10</span>数の並び <span class="math">5, 9, 13, 17, …</span> について、(1) n番目の数を n の式で表しなさい。(2) 20番目の数を求めなさい。</div>
+  <div class="note-draw">差を見て「差×n＋（1番目−差）」。最後にn=1で確かめる。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>(1)</span>差4。4n＋(5−4)＝<span class="math">4n＋1</span>。確かめ n＝1→5○。</div>
+    <div class="step"><span>(2)</span>n＝20：4×20＋1＝<span class="math">81</span>。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 4n＋1／(2) 81</div>
+  </div>
+  <div class="gq" data-gid="q10"><div class="grade"><span class="gq-label">問10</span><button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">調整忘れ</button><button onclick="m(this)">代入ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら差とn式を誤答キューへ</div></div>
+</div>
+
+<!-- 大問5 グラフ・比 -->
+<div class="unit-banner"><span class="unit-num">大問5</span><span class="unit-name">速さ・比（総合）L3</span><span class="unit-time">各7点・計14点</span></div>
+<div class="q calc" data-id="5">
+  <div class="qbody">
+    <span class="lead">問11</span>ある人が一定の速さで歩き、10分で1000m進みました。(1) この人の速さは分速何mですか。(2) 700m進むのは何分後ですか。<br>
+    <span class="lead">問12</span>2100円を兄と弟で 3：4 に分けます。兄はいくらになりますか。</div>
+  <div class="note-draw">問11は速さ＝道のり÷時間。問12は「1つぶん a」を使う。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問11</span>(1) 1000÷10＝<span class="math">分速100m</span>。(2) 700÷100＝<span class="math">7分後</span>。</div>
+    <div class="step"><span>問12</span>3：4 → 兄3a・弟4a。合計7a＝2100 → a＝300。兄＝3a＝<span class="math">900円</span>。検算 弟1200、合計2100○。</div>
+    <div class="bx bx-warn">問12 <span class="red">2100÷3＝700 などとしない</span>（全体は3＋4＝7つぶん）。最後に「兄」を答える。</div>
+    <div class="ans-final"><span>こたえ</span>問11 (1)分速100m (2)7分後／問12 900円</div>
+  </div>
+  <div class="gq" data-gid="q11"><div class="grade"><span class="gq-label">問11</span><button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">公式</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q12"><div class="grade"><span class="gq-label">問12</span><button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">比のつぶん</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P12c 通し③ 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">通し3回完走、本当によくがんばった！🌸 これで本番のリズム（前半確実・難問(1)拾い・検算）が体に入った。3回の○✕を見くらべて、まだ×が残る型だけを誤答キューで仕上げれば、特訓選抜が見えてくる。夏の数学18枚、走りきろう。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m12c';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！通し③ クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

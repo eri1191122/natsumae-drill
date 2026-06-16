@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P3 方程式の解法 演習（移項・小数・分数係数）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai .ot{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai p{font-size:13.5px;line-height:1.95;color:#5a4520;margin:4px 0}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.9;color:#5a4520}
+.osarai .ex{background:#fff;border:1px dashed #e0c98a;border-radius:6px;padding:8px 11px;margin:6px 0;font-size:13.5px;color:#5a4520}
+.osarai .ex::before{content:"✏️ いっしょに1回";display:block;font-size:11px;font-weight:800;color:#8a5a19;margin-bottom:3px}
+.osarai .miss{background:#fdeee6;border-left:4px solid #d8a07a;border-radius:6px;padding:7px 11px;margin:6px 0;font-size:13px;color:#8a4a2a}
+.osarai .miss::before{content:"⚠️ ありがちな勘ちがい";display:block;font-size:11px;font-weight:800;color:#a85a2a;margin-bottom:2px}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:18px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.step.q5{border-left-color:#d49a95;background:#fcf3f2}
+.step.q5 > span:first-child{background:#f6e2e0;border-color:#e8c5c1;color:#9b514d}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:0.9em}
+.frac .n{border-bottom:1.6px solid currentColor;padding:0 4px 1px}
+.frac .d{padding:1px 4px 0}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P3</span><span class="pg-badge">数学：方程式</span><span class="pg-badge">解法 演習 L2-L3（速く正確に）</span></div>
+  <h1>方程式の解法 演習｜移項・かっこ・小数係数・分数係数を「速く正確に」</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問15・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">方程式は塾でも習うけど、勝負は<strong>計算精度</strong>。特訓選抜の大問1(3)(4)は「解けるか」ではなく「ミスらず解けるか」。きょうは①移項の符号②小数は×10③分数は×分母、を反射でできるまで。<strong>解いたら必ず検算（xを式に戻す）</strong>まで。解説は小問ごとに色分け。</p>
+</div>
+
+<!-- ===== 大問A 移項の基礎（問1〜問3） ===== -->
+<div class="unit-banner"><span class="unit-num">問1〜3</span><span class="unit-name">移項と「両辺を係数でわる」L2 基礎</span><span class="unit-time">目安 4分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qnum">次の方程式を解こう。</div>
+  <div class="qbody"><span style="color:#2f5a8a">問1</span> <span class="math">x＋7＝12</span>　<span style="color:#8a5a17">問2</span> <span class="math">3x＝−18</span>　<span style="color:#2f6a5c">問3</span> <span class="math">5x−4＝11</span></div>
+  <div class="note-draw">移項した式と答えをノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">
+      <div class="ot">⓪ 方程式を解く＝「x＝□」の形にする</div>
+      <ul>
+        <li><b>移項</b>：項を反対側へ動かすと符号が変わる（＋7 → 移すと −7）。</li>
+        <li><b>両辺を係数でわる</b>：3x＝−18 なら両辺を3でわって x＝−6。</li>
+        <li><b>検算</b>：出た x をもとの式に戻して、左辺＝右辺か確かめる。</li>
+      </ul>
+      <div class="miss">移項で符号を変え忘れる／係数3を「ひく」（正しくは「わる」）が二大ミス。</div>
+    </div>
+    <div class="step q1"><span>問1</span>7を移項：<span class="math">x＝12−7＝5</span>。検算 5＋7＝12○。</div>
+    <div class="step q2"><span>問2</span>両辺÷3：<span class="math">x＝−18÷3＝−6</span>。検算 3×(−6)＝−18○。</div>
+    <div class="step q3"><span>問3</span>−4を移項：5x＝11＋4＝15。÷5して <span class="math">x＝3</span>。検算 15−4＝11○。</div>
+    <div class="ans-final"><span>こたえ</span>問1 x＝5／問2 x＝−6／問3 x＝3</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ===== 大問B 文字が両辺（問4〜問6） ===== -->
+<div class="unit-banner"><span class="unit-num">問4〜6</span><span class="unit-name">文字が両辺にある方程式 L2→L3 標準</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qnum">次の方程式を解こう。</div>
+  <div class="qbody"><span style="color:#2f5a8a">問4</span> <span class="math">4x＋3＝x＋12</span>　<span style="color:#8a5a17">問5</span> <span class="math">5x−2＝2x＋7</span>　<span style="color:#2f6a5c">問6</span> <span class="math">7−x＝3x−5</span></div>
+  <div class="note-draw">「文字は左・数は右」に集めた式をノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">手順：<strong>文字の項を左へ・数の項を右へ移項</strong>→まとめる→係数でわる→検算。移項したら必ず符号が変わる。</div>
+    <div class="step q1"><span>問4</span>x を左・3を右：4x−x＝12−3 → 3x＝9 → <span class="math">x＝3</span>。検算 12＋3＝x+12＝15○。</div>
+    <div class="step q2"><span>問5</span>5x−2x＝7＋2 → 3x＝9 → <span class="math">x＝3</span>。検算 13＝13○。</div>
+    <div class="step q3"><span>問6・★符号</span>−x−3x＝−5−7 → −4x＝−12 → <span class="math">x＝3</span>（−÷−＝＋）。検算 4＝4○。</div>
+    <div class="bx bx-warn">問6 <span class="red">−4x＝−12 を x＝−3 としない</span>（−12÷−4＝＋3）。移項のたびに符号を確認。</div>
+    <div class="ans-final"><span>こたえ</span>問4 x＝3／問5 x＝3／問6 x＝3</div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span>○✕ → <button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span>○✕ → <button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ===== 大問C かっこを含む（問7〜問9） ===== -->
+<div class="unit-banner"><span class="unit-num">問7〜9</span><span class="unit-name">かっこを含む方程式（分配で外す）L3 標準</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qnum">次の方程式を解こう。</div>
+  <div class="qbody"><span style="color:#2f5a8a">問7</span> <span class="math">2(x−3)＝8</span>　<span style="color:#8a5a17">問8</span> <span class="math">3(x＋1)＝x−5</span>　<span style="color:#2f6a5c">問9</span> <span class="math">5x−2(x−4)＝20</span></div>
+  <div class="note-draw">かっこを外した式をノートに書いてから解こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q1"><span>問7</span>分配：2x−6＝8 → 2x＝14 → <span class="math">x＝7</span>。検算 2×4＝8○。</div>
+    <div class="step q2"><span>問8</span>3x＋3＝x−5 → 3x−x＝−5−3 → 2x＝−8 → <span class="math">x＝−4</span>。検算 3×(−3)＝−9＝x−5○。</div>
+    <div class="step q3"><span>問9・★符号</span>−2(x−4)＝−2x＋8。5x−2x＋8＝20 → 3x＝12 → <span class="math">x＝4</span>。検算 20−2×0＝20○。</div>
+    <div class="bx bx-warn">問9 <span class="red">−2(x−4) を −2x−8 としない</span>（＝−2x＋8）。マイナスの分配は両方の符号が変わる。</div>
+    <div class="ans-final"><span>こたえ</span>問7 x＝7／問8 x＝−4／問9 x＝4</div>
+  </div>
+  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7</span>○✕ → <button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8</span>○✕ → <button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q09"><div class="grade"><span class="gq-label">問9</span>○✕ → <button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ===== 大問D 小数係数（問10〜問11） ===== -->
+<div class="unit-banner"><span class="unit-num">問10〜11</span><span class="unit-name">小数の係数（両辺を10倍・100倍）L3 応用</span><span class="unit-time">目安 4分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qnum">次の方程式を解こう。</div>
+  <div class="qbody"><span style="color:#2f5a8a">問10</span> <span class="math">0.2x＋0.5＝1.1</span>　<span style="color:#8a5a17">問11</span> <span class="math">0.5x−1＝0.2x＋0.8</span></div>
+  <div class="note-draw">両辺を10倍した式をノートに書いてから解こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">小数はまず<strong>両辺を10倍（10分の1の位があれば10倍、100分の1なら100倍）して整数に</strong>。このとき<strong>全部の項に同じ数をかける</strong>（かけ忘れ注意）。</div>
+    <div class="step q1"><span>問10</span>両辺×10：2x＋5＝11 → 2x＝6 → <span class="math">x＝3</span>。検算 0.6＋0.5＝1.1○。</div>
+    <div class="step q2"><span>問11</span>両辺×10：5x−10＝2x＋8 → 3x＝18 → <span class="math">x＝6</span>。検算 3−1＝2＝0.2×6＋0.8○。</div>
+    <div class="bx bx-warn">問11 <span class="red">×10で「−1」を−1のままにしない</span>（−1×10＝−10）。<strong>右辺の項にも全部×10</strong>。</div>
+    <div class="ans-final"><span>こたえ</span>問10 x＝3／問11 x＝6</div>
+  </div>
+  <div class="gq" data-gid="q10"><div class="grade"><span class="gq-label">問10</span>○✕ → <button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q11"><div class="grade"><span class="gq-label">問11</span>○✕ → <button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ===== 大問E 分数係数（問12〜問13） ===== -->
+<div class="unit-banner"><span class="unit-num">問12〜13</span><span class="unit-name">分数の係数（両辺に分母の最小公倍数）L3 応用</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="E">
+  <div class="qnum">次の方程式を解こう。</div>
+  <div class="qbody"><span style="color:#2f5a8a">問12</span> <span class="math"><span class="frac"><span class="n">x</span><span class="d">2</span></span>＋1＝<span class="frac"><span class="n">x</span><span class="d">3</span></span>＋2</span>　<span style="color:#8a5a17">問13</span> <span class="math"><span class="frac"><span class="n">x−1</span><span class="d">3</span></span>＝<span class="frac"><span class="n">x＋1</span><span class="d">4</span></span></span></div>
+  <div class="note-draw">両辺に分母の最小公倍数をかけた式をノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">分数は<strong>両辺に分母の最小公倍数をかけて分母を払う</strong>。<strong>分子が2つ以上の項のときは、はらった後を必ず( )でくくる</strong>（ここが最大のミス源）。</div>
+    <div class="step q1"><span>問12</span>分母2,3の最小公倍数6を両辺に：3x＋6＝2x＋12 → x＝6。検算 3＋1＝4＝<span class="frac"><span class="n">6</span><span class="d">3</span></span>＋2○。<span class="math">x＝6</span>。</div>
+    <div class="step q2"><span>問13・★かっこ</span>分母3,4の最小公倍数12：4(x−1)＝3(x＋1) → 4x−4＝3x＋3 → x＝7。検算 <span class="frac"><span class="n">6</span><span class="d">3</span></span>＝2＝<span class="frac"><span class="n">8</span><span class="d">4</span></span>○。<span class="math">x＝7</span>。</div>
+    <div class="bx bx-warn">問13 <span class="red">4×(x−1) を 4x−1 としない</span>（4x−4）。分子のかたまりは必ずかっこ。</div>
+    <div class="ans-final"><span>こたえ</span>問12 x＝6／問13 x＝7</div>
+  </div>
+  <div class="gq" data-gid="q12"><div class="grade"><span class="gq-label">問12</span>○✕ → <button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q13"><div class="grade"><span class="gq-label">問13</span>○✕ → <button class="o" onclick="g(this,'q13','o')">○</button><button class="x" onclick="g(this,'q13','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ===== 大問F 特訓型（問14〜問15） ===== -->
+<div class="unit-banner"><span class="unit-num">問14〜15</span><span class="unit-name">特訓型（かっこ＋係数）L3 応用</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="F">
+  <div class="qnum">次の方程式を解こう（特訓選抜 大問1(3)(4)レベル）。</div>
+  <div class="qbody"><span style="color:#2f5a8a">問14</span> <span class="math">2(3x−1)＝4(x＋2)</span>　<span style="color:#8a5a17">問15</span> <span class="math"><span class="frac"><span class="n">2x−1</span><span class="d">3</span></span>−<span class="frac"><span class="n">x＋1</span><span class="d">2</span></span>＝1</span></div>
+  <div class="note-draw">途中式をていねいにノートに書いて、最後に検算しよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q1"><span>問14</span>両辺を分配：6x−2＝4x＋8 → 6x−4x＝8＋2 → 2x＝10 → <span class="math">x＝5</span>。検算 2×14＝28＝4×7○。</div>
+    <div class="step q2"><span>問15・★最重要</span>分母3,2の最小公倍数6を両辺に。<span class="math">2(2x−1)−3(x＋1)＝6</span>（−のあとも必ずかっこ）。4x−2−3x−3＝6 → x−5＝6 → <span class="math">x＝11</span>。検算 <span class="frac"><span class="n">21</span><span class="d">3</span></span>−<span class="frac"><span class="n">12</span><span class="d">2</span></span>＝7−6＝1○。</div>
+    <div class="bx bx-warn">問15 <span class="red">−<span class="frac"><span class="n">x＋1</span><span class="d">2</span></span>×6 を −3x＋3 としない</span>（＝−3(x＋1)＝−3x−3）。マイナスの分数を払うと中の全項の符号が変わる。<strong>右辺の1にも×6＝6</strong>。</div>
+    <div class="ans-final"><span>こたえ</span>問14 x＝5／問15 x＝11</div>
+  </div>
+  <div class="gq" data-gid="q14"><div class="grade"><span class="gq-label">問14</span>○✕ → <button class="o" onclick="g(this,'q14','o')">○</button><button class="x" onclick="g(this,'q14','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q15"><div class="grade"><span class="gq-label">問15★山</span>○✕ → <button class="o" onclick="g(this,'q15','o')">○</button><button class="x" onclick="g(this,'q15','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div><div class="write3">📝 まちがえたら、解く手順と答えをノートに3回書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P3 方程式の解法 演習 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">方程式の解法おつかれさま！①移項したら符号が変わる②小数は両辺×10③分数は両辺×最小公倍数（分子はかっこ）④−の分配・−の分数払いは全項の符号が変わる⑤<strong>必ず検算</strong>。これが特訓大問1(3)(4)を「ミスらず取る」力。まちがえた問題はノートに3回書いて誤答キューに写そう。次は「文章→式」（立式）の特訓だ🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m03';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！方程式の解法 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

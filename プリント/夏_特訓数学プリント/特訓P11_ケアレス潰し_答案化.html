@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P11 ケアレス潰し・答案化ドリル｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"✅ 答案の作法チェック（毎回これを守る＝安い15点）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ul{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a;list-style:none}
+.cardbox ul li::before{content:"☐ ";font-weight:900;color:#2f6a44}
+.cardbox ul b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ ねらわれる落とし穴";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.miss-card{background:#fdf3ef;border:1px solid #eccdc4;border-radius:8px;padding:8px 12px;margin:6px 0;font-size:14px;color:#7a3f2a}
+.miss-card::before{content:"❌ ある人の答え（どこが間違い？）";display:block;font-size:11px;font-weight:800;color:#a85a2a;margin-bottom:3px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:16px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:38px;height:38px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:17px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.quizrow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;border-bottom:1px dashed #e8e6dd;padding:8px 0}
+.quizrow .qq{font-size:16px;font-weight:700;color:#31415f;min-width:170px}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P11</span><span class="pg-badge">数学：精度・答案</span><span class="pg-badge">ケアレス潰し L2-L3（安い15点）</span></div>
+  <h1>ケアレス潰し・答案の作り方｜符号・空欄ゼロ・検算を習慣にする</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問13・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">80点は「難しい問題を増やす」より<strong>「取れる問題を落とさない」</strong>で作る。5月のテストで落としやすかったのは符号・＋1忘れ・空欄。今日はそこを直撃。①符号ミス頻発の速攻10連②まちがい探しで“見直しの目”を作る③答案の作法チェック。**いちばん安い15点**を取りにいこう。</p>
+</div>
+
+<div class="cardbox">
+  <ul>
+    <li><b>途中式を書く</b>（暗算で飛ばさない）</li>
+    <li><b>符号を声に出して確認</b>（−×−＝＋、−( )は全部の符号が変わる）</li>
+    <li><b>答えに単位</b>（円・人・cm・度…）</li>
+    <li><b>空欄を作らない</b>（分かる所まで必ず書く＝部分点）</li>
+    <li><b>検算する</b>（答えを式に戻す／逆算する）</li>
+  </ul>
+</div>
+
+<!-- ===== 大問A 符号・累乗 速攻10連（問1〜問10） ===== -->
+<div class="unit-banner"><span class="unit-num">問1〜10</span><span class="unit-name">★符号・累乗ミス 速攻10連 L2</span><span class="unit-time">目安 10分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qnum" style="font-size:12px;font-weight:800;color:#4c5b70">次を計算しよう。1問ずつ符号に注意（暗算しすぎない）。</div>
+  <div class="quizrow"><span class="qq">問1　<span class="math">−5²</span></span></div>
+  <div class="quizrow"><span class="qq">問2　<span class="math">(−5)²</span></span></div>
+  <div class="quizrow"><span class="qq">問3　<span class="math">−3−(−7)</span></span></div>
+  <div class="quizrow"><span class="qq">問4　<span class="math">−2×(−3)²</span></span></div>
+  <div class="quizrow"><span class="qq">問5　<span class="math">8−2×3</span></span></div>
+  <div class="quizrow"><span class="qq">問6　<span class="math">−(−4)</span></span></div>
+  <div class="quizrow"><span class="qq">問7　<span class="math">−2(x−4)</span> を展開</span></div>
+  <div class="quizrow"><span class="qq">問8　<span class="math">(12x−6)÷3</span></span></div>
+  <div class="quizrow"><span class="qq">問9　<span class="math">x＝−2</span> のとき <span class="math">−x²</span></span></div>
+  <div class="quizrow"><span class="qq">問10　<span class="math">−4x＝−12</span> を解く</span></div>
+  <div class="note-draw">暗算で飛ばさず、途中をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問1</span><span class="math">−5²＝−(5×5)＝−25</span>（2乗が先・−は外）。</div>
+    <div class="step"><span>問2</span><span class="math">(−5)²＝(−5)×(−5)＝＋25</span>（かっこごと2乗）。</div>
+    <div class="step"><span>問3</span><span class="math">−3−(−7)＝−3＋7＝＋4</span>（−を引く＝足す）。</div>
+    <div class="step"><span>問4</span><span class="math">(−3)²＝9、−2×9＝−18</span>（2乗が先）。</div>
+    <div class="step"><span>問5</span><span class="math">8−6＝2</span>（×が先）。</div>
+    <div class="step"><span>問6</span><span class="math">−(−4)＝＋4</span>。</div>
+    <div class="step"><span>問7</span><span class="math">−2x＋8</span>（−2×(−4)＝＋8）。</div>
+    <div class="step"><span>問8</span><span class="math">4x−2</span>（各項を÷3）。</div>
+    <div class="step"><span>問9</span><span class="math">−x²＝−(−2)²＝−4</span>。</div>
+    <div class="step"><span>問10</span><span class="math">x＝−12÷−4＝＋3</span>（−÷−＝＋）。</div>
+    <div class="bx bx-warn">頻発：<span class="red">−5²＝25</span>（誤）／<span class="red">−3−(−7)＝−10</span>（誤）／<span class="red">−2(x−4)＝−2x−8</span>（誤）／<span class="red">−4x=−12→x=−3</span>（誤）。<strong>これらは“知っている”のに落とす＝練習で消せる15点。</strong></div>
+    <div class="ans-final"><span>こたえ</span>問1 −25／問2 25／問3 4／問4 −18／問5 2／問6 4／問7 −2x＋8／問8 4x−2／問9 −4／問10 x＝3</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span><button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号ミス</button><button onclick="m(this)">計算順ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら、正しい計算をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span><button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号ミス</button><button onclick="m(this)">計算順ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら、正しい計算をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span><button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号ミス</button><button onclick="m(this)">計算順ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら、正しい計算をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span><button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号ミス</button><button onclick="m(this)">計算順ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら、正しい計算をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span><button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号ミス</button><button onclick="m(this)">計算順ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら、正しい計算をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span><button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号ミス</button><button onclick="m(this)">計算順ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら、正しい計算をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7</span><button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号ミス</button><button onclick="m(this)">分配ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら、正しい計算をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8</span><button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号ミス</button><button onclick="m(this)">わり忘れ</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら、正しい計算をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q09"><div class="grade"><span class="gq-label">問9</span><button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号ミス</button><button onclick="m(this)">2乗ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら、正しい計算をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q10"><div class="grade"><span class="gq-label">問10</span><button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号ミス</button><button onclick="m(this)">わる/ひく取り違え</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら、正しい計算をノートに3回書こう</div></div>
+</div>
+
+<!-- ===== 大問B まちがい探し（問11〜問13） ===== -->
+<div class="unit-banner"><span class="unit-num">問11〜13</span><span class="unit-name">★まちがい探し（見直しの目を作る）L3</span><span class="unit-time">目安 10分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qnum" style="font-size:12px;font-weight:800;color:#4c5b70">次の「ある人の答え」には間違いがあります。どこが間違いかを見つけ、正しい答えを書こう。</div>
+  <div class="qbody">
+    <span class="lead">問11</span><div class="miss-card"><span class="math">3(x−2)＝3x−2</span></div>
+    <span class="lead">問12</span><div class="miss-card"><span class="math">2−5×(−2)＝2−10＝−8</span></div>
+    <span class="lead">問13</span><div class="miss-card"><span class="math">4x＋3＝x＋12</span> → <span class="math">4x−x＝12＋3</span> → <span class="math">3x＝15</span> → <span class="math">x＝5</span></div>
+  </div>
+  <div class="note-draw">どの1ステップで間違えたか、正しい式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問11</span>間違い＝分配で <span class="red">−2 に3をかけ忘れ</span>。正：3(x−2)＝3x−6。<strong>正しくは 3x−6</strong>。</div>
+    <div class="step"><span>問12</span>間違い＝<span class="red">5×(−2)＝−10 を「−10」と書いた後、2−(−10) を 2−10 にした</span>。正：2−(−10)＝2＋10＝12。<strong>正しくは 12</strong>。</div>
+    <div class="step"><span>問13</span>間違い＝<span class="red">＋3 を移項したのに符号を変えていない</span>（＋3→右辺では −3）。正：4x−x＝12−3 → 3x＝9 → x＝3。<strong>正しくは x＝3</strong>。検算 4×3＋3＝15＝3＋12○。</div>
+    <div class="bx bx-key">まちがい探し＝<strong>自分の見直しの練習</strong>。テスト中も「移項の符号」「−( )の分配」「−を引く」を毎回チェックすれば、この15点は守れる。</div>
+    <div class="ans-final"><span>こたえ</span>問11 3x−6／問12 12／問13 x＝3</div>
+  </div>
+  <div class="gq" data-gid="q11"><div class="grade"><span class="gq-label">問11</span><button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">見つけられた</button><button onclick="m(this)">間違いに気づけない</button><button onclick="m(this)">正答が出せない</button></div><div class="write3">📝 まちがえたら、正しい式をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q12"><div class="grade"><span class="gq-label">問12</span><button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">見つけられた</button><button onclick="m(this)">間違いに気づけない</button><button onclick="m(this)">正答が出せない</button></div><div class="write3">📝 まちがえたら、正しい式をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q13"><div class="grade"><span class="gq-label">問13</span><button class="o" onclick="g(this,'q13','o')">○</button><button class="x" onclick="g(this,'q13','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">見つけられた</button><button onclick="m(this)">間違いに気づけない</button><button onclick="m(this)">正答が出せない</button></div><div class="write3">📝 まちがえたら、正しい式をノートに3回書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P11 ケアレス潰し 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">ケアレス潰しおつかれさま！①符号（−5²と(−5)²・−を引く・−( )の分配・−÷−）②まちがい探しで「見直しの目」③答案の作法（途中式・単位・空欄ゼロ・検算）。これが80点の<strong>いちばん安い15点</strong>。テスト中も「移項の符号」「分配」「検算」を声に出してチェックしよう。次はいよいよ過去問形式の通し（P12）だ🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m11';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！ケアレス潰し クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

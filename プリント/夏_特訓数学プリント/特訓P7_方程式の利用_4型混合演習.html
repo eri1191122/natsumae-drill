@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P7 方程式の利用 4型混合演習｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 型カード＋4型の見分け方";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ この問題は何型？";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.zukai{background:#fbfaf5;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Courier New',monospace;font-size:13px;color:#6a5a32;white-space:pre-wrap;line-height:1.7}
+.zukai::before{content:"📐 図";display:block;font-family:'Hiragino Kaku Gothic ProN',sans-serif;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:0.9em}
+.frac .n{border-bottom:1.6px solid currentColor;padding:0 4px 1px}
+.frac .d{padding:1px 4px 0}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P7</span><span class="pg-badge">数学：方程式の利用</span><span class="pg-badge">4型 混合演習 L3（実戦）</span></div>
+  <h1>方程式の利用｜4つの型を混ぜて演習（個数・速さ・割合・比／動点）</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問6・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">P4〜P6で型カードを練習したら、今日は<strong>型を混ぜて出す（インターリーブ）</strong>回。本番は「これは何型？」を自分で見抜くことが大事。塾の夏期講習で習う4型の総しあげ。まず「何型か」を考えてから、型カードにそって式を作ろう。</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>個数・代金型</b>：合計が決まる → 片方 x、もう片方 (合計−x)</li>
+    <li><b>速さ型</b>：道のり＝速さ×時間。追いつき＝道のり等しい／出会い＝合計</li>
+    <li><b>割合・利益型</b>：割引き×(1−)／利益×(1+)／「の」はかけ算</li>
+    <li><b>比・動点型</b>：比は a を1つぶんとして 5a・3a／動点は長さを x で表す</li>
+  </ol>
+</div>
+
+<!-- 問1 割合型 -->
+<div class="q calc" data-id="1">
+  <div class="qbody"><span class="lead">問1</span>ある商品を定価の3割引きで売ったら、売値は1400円でした。定価はいくらですか。</div>
+  <div class="note-draw">まず何型か考え、x を決めて式をノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">割合・利益型（割引き）。「3割引き＝×(1−0.3)＝×0.7」。</div>
+    <div class="step"><span>式</span>定価を x 円。0.7x＝1400。</div>
+    <div class="step"><span>解</span>x＝1400÷0.7＝2000。検算 2000×0.7＝1400○。</div>
+    <div class="bx bx-warn"><span class="red">3割引きを ×0.3 としない</span>（残り×0.7）。</div>
+    <div class="ans-final"><span>こたえ</span>定価 2000円</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">何型か見抜けない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カードにそってノートに解き直そう</div></div>
+</div>
+
+<!-- 問2 速さ追いつき型 -->
+<div class="q calc" data-id="2">
+  <div class="qbody"><span class="lead">問2</span>弟が分速50mで家を出発しました。その10分後に兄が分速70mで追いかけました。兄が出発してから何分後に弟に追いつきますか。</div>
+  <div class="note-draw">まず何型か考え、線分図と式をノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">速さ型（追いつき）。追いつく＝2人の道のりが等しい。弟は兄より10分多く歩いている。</div>
+    <div class="zukai">弟：50×(x＋10) ───────────→
+兄：70×x   ──────────→（追いつく＝同じ道のり）</div>
+    <div class="step"><span>式</span>兄が出発してから x 分後。70x＝50(x＋10)。</div>
+    <div class="step"><span>解</span>70x＝50x＋500 → 20x＝500 → x＝25。検算 兄70×25＝1750、弟50×35＝1750○。</div>
+    <div class="bx bx-warn"><span class="red">弟の時間を x にしない</span>（弟は x＋10分）。</div>
+    <div class="ans-final"><span>こたえ</span>25分後</div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">何型か見抜けない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カードにそってノートに解き直そう</div></div>
+</div>
+
+<!-- 問3 個数2種型 -->
+<div class="q calc" data-id="3">
+  <div class="qbody"><span class="lead">問3</span>1個90円のなしと、1個60円のみかんを合わせて12個買ったら、代金は870円でした。なしは何個買いましたか。</div>
+  <div class="note-draw">まず何型か考え、表にして式をノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">個数・代金型（合計が決まる）。なしを x 個 → みかんは (12−x) 個。</div>
+    <div class="step"><span>式</span>90x＋60(12−x)＝870。</div>
+    <div class="step"><span>解</span>90x＋720−60x＝870 → 30x＝150 → x＝5。検算 450＋420＝870○。</div>
+    <div class="bx bx-warn"><span class="red">60(12−x) を 720−x としない</span>（720−60x）。</div>
+    <div class="ans-final"><span>こたえ</span>なし 5個</div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">何型か見抜けない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カードにそってノートに解き直そう</div></div>
+</div>
+
+<!-- 問4 比型 -->
+<div class="q calc" data-id="4">
+  <div class="qbody"><span class="lead">問4</span>兄と弟の所持金の比は 5：3 で、2人の合計は4000円です。兄の所持金はいくらですか。</div>
+  <div class="note-draw">まず何型か考え、「1つぶん」を文字にしてノートに式を書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">比型。比 5：3 は「1つぶん a」を使って兄＝5a、弟＝3a と表す。</div>
+    <div class="step"><span>式</span>合計＝5a＋3a＝4000。</div>
+    <div class="step"><span>解</span>8a＝4000 → a＝500。兄＝5a＝5×500＝2500。検算 弟3×500＝1500、合計4000○。</div>
+    <div class="bx bx-warn"><span class="red">兄を5000円のように勝手に置かない</span>（比は「何倍か」だけ。1つぶんを a に）。<span class="red">最後に「兄」を答える</span>（a で止めない）。</div>
+    <div class="ans-final"><span>こたえ</span>兄 2500円</div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">何型か見抜けない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カードにそってノートに解き直そう</div></div>
+</div>
+
+<!-- 問5 年齢型 -->
+<div class="q calc" data-id="5">
+  <div class="qbody"><span class="lead">問5</span>現在、父は45歳、子は15歳です。父の年齢が子の年齢のちょうど2倍になるのは何年後ですか。</div>
+  <div class="note-draw">まず何型か考え、x 年後の2人の年齢を式にしてノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">年齢型（過不足・等式型の仲間）。x 年後は父(45＋x)歳、子(15＋x)歳。父＝子×2。</div>
+    <div class="step"><span>式</span>45＋x＝2(15＋x)。</div>
+    <div class="step"><span>解</span>45＋x＝30＋2x → 45−30＝2x−x → x＝15。検算 父60＝子30×2○。</div>
+    <div class="bx bx-warn"><span class="red">片方だけに＋x しない</span>（父も子も同じだけ年をとる）。<span class="red">2倍は大きいほう（父）＝小×2</span>。</div>
+    <div class="ans-final"><span>こたえ</span>15年後</div>
+  </div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span>○✕ → <button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">何型か見抜けない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カードにそってノートに解き直そう</div></div>
+</div>
+
+<!-- 問6 動点型 -->
+<div class="q calc" data-id="6">
+  <div class="qbody"><span class="lead">問6</span>1辺が10cmの正方形ABCDがあります。点Pは頂点Aを出発し、辺AB上を毎秒1cmの速さでBに向かって動きます。出発してから x 秒後、三角形APDの面積が15cm²になるのは何秒後ですか。</div>
+  <div class="note-draw">まず何型か考え、x 秒後の AP の長さと三角形の面積を式にしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">動点型。動いた長さを x で表す。x 秒後 AP＝1×x＝x cm。三角形APDは底辺AP・高さAD(=10cm)。</div>
+    <div class="zukai">D┌──────┐C
+ │＼      │
+ │  ＼    │ AD=10
+ │    ＼  │
+A└─P────┘B
+  AP=x
+（三角形APDの面積＝AP×AD÷2）</div>
+    <div class="step"><span>式</span>面積＝AP×AD÷2＝x×10÷2＝5x。これが15。5x＝15。</div>
+    <div class="step"><span>解</span>x＝3。検算 AP=3、3×10÷2＝15○。</div>
+    <div class="bx bx-warn"><span class="red">高さは AD＝10（一定）</span>。P が動いても底辺 AP だけが x で変わる。</div>
+    <div class="ans-final"><span>こたえ</span>3秒後</div>
+  </div>
+  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span>○✕ → <button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">何型か見抜けない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カードにそってノートに解き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P7 4型混合演習 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">4型混合おつかれさま！①割合②速さ③個数④比⑤年齢⑥動点。どれも型カード（何を x →図→等式→解く→検算）で解ける。大事なのは<strong>「これは何型？」を最初に見抜く</strong>こと。見抜けなかった問題は、見出しの【何型】をノートに写して「どの言葉でそれと分かるか」を書こう。次は図形（複合図形・円・角度）だ🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m07';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！4型混合演習 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>
