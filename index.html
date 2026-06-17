@@ -97,17 +97,7 @@
   .scope p{font-size:13.5px; color:var(--sub); margin-top:10px;}
   .scope strong{color:var(--ink);}
   button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #1d70b8; outline-offset:3px;}
-  /* 夏 特訓数学（18枚）＝夏前カレンダーとは別フェーズの単元別ランチャー */
-  .tokkun{background:var(--card); border:1px solid var(--line); border-left:7px solid var(--math); border-radius:12px; margin-top:24px; padding:16px 18px; box-shadow:0 2px 8px rgba(67,83,72,.06);}
-  .tokkun > h2{font-size:18px; font-weight:900; color:var(--hd-ink);}
-  .tokkun > .lead{font-size:12.5px; color:var(--sub); margin:6px 0 12px; line-height:1.8;}
-  .tokkun .tk-grp{margin-bottom:11px;}
-  .tokkun .gh{display:inline-block; font-size:12px; font-weight:900; color:var(--math-ink); background:var(--math-soft); border:1px solid #bcdbd6; border-radius:10px; padding:2px 10px; margin-bottom:6px;}
-  .tokkun a.tk{display:flex; justify-content:space-between; align-items:center; gap:8px; text-decoration:none; color:var(--ink); background:#fbfdfb; border:1px solid var(--line); border-left:5px solid var(--math); border-radius:9px; padding:10px 12px; margin-bottom:6px; font-size:14px; font-weight:700; min-height:44px;}
-  .tokkun a.tk:active{transform:scale(.99);}
-  .tokkun a.tk .pp{display:inline-block; font-size:11px; font-weight:800; color:#fff; background:var(--math); border-radius:9px; padding:1px 8px; margin-right:8px;}
-  .tokkun a.tk .dn{font-size:12px; font-weight:800; color:#56875b; white-space:nowrap;}
-  .tokkun a.tk.is-tdone{background:var(--done-soft); border-left-color:#56875b;}
+  /* 夏休みの特訓数学はこの公開版には載せない（ローカルの夏休みダッシュボードで管理） */
   @media print{
     body{padding:0; background:#fff;}
     .today,.doneBtn,.slimDone,.reset,.storageWarn,.installGuide{display:none !important;}
@@ -168,38 +158,7 @@
 
   <div id="board"></div>
 
-  <section class="tokkun" aria-label="夏 特訓数学プリント">
-    <h2>🔥 夏 特訓数学プリント（全18枚・8月〜）</h2>
-    <p class="lead">9月特訓選抜の対策。これは夏前カレンダー（上）とは<b>別フェーズ</b>です。日付固定ではなく、<b>忘却曲線で何周もする</b>。各プリントの○✕は <a href="記録ボード_毎日プリント集計.html">📋 記録ボード</a> に自動集計されます。</p>
-    <div class="tk-grp"><span class="gh">① 正負の数</span>
-      <a class="tk" data-key="tokkun_m01" href="プリント/夏_特訓数学プリント/特訓P1_正負の数_L3L4.html"><span><span class="pp">P1</span>正負の数 L3-L4</span><span class="dn"></span></a></div>
-    <div class="tk-grp"><span class="gh">② 文字式</span>
-      <a class="tk" data-key="tokkun_m02a" href="プリント/夏_特訓数学プリント/特訓P2a_文字式_演習.html"><span><span class="pp">P2a</span>文字式 演習</span><span class="dn"></span></a>
-      <a class="tk" data-key="tokkun_m02b" href="プリント/夏_特訓数学プリント/特訓P2b_文字式_特訓_立式.html"><span><span class="pp">P2b</span>文字式 特訓（立式）</span><span class="dn"></span></a></div>
-    <div class="tk-grp"><span class="gh">③ 方程式の解法</span>
-      <a class="tk" data-key="tokkun_m03" href="プリント/夏_特訓数学プリント/特訓P3_方程式の解法_演習.html"><span><span class="pp">P3</span>方程式の解法</span><span class="dn"></span></a></div>
-    <div class="tk-grp"><span class="gh">④ 文章を式に（0/25の核）</span>
-      <a class="tk" data-key="tokkun_m04" href="プリント/夏_特訓数学プリント/特訓P4_文章を式に1_型カード_個数過不足.html"><span><span class="pp">P4</span>文章を式に①（型カード・過不足）</span><span class="dn"></span></a>
-      <a class="tk" data-key="tokkun_m05" href="プリント/夏_特訓数学プリント/特訓P5_文章を式に2_速さ_割合利益.html"><span><span class="pp">P5</span>文章を式に②（速さ・割合）</span><span class="dn"></span></a>
-      <a class="tk" data-key="tokkun_m06" href="プリント/夏_特訓数学プリント/特訓P6_文章を式に3_正負の文章.html"><span><span class="pp">P6</span>文章を式に③（正負の文章・仮平均）</span><span class="dn"></span></a></div>
-    <div class="tk-grp"><span class="gh">⑤ 方程式の利用4型</span>
-      <a class="tk" data-key="tokkun_m07" href="プリント/夏_特訓数学プリント/特訓P7_方程式の利用_4型混合演習.html"><span><span class="pp">P7</span>利用4型 混合演習</span><span class="dn"></span></a></div>
-    <div class="tk-grp"><span class="gh">⑥ 図形（複合図形・円・角度）</span>
-      <a class="tk" data-key="tokkun_m08a" href="プリント/夏_特訓数学プリント/特訓P8a_図形_演習.html"><span><span class="pp">P8a</span>図形 演習（面積・円・角度）</span><span class="dn"></span></a>
-      <a class="tk" data-key="tokkun_m08" href="プリント/夏_特訓数学プリント/特訓P8_複合図形_円_折り返し角.html"><span><span class="pp">P8</span>複合図形・円・折り返し L4</span><span class="dn"></span></a></div>
-    <div class="tk-grp"><span class="gh">⑦ 規則性</span>
-      <a class="tk" data-key="tokkun_m09a" href="プリント/夏_特訓数学プリント/特訓P9a_規則性_演習.html"><span><span class="pp">P9a</span>規則性 演習（差→n式）</span><span class="dn"></span></a>
-      <a class="tk" data-key="tokkun_m09" href="プリント/夏_特訓数学プリント/特訓P9_規則性_n式.html"><span><span class="pp">P9</span>規則性 n式 L4（碁石の周）</span><span class="dn"></span></a></div>
-    <div class="tk-grp"><span class="gh">⑧ グラフ・水そう</span>
-      <a class="tk" data-key="tokkun_m10a" href="プリント/夏_特訓数学プリント/特訓P10a_速さグラフ_水そう_演習.html"><span><span class="pp">P10a</span>グラフ 演習（読み取り）</span><span class="dn"></span></a>
-      <a class="tk" data-key="tokkun_m10" href="プリント/夏_特訓数学プリント/特訓P10_速さグラフ_水そう.html"><span><span class="pp">P10</span>速さグラフ・水そう L4</span><span class="dn"></span></a></div>
-    <div class="tk-grp"><span class="gh">⑨ ケアレス潰し</span>
-      <a class="tk" data-key="tokkun_m11" href="プリント/夏_特訓数学プリント/特訓P11_ケアレス潰し_答案化.html"><span><span class="pp">P11</span>ケアレス潰し・答案化</span><span class="dn"></span></a></div>
-    <div class="tk-grp"><span class="gh">⑩ 過去問形式 通し（本番リズム・各40分）</span>
-      <a class="tk" data-key="tokkun_m12" href="プリント/夏_特訓数学プリント/特訓P12_過去問形式_通しセット.html"><span><span class="pp">P12</span>過去問形式 通し①</span><span class="dn"></span></a>
-      <a class="tk" data-key="tokkun_m12b" href="プリント/夏_特訓数学プリント/特訓P12b_過去問形式_通しセット2.html"><span><span class="pp">P12b</span>過去問形式 通し②</span><span class="dn"></span></a>
-      <a class="tk" data-key="tokkun_m12c" href="プリント/夏_特訓数学プリント/特訓P12c_過去問形式_通しセット3.html"><span><span class="pp">P12c</span>過去問形式 通し③</span><span class="dn"></span></a></div>
-  </section>
+  <!-- 夏休みの特訓数学は別フェーズ。公開版には載せない（ローカルの夏休みダッシュボードで管理） -->
 
   <div class="note">
     プリントを開いたら、なかで○✕とミスの型をタップして記録できます。<br>
@@ -356,7 +315,6 @@ function render(){
   document.getElementById('progress').setAttribute('aria-valuemax',total);
   document.getElementById('progress').setAttribute('aria-valuenow',done);
   document.getElementById('storageWarn').style.display=storageAvailable?'none':'block';
-  annotateTokkun();
   renderToday();
   const cheer=document.getElementById('cheer');
   if(done===0) cheer.textContent='6/15から、1日ずつ始めよう';
@@ -364,13 +322,6 @@ function render(){
   else cheer.textContent='33日すべて取り組めました。次は初見テストで定着確認';
 }
 
-function annotateTokkun(){
-  document.querySelectorAll('.tokkun a.tk[data-key]').forEach(function(a){
-    var done=storageGet(a.getAttribute('data-key')+'_done')==='1';
-    a.classList.toggle('is-tdone',done);
-    var d=a.querySelector('.dn'); if(d) d.textContent=done?'✓ 済':'';
-  });
-}
 function toggleDone(e,key){
   e.preventDefault(); e.stopPropagation();
   if(!key) return;
