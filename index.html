@@ -98,6 +98,21 @@
   .scope p{font-size:13.5px; color:var(--sub); margin-top:10px;}
   .scope strong{color:var(--ink);}
   button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #1d70b8; outline-offset:3px;}
+  /* 弱点復習（赤・目立たせる） */
+  .rev{background:#fdecea; border:1px solid #f0b7b1; border-left:8px solid #d9534f; border-radius:12px; margin:14px 0 18px; padding:16px 18px; box-shadow:0 3px 12px rgba(217,83,79,.14);}
+  .rev > h2{font-size:19px; font-weight:900; color:#b23b34; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .rev .revwarn{font-size:12px; font-weight:900; color:#fff; background:#d9534f; border-radius:12px; padding:2px 10px;}
+  .rev .lead{font-size:12.5px; color:#7a4a47; margin:6px 0 12px; line-height:1.8;}
+  .rev .lead b{color:#b23b34;}
+  .rev-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap; background:#fff; border:1px solid #f0c7c3; border-radius:10px; padding:10px 12px; margin-bottom:8px;}
+  .rev-row .cat{font-size:11px; font-weight:900; color:#fff; background:#d9534f; border-radius:10px; padding:3px 9px; white-space:nowrap;}
+  .rev-row .body{flex:1; min-width:150px;}
+  .rev-row .ttl{font-size:14.5px; font-weight:800; color:var(--ink); text-decoration:none;}
+  .rev-row .ttl:active{opacity:.7;}
+  .rev-row .meta{display:block; font-size:11.5px; font-weight:800; margin-top:3px;}
+  .rev-row .meta.ok{color:#3d8f5a;} .rev-row .meta.warn{color:#c0392b;} .rev-row .meta.mut{color:#9aa3ad;}
+  .rev-row .did{font-size:13px; font-weight:900; color:#fff; background:#56875b; border:none; border-radius:18px; min-height:42px; padding:8px 15px; cursor:pointer; white-space:nowrap;}
+  .rev-row .did:active{opacity:.8;}
   /* 夏休みの特訓数学はこの公開版には載せない（ローカルの夏休みダッシュボードで管理） */
   @media print{
     body{padding:0; background:#fff;}
@@ -143,6 +158,12 @@
     </ol>
     <p class="offlineStatus" id="offlineStatus" role="status">オフライン準備を確認しています...</p>
   </details>
+
+  <section class="rev" id="revSec" aria-label="弱点復習（さいしょにやる）">
+    <h2>🔁 弱点復習（さいしょにやる）<span class="revwarn" id="revWarn"></span></h2>
+    <p class="lead">まず苦手をつぶそう。やったら <b>「✓ やった」</b> を押す。<b>やらないとどんどんたまるよ！</b>　○✕は <a href="記録ボード_毎日プリント集計.html">📋 記録ボード</a> に集計されます。</p>
+    <div id="revRows"></div>
+  </section>
 
   <div class="storageWarn" id="storageWarn" role="alert">この環境では進捗を保存できません。表示は使えますが、再読み込みするとチェックが消えます。</div>
   <section class="today" id="today" aria-live="polite"></section>
@@ -341,6 +362,37 @@ function resetCompletion(){
 window.addEventListener('pageshow',render);
 document.addEventListener('visibilitychange',function(){if(!document.hidden) render();});
 render();
+
+/* ===== 弱点復習トラッカー（最初にやる・最終実施日と煽り） ===== */
+var REVIEW=[
+  {key:'tokkun_revm_wari1', cat:'📕算数', title:'割合 三用法・逆算・残り', file:'プリント/夏_特訓数学プリント/復習算数_割合_三用法と逆算と残り.html'},
+  {key:'tokkun_reve_queue', cat:'📗英語', title:'復習・英語（まちがえだけ）', file:'プリント/夏_特訓数学プリント/復習英語_まちがえ復習キュー.html'}
+];
+function revToday(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
+function revDays(iso){if(!iso)return null;var a=new Date(iso+'T00:00:00'),b=new Date(revToday()+'T00:00:00');return Math.round((b-a)/86400000);}
+function revDid(key){storageSet(key+'_revd',revToday());revRender();}
+function revRender(){
+  var rows='',pile=0;
+  REVIEW.forEach(function(r){
+    var d=storageGet(r.key+'_revd');
+    var ds=revDays(d);
+    var meta='',mcls='mut';
+    if(!d){meta='⚠ まだやってない！';mcls='warn';pile++;}
+    else if(ds>=3){meta='🔥 '+ds+'日ためてる！　最終実施日 '+d;mcls='warn';pile++;}
+    else{meta='最終実施日 '+d+'（'+(ds===0?'今日やった':ds+'日前')+'）';mcls='ok';}
+    rows+='<div class="rev-row">'
+      +'<span class="cat">'+r.cat+'</span>'
+      +'<span class="body"><a class="ttl" href="'+r.file+'">'+r.title+'</a>'
+      +'<span class="meta '+mcls+'">'+meta+'</span></span>'
+      +'<button class="did" onclick="revDid(\''+r.key+'\')">✓ やった</button>'
+      +'</div>';
+  });
+  document.getElementById('revRows').innerHTML=rows;
+  var w=document.getElementById('revWarn');
+  if(pile>0){w.textContent='やること '+pile+'件';w.style.display='';}else{w.style.display='none';}
+}
+window.addEventListener('pageshow',revRender);
+revRender();
 </script>
 <script>
 (function(){
