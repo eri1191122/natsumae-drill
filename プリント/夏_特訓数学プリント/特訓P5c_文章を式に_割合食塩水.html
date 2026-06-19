@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P5c 文章を式に（割合・食塩水）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 文章→式の型カード（毎回これにそって解く）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.zukai{background:#fbfaf5;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Courier New',monospace;font-size:13px;color:#6a5a32;white-space:pre-wrap;line-height:1.7}
+.zukai::before{content:"📐 図（線分図・表）";display:block;font-family:'Hiragino Kaku Gothic ProN',sans-serif;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P5c</span><span class="pg-badge">数学：方程式の利用</span><span class="pg-badge">★文章→式 L3（割合・食塩水）</span></div>
+  <h1>文章を式にする｜割合・食塩水の型を「4問・じっくり」で固める</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">これがきみの<strong>いちばんの伸びしろ</strong>＝「文章を式にする」力。全国統一テストで0/25だったのもここ。今日は<strong>4問だけ</strong>。割合のいのちは<strong>「もとにする量×割合＝くらべる量」</strong>。これ1つを、割引・値上げ・食塩水・人数の4つの場面で使えるようにするのが今日の目標。数をこなすより<strong>型を体に入れる</strong>。</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 何を求める？</b> → それを <span class="math">x</span> とおく（「□を x とする」と書く）</li>
+    <li><b>② 図か表にする</b>（割合は線分図・食塩水は表）＝目で見える形に</li>
+    <li><b>③ 等しい関係を式に</b>（「もとにする量×割合＝くらべる量」で＝を作る）</li>
+    <li><b>④ 解く</b>（移項して x ＝ の形へ）</li>
+    <li><b>⑤ 検算</b>（出た数を文章に戻して合うか確かめる）</li>
+  </ol>
+</div>
+
+<!-- ===== 問1 割引 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">割引（割引後の代金から定価を求める）L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問1</span>ある品物を定価の3割引で買ったら、代金は1750円でした。この品物の定価を求めなさい。</div>
+  <div class="note-draw">求めるもの（定価）を x にする。「3割引で買う」＝「定価の何倍をはらった？」を先に決めてから式を作ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">割合のいのち：<strong>もとにする量×割合＝くらべる量</strong>。割引は<strong>はらうのは「残り」</strong>。3割引で買う＝定価の(1−0.3)＝<strong>0.7倍</strong>をはらう（3割＝0.3）。</div>
+    <div class="step q1"><span>①x</span>定価を x 円とする（求めるもの）。</div>
+    <div class="zukai">定価 x 円 ─────────────────
+            ↑3割(0.3x)引く↑  残り0.7x＝はらった額(1750円)</div>
+    <div class="step q1"><span>③式</span>はらった代金＝定価×0.7。<span class="math">0.7x＝1750</span>（3割引＝×(1−0.3)＝×0.7）。</div>
+    <div class="step q1"><span>④解</span>x＝1750÷0.7＝2500。</div>
+    <div class="step q1"><span>⑤検算</span>定価2500円の3割引：2500×0.7＝1750○。引いた額は2500×0.3＝750円で、2500−750＝1750もOK。</div>
+    <div class="bx bx-warn"><span class="red">3割引を ×0.3 としない</span>。はらうのは引いた<strong>残り</strong>＝×0.7。<span class="red">「割」を％とまぜない</span>（3割＝0.3、3%＝0.03）。</div>
+    <div class="bx bx-link">「割引＝×(1−割合)」は特訓選抜 大問3（割合の方程式）の超定番。値引き・セール・利益はすべてこの形でつながる。</div>
+    <div class="ans-final"><span>こたえ</span>定価 2500円</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問2 値上げ ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">値上げ（○%増しで今の値段になった）L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問2</span>あるバスの運賃が、去年より15%値上げされて、今年は230円になりました。去年の運賃は何円でしたか。</div>
+  <div class="note-draw">求めるもの（去年の運賃）を x にする。値上げは「もとより増える」。何倍になったかを先に決めよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">値上げ（増加）は<strong>もとに足す</strong>。15%値上げ＝もとの(1＋0.15)＝<strong>1.15倍</strong>（15%＝0.15）。式は「もとにする量×割合＝くらべる量」のまま。</div>
+    <div class="step q2"><span>①x</span>去年の運賃を x 円とする（求めるもの＝もとにする量）。</div>
+    <div class="zukai">去年 x 円 ────────→ 今年 230円
+         ＋15%(0.15x)増し  →  1.15x＝230</div>
+    <div class="step q2"><span>③式</span>今年の運賃＝去年×1.15。<span class="math">1.15x＝230</span>（15%増し＝×(1＋0.15)）。</div>
+    <div class="step q2"><span>④解</span>x＝230÷1.15＝200。</div>
+    <div class="step q2"><span>⑤検算</span>去年200円の15%増し：200×1.15＝230○。増えた額は200×0.15＝30円で、200＋30＝230もOK。</div>
+    <div class="bx bx-warn"><span class="red">15%を 1.5 や 0.015 にしない</span>（15%＝0.15）。<span class="red">値上げは×1.15（足す）、値下げ・割引は×0.85など（引く）</span>。増えるのか減るのかを必ず先に確認。</div>
+    <div class="bx bx-link">「○%増し＝×(1＋割合)」は値上げ・利益・人口増などに共通。割引の×(1−割合)と<strong>＋か−かだけ</strong>がちがう。</div>
+    <div class="ans-final"><span>こたえ</span>去年の運賃 200円</div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問3 食塩水（水を加える） ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★食塩水（水を加えて濃度を下げる）L3 応用</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問3</span>濃度10%の食塩水が200gあります。これに水を何gか加えたら、濃度が8%になりました。加えた水は何gですか。</div>
+  <div class="note-draw">食塩水は<strong>表</strong>で整理。「水を加えても<strong>食塩の重さは変わらない</strong>」がカギ。食塩の重さを2通りで表して＝で結ぼう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">食塩水のいのち：<strong>食塩＝食塩水×濃度</strong>（割合の式と同じ）。水を加えても<strong>変わらないのは「食塩の重さ」</strong>。加える前の食塩＝加えた後の食塩、で＝を作る。</div>
+    <div class="step q3"><span>①x</span>加える水を x g とする。加えた後の食塩水は (200＋x) g。</div>
+    <div class="zukai">┌──────────┬──────────┬──────────┐
+│            │ 加える前  │ 加えた後  │
+├──────────┼──────────┼──────────┤
+│ 食塩水(g)  │  200      │ 200＋x    │
+│ 濃度       │ 10%(0.1)  │ 8%(0.08)  │
+│ 食塩(g)    │ 200×0.1   │(200＋x)×0.08│
+└──────────┴──────────┴──────────┘
+※水だけ足す＝食塩はそのまま（左の食塩＝右の食塩）</div>
+    <div class="step q3"><span>③式</span>食塩の重さは変わらない：<span class="math">(200＋x)×0.08＝200×0.1</span>（8%＝0.08、10%＝0.1）。</div>
+    <div class="step q3"><span>④解</span>右辺＝20。0.08(200＋x)＝20 → 16＋0.08x＝20 → 0.08x＝4 → x＝50。</div>
+    <div class="step q3"><span>⑤検算</span>水を50g加えると食塩水は200＋50＝250g。食塩は20gのまま。20÷250＝0.08＝8%○。</div>
+    <div class="bx bx-warn"><span class="red">8%を0.8にしない</span>（8%＝0.08）。<span class="red">水を加えると食塩も増える、と思わない</span>＝足したのは水だけ。食塩は変わらないのが等式のもと。</div>
+    <div class="bx bx-link">「変わらない量（食塩）を2通りで表して＝」は過不足算と同じ考え方。中2の食塩水（連立）にもそのままつながる。</div>
+    <div class="ans-final"><span>こたえ</span>加えた水 50g</div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問4 人数の割合増減 ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">人数の割合増減（昨年比○割増）L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問4</span>あるクラブの今年の部員は、去年より2割増えて36人になりました。去年の部員は何人でしたか。</div>
+  <div class="note-draw">求めるもの（去年の部員）を x にする。「2割増えて」＝去年の何倍が今年か、を先に決めてから式を作ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">人数でも考え方は同じ：<strong>もとにする量（去年）×割合＝くらべる量（今年）</strong>。2割増え＝去年の(1＋0.2)＝<strong>1.2倍</strong>（2割＝0.2）。</div>
+    <div class="step q4"><span>①x</span>去年の部員を x 人とする（もとにする量）。</div>
+    <div class="zukai">去年 x 人 ────────→ 今年 36人
+         ＋2割(0.2x)増し  →  1.2x＝36</div>
+    <div class="step q4"><span>③式</span>今年の人数＝去年×1.2。<span class="math">1.2x＝36</span>（2割増し＝×(1＋0.2)）。</div>
+    <div class="step q4"><span>④解</span>x＝36÷1.2＝30。</div>
+    <div class="step q4"><span>⑤検算</span>去年30人の2割増し：30×1.2＝36○。増えた人数は30×0.2＝6人で、30＋6＝36もOK。</div>
+    <div class="bx bx-warn"><span class="red">36人を「去年」と思わない</span>＝36は<strong>今年（増えた後）</strong>。もとにする量（去年）が x。<span class="red">2割を0.02にしない</span>（2割＝0.2、2%＝0.02）。</div>
+    <div class="bx bx-link">人口・売上・部員の「○割増・○%減」は割引・値上げとまったく同じ型。場面がちがっても「もとにする量×割合＝くらべる量」1つで解ける。</div>
+    <div class="ans-final"><span>こたえ</span>去年の部員 30人</div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P5c 割合・食塩水 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">4問おつかれさま！今日のいちばんの収穫は<strong>「もとにする量×割合＝くらべる量」</strong>。割引も値上げも食塩水も人数も、全部この1つの式でつながっている。ポイントは①割引は×(1−割合)、値上げ・増加は×(1＋割合)②％・割は小数になおす（15%＝0.15、3割＝0.3）③食塩水は表にして「変わらない食塩」で＝を作る。式が作れなかった問題は「何を x にして」「何と何が＝か」をノートで言葉にしよう。きみは確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m05c';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！割合・食塩水 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 国語 記述プリント01（読解短文＋記述4問・型カード誌面化）＝文学的文章(自作)＋記述3／説明的文章(自作)＋記述1。約30分。KEY=tokkun_jk01。
+ ・本文は完全オリジナル（著作権フリー・答えを統制）。記述タイプは特訓2023 大問一に対応（心情内容/理由/内容説明/字数指定）。
+ ・記述は○✕で測れない→「書く→模範＋核心要素チェックリスト→自己採点(型どおり書けた？)→✕は3軸(内容/文末/字数)のどれがズレたか→書き直し→AI採点へ」。
+ ・採点基準は正本『国語_記述AI採点ルーブリック.md』§2型カード/§3配点3軸/§4採点プロンプトに準拠。
+ ・夏前プリント/暗記カードの機械(t/g/m/localStorage/印刷/もどる)を踏襲。
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>国語 記述01｜読解短文＋記述｜約30分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.85}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+/* 型カード（常時表示） */
+.typecard{background:#f3edf8;border:1px solid #cdbbe4;border-radius:10px;padding:14px 16px;margin-bottom:18px}
+.typecard h3{font-size:14px;font-weight:900;color:#5f4b7a;margin-bottom:8px}
+.typecard h3::before{content:"🖊 記述の型（書く前に必ず見る）";display:block}
+.typecard table{width:100%;border-collapse:collapse;font-size:13px}
+.typecard td{border:1px solid #d8c9ea;padding:6px 9px;color:#4a3b62}
+.typecard td:first-child{font-weight:800;white-space:nowrap;color:#5f4b7a;background:#ece2f6}
+.typecard .chk5{margin-top:8px;font-size:12.5px;color:#5f4b7a}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px}
+.unit-banner .unit-name{font-size:14px;font-weight:900}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:0 0 8px 8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-body{padding:16px 20px}
+/* 本文 */
+.passage{background:#fffdf7;border:1px solid #e6e0cf;border-radius:8px;padding:16px 18px;font-size:15.5px;line-height:2.0;color:#2c3540}
+.passage p{margin:0 0 10px;text-indent:1em}
+.passage p:last-child{margin-bottom:0}
+.passage .ul{text-decoration:underline;text-decoration-color:#c0392b;text-decoration-thickness:2px}
+.psrc{font-size:11.5px;color:#9aa0a6;margin-top:6px;text-align:right}
+/* 記述問 */
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:14px 0}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.qtype{display:inline-block;font-size:11px;font-weight:800;color:#5f4b7a;background:#efe7f7;border:1px solid #d6c7ea;border-radius:10px;padding:2px 9px;margin-left:6px}
+.qword{font-size:16px;font-weight:800;color:#31415f}
+.qhint{font-size:13px;color:#5f4b7a;margin-top:4px}
+.qhint b{color:#7a3f86}
+.write-area{margin:10px 0 4px;background:#fff;border:1px dashed #c7cdbf;border-radius:8px;padding:10px 12px}
+.write-area .wl{display:block;border-bottom:1px solid #d7dccd;height:30px}
+.write-area .cap{font-size:11.5px;color:#8a93a0;margin-bottom:4px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:13px}
+.ans-box.open{display:block}
+.ans-main{font-size:16px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.checklist{font-size:13px;color:#3a5a45;margin:6px 0}
+.checklist .ci{display:block;margin:2px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#8a5a19}
+.bx-warn::before{content:"⚠️ よくあるズレ";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.gq{margin-top:10px}
+.grade{font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.miss{display:none;margin-top:8px;background:#f6f3ee;border:1px dashed #cdbfa6;border-radius:8px;padding:8px 12px;font-size:12.5px;color:#6b5a3e}
+.miss.show{display:block}
+.miss .ml{font-weight:800;margin-right:6px}
+.miss button{font-size:12px;border:1px solid #cdbfa6;background:#fff;color:#6b5a3e;border-radius:14px;padding:3px 10px;margin:3px 4px 0 0;cursor:pointer}
+.miss button.sel{background:#b89b6a;color:#fff;border-color:#b89b6a}
+.miss .ai{display:block;margin-top:6px;color:#3f6f9f}
+.redo{display:block;margin-top:6px;color:#8a5a19;font-size:12.5px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.miss{display:none}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .write-area .wl{height:26px}
+  .sec,.passage,.q,.typecard{break-inside:avoid;page-break-inside:avoid}
+  .unit-banner{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">国語 記述01</span><span class="pg-badge">読解短文＋記述</span><span class="pg-badge">型カード</span></div>
+  <h1>国語 記述プリント01｜読んで、型どおりに書く</h1>
+  <p>目安 約30分　対象: 中1　＝本文を読む→記述を書く→「答えを見る」で模範とくらべ自己採点→ズレたら直す。</p>
+  <p class="pg-sub">🌸 きみは「読む力」が強み。あとは<b>書き方（型）</b>だけ。型どおりに書けば点になる。</p>
+</div>
+
+<!-- 型カード（常時表示） -->
+<div class="typecard">
+  <h3></h3>
+  <table>
+    <tr><td>どういうこと</td><td>文末は <b>「〜こと。」</b>　骨組み＝〔だれ／何〕が〔どうである〕こと。</td></tr>
+    <tr><td>なぜ・何のため</td><td>文末は <b>「〜から。」「〜ため。」</b>　骨組み＝〔理由・目的〕から。</td></tr>
+    <tr><td>どんな気持ち</td><td>文末は <b>「〜気持ち。」「〜思い。」</b>　骨組み＝〔対象〕への〔心情語〕気持ち。</td></tr>
+  </table>
+  <div class="chk5">✅ 書いたら最後に5秒チェック：<b>①核心の言葉が入ったか ②文末は問いに合うか ③字数は条件内か</b>（＝この3つで採点される）</div>
+</div>
+
+<!-- ===== 大問一 文学的文章（自作）＋記述3 ===== -->
+<div class="unit-banner">
+  <span class="unit-num">大問一</span>
+  <span class="unit-name">文学的文章（心情を書く）</span>
+  <span class="unit-time">記述3問</span>
+</div>
+<div class="sec">
+  <div class="sec-body">
+    <div class="passage">
+      <p>三月の駅のホームは、まだ風が冷たかった。みなとは、引っこしていくさくらとならんで、電車を待っていた。</p>
+      <p>「これ、読んでね。着いてから」</p>
+      <p>さくらが、小さな手紙を差し出した。みなとはそれを受け取って、ポケットにそっとしまった。本当は、今すぐ開けたかった。でも、開けたら泣いてしまいそうで、できなかった。</p>
+      <p>電車が、ゆっくりとホームに入ってくる。さくらが乗りこむと、ドアの向こうで小さく手をふった。みなとは、<span class="ul">せいいっぱい笑って</span>、大きく手をふり返した。</p>
+      <p>「またね！　ぜったい会おうね！」</p>
+      <p>声が、少しふるえた。それでも、最後まで笑っていた。<span class="ul">さくらに、心配そうな顔を見せたくなかったからだ。</span></p>
+      <p>電車が走り出し、さくらのすがたが見えなくなると、みなとの<span class="ul">胸のおくが、ぎゅっとなった</span>。ポケットの手紙を、にぎりしめる。冷たい風の中で、みなとはしばらく、その場から動けなかった。</p>
+      <div class="psrc">※本文は学習用のオリジナル（著作権フリー）</div>
+    </div>
+
+    <div class="q" data-id="JK-1">
+      <div><span class="qnum-e">問題1</span><span class="qtype">どんな気持ち型</span></div>
+      <div class="qword">──「せいいっぱい笑って」手をふったとき、みなとの<b>本当の気持ち</b>はどんな気持ちですか。<b>十五字以内</b>で書きなさい。</div>
+      <div class="qhint">型ヒント：文末は <b>「〜気持ち。」</b>　（本当はどう感じている？）</div>
+      <div class="write-area"><div class="cap">ここに書こう（15字以内）</div><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">（模範）さびしくてたまらない気持ち。</div>
+        <div class="checklist">
+          <span class="ci">□ 核心：さびしい／悲しい／本当はつらい（強がりの裏の本心）</span>
+          <span class="ci">□ 文末：「〜気持ち。」になっている</span>
+          <span class="ci">□ 字数：15字以内</span>
+        </div>
+        <div class="bx-warn">「うれしい気持ち」は×（笑顔は強がり）。本文「泣いてしまいそう」「声がふるえた」が手がかり。</div>
+      </div>
+      <div class="gq" data-gid="JK-1">
+        <div class="grade">型どおり書けた？ <button class="o" onclick="g(this,'JK-1','o')">○</button><button class="x" onclick="g(this,'JK-1','x')">✕</button></div>
+        <div class="miss"><span class="ml">どこがズレた？</span><button onclick="m(this,'JK-1','内容')">内容</button><button onclick="m(this,'JK-1','文末')">文末</button><button onclick="m(this,'JK-1','字数')">字数</button><span class="redo">→ 模範とくらべて書き直そう</span><span class="ai">💡 AIに採点してほしいときは『記述AI採点ルーブリック』§4のプロンプトに貼ろう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="JK-2">
+      <div><span class="qnum-e">問題2</span><span class="qtype">なぜ・理由型</span></div>
+      <div class="qword">みなとが<b>最後まで笑っていた</b>のはなぜですか。<b>二十字以内</b>で書きなさい。</div>
+      <div class="qhint">型ヒント：文末は <b>「〜から。」「〜ため。」</b></div>
+      <div class="write-area"><div class="cap">ここに書こう（20字以内）</div><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">（模範）さくらに心配をかけたくなかったから。</div>
+        <div class="checklist">
+          <span class="ci">□ 核心：さくらに心配（悲しい顔）をさせたくない</span>
+          <span class="ci">□ 文末：「〜から。」または「〜ため。」</span>
+          <span class="ci">□ 字数：20字以内</span>
+        </div>
+        <div class="bx-warn">本文「心配そうな顔を見せたくなかったからだ」が直接の根拠。文末を「〜から。」で結ぶ。</div>
+      </div>
+      <div class="gq" data-gid="JK-2">
+        <div class="grade">型どおり書けた？ <button class="o" onclick="g(this,'JK-2','o')">○</button><button class="x" onclick="g(this,'JK-2','x')">✕</button></div>
+        <div class="miss"><span class="ml">どこがズレた？</span><button onclick="m(this,'JK-2','内容')">内容</button><button onclick="m(this,'JK-2','文末')">文末</button><button onclick="m(this,'JK-2','字数')">字数</button><span class="redo">→ 模範とくらべて書き直そう</span><span class="ai">💡 AI採点はルーブリック§4のプロンプトへ</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="JK-3">
+      <div><span class="qnum-e">問題3</span><span class="qtype">どういうこと型</span></div>
+      <div class="qword">──「胸のおくが、ぎゅっとなった」とは、<b>どういうこと</b>ですか。<b>二十五字以内</b>で書きなさい。</div>
+      <div class="qhint">型ヒント：文末は <b>「〜こと。」</b>　（みなとは今どんな状態？）</div>
+      <div class="write-area"><div class="cap">ここに書こう（25字以内）</div><span class="wl"></span><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">（模範）親友との別れがつらくてしかたがないということ。</div>
+        <div class="checklist">
+          <span class="ci">□ 核心：別れ＋つらい・悲しい（こらえていた気持ちがあふれる）</span>
+          <span class="ci">□ 文末：「〜こと。」</span>
+          <span class="ci">□ 字数：25字以内</span>
+        </div>
+        <div class="bx-warn">体の様子（ぎゅっ）を<b>心情の言葉</b>に言いかえるのがコツ。「動けなかった」も別れのつらさの表れ。</div>
+      </div>
+      <div class="gq" data-gid="JK-3">
+        <div class="grade">型どおり書けた？ <button class="o" onclick="g(this,'JK-3','o')">○</button><button class="x" onclick="g(this,'JK-3','x')">✕</button></div>
+        <div class="miss"><span class="ml">どこがズレた？</span><button onclick="m(this,'JK-3','内容')">内容</button><button onclick="m(this,'JK-3','文末')">文末</button><button onclick="m(this,'JK-3','字数')">字数</button><span class="redo">→ 模範とくらべて書き直そう</span><span class="ai">💡 AI採点はルーブリック§4のプロンプトへ</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== 大問二 説明的文章（自作）＋記述1 ===== -->
+<div class="unit-banner">
+  <span class="unit-num">大問二</span>
+  <span class="unit-name">説明的文章（内容を書く）</span>
+  <span class="unit-time">記述1問</span>
+</div>
+<div class="sec">
+  <div class="sec-body">
+    <div class="passage">
+      <p>わたしたちが毎日使っている「もの」には、その国の人のくらし方が表れている。たとえば、日本の茶わんには取っ手がないが、西洋のカップには取っ手がある。これは、熱いものを手に持つか、持たないか、というしゅうかんのちがいから生まれた形だ。</p>
+      <p>つまり、ものの形は、ただの見た目ではない。その地いきの人びとが、どうくらし、何を大切にしてきたかという文化を、静かに映し出している。<span class="ul">ものは、文化の鏡なのである。</span></p>
+      <div class="psrc">※本文は学習用のオリジナル（著作権フリー）</div>
+    </div>
+
+    <div class="q" data-id="JK-4">
+      <div><span class="qnum-e">問題4</span><span class="qtype">どういうこと型</span></div>
+      <div class="qword">──「ものは、文化の鏡なのである」とは、<b>どういうこと</b>ですか。<b>三十字以内</b>で書きなさい。</div>
+      <div class="qhint">型ヒント：文末は <b>「〜こと。」</b>　（「鏡」＝何を映す？を言いかえる）</div>
+      <div class="write-area"><div class="cap">ここに書こう（30字以内）</div><span class="wl"></span><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">（模範）ものの形に、その地いきの人のくらし方や文化が表れているということ。</div>
+        <div class="checklist">
+          <span class="ci">□ 核心：ものの形に 人のくらし方・文化 が表れる（映す＝表れる）</span>
+          <span class="ci">□ 文末：「〜こと。」</span>
+          <span class="ci">□ 字数：30字以内</span>
+        </div>
+        <div class="bx-warn">「鏡」という比ゆを、<b>ふつうの言葉</b>（表れている・映している）に言いかえるのがポイント。</div>
+      </div>
+      <div class="gq" data-gid="JK-4">
+        <div class="grade">型どおり書けた？ <button class="o" onclick="g(this,'JK-4','o')">○</button><button class="x" onclick="g(this,'JK-4','x')">✕</button></div>
+        <div class="miss"><span class="ml">どこがズレた？</span><button onclick="m(this,'JK-4','内容')">内容</button><button onclick="m(this,'JK-4','文末')">文末</button><button onclick="m(this,'JK-4','字数')">字数</button><span class="redo">→ 模範とくらべて書き直そう</span><span class="ai">💡 AI採点はルーブリック§4のプロンプトへ</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">記述は「気持ち」でなく「型」で点になる。模範とくらべて、型どおりに直せたらOK。読む力が強いきみは、型さえつかめば一気に伸びる。よくがんばったね。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_jk01';   /* 国語 記述プリント01。採点基準＝国語_記述AI採点ルーブリック §2/§3/§4 */
+
+function t(b){
+  if(!b.dataset.label)b.dataset.label=b.textContent;
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':b.dataset.label;
+}
+function g(btn,id,v){
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var miss=box.querySelector('.miss');
+  if(v==='x'){ if(miss)miss.classList.add('show'); }
+  else{ if(miss)miss.classList.remove('show'); localStorage.removeItem(KEY+'_'+id+'_m'); box.querySelectorAll('.miss button').forEach(function(e){e.classList.remove('sel');}); }
+}
+function m(btn,id,v){
+  var miss=btn.closest('.miss');
+  miss.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id+'_m',v);
+}
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var miss=box.querySelector('.miss');
+        if(miss)miss.classList.add('show');
+        var mv=localStorage.getItem(KEY+'_'+id+'_m');
+        if(mv){ var mb=box.querySelector('.miss button[onclick*="\''+mv+'\'"]'); if(mb)mb.classList.add('sel'); }
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){ document.getElementById('doneBtn').textContent='✓ 完了ずみ'; }
+};
+</script>
+</body>
+</html>

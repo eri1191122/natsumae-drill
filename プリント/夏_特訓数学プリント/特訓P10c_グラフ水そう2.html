@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P10c グラフ・水そう②（9月大問5対策）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い（先に見ておこう）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 まずおさらい｜グラフ・水そうの読み方3つ";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.layer{margin:10px 0;border-radius:8px;padding:9px 13px;font-size:13px;line-height:1.9;background:#fff;border:1px solid #e4e8e3}
+.layer .lab{display:block;font-size:12px;font-weight:900;margin-bottom:3px;color:#3a5266}
+.layer.l1{background:#eef4fb;border-color:#cfe0f1}.layer.l1 .lab{color:#2f5a8a}
+.layer.l2{background:#f4f8fd;border-color:#dbe8f5}.layer.l2 .lab{color:#3a6a9a}
+.layer.l3{background:#f1f8f5;border-color:#cfe7df}.layer.l3 .lab{color:#2f6a5c}
+.layer.l4{background:#fdf7ee;border-color:#eedfc4}.layer.l4 .lab{color:#8a5a17}
+.layer.l5{background:#f7f4fb;border-color:#e3d8f0}.layer.l5 .lab{color:#5f4a8a}
+.layer.l7{background:#eafaf1;border-color:#bfe3cd}.layer.l7 .lab{color:#2f6b45}
+.layer ul{margin:3px 0 2px 1.25em}
+.layer .calc{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:13px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.figrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P10c</span><span class="pg-badge">数学：関数的・グラフ</span><span class="pg-badge">★グラフ・水そう② L3-L4（9月大問5直撃）</span></div>
+  <h1>グラフ・水そう②｜給水・満水時刻・折れるグラフ・排水を「あほでもわかる」までほどく</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に超ぶあつい7層解説つき</p>
+  <p class="pg-cheer">グラフ・水そうは4〜5月で空欄だった<strong>きみのいちばんの伸びしろ</strong>。でも安心して。コツはたった3つだけ：<strong>①かたむき＝1分あたり変わる量 ②満水・空っぽは「容積÷1分の量」で時刻を逆算 ③グラフが折れた所＝水のたまり方が変わった所</strong>。今日は1問ずつ、たとえ話つきでゆっくりほどいていくよ。</p>
+</div>
+
+<div class="osarai"><ul>
+  <li><b>かたむき＝1分あたり変わる量</b>。読みやすい点を1つ見つけ、「変わった量÷かかった時間」で出す。給水なら毎分入る水、排水なら毎分減る水。</li>
+  <li><b>満水・空っぽの時刻は逆算</b>。①1分あたりの量を出す→②<b>容積÷1分の量＝何分かかるか</b>→③開始時刻にその分をたす。これだけ。</li>
+  <li><b>グラフが折れた所＝たまり方が変わった所</b>。水そうに段差や仕切りがあると、せまい所では水位がはやく上がる（線が急になる）。</li>
+</ul></div>
+
+<!-- ===== 問1 一定割合の給水 L3 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">一定の割合で入る給水グラフ（毎分の量・ある時刻の量）L3</span><span class="unit-time">目安 6分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    からの水そうに、一定の割合で水を入れます。下のグラフは「水を入れ始めてからの時間」と「たまった水の量」の関係です。
+    <div class="figrow">
+    <svg class="fig" width="320" height="195" viewBox="0 0 320 195" aria-label="問1 給水グラフ">
+      <line x1="45" y1="125" x2="285" y2="125" stroke="#eee" stroke-width="1"/>
+      <line x1="45" y1="90" x2="285" y2="90" stroke="#eee" stroke-width="1"/>
+      <line x1="45" y1="55" x2="285" y2="55" stroke="#eee" stroke-width="1"/>
+      <line x1="105" y1="160" x2="105" y2="20" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="165" y1="160" x2="165" y2="20" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="225" y1="160" x2="225" y2="20" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- read helper: (4,20) -->
+      <line x1="105" y1="160" x2="105" y2="125" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="125" x2="105" y2="125" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- axes -->
+      <line x1="45" y1="160" x2="290" y2="160" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="165" x2="45" y2="15" stroke="#555" stroke-width="1.5"/>
+      <!-- graph line: (0,0)->(16,80) -->
+      <polyline points="45,160 285,20" fill="none" stroke="#2f6a5c" stroke-width="2.5"/>
+      <circle cx="105" cy="125" r="3" fill="#2f6a5c"/>
+      <text x="50" y="13" font-size="11" fill="#444">水の量(L)</text>
+      <text x="292" y="164" font-size="11" fill="#444">時間(分)</text>
+      <text x="22" y="129" font-size="11" fill="#444">20</text>
+      <text x="22" y="94" font-size="11" fill="#444">40</text>
+      <text x="22" y="59" font-size="11" fill="#444">60</text>
+      <text x="100" y="174" font-size="11" fill="#444">4</text>
+      <text x="160" y="174" font-size="11" fill="#444">8</text>
+      <text x="220" y="174" font-size="11" fill="#444">12</text>
+      <text x="40" y="174" font-size="11" fill="#444">0</text>
+    </svg>
+    </div>
+    <span class="lead">問1</span>(1) この水そうには1分あたり何Lの水が入りますか。<br>
+    <span class="lead">問1</span>(2) 水を入れ始めてから7分後の水の量は何Lですか。</div>
+  <div class="note-draw">グラフのちょうど点が打ってある所（4分のところ）を1つ読み、「水の量÷時間」で1分あたりを出そう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="layer l1"><span class="lab">① 何を聞かれてる？</span>「1分でどれだけ水がたまるか（＝水のいきおい）」と、「7分たったらどこまでたまるか」の2つ。</div>
+    <div class="layer l2"><span class="lab">② わかってること／求めるもの</span>
+      <ul>
+        <li>わかってる：グラフに点がある＝<b>4分のとき20L</b>たまっている。水は一定のいきおいで入る（直線だから）。</li>
+        <li>求める：(1)1分あたり何L　(2)7分後の水の量</li>
+      </ul></div>
+    <div class="layer l3"><span class="lab">③ 図でイメージ</span>グラフの<b>ななめの線のかたむき（急さ）</b>が、1分で増える水の量。線が原点(0,0)からまっすぐのびているのは「最初0L→一定のいきおいでたまる」という意味。点(4分,20L)を見ればいきおいがわかる。</div>
+    <div class="layer l4"><span class="lab">④ 作戦＋たとえ話</span>水道で水をためる場面を想像しよう。「4分で20Lたまった」なら、1分では4等分して<b>20÷4＝5L</b>ずつ。これが毎分のいきおい。あとは7分ぶんだけ「5Lのいきおい」をかければ、7分後の量になる（5×7）。一定のいきおいだからかけ算でいける。</div>
+    <div class="layer l5"><span class="lab">⑤ 1ステップずつ</span>
+      <ul>
+        <li>(1) 点(4分,20L)を読む … グラフで点が打ってある所がいちばん正確 → <span class="calc">20 ÷ 4 ＝ 5</span> … 4等分するから割り算 → <b>毎分5L</b></li>
+        <li>(2) 7分後＝毎分5Lを7回ぶん … <span class="calc">5 × 7 ＝ 35</span> … いきおい×時間 → <b>35L</b></li>
+      </ul></div>
+    <div class="bx bx-warn"><span class="red">グラフの「20」をそのまま答えにしない</span>。20Lは「4分での量」であって「1分あたり」ではない。<span class="red">まず1分あたり（割合）を出すのが先</span>。ここをとばすと(2)も全部ずれる。</div>
+    <div class="layer l7"><span class="lab">⑦ 検算＋次に見抜くコツ</span>検算：毎分5Lで8分なら5×8＝40L。グラフの8分の所を見ると、ちょうど40Lの目盛りに線が来ている → ほら合った○。<br>次にこんなグラフが出たら：<b>まず点が打ってある所を1つ読んで「量÷時間」で毎分を出す</b>。これさえやれば、何分後でも「毎分×時間」で求まる。</div>
+    <div class="bx bx-link">9月特訓選抜 大問5(1)の「毎分何L」の読み取りそのもの。ここを正確に読めると、(2)以降の満水・排水が全部つながる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 毎分5L　(2) 35L</div>
+  </div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1)</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K グラフが読めない</button><button onclick="m(this)">A 読めたが式に直せない</button></div><div class="write3">📝 まちがえたら、点(4分,20L)と「20÷4」の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2)</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 毎分×時間が分からない</button><button onclick="m(this)">A 読めたが計算ミス</button></div><div class="write3">📝 まちがえたら、5×7 の式をノートに書こう</div></div>
+</div>
+
+<!-- ===== 問2 満水時刻の逆算 L3-L4 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">★満水になる時刻を逆算する L3-L4（9月5(2)同型）</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    容積72Lの水そうに、午前10時00分から一定の割合で水を入れ始めました。下のグラフは「水を入れ始めてからの時間」と「水の量」の関係の一部です（点まではわかっていて、その先は点線）。
+    <div class="figrow">
+    <svg class="fig" width="320" height="195" viewBox="0 0 320 195" aria-label="問2 満水逆算グラフ">
+      <line x1="45" y1="136.7" x2="285" y2="136.7" stroke="#eee" stroke-width="1"/>
+      <line x1="45" y1="20" x2="285" y2="20" stroke="#eee" stroke-width="1"/>
+      <!-- read helper (4,12) -->
+      <line x1="77" y1="160" x2="77" y2="136.7" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="136.7" x2="77" y2="136.7" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- full point helper (24,72) -->
+      <line x1="237" y1="160" x2="237" y2="20" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="20" x2="237" y2="20" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- axes -->
+      <line x1="45" y1="160" x2="290" y2="160" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="165" x2="45" y2="15" stroke="#555" stroke-width="1.5"/>
+      <!-- solid (0,0)->(4,12), dashed (4,12)->(24,72) -->
+      <polyline points="45,160 77,136.7" fill="none" stroke="#2f6a5c" stroke-width="2.5"/>
+      <polyline points="77,136.7 237,20" fill="none" stroke="#cdd6cf" stroke-width="2" stroke-dasharray="4 4"/>
+      <circle cx="77" cy="136.7" r="3" fill="#2f6a5c"/>
+      <text x="50" y="13" font-size="11" fill="#444">水の量(L)</text>
+      <text x="292" y="164" font-size="11" fill="#444">時間(分)</text>
+      <text x="22" y="140" font-size="11" fill="#444">12</text>
+      <text x="22" y="24" font-size="11" fill="#444">72</text>
+      <text x="72" y="174" font-size="11" fill="#444">4</text>
+      <text x="231" y="174" font-size="11" fill="#444">?</text>
+      <text x="40" y="174" font-size="11" fill="#444">0</text>
+    </svg>
+    </div>
+    <span class="lead">問2</span>(1) この水そうには1分あたり何Lの水が入りますか。<br>
+    <span class="lead">問2</span>(2) この水そうが満水になるのは午前何時何分ですか。</div>
+  <div class="note-draw">まず1分あたりの割合を出す。次に「容積÷割合＝満水まで何分」。最後に開始時刻10:00にたす。3段階！</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="layer l1"><span class="lab">① 何を聞かれてる？</span>「この水道のいきおいは毎分どれだけ？」と「いっぱい（満水）になるのは何時何分？」。時計の時刻まで答えるのがポイント。</div>
+    <div class="layer l2"><span class="lab">② わかってること／求めるもの</span>
+      <ul>
+        <li>わかってる：容積（満タンの量）は<b>72L</b>。開始は<b>午前10時00分</b>。グラフの点は<b>4分で12L</b>。</li>
+        <li>求める：(1)毎分何L　(2)満水になる時刻（何時何分）</li>
+      </ul></div>
+    <div class="layer l3"><span class="lab">③ 図でイメージ</span>実線は「ここまで実際にわかっている所」、点線は「このいきおいのままいけば、こうなるはず」という未来。点線が72Lの高さにとどく所の時間（グラフの「?」）が満水までの時間。グラフのかたむきは最後まで変わらない（一定のいきおい）。</div>
+    <div class="layer l4"><span class="lab">④ 作戦＋たとえ話</span>バケツに水道で水をためるのと同じ。「毎分3L入る」「バケツは72L」なら、<b>72÷3＝24分</b>でいっぱい。最後に「10時にスタートして24分後だから10時24分」と時計に直す。<b>①毎分→②容積÷毎分→③時刻にたす</b>、の3段がまえで必ず解ける。</div>
+    <div class="layer l5"><span class="lab">⑤ 1ステップずつ</span>
+      <ul>
+        <li>(1) 点(4分,12L) → <span class="calc">12 ÷ 4 ＝ 3</span> … 4等分 → <b>毎分3L</b></li>
+        <li>(2) 満水まで何分？ … 満タン72Lを毎分3Lで → <span class="calc">72 ÷ 3 ＝ 24</span> … 容積÷いきおい → <b>24分かかる</b></li>
+        <li>(2) 時刻に直す … <span class="calc">10時00分 ＋ 24分 ＝ 10時24分</span> … 開始時刻にたす → <b>午前10時24分</b></li>
+      </ul></div>
+    <div class="bx bx-warn"><span class="red">①満水の逆算で「容積72」を使い忘れない</span>。グラフの12Lで止めて「12÷3＝4分」などにしないこと。聞かれているのは<span class="red">満水（72L）になる時刻</span>。<br><span class="red">②「24分後」で止めず、10:00にたして時刻にする</span>。「24分」と答えるとバツ。何時何分まで書こう。</div>
+    <div class="layer l7"><span class="lab">⑦ 検算＋次に見抜くコツ</span>検算：毎分3L×24分＝72L＝容積ぴったり○。だから24分で正しい。<br>次にこんなグラフが出たら：<b>「割合→容積÷割合→開始時刻にたす」の3段</b>を思い出す。満水・排水・くみ上げ、どの問題でもこの型がそのまま効く。</div>
+    <div class="bx bx-link">9月特訓選抜 大問5(2)の核そのもの。3段の型を体に入れておけば、本番で時間に追われても手が止まらない。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 毎分3L　(2) 午前10時24分</div>
+  </div>
+  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1)</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K グラフが読めない</button><button onclick="m(this)">A 読めたが計算ミス</button></div><div class="write3">📝 まちがえたら、12÷4 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2) 満水時刻</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 容積を使い忘れた</button><button onclick="m(this)">A 時刻にたし忘れた</button></div><div class="write3">📝 まちがえたら、72÷3＝24分→10:00+24分 をノートに書こう</div></div>
+</div>
+
+<!-- ===== 問3 段差で折れる水そう L4 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★途中でたまり方が変わる水そう（折れるグラフ）L4 本番級</span><span class="unit-time">目安 10分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    下の図のような、とちゅうに段差のある水そうに、一定の割合で水を入れます。奥行きはどこも10cmです。水位は底からはかり、グラフは「時間」と「水位」の関係です。
+    <div class="figrow">
+    <svg class="fig" width="260" height="180" viewBox="0 0 260 180" aria-label="問3 段差水そうの寸法図">
+      <path d="M40,150 L40,40 L130,40 L130,100 L230,100 L230,150 Z" fill="#eef7f5" stroke="#2f6a5c" stroke-width="2"/>
+      <line x1="40" y1="100" x2="230" y2="100" stroke="#b8c8bd" stroke-width="1.5" stroke-dasharray="4 3"/>
+      <text x="52" y="34" font-size="11" fill="#2f6a5c">上の幅12cm</text>
+      <text x="146" y="116" font-size="11" fill="#2f6a5c">出っぱり12cm</text>
+      <text x="80" y="166" font-size="11" fill="#2f6a5c">下の幅24cm</text>
+      <text x="9" y="76" font-size="11" fill="#2f6a5c">上6cm</text>
+      <text x="9" y="128" font-size="11" fill="#2f6a5c">下8cm</text>
+      <text x="150" y="58" font-size="11" fill="#777">奥行10cm</text>
+    </svg>
+    <svg class="fig" width="320" height="195" viewBox="0 0 320 195" aria-label="問3 水位グラフ（折れ線）">
+      <line x1="45" y1="90" x2="285" y2="90" stroke="#eee" stroke-width="1"/>
+      <line x1="45" y1="37.5" x2="285" y2="37.5" stroke="#eee" stroke-width="1"/>
+      <!-- helper折れ点(8,8) -->
+      <line x1="192.7" y1="160" x2="192.7" y2="90" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="90" x2="192.7" y2="90" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- 満水点(11,14) -->
+      <line x1="248.1" y1="160" x2="248.1" y2="37.5" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="37.5" x2="248.1" y2="37.5" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="160" x2="290" y2="160" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="165" x2="45" y2="15" stroke="#555" stroke-width="1.5"/>
+      <!-- (0,0)->(8,8)->(11,14) 折れ線 -->
+      <polyline points="45,160 192.7,90 248.1,37.5" fill="none" stroke="#a85a2a" stroke-width="2.5"/>
+      <circle cx="192.7" cy="90" r="3" fill="#a85a2a"/><circle cx="248.1" cy="37.5" r="3" fill="#a85a2a"/>
+      <text x="50" y="13" font-size="11" fill="#444">水位(cm)</text>
+      <text x="292" y="164" font-size="11" fill="#444">時間(分)</text>
+      <text x="27" y="94" font-size="11" fill="#444">8</text>
+      <text x="22" y="41" font-size="11" fill="#444">14</text>
+      <text x="187" y="174" font-size="11" fill="#444">8</text>
+      <text x="243" y="174" font-size="11" fill="#444">11</text>
+      <text x="40" y="174" font-size="11" fill="#444">0</text>
+    </svg>
+    </div>
+    <span class="lead">問3</span>(1) 1分間に何cm³の水が入っていますか。<br>
+    <span class="lead">問3</span>(2) この水そうが満水になるのは、水を入れ始めてから何分後ですか。</div>
+  <div class="note-draw">グラフだけでなく寸法図も使う。0〜8分は下の広い所（幅24cm）に水が入り、折れたあとは上のせまい所（幅12cm）に入る。水量＝断面積×水位の変化。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="layer l1"><span class="lab">① 何を聞かれてる？</span>「水道のいきおいは毎分何cm³？（こんどはL でなく cm³）」と「いっぱいになるのは何分後？」。水そうの形が下と上でちがうのがミソ。</div>
+    <div class="layer l2"><span class="lab">② わかってること／求めるもの</span>
+      <ul>
+        <li>形：下の段は幅24cm・高さ8cm、上の段は幅12cm・高さ6cm。奥行はどちらも10cm。</li>
+        <li>グラフ：水位は8分で0→8cm（折れ点）、そのあと急になって11分で14cm（満水＝8+6cm）。</li>
+        <li>求める：(1)毎分何cm³　(2)満水まで何分後</li>
+      </ul></div>
+    <div class="layer l3"><span class="lab">③ 図でイメージ</span>グラフが<b>8分の所でカクッと急になる</b>のは、せまい上の段に入りだしたから。同じいきおいでも、入れ物がせまいと水面はぐんぐん上がる（線が急）。下の段はゆったり、上の段はせまくて急。これが「折れ」の正体。</div>
+    <div class="layer l4"><span class="lab">④ 作戦＋たとえ話</span>大きいバケツと細いコップに、同じ水道で水を入れる場面。コップの方が水面はすぐ上がるよね。だから水位の上がり方だけ見てもいきおいは分からない。<b>「何cm³入ったか」は 底面積×高さ で体積に直す</b>のがコツ。下の段で「何cm³入ったか」を出せば、毎分のいきおいが分かる。</div>
+    <div class="layer l5"><span class="lab">⑤ 1ステップずつ</span>
+      <ul>
+        <li>(1) 下の段の底面積 … <span class="calc">24 × 10 ＝ 240</span> cm² … 幅×奥行</li>
+        <li>(1) 下の段にたまった体積 … 水位0→8cm → <span class="calc">240 × 8 ＝ 1920</span> cm³ … 底面積×高さ</li>
+        <li>(1) これが8分で入った → <span class="calc">1920 ÷ 8 ＝ 240</span> cm³ … 体積÷時間 → <b>毎分240cm³</b></li>
+        <li>(2) 上の段の底面積 … <span class="calc">12 × 10 ＝ 120</span> cm² … 上はせまい</li>
+        <li>(2) 上の段の体積 … 高さ6cm → <span class="calc">120 × 6 ＝ 720</span> cm³</li>
+        <li>(2) 上の段にかかる時間 … <span class="calc">720 ÷ 240 ＝ 3</span> 分</li>
+        <li>(2) 満水まで … <span class="calc">8 ＋ 3 ＝ 11</span> 分 … 下の8分＋上の3分 → <b>11分後</b></li>
+      </ul></div>
+    <div class="bx bx-warn"><span class="red">①水位の上がり方(cm/分)と、水の量(cm³/分)を混ぜない</span>。聞かれたのは「1分間に入る水の体積(cm³)」。水位だけで答えない。<br><span class="red">②折れたあとも幅24cmで計算しない</span>。段をこえたら入る所がせまくなる（断面積が240→120へ変わる）。<br><span class="red">③下の8分を足し忘れない</span>。上の段だけの3分で止めずに、8＋3＝11分。</div>
+    <div class="layer l7"><span class="lab">⑦ 検算＋次に見抜くコツ</span>検算：満水ぜんぶの体積＝下1920＋上720＝2640cm³。毎分240cm³で 2640÷240＝11分 → グラフの満水点11分とぴったり○。<br>次にこんなグラフが出たら：<b>グラフが折れた所＝水そうの形が変わった所</b>と読む。折れる前で「毎分の量」を出し、折れたあとは新しい断面積で時間を出して、たし算で満水。</div>
+    <div class="bx bx-link">9月特訓選抜 大問5の本番型。寸法図→断面積、グラフ→水位変化、そこから給水量と満水時刻を出す。<strong>図とグラフを同時に読む</strong>のが得点の分かれ目。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 毎分240cm³　(2) 11分後</div>
+  </div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1)★L4</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 断面積が出せない</button><button onclick="m(this)">A 読めたが体積にできない</button></div><div class="write3">📝 まちがえたら、24×10×8÷8 をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2)★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 段差後の断面積ミス</button><button onclick="m(this)">A 8分を足し忘れた</button></div><div class="write3">📝 まちがえたら、12×10×6÷240＋8 をノートに書こう</div></div>
+</div>
+
+<!-- ===== 問4 排水（満水から減る） L4 ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★排水のグラフ（満水から一定の割合で減る・空になる時刻）L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    容積60Lの水そうが満水になっています。午前10時00分から、せんをぬいて一定の割合で水をぬいていきます。下のグラフは「ぬき始めてからの時間」と「のこっている水の量」の関係です。
+    <div class="figrow">
+    <svg class="fig" width="320" height="195" viewBox="0 0 320 195" aria-label="問4 排水グラフ">
+      <line x1="45" y1="113.3" x2="285" y2="113.3" stroke="#eee" stroke-width="1"/>
+      <line x1="45" y1="66.7" x2="285" y2="66.7" stroke="#eee" stroke-width="1"/>
+      <line x1="45" y1="20" x2="285" y2="20" stroke="#eee" stroke-width="1"/>
+      <!-- read helper (3,48) -->
+      <line x1="85" y1="160" x2="85" y2="48" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="48" x2="85" y2="48" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- empty point (15,0) -->
+      <line x1="245" y1="160" x2="245" y2="20" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- axes -->
+      <line x1="45" y1="160" x2="290" y2="160" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="165" x2="45" y2="15" stroke="#555" stroke-width="1.5"/>
+      <!-- decreasing (0,60)->(15,0) -->
+      <polyline points="45,20 245,160" fill="none" stroke="#3f6f9f" stroke-width="2.5"/>
+      <circle cx="45" cy="20" r="3" fill="#3f6f9f"/><circle cx="85" cy="48" r="3" fill="#3f6f9f"/>
+      <text x="50" y="13" font-size="11" fill="#444">水の量(L)</text>
+      <text x="292" y="164" font-size="11" fill="#444">時間(分)</text>
+      <text x="22" y="24" font-size="11" fill="#444">60</text>
+      <text x="22" y="52" font-size="11" fill="#444">48</text>
+      <text x="80" y="174" font-size="11" fill="#444">3</text>
+      <text x="240" y="174" font-size="11" fill="#444">?</text>
+      <text x="40" y="174" font-size="11" fill="#444">0</text>
+    </svg>
+    </div>
+    <span class="lead">問4</span>(1) 1分あたり何Lの水がぬけていきますか。<br>
+    <span class="lead">問4</span>(2) 水そうがからになるのは午前何時何分ですか。</div>
+  <div class="note-draw">給水とは逆で、グラフは右下がり。まず「1分で何L減るか」を出し、次に「満水60L÷1分の量」で空になるまでの時間。最後に10:00にたす。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="layer l1"><span class="lab">① 何を聞かれてる？</span>「1分でどれだけ水が減るか」と「からっぽになるのは何時何分か」。今回は<b>たまるのではなく、ぬける</b>話。</div>
+    <div class="layer l2"><span class="lab">② わかってること／求めるもの</span>
+      <ul>
+        <li>わかってる：はじめ満水で<b>60L</b>。開始<b>午前10時00分</b>。グラフの点は<b>3分で48L</b>のこっている。</li>
+        <li>求める：(1)毎分何L減るか　(2)からになる時刻</li>
+      </ul></div>
+    <div class="layer l3"><span class="lab">③ 図でイメージ</span>グラフが<b>右下がり</b>なのは「時間がたつほど水が減る」から。線のかたむき（下がる急さ）が、1分で減る量。線が0Lの所（横じく）にとどく時間が「からになる時刻」。グラフの「?」のところ。</div>
+    <div class="layer l4"><span class="lab">④ 作戦＋たとえ話</span>おふろのせんをぬいて水が減っていくのと同じ。「3分で60→48Lになった＝12L減った」なら、1分では<b>12÷3＝4L</b>ずつ減る。あとは満水60Lが毎分4Lで減るから、<b>60÷4＝15分</b>でからっぽ。最後に時計に直す。給水の3段がまえと同じで、向きが逆なだけ。</div>
+    <div class="layer l5"><span class="lab">⑤ 1ステップずつ</span>
+      <ul>
+        <li>(1) 3分で減った量 … はじめ60L、3分で48L → <span class="calc">60 − 48 ＝ 12</span> L 減った</li>
+        <li>(1) 毎分の量 … <span class="calc">12 ÷ 3 ＝ 4</span> … 3等分 → <b>毎分4L 減る</b></li>
+        <li>(2) からになるまで … 満水60Lが毎分4Lで → <span class="calc">60 ÷ 4 ＝ 15</span> 分</li>
+        <li>(2) 時刻に直す … <span class="calc">10時00分 ＋ 15分 ＝ 10時15分</span> → <b>午前10時15分</b></li>
+      </ul></div>
+    <div class="bx bx-warn"><span class="red">①「48」をそのまま毎分にしない</span>。48Lは「3分後にのこっている量」。1分で減る量は「減った量(60−48)÷時間」で出す。<br><span class="red">②空になるのは「のこり0L」になる時刻</span>。満水60Lぜんぶがぬけきる時間（60÷4）を使う。<br><span class="red">③「15分後」で止めず、10:00にたして時刻にする</span>。</div>
+    <div class="layer l7"><span class="lab">⑦ 検算＋次に見抜くコツ</span>検算：毎分4L×15分＝60L＝満水ぜんぶ、これがちょうどぬけきる○。グラフでも15分の所で線が0Lにとどいている。<br>次にこんなグラフが出たら：<b>右下がり＝排水</b>。やることは給水と同じ3段（毎分→容積÷毎分→時刻にたす）で、「増える」を「減る」に読みかえるだけ。</div>
+    <div class="bx bx-link">9月特訓選抜 大問5は、給水だけでなく排水・くみ出しの形でも出る。「右下がりでも考え方は同じ」と分かっていれば、本番でひるまない。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 毎分4L　(2) 午前10時15分</div>
+  </div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1)</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 減った量が出せない</button><button onclick="m(this)">A 読めたが計算ミス</button></div><div class="write3">📝 まちがえたら、(60−48)÷3 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 空になる時刻</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 容積を使い忘れた</button><button onclick="m(this)">A 時刻にたし忘れた</button></div><div class="write3">📝 まちがえたら、60÷4＝15分→10:00+15分 をノートに書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P10c グラフ・水そう② 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">グラフ・水そう②おつかれさま！今日の収穫は<strong>「給水も満水も折れも排水も、ぜんぶ"毎分の量を出す→容積÷毎分→時刻にたす"でつながる」</strong>こと。グラフが折れたら形が変わった所、右下がりなら排水。空欄だったグラフを、きみは今日ちゃんと自分の手でほどいた。まちがえた問題は、読んだ点の数値と式をノートに書き直そう。確実に進んでる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m10c';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！グラフ・水そう② クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

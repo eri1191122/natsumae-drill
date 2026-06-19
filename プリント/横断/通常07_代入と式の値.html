@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>通常07 代入と式の値（負の数の代入・かっこが命）＋命令文・整数の個数の復習｜30分</title>
@@ -161,12 +162,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
   .q{break-inside:avoid;page-break-inside:avoid}
 }
+.frac{display:inline-flex!important;flex-direction:column!important;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.95em;border:none!important;background:none!important;border-radius:0!important;padding:0!important}
+.frac .n{display:block!important;border:none!important;border-bottom:1.6px solid currentColor!important;background:none!important;border-radius:0!important;padding:0 4px 1px!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+.frac .d{display:block!important;border:none!important;background:none!important;border-radius:0!important;padding:1px 4px 0!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
@@ -523,7 +527,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="step"><span>解説(1)・x³とは</span><span class="math">x³＝x×x×x</span>（3回かける）。x に (−2) を入れて <span class="math">(−2)³＝(−2)×(−2)×(−2)＝4×(−2)＝−8</span>。マイナスを3回かけるとマイナス。</div>
         <div class="step"><span>解説(1)・前の−に注意</span>求めるのは <span class="math">−x³</span>＝<span class="math">−(x³)</span>。先に x³＝−8 を出して、その前のマイナスをつける → <span class="math">−(−8)＝＋8</span>。だから <strong>8</strong>。x³ と −x³ のちがいは、問2の x² と −x² と同じ考え方。</div>
         <div class="step"><span>解説(2)</span>分子の <span class="math">x²−1</span> を先に計算。<span class="math">x²＝(−2)²＝4</span> なので、<span class="math">x²−1＝4−1＝3</span>。これを3でわって <span class="math">3÷3＝1</span>。分数は「分子を先にまとめてから、分母でわる」。</div>
-        <div class="step"><span>検算</span>(1) x³＝(−2)³＝−8、その前のマイナスで＋8。○。(2) (4−1)/3＝3/3＝1。分子に戻すと 1×3＝3＝x²−1 → x²＝4 → x＝−2。○。</div>
+        <div class="step"><span>検算</span>(1) x³＝(−2)³＝−8、その前のマイナスで＋8。○。(2) (4−1)/3＝<span class="frac"><span class="n">3</span><span class="d">3</span></span>＝1。分子に戻すと 1×3＝3＝x²−1 → x²＝4 → x＝−2。○。</div>
         <div class="bx bx-link">「2乗はプラス・3乗はマイナス」という符号のルールと、「分数は分子を先にまとめる」流れは、式の計算・関数・方程式でくり返し出る。代入の総仕上げとして、累乗と分数までできれば代入はばっちり。</div>
         <div class="bx bx-warn">(1)で <span class="red">(−2)³ を ＋8 としない</span>（マイナスを3回かけると −8。<strong>マイナスを偶数回かけ→プラス、奇数回かけ→マイナス</strong>。だから(−2)²は＋、(−2)³は−）。その上で前の「−」をつけて −x³＝−(−8)＝＋8。(2)で <span class="red">分子の x²−1 を計算せずに先にわらない</span>。まず分子をまとめる。</div>
         <div class="ans-final"><span>こたえ</span>(1) 8　(2) 1</div>
@@ -598,7 +602,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="step"><span>ステップ2（すき間の数）</span>(終わり−はじめ)÷とびはば＝<span class="math">(80−40)÷2＝40÷2＝20</span>。これは「点と点の<strong>すき間</strong>の数」であって、点の数ではない。</div>
         <div class="step"><span>ステップ3（＋1する）</span>すき間が20なら、両はしの点（40と80）も入れて <span class="math">20＋1＝21個</span>。<strong>これが「両はしを入れて＋1」</strong>。</div>
         <div class="step"><span>確かめ</span>小さく確かめる：40,42,44 の3つは、すき間 (44−40)÷2＝2、点は 2＋1＝3個。ちゃんと合う。だから80まででも ＋1 でよい。</div>
-        <div class="bx bx-link">「すき間の数＋1＝点の数」は、中学の数列・規則性の問題でくり返し使う、いちばん大事な数えルール。両はしを含むか含まないかで答えが1ずれるので、数直線で両はしに印をつけて確認するクセをつけよう。早稲アカの必修テストでもこの整数の個数は定番。</div>
+        <div class="bx bx-link">「すき間の数＋1＝点の数」は、中学の数列・規則性の問題でくり返し使う、いちばん大事な数えルール。両はしを含むか含まないかで答えが1ずれるので、数直線で両はしに印をつけて確認するクセをつけよう。塾のテストでもこの整数の個数は定番。</div>
         <div class="bx bx-warn"><span class="red">(80−40)÷2＝20 で止めて「20個」と答えない</span>。それは<strong>すき間の数</strong>。両はしを含むので必ず＋1して21個。木を植えるときの「間かくの数」と「くいの本数」の関係と同じ（くいは間かくより1本多い）。</div>
         <div class="ans-final"><span>こたえ</span>21個</div>
       </div>

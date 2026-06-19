@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P9c 規則性（碁石・マッチ棒②）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 規則性の型（必ずこの順で）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・9月大問4へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-img{background:#eef4fb;border-left:4px solid #8fb4dd}
+.bx-img::before{content:"🖼 図でイメージ";display:block;font-size:12px;font-weight:800;color:#3f6f9f;margin-bottom:4px}
+.bx-story{background:#fbf3ee;border-left:4px solid #d9a17e}
+.bx-story::before{content:"💡 作戦＋たとえ話";display:block;font-size:12px;font-weight:800;color:#a05f33;margin-bottom:4px}
+.bx-check{background:#eef7f0;border-left:4px solid #7fbf94}
+.bx-check::before{content:"✅ 検算＋次に見抜くコツ";display:block;font-size:12px;font-weight:800;color:#2f7a4a;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.qtable{border-collapse:collapse;margin:8px 0;font-size:13px}
+.qtable th,.qtable td{border:1px solid #c9cfc6;padding:4px 10px;text-align:center}
+.qtable th{background:#eef1ec;font-weight:800;color:#46524a}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px;max-width:100%}
+.figcap{text-align:center;font-size:11.5px;color:#6a7280;margin:-4px 0 8px}
+.qmini{font-size:13.5px;font-weight:800;color:#46524a;margin:8px 0 2px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .layer{display:block;font-size:12px;font-weight:900;color:#31415f;background:#e4ebf3;border:1px solid #c6d4e4;border-radius:6px;padding:3px 10px;margin:12px 0 4px}
+.ans-box .step{margin:6px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ul{margin:4px 0 4px 1.3em;font-size:13px;line-height:1.85}
+.ul li{margin:2px 0}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P9c</span><span class="pg-badge">数学：規則性</span><span class="pg-badge">★碁石・マッチ棒→n式→逆算 L3-L4（9月大問4直撃）</span></div>
+  <h1>規則性③｜マッチ棒と碁石の数を「nの式」にして、大きい番目を逆算する</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に「あほでもわかる7層解説」つき</p>
+  <p class="pg-cheer">9月の特訓選抜・大問4はこの流れがそのまま出る：<strong>①図を数える → ②nの式にする → ③大きい番目を逆算する</strong>。規則性はきみの<strong>いちばんの伸びしろ</strong>。今日はマッチ棒と碁石で①②③を最後まで通すよ。式さえ作れれば100本でも1000番目でも一瞬。あせらなくていい、1層ずつ読めば必ず分かる🌸</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 1・2・3番目を表に書く</b>（図を数えて具体を並べる）</li>
+    <li><b>② 差を見る</b>（毎回いくつ増える？＝この数が n の係数）</li>
+    <li><b>③ n式を作る</b>：<b>差×n＋（1番目−差）</b>。図形は「ふえる部分×n＋ふえない部分」</li>
+    <li><b>④ 逆算</b>：「○本（○個）になるのは何番目？」は <b>n式＝○ の方程式</b>を解く</li>
+    <li><b>⑤ 確かめ</b>：n＝1,2,3 や出た番目を式に入れて表と合うか</li>
+  </ol>
+</div>
+
+<!-- ============================================================ 問1 具体化 ============================================================ -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">①具体化：マッチ棒を数えて差を見つける L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead">問1</span>マッチ棒で正方形を横に1列に並べます。下の図は1番目・2番目・3番目です。<strong>マッチ棒の本数</strong>を数えて、1番目・2番目・3番目を表にうめなさい。また、1番進むごとに何本ずつ増えますか。
+    <svg class="fig" width="580" height="150" viewBox="0 0 580 150">
+      <!-- 1番目: 正方形1個 = 4本 -->
+      <g stroke="#c0651f" stroke-width="5" stroke-linecap="round">
+        <line x1="30" y1="50" x2="78" y2="50"/>   <!-- 上 -->
+        <line x1="30" y1="98" x2="78" y2="98"/>   <!-- 下 -->
+        <line x1="30" y1="50" x2="30" y2="98"/>   <!-- 左 -->
+        <line x1="78" y1="50" x2="78" y2="98"/>   <!-- 右 -->
+      </g>
+      <text x="36" y="40" font-size="12" fill="#555">1番目</text>
+      <text x="20" y="128" font-size="11" fill="#888">4本（正方形1個）</text>
+
+      <!-- 2番目: 正方形2個 = 7本 -->
+      <g stroke="#c0651f" stroke-width="5" stroke-linecap="round" transform="translate(150,0)">
+        <line x1="30" y1="50" x2="78" y2="50"/><line x1="78" y1="50" x2="126" y2="50"/>
+        <line x1="30" y1="98" x2="78" y2="98"/><line x1="78" y1="98" x2="126" y2="98"/>
+        <line x1="30" y1="50" x2="30" y2="98"/><line x1="78" y1="50" x2="78" y2="98"/><line x1="126" y1="50" x2="126" y2="98"/>
+      </g>
+      <text x="186" y="40" font-size="12" fill="#555">2番目</text>
+      <text x="172" y="128" font-size="11" fill="#888">7本（正方形2個）</text>
+
+      <!-- 3番目: 正方形3個 = 10本 -->
+      <g stroke="#c0651f" stroke-width="5" stroke-linecap="round" transform="translate(330,0)">
+        <line x1="30" y1="50" x2="78" y2="50"/><line x1="78" y1="50" x2="126" y2="50"/><line x1="126" y1="50" x2="174" y2="50"/>
+        <line x1="30" y1="98" x2="78" y2="98"/><line x1="78" y1="98" x2="126" y2="98"/><line x1="126" y1="98" x2="174" y2="98"/>
+        <line x1="30" y1="50" x2="30" y2="98"/><line x1="78" y1="50" x2="78" y2="98"/><line x1="126" y1="50" x2="126" y2="98"/><line x1="174" y1="50" x2="174" y2="98"/>
+      </g>
+      <text x="366" y="40" font-size="12" fill="#555">3番目</text>
+      <text x="352" y="128" font-size="11" fill="#888">10本（正方形3個）</text>
+    </svg>
+    <div class="figcap">━ ＝マッチ棒1本。正方形を右へ1個ずつつなげて並べる（となりと1辺を共有する）</div>
+  </div>
+  <div class="note-draw">図のマッチ棒を1本ずつ数えて表をうめよう。次に「2番目−1番目」「3番目−2番目」を計算して、増え方（差）を見つける。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <span class="layer">① 何を聞かれてる？（やさしい言いかえ）</span>
+    <div class="step q1">「マッチ棒の正方形を1個・2個・3個ならべたとき、ぼうは何本ずつ？　そして次に進むと何本ふえる？」を聞かれているだけ。むずかしく考えない。</div>
+
+    <span class="layer">② わかってること／求めるもの</span>
+    <ul class="ul">
+      <li><b>わかってること</b>：図の1〜3番目（正方形が1個・2個・3個）</li>
+      <li><b>求めるもの</b>：①各番目の本数　②1番進むごとの「差（ふえる本数）」</li>
+    </ul>
+
+    <span class="layer">③ 図でイメージ</span>
+    <div class="bx bx-img">最初の正方形は、4本そろえないと作れない（4本）。<strong>次からは、となりに新しい正方形をくっつけるけど、左の1辺はもう前の正方形のぼうを使いまわす</strong>。だから新しく足すのは <strong>上・下・右の3本だけ</strong>。図の「ふえた所」だけ見ると、いつも3本ずつ増えている。</div>
+
+    <span class="layer">④ 作戦＋たとえ話</span>
+    <div class="bx bx-story">これは「階段を1段ずつ上る」のと同じ。<strong>1段目だけは特別（4本）</strong>、そのあとは<strong>毎回おなじ段差（＋3本）</strong>。だから「最初の1個ぶん」と「あとは何回足すか」を分けて考えるのがコツ。今日はまず表に書いて、差を目で見つける。</div>
+
+    <span class="layer">⑤ 1ステップずつ（なぜ付き）</span>
+    <table class="qtable"><tr><th>番目（n）</th><th>1</th><th>2</th><th>3</th><th>…</th></tr><tr><th>マッチ棒(本)</th><td>4</td><td>7</td><td>10</td><td>…</td></tr></table>
+    <div class="step q1"><span>数える</span>1番目＝4本、2番目＝7本、3番目＝10本。（なぜ：正方形1個＝4本、2個目で＋3、3個目で＋3）</div>
+    <div class="step q1"><span>差を見る</span>7−4＝3、10−7＝3。<strong>1番進むごとに3本ずつ増える</strong>（差は3）。（なぜ：足すのは上下右の3本だけだから）</div>
+
+    <span class="layer">⑥ よくある間違い</span>
+    <div class="bx bx-warn"><span class="red">「正方形が何個か」と「ぼうが何本か」をごちゃ混ぜにしない</span>。表の上の行が「番目（正方形の個数）」、下の行が「マッチ棒の本数」。<span class="red">差を「4」と書かない</span>＝最初だけ4本だが、ふえる差は3本。最初の1本と、増える差はべつもの。</div>
+
+    <span class="layer">⑦ 検算＋次に見抜くコツ</span>
+    <div class="bx bx-check">表の差を全部確かめる：7−4＝3、10−7＝3でそろっている○。<br>規則性のコツは <strong>①差を見る ②1番目に合わせる ③確かめる</strong>。まず表を作って差を出す、これが全部のスタート。</div>
+
+    <div class="ans-final"><span>こたえ</span>1番目 4本／2番目 7本／3番目 10本　差は3（3本ずつ増える）</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 数え方・差がわからない</button><button onclick="m(this)">A わかったが計算ミス</button></div><div class="write3">📝 まちがえたら、図のマッチ棒を1本ずつ○をつけて数え直し、表の差（7−4、10−7）をノートに書こう</div></div>
+</div>
+
+<!-- ============================================================ 問2 n式 ============================================================ -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">②一般化：n番目をnの式にする L3-L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody"><span class="lead">問2</span>問1と同じマッチ棒の正方形の並びで、<strong>n番目のマッチ棒の本数</strong>を n の式で表しなさい。</div>
+  <div class="note-draw">型カードの③を使う。<span class="math">差×n＋（1番目−差）</span>。問1で差＝3、1番目＝4だから…。式ができたら n＝1, 2, 3 を入れて表（4, 7, 10）に合うか確かめよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <span class="layer">① 何を聞かれてる？（やさしい言いかえ）</span>
+    <div class="step q2">「100番目だろうが1000番目だろうが、本数が一発で出る『計算式』を作って」ということ。番目を n と書いて、その式を作る。</div>
+
+    <span class="layer">② わかってること／求めるもの</span>
+    <ul class="ul">
+      <li><b>わかってること</b>：差は3、1番目は4（問1より）</li>
+      <li><b>求めるもの</b>：n番目の本数を表す式</li>
+    </ul>
+
+    <span class="layer">③ 図でイメージ</span>
+    <div class="bx bx-img">図でいうと「最初の1本ぶん（左はしの4本）」はずっと変わらない。<strong>変わるのは『3本セット』を何回くっつけるか</strong>。n番目なら、3本セットを n 回足したいけど、最初の正方形はもう4本そろっている…ここをどう数えるかが式作りのカギ。</div>
+
+    <span class="layer">④ 作戦＋たとえ話</span>
+    <div class="bx bx-story">「最初に4本もらってスタート、そのあと1個進むごとに3本ずつもらう」貯金みたいなもの。1番目＝4、2番目＝4＋3、3番目＝4＋3＋3…。これを式にすると「4＋3×(進んだ回数)」。型カードでは <strong>差×n＋（1番目−差）</strong> で一発に出せる。</div>
+
+    <span class="layer">⑤ 1ステップずつ（なぜ付き）</span>
+    <div class="bx bx-key">等差の並びの式：<strong>n番目＝（差）×n＋（1番目−差）</strong>。差は「毎回いくつ増えるか」。最後に n＝1 で必ず確かめる。</div>
+    <div class="step q2"><span>式を作る</span>差は3、1番目は4。式＝3×n＋(4−3)＝<span class="math">3n＋1</span>。（なぜ：3n だけだと n＝1 で3になり、図の4本と1本ずれる。そのずれ＋1をたす）</div>
+    <div class="step q2"><span>代入と方程式のちがい</span>ここで作るのは「式そのもの」。<strong>代入</strong>＝この式の n に数を入れて本数を出すこと（問3で使う）。<strong>方程式</strong>＝この式＝○ とおいて n を逆に求めること（問3(2)で使う）。今は<strong>式を作るだけ</strong>。</div>
+    <div class="step q2"><span>確かめ</span>n＝1：3×1＋1＝4○、n＝2：3×2＋1＝7○、n＝3：3×3＋1＝10○。表とぴったり合う。</div>
+
+    <span class="layer">⑥ よくある間違い</span>
+    <div class="bx bx-warn"><span class="red">差だけ見て「3n」で終わらせない</span>。それだと n＝1 で3本になり、図の4本と合わない。<strong>1番目に合わせる調整（＋1）</strong>が必ず要る。式を作ったら n＝1 で検算するクセを。<span class="red">「番目 n」と「正方形の個数」を別の文字にしない</span>＝この問題では番目＝正方形の個数なので同じ n でよい。</div>
+
+    <span class="layer">⑦ 検算＋次に見抜くコツ</span>
+    <div class="bx bx-check">n＝1,2,3 を式に入れて表（4,7,10）と全部一致○。<br>コツは <strong>①差を見る（3）→ 係数 ②1番目に合わせる（＋1）→ 定数 ③確かめる（n＝1で必ず）</strong>。この3手で必ず正しい式になる。</div>
+    <div class="bx bx-link">「具体（数えた表）→ 差 → 3n＋1 という n の式」へ翻訳するこの流れが、9月大問4(2)でそのまま問われる。式づくりが規則性の心臓。</div>
+
+    <div class="ans-final"><span>こたえ</span>n番目＝3n＋1（本）</div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2★L4</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 式の作り方がわからない</button><button onclick="m(this)">A 考え方は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「差×n＋（1番目−差）」＝「3×n＋(4−3)」を書いて、n＝1で検算しよう</div></div>
+</div>
+
+<!-- ============================================================ 問3 逆算 ============================================================ -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">③逆算：大きい番目を方程式で出す L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody"><span class="lead">問3</span>問2の式（n番目＝3n＋1）を使って答えなさい。(1) 20番目のマッチ棒は何本ですか。(2) <strong>マッチ棒をちょうど100本使うのは何番目ですか。</strong></div>
+  <div class="note-draw">(1)は n に数を「入れる（代入）」。(2)は逆に「式＝100」という n の方程式を解く。型カードの④。ノートに式を書いてから解こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <span class="layer">① 何を聞かれてる？（やさしい言いかえ）</span>
+    <div class="step q3">(1)「20番目って何本？」＝番目→本数を出す。(2)「100本になるのは何番目？」＝本数→番目を逆に出す。<strong>向きが反対</strong>なのがポイント。</div>
+
+    <span class="layer">② わかってること／求めるもの</span>
+    <ul class="ul">
+      <li><b>わかってること</b>：式は 3n＋1（問2）</li>
+      <li><b>(1) 求めるもの</b>：n＝20 のときの本数</li>
+      <li><b>(2) 求めるもの</b>：本数が100になる番目 n</li>
+    </ul>
+
+    <span class="layer">③ 図でイメージ</span>
+    <div class="bx bx-img">(1)は「20個ならべた正方形の列」を想像。全部数えるのは大変だから式で一発。(2)は逆に「100本のマッチ棒をぜんぶ使い切ると、正方形は何個ならぶ？」を聞かれている。</div>
+
+    <span class="layer">④ 作戦＋たとえ話</span>
+    <div class="bx bx-story">式は「両方向に使える道具」。<strong>代入＝行き（番目→本数）</strong>、<strong>逆算＝帰り（本数→番目）</strong>。帰り道は「箱を開ける順番」が大事：3n＋1 は「n を3倍して1を足した」順だから、もどすときは<strong>逆順で、先に1を引いて、あとで3で割る</strong>。くつをはくとき（くつ下→くつ）、ぬぐときは逆（くつ→くつ下）と同じ。</div>
+
+    <span class="layer">⑤ 1ステップずつ（なぜ付き）</span>
+    <div class="bx bx-key">n式ができれば <strong>「番目→本数」は代入</strong>、<strong>「本数→何番目」は方程式（逆算）</strong>。これが規則性の最後のゴール。</div>
+    <div class="step q3"><span>(1) 代入</span>n＝20 を 3n＋1 へ：<span class="math">3×20＋1＝60＋1＝61</span>。<strong>61本</strong>。（なぜ：式の n に20を入れるだけ）</div>
+    <div class="step q3"><span>(2) 逆算＝方程式を立てる</span>本数＝100 だから <span class="math">3n＋1＝100</span>。（なぜ：式が表す本数を100に等しくおく）</div>
+    <div class="step q3"><span>(2) 解く（順番が命）</span>まず両辺−1 → 3n＝99。次に両辺÷3 → n＝33。<strong>33番目</strong>。（なぜ：先に＋1を消してから、3で割る。逆順）</div>
+
+    <span class="layer">⑥ よくある間違い</span>
+    <div class="bx bx-warn"><span class="red">100÷3＝33.3… と割るだけにしない</span>。それは「＋1」を忘れた答え。<strong>逆算は先に＋1を移項して引いてから割る</strong>（3n＝99 → n＝33）。<span class="red">(2)で61本と書かない</span>＝それは(1)の答え。聞かれているのは「番目」。代入と逆算がごちゃ混ぜにならないよう、(1)は本数・(2)は番目と確認。</div>
+
+    <span class="layer">⑦ 検算＋次に見抜くコツ</span>
+    <div class="bx bx-check">(2)の答え n＝33 を式へ戻す：3×33＋1＝99＋1＝100○。ちゃんと100本になる。<br>コツ：<strong>「○番目は？」と聞かれたら代入、「○本になるのは何番目？」と聞かれたら方程式（逆算）</strong>。問題文の最後をよく読んで、行きか帰りかを見ぬく。</div>
+    <div class="bx bx-link">この(2)が9月大問4(3)の「○本になるのは何番目」型とまったく同じ。代入と逆算をセットで出せれば大問4は取れる。</div>
+
+    <div class="ans-final"><span>こたえ</span>(1) 61本／(2) 33番目</div>
+  </div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1) 代入</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 代入の仕方がわからない</button><button onclick="m(this)">A わかったが計算ミス</button></div><div class="write3">📝 まちがえたら、式に n＝20 を入れる手順をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2) 逆算★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 方程式の立て方がわからない</button><button onclick="m(this)">A 立てたが計算ミス</button></div><div class="write3">📝 まちがえたら、「3n＋1＝100」を立てて、−1してから÷3の順で書こう</div></div>
+</div>
+
+<!-- ============================================================ 問4 別パターン 碁石 ============================================================ -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★別パターン：碁石を正方形の周にならべる L3-L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead">問4</span>碁石を、正方形の<strong>まわり（周）にそって</strong>ならべます。1辺に2個・3個・4個…とならべると、下の図のようになります。
+    <svg class="fig" width="560" height="200" viewBox="0 0 560 200">
+      <!-- 1辺2個 (n=2): 外周 4個 -->
+      <g fill="#37404a">
+        <circle cx="40" cy="50" r="11"/><circle cx="78" cy="50" r="11"/>
+        <circle cx="40" cy="88" r="11"/><circle cx="78" cy="88" r="11"/>
+      </g>
+      <text x="34" y="28" font-size="12" fill="#555">1辺2個</text>
+      <text x="24" y="128" font-size="11" fill="#888">碁石4個</text>
+
+      <!-- 1辺3個 (n=3): 外周 8個 (中央は置かない) -->
+      <g fill="#37404a" transform="translate(150,0)">
+        <circle cx="40" cy="50" r="11"/><circle cx="78" cy="50" r="11"/><circle cx="116" cy="50" r="11"/>
+        <circle cx="40" cy="88" r="11"/>                              <circle cx="116" cy="88" r="11"/>
+        <circle cx="40" cy="126" r="11"/><circle cx="78" cy="126" r="11"/><circle cx="116" cy="126" r="11"/>
+      </g>
+      <text x="184" y="28" font-size="12" fill="#555">1辺3個</text>
+      <text x="174" y="160" font-size="11" fill="#888">碁石8個</text>
+
+      <!-- 1辺4個 (n=4): 外周 12個 -->
+      <g fill="#37404a" transform="translate(340,0)">
+        <circle cx="40" cy="50" r="11"/><circle cx="78" cy="50" r="11"/><circle cx="116" cy="50" r="11"/><circle cx="154" cy="50" r="11"/>
+        <circle cx="40" cy="88" r="11"/>                                                            <circle cx="154" cy="88" r="11"/>
+        <circle cx="40" cy="126" r="11"/>                                                           <circle cx="154" cy="126" r="11"/>
+        <circle cx="40" cy="164" r="11"/><circle cx="78" cy="164" r="11"/><circle cx="116" cy="164" r="11"/><circle cx="154" cy="164" r="11"/>
+      </g>
+      <text x="374" y="28" font-size="12" fill="#555">1辺4個</text>
+      <text x="364" y="190" font-size="11" fill="#888">碁石12個</text>
+    </svg>
+    <div class="figcap">●＝碁石。正方形の<strong>周だけ</strong>にならべる（中はからっぽ）。1辺の個数を n とする。</div>
+    <table class="qtable"><tr><th>1辺の個数（n）</th><th>2</th><th>3</th><th>4</th><th>…</th></tr><tr><th>碁石(個)</th><td>4</td><td>8</td><td>12</td><td>…</td></tr></table>
+    <div class="qmini">(1) 碁石の個数を n の式で表しなさい。</div>
+    <div class="qmini">(2) 碁石をちょうど 60個 つかうのは、1辺が何個のときですか。</div>
+  </div>
+  <div class="note-draw">1辺が n 個のとき、4つの角（かど）を二重に数えないのがコツ。表の差を見て式を作り、(2)は式＝60の方程式を解こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <span class="layer">① 何を聞かれてる？（やさしい言いかえ）</span>
+    <div class="step q4">(1)「1辺 n 個のとき、周の碁石は全部で何個？」を式に。(2)「60個ちょうどになるのは、1辺いくつ？」を逆算で。問1〜3と同じ流れの<strong>別パターン</strong>。</div>
+
+    <span class="layer">② わかってること／求めるもの</span>
+    <ul class="ul">
+      <li><b>わかってること</b>：表（n＝2で4個、3で8個、4で12個）</li>
+      <li><b>(1) 求めるもの</b>：碁石の個数の n 式</li>
+      <li><b>(2) 求めるもの</b>：60個になる1辺の個数 n</li>
+    </ul>
+
+    <span class="layer">③ 図でイメージ</span>
+    <div class="bx bx-img">1辺を大きくすると、図の<strong>上の辺・下の辺・左の辺・右の辺、それぞれに1個ずつ＝4個</strong>増えていく（n＝3→4で 8個→12個、＋4）。角の碁石は2つの辺が共有しているので、数えるとき<strong>角を二重に数えない</strong>のがポイント。</div>
+
+    <span class="layer">④ 作戦＋たとえ話</span>
+    <div class="bx bx-story">考え方は問1とまったく同じ「差×n＋調整」。1辺がのびると4方向に1個ずつ増えるから差は4。あとは「n＝2で4個になるように調整」するだけ。マッチ棒も碁石も、<strong>表→差→式→検算</strong>の同じレールに乗せれば解ける。</div>
+
+    <span class="layer">⑤ 1ステップずつ（なぜ付き）</span>
+    <div class="step q4"><span>差を見る</span>8−4＝4、12−8＝4。差は<strong>4</strong>。（なぜ：1辺がのびると4方向に1個ずつ）</div>
+    <div class="step q4"><span>(1) 式を作る</span>差4、n＝2のとき4個。<span class="math">4×n＋調整</span>。4×2＝8 だが本当は4個なので、調整は −4。式は <span class="math">4n−4</span>。（なぜ：角の4個を二重に数えたぶんを引くイメージ）</div>
+    <div class="step q4"><span>確かめ</span>n＝3：4×3−4＝8○、n＝4：4×4−4＝12○。表と合う。</div>
+    <div class="step q4"><span>(2) 逆算</span>碁石＝60 だから <span class="math">4n−4＝60</span>。両辺＋4 → 4n＝64。両辺÷4 → n＝16。<strong>1辺16個</strong>。（なぜ：−4をもどして＋4、それから÷4）</div>
+
+    <span class="layer">⑥ よくある間違い</span>
+    <div class="bx bx-warn"><span class="red">1辺を4倍して「4n」で終わらせない</span>＝角の碁石を二重に数えてしまう。本当は <strong>4n−4</strong>（角の4個ぶん引く）。<span class="red">(2)で 60÷4＝15 と即答しない</span>＝「−4」を忘れた答え。<strong>先に＋4してから÷4</strong>（4n＝64 → n＝16）。</div>
+
+    <span class="layer">⑦ 検算＋次に見抜くコツ</span>
+    <div class="bx bx-check">(2)の n＝16 を式へ：4×16−4＝64−4＝60○。ちゃんと60個。<br>コツは問1〜3と同じ <strong>①差を見る（4）②1番目に合わせる（−4）③確かめる</strong>。<strong>パターンが変わっても、レールは同じ</strong>。表を作って差から式、そして逆算は「足し引きを先・かけ割りをあと」で戻す。</div>
+    <div class="bx bx-link">9月特訓選抜・大問4は「マッチ棒・碁石・タイル」など見た目を変えて出る。<strong>どんな図でも 表→差→n式→逆算 の同じレール</strong>に乗せられれば、初見の図でも取れる。これが大問4攻略の本体。</div>
+
+    <div class="ans-final"><span>こたえ</span>(1) 4n−4（個）／(2) 1辺16個</div>
+  </div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 碁石の式</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K n式が作れない</button><button onclick="m(this)">A 調整−4を忘れた</button></div><div class="write3">📝 まちがえたら、表から「差4、n＝2で4個」をノートに書き、4n−4 を導こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 逆算★L4</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 方程式の立て方がわからない</button><button onclick="m(this)">A 割るだけにした</button></div><div class="write3">📝 まちがえたら、「4n−4＝60」を立てて、＋4してから÷4の順で書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P9c 規則性 碁石・マッチ棒② 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">4問おつかれさま！今日のいちばんの収穫は<strong>①数える → ②nの式にする → ③大きい番目を代入/逆算する</strong>を、マッチ棒でも碁石でも同じレールで通せたこと。これが9月大問4の流れそのもの。差だけでなく「1番目に合わせる調整（＋1や−4）」を忘れないこと、逆算は「足し引きを先・かけ割りをあと」でもどすこと。まちがえた問題は表・差・n式をノートに書き直そう。式が作れれば100本でも1000番目でも一瞬。きみは確実に大問4に近づいている🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m09c';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！規則性（碁石・マッチ棒②）クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

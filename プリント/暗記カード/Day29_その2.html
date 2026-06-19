@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 暗記カード その2（Day29）＝想起テスト
+ KEY=tokkun_kb29
+ ①英単語5想起: must/may/difficult/famous/find
+ ②漢字5想起: 以外/開放/解放/一行(いっこう)/生物(せいぶつ)
+ ③前日ローテ想起（Day28=部首・画数）: 鼻14画/博12画/凸5画・凹5画
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>暗記カード その2 Day29｜想起テスト</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-body{padding:16px 20px}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:15px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:12px 0}
+.qword{font-size:22px;font-weight:900;color:#31415f}
+.qhint{font-size:13px;color:#4c5b70;margin-top:2px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:13px}
+.ans-box.open{display:block}
+.ans-main{font-size:20px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-read{font-size:13px;color:#405060;margin-bottom:4px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff}
+  .back,.done,.ans-btn,.grade{display:none}
+  .ans-box{display:block!important}
+  .write3{display:block!important}
+  .sec{break-inside:avoid;box-shadow:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">暗記カード その2</span><span class="pg-badge">Day29</span><span class="pg-badge">想起テスト</span></div>
+  <h1>暗記カード（Day29）その2</h1>
+  <p>目安 約10分　答えを隠して頭から引き出す練習。できたら○、できなかったら✕。</p>
+  <p class="pg-sub">画数の想起は「指で空書きしてから答える」のが効果的。</p>
+</div>
+
+<!-- ① 英単語5想起 -->
+<div class="unit-banner">
+  <span class="unit-num">① 英単語 想起</span>
+  <span class="unit-name">日本語を見て、英語でつづりを書こう</span>
+  <span class="unit-time">5問</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>英単語（つづり想起）</h2></div>
+  <div class="sec-body">
+
+    <div class="q" data-id="W-1">
+      <div class="qnum-e">問題1</div>
+      <div class="qword">〜しなければならない</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">must</div><div class="ans-read">後ろは動詞の原形</div></div>
+      <div class="gq" data-gid="W-1"><div class="grade"><button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div><div class="write3">📝 must　＿＿＿＿＿　＿＿＿＿＿</div></div>
+    </div>
+
+    <div class="q" data-id="W-2">
+      <div class="qnum-e">問題2</div>
+      <div class="qword">〜してもよい</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">may</div><div class="ans-read">後ろは動詞の原形</div></div>
+      <div class="gq" data-gid="W-2"><div class="grade"><button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div><div class="write3">📝 may　＿＿＿＿＿　＿＿＿＿＿</div></div>
+    </div>
+
+    <div class="q" data-id="W-3">
+      <div class="qnum-e">問題3</div>
+      <div class="qword">難しい</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">difficult</div><div class="ans-read">dif-fi-cult（f が2つ）</div></div>
+      <div class="gq" data-gid="W-3"><div class="grade"><button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div><div class="write3">📝 difficult　＿＿＿＿＿　＿＿＿＿＿</div></div>
+    </div>
+
+    <div class="q" data-id="W-4">
+      <div class="qnum-e">問題4</div>
+      <div class="qword">有名な</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">famous</div><div class="ans-read">fa-mous（-ous で終わる）</div></div>
+      <div class="gq" data-gid="W-4"><div class="grade"><button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div><div class="write3">📝 famous　＿＿＿＿＿　＿＿＿＿＿</div></div>
+    </div>
+
+    <div class="q" data-id="W-5">
+      <div class="qnum-e">問題5</div>
+      <div class="qword">見つける（過去形も）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">find / found</div><div class="ans-read">不規則変化（×finded）</div></div>
+      <div class="gq" data-gid="W-5"><div class="grade"><button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div><div class="write3">📝 find/found　＿＿＿＿＿　＿＿＿＿＿</div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ② 漢字5想起 -->
+<div class="unit-banner">
+  <span class="unit-num">② 漢字 想起</span>
+  <span class="unit-name">読みを見て漢字を、漢字を見て読みを書こう</span>
+  <span class="unit-time">5問</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-hd"><h2>漢字（想起）</h2></div>
+  <div class="sec-body">
+
+    <div class="q" data-id="K-1">
+      <div class="qnum-e">問題6</div>
+      <div class="qword">それ「いがい」は知らない（除外の意）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">以外</div><div class="ans-read">（×意外）それをのぞくほか</div></div>
+      <div class="gq" data-gid="K-1"><div class="grade"><button class="o" onclick="g(this,'K-1','o')">○</button><button class="x" onclick="g(this,'K-1','x')">✕</button></div><div class="write3">📝 以外　＿＿＿＿＿　＿＿＿＿＿</div></div>
+    </div>
+
+    <div class="q" data-id="K-2">
+      <div class="qnum-e">問題7</div>
+      <div class="qword">窓を「かいほう」する（開け放つ）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">開放</div><div class="ans-read">（×解放）物理的に開ける</div></div>
+      <div class="gq" data-gid="K-2"><div class="grade"><button class="o" onclick="g(this,'K-2','o')">○</button><button class="x" onclick="g(this,'K-2','x')">✕</button></div><div class="write3">📝 開放　＿＿＿＿＿　＿＿＿＿＿</div></div>
+    </div>
+
+    <div class="q" data-id="K-3">
+      <div class="qnum-e">問題8</div>
+      <div class="qword">人質を「かいほう」する（束縛をとく）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">解放</div><div class="ans-read">（×開放）束縛から自由にする</div></div>
+      <div class="gq" data-gid="K-3"><div class="grade"><button class="o" onclick="g(this,'K-3','o')">○</button><button class="x" onclick="g(this,'K-3','x')">✕</button></div><div class="write3">📝 解放　＿＿＿＿＿　＿＿＿＿＿</div></div>
+    </div>
+
+    <div class="q" data-id="K-4">
+      <div class="qnum-e">問題9</div>
+      <div class="qword">「一行」のよみは？（連れ立って行く人々）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">いっこう</div><div class="ans-read">（×いちぎょう＝文章の1行）</div></div>
+      <div class="gq" data-gid="K-4"><div class="grade"><button class="o" onclick="g(this,'K-4','o')">○</button><button class="x" onclick="g(this,'K-4','x')">✕</button></div><div class="write3">📝 いっこう　＿＿＿＿＿　＿＿＿＿＿</div></div>
+    </div>
+
+    <div class="q" data-id="K-5">
+      <div class="qnum-e">問題10</div>
+      <div class="qword">「生物」のよみは？（生き物）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">せいぶつ</div><div class="ans-read">（×なまもの＝なまの食品）</div></div>
+      <div class="gq" data-gid="K-5"><div class="grade"><button class="o" onclick="g(this,'K-5','o')">○</button><button class="x" onclick="g(this,'K-5','x')">✕</button></div><div class="write3">📝 せいぶつ　＿＿＿＿＿　＿＿＿＿＿</div></div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ③ 前日ローテ想起（Day28=部首・画数） -->
+<div class="unit-banner">
+  <span class="unit-num">③ 前日ローテ想起</span>
+  <span class="unit-name">昨日（Day28）覚えた部首・画数を思い出そう</span>
+  <span class="unit-time">3問</span>
+</div>
+<div class="sec th-teal">
+  <div class="sec-hd"><h2>部首・画数 想起（Day28のローテ）</h2></div>
+  <div class="sec-body">
+
+    <div class="q" data-id="P-1">
+      <div class="qnum-e">問題11</div>
+      <div class="qword">「鼻」の画数は？</div>
+      <div class="qhint">指で空書きしてから答えを見よう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">14画</div><div class="ans-read">自（6）＋畀（8）＝14</div></div>
+      <div class="gq" data-gid="P-1"><div class="grade"><button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div><div class="write3">📝 鼻＝14画。空書きで確認。</div></div>
+    </div>
+
+    <div class="q" data-id="P-2">
+      <div class="qnum-e">問題12</div>
+      <div class="qword">「博」の画数は？</div>
+      <div class="qhint">指で空書きしてから答えを見よう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">12画</div><div class="ans-read">（×11画・×13画）</div></div>
+      <div class="gq" data-gid="P-2"><div class="grade"><button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div><div class="write3">📝 博＝12画。空書きで確認。</div></div>
+    </div>
+
+    <div class="q" data-id="P-3">
+      <div class="qnum-e">問題13</div>
+      <div class="qword">「凸」「凹」の画数は各いくつ？</div>
+      <div class="qhint">指で空書きしてから答えを見よう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box"><div class="ans-main">凸＝5画　凹＝5画</div><div class="ans-read">どちらも5画（×4画・×6画）</div></div>
+      <div class="gq" data-gid="P-3"><div class="grade"><button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div><div class="write3">📝 凸＝5画・凹＝5画。両方空書き確認。</div></div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">想起テスト完了！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">明日がDay30、最終日！今日の✕をもう一度見直して、明日は全問○を目指そう。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_kb29';
+function t(b){
+  if(!b.dataset.label)b.dataset.label=b.textContent;
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':b.dataset.label;
+}
+function g(btn,id,v){
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var w3=box.querySelector('.write3');
+  if(v==='x'){ if(w3)w3.style.display='block'; } else { if(w3)w3.style.display='none'; }
+}
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(!v)return;
+    var b=box.querySelector('.'+v);
+    if(b)b.classList.add('sel');
+    if(v==='x'){ var w3=box.querySelector('.write3'); if(w3)w3.style.display='block'; }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){ document.getElementById('doneBtn').textContent='✓ 完了ずみ'; }
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P5b 文章を式に（速さ②）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 文章→式の型カード（毎回これにそって解く）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai .ot{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai p{font-size:13.5px;line-height:1.95;color:#5a4520;margin:4px 0}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.9;color:#5a4520}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.zukai{background:#fbfaf5;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Courier New',monospace;font-size:13px;color:#6a5a32;white-space:pre-wrap;line-height:1.7}
+.zukai::before{content:"📐 図（線分図・表）";display:block;font-family:'Hiragino Kaku Gothic ProN',sans-serif;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.svgfig{background:#fbfdff;border:1px solid #dbe7f3;border-radius:8px;padding:10px 12px;margin:8px 0}
+.svgfig::before{content:"📐 図";display:block;font-size:11px;font-weight:800;color:#3f6f9f;margin-bottom:4px}
+.svgfig svg{display:block;max-width:100%;height:auto}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:0.9em}
+.frac .n{border-bottom:1.6px solid currentColor;padding:0 4px 1px}
+.frac .d{padding:1px 4px 0}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P5b</span><span class="pg-badge">数学：方程式の利用</span><span class="pg-badge">★文章→式 L3（速さ）</span></div>
+  <h1>文章を式にする｜速さ②を「4問・じっくり」で固める（往復・出会い・追いつき・トンネル）</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">速さの文章→式は<strong>きみの伸びしろのど真ん中</strong>。全国統一テストで0/25だったのもこの種類。今日は<strong>4問だけ</strong>。そのぶん1問ずつ<strong>図（線分図）をかいてから式を作る</strong>。コツはたった2つ＝①<strong>道のり＝速さ×時間</strong>②<strong>単位をそろえる</strong>。数をこなすより「型を体に入れる」のが今日の目標。</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 何を求める？</b> → それを <span class="math">x</span> とおく（「□を x とする」と書く）</li>
+    <li><b>② 図にする</b>（線分図・ダイヤ図）＝だれがどこをどれだけ進むかを見える形に</li>
+    <li><b>③ 等しい関係を式に</b>（道のりや時間で「＝で結べる2つの言い方」をさがす）</li>
+    <li><b>④ 解く</b>（移項して x ＝ の形へ。分数は両辺×分母で払う）</li>
+    <li><b>⑤ 検算</b>（出た数を文章に戻して合うか確かめる）</li>
+  </ol>
+</div>
+
+<!-- ===== 問1 往復 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">往復（行き帰りで速さがちがう・時間の合計）L3 標準</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問1</span>家から公園まで、行きは分速60m、帰りは分速90mで往復したら、合計で25分かかりました。家から公園までの道のりは何mですか。</div>
+  <div class="note-draw">行き帰りで「道のりは同じ」（どちらも x m）。ちがうのは速さ→だから時間がちがう。「時間＝道のり÷速さ」で行き・帰りの時間を表し、合計で式を作ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">
+      <div class="ot">⓪ 速さの3つの関係</div>
+      <ul>
+        <li><b>道のり＝速さ×時間</b>　<b>時間＝道のり÷速さ</b>　<b>速さ＝道のり÷時間</b></li>
+        <li>分速のときは時間は「分」で出る。<b>単位をそろえる</b>のもわすれずに。</li>
+      </ul>
+    </div>
+    <div class="bx bx-key">往復は<strong>道のりが行き帰り同じ（x）</strong>。立てる式は<strong>「時間の合計」</strong>。x を時間にしないで、<strong>道のりを x</strong> にするのがコツ。</div>
+    <div class="step q1"><span>①x</span>家から公園までの道のりを x m とする（行きも帰りも同じ x）。</div>
+    <div class="svgfig"><svg viewBox="0 0 360 90" role="img" aria-label="往復の線分図">
+      <line x1="30" y1="35" x2="330" y2="35" stroke="#7aa7d9" stroke-width="3"/>
+      <circle cx="30" cy="35" r="4" fill="#2f5a8a"/><circle cx="330" cy="35" r="4" fill="#2f5a8a"/>
+      <text x="14" y="58" font-size="12" fill="#2f5a8a">家</text>
+      <text x="318" y="58" font-size="12" fill="#2f5a8a">公園</text>
+      <text x="150" y="22" font-size="12" fill="#33433a">道のり x m</text>
+      <text x="70" y="78" font-size="11" fill="#3f6f9f">行き 分速60m →</text>
+      <text x="210" y="78" font-size="11" fill="#8a5a19">← 帰り 分速90m</text>
+    </svg></div>
+    <div class="step q1"><span>③式</span>時間＝道のり÷速さ。行き <span class="frac"><span class="n">x</span><span class="d">60</span></span> 分、帰り <span class="frac"><span class="n">x</span><span class="d">90</span></span> 分。合計が25分だから <span class="math"><span class="frac"><span class="n">x</span><span class="d">60</span></span>＋<span class="frac"><span class="n">x</span><span class="d">90</span></span>＝25</span>。</div>
+    <div class="step q1"><span>④解</span>両辺×180（60と90の最小公倍数）：3x＋2x＝4500 → 5x＝4500 → x＝900。</div>
+    <div class="step q1"><span>⑤検算</span>行き 900÷60＝15分、帰り 900÷90＝10分。15＋10＝25分○。</div>
+    <div class="bx bx-warn"><span class="red">x を「時間」にしない</span>。求めるのは道のりだから x は道のり。行き帰りで道のりは同じ、ちがうのは時間、と整理しよう。分数は<span class="red">両辺に分母の最小公倍数をかけて</span>払う（÷ではなく×）。</div>
+    <div class="bx bx-link">「往復＝道のりが同じ・時間の合計で式」は特訓選抜 大問6（速さ）の超定番。時間や速さがちがっても、まず線分図で同じ部分をさがす。</div>
+    <div class="ans-final"><span>こたえ</span>900m</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問2 出会い算 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">★出会い算（向かい合って進み出会う）L3 応用</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問2</span>1500mはなれたP地点とQ地点から、AさんはPを分速60m、BさんはQを分速90mで、同時に向かい合って進みました。2人は何分後に出会いますか。</div>
+  <div class="note-draw">向かい合って進むと、2人の進んだ道のりを合わせると、はじめの間の距離（1500m）になる。出会うまでの時間を x にしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">出会い算＝<strong>2人の進んだ道のりの合計＝はじめにはなれていた距離</strong>。「合計」で式を立てる（差ではない）。同時に出発だから、2人とも進んだ時間は同じ x。</div>
+    <div class="step q2"><span>①x</span>出発してから x 分後に出会うとする（2人とも x 分進む）。</div>
+    <div class="svgfig"><svg viewBox="0 0 360 90" role="img" aria-label="出会い算の線分図">
+      <line x1="30" y1="40" x2="330" y2="40" stroke="#cdbf96" stroke-width="2"/>
+      <circle cx="30" cy="40" r="4" fill="#2f5a8a"/><circle cx="330" cy="40" r="4" fill="#8a5a19"/>
+      <text x="14" y="62" font-size="12" fill="#2f5a8a">P</text>
+      <text x="322" y="62" font-size="12" fill="#8a5a19">Q</text>
+      <text x="150" y="20" font-size="12" fill="#33433a">1500m</text>
+      <line x1="30" y1="40" x2="170" y2="40" stroke="#7aa7d9" stroke-width="4"/>
+      <line x1="190" y1="40" x2="330" y2="40" stroke="#e0a85c" stroke-width="4"/>
+      <text x="55" y="78" font-size="11" fill="#3f6f9f">A 60x →</text>
+      <text x="240" y="78" font-size="11" fill="#8a5a19">← B 90x</text>
+      <text x="172" y="34" font-size="13" fill="#9b514d">●出会う</text>
+    </svg></div>
+    <div class="step q2"><span>③式</span>道のりの合計＝1500：A は 60x m、B は 90x m 進む。<span class="math">60x＋90x＝1500</span>。</div>
+    <div class="step q2"><span>④解</span>150x＝1500 → x＝10。</div>
+    <div class="step q2"><span>⑤検算</span>A 60×10＝600m、B 90×10＝900m。600＋900＝1500m○。ちょうど出会う。</div>
+    <div class="bx bx-warn"><span class="red">「合計」を「差」にしない</span>。向かい合うと近づくので、2人の道のりを<strong>足すと</strong>間の距離になる。引き算にすると追いつき算とまざるので注意。</div>
+    <div class="bx bx-link">出会い算は特訓選抜 大問6の定番。次の問3「追いつき算」と「足すか引くか」だけがちがう。図でどちら向きかを必ず確認しよう。</div>
+    <div class="ans-final"><span>こたえ</span>10分後</div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問3 追いつき算 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★追いつき算（先に出た人を後から追う）L3 応用</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問3</span>弟が分速50mで家を出発しました。その12分後に兄が分速90mで同じ道を追いかけました。兄が出発してから何分後に弟に追いつきますか。</div>
+  <div class="note-draw">追いつく＝「2人の進んだ道のりが同じ」になったとき。気をつけるのは時間のずれ。弟は兄より12分多く歩いている。兄が出発してからの時間を x にしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">追いつき算＝<strong>2人の進んだ道のりが等しくなる</strong>。同じ家から同じ道を進むので、追いついた瞬間は「家からの道のり」が一致する。出会い算（合計）とちがって<strong>＝で結ぶ</strong>。</div>
+    <div class="step q3"><span>①x</span>兄が出発してから x 分後に追いつくとする。弟は兄より12分早く出たので、そのとき弟は <span class="math">(x＋12)</span> 分歩いている。</div>
+    <div class="svgfig"><svg viewBox="0 0 360 100" role="img" aria-label="追いつき算の線分図">
+      <text x="14" y="22" font-size="12" fill="#2f6a5c">家</text>
+      <line x1="30" y1="30" x2="320" y2="30" stroke="#5fa89a" stroke-width="4"/>
+      <text x="60" y="22" font-size="11" fill="#2f6a5c">弟 50×(x+12)</text>
+      <line x1="30" y1="60" x2="320" y2="60" stroke="#7aa7d9" stroke-width="4"/>
+      <text x="70" y="80" font-size="11" fill="#3f6f9f">兄 90×x</text>
+      <line x1="320" y1="22" x2="320" y2="68" stroke="#9b514d" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <text x="284" y="95" font-size="12" fill="#9b514d">●追いつく（道のり同じ）</text>
+    </svg></div>
+    <div class="step q3"><span>③式</span>道のりが等しい：兄 90x ＝ 弟 50(x＋12)。<span class="math">90x＝50(x＋12)</span>。</div>
+    <div class="step q3"><span>④解</span>90x＝50x＋600 → 90x−50x＝600 → 40x＝600 → x＝15。</div>
+    <div class="step q3"><span>⑤検算</span>兄 90×15＝1350m。弟 50×(15＋12)＝50×27＝1350m。どちらも1350mで一致○。</div>
+    <div class="bx bx-warn"><span class="red">弟の時間を x にしない</span>（弟は x＋12 分歩いている）。<span class="red">50(x＋12) を 50x＋12 としない</span>＝かっこの中の全部に50をかける（＝50x＋600）。</div>
+    <div class="bx bx-link">追いつき算は特訓選抜 大問6の頻出。「先に出た人は時間が多い」を ＋ で式に入れるのがカギ。問2の出会い（合計）と見くらべて、足すか＝かを図で判断しよう。</div>
+    <div class="ans-final"><span>こたえ</span>兄が出発してから 15分後</div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問4 トンネル ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★列車がトンネルを通る（列車の長さ込み）L3 応用</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問4</span>長さ120mの列車が、秒速25mで走っています。この列車があるトンネルに入りはじめてから、完全に出おわるまでに32秒かかりました。トンネルの長さは何mですか。</div>
+  <div class="note-draw">「入りはじめてから出おわるまで」に列車の先頭が進む道のり＝トンネルの長さ＋列車の長さ。これを「道のり＝速さ×時間」で式にしよう。トンネルの長さを x にする。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">トンネル・橋の問題は<strong>列車の長さを忘れない</strong>のがすべて。<strong>先頭が進む道のり＝トンネルの長さ＋列車の長さ</strong>（入りはじめ＝先頭が入口、出おわり＝最後尾が出口）。</div>
+    <div class="step q4"><span>①x</span>トンネルの長さを x m とする。</div>
+    <div class="svgfig"><svg viewBox="0 0 360 100" role="img" aria-label="列車がトンネルを通る図">
+      <rect x="120" y="30" width="140" height="34" fill="none" stroke="#a98ed0" stroke-width="2"/>
+      <text x="160" y="22" font-size="12" fill="#5f4a8a">トンネル x m</text>
+      <rect x="70" y="38" width="45" height="18" rx="3" fill="#cfbce8" stroke="#5f4a8a"/>
+      <text x="76" y="74" font-size="11" fill="#5f4a8a">列車120m</text>
+      <line x1="70" y1="84" x2="305" y2="84" stroke="#9b514d" stroke-width="2"/>
+      <polygon points="305,84 297,80 297,88" fill="#9b514d"/>
+      <text x="120" y="98" font-size="11" fill="#9b514d">先頭の進む道のり＝x＋120</text>
+    </svg></div>
+    <div class="step q4"><span>③式</span>先頭が進む道のり＝トンネル＋列車＝(x＋120) m。道のり＝速さ×時間だから <span class="math">x＋120＝25×32</span>。</div>
+    <div class="step q4"><span>④解</span>x＋120＝800 → x＝800−120 → x＝680。</div>
+    <div class="step q4"><span>⑤検算</span>進む道のり＝680＋120＝800m。速さ×時間＝25×32＝800m。一致○。</div>
+    <div class="bx bx-warn"><span class="red">トンネルの長さだけにしない</span>（＝25×32＝800 を答えにしない）。完全に出おわるには、列車の長さ120m分も先頭が余分に進む。だから<strong>＋列車の長さ</strong>。秒速と秒でそろっているので単位変換は不要。</div>
+    <div class="bx bx-link">「通過＝対象の長さ＋列車の長さ」は特訓選抜 大問6の応用パターン。鉄橋・ホームでも同じ考え方。単位がちがう問題（時速→秒速）も出るので、いつも単位をそろえる習慣を。</div>
+    <div class="ans-final"><span>こたえ</span>トンネルの長さ 680m</div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P5b 速さ② 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">速さの文章→式、4問おつかれさま！今日の収穫は<strong>「線分図をかいてから、足す・＝・列車の長さを判断する」</strong>こと。往復＝時間の合計、出会い＝道のりの合計、追いつき＝道のりが等しい、トンネル＝＋列車の長さ。全部「道のり＝速さ×時間」から作れる1つの考え方だ。式が作れなかった問題は「①何を x にしたか」「③何と何が＝（または合計）か」をノートで言葉に書き直そう。少しずつでいい、きみは確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m05b';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！速さ② クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

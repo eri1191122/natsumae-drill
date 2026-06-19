@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>復習06 速さと比・小学校総まとめ｜30分</title>
@@ -154,25 +155,29 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 .osarai b{color:#7a4e12}
 .osarai .ng{color:#9b514d;font-weight:800}.osarai .ok{color:#3f7a4a;font-weight:800}
 .osarai .hajiki{display:inline-block;background:#fff;border:2px solid #d9b46d;border-radius:50%;width:120px;height:120px;text-align:center;line-height:1.3;font-weight:900;color:#7a4e12;font-size:15px;margin:6px 0;padding-top:22px}
+/* 武装版分数縦組み（!important でspecificityバグ対策） */
+.frac{display:inline-flex!important;flex-direction:column!important;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.95em;border:none!important;background:none!important;border-radius:0!important;padding:0!important}
+.frac .n{display:block!important;border:none!important;border-bottom:1.6px solid currentColor!important;background:none!important;border-radius:0!important;padding:0 4px 1px!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+.frac .d{display:block!important;border:none!important;background:none!important;border-radius:0!important;padding:1px 4px 0!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
   <div><span class="pg-badge">復習06</span><span class="pg-badge">速さ</span><span class="pg-badge">比</span><span class="pg-badge">小学校総まとめ</span></div>
   <h1>速さと比＋小学校総まとめ</h1>
   <p>目安 約30分　対象: 中1</p>
-  <p class="cheer">🌸 これが小学校算数の復習シリーズ最終回。英語5＋3問→算数7問。きょうで総まとめを完成させよう。</p>
+  <p class="cheer">🌸 これが小学校算数の復習シリーズ最終回。英語10＋熟語3＋英作文1→算数7問。きょうで総まとめを完成させよう。</p>
 </div>
 
 <!-- ============ 英語：単語 ============ -->
 <div class="unit-banner">
   <span class="unit-num">英語</span>
-  <span class="unit-name">単語 5問</span>
+  <span class="unit-name">単語 10問（基本5＋必須5）</span>
   <span class="unit-time">意味を見て、ノートに英語を書こう</span>
 </div>
 <div class="sec th-prp">
@@ -181,7 +186,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- W-1 -->
     <div class="q vocab" data-id="W-1">
-      <div class="qnum-e">問題1｜単語 ①</div>
+      <div class="qnum-e">英①｜単語</div>
       <div class="qword">天気・天候</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -199,7 +204,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- W-2 -->
     <div class="q vocab" data-id="W-2">
-      <div class="qnum-e">問題2｜単語 ②</div>
+      <div class="qnum-e">英②｜単語</div>
       <div class="qword">休日・祝日</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -217,7 +222,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- W-3 -->
     <div class="q vocab" data-id="W-3">
-      <div class="qnum-e">問題3｜単語 ③</div>
+      <div class="qnum-e">英③｜単語</div>
       <div class="qword">お気に入りの・大好きな</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -235,7 +240,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- W-4 -->
     <div class="q vocab" data-id="W-4">
-      <div class="qnum-e">問題4｜単語 ④</div>
+      <div class="qnum-e">英④｜単語</div>
       <div class="qword">美しい・きれいな</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -253,7 +258,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- W-5 -->
     <div class="q vocab" data-id="W-5">
-      <div class="qnum-e">問題5｜単語 ⑤</div>
+      <div class="qnum-e">英⑤｜単語</div>
       <div class="qword">大切な・重要な</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -265,6 +270,96 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
       </div>
       <div class="gq" data-gid="W-5">
         <div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- W-6（必須+1） -->
+    <div class="q vocab" data-id="W-6">
+      <div class="qnum-e">英⑥｜単語（必須）</div>
+      <div class="qword">3月</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">March</div>
+        <div class="ans-read">読み：マーチ</div>
+        <div class="ans-why">なぜこの語か：月名は日付で必須。<b>先頭大文字</b>。</div>
+        <div class="bx bx-warn">先頭は大文字 <span class="red">M</span>arch。march（行進）と同じつづりだが、月名は必ず大文字で始める。</div>
+      </div>
+      <div class="gq" data-gid="W-6">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-6','o')">○</button><button class="x" onclick="g(this,'W-6','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- W-7（必須+2） -->
+    <div class="q vocab" data-id="W-7">
+      <div class="qnum-e">英⑦｜単語（必須）</div>
+      <div class="qword">4月</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">April</div>
+        <div class="ans-read">読み：エイプリル</div>
+        <div class="ans-why">なぜこの語か：月名。<b>先頭大文字</b>。新学期の月で頻出。</div>
+        <div class="bx bx-warn">先頭は大文字 <span class="red">A</span>pril。Ap-ril。l は最後に1つ（aprill は×）。</div>
+      </div>
+      <div class="gq" data-gid="W-7">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-7','o')">○</button><button class="x" onclick="g(this,'W-7','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- W-8（必須+3） -->
+    <div class="q vocab" data-id="W-8">
+      <div class="qnum-e">英⑧｜単語（必須）</div>
+      <div class="qword">5月</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">May</div>
+        <div class="ans-read">読み：メイ</div>
+        <div class="ans-why">なぜこの語か：月名で最短。<b>先頭大文字</b>。</div>
+        <div class="bx bx-warn">先頭は大文字 <span class="red">M</span>ay。3文字だけだが必ず大文字始まり。</div>
+      </div>
+      <div class="gq" data-gid="W-8">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-8','o')">○</button><button class="x" onclick="g(this,'W-8','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- W-9（必須+4） -->
+    <div class="q vocab" data-id="W-9">
+      <div class="qnum-e">英⑨｜単語（必須）</div>
+      <div class="qword">6月</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">June</div>
+        <div class="ans-read">読み：ジューン</div>
+        <div class="ans-why">なぜこの語か：月名。<b>先頭大文字</b>。今の季節で身近。</div>
+        <div class="bx bx-warn">先頭は大文字 <span class="red">J</span>une。Ju-ne。最後の e を忘れない（Jun は×）。</div>
+      </div>
+      <div class="gq" data-gid="W-9">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-9','o')">○</button><button class="x" onclick="g(this,'W-9','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- W-10（必須+5） -->
+    <div class="q vocab" data-id="W-10">
+      <div class="qnum-e">英⑩｜単語（必須）</div>
+      <div class="qword">7月</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">July</div>
+        <div class="ans-read">読み：ジュライ</div>
+        <div class="ans-why">なぜこの語か：月名。<b>先頭大文字</b>。夏休みの月で頻出。</div>
+        <div class="bx bx-warn">先頭は大文字 <span class="red">J</span>uly。Ju-ly。June（6月）とつづりを混ぜない。</div>
+      </div>
+      <div class="gq" data-gid="W-10">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-10','o')">○</button><button class="x" onclick="g(this,'W-10','x')">✕</button></div>
         <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
       </div>
     </div>
@@ -284,7 +379,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- P-1 -->
     <div class="q vocab" data-id="P-1">
-      <div class="qnum-e">問題6｜熟語 ①</div>
+      <div class="qnum-e">英⑪｜熟語</div>
       <div class="qword">（乗り物に）乗る</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -302,7 +397,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- P-2 -->
     <div class="q vocab" data-id="P-2">
-      <div class="qnum-e">問題7｜熟語 ②</div>
+      <div class="qnum-e">英⑫｜熟語</div>
       <div class="qword">（乗り物を）降りる</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -320,7 +415,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- P-3 -->
     <div class="q vocab" data-id="P-3">
-      <div class="qnum-e">問題8｜熟語 ③</div>
+      <div class="qnum-e">英⑬｜熟語</div>
       <div class="qword">〜に到着する</div>
       <div class="qhint">英語で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -351,7 +446,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- EW-1 -->
     <div class="q writing" data-id="EW-1">
-      <div class="qnum-e">問題9｜英作文 ①</div>
+      <div class="qnum-e">英⑭｜英作文</div>
       <div class="ew-task">📝 この日本語を、英語にして下の線に書こう（文法は自分で考える）</div>
       <div class="ew-jp">「私は速く泳ぐことができます。」</div>
       <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
@@ -419,7 +514,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- M-1 速さ -->
     <div class="q calc" data-id="M-1">
-      <div class="qnum">問題10｜速さ　L1 基礎</div>
+      <div class="qnum">数①｜速さ　L1 基礎</div>
       <div class="qbody">時速60kmで2時間30分走ったときの道のりを求めよう。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
@@ -467,14 +562,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>150km</div>
       </div>
       <div class="gq" data-gid="M-1">
-        <div class="grade"><span class="gq-label">問題10</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数①</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-2 速さ 往復 -->
     <div class="q calc" data-id="M-2">
-      <div class="qnum">問題11｜速さ・往復　L2 標準</div>
+      <div class="qnum">数②｜速さ・往復　L2 標準</div>
       <div class="qbody">家から駅まで1820m。行きは分速65m、帰りは分速70m。往復にかかる時間は合計何分か。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
@@ -487,14 +582,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>54分</div>
       </div>
       <div class="gq" data-gid="M-2">
-        <div class="grade"><span class="gq-label">問題11</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数②</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-3 比 配分 -->
     <div class="q calc" data-id="M-3">
-      <div class="qnum">問題12｜比の配分　L1 基礎</div>
+      <div class="qnum">数③｜比の配分　L1 基礎</div>
       <div class="qbody">1200円を姉と妹で 5:3 に分けると、それぞれいくらか。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
@@ -507,14 +602,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>姉750円、妹450円</div>
       </div>
       <div class="gq" data-gid="M-3">
-        <div class="grade"><span class="gq-label">問題12</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数③</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-4 等しい比 -->
     <div class="q calc" data-id="M-4">
-      <div class="qnum">問題13｜等しい比　L2 標準</div>
+      <div class="qnum">数④｜等しい比　L2 標準</div>
       <div class="qbody"><strong>3:□＝12:20</strong> の □ に入る数を求めよう。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
@@ -526,7 +621,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>5</div>
       </div>
       <div class="gq" data-gid="M-4">
-        <div class="grade"><span class="gq-label">問題13</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数④</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
@@ -546,8 +641,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- M-5 演算順序＋分数 -->
     <div class="q calc" data-id="M-5">
-      <div class="qnum">問題14・15｜演算順序・分数の確認　L1</div>
-      <div class="qbody">計算しよう。(1) <strong>20÷4＋3×2</strong>　(2) <strong>5/6÷5/12</strong>（約分まで）</div>
+      <div class="qnum">数⑤・⑥｜演算順序・分数の確認　L1</div>
+      <div class="qbody">計算しよう。(1) <strong>20÷4＋3×2</strong>　(2) <strong><span class="frac"><span class="n">5</span><span class="d">6</span></span>÷<span class="frac"><span class="n">5</span><span class="d">12</span></span></strong>（約分まで）</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
@@ -560,12 +655,12 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
           <h4>② 分数のわり算</h4>
           <p>わる数を<b>ひっくり返して（逆数）かける</b>。あとは約分。</p>
-          <div class="ex">5/6 ÷ 5/12 ＝ 5/6 × 12/5 ＝ 60/30 ＝ <b>2</b>（12/5 はひっくり返した形）</div>
+          <div class="ex"><span class="frac"><span class="n">5</span><span class="d">6</span></span> ÷ <span class="frac"><span class="n">5</span><span class="d">12</span></span> ＝ <span class="frac"><span class="n">5</span><span class="d">6</span></span> × <span class="frac"><span class="n">12</span><span class="d">5</span></span> ＝ <span class="frac"><span class="n">60</span><span class="d">30</span></span> ＝ <b>2</b>（<span class="frac"><span class="n">12</span><span class="d">5</span></span> はひっくり返した形）</div>
 
           <h4>③ 割合（わりあい）と「もとにする量」</h4>
           <p>割合は「<b>何を1（もと）とみるか</b>」がいちばん大事。文の中で基準が変わることがある。</p>
-          <div class="ex">全体100の1/4を取りのぞいた残りは 100×3/4＝<b>75</b>。<br>
-            その「<b>残りの</b>2/5」は、全体100ではなく<b>残り75</b>の2/5 → 75×2/5＝<b>30</b></div>
+          <div class="ex">全体100の1/4を取りのぞいた残りは 100×<span class="frac"><span class="n">3</span><span class="d">4</span></span>＝<b>75</b>。<br>
+            その「<b>残りの</b><span class="frac"><span class="n">2</span><span class="d">5</span></span>」は、全体100ではなく<b>残り75</b>の2/5 → 75×<span class="frac"><span class="n">2</span><span class="d">5</span></span>＝<b>30</b></div>
           <div class="miss">「残りの2/5」を全体100の2/5＝<span class="ng">40</span> とするのが最多ミス。「<b>残りの</b>」が出たら基準が残りに変わる。</div>
 
           <h4>④ 数直線と「以上・未満」</h4>
@@ -575,44 +670,44 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
           <div class="miss">負から正へまたぐとき <b>0 を入れわすれ</b>やすい。0 は必ず候補に入れる。</div>
         </div>
         <div class="step"><span>(1)</span>×÷を先に：20÷4＝5、3×2＝6 → 5＋6＝<strong>11</strong></div>
-        <div class="step"><span>(2)</span>÷は逆数のかけ算：5/6×12/5＝60/30＝<strong>2</strong></div>
+        <div class="step"><span>(2)</span>÷は逆数のかけ算：<span class="frac"><span class="n">5</span><span class="d">6</span></span>×<span class="frac"><span class="n">12</span><span class="d">5</span></span>＝<span class="frac"><span class="n">60</span><span class="d">30</span></span>＝<strong>2</strong></div>
         <div class="bx bx-link">演算順序は中1の正負の数でもそのまま。分数のわり算（逆数にしてかける）は文字式・方程式の計算でも必須。</div>
         <div class="bx bx-warn">(1) を左から <span class="red">20÷4＝5、5＋3＝8、8×2＝16</span> と順に計算するのが最多ミス。×÷を先に探す。</div>
         <div class="ans-final"><span>こたえ</span>(1) 11　(2) 2</div>
       </div>
       <div class="gq" data-gid="M-5a">
-        <div class="grade"><span class="gq-label">問題14（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5a','o')">○</button><button class="x" onclick="g(this,'M-5a','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数⑤（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5a','o')">○</button><button class="x" onclick="g(this,'M-5a','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
       <div class="gq" data-gid="M-5b">
-        <div class="grade"><span class="gq-label">問題15（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5b','o')">○</button><button class="x" onclick="g(this,'M-5b','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数⑥（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5b','o')">○</button><button class="x" onclick="g(this,'M-5b','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-6 割合「残りの」 -->
     <div class="q calc" data-id="M-6">
-      <div class="qnum">問題16｜割合の確認　L2</div>
-      <div class="qbody">全体を100とする。①全体の1/4を取り除いた残りは？　②その<strong>残りの</strong>2/5を使った量は？　③最終的に残る量は？</div>
+      <div class="qnum">数⑦｜割合の確認　L2</div>
+      <div class="qbody">全体を100とする。①全体の1/4を取り除いた残りは？　②その<strong>残りの</strong><span class="frac"><span class="n">2</span><span class="d">5</span></span>を使った量は？　③最終的に残る量は？</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="step"><span>①</span>100×(1−1/4)＝100×3/4＝<strong>75</strong></div>
-        <div class="step"><span>②</span><strong>残り75</strong>の2/5 → 75×2/5＝<strong>30</strong>（全体100の2/5＝40ではない！）</div>
+        <div class="step"><span>①</span>100×(1−<span class="frac"><span class="n">1</span><span class="d">4</span></span>)＝100×<span class="frac"><span class="n">3</span><span class="d">4</span></span>＝<strong>75</strong></div>
+        <div class="step"><span>②</span><strong>残り75</strong>の2/5 → 75×<span class="frac"><span class="n">2</span><span class="d">5</span></span>＝<strong>30</strong>（全体100の2/5＝40ではない！）</div>
         <div class="step"><span>③</span>75−30＝<strong>45</strong></div>
         <div class="bx bx-link">「何を1（もとにする量）とみるか」を見極める力は、中1の割合・方程式の文章題の核心そのもの。</div>
         <div class="bx bx-warn">「残りの2/5」を全体100の2/5＝<span class="red">40</span> として計算するミスが最多。「残りの」が出たら基準が残りに変わる。</div>
         <div class="ans-final"><span>こたえ</span>① 75　② 30　③ 45</div>
       </div>
       <div class="gq" data-gid="M-6">
-        <div class="grade"><span class="gq-label">問題16</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数⑦</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-7 数直線（範囲） -->
     <div class="q calc" data-id="M-7">
-      <div class="qnum">問題17｜数直線・範囲の確認　L1</div>
+      <div class="qnum">数⑧｜数直線・範囲の確認　L1</div>
       <div class="qbody"><strong>−2以上 4未満</strong>の整数をすべて書こう。</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
@@ -624,7 +719,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>−2, −1, 0, 1, 2, 3</div>
       </div>
       <div class="gq" data-gid="M-7">
-        <div class="grade"><span class="gq-label">問題17</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数⑧</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>

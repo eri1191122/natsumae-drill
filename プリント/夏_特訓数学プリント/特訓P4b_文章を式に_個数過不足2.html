@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P4b 文章を式に（個数・過不足②）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 文章→式の型カード（毎回これにそって解く）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.zukai{background:#fbfaf5;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Courier New',monospace;font-size:13px;color:#6a5a32;white-space:pre-wrap;line-height:1.7}
+.zukai::before{content:"📐 図（線分図・表）";display:block;font-family:'Hiragino Kaku Gothic ProN',sans-serif;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P4b</span><span class="pg-badge">数学：方程式の利用</span><span class="pg-badge">★文章→式 L2-L3（最重要）</span></div>
+  <h1>文章を式にする②｜個数・過不足の型カードを「4問・じっくり」で固める</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">これがきみの<strong>いちばんの伸びしろ</strong>＝「文章を式にする」力。全国統一テストで0/25だったのもここ。今日は<strong>4問だけ</strong>。そのぶん1問ずつ<strong>型カードにそって途中式をていねいに</strong>書こう。数をこなすより「型を体に入れる」のが今日の目標。</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 何を求める？</b> → それを <span class="math">x</span> とおく（「□を x とする」と書く）</li>
+    <li><b>② 図か表にする</b>（線分図・表）＝目で見える形に</li>
+    <li><b>③ 等しい関係を式に</b>（＝で結べる2つの言い方を探す）</li>
+    <li><b>④ 解く</b>（移項して x ＝ の形へ）</li>
+    <li><b>⑤ 検算</b>（出た数を文章に戻して合うか確かめる）</li>
+  </ol>
+</div>
+
+<!-- ===== 問1 切手2種類 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">2種類の個数（合計が決まっている）L2 標準</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問1</span>84円切手と63円切手を合わせて20枚買ったら、代金は1470円でした。84円切手と63円切手をそれぞれ何枚買いましたか。</div>
+  <div class="note-draw">①〜⑤の型カードを使う。片方を x、もう片方を「20−x」と表にしてからノートで式を作ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">2種類で<strong>合計枚数</strong>が決まっているとき：<strong>片方を x、もう片方は「合計−x」</strong>で表す。これで文字は1つで済む。</div>
+    <div class="step q1"><span>①x</span>84円切手を x 枚とする → 63円切手は (20−x) 枚。</div>
+    <div class="zukai">┌──────┬───────┬─────────┐
+│        │ 84円   │ 63円     │
+├──────┼───────┼─────────┤
+│ 枚数   │  x     │ 20−x     │
+│ 金額   │ 84x    │ 63(20−x) │
+└──────┴───────┴─────────┘</div>
+    <div class="step q1"><span>③式</span>金額の合計＝1470。<span class="math">84x＋63(20−x)＝1470</span>。</div>
+    <div class="step q1"><span>④解</span>84x＋1260−63x＝1470 → 21x＝210 → x＝10。</div>
+    <div class="step q1"><span>⑤検算</span>84円が10枚、63円が(20−10)＝10枚。84×10＋63×10＝840＋630＝1470○。</div>
+    <div class="bx bx-warn"><span class="red">63(20−x) を 63×20−x としない</span>（＝1260−63x。x にも63をかける）。−の前のかっこは、中の全部にかける。</div>
+    <div class="bx bx-link">「片方を x、もう片方を 合計−x」は特訓選抜 大問3（方程式の利用）の超定番。人数・代金・速さの混合でも同じ。</div>
+    <div class="ans-final"><span>こたえ</span>84円切手 10枚／63円切手 10枚</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問2 大人と子ども ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">2種類の人数（合計人数と合計料金）L3 標準</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問2</span>大人と子どもが合わせて25人います。入場料は大人1人600円、子ども1人350円で、全員の合計は12500円でした。大人は何人ですか。</div>
+  <div class="note-draw">問1と同じ型。大人を x 人とすると子どもは「25−x」人。表にしてから式を作ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q2"><span>①x</span>大人を x 人とする → 子どもは (25−x) 人。</div>
+    <div class="zukai">┌──────┬────────┬──────────┐
+│        │ 大人    │ 子ども    │
+├──────┼────────┼──────────┤
+│ 人数   │  x      │ 25−x      │
+│ 料金   │ 600x    │ 350(25−x) │
+└──────┴────────┴──────────┘</div>
+    <div class="step q2"><span>③式</span>料金の合計＝12500。<span class="math">600x＋350(25−x)＝12500</span>。</div>
+    <div class="step q2"><span>④解</span>600x＋8750−350x＝12500 → 250x＝3750 → x＝15。</div>
+    <div class="step q2"><span>⑤検算</span>大人15人、子ども(25−15)＝10人。600×15＋350×10＝9000＋3500＝12500○。</div>
+    <div class="bx bx-warn"><span class="red">問われたのは「大人の人数」</span>。x がそのまま答え。子どもの数(10人)を答えにしないよう、最後に「何を聞かれたか」を読み直す。</div>
+    <div class="ans-final"><span>こたえ</span>大人 15人</div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問3 過不足 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★過不足算（あまる・たりない）L3 応用</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問3</span>あめを子どもに配ります。1人に6個ずつ配ると8個あまり、1人に8個ずつ配ると6個たりません。子どもの人数を求めなさい。</div>
+  <div class="note-draw">「配り方が2通り→変わらない『あめの全部の数』を2通りで表して＝で結ぶ」。人数を x にしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">過不足のコツ：<strong>変わらないのは「あめの全部の数」</strong>。これを2通りの配り方で表して＝で結ぶ。<strong>あまる＝＋、たりない＝−</strong>（全部＝1人分×人数＋あまり ／ 全部＝1人分×人数−たりない）。</div>
+    <div class="step q3"><span>①x</span>子どもの人数を x 人とする（求めるもの）。</div>
+    <div class="step q3"><span>③式</span>あめの数を2通りで：6個ずつ＝<span class="math">6x＋8</span>（あまる）、8個ずつ＝<span class="math">8x−6</span>（たりない）。同じあめだから <span class="math">6x＋8＝8x−6</span>。</div>
+    <div class="step q3"><span>④解</span>8＋6＝8x−6x → 14＝2x → x＝7。</div>
+    <div class="step q3"><span>⑤検算</span>6×7＋8＝42＋8＝50、8×7−6＝56−6＝50。どちらも50個で一致○。</div>
+    <div class="bx bx-warn"><span class="red">「たりない」を ＋ にしない</span>（たりない＝−）。配る数が多い方ほど、たりなくなる、と図でイメージすると符号をまちがえない。</div>
+    <div class="bx bx-link">過不足は特訓選抜 大問3の定番。「変わらない全体を2通りで表して＝」は、椅子・部屋割り・お金の問題でもそのまま使える。</div>
+    <div class="ans-final"><span>こたえ</span>子ども 7人（あめは50個）</div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問4 長椅子 ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★長椅子型（座れない・最後があまる）L3 応用</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問4</span>長椅子に生徒を座らせます。1脚に4人ずつ座ると15人がすわれません。1脚に6人ずつ座ると、最後の1脚だけ1人になります。長椅子は何脚あり、生徒は何人ですか。</div>
+  <div class="note-draw">変わらないのは「生徒の人数」。これを長椅子の脚数を使って2通りで表そう。脚数を x にする。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">椅子の問題も過不足と同じ：<strong>変わらない「生徒の人数」</strong>を、椅子の脚数 x を使って2通りで表して＝で結ぶ。「最後の1脚だけ1人」＝最後の椅子以外（x−1脚）は6人ずつ、最後だけ1人。</div>
+    <div class="step q4"><span>①x</span>長椅子の脚数を x 脚とする。</div>
+    <div class="step q4"><span>③式</span>4人ずつだと15人すわれない＝<span class="math">4x＋15</span>（人）。6人ずつだと最後の1脚だけ1人＝(x−1)脚に6人ずつ＋最後1人＝<span class="math">6(x−1)＋1</span>（人）。同じ生徒数だから <span class="math">4x＋15＝6(x−1)＋1</span>。</div>
+    <div class="step q4"><span>④解</span>4x＋15＝6x−6＋1 → 4x＋15＝6x−5 → 15＋5＝6x−4x → 20＝2x → x＝10。</div>
+    <div class="step q4"><span>⑤検算</span>脚数10脚。生徒＝4×10＋15＝55人。6人ずつ：9脚に54人、最後の1脚に1人で計55人○。</div>
+    <div class="bx bx-warn"><span class="red">「すわれない15人」は ＋</span>（席が足りず人があまる＝人数の方が多い）。<span class="red">「最後だけ1人」を 6x＋1 としない</span>＝最後の椅子は6人ではなく1人なので、6人席は (x−1) 脚分だけ。</div>
+    <div class="ans-final"><span>こたえ</span>長椅子 10脚／生徒 55人</div>
+  </div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4 椅子の数</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4 生徒の数</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">式が作れない</button><button onclick="m(this)">式は作れたが計算ミス</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P4b 個数・過不足② 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">4問おつかれさま！今日のいちばんの収穫は<strong>「変わらないものを2通りで表して＝で結ぶ」</strong>という型。切手も人数も過不足も椅子も、全部この1つの考え方でつながっている。式が作れなかった問題は「①何を x にしたか」「③何と何が＝か」をノートで言葉に書き直そう。少しずつでいい、きみは確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m04b';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！個数・過不足② クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

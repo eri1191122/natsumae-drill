@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P8f 等積変形・面積一定（砂時計型）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 今日の合言葉カード（4問ぜんぶこれ）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い（赤を先に読もう）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月特訓選抜 大問2へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜面積のいちばん根っこ";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.layer{margin:9px 0;border-left:4px solid #cfd5ce;background:#fff;border-radius:0 7px 7px 0;padding:8px 12px;font-size:13.5px;line-height:1.95}
+.layer > b:first-child{display:block;font-size:11.5px;font-weight:900;color:#41506a;margin-bottom:3px;letter-spacing:.02em}
+.layer.l1{border-left-color:#7aa7d9;background:#f4f8fd}.layer.l1>b{color:#2f5a8a}
+.layer.l2{border-left-color:#5fa89a;background:#eef7f5}.layer.l2>b{color:#2f6a5c}
+.layer.l3{border-left-color:#e0a85c;background:#fdf7ee}.layer.l3>b{color:#8a5a17}
+.layer.l4{border-left-color:#a98ed0;background:#f7f2fc}.layer.l4>b{color:#5f4a8a}
+.layer.l5{border-left-color:#6aa97a;background:#eef5ee}.layer.l5>b{color:#2f6a44}
+.layer.l6{border-left-color:#d08a86;background:#fdf4f3}.layer.l6>b{color:#9b514d}
+.layer.l7{border-left-color:#c9a13b;background:#fdfbef}.layer.l7>b{color:#8a6a17}
+.layer .stp{display:block;margin:4px 0;padding-left:6px;border-left:2px solid #dfe3da}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P8f</span><span class="pg-badge">数学：平面図形</span><span class="pg-badge">★等積変形・面積一定 L3-L4（9月大問2直撃）</span></div>
+  <h1>等積変形と面積一定｜砂時計型（点が動いても面積が変わらない）を完全マスター</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に「あほでもわかる7層」解説つき</p>
+  <p class="pg-cheer">9月の特訓選抜 大問2は<strong>「砂時計型＝面積が変わらないことに気づけるか」</strong>がカギ。ここはきみの確定弱点だから、今日は<strong>4問だけ</strong>を、これでもかというくらい分厚く解説したよ。今日の合言葉はただ1つ。<strong>「底辺が同じ・高さが同じ → 面積も同じ」</strong>。これだけ。図に長さを書きこんで、ゆっくりいこう。</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 三角形の面積は「底辺 × 高さ ÷ 2」</b>。たて×横の半分、というイメージ。</li>
+    <li><b>② 底辺が同じ・高さが同じなら、形がちがっても面積は同じ</b>（=等積）。</li>
+    <li><b>③ 平行な2本の線の間隔が「高さ」</b>。平行線の上で頂点を横にずらしても、高さは1ミリも変わらない。</li>
+    <li><b>④ 「平行」という言葉を見たら、まず "高さが一定" を疑え</b>。</li>
+  </ol>
+</div>
+
+<!-- ===== 問1 砂時計型・面積一定 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">★砂時計型・面積一定（頂点が動いても同じ）L3 ＝確定弱点</span><span class="unit-time">目安 9分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead">問1</span>下の図で、上下の2本の直線は平行です。底辺ABの長さは10cm、2本の平行線のはばは6cmです。点Pは上の直線の上にあります。三角形ABPの面積を求めなさい。また、点Pを上の直線にそって右や左にずらすと（図の点P'のように）、面積はどう変わりますか。
+    <svg class="fig" width="320" height="190" viewBox="0 0 320 190">
+      <!-- parallel lines: lower y=150, upper y=50, gap=100px=6cm -->
+      <line x1="20" y1="150" x2="300" y2="150" stroke="#888" stroke-width="1.5"/>
+      <line x1="20" y1="50" x2="300" y2="50" stroke="#888" stroke-width="1.5"/>
+      <text x="24" y="166" font-size="10" fill="#666">下の直線</text>
+      <text x="24" y="44" font-size="10" fill="#666">上の直線（Pはこの上）</text>
+      <!-- base AB on lower line: A(60,150) B(240,150) width 180px=10cm -->
+      <!-- triangle ABP solid, P at (200,50) -->
+      <polygon points="60,150 240,150 200,50" fill="#eaf2fb" stroke="#3f6f9f" stroke-width="2" opacity="0.8"/>
+      <!-- ghost triangle ABP' dashed, P' at (95,50) -->
+      <polygon points="60,150 240,150 95,50" fill="none" stroke="#b07ab0" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <!-- height marker -->
+      <line x1="280" y1="50" x2="280" y2="150" stroke="#2f6a5c" stroke-width="1" stroke-dasharray="3 3"/>
+      <text x="284" y="104" font-size="11" fill="#2f6a5c">6cm</text>
+      <circle cx="60" cy="150" r="3.5" fill="#2f5a8a"/><text x="48" y="166" font-size="12" fill="#2f5a8a">A</text>
+      <circle cx="240" cy="150" r="3.5" fill="#2f5a8a"/><text x="244" y="166" font-size="12" fill="#2f5a8a">B</text>
+      <circle cx="200" cy="50" r="4" fill="#9b514d"/><text x="206" y="46" font-size="12" fill="#9b514d">P</text>
+      <circle cx="95" cy="50" r="3.5" fill="#b07ab0"/><text x="80" y="46" font-size="12" fill="#b07ab0">P'</text>
+      <text x="140" y="166" font-size="11" fill="#2f5a8a">10cm</text>
+    </svg>
+  </div>
+  <div class="note-draw">底辺ABは10cmで動かない。高さは「平行線のはば6cm」で、これも動かない。Pを横にずらしても、底辺も高さも変わらないことを図で確かめよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="layer l1"><b>① まず、やさしく言いかえると</b>三角形の「底」がABで、「てっぺん」がP。Pが乗っている上の線と、ABが乗っている下の線は<strong>ぴったり平行</strong>。平行ということは、2本の線のはば（＝Pの高さ）は、左でも右でも<strong>ずっと6cmのまま</strong>。だからPが横にすべっても高さは変わらない。</div>
+    <div class="layer l2"><b>② わかっていること／求めること</b><span class="stp">わかっている：底辺AB＝10cm、平行線のはば（＝高さ）＝6cm。</span><span class="stp">求める：三角形ABPの面積。あと、Pをずらしたとき面積がどうなるか。</span></div>
+    <div class="layer l3"><b>③ 図でイメージ（ここが心臓）</b>三角形の高さとは「底辺から、てっぺんまでの<strong>まっすぐ上（垂直）の長さ</strong>」。斜めの辺の長さではない。Pは上の平行線の上にいるから、ABからPまでの垂直の高さは、いつでも平行線のはば＝6cm。<strong>底辺10cmも同じ、高さ6cmも同じ → だから面積も同じ。</strong>図の点線の三角形ABP'も、見た目は細長くても面積は実線の三角形とまったく同じ。</div>
+    <div class="layer l4"><b>④ 作戦＋たとえ話</b>たとえ話：はしごを思いうかべて。はしごの2本の長い棒が「平行な2直線」。横の段（高さ）は、はしごの右はしでも左はしでも同じ長さだよね。三角形のてっぺんPは、その段の上を左右にスライドするだけ。<strong>すべっても床からの高さは変わらない</strong>。作戦はかんたん、<span class="math">底辺×高さ÷2</span>に数を入れるだけ。</div>
+    <div class="layer l5"><b>⑤ 1ステップずつ（なぜ付き）</b><span class="stp">ステップ1：底辺＝10cm。なぜ？ ABの長さがそのまま底辺だから。</span><span class="stp">ステップ2：高さ＝6cm。なぜ？ Pは上の平行線の上で、平行線のはばが6cmだから、ABからの垂直の高さも6cm。</span><span class="stp">ステップ3：面積＝<span class="math">10×6÷2＝30</span>。なぜ÷2？ 三角形は同じ形を2つ合わせると長方形（10×6＝60）になるから、その半分。</span><span class="stp">ステップ4：Pをずらしても？ 底辺も高さも変わらないので、面積は<strong>30cm²のまま変わらない</strong>。</span></div>
+    <div class="bx bx-warn"><span class="red">「点Pが動いたら面積も変わる」と思いこまない</span>。これがいちばん多いワナ。動いても底辺と高さが同じなら面積は1ミリも変わらない。<span class="red">高さを「斜めの辺APやBP」と勘違いしない</span>。高さはまっすぐ上の長さ＝平行線のはば6cm。斜めの辺は高さではない。</div>
+    <div class="layer l7"><b>⑦ 検算＋次に見抜くコツ</b><span class="stp">検算：同じ三角形をもう1つさかさまに重ねると、たて6cm・横10cmの長方形（面積60）。三角形はその半分の30。OK。</span><span class="stp">コツ：問題に<strong>「平行」</strong>という言葉や平行の記号が出てきたら、まず<strong>「高さが一定だ！」</strong>と心の中でさけぶ。平行線＝高さの番人、とおぼえよう。</span></div>
+    <div class="bx bx-link">9月特訓選抜 大問2の「砂時計型」は、まさにこれ。点が平行線の上を動く図を見せて「面積が変わらないことに気づけるか」を試してくる。<strong>平行を見たら高さ一定</strong>、これに気づけたら大問2は半分とったも同然。</div>
+    <div class="ans-final"><span>こたえ</span>面積＝30cm²。点Pを上の直線にそってずらしても、面積は30cm²のまま変わらない。</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1★</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「平行線の上では高さが一定 → 面積も一定」を図つきでノートに書こう</div></div>
+</div>
+
+<!-- ===== 問2 底辺共通・高さ等しい / 対角線で2等分 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">長方形の対角線で2等分（底辺共通・高さ等しい）L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead">問2</span>下の図のように、たて8cm、横12cmの長方形ABCDがあります。対角線ACを1本引いて、長方形を2つの三角形に分けました。色をぬった三角形ABCの面積を求めなさい。
+    <svg class="fig" width="320" height="200" viewBox="0 0 320 200">
+      <!-- rect 40..280 x (240px=12cm), 30..190 y (160px=8cm) -->
+      <rect x="40" y="30" width="240" height="160" fill="#fff" stroke="#2f5a8a" stroke-width="2"/>
+      <!-- triangle ABC shaded: A top-left(40,30) B bottom-left(40,190) C bottom-right(280,190) -->
+      <polygon points="40,30 40,190 280,190" fill="#eef7f5" stroke="#2f6a5c" stroke-width="2" opacity="0.8"/>
+      <line x1="40" y1="30" x2="280" y2="190" stroke="#2f6a5c" stroke-width="2"/>
+      <text x="30" y="26" font-size="12" fill="#2f5a8a">A</text>
+      <text x="30" y="200" font-size="12" fill="#2f5a8a">B</text>
+      <text x="284" y="200" font-size="12" fill="#2f5a8a">C</text>
+      <text x="284" y="26" font-size="12" fill="#2f5a8a">D</text>
+      <text x="150" y="200" font-size="11" fill="#2f5a8a">12cm</text>
+      <text x="14" y="114" font-size="11" fill="#2f5a8a">8cm</text>
+    </svg>
+  </div>
+  <div class="note-draw">対角線で分けた2つの三角形は、ぴったり同じ大きさ（合同）。だから長方形の面積を半分にすればよい。三角形ABCの底辺と高さがどこか、図に書きこもう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="layer l1"><b>① まず、やさしく言いかえると</b>長方形をナナメの線（対角線）で2つに切ると、まったく同じ三角形が2つできる。だから1つの三角形は<strong>長方形のちょうど半分</strong>。</div>
+    <div class="layer l2"><b>② わかっていること／求めること</b><span class="stp">わかっている：たて8cm、横12cm。</span><span class="stp">求める：三角形ABCの面積。</span></div>
+    <div class="layer l3"><b>③ 図でイメージ</b>三角形ABCを見ると、底辺BC＝12cm（長方形の横）、高さAB＝8cm（長方形のたて）。長方形を対角線で折ると、上の三角形と下の三角形がピタッと重なる＝<strong>2つは合同で、面積も同じ</strong>。</div>
+    <div class="layer l4"><b>④ 作戦＋たとえ話</b>たとえ話：四角いサンドイッチをナナメに切ると、同じ三角サンドが2つできるよね。1つ分のカロリーは、まるごとの半分。図形も同じで、三角形は長方形の半分。作戦は2つ、どちらでもOK。<br>作戦A：長方形の面積を出して÷2。　作戦B：三角形の公式 底辺×高さ÷2 に直接入れる。</div>
+    <div class="layer l5"><b>⑤ 1ステップずつ（なぜ付き）</b><span class="stp">作戦A：長方形＝<span class="math">12×8＝96</span>。三角形はその半分だから <span class="math">96÷2＝48</span>。</span><span class="stp">作戦B：底辺12、高さ8だから <span class="math">12×8÷2＝48</span>。なぜ同じ？ どちらも「12×8の半分」を計算しているから、答えは必ず一致する。</span></div>
+    <div class="bx bx-warn"><span class="red">÷2を忘れて96にしない</span>。96は長方形まるごとの面積。三角形はその半分。<span class="red">高さを対角線ACの長さと勘違いしない</span>。高さは長方形のたて8cm（底辺BCに垂直な長さ）。ナナメのACは高さではない。</div>
+    <div class="layer l7"><b>⑦ 検算＋次に見抜くコツ</b><span class="stp">検算：もう片方の三角形ACDも、底辺CD＝8・高さAD＝12で <span class="math">8×12÷2＝48</span>。2つ足すと48＋48＝96＝長方形。ぴったり合うのでOK。</span><span class="stp">コツ：「対角線で分けた」「対角線で2等分」と出たら、迷わず<strong>長方形÷2</strong>。底辺と高さ共通の三角形は面積が等しい、という大ルールの仲間。</span></div>
+    <div class="bx bx-link">9月特訓選抜 大問2では「底辺が共通で高さが同じ三角形は面積が等しい」がよく問われる。対角線2等分はその一番やさしい形。ここで「半分」の感覚をしっかり入れておこう。</div>
+    <div class="ans-final"><span>こたえ</span>48cm²</div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「対角線で分けた三角形＝長方形の半分」を図つきでノートに書こう</div></div>
+</div>
+
+<!-- ===== 問3 平行四辺形を長方形に等積変形 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★平行四辺形を長方形に等積変形して面積を出す L3-L4</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead">問3</span>下の図のような平行四辺形があります。底辺は14cm、高さ（底辺から上の辺までの垂直の長さ）は6cmです。この平行四辺形の面積を求めなさい。あわせて、「平行四辺形のはしの三角形を反対側に移すと長方形になる」ことを使って、なぜその面積になるのかを説明できるようにしましょう。
+    <svg class="fig" width="340" height="180" viewBox="0 0 340 180">
+      <!-- parallelogram: bottom A(40,140) B(222,140) (182px=14cm), top D(98,60) C(280,60) shift 58px -->
+      <polygon points="40,140 222,140 280,60 98,60" fill="#f7f2fc" stroke="#7b5ea7" stroke-width="2"/>
+      <!-- height line from D down to base -->
+      <line x1="98" y1="60" x2="98" y2="140" stroke="#2f6a5c" stroke-width="1.3" stroke-dasharray="4 3"/>
+      <!-- the left triangle to be moved (A,98bottom,98top=D) -->
+      <polygon points="40,140 98,140 98,60" fill="#d9c8f0" stroke="#7b5ea7" stroke-width="1" opacity="0.7"/>
+      <!-- arrow showing move to right -->
+      <path d="M150,100 L210,100" stroke="#9b514d" stroke-width="1.5" marker-end="url(#ar)"/>
+      <defs><marker id="ar" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 Z" fill="#9b514d"/></marker></defs>
+      <text x="155" y="94" font-size="10" fill="#9b514d">左の三角を右へ移す</text>
+      <text x="120" y="156" font-size="11" fill="#7b5ea7">底辺 14cm</text>
+      <text x="60" y="104" font-size="11" fill="#2f6a5c">高さ6cm</text>
+      <text x="32" y="155" font-size="11" fill="#7b5ea7">A</text>
+      <text x="222" y="155" font-size="11" fill="#7b5ea7">B</text>
+      <text x="284" y="58" font-size="11" fill="#7b5ea7">C</text>
+      <text x="88" y="56" font-size="11" fill="#7b5ea7">D</text>
+    </svg>
+  </div>
+  <div class="note-draw">平行四辺形は「左はしの三角形を切って、右はしにくっつける」と長方形に変身する（＝等積変形）。長方形のたて・横が、平行四辺形の高さ・底辺と同じになることを図で確かめよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai"><ul>
+      <li><b>等積変形＝形を変えても面積は変えない切り貼り。</b>切った分をそっくり移すだけだから、面積はぜったいに変わらない。</li>
+      <li><b>平行四辺形を長方形に変形すると → 長方形のたて＝平行四辺形の高さ、横＝底辺。</b></li>
+    </ul></div>
+    <div class="layer l1"><b>① まず、やさしく言いかえると</b>平行四辺形は、長方形を横にグニャッとかたむけた形。左はしのナナメの三角形をハサミで切って、右はしのへこみにパチッとはめると、ちょうど長方形になる。</div>
+    <div class="layer l2"><b>② わかっていること／求めること</b><span class="stp">わかっている：底辺14cm、高さ6cm。</span><span class="stp">求める：平行四辺形の面積。</span></div>
+    <div class="layer l3"><b>③ 図でイメージ</b>図の左の小さな三角形（うすい色）を、矢印のように右へスライドして移すと、すきまがぴったりうまって<strong>たて6cm・横14cmの長方形</strong>になる。三角形を移しただけなので、面積は変わっていない。だから平行四辺形の面積＝この長方形の面積。</div>
+    <div class="layer l4"><b>④ 作戦＋たとえ話</b>たとえ話：消しゴムでナナメの角を切って反対に貼りなおしても、消しゴムの量（体積）は同じ。図形も、切って移すだけなら面積は変わらない。作戦：平行四辺形を長方形に変身させて、<span class="math">たて×横＝高さ×底辺</span>で出す。</div>
+    <div class="layer l5"><b>⑤ 1ステップずつ（なぜ付き）</b><span class="stp">ステップ1：長方形のたて＝高さ＝6cm。なぜ？ 三角形を横に移しても、上の辺と下の辺のはば（高さ）は変わらないから。</span><span class="stp">ステップ2：長方形の横＝底辺＝14cm。なぜ？ 切って移した三角形が、ちょうどはしのへこみをうめるので、横の長さは底辺と同じになる。</span><span class="stp">ステップ3：面積＝<span class="math">14×6＝84</span>。長方形だから÷2はしない（÷2は三角形のとき）。</span></div>
+    <div class="bx bx-warn"><span class="red">平行四辺形なのに÷2をしない</span>。÷2は三角形のときだけ。平行四辺形は長方形に変身するので「底辺×高さ」でおわり。<span class="red">高さをナナメの辺ADの長さにしない</span>。高さは「底辺にまっすぐ垂直な長さ6cm」。ナナメの辺は高さより長いので、それを使うと答えが大きくなりすぎる。</div>
+    <div class="layer l7"><b>⑦ 検算＋次に見抜くコツ</b><span class="stp">検算：平行四辺形を対角線で2つの三角形に分けると、それぞれ底辺14・高さ6で <span class="math">14×6÷2＝42</span>。2つ足すと42＋42＝84。長方形変形と同じ答え。OK。</span><span class="stp">コツ：見なれない形（平行四辺形・台形・でこぼこ図形）が出たら<strong>「知っている形（長方形・三角形）に切り貼りできないか？」</strong>と考える。これが等積変形の発想。</span></div>
+    <div class="bx bx-link">9月特訓選抜 大問2では「平行四辺形や台形を、三角形や長方形に変形して面積を出す」問題が出る。<strong>切って移しても面積は変わらない</strong>という等積変形の感覚は、大問2の応用をとくための土台になる。</div>
+    <div class="ans-final"><span>こたえ</span>84cm²（たて6cm・横14cmの長方形に変形できるから 14×6＝84）</div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「平行四辺形→長方形に切り貼り＝高さ×底辺」を図つきでノートに書こう</div></div>
+</div>
+
+<!-- ===== 問4 点がどこにあっても面積が変わらない（応用） ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★点がどこにあっても面積が変わらない（応用）L4</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead">問4</span>下の図の平行四辺形ABCDで、辺AB＝12cm、平行四辺形の高さ（辺ABと辺DCのはば）＝5cmです。辺DC上に点Pをとり、PとA、PとBを結びます。三角形PABの面積を求めなさい。また、点Pを辺DCのどこに動かしても面積が同じになる理由を答えなさい。
+    <svg class="fig" width="340" height="180" viewBox="0 0 340 180">
+      <!-- parallelogram ABCD: A(40,140) B(232,140) (192px=12cm), D(98,40) C(290,40) shift 58 -->
+      <polygon points="40,140 232,140 290,40 98,40" fill="#fff" stroke="#7b5ea7" stroke-width="2"/>
+      <!-- DC is the top side (from D(98,40) to C(290,40)) -->
+      <!-- P on DC at x=210 -->
+      <!-- triangle PAB shaded -->
+      <polygon points="40,140 232,140 210,40" fill="#eef7f5" stroke="#2f6a5c" stroke-width="2" opacity="0.8"/>
+      <!-- ghost triangle P'AB dashed, P' at x=130 -->
+      <polygon points="40,140 232,140 130,40" fill="none" stroke="#b07ab0" stroke-width="1.5" stroke-dasharray="5 4"/>
+      <!-- height marker -->
+      <line x1="300" y1="40" x2="300" y2="140" stroke="#2f6a5c" stroke-width="1" stroke-dasharray="3 3"/>
+      <text x="304" y="96" font-size="11" fill="#2f6a5c">5cm</text>
+      <circle cx="40" cy="140" r="3.5" fill="#7b5ea7"/><text x="30" y="155" font-size="12" fill="#7b5ea7">A</text>
+      <circle cx="232" cy="140" r="3.5" fill="#7b5ea7"/><text x="236" y="155" font-size="12" fill="#7b5ea7">B</text>
+      <circle cx="290" cy="40" r="3.5" fill="#7b5ea7"/><text x="294" y="38" font-size="12" fill="#7b5ea7">C</text>
+      <circle cx="98" cy="40" r="3.5" fill="#7b5ea7"/><text x="86" y="38" font-size="12" fill="#7b5ea7">D</text>
+      <circle cx="210" cy="40" r="4" fill="#9b514d"/><text x="214" y="36" font-size="12" fill="#9b514d">P</text>
+      <circle cx="130" cy="40" r="3.5" fill="#b07ab0"/><text x="116" y="36" font-size="12" fill="#b07ab0">P'</text>
+      <text x="120" y="155" font-size="11" fill="#7b5ea7">12cm</text>
+    </svg>
+  </div>
+  <div class="note-draw">辺ABと辺DCは平行（平行四辺形の向かい合う辺だから）。Pは辺DCの上にあるので、ABからPまでの高さは、平行線のはば5cmで一定。Pを動かしても底辺AB＝12と高さ5は変わらない、を図で確かめよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="layer l1"><b>① まず、やさしく言いかえると</b>これは問1の「砂時計型」とまったく同じしくみ。底辺はAB（ずっと12cm）。てっぺんPは、ABと平行な辺DCの上にいる。平行だから、ABからPまでの高さはどこでも同じ5cm。だから面積は変わらない。</div>
+    <div class="layer l2"><b>② わかっていること／求めること</b><span class="stp">わかっている：底辺AB＝12cm、ABと辺DCのはば（高さ）＝5cm。辺ABと辺DCは平行。</span><span class="stp">求める：三角形PABの面積と、Pを動かしても同じになる理由。</span></div>
+    <div class="layer l3"><b>③ 図でイメージ</b>平行四辺形の向かい合う辺ABとDCは平行。Pは辺DCの上にいるから、底辺ABからPまでの垂直の高さは、いつも平行線のはば＝5cm。図の点線の三角形P'ABも、てっぺんが左へずれただけで、底辺12cmも高さ5cmも実線と同じ。だから2つの三角形は面積が等しい。</div>
+    <div class="layer l4"><b>④ 作戦＋たとえ話</b>たとえ話：電車のレール（平行な2本）を思いうかべて。レールのはば（高さ）は、駅でもトンネルでも同じ。Pはレールの上をすべる人。どこに立っても、もう一方のレール（AB）からの高さは同じ。作戦：問1と同じく <span class="math">底辺×高さ÷2</span> に入れるだけ。</div>
+    <div class="layer l5"><b>⑤ 1ステップずつ（なぜ付き）</b><span class="stp">ステップ1：底辺＝AB＝12cm。</span><span class="stp">ステップ2：高さ＝5cm。なぜ？ Pは辺DCの上で、辺DCとABは平行、そのはばが5cmだから、ABからPまでの高さも5cm。</span><span class="stp">ステップ3：面積＝<span class="math">12×5÷2＝30</span>。</span><span class="stp">ステップ4：理由＝「Pがどこに動いても、底辺AB（12cm）と高さ（平行線のはば5cm）が変わらないから、面積はいつも30cm²で一定」。</span></div>
+    <div class="bx bx-warn"><span class="red">「Pが動いたら面積も変わる」と思いこまない</span>（問1とまったく同じワナ）。底辺と高さが同じなら面積は変わらない。<span class="red">高さを辺AD（ナナメの辺）の長さや、平行四辺形の底辺と混ぜない</span>。三角形PABの高さは「ABからPまでの垂直の長さ＝平行線のはば5cm」だけ。<span class="red">÷2を忘れて60にしない</span>（これは三角形なので÷2が必要）。</div>
+    <div class="layer l7"><b>⑦ 検算＋次に見抜くコツ</b><span class="stp">検算：平行四辺形ABCDの面積は 12×5＝60。三角形PABは底辺AB・高さ5で、平行四辺形のちょうど半分の30。半分になっていてつじつまが合う。OK。</span><span class="stp">コツ：図に<strong>「平行」マークや向かい合う辺</strong>を見つけたら、その辺の上を動く点は<strong>高さを変えない</strong>。「平行を見たら高さ一定 → 面積一定」、この合言葉を本番でも必ず思い出そう。</span></div>
+    <div class="bx bx-link">9月特訓選抜 大問2の本丸がこれ。「点Pをどこに動かしても面積が変わらないのはなぜか」を言葉で説明させる問題が出る。答えのカギはいつも同じ＝<strong>「平行だから高さが一定、底辺も共通だから面積も一定」</strong>。この一文をスラスラ言えるようにしておこう。</div>
+    <div class="ans-final"><span>こたえ</span>面積＝30cm²。理由：Pは辺DC上にあり、辺DCはABと平行なので、ABからPまでの高さは平行線のはば5cmで一定。底辺AB＝12cmも変わらないので、Pをどこに動かしても面積は30cm²のまま変わらない。</div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「平行な辺の上を動く点 → 高さ一定 → 面積一定」を図つきでノートに書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8f 等積変形・面積一定 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">4問おつかれさま！今日のいちばんの収穫は<strong>「平行を見たら高さ一定 → 底辺が同じなら面積も同じ」</strong>。砂時計型（問1・問4）も、対角線2等分（問2）も、平行四辺形の変形（問3）も、ぜんぶこの1つの考え方でつながっている。点が動いても面積は変わらない——これに気づけたら、9月の大問2はきみのものだよ。まちがえた問題は、図に底辺と高さ（垂直の長さ！）を赤で書きこんでノートに解き直そう。少しずつでいい、きみは確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m08f';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！等積変形・面積一定 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

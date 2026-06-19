@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>復習・英語（まちがえだけ）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f8f7;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#eaf2ee;color:#23402f;padding:20px 20px;border:1px solid #cadfd1;border-radius:10px;margin-bottom:14px}
+.pg-hd h1{font-size:20px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#46604f}
+.pg-badge{display:inline-block;background:#d8ecdd;color:#2f6a44;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #bbe0c4;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.progress{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:12px 16px;margin:0 0 16px;font-size:15px;font-weight:800;color:#2f6a44;text-align:center}
+.progress .left{color:#9b514d}
+.allclear{display:none;text-align:center;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;padding:18px;border-radius:14px;margin-bottom:16px}
+.allclear.show{display:block}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:10px;padding:14px 16px;margin:14px 0}
+.q.grad{display:none}
+.q .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 9px;border-radius:12px}
+.badge.tango{background:#e6f0fb;color:#2f5a8a;border:1px solid #bcd3ee}
+.badge.jukugo{background:#fbe9cf;color:#8a5a17;border:1px solid #eccf9a}
+.badge.eisaku{background:#ece2f7;color:#5f4a8a;border:1px solid #cfbce8}
+.date{font-size:11.5px;color:#8a7d6a;font-weight:700;background:#fbf6ec;border:1px solid #ecdcc0;border-radius:10px;padding:2px 9px}
+.cnt{font-size:11px;color:#3f7a4a;font-weight:800;margin-left:auto}
+.jp{font-size:19px;font-weight:800;color:#31415f;margin:6px 0 4px;line-height:1.7}
+.kind{font-size:12px;color:#7a8794;font-weight:700}
+.ans-btn{margin-top:10px;background:#657789;color:#fff;border:none;border-radius:20px;padding:9px 18px;font-size:13.5px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:8px}
+.ans-box.open{display:block}
+.en{font-size:20px;font-weight:900;color:#2f6b45;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-family:'Courier New','Hiragino Kaku Gothic ProN',sans-serif}
+.kaisetsu{font-size:13.5px;line-height:1.95;color:#33433a}
+.kaisetsu .chunk{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 5px;border-radius:3px;font-weight:800;color:#2f5a8a}
+.kaisetsu .lab{display:inline-block;font-size:11px;font-weight:800;color:#2f6a44;background:#dcefea;border:1px solid #aed8cf;border-radius:8px;padding:1px 8px;margin-right:6px}
+.kaisetsu p{margin:7px 0}
+.red{color:#9b514d;font-weight:800}
+.draft{display:inline-block;font-size:11px;font-weight:800;color:#8a5a19;background:#fff7e8;border:1px solid #e6cf9a;border-radius:8px;padding:2px 8px;margin-bottom:6px}
+.grade{margin-top:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.grade .lbl{font-size:13px;color:#607086;font-weight:700}
+.o,.x{width:48px;height:48px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:22px;font-weight:700;cursor:pointer;color:#8a8794}
+.o:active,.x:active{transform:scale(.94)}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.grad-note{text-align:center;color:#3f7a4a;font-weight:900;font-size:15px;padding:6px}
+.reset{display:block;margin:30px auto 0;background:#fff;border:1px solid #e0d8d6;color:#a08a86;font-size:12px;font-weight:700;padding:7px 14px;border-radius:18px;cursor:pointer}
+.reset:hover{background:#fdf6f4}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:18px;line-height:1.9}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">復習キュー</span><span class="pg-badge">英語：まちがえ直し</span></div>
+  <h1>復習・英語（まちがえだけ）</h1>
+  <p>日本語を見て、英語を<strong>あたまの中で言ってから</strong>「こたえを見る」を押そう。合っていたら○、ちがったら✕。○を<strong>2回</strong>連続でとれたら「卒業」＝もう出てこなくなるよ。✕を押すと0からやり直し。短くてOK、毎日ちょっとずつ。</p>
+</div>
+
+<div class="allclear" id="allclear">🌸 ぜんぶ卒業！おめでとう 🌸</div>
+<div class="progress" id="progress">のこり <span class="left" id="remain">0</span> 問／卒業 <span id="grad">0</span> 問</div>
+
+<div id="list"></div>
+
+<button class="reset" onclick="resetAll()">↺ もう一度ぜんぶ出す（リセット）</button>
+
+<div class="endcheer">
+  英語は「ちょっとずつ何回も」がいちばん強い。今日できなくても、明日もう一回出てくるから大丈夫。<br>
+  つづり（スペル）は声に出して「かたまり」で覚えると忘れにくいよ🌸
+</div>
+
+</div>
+
+<script>
+// ===== 収録17問（自己完結・隔離試作とは無関係の軽量キュー） =====
+// ★day は必ず「M/D」形式（例 6/18）で記入する。「初日／2日目」等の相対表記は禁止（忘却曲線の起算日が不明になるため）。実日付が不明なら、出題日または採点日を入れる。
+// id1-11=6/17（夏前ドリル復習01-03の採点分析分・実解答日は記録なしのため分析日に統一）／id12-17=6/18。
+var QS=[
+ {id:1, kind:'熟語', badge:'jukugo', jp:'～を聞く', en:'listen to', day:'6/17',
+  k:'<p><span class="lab">かたち</span>「listen（聞く）＋ to」で1セット。<span class="red">to を落とすと×</span>。英語では「○○を聞く」の「を」が <span class="chunk">to</span> になるよ。</p><p>例：I listen to music.（わたしは音楽を聞く）／× I listen music.</p>'},
+
+ {id:2, kind:'英作文', badge:'eisaku', jp:'私は中学生です。', en:'I am a junior high school student.', day:'6/17',
+  k:'<p><span class="lab">語順</span>主語 <span class="chunk">I</span> → be動詞 <span class="chunk">am</span> → なに <span class="chunk">a junior high school student</span>。</p><p><span class="red">a を忘れない</span>：「1人の生徒」だから数えられる名詞には a がつく。<span class="red">最後はピリオド「.」</span>を必ず。</p><p>junior high school（中学校）＝3語でひとかたまり。そのうしろに student（生徒）。</p>'},
+
+ {id:3, kind:'単語', badge:'tango', jp:'朝', en:'morning', day:'6/17',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">mor + ning</span>。「モー・ニング」と区切って覚える。</p><p><span class="red">mourning（喪に服す）と書かない</span>：u は入らない。朝は m-o-r-n-i-n-g。</p><p>in the morning（朝に）でよく使うよ。</p>'},
+
+ {id:4, kind:'単語', badge:'tango', jp:'朝食', en:'breakfast', day:'6/17',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">break + fast</span>＝「break（やぶる）＋ fast（断食）」＝夜の絶食をやぶる食事＝朝ごはん。</p><p><span class="red">brekfast と書かない</span>：a を落としがち。break（ブレイク）がそのまま入っている、と覚える。</p>'},
+
+ {id:5, kind:'単語', badge:'tango', jp:'家族', en:'family', day:'6/17',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">fam + i + ly</span>。「ファ・ミ・リー」の3つ。</p><p><span class="red">familly と l を2つ書かない</span>：l は1つだけ。fam-i-ly。</p>'},
+
+ {id:6, kind:'熟語', badge:'jukugo', jp:'～出身だ・～から来る', en:'come from', day:'6/17',
+  k:'<p><span class="lab">かたち</span>「come（来る）＋ from（～から）」。<span class="red">from を落とすと×</span>。「～から」が <span class="chunk">from</span>。</p><p>例：I come from Tokyo.（わたしは東京出身です）。出身を言うときの定番。</p>'},
+
+ {id:7, kind:'熟語', badge:'jukugo', jp:'目が覚める', en:'wake up', day:'6/17',
+  k:'<p><span class="lab">かたち</span>「wake（覚める）＋ up」で1セット。<span class="red">up を落とすと×</span>。</p><p><span class="red">wake up（目が覚める）↔ get up（起き上がる）</span>の対比に注意。目が開くのが wake up、ベッドから出るのが get up。</p>'},
+
+ {id:8, kind:'英作文', badge:'eisaku', jp:'あなたはサッカーファンですか。', en:'Are you a soccer fan?', day:'6/17',
+  k:'<p><span class="lab">かたち</span>be動詞の疑問文。ふつうの文 <span class="chunk">You are a soccer fan.</span> の <span class="red">are を主語の前に出す</span> → <span class="chunk">Are you a soccer fan?</span></p><p><span class="lab">手順</span>①You are ～ を作る ②are を文のいちばん前へ ③最後は <span class="red">「?」</span>（クエスチョンマーク）。</p><p>サッカーファン＝<span class="chunk">a soccer fan</span>（数えられる1人なので <span class="red">a</span> を忘れない）。<span class="red">Do you ～? にしない</span>＝be動詞の文なので are を使う。</p>'},
+
+ {id:9, kind:'単語', badge:'tango', jp:'人々', en:'people', day:'6/17',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">peo + ple</span>。「ピー・プル」。これ自体が「たくさんの人」を表すので、ふだん s はつけない。</p><p><span class="red">pole（棒）と書かない</span>：people は o の前に e が入る。p-e-o-p-l-e。</p>'},
+
+ {id:10, kind:'単語', badge:'tango', jp:'国', en:'country', day:'6/17',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">coun + try</span>。「カン・トリー」。</p><p><span class="red">cuntry と書かない</span>：o を落とさない。coun（カウン）＋ try（トライ）。</p>'},
+
+ {id:11, kind:'熟語', badge:'jukugo', jp:'（電源を）消す', en:'turn off', day:'6/17',
+  k:'<p><span class="lab">かたち</span>「turn（まわす）＋ off（切る）」。<span class="red">off を落とすと×</span>。</p><p><span class="red">turn on（つける）↔ turn off（消す）</span>の対比に注意。on が「つく」、off が「切れる」。テレビ・電気のスイッチをイメージ。</p>'},
+
+ {id:12, kind:'単語', badge:'tango', jp:'図書館', en:'library', day:'6/18',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">li + bra + ry</span>。「ライ・ブラ・リー」と3つに区切る。</p><p><span class="red">r が2つ</span>入るのがポイント＝「libr-ar-y」。<span class="red">libary と書かない</span>（r を1つにする間違いが多い）。本をたくさん借りる場所、とセットで覚える。</p>'},
+
+ {id:13, kind:'単語', badge:'tango', jp:'病院', en:'hospital', day:'6/18',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">hos + pi + tal</span>。「ホス・ピ・タル」。</p><p>さいごは <span class="chunk">tal</span>（-tle ではない）。<span class="red">hospitle・hospitol と書かない</span>。まん中は <span class="chunk">pi</span>、さいごは <span class="chunk">tal</span>。</p>'},
+
+ {id:14, kind:'単語', badge:'tango', jp:'質問', en:'question', day:'6/18',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">ques + tion</span>。「クエス・チョン」。</p><p><span class="red">q のあとは必ず u</span>（<span class="chunk">qu</span> でいつもセット）。さいごは <span class="chunk">tion</span>。<span class="red">qestion（u を落とす）・queston（i を落とす）と書かない</span>。</p>'},
+
+ {id:15, kind:'熟語', badge:'jukugo', jp:'（服などを）着る・身につける', en:'put on', day:'6/18',
+  k:'<p><span class="lab">かたち</span>「put（置く）＋ on（体の上に）」＝服を体の上に置く＝<span class="red">着る</span>。<span class="red">on を落とすと×</span>。</p><p>反対は <span class="chunk">take off</span>（脱ぐ）。例：Put on your jacket.（上着を着て）</p>'},
+
+ {id:16, kind:'熟語', badge:'jukugo', jp:'（服などを）脱ぐ／（飛行機が）とびたつ', en:'take off', day:'6/18',
+  k:'<p><span class="lab">かたち</span>「take（取る）＋ off（はなす）」＝着ているものを取り去る＝<span class="red">脱ぐ</span>。<span class="red">off を落とすと×</span>。</p><p>反対は <span class="chunk">put on</span>（着る）。飛行機なら「とびたつ（離陸する）」の意味にもなる。例：Take off your shoes.（くつを脱いで）</p>'},
+
+ {id:17, kind:'熟語', badge:'jukugo', jp:'～をさがす', en:'look for', day:'6/18',
+  k:'<p><span class="lab">かたち</span>「look（見る）＋ for（～を求めて）」＝<span class="red">さがす</span>。<span class="red">for を落とすと×</span>。</p><p><span class="red">look at（～を見る）と区別</span>：「さがす」は <span class="chunk">for</span>、「（じっと）見る」は <span class="chunk">at</span>。例：I look for my key.（かぎをさがす）</p>'}
+];
+
+var PRE='revq_'; // localStorageキー: revq_1 .. revq_17
+var BOARD='tokkun_reve_queue'; // 記録ボード連携キー
+var GRADUATE=2; // 2回○で卒業
+
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function load(id){try{return JSON.parse(localStorage.getItem(PRE+id))||{cnt:0,lastX:''};}catch(e){return {cnt:0,lastX:''};}}
+function save(id,st){localStorage.setItem(PRE+id,JSON.stringify(st));}
+
+// 記録ボード連携：全体の○総数・✕総数を集計して書き出す
+function writeBoard(){
+  var o=0,x=0;
+  QS.forEach(function(q){
+    try{var b=JSON.parse(localStorage.getItem(PRE+q.id+'_log'))||{o:0,x:0};o+=b.o;x+=b.x;}catch(e){}
+  });
+  localStorage.setItem(BOARD, JSON.stringify({o:o,x:x}));
+}
+function bumpLog(id,key){
+  var b;try{b=JSON.parse(localStorage.getItem(PRE+id+'_log'))||{o:0,x:0};}catch(e){b={o:0,x:0};}
+  b[key]=(b[key]||0)+1;localStorage.setItem(PRE+id+'_log',JSON.stringify(b));writeBoard();
+}
+
+function render(){
+  var list=document.getElementById('list');list.innerHTML='';
+  var remain=0,grad=0;
+  QS.forEach(function(q){
+    var st=load(q.id);
+    if(st.cnt>=GRADUATE){grad++;return;} // 卒業した問題は出さない
+    remain++;
+    var el=document.createElement('div');el.className='q';el.id='q'+q.id;
+    var dateStr='まちがえた日：'+q.day+(st.lastX?'（再×'+st.lastX+'）':'');
+    el.innerHTML=
+      '<div class="top">'+
+        '<span class="badge '+q.badge+'">'+q.kind+'</span>'+
+        '<span class="date">'+dateStr+'</span>'+
+        '<span class="cnt">○ '+st.cnt+' / '+GRADUATE+'</span>'+
+      '</div>'+
+      '<div class="jp">'+q.jp+'</div>'+
+      '<button class="ans-btn" onclick="toggle('+q.id+',this)">こたえを見る</button>'+
+      '<div class="ans-box" id="a'+q.id+'">'+
+        '<div class="en">'+q.en+'</div>'+
+        '<div class="kaisetsu">'+q.k+'</div>'+
+        '<div class="grade"><span class="lbl">合ってた？</span>'+
+          '<button class="o" onclick="mark('+q.id+',1)">○</button>'+
+          '<button class="x" onclick="mark('+q.id+',0)">✕</button>'+
+        '</div>'+
+      '</div>';
+    list.appendChild(el);
+  });
+  document.getElementById('remain').textContent=remain;
+  document.getElementById('grad').textContent=grad;
+  var ac=document.getElementById('allclear');
+  if(remain===0){ac.classList.add('show');document.getElementById('progress').style.display='none';}
+  else{ac.classList.remove('show');document.getElementById('progress').style.display='';}
+}
+
+function toggle(id,b){
+  var a=document.getElementById('a'+id);var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':'こたえを見る';
+}
+
+function mark(id,ok){
+  var st=load(id);
+  if(ok){ st.cnt=st.cnt+1; bumpLog(id,'o'); }
+  else  { st.cnt=0; st.lastX=today(); bumpLog(id,'x'); }
+  save(id,st);
+  if(ok && st.cnt>=GRADUATE){
+    // 卒業演出をちょっと出してから再描画
+    var el=document.getElementById('q'+id);
+    if(el){el.classList.add('grad');el.innerHTML='<div class="grad-note">🎉 卒業！もう出てこないよ。よくがんばった！</div>';}
+    setTimeout(render,900);
+  }else{
+    render();
+  }
+}
+
+function resetAll(){
+  if(!confirm('ぜんぶの○✕をリセットして、もう一度11問ぜんぶ出すよ。いい？'))return;
+  QS.forEach(function(q){localStorage.removeItem(PRE+q.id);localStorage.removeItem(PRE+q.id+'_log');});
+  localStorage.setItem(BOARD,JSON.stringify({o:0,x:0}));
+  render();
+}
+
+window.onload=function(){render();writeBoard();};
+</script>
+</body>
+</html>

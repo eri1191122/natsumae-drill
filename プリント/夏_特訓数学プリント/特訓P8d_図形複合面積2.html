@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P8d 図形・複合面積②（L字・階段・円の組合せ・くりぬき）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 複合面積の型カード（毎回これにそって解く）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月特訓選抜 大問2へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜公式を思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.layer{margin:9px 0;font-size:13px;line-height:1.95;border-radius:0 8px 8px 0;padding:9px 13px}
+.layer > b:first-child{display:block;font-size:12.5px;font-weight:900;margin-bottom:3px}
+.l1{border-left:4px solid #7aa7d9;background:#f4f8fd}.l1>b:first-child{color:#2f5a8a}
+.l2{border-left:4px solid #5fa89a;background:#eef7f5}.l2>b:first-child{color:#2f6a5c}
+.l3{border-left:4px solid #e0a85c;background:#fdf7ee}.l3>b:first-child{color:#8a5a17}
+.l4{border-left:4px solid #a98ed0;background:#f7f2fc}.l4>b:first-child{color:#5f4a8a}
+.l5{border-left:4px solid #6aa97a;background:#eef5ee}.l5>b:first-child{color:#2f6a44}
+.l5 .row{margin:3px 0}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#5fa89a;background:#eef7f5}
+.step.q2 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q3{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q3 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.pi{font-family:'Times New Roman','Times',serif;font-weight:700;font-style:italic;font-size:1.08em}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P8d</span><span class="pg-badge">数学：平面図形</span><span class="pg-badge">★複合図形の面積 L3-L4（9月大問2直撃）</span></div>
+  <h1>図形・複合面積②｜L字・階段・円の組合せ（<span class="pi">π</span>）・くりぬき</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に「あほでもわかる」徹底解説つき</p>
+  <p class="pg-cheer">9月の特訓選抜 <strong>大問2（複合図形の面積）</strong>を直撃する4問だよ。複合図形はむずかしそうに見えるけど、やることはたった2つ。<strong>「分けて足す」か「大きい形から引く」かのどちらか</strong>。今日はその2つの見分け方を体に入れよう。図に分かる長さを全部書きこんでから解くのがコツ。あせらなくて大丈夫、1問ずつていねいにいこう🌸</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① どんな形？</b> → 知っている形（長方形・三角形・円・半円・四分円）に「分けられる」か見る</li>
+    <li><b>② 作戦を決める</b> → <b>分けて足す</b>（でこぼこを部品に切る）か <b>大きい形−いらない形</b>（くりぬき・切り取り）か</li>
+    <li><b>③ 分かる長さを図に書く</b> → 見えていない辺の長さは、向かいの辺から計算して書きこむ</li>
+    <li><b>④ 部品ごとに面積を出す</b> → 長方形＝たて×よこ、三角形＝底辺×高さ÷2、円＝半径×半径×<span class="pi">π</span></li>
+    <li><b>⑤ 検算</b> → 「分けて足す」と「引く」の<b>両方で同じ答え</b>になればほぼ正解</li>
+  </ol>
+</div>
+
+<!-- ===== 問1 L字型 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">L字型の面積（引く／分けて足す）L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead">問1</span>下の図のような L字型の土地があります。色をぬった部分の面積を求めなさい（角はすべて直角）。
+    <svg class="fig" width="300" height="220" viewBox="0 0 300 220">
+      <!-- L字: 外接は 横16(=240px) たて10(=150px)。右上 横6(90px) たて4(60px) を切り取る -->
+      <!-- 座標: 左上(40,40) 横240 たて150 → 右下(280,190) -->
+      <polygon points="40,40 190,40 190,100 280,100 280,190 40,190"
+               fill="#eaf2fb" stroke="#2f5a8a" stroke-width="2"/>
+      <!-- 切り取られた点線部分（外接長方形の右上） -->
+      <polygon points="190,40 280,40 280,100 190,100" fill="none" stroke="#bbb" stroke-width="1" stroke-dasharray="4 3"/>
+      <!-- 寸法ラベル -->
+      <text x="100" y="32" font-size="12" fill="#2f5a8a">16cm</text>
+      <text x="20" y="120" font-size="12" fill="#2f5a8a" transform="rotate(-90 20,120)">10cm</text>
+      <text x="225" y="60" font-size="11" fill="#888">6cm</text>
+      <text x="288" y="74" font-size="11" fill="#888">4cm</text>
+      <!-- 切り取りの寸法（実線部分の上辺=左から10cm、たて下=6cm） -->
+      <text x="105" y="55" font-size="11" fill="#2f5a8a">10cm</text>
+      <text x="195" y="78" font-size="11" fill="#2f5a8a">6cm</text>
+      <line x1="40" y1="40" x2="40" y2="190" stroke="none"/>
+    </svg>
+  </div>
+  <div class="note-draw">まず点線を入れて「大きい長方形 16×10」を作ろう。そこから右上の「小さい長方形」を引けばいい。見えていない辺の長さは、向かいの辺から引き算で出せる。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="layer l1"><b>① 何を聞かれてる？</b>でこぼこした L字の形の「広さ（面積）」を聞かれているよ。むずかしく考えないで、「この形は、長方形を1つの角でカチッと切り取った形だな」と気づけたら勝ち。</div>
+    <div class="layer l2"><b>② わかってること／求めるもの</b>
+      ・外がわのいちばん大きい横＝16cm、いちばん大きいたて＝10cm<br>
+      ・右上の切り取った部分は、横6cm・たて4cm<br>
+      ・<b>求めるもの</b>＝色をぬった L字の面積</div>
+    <div class="layer l3"><b>③ 図でイメージ</b>この L字は、<b>「たて10cm・横16cm の大きい長方形から、右上の角（横6cm・たて4cm）をパチンと切り取った形」</b>だね。点線でその切り取った角を書きたすと、ちゃんと大きい四角になるのが見える。</div>
+    <div class="layer l4"><b>④ 作戦＋たとえ話</b>作戦は <b>「大きい形−いらない形」</b>。これは<b>折り紙の角をハサミで1か所チョキンと切り落とすのと同じ</b>。残った紙の広さ＝もとの紙の広さ−切り落とした紙の広さ、だよね。だから L字の面積＝大きい長方形−切り取った小さい長方形。</div>
+    <div class="layer l5"><b>⑤ 1ステップずつ（なぜ付き）</b>
+      <div class="row">・大きい長方形＝<span class="math">たて10×よこ16＝160</span>（たて×よこ＝1cmマスが「たて10列・よこ16列」ならぶから、マスの数＝10×16＝160こ）</div>
+      <div class="row">・切り取った小さい長方形＝<span class="math">たて4×よこ6＝24</span></div>
+      <div class="row">・L字の面積＝<span class="math">160−24＝136</span></div>
+      <div class="row"><b>答え 136cm²</b></div></div>
+    <div class="bx bx-warn"><span class="red">どこで切るか・どの辺が何cmか迷う</span>のが最大のミス。見えていない辺は<b>向かいの辺から引く</b>と出る（例：右の出っぱりの上辺は 16−6＝10cm）。<span class="red">切り取る長方形の「たて」と「よこ」を取りちがえない</span>（4×6か6×4かは、面積なら同じだけど図と合わせて確認）。</div>
+    <div class="bx bx-key">L字を見たら、まず<b>点線で大きい四角に戻す</b>。そして<b>「大−小」</b>で引く。これが複合図形の超基本ワザだよ。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2は、L字や凸型の土地の面積から始まることが多い。<b>「点線で大きい四角を作る→引く」</b>が決まれば、大問2の最初の1問は確実に取れる。</div>
+    <div class="ans-final"><span>こたえ</span>136cm²</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">分け方がわからない</button><button onclick="m(this)">分け方は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「点線で大きい長方形→引く」をノートに図つきで書こう</div></div>
+</div>
+
+<!-- ===== 問2 階段状 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">階段状の面積（横の帯に分けて足す）L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead">問2</span>下の図のような階段の形をした図形があります。色をぬった部分の面積を求めなさい（角はすべて直角。たての3段は、どれも同じ高さ3cm）。
+    <svg class="fig" width="300" height="220" viewBox="0 0 300 220">
+      <!-- 階段: たて方向 3段×3cm=9cm。横は 下段12cm 中段8cm 上段4cm（左ぞろえ） -->
+      <!-- スケール: 1cm=15px。原点 左下(30,190) -->
+      <!-- 下段: 横12(180px) たて3(45px) → x30-210, y145-190 -->
+      <!-- 中段: 横8(120px)  たて3(45px) → x30-150, y100-145 -->
+      <!-- 上段: 横4(60px)   たて3(45px) → x30-90,  y55-100 -->
+      <polygon points="30,55 90,55 90,100 150,100 150,145 210,145 210,190 30,190"
+               fill="#eef7f5" stroke="#2f6a5c" stroke-width="2"/>
+      <!-- 段の境界の点線 -->
+      <line x1="30" y1="100" x2="90" y2="100" stroke="#9cc7bd" stroke-width="1" stroke-dasharray="4 3"/>
+      <line x1="30" y1="145" x2="150" y2="145" stroke="#9cc7bd" stroke-width="1" stroke-dasharray="4 3"/>
+      <!-- 横の寸法 -->
+      <text x="50" y="50" font-size="11" fill="#2f6a5c">4cm</text>
+      <text x="105" y="95" font-size="11" fill="#2f6a5c">8cm</text>
+      <text x="160" y="140" font-size="11" fill="#2f6a5c">12cm</text>
+      <!-- たての寸法 -->
+      <text x="12" y="80" font-size="10" fill="#888">3cm</text>
+      <text x="12" y="125" font-size="10" fill="#888">3cm</text>
+      <text x="12" y="170" font-size="10" fill="#888">3cm</text>
+    </svg>
+  </div>
+  <div class="note-draw">階段は「横長の帯（長方形）」が3つ重なった形。点線で横に3つに切って、それぞれの長方形の面積を出して足そう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="layer l1"><b>① 何を聞かれてる？</b>カクカクした階段の形の「広さ」を聞かれているよ。「階段＝平らな板（長方形）を何段か積んだもの」と考えると、知っている形に分けられる。</div>
+    <div class="layer l2"><b>② わかってること／求めるもの</b>
+      ・3つの段の横はそれぞれ 下段12cm・中段8cm・上段4cm<br>
+      ・たて（高さ）はどの段も同じ3cm<br>
+      ・<b>求めるもの</b>＝階段全体の面積</div>
+    <div class="layer l3"><b>③ 図でイメージ</b>この形は、<b>「横長の長方形（帯）が下から 12cm・8cm・4cm と3まい積み重なった形」</b>だね。点線で横に切ると、それぞれが「たて3cm」の長方形になる。</div>
+    <div class="layer l4"><b>④ 作戦＋たとえ話</b>作戦は <b>「分けて足す」</b>。これは<b>本を3さつ平づみにして、1さつずつの広さを足すのと同じ</b>。デコボコしている図形は、まっすぐな線で切れば必ず長方形の集まりになる。だから1まいずつ面積を出して足せばいい。</div>
+    <div class="layer l5"><b>⑤ 1ステップずつ（なぜ付き）</b>
+      <div class="row">・下段＝<span class="math">よこ12×たて3＝36</span></div>
+      <div class="row">・中段＝<span class="math">よこ8×たて3＝24</span></div>
+      <div class="row">・上段＝<span class="math">よこ4×たて3＝12</span>（よこ×たて＝1cmマスの数だから、それぞれマスを数えていることになる）</div>
+      <div class="row">・全部足す＝<span class="math">36＋24＋12＝72</span></div>
+      <div class="row"><b>答え 72cm²</b></div></div>
+    <div class="bx bx-warn"><span class="red">どこで切るか迷ったら「横にまっすぐ」切る</span>のが階段のコツ（たてに切ってもできるが、横が一番ラク）。<span class="red">各段のたてを足してしまわない</span>（たては3cmのまま。足すのは「面積」だけ）。<span class="red">横の長さを取りちがえない</span>（上段は4cm、下段は12cm。図で確認）。</div>
+    <div class="bx bx-key">階段を見たら<b>「横に切って帯にする→足す」</b>。L字（問1）が「引く」型なら、階段は「分けて足す」型の代表だよ。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2では、階段や凸凹の図形を「いくつの長方形に切れるか」で差がつく。<b>まっすぐな線で部品に切る</b>練習がそのまま得点になる。</div>
+    <div class="ans-final"><span>こたえ</span>72cm²</div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">分け方がわからない</button><button onclick="m(this)">分け方は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「横に切って帯3つ→足す」をノートに図つきで書こう</div></div>
+</div>
+
+<!-- ===== 問3 円・半円・四分円の組合せ ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★円・半円・四分円の組合せ（<span class="pi">π</span>）L3</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead">問3</span>下の図は、半径6cmの半円と、半径4cmの四分円（円の4分の1）をくっつけた図形です。色をぬった部分全体の面積を求めなさい（円周率は<span class="pi">π</span>）。
+    <svg class="fig" width="320" height="190" viewBox="0 0 320 190">
+      <!-- 半円: 半径6cm=72px。中心(110,150) 直径は下の水平線、上にふくらむ -->
+      <path d="M38,150 A72,72 0 0 1 182,150 Z" fill="#f0e7fa" stroke="#7b5ea7" stroke-width="2"/>
+      <text x="95" y="100" font-size="12" fill="#5f4a8a">半円</text>
+      <text x="90" y="170" font-size="11" fill="#7b5ea7">半径6cm</text>
+      <!-- 半円の半径線 -->
+      <line x1="110" y1="150" x2="182" y2="150" stroke="#7b5ea7" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="110" cy="150" r="2.5" fill="#7b5ea7"/>
+      <!-- 四分円: 半径4cm=48px。直角の頂点(210,150)、右と上へ -->
+      <path d="M210,150 L258,150 A48,48 0 0 0 210,102 Z" fill="#eef7f5" stroke="#2f6a5c" stroke-width="2"/>
+      <text x="218" y="142" font-size="11" fill="#2f6a5c">四分円</text>
+      <text x="216" y="170" font-size="11" fill="#2f6a5c">半径4cm</text>
+      <circle cx="210" cy="150" r="2.5" fill="#2f6a5c"/>
+      <!-- 直角マーク -->
+      <polyline points="210,140 220,140 220,150" fill="none" stroke="#2f6a5c" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="note-draw"><span class="pi">π</span>は最後まで文字で残そう。半円は「円÷2」、四分円は「円÷4」。それぞれの半径をまちがえないこと（半円6cm／四分円4cm）。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai"><ul>
+      <li><b>円の面積＝半径×半径×<span class="pi">π</span></b></li>
+      <li><b>半円＝円÷2</b>（円の半分）　<b>四分円＝円÷4</b>（円の4分の1）</li>
+      <li><span class="pi">π</span>は数にしないで、そのまま文字で計算する。</li>
+    </ul></div>
+    <div class="layer l1"><b>① 何を聞かれてる？</b>「半円」と「四分円」がくっついた形ぜんぶの広さを聞かれているよ。2つの形は重なっていないので、<b>それぞれの面積を出して足すだけ</b>。</div>
+    <div class="layer l2"><b>② わかってること／求めるもの</b>
+      ・半円の半径＝6cm<br>
+      ・四分円の半径＝4cm<br>
+      ・<b>求めるもの</b>＝半円＋四分円の合計面積（<span class="pi">π</span>を使った式のまま）</div>
+    <div class="layer l3"><b>③ 図でイメージ</b>この形は、<b>「まあるい半分（半円）」と「ピザを4等分した1切れ（四分円）」が横にならんだ形</b>。重なっていないから、ピザ2切れの広さを足すのと同じだよ。</div>
+    <div class="layer l4"><b>④ 作戦＋たとえ話</b>作戦は <b>「分けて足す」</b>。半円は<b>まるいケーキを包丁で半分にした1つ分</b>＝円の半分。四分円は<b>そのケーキを4つに切った1切れ</b>＝円の4分の1。だから「まるごとの円の面積」を出してから、半分・4分の1にすればいい。</div>
+    <div class="layer l5"><b>⑤ 1ステップずつ（なぜ付き）</b>
+      <div class="row">・半円＝<span class="math">6×6×<span class="pi">π</span>÷2＝36<span class="pi">π</span>÷2＝18<span class="pi">π</span></span>（まず半径6の円ぜんぶ＝36<span class="pi">π</span>。その半分だから÷2）</div>
+      <div class="row">・四分円＝<span class="math">4×4×<span class="pi">π</span>÷4＝16<span class="pi">π</span>÷4＝4<span class="pi">π</span></span>（半径4の円ぜんぶ＝16<span class="pi">π</span>。その4分の1だから÷4）</div>
+      <div class="row">・合計＝<span class="math">18<span class="pi">π</span>＋4<span class="pi">π</span>＝22<span class="pi">π</span></span>（<span class="pi">π</span>どうしは、18こ＋4こ＝22こ、と同じように足せる）</div>
+      <div class="row"><b>答え 22<span class="pi">π</span> cm²</b></div></div>
+    <div class="bx bx-warn"><span class="red">半径と直径を取りちがえない</span>（問題が「半径」なら、それがそのまま半径。図でかならず確認）。<span class="red">半円なのに÷2を忘れる／四分円なのに÷4を忘れる</span>のが一番多いミス。<span class="red"><span class="pi">π</span>を勝手に3.14にしない</span>。<span class="red"><span class="pi">π</span>の数と、ただの数を混ぜて1つにしない</span>（18<span class="pi">π</span>＋4<span class="pi">π</span>＝22<span class="pi">π</span>。22<span class="pi">π</span>のまま）。</div>
+    <div class="bx bx-key">円の組合せは<b>「まるごとの円を出す→半分(÷2)・4分の1(÷4)にする→足す」</b>。<span class="pi">π</span>は文字のまま、最後まで残すのがコツ。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2の円問題は「半円＋四分円」「半円−半円」など組合せで出る。<b>÷2／÷4を正しく付ける</b>＋<b><span class="pi">π</span>を文字で通す</b>の2つができれば確実に取れる。</div>
+    <div class="ans-final"><span>こたえ</span>22<span class="pi">π</span> cm²</div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">分け方・公式がわからない</button><button onclick="m(this)">公式は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「半円＝円÷2／四分円＝円÷4」をノートに図つきで書こう</div></div>
+</div>
+
+<!-- ===== 問4 くりぬき複合 ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★くりぬき（正方形−円）の複合 L3-L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead">問4</span>下の図のように、1辺10cmの正方形の真ん中から、半径3cmの円をくりぬきました。残った色をぬった部分の面積を求めなさい（円周率は<span class="pi">π</span>）。
+    <svg class="fig" width="200" height="210" viewBox="0 0 200 210">
+      <!-- 正方形 1辺10cm=150px。左上(25,30)〜右下(175,180) -->
+      <path d="M25,30 H175 V180 H25 Z M100,105 m-45,0 a45,45 0 1,0 90,0 a45,45 0 1,0 -90,0 Z"
+            fill="#fdf2e3" stroke="#d9883a" stroke-width="2" fill-rule="evenodd"/>
+      <!-- くりぬいた円の輪郭をはっきり -->
+      <circle cx="100" cy="105" r="45" fill="#fff" stroke="#b3611c" stroke-width="1.5"/>
+      <!-- 半径線 -->
+      <line x1="100" y1="105" x2="145" y2="105" stroke="#b3611c" stroke-width="1" stroke-dasharray="3 3"/>
+      <circle cx="100" cy="105" r="2.5" fill="#b3611c"/>
+      <text x="118" y="100" font-size="11" fill="#b3611c">3cm</text>
+      <!-- 正方形の寸法 -->
+      <text x="85" y="22" font-size="12" fill="#8a5a17">10cm</text>
+      <text x="6" y="110" font-size="12" fill="#8a5a17" transform="rotate(-90 6,110)">10cm</text>
+    </svg>
+  </div>
+  <div class="note-draw">「残った部分」＝「もとの正方形」−「くりぬいた円」。円の半径は3cm（直径ではない）。<span class="pi">π</span>は文字のまま残そう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai"><ul>
+      <li><b>正方形の面積＝1辺×1辺</b></li>
+      <li><b>円の面積＝半径×半径×<span class="pi">π</span></b></li>
+      <li>「くりぬいた残り」＝<b>大きい形−くりぬいた形</b>。<span class="pi">π</span>は文字のまま。</li>
+    </ul></div>
+    <div class="layer l1"><b>① 何を聞かれてる？</b>正方形からまるい穴をあけた「残り」の広さを聞かれているよ。穴があいた紙の広さ＝もとの紙−あけた穴、と考えればいい。</div>
+    <div class="layer l2"><b>② わかってること／求めるもの</b>
+      ・正方形の1辺＝10cm<br>
+      ・くりぬいた円の半径＝3cm<br>
+      ・<b>求めるもの</b>＝色をぬった「残り」の面積（<span class="pi">π</span>を使った式のまま）</div>
+    <div class="layer l3"><b>③ 図でイメージ</b>この形は、<b>「1辺10cmの正方形から、まん中の円（半径3cm）をポンとくりぬいた形」</b>。残ったのはドーナツの板みたいな形だね。穴の分だけ広さが減っている。</div>
+    <div class="layer l4"><b>④ 作戦＋たとえ話</b>作戦は <b>「大きい形−くりぬいた形」</b>。これは<b>クッキー生地を四角くのばして、まん中をコップでまるくくりぬくのと同じ</b>。残った生地の広さ＝四角い生地−くりぬいた丸、だよね。だから 正方形−円。</div>
+    <div class="layer l5"><b>⑤ 1ステップずつ（なぜ付き）</b>
+      <div class="row">・正方形＝<span class="math">10×10＝100</span>（1辺×1辺。1cmマスがたて10・よこ10ならぶから100こ）</div>
+      <div class="row">・くりぬいた円＝<span class="math">3×3×<span class="pi">π</span>＝9<span class="pi">π</span></span>（半径×半径×<span class="pi">π</span>。半径は3cm）</div>
+      <div class="row">・残り＝<span class="math">100−9<span class="pi">π</span></span>（正方形からくりぬいた円を引く）</div>
+      <div class="row"><b>答え 100−9<span class="pi">π</span> cm²</b></div></div>
+    <div class="bx bx-warn"><span class="red">円の半径と直径を取りちがえない</span>（半径3cmだから 3×3×<span class="pi">π</span>。6×6 にしないこと）。<span class="red">100−9<span class="pi">π</span> を 91<span class="pi">π</span> などにしない</span>（100はただの数、9<span class="pi">π</span>は<span class="pi">π</span>の数。種類がちがうので引けない。<b>100−9<span class="pi">π</span>のまま</b>が答え）。<span class="red">引く向きを逆にしない</span>（大きい正方形から小さい円を引く）。</div>
+    <div class="bx bx-key">くりぬきは<b>「大きい形−くりぬいた形」</b>。問1のL字（角を切る）も、この問4（丸い穴）も、考え方は同じ「引く」だよ。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2の山場が、この「正方形−円」「長方形−半円」などのくりぬき複合。<b>引く形の半径を正しく取る</b>＋<b><span class="pi">π</span>を最後まで文字で残す</b>。この2つでL4レベルも取れる。</div>
+    <div class="ans-final"><span>こたえ</span>100−9<span class="pi">π</span> cm²</div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">分け方・公式がわからない</button><button onclick="m(this)">公式は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「正方形−円（半径3）」をノートに図つきで書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8d 複合面積② 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">4問おつかれさま！今日のいちばんの収穫は<strong>「複合図形は『分けて足す』か『大きい形から引く』の2択」</strong>。問1のL字と問4のくりぬきは「引く」、問2の階段と問3の円の組合せは「分けて足す」。どっちかな？と見分けられたら、もう半分は解けたも同じ。まちがえた問題は、図に分かる長さを全部書きこんでノートで解き直そう。少しずつでいい、きみは確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m08d';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！複合面積② クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

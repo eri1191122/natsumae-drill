@@ -6,6 +6,7 @@
   数学＝復習01〜06の各単元から1問ずつ、数字だけ変えた類題6問。
 -->
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>第1週 週末復習（6/15〜21）｜40分</title>
@@ -143,12 +144,16 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
   .q{break-inside:avoid;page-break-inside:avoid}
 }
+/* 武装版分数縦組み（!important でspecificityバグ対策） */
+.frac{display:inline-flex!important;flex-direction:column!important;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.95em;border:none!important;background:none!important;border-radius:0!important;padding:0!important}
+.frac .n{display:block!important;border:none!important;border-bottom:1.6px solid currentColor!important;background:none!important;border-radius:0!important;padding:0 4px 1px!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+.frac .d{display:block!important;border:none!important;background:none!important;border-radius:0!important;padding:1px 4px 0!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
@@ -490,7 +495,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
       <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
       <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <!-- ① まず解説（自動で出る。わかる子は下の答えへ） -->
+        __PROT_COM_22__
         <div class="deep-head">📖 文法のせつめい（読んでから下の答えへ。わかる子は読みとばしてOK）</div>
         <div class="deep">
           <p><b>be動詞は「＝（イコール）」の役。</b>主語と、そのあとのことばを「これは同じだよ」とつなぐ。だから「私＝中学生」は <b>I am a junior high school student.</b></p>
@@ -511,13 +516,13 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
            <span class="ng">✕ i am ~ ／ ピリオドなし</span> → <span class="ok">○ 文頭は大文字・文末は「.」</span></p>
           <p><b>これができたらゴール🌸</b>：主語を見て am/are/is をすぐ選べて、「〜です」の文を自分で書ける。</p>
         </div>
-        <!-- ② 読み取り確認（穴埋め3） -->
+        __PROT_COM_23__
         <div class="fill">
           <div class="fill-q">✍ よみとり確認：主語が I →（ ① ）／ You・複数 →（ ② ）／ He・She →（ ③ ）</div>
           <button class="fill-btn" onclick="this.nextElementSibling.classList.toggle('open')">確認の答えを見る</button>
           <div class="fill-a">① am ／ ② are ／ ③ is</div>
         </div>
-        <!-- ③ 英文の答えは一番下 -->
+        __PROT_COM_24__
         <div class="ans-final"><span>こたえ</span>I am a junior high school student.</div>
       </div>
       <div class="gq" data-gid="EW-1">
@@ -534,7 +539,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
       <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
       <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <!-- ① まず解説（自動で出る。わかる子は下の答えへ） -->
+        __PROT_COM_26__
         <div class="deep-head">📖 文法のせつめい（読んでから下の答えへ。わかる子は読みとばしてOK）</div>
         <div class="deep">
           <p><b>一般動詞は「動作・気持ちを表すことば」。</b>play（する）・like（好き）・study（勉強する）・have（持っている）・eat（食べる）・go（行く）など。「〜です」のbe動詞とちがって、「何をするか」を表す。</p>
@@ -560,13 +565,13 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
           <p><b>これができたらゴール🌸</b>：「〜する」の文を、be動詞を足さずに「主語＋動詞＋つづき」で自分で書ける。</p>
           <p><b>⚠ 綴り注意。</b>study・English・every day。I am study ✕（動作の文に be動詞を足さない）。文頭は大文字・文末はピリオド。</p>
         </div>
-        <!-- ② 読み取り確認（穴埋め3） -->
+        __PROT_COM_27__
         <div class="fill">
           <div class="fill-q">✍ よみとり確認：study は（ ① ＝動作／状態）の動詞なので be動詞（am）は（ ② ＝足す／足さない）。「私は〜する」の主語 I では動詞は（ ③ ＝そのまま／-sがつく）。</div>
           <button class="fill-btn" onclick="this.nextElementSibling.classList.toggle('open')">確認の答えを見る</button>
           <div class="fill-a">① 動作 ／ ② 足さない ／ ③ そのまま</div>
         </div>
-        <!-- ③ 英文の答えは一番下 -->
+        __PROT_COM_28__
         <div class="ans-final"><span>こたえ</span>I study English every day.</div>
       </div>
       <div class="gq" data-gid="EW-2">
@@ -583,7 +588,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
       <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
       <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <!-- ① まず解説（自動で出る。わかる子は下の答えへ） -->
+        __PROT_COM_30__
         <div class="deep-head">📖 文法のせつめい（読んでから下の答えへ。わかる子は読みとばしてOK）</div>
         <div class="deep">
           <p><b>英語の動詞は大きく2つの仲間に分かれる。</b>この2つを見分けられるかどうかが、中1英語のいちばんの分かれ道。<b>ここが崩れると、否定・疑問で必ず混乱する。</b>逆に、ここさえ固まれば英語がぐっと楽になる。</p>
@@ -626,13 +631,13 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
           <p><b>これができたらゴール🌸</b>：日本語を見て「です／にいる＝be動詞」「する＝一般動詞」をすぐ判定でき、1文に動詞を重ねず、否定・疑問を「be動詞は not／前出し」「一般動詞は do」で作り分けられる。これが中1英語の心臓部。ここを固めれば一気に強くなる。</p>
           <p><b>⚠ 綴り注意。</b>student は s-t-u-d-e-n-t、tennis は t-e-n-n-i-s（n が2つ）。I am play tennis ✕（動作に be動詞を足さない）。</p>
         </div>
-        <!-- ② 読み取り確認（穴埋め3） -->
+        __PROT_COM_31__
         <div class="fill">
           <div class="fill-q">✍ よみとり確認：「学生です」はイコール →（ ① ）／「テニスをします」は動作 →（ ② ）／2つを1文でつなぐ語は（ ③ ）。</div>
           <button class="fill-btn" onclick="this.nextElementSibling.classList.toggle('open')">確認の答えを見る</button>
           <div class="fill-a">① am（be動詞） ／ ② play（一般動詞） ／ ③ and</div>
         </div>
-        <!-- ③ 英文の答えは一番下 -->
+        __PROT_COM_32__
         <div class="ans-final"><span>こたえ</span>I am a student and play tennis.</div>
       </div>
       <div class="gq" data-gid="EW-3">
@@ -676,15 +681,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <!-- M-2 分数の通分加減（復習02：2/3＋1/4） -->
     <div class="q calc" data-id="M-2">
       <div class="qnum">問題21｜分数のたし算（通分）</div>
-      <div class="qbody">2/3 ＋ 1/4　（答えは約分まで）</div>
+      <div class="qbody"><span class="frac"><span class="n">2</span><span class="d">3</span></span> ＋ <span class="frac"><span class="n">1</span><span class="d">4</span></span>　（答えは約分まで）</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
         <div class="step"><span>ステップ1</span>たし算は通分（分母をそろえる）してから分子を計算。</div>
-        <div class="step"><span>ステップ2</span>3と4の最小公倍数12で通分 → 8/12＋3/12=<strong>11/12</strong></div>
+        <div class="step"><span>ステップ2</span>3と4の最小公倍数12で通分 → <span class="frac"><span class="n">8</span><span class="d">12</span></span>＋<span class="frac"><span class="n">3</span><span class="d">12</span></span>=<strong><span class="frac"><span class="n">11</span><span class="d">12</span></span></strong></div>
         <div class="bx bx-link">分数の加減は中1の「負の数を含む分数計算」でもまったく同じ手順。ここが全単元の土台。</div>
-        <div class="bx bx-warn">「2/3+1/4=3/7」と分母どうし・分子どうしを足すのは誤り。分母は「ピザの切り方」。切り方をそろえて（通分して）から枚数（分子）を計算する。</div>
-        <div class="ans-final"><span>こたえ</span>11/12</div>
+        <div class="bx bx-warn">「<span class="frac"><span class="n">2</span><span class="d">3</span></span>+<span class="frac"><span class="n">1</span><span class="d">4</span></span>=<span class="frac"><span class="n">3</span><span class="d">7</span></span>」と分母どうし・分子どうしを足すのは誤り。分母は「ピザの切り方」。切り方をそろえて（通分して）から枚数（分子）を計算する。</div>
+        <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">11</span><span class="d">12</span></span></div>
       </div>
       <div class="gq" data-gid="M-2">
         <div class="grade"><span class="gq-label">問題21</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>復習・算数｜割合（三用法・÷でもとに戻す・残りの〜）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:16px;line-height:1.85}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#fdeef3;color:#5a2b3d;padding:24px 22px;border:1px solid #f0c9d6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#7a5563}
+.pg-badge{display:inline-block;background:#f7d7e2;color:#7a324b;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #efbccd;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13.5px;color:#a14a2f;font-weight:700}
+/* 合言葉カード */
+.spell{background:#fff;border:3px solid #f3a6c0;border-radius:14px;padding:16px 18px;margin:14px 0}
+.spell::before{content:"今日の合言葉カード（これだけ覚える）";display:block;font-size:13px;font-weight:900;color:#c34d77;margin-bottom:10px}
+.spell .big{font-size:19px;font-weight:900;text-align:center;line-height:2.0}
+.spell .moto{background:#ffe9a3;border-radius:6px;padding:2px 8px;color:#7a5a00}
+.spell .wari{background:#cfe7ff;border-radius:6px;padding:2px 8px;color:#244e7a}
+.spell .kura{background:#ffd0d8;border-radius:6px;padding:2px 8px;color:#8a2b3d}
+.spell .arrow{display:block;text-align:center;font-size:16px;font-weight:900;color:#3f7a4a;margin-top:6px}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#5a3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.20);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:14px}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"よくある間違い（赤に注意）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#eef7f0;border-left:4px solid #6aa97a}
+.bx-link::before{content:"次に見抜くコツ";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-key{background:#fdeef3;border-left:4px solid #e58aa8}
+.bx-key::before{content:"ひとことで言うと";display:block;font-size:12px;font-weight:800;color:#b14a6c;margin-bottom:4px}
+.bx-check{background:#eef4fb;border-left:4px solid #7aa7d9}
+.bx-check::before{content:"確かめ（検算）";display:block;font-size:12px;font-weight:800;color:#2f5a8a;margin-bottom:4px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:18.5px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:2.0}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#f7d7e2;color:#7a324b}
+.fig{display:block;margin:12px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px;width:100%;max-width:540px;height:auto}
+.fill{display:inline-block;min-width:46px;border-bottom:3px solid #e58aa8;text-align:center;font-weight:900;color:#c34d77;padding:0 4px}
+.ans-btn{margin-top:8px;background:#a86b80;color:#fff;border:none;border-radius:20px;padding:9px 20px;font-size:14px;font-weight:800;cursor:pointer}
+.ans-btn:hover{background:#90586a}
+.ans-box{display:none;background:#fbf7f8;border:1px solid #ecd9df;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:14px}
+.ans-box.open{display:block}
+.ans-box .step{margin:10px 0;font-size:14.5px;line-height:1.9;border-left:4px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:9px 13px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:2px 9px;margin-right:7px;font-weight:800;color:#54605a;font-size:12px}
+.step.s1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.s1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.s2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.s2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.s3{border-left-color:#5fa89a;background:#eef7f5}
+.step.s3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.s4{border-left-color:#e58aa8;background:#fdeef3}
+.step.s4 > span:first-child{background:#f7d7e2;border-color:#efbccd;color:#b14a6c}
+.huge{font-size:18px;font-weight:900;color:#c34d77}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:42px;height:42px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:19px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 5px;border-radius:3px;font-size:15px;font-weight:700}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:1em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.red{color:#c0392b;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#f3a6c0,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">復習・算数</span><span class="pg-badge">割合</span><span class="pg-badge">三用法・÷でもとに戻す・残りの〜</span></div>
+  <h1>割合の補強プリント｜「÷でもとに戻す」と「残りの〜」を固める</h1>
+  <p>復習・算数　目安：約30分（問0〜問5・通し番号）　全問図つき・徹底解説</p>
+  <p class="pg-cheer">今日は <strong>簡単な問題から</strong> 始めるよ。最初の問0は 確実に〇をとれる問題。そこから 1段ずつ 上げていく。割合は 難しくない。<strong>大事なのは たった2つ</strong>だけ。<br>① もとにする量 × 割合 ＝ 比べる量　② もとに戻すときは ÷割合。これだけ。</p>
+</div>
+
+<div class="spell">
+  <div class="big"><span class="moto">もとにする量</span> × <span class="wari">割合</span> ＝ <span class="kura">比べる量</span></div>
+  <span class="arrow">▼ もとが 分からないとき（逆に戻す）▼</span>
+  <div class="big"><span class="moto">もとにする量</span> ＝ <span class="kura">比べる量</span> ÷ <span class="wari">割合</span></div>
+  <p style="text-align:center;margin-top:8px;font-size:12.5px;color:#7a5563;font-weight:700">まず文章で「<span class="moto">もとにする量</span>」を〇で囲もう。それが 第一歩。</p>
+</div>
+
+<!-- ===== 問0 ウォームアップ ===== -->
+<div class="unit-banner"><span class="unit-num">問0</span><span class="unit-name">ウォームアップ｜%と小数（成功体験）L1</span><span class="unit-time">目安 3分</span></div>
+<div class="q calc" data-id="W">
+  <div class="qbody">
+    <span class="lead">問0</span>パーセント（%）を 小数に 直そう。□に あてはまる数を 書こう。
+    <svg class="fig" width="360" height="120" viewBox="0 0 360 120">
+      <rect x="16" y="20" width="328" height="80" fill="#fff" stroke="#e58aa8" stroke-width="2" rx="6"/>
+      <text x="34" y="50" font-size="15" fill="#5a2b3d">① 50% ＝ 0.□</text>
+      <text x="34" y="82" font-size="15" fill="#5a2b3d">② 0.25 ＝ □□ %</text>
+      <text x="195" y="50" font-size="15" fill="#5a2b3d">③ 8% ＝ 0.□□</text>
+      <text x="195" y="82" font-size="13" fill="#a86b80">（%は ÷100 で小数）</text>
+    </svg>
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">%は「100個に 分けた いくつ」。だから <strong>%を 小数に するには ÷100</strong>（小数点を 左に 2つ 動かす）。逆に 小数を %に するには ×100。</div>
+    <div class="step s1"><span>①</span>50% → 50÷100 ＝ <span class="huge">0.5</span></div>
+    <div class="step s1"><span>②</span>0.25 → 0.25×100 ＝ <span class="huge">25 %</span></div>
+    <div class="step s1"><span>③</span>8% → 8÷100 ＝ <span class="huge">0.08</span>（8%は 0.8 ではなく 0.08）</div>
+    <div class="bx bx-warn"><span class="red">8%を 0.8 にしない</span>。8%は 0.08。点を 2つ 動かす（08 → 0.08）。これが いちばん 多い間違い。</div>
+    <div class="ans-final"><span>こたえ</span>① 0.5　② 25%　③ 0.08</div>
+  </div>
+  <div class="gq" data-gid="q00"><div class="grade"><span class="gq-label">問0</span>○✕ → <button class="o" onclick="g(this,'q00','o')">○</button><button class="x" onclick="g(this,'q00','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K しくみが 分からない</button><button onclick="m(this)">A 計算は分かるが手が止まる</button></div><div class="write3">まちがえたら「%は ÷100 で小数」を声に出して 3回 書こう</div></div>
+</div>
+
+<!-- ===== 問1 三用法 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">三用法の確認｜もと×割合＝比べる L1</span><span class="unit-time">目安 4分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead">問1</span>120ページの本の 0.3（3割）を 読みました。読んだのは 何ページ？　□に 書こう。
+    <svg class="fig" width="360" height="130" viewBox="0 0 360 130">
+      <text x="16" y="25" font-size="12" fill="#7a5563">▼ 帯全体が「もとにする量」＝120ページ</text>
+      <rect x="16" y="35" width="320" height="42" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <text x="176" y="62" font-size="14" fill="#7a5a00" font-weight="bold" text-anchor="middle">120ページ（もと）</text>
+      <rect x="16" y="35" width="96" height="42" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="64" y="62" font-size="13" fill="#8a2b3d" font-weight="bold" text-anchor="middle">□ページ</text>
+      <text x="16" y="102" font-size="12" fill="#244e7a">割合 0.3（全体の 3割）</text>
+      <line x1="16" y1="82" x2="112" y2="82" stroke="#c34d77" stroke-width="1.5"/>
+    </svg>
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">全体（もとにする量）が 分かっていて、その「一部（比べる量）」を 聞きたいとき → <strong>もと × 割合</strong>。これは ×（かける）。</div>
+    <div class="step s1"><span>もとは？</span>本全体 120ページ（帯全体）＝ <span class="moto" style="background:#ffe9a3;padding:1px 6px;border-radius:4px">もとにする量</span></div>
+    <div class="step s1"><span>式</span>もと × 割合 ＝ 比べる量　→　<span class="math">120 × 0.3 ＝ 36</span></div>
+    <div class="step s1"><span>こたえ</span>読んだのは <span class="huge">36ページ</span></div>
+    <div class="bx bx-check">36ページが 全体120の どれくらい？ 36÷120 ＝ 0.3 ＝ 3割。ぴったり 合った。</div>
+    <div class="bx bx-warn"><span class="red">120÷0.3 にしない</span>。全体が 分かっていて 一部を 聞くときは ×（かける）。÷を 使うのは「もとが 分からない」とき（次の問2）。</div>
+    <div class="bx bx-link">まず <strong>「もとにする量」を 〇で囲む</strong>。全体（120）が 〇なら、一部を 聞くのは ×。</div>
+    <div class="ans-final"><span>こたえ</span>36ページ</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K しくみが 分からない</button><button onclick="m(this)">A 式は分かるが手が止まる</button></div><div class="write3">まちがえたら「もと×割合＝比べる」を 帯の図といっしょに書こう</div></div>
+</div>
+
+<!-- ===== 問2 もとを求める逆算 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">★もとを求める（÷でもとに戻す）L2</span><span class="unit-time">目安 6分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead">問2</span>あるクラスの 0.6（6割）が 女子で、女子は 18人 でした。クラス全体は 何人？
+    <svg class="fig" width="460" height="150" viewBox="0 0 460 150">
+      <text x="16" y="22" font-size="12.5" fill="#7a5563">▼ 0.6分＝18人。1分（全体）に 戻したい</text>
+      <rect x="16" y="35" width="430" height="42" fill="#fff" stroke="#bbb" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="360" y="61" font-size="13" fill="#999" font-weight="bold" text-anchor="middle">？人（全体）</text>
+      <rect x="16" y="35" width="258" height="42" fill="#cfe7ff" stroke="#244e7a" stroke-width="2"/>
+      <text x="145" y="62" font-size="14" fill="#244e7a" font-weight="bold" text-anchor="middle">18人（0.6分）</text>
+      <text x="16" y="100" font-size="13" fill="#244e7a">0.6分 が 18人 ──÷0.6──▶ 1分（全体）</text>
+      <text x="16" y="122" font-size="12" fill="#c34d77">※ 0.6で 割ると、1（まるごと）に 戻る</text>
+    </svg>
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">今度は <strong>「もと」が 分からない</strong>。分かっているのは 比べる量(18)と 割合(0.6)。もとに 戻すには <span class="huge">÷割合</span>。これが いちばんの 練習ポイント。</div>
+    <div class="step s2"><span>なぜ÷？</span>「もと × 0.6 ＝ 18」だね。□ × 0.6 ＝ 18 の □を 見つけるには、逆の計算 ÷0.6 をする。かけ算の反対は わり算。</div>
+    <div class="step s2"><span>図で</span>0.6分 が 18人。1分（全体）に 戻すから、0.6 で 割る → <span class="math">18 ÷ 0.6 ＝ 30</span></div>
+    <div class="step s2"><span>こたえ</span>クラス全体は <span class="huge">30人</span></div>
+    <div class="bx bx-check">30人の 0.6は？ 30×0.6 ＝ 18。ちゃんと 女子18人に なった。合った。</div>
+    <div class="bx bx-warn"><span class="red">18×0.6 にしない</span>（それだと もっと 小さくなる）。<strong>もとは 比べる量より 大きい</strong>はず。18人より 大きい 30人。これで「÷で 合っている」と 分かる。<span class="red">割合0.6を そのまま 6 にしない</span>。</div>
+    <div class="bx bx-link">見抜くコツ：文章に「全体は？」「もとは？」と <strong>もとを 聞きたい</strong> 言葉が あったら ÷割合。比べる量(18)を もとが 隠れている 割合(0.6)で 割る。</div>
+    <div class="ans-final"><span>こたえ</span>30人</div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2★</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K ÷か×か 分からない</button><button onclick="m(this)">A 式は分かるが手が止まる</button></div><div class="write3">まちがえたら「もと＝比べる÷割合」を 図といっしょに書こう</div></div>
+</div>
+
+<!-- ===== 問3 逆算2段階 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★逆算 2段階（もとに戻して→かける）L2-L3</span><span class="unit-time">目安 6分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead">問3</span>ある数の 40%（0.4）が 60 です。同じ数の 75%（0.75）は いくつ？
+    <svg class="fig" width="400" height="160" viewBox="0 0 400 160">
+      <text x="16" y="22" font-size="12" fill="#7a5563">▼ まず「ある数（もと）」に 戻す → そのあと 75%を かける</text>
+      <rect x="16" y="35" width="360" height="36" fill="#fff" stroke="#bbb" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="270" y="58" font-size="12" fill="#999" font-weight="bold" text-anchor="middle">ある数＝？（もと）</text>
+      <rect x="16" y="35" width="144" height="36" fill="#cfe7ff" stroke="#244e7a" stroke-width="2"/>
+      <text x="88" y="58" font-size="13" fill="#244e7a" font-weight="bold" text-anchor="middle">60（0.4分）</text>
+      <text x="16" y="92" font-size="12" fill="#c34d77">① 60 ÷ 0.4 ＝ 150（ある数に 戻る）</text>
+      <rect x="16" y="105" width="360" height="36" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <text x="196" y="128" font-size="13" fill="#7a5a00" font-weight="bold" text-anchor="middle">ある数 150（もと）</text>
+      <rect x="16" y="105" width="270" height="36" fill="#ffd0d8" stroke="#c34d77" stroke-width="2" opacity="0.7"/>
+      <text x="330" y="128" font-size="11.5" fill="#8a2b3d" text-anchor="middle">② ×0.75</text>
+    </svg>
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">2段階で 考える。<strong>まず もとに 戻す（÷）→ 次に ほしい割合を かける（×）</strong>。あわてて 60に 75%を かけない。60は 全部 ではなく 40%分 だから。</div>
+    <div class="step s1"><span>① ÷で戻す</span>「ある数 × 0.4 ＝ 60」。ある数を 出すには ÷0.4 → <span class="math">60 ÷ 0.4 ＝ 150</span>（ある数＝150）</div>
+    <div class="step s2"><span>② ×でほしい分</span>その150の 75%（0.75）→ <span class="math">150 × 0.75 ＝ 112.5</span></div>
+    <div class="step s2"><span>こたえ</span><span class="huge">112.5</span></div>
+    <div class="bx bx-check">確かめ：150の 40%は 150×0.4＝60（問題と 合う）。150の 75%は 112.5。ちゃんと 60より 大きい。合った。</div>
+    <div class="bx bx-warn"><span class="red">60に いきなり 0.75を かけない</span>（60×0.75＝45 は 間違い）。60は「ある数」ではなく、40%分。<strong>必ず 先に もとに 戻す</strong>。<span class="red">①と②の 割合を 混ぜない</span>（戻すのは 0.4、かけるのは 0.75）。</div>
+    <div class="bx bx-link">見抜くコツ：「もとが 隠れていて、別の割合を 聞く」問題は 全部 この2段。<strong>① ÷でもとに戻す ② ×でほしい割合</strong>。順番を 間違えないこと。</div>
+    <div class="ans-final"><span>こたえ</span>112.5</div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 順番・÷×が 分からない</button><button onclick="m(this)">A 式は分かるが手が止まる</button></div><div class="write3">まちがえたら「① ÷で戻す → ② ×でほしい分」と 2行で書こう</div></div>
+</div>
+
+<!-- ===== 問4 残りの〜① ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★「残りの〜」①｜もとが切り替わる L3</span><span class="unit-time">目安 6分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead">問4</span>96m² の 土地が あります。全体の <span class="frac"><span class="n">1</span><span class="d">4</span></span> を 公園に しました。<strong>残りの <span class="frac"><span class="n">2</span><span class="d">3</span></span></strong> を 住宅に します。住宅は 何m²？
+    <svg class="fig" width="460" height="196" viewBox="0 0 460 196">
+      <text x="16" y="20" font-size="12" fill="#7a5563">▼ 全体 96m²（この帯全体が 第1の もと）</text>
+      <rect x="16" y="28" width="380" height="38" fill="#eee" stroke="#999" stroke-width="2"/>
+      <rect x="16" y="28" width="95" height="38" fill="#cdebcd" stroke="#3f7a4a" stroke-width="2"/>
+      <text x="63" y="52" font-size="12" fill="#2f6a44" font-weight="bold" text-anchor="middle">公園 1/4</text>
+      <text x="253" y="52" font-size="13" fill="#555" font-weight="bold" text-anchor="middle">残り 3/4</text>
+      <text x="16" y="92" font-size="12" fill="#c34d77">公園を 除くと「残り」＝ 96×3/4 ＝ 72m²。ここが 新しい もと</text>
+      <text x="16" y="118" font-size="12" fill="#7a5563">▼ 残り 72m² だけを 取り出して 新しい帯にする（もとが切替）</text>
+      <rect x="16" y="126" width="300" height="40" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <rect x="16" y="126" width="200" height="40" fill="#ffd0d8" stroke="#c34d77" stroke-width="2" opacity="0.75"/>
+      <text x="116" y="151" font-size="13" fill="#8a2b3d" font-weight="bold" text-anchor="middle">住宅 2/3</text>
+      <text x="266" y="151" font-size="12" fill="#7a5a00" font-weight="bold" text-anchor="middle">残り 1/3</text>
+      <text x="166" y="185" font-size="11.5" fill="#555" text-anchor="middle">↑ 残り全体72m²（新しいもと）。その 2/3 が住宅</text>
+    </svg>
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">「<strong>残りの <span class="frac"><span class="n">2</span><span class="d">3</span></span></strong>」が 大事。<span class="frac"><span class="n">2</span><span class="d">3</span></span>を かける 相手は <strong>全体96 ではなく「残り」</strong>。残りを 出してから、その残りを 新しい もとに する。<span class="red">もとが切り替わる</span>のが この問題の 要。</div>
+    <div class="step s3"><span>① 残りを出す</span>公園は <span class="frac"><span class="n">1</span><span class="d">4</span></span>。残りは 1−<span class="frac"><span class="n">1</span><span class="d">4</span></span> ＝ <span class="frac"><span class="n">3</span><span class="d">4</span></span>。残り ＝ <span class="math">96 × <span class="frac"><span class="n">3</span><span class="d">4</span></span> ＝ 72</span>（m²）</div>
+    <div class="step s4"><span>② もとが切替</span>これから <span class="frac"><span class="n">2</span><span class="d">3</span></span>を かけるのは <strong>残り72</strong>。72が 新しい もと。</div>
+    <div class="step s4"><span>③ 住宅</span>残り72 の <span class="frac"><span class="n">2</span><span class="d">3</span></span> → <span class="math">72 × <span class="frac"><span class="n">2</span><span class="d">3</span></span> ＝ 48</span></div>
+    <div class="step s4"><span>こたえ</span>住宅は <span class="huge">48m²</span></div>
+    <div class="bx bx-check">確かめ：公園 96×<span class="frac"><span class="n">1</span><span class="d">4</span></span>＝24。残り 96−24＝72。住宅 72×<span class="frac"><span class="n">2</span><span class="d">3</span></span>＝48。住宅以外の残り 72×<span class="frac"><span class="n">1</span><span class="d">3</span></span>＝24。24+24+48＝96でぴったり。合った。</div>
+    <div class="bx bx-warn"><span class="red">96 × <span class="frac"><span class="n">2</span><span class="d">3</span></span> にしない</span>（それは「全体の<span class="frac"><span class="n">2</span><span class="d">3</span></span>」で 間違い）。<span class="frac"><span class="n">2</span><span class="d">3</span></span>は「残りの」だから、かけるのは 残り72。<span class="red">「残り」を 先に 出すのを 忘れない</span>。</div>
+    <div class="bx bx-link">見抜くコツ：「<strong>残りの</strong>」という 言葉を 見たら、線を 引いて チェック。その割合を かけるのは 全体 ではなく「残り」。まず 残りを 出して 新しい帯を 囲もう。</div>
+    <div class="ans-final"><span>こたえ</span>48m²</div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 「残りの」のもとが 分からない</button><button onclick="m(this)">A 式は分かるが手が止まる</button></div><div class="write3">まちがえたら「残りを 先に 出す → 残りを 新しい もとに」を図で書こう</div></div>
+</div>
+
+<!-- ===== 問5 残りの〜② 全体を□で逆算 ===== -->
+<div class="unit-banner"><span class="unit-num">問5</span><span class="unit-name">★「残りの〜」②｜全体を □ で逆算 L3</span><span class="unit-time">目安 6分</span></div>
+<div class="q calc" data-id="E">
+  <div class="qbody">
+    <span class="lead">問5</span>ある土地の 全体の <span class="frac"><span class="n">1</span><span class="d">3</span></span> に 木を 植え、<strong>残りの <span class="frac"><span class="n">3</span><span class="d">4</span></span></strong> に 花を 植えたら、何もない ところが 4m² 残りました。全体は 何m²？
+    <svg class="fig" width="470" height="200" viewBox="0 0 470 200">
+      <text x="16" y="18" font-size="12" fill="#7a5563">▼ 全体を □ とおく（分からないから 文字）</text>
+      <rect x="16" y="26" width="420" height="36" fill="#eee" stroke="#999" stroke-width="2"/>
+      <rect x="16" y="26" width="140" height="36" fill="#cdebcd" stroke="#3f7a4a" stroke-width="2"/>
+      <text x="86" y="49" font-size="12" fill="#2f6a44" font-weight="bold" text-anchor="middle">木 1/3</text>
+      <text x="296" y="49" font-size="12" fill="#555" font-weight="bold" text-anchor="middle">残り 2/3</text>
+      <text x="16" y="86" font-size="12" fill="#c34d77">残り ＝ □×2/3。その残りの 3/4 が 花、1/4 が 何もない所</text>
+      <text x="16" y="108" font-size="12" fill="#7a5563">▼ 残り（□×2/3）を 新しい帯に</text>
+      <rect x="16" y="116" width="320" height="36" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <rect x="16" y="116" width="240" height="36" fill="#ffd0d8" stroke="#c34d77" stroke-width="2" opacity="0.7"/>
+      <text x="126" y="139" font-size="12" fill="#8a2b3d" font-weight="bold" text-anchor="middle">花 3/4</text>
+      <rect x="256" y="116" width="80" height="36" fill="#fff" stroke="#244e7a" stroke-width="2"/>
+      <text x="296" y="139" font-size="11" fill="#244e7a" font-weight="bold" text-anchor="middle">4m²(1/4)</text>
+      <text x="16" y="180" font-size="12.5" fill="#244e7a" font-weight="bold">何もない所 ＝ □ × 2/3 × 1/4 ＝ 4　→ □を 逆算</text>
+    </svg>
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">全体が 分からない → <strong>全体を □ とおく</strong>。「何もない所4m²」を □で 表して、=4 の式を つくり、最後に ÷で □を 求める（逆算）。</div>
+    <div class="step s1"><span>① 残り</span>木が <span class="frac"><span class="n">1</span><span class="d">3</span></span>。残りは 1−<span class="frac"><span class="n">1</span><span class="d">3</span></span> ＝ <span class="frac"><span class="n">2</span><span class="d">3</span></span>。残り ＝ □ × <span class="frac"><span class="n">2</span><span class="d">3</span></span></div>
+    <div class="step s2"><span>② 何もない所</span>残りの <span class="frac"><span class="n">3</span><span class="d">4</span></span>が 花 → 何もないのは 残りの <span class="frac"><span class="n">1</span><span class="d">4</span></span>。何もない所 ＝ 残り × <span class="frac"><span class="n">1</span><span class="d">4</span></span> ＝ □ × <span class="frac"><span class="n">2</span><span class="d">3</span></span> × <span class="frac"><span class="n">1</span><span class="d">4</span></span> ＝ <span class="math">□ × <span class="frac"><span class="n">1</span><span class="d">6</span></span></span></div>
+    <div class="step s3"><span>③ ＝4 の式</span>何もない所は 4m² だから <span class="math">□ × <span class="frac"><span class="n">1</span><span class="d">6</span></span> ＝ 4</span></div>
+    <div class="step s4"><span>④ ÷で逆算</span>□ ＝ 4 ÷ <span class="frac"><span class="n">1</span><span class="d">6</span></span> ＝ 4 × 6 ＝ <span class="huge">24</span>（÷分数は ひっくり返して ×）</div>
+    <div class="step s4"><span>こたえ</span>全体は <span class="huge">24m²</span></div>
+    <div class="bx bx-check">確かめ：木 24×<span class="frac"><span class="n">1</span><span class="d">3</span></span>＝8。残り 24−8＝16。花 16×<span class="frac"><span class="n">3</span><span class="d">4</span></span>＝12。何もない 16×<span class="frac"><span class="n">1</span><span class="d">4</span></span>＝4。8+12+4＝24でぴったり。合った。</div>
+    <div class="bx bx-warn"><span class="red"><span class="frac"><span class="n">3</span><span class="d">4</span></span>が 花だから 何もないのは <span class="frac"><span class="n">1</span><span class="d">4</span></span></span>（残りを 全部 使った わけではない）。<span class="red">4を 全体と 思わない</span>＝4は ほんの 一部。<span class="red">÷分数は ひっくり返して ×</span>（÷<span class="frac"><span class="n">1</span><span class="d">6</span></span> ＝ ×6）。</div>
+    <div class="bx bx-link">見抜くコツ：全体が 不明なら まず □。一部の m²から 全体に 戻すのは ÷（逆算）。問4の「残りの」＋ 問2の「÷でもとに戻す」が 合体した問題。もう 両方 やったね。</div>
+    <div class="ans-final"><span>こたえ</span>24m²</div>
+  </div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5★</span>○✕ → <button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K □の置き方・逆算が 分からない</button><button onclick="m(this)">A 式は分かるが手が止まる</button></div><div class="write3">まちがえたら「全体＝□ → 式をつくる → ÷で逆算」を3行で書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">今日できた（割合 補強 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">6問 おつかれさま。今日の いちばんの 収穫は <strong>「もとが 分からないときは ÷割合 で 戻す」</strong> と <strong>「残りの〜は、全体ではなく 残りに かける」</strong>の2つ。どんな問題でも、まず <strong>「もとにする量」を〇で囲む</strong> ところから 始めよう。難しい問5まで 図で たどれたら、もう 割合は こわくない。まちがえた問題は、図を 書いて もう一回だけ やってみよう。ちゃんと 進んでいるよ。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_revm_wari1';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった。割合 補強 クリア';document.getElementById('doneBtn').textContent='完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='完了ずみ';}
+};
+</script>
+</body>
+</html>

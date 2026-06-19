@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>復習02 分数の計算＋中1単語・熟語｜30分</title>
@@ -136,6 +137,11 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 .math{font-family:'Courier New',monospace;background:#f2f4f5;padding:1px 4px;border-radius:3px;font-size:14px}
 .red{color:#9b514d;font-weight:800}
 
+/* 分数の縦組み（特訓プリント準拠） */
+.frac{display:inline-flex!important;flex-direction:column!important;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.95em;border:none!important;background:none!important;border-radius:0!important;padding:0!important}
+.frac .n{display:block!important;border:none!important;border-bottom:1.6px solid currentColor!important;background:none!important;border-radius:0!important;padding:0 4px 1px!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+.frac .d{display:block!important;border:none!important;background:none!important;border-radius:0!important;padding:1px 4px 0!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+
 /* できたボタン */
 .done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
 .fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
@@ -161,7 +167,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
@@ -174,8 +180,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <!-- ============ 英語：単語 ============ -->
 <div class="unit-banner">
   <span class="unit-num">英語 ①</span>
-  <span class="unit-name">単語を5つ（意味 → ノートに英語）</span>
-  <span class="unit-time">目安 6分</span>
+  <span class="unit-name">単語を10こ（基本5＋必須5）（意味 → ノートに英語）</span>
+  <span class="unit-time">目安 12分</span>
 </div>
 <div class="sec th-prp">
   <div class="sec-body">
@@ -270,6 +276,96 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
       </div>
     </div>
 
+    <!-- 単語6（必須+1） -->
+    <div class="q vocab" data-id="W-6">
+      <div class="qnum-e">問題6｜単語 ⑥（必須）</div>
+      <div class="qword">日曜日</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">Sunday</div>
+        <div class="ans-read">読み：サンデー</div>
+        <div class="ans-why">なぜこの語か：曜日は会話・日記の超基本。<b>先頭は必ず大文字</b>。</div>
+        <div class="bx bx-warn">先頭は大文字 <span class="red">S</span>unday。小文字 sunday は×。sun（太陽）＋day で覚える。</div>
+      </div>
+      <div class="gq" data-gid="W-6">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-6','o')">○</button><button class="x" onclick="g(this,'W-6','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語7（必須+2） -->
+    <div class="q vocab" data-id="W-7">
+      <div class="qnum-e">問題7｜単語 ⑦（必須）</div>
+      <div class="qword">月曜日</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">Monday</div>
+        <div class="ans-read">読み：マンデー</div>
+        <div class="ans-why">なぜこの語か：曜日の基本。<b>先頭大文字</b>。</div>
+        <div class="bx bx-warn">先頭は大文字 <span class="red">M</span>onday。読みは「マンデー」だが mon と書く（man ではない）。</div>
+      </div>
+      <div class="gq" data-gid="W-7">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-7','o')">○</button><button class="x" onclick="g(this,'W-7','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語8（必須+3） -->
+    <div class="q vocab" data-id="W-8">
+      <div class="qnum-e">問題8｜単語 ⑧（必須）</div>
+      <div class="qword">木曜日</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">Thursday</div>
+        <div class="ans-read">読み：サーズデー</div>
+        <div class="ans-why">なぜこの語か：曜日。つづりの罠が多い最重要語。</div>
+        <div class="bx bx-warn">Thurs-day。<span class="red">r を忘れる</span>(Thusday)・th を t にする(Tursday)が二大ミス。Thu-r-s-day と1文字ずつ。先頭大文字。</div>
+      </div>
+      <div class="gq" data-gid="W-8">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-8','o')">○</button><button class="x" onclick="g(this,'W-8','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語9（必須+4） -->
+    <div class="q vocab" data-id="W-9">
+      <div class="qnum-e">問題9｜単語 ⑨（必須）</div>
+      <div class="qword">金曜日</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">Friday</div>
+        <div class="ans-read">読み：フライデー</div>
+        <div class="ans-why">なぜこの語か：曜日。先頭大文字。</div>
+        <div class="bx bx-warn">先頭は大文字 <span class="red">F</span>riday。Fri-day。fly（飛ぶ）とつづりを混ぜない（Fryday は×）。</div>
+      </div>
+      <div class="gq" data-gid="W-9">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-9','o')">○</button><button class="x" onclick="g(this,'W-9','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語10（必須+5） -->
+    <div class="q vocab" data-id="W-10">
+      <div class="qnum-e">問題10｜単語 ⑩（必須）</div>
+      <div class="qword">1月</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">January</div>
+        <div class="ans-read">読み：ジャニュアリー</div>
+        <div class="ans-why">なぜこの語か：月名は日付で必須。<b>先頭大文字</b>。</div>
+        <div class="bx bx-warn">先頭は大文字 <span class="red">J</span>anuary。Jan-u-ary。u を忘れない（Janary は×）。</div>
+      </div>
+      <div class="gq" data-gid="W-10">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-10','o')">○</button><button class="x" onclick="g(this,'W-10','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
   </div>
 </div>
 
@@ -284,7 +380,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- 熟語1 -->
     <div class="q vocab" data-id="P-1">
-      <div class="qnum-e">問題6｜熟語 ①</div>
+      <div class="qnum-e">問題11｜熟語 ①</div>
       <div class="qword">～へ行く</div>
       <div class="qhint">英語（2語の熟語）で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -302,7 +398,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- 熟語2 -->
     <div class="q vocab" data-id="P-2">
-      <div class="qnum-e">問題7｜熟語 ②</div>
+      <div class="qnum-e">問題12｜熟語 ②</div>
       <div class="qword">～の出身だ・～から来る</div>
       <div class="qhint">英語（2語の熟語）で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -320,7 +416,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- 熟語3 -->
     <div class="q vocab" data-id="P-3">
-      <div class="qnum-e">問題8｜熟語 ③</div>
+      <div class="qnum-e">問題13｜熟語 ③</div>
       <div class="qword">目が覚める</div>
       <div class="qhint">英語（2語の熟語）で書いてみよう（ノートに）</div>
       <button class="ans-btn" onclick="t(this)">答えを見る</button>
@@ -349,7 +445,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   <div class="sec-body">
 
     <div class="q writing" data-id="EW-1">
-      <div class="qnum-e">問題9｜英作文 ①</div>
+      <div class="qnum-e">問題14｜英作文 ①</div>
       <div class="ew-task">📝 この日本語を、英語にして下の線に書こう（文法は自分で考える）</div>
       <div class="ew-jp">「あなたはサッカーファンですか。」</div>
       <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
@@ -398,59 +494,49 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <!-- M-1 約分（通し番号10） -->
     <div class="q calc" data-id="M-1">
-      <div class="qnum">問題10・11・12｜約分</div>
-      <div class="qbody">次の分数を約分しよう。(1) 24/36　(2) 45/60　(3) 72/90</div>
+      <div class="qnum">問題15｜約分</div>
+      <div class="qbody">次の分数を約分しよう。<span class="frac"><span class="n">24</span><span class="d">36</span></span></div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
         <div class="osarai">
           <div class="ot">⓪ そもそも分数って何だっけ？</div>
-          <p><b>意味：</b>分数は「1を何個に分けたうちの何個分か」を表す数。3/4 なら「1を4つに分けた、そのうちの3個分」。</p>
+          <p><b>意味：</b>分数は「1を何個に分けたうちの何個分か」を表す数。<span class="frac"><span class="n">3</span><span class="d">4</span></span> なら「1を4つに分けた、そのうちの3個分」。</p>
           <p>下の数（<b>分母</b>）＝何個に分けたか（切り方）。上の数（<b>分子</b>）＝そのうち何個か（枚数）。<br>これから出てくる「約分・通分・たし算…」は、ぜんぶこの分母・分子をどう動かすかの話。</p>
           <div class="ot">⓪-2 真分数・仮分数・帯分数って何だっけ？</div>
           <p>分数には、形によって3つの呼び名がある。これからの問題で「仮分数に直して」「帯分数で答える」と出てくるので、まず名前と意味をそろえておこう。</p>
           <ul>
-            <li><b>真分数（しんぶんすう）</b>…分子が分母より<b>小さい</b>分数。1より小さい。例：2/3、5/8</li>
-            <li><b>仮分数（かぶんすう）</b>…分子が分母と<b>同じか大きい</b>分数。1以上になる。例：7/3、9/9</li>
-            <li><b>帯分数（たいぶんすう）</b>…<b>整数＋真分数</b>をならべた形。例：「2と1/3」＝2＋1/3</li>
+            <li><b>真分数（しんぶんすう）</b>…分子が分母より<b>小さい</b>分数。1より小さい。例：<span class="frac"><span class="n">2</span><span class="d">3</span></span>、<span class="frac"><span class="n">5</span><span class="d">8</span></span></li>
+            <li><b>仮分数（かぶんすう）</b>…分子が分母と<b>同じか大きい</b>分数。1以上になる。例：<span class="frac"><span class="n">7</span><span class="d">3</span></span>、<span class="frac"><span class="n">9</span><span class="d">9</span></span></li>
+            <li><b>帯分数（たいぶんすう）</b>…<b>整数＋真分数</b>をならべた形。例：「2<span class="frac"><span class="n">1</span><span class="d">3</span></span>」＝2＋<span class="frac"><span class="n">1</span><span class="d">3</span></span></li>
           </ul>
           <p><b>仮分数 → 帯分数：</b>分子÷分母をして、商が整数部分、あまりが新しい分子（分母はそのまま）。</p>
           <p><b>帯分数 → 仮分数：</b>整数×分母＋分子 を新しい分子にする（分母はそのまま）。</p>
-          <div class="ex">7/3 を帯分数に → 7÷3＝2あまり1 → <b>2と1/3</b>。<br>
-            ぎゃくに 2と1/3 を仮分数に → 2×3＋1＝7 → <b>7/3</b>。（同じ大きさ）</div>
+          <div class="ex"><span class="frac"><span class="n">7</span><span class="d">3</span></span> を帯分数に → 7÷3＝2あまり1 → <b>2<span class="frac"><span class="n">1</span><span class="d">3</span></span></b>。<br>
+            ぎゃくに 2<span class="frac"><span class="n">1</span><span class="d">3</span></span> を仮分数に → 2×3＋1＝7 → <b><span class="frac"><span class="n">7</span><span class="d">3</span></span></b>。（同じ大きさ）</div>
           <div class="ot">① 約分（やくぶん）</div>
           <p><b>意味：</b>分数を、それ以上かんたんにできないところまで小さくすること。値は変えずに見た目だけスッキリさせる。</p>
-          <p><b>いつ・なぜ：</b>分数の答えは「約分まで」がルール。6/8 と 3/4 は同じ大きさ。約束として一番小さい形で答える。</p>
+          <p><b>いつ・なぜ：</b>分数の答えは「約分まで」がルール。<span class="frac"><span class="n">6</span><span class="d">8</span></span> と <span class="frac"><span class="n">3</span><span class="d">4</span></span> は同じ大きさ。約束として一番小さい形で答える。</p>
           <p><b>やり方：</b>分子と分母を、<b>両方を割り切れる同じ数</b>で割る。一番大きい数（最大公約数）で1回で割ると速い。</p>
-          <div class="ex">24/36 を約分。<br>→ 24も36も12で割れる（最大公約数12）。<br>→ 24÷12＝2、36÷12＝3 → <b>2/3</b>。</div>
-          <div class="miss">分子だけ、または分母だけを割るのは×。<b>上と下を同じ数で割る</b>から大きさが変わらない。（帯分数はかけ算・わり算では先に仮分数に直す。問6で使う）</div>
+          <div class="ex"><span class="frac"><span class="n">24</span><span class="d">36</span></span> を約分。<br>→ 24も36も12で割れる（最大公約数12）。<br>→ 24÷12＝2、36÷12＝3 → <b><span class="frac"><span class="n">2</span><span class="d">3</span></span></b>。</div>
+          <div class="miss">分子だけ、または分母だけを割るのは×。<b>上と下を同じ数で割る</b>から大きさが変わらない。（帯分数はかけ算・わり算では先に仮分数に直す）</div>
         </div>
         <div class="step"><span>ステップ1</span>分子と分母を最大公約数（＝両方を割り切れる一番大きい数）で割る。</div>
-        <div class="step"><span>解説(1)</span>24と36の最大公約数12 → 24÷12=2、36÷12=3 → <strong>2/3</strong></div>
-        <div class="step"><span>解説(2)</span>45と60の最大公約数15 → 45÷15=3、60÷15=4 → <strong>3/4</strong></div>
-        <div class="step"><span>解説(3)</span>72と90の最大公約数18 → 72÷18=4、90÷18=5 → <strong>4/5</strong></div>
+        <div class="step"><span>解説</span>24と36の最大公約数12 → 24÷12=2、36÷12=3 → <strong><span class="frac"><span class="n">2</span><span class="d">3</span></span></strong></div>
         <div class="bx bx-link">約分は中1の「分数を含む正負の計算」でそのまま使う土台。答えは必ず約分まで、が中学でもルール。</div>
         <div class="bx bx-warn">「2で割って、また2で割って…」と繰り返すと時間がかかる。最大公約数を一発で見つけて一度で割り切るのが速い。</div>
-        <div class="ans-final"><span>こたえ</span>(1) 2/3　(2) 3/4　(3) 4/5</div>
+        <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">2</span><span class="d">3</span></span></div>
       </div>
-      <div class="gq" data-gid="M-1a">
-        <div class="grade"><span class="gq-label">問題10（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1a','o')">○</button><button class="x" onclick="g(this,'M-1a','x')">✕</button></div>
-        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
-      </div>
-      <div class="gq" data-gid="M-1b">
-        <div class="grade"><span class="gq-label">問題11（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1b','o')">○</button><button class="x" onclick="g(this,'M-1b','x')">✕</button></div>
-        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
-      </div>
-      <div class="gq" data-gid="M-1c">
-        <div class="grade"><span class="gq-label">問題12（3）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1c','o')">○</button><button class="x" onclick="g(this,'M-1c','x')">✕</button></div>
+      <div class="gq" data-gid="M-1">
+        <div class="grade"><span class="gq-label">問題15</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-2 通分 -->
     <div class="q calc" data-id="M-2">
-      <div class="qnum">問題13・14・15｜通分</div>
-      <div class="qbody">次の2つの分数を通分しよう。(1) 1/4 と 5/6　(2) 3/8 と 7/12　(3) 2/9 と 5/6</div>
+      <div class="qnum">問題16｜通分</div>
+      <div class="qbody">次の2つの分数を通分しよう。<span class="frac"><span class="n">1</span><span class="d">4</span></span> と <span class="frac"><span class="n">5</span><span class="d">6</span></span></div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
@@ -459,35 +545,25 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
           <p><b>意味：</b>分母がちがう分数たちの、<b>分母をそろえる</b>こと。たし算・ひき算の前に必ずやる準備。</p>
           <p><b>なぜ：</b>切り方（分母）がちがうと枚数（分子）をそのまま足せない。切り方をそろえてはじめて足せる。</p>
           <p><b>やり方：</b>分母の<b>最小公倍数</b>（両方の段に共通で出る一番小さい数）にそろえる。分子と分母に<b>同じ数</b>をかける（値は変わらない）。</p>
-          <div class="ex">1/4 と 5/6 を通分。<br>→ 4と6の最小公倍数は12。<br>→ 1/4 は上下に3をかけて 3/12。5/6 は上下に2をかけて 10/12。</div>
+          <div class="ex"><span class="frac"><span class="n">1</span><span class="d">4</span></span> と <span class="frac"><span class="n">5</span><span class="d">6</span></span> を通分。<br>→ 4と6の最小公倍数は12。<br>→ <span class="frac"><span class="n">1</span><span class="d">4</span></span> は上下に3をかけて <span class="frac"><span class="n">3</span><span class="d">12</span></span>。<span class="frac"><span class="n">5</span><span class="d">6</span></span> は上下に2をかけて <span class="frac"><span class="n">10</span><span class="d">12</span></span>。</div>
           <div class="miss">分子だけにかけて分母をそのままにしない。上と下に同じ数をかけるから大きさが変わらない。</div>
         </div>
         <div class="step"><span>ステップ1</span>分母の最小公倍数（＝両方の段に共通で出る一番小さい数）にそろえる。</div>
-        <div class="step"><span>解説(1)</span>4と6の最小公倍数12 → 1/4=3/12、5/6=10/12</div>
-        <div class="step"><span>解説(2)</span>8と12の最小公倍数24 → 3/8=9/24、7/12=14/24</div>
-        <div class="step"><span>解説(3)</span>9と6の最小公倍数18 → 2/9=4/18、5/6=15/18</div>
+        <div class="step"><span>解説</span>4と6の最小公倍数12 → <span class="frac"><span class="n">1</span><span class="d">4</span></span>=<span class="frac"><span class="n">3</span><span class="d">12</span></span>、<span class="frac"><span class="n">5</span><span class="d">6</span></span>=<span class="frac"><span class="n">10</span><span class="d">12</span></span></div>
         <div class="bx bx-link">通分は分数の加減・中1の正負の分数計算の前に必ずやる作業。最小公倍数を速く出す感覚が効いてくる。</div>
         <div class="bx bx-warn">分子だけにかけて分母をそのままにしない。分子と分母に「同じ数」をかけるから値は変わらない。</div>
-        <div class="ans-final"><span>こたえ</span>(1) 3/12 と 10/12　(2) 9/24 と 14/24　(3) 4/18 と 15/18</div>
+        <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">3</span><span class="d">12</span></span> と <span class="frac"><span class="n">10</span><span class="d">12</span></span></div>
       </div>
-      <div class="gq" data-gid="M-2a">
-        <div class="grade"><span class="gq-label">問題13（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2a','o')">○</button><button class="x" onclick="g(this,'M-2a','x')">✕</button></div>
-        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
-      </div>
-      <div class="gq" data-gid="M-2b">
-        <div class="grade"><span class="gq-label">問題14（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2b','o')">○</button><button class="x" onclick="g(this,'M-2b','x')">✕</button></div>
-        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
-      </div>
-      <div class="gq" data-gid="M-2c">
-        <div class="grade"><span class="gq-label">問題15（3）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2c','o')">○</button><button class="x" onclick="g(this,'M-2c','x')">✕</button></div>
+      <div class="gq" data-gid="M-2">
+        <div class="grade"><span class="gq-label">問題16</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-3 加減 -->
     <div class="q calc" data-id="M-3">
-      <div class="qnum">問題16・17・18｜分数のたし算・ひき算</div>
-      <div class="qbody">(1) 1/3 ＋ 1/4　(2) 5/6 − 3/4　(3) 3/7 ＋ 2/7　（答えは約分まで）</div>
+      <div class="qnum">問題17｜分数のたし算・ひき算</div>
+      <div class="qbody"><span class="frac"><span class="n">1</span><span class="d">3</span></span> ＋ <span class="frac"><span class="n">1</span><span class="d">4</span></span>　（答えは約分まで）</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
@@ -499,58 +575,48 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
             <li>分母はそのままで、<b>分子だけ</b>たす・ひく</li>
             <li>できたら<b>約分</b>する</li>
           </ol>
-          <div class="ex">1/3 ＋ 1/4。<br>→ 通分（最小公倍数12）→ 4/12＋3/12。<br>→ 分子だけ 4＋3＝7 → <b>7/12</b>。</div>
-          <div class="miss">「1/3＋1/4＝2/7」と分母どうしも足すのが最多ミス。分母は切り方。そろえてから分子だけ計算。<b>帯分数のひき算で引けないときは、整数から1を分数にして借りる</b>（くり下がりと同じ）。</div>
+          <div class="ex"><span class="frac"><span class="n">1</span><span class="d">3</span></span> ＋ <span class="frac"><span class="n">1</span><span class="d">4</span></span>。<br>→ 通分（最小公倍数12）→ <span class="frac"><span class="n">4</span><span class="d">12</span></span>＋<span class="frac"><span class="n">3</span><span class="d">12</span></span>。<br>→ 分子だけ 4＋3＝7 → <b><span class="frac"><span class="n">7</span><span class="d">12</span></span></b>。</div>
+          <div class="miss">「<span class="frac"><span class="n">1</span><span class="d">3</span></span>＋<span class="frac"><span class="n">1</span><span class="d">4</span></span>＝<span class="frac"><span class="n">2</span><span class="d">7</span></span>」と分母どうしも足すのが最多ミス。分母は切り方。そろえてから分子だけ計算。<b>帯分数のひき算で引けないときは、整数から1を分数にして借りる</b>（くり下がりと同じ）。</div>
         </div>
         <div class="step"><span>ステップ1</span>分母がちがえば通分。同じなら分子だけ計算。</div>
-        <div class="step"><span>解説(1)</span>最小公倍数12で通分 → 4/12+3/12=<strong>7/12</strong></div>
-        <div class="step"><span>解説(2)</span>最小公倍数12で通分 → 10/12−9/12=<strong>1/12</strong></div>
-        <div class="step"><span>解説(3)</span>分母が同じ7 → 分子だけ → 3/7+2/7=<strong>5/7</strong></div>
+        <div class="step"><span>解説</span>最小公倍数12で通分 → <span class="frac"><span class="n">4</span><span class="d">12</span></span>+<span class="frac"><span class="n">3</span><span class="d">12</span></span>=<strong><span class="frac"><span class="n">7</span><span class="d">12</span></span></strong></div>
         <div class="bx bx-link">「通分が要るか分母を見て判断」する力は、中1の負の数を含む分数計算でもそのまま使う。</div>
-        <div class="bx bx-warn">「1/3+1/4=2/7」と分母どうしを足すのが最多ミス。分母は「ピザの切り方」。そろえてから枚数（分子）を計算する。</div>
-        <div class="ans-final"><span>こたえ</span>(1) 7/12　(2) 1/12　(3) 5/7</div>
+        <div class="bx bx-warn">「<span class="frac"><span class="n">1</span><span class="d">3</span></span>+<span class="frac"><span class="n">1</span><span class="d">4</span></span>=<span class="frac"><span class="n">2</span><span class="d">7</span></span>」と分母どうしを足すのが最多ミス。分母は「ピザの切り方」。そろえてから枚数（分子）を計算する。</div>
+        <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">7</span><span class="d">12</span></span></div>
       </div>
-      <div class="gq" data-gid="M-3a">
-        <div class="grade"><span class="gq-label">問題16（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3a','o')">○</button><button class="x" onclick="g(this,'M-3a','x')">✕</button></div>
-        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
-      </div>
-      <div class="gq" data-gid="M-3b">
-        <div class="grade"><span class="gq-label">問題17（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3b','o')">○</button><button class="x" onclick="g(this,'M-3b','x')">✕</button></div>
-        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
-      </div>
-      <div class="gq" data-gid="M-3c">
-        <div class="grade"><span class="gq-label">問題18（3）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3c','o')">○</button><button class="x" onclick="g(this,'M-3c','x')">✕</button></div>
+      <div class="gq" data-gid="M-3">
+        <div class="grade"><span class="gq-label">問題17</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-4 帯分数の加減 -->
     <div class="q calc" data-id="M-4">
-      <div class="qnum">問題19・20｜帯分数のたし算・ひき算</div>
-      <div class="qbody">(1) 2と1/3 ＋ 1と3/4　(2) 3と1/6 − 1と5/8</div>
+      <div class="qnum">問題18・19｜帯分数のたし算・ひき算</div>
+      <div class="qbody">(1) 2<span class="frac"><span class="n">1</span><span class="d">3</span></span> ＋ 1<span class="frac"><span class="n">3</span><span class="d">4</span></span>　(2) 3<span class="frac"><span class="n">1</span><span class="d">6</span></span> − 1<span class="frac"><span class="n">5</span><span class="d">8</span></span></div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="step"><span>解説(1)</span>整数2+1=3、分数 1/3+3/4=4/12+9/12=13/12=1と1/12 → 3に1をたして <strong>4と1/12</strong></div>
-        <div class="step"><span>解説(2)</span>1/6から5/8は引けない → 整数3から1(=6/6)を借り 2と7/6 に。整数2−1=1、分数 7/6−5/8=28/24−15/24=13/24 → <strong>1と13/24</strong></div>
+        <div class="step"><span>解説(1)</span>整数2+1=3、分数 <span class="frac"><span class="n">1</span><span class="d">3</span></span>+<span class="frac"><span class="n">3</span><span class="d">4</span></span>=<span class="frac"><span class="n">4</span><span class="d">12</span></span>+<span class="frac"><span class="n">9</span><span class="d">12</span></span>=<span class="frac"><span class="n">13</span><span class="d">12</span></span>=1<span class="frac"><span class="n">1</span><span class="d">12</span></span> → 3に1をたして <strong>4<span class="frac"><span class="n">1</span><span class="d">12</span></span></strong></div>
+        <div class="step"><span>解説(2)</span><span class="frac"><span class="n">1</span><span class="d">6</span></span>から<span class="frac"><span class="n">5</span><span class="d">8</span></span>は引けない → 整数3から1(=<span class="frac"><span class="n">6</span><span class="d">6</span></span>)を借り 2<span class="frac"><span class="n">7</span><span class="d">6</span></span> に。整数2−1=1、分数 <span class="frac"><span class="n">7</span><span class="d">6</span></span>−<span class="frac"><span class="n">5</span><span class="d">8</span></span>=<span class="frac"><span class="n">28</span><span class="d">24</span></span>−<span class="frac"><span class="n">15</span><span class="d">24</span></span>=<span class="frac"><span class="n">13</span><span class="d">24</span></span> → <strong>1<span class="frac"><span class="n">13</span><span class="d">24</span></span></strong></div>
         <div class="bx bx-link">「引けないときは1を分数に変えて借りる」は、中1の負の数の計算で「足りない分はマイナスで考える」感覚につながる。</div>
         <div class="bx bx-warn">帯分数のひき算で「引けない！」となったら、整数から1を分数にして借りる。小数のひき算の繰り下がりと同じ仕組み。</div>
-        <div class="ans-final"><span>こたえ</span>(1) 4と1/12　(2) 1と13/24</div>
+        <div class="ans-final"><span>こたえ</span>(1) 4<span class="frac"><span class="n">1</span><span class="d">12</span></span>　(2) 1<span class="frac"><span class="n">13</span><span class="d">24</span></span></div>
       </div>
       <div class="gq" data-gid="M-4a">
-        <div class="grade"><span class="gq-label">問題19（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4a','o')">○</button><button class="x" onclick="g(this,'M-4a','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">問題18（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4a','o')">○</button><button class="x" onclick="g(this,'M-4a','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
       <div class="gq" data-gid="M-4b">
-        <div class="grade"><span class="gq-label">問題20（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4b','o')">○</button><button class="x" onclick="g(this,'M-4b','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">問題19（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4b','o')">○</button><button class="x" onclick="g(this,'M-4b','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-5 乗除 -->
     <div class="q calc" data-id="M-5">
-      <div class="qnum">問題21・22・23｜分数のかけ算・わり算</div>
-      <div class="qbody">(1) 3/4 × 8/9　(2) 5/6 ÷ 5/12　(3) 7/8 ÷ 14　（答えは約分まで）</div>
+      <div class="qnum">問題20・21｜分数のかけ算・わり算</div>
+      <div class="qbody">(1) <span class="frac"><span class="n">3</span><span class="d">4</span></span> × <span class="frac"><span class="n">8</span><span class="d">9</span></span>　(2) <span class="frac"><span class="n">5</span><span class="d">6</span></span> ÷ <span class="frac"><span class="n">5</span><span class="d">12</span></span>　（答えは約分まで）</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
@@ -558,92 +624,82 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
           <div class="ot">④ 分数のかけ算・わり算</div>
           <p><b>かけ算：</b>通分はいらない。<b>分子どうし・分母どうし</b>をそのままかける。（とちゅうで約分すると楽）</p>
           <p><b>わり算：</b>わる数を<b>逆数（上下をひっくり返した数）</b>に変えて、<b>かけ算に直す</b>。÷ は ×逆数。</p>
-          <p>※帯分数（2と1/3 など）が出たら、まず<b>仮分数</b>（7/3 など）に直してから計算する。</p>
-          <div class="ex">5/6 ÷ 5/12。<br>→ わる数 5/12 の逆数は 12/5。<br>→ ÷5/12 を ×12/5 に直す → 5/6×12/5＝60/30＝<b>2</b>。</div>
-          <div class="miss">「÷5/12 を ×5/12」としない。逆数は上下をひっくり返すだけ。整数でわるときも「÷2＝×1/2」と分数で考えられる。</div>
+          <p>※帯分数（2<span class="frac"><span class="n">1</span><span class="d">3</span></span> など）が出たら、まず<b>仮分数</b>（<span class="frac"><span class="n">7</span><span class="d">3</span></span> など）に直してから計算する。</p>
+          <div class="ex"><span class="frac"><span class="n">5</span><span class="d">6</span></span> ÷ <span class="frac"><span class="n">5</span><span class="d">12</span></span>。<br>→ わる数 <span class="frac"><span class="n">5</span><span class="d">12</span></span> の逆数は <span class="frac"><span class="n">12</span><span class="d">5</span></span>。<br>→ ÷<span class="frac"><span class="n">5</span><span class="d">12</span></span> を ×<span class="frac"><span class="n">12</span><span class="d">5</span></span> に直す → <span class="frac"><span class="n">5</span><span class="d">6</span></span>×<span class="frac"><span class="n">12</span><span class="d">5</span></span>＝<span class="frac"><span class="n">60</span><span class="d">30</span></span>＝<b>2</b>。</div>
+          <div class="miss">「÷<span class="frac"><span class="n">5</span><span class="d">12</span></span> を ×<span class="frac"><span class="n">5</span><span class="d">12</span></span>」としない。逆数は上下をひっくり返すだけ。整数でわるときも「÷2＝×<span class="frac"><span class="n">1</span><span class="d">2</span></span>」と分数で考えられる。</div>
         </div>
         <div class="step"><span>ステップ1</span>かけ算は分子・分母どうし。わり算は割る数の逆数（上下を入れかえた数）をかける。</div>
-        <div class="step"><span>解説(1)</span>3/4×8/9=24/36。最大公約数12で約分 → <strong>2/3</strong></div>
-        <div class="step"><span>解説(2)</span>÷5/12 を ×12/5 に → 5/6×12/5=60/30=<strong>2</strong></div>
-        <div class="step"><span>解説(3)</span>14=14/1 の逆数は1/14 → 7/8×1/14=7/112。分子7で約分 → <strong>1/16</strong></div>
-        <div class="bx bx-link">「わり算は逆数のかけ算」は中1の分数計算でそのまま使う。整数も「÷14＝×1/14」と分数で考えられる。</div>
-        <div class="bx bx-warn">「3/4÷2 → 3/4×2」としない。÷2 は ×(1/2)。2の逆数は 1/2。逆数は上下をひっくり返すだけ。</div>
-        <div class="ans-final"><span>こたえ</span>(1) 2/3　(2) 2　(3) 1/16</div>
+        <div class="step"><span>解説(1)</span><span class="frac"><span class="n">3</span><span class="d">4</span></span>×<span class="frac"><span class="n">8</span><span class="d">9</span></span>=<span class="frac"><span class="n">24</span><span class="d">36</span></span>。最大公約数12で約分 → <strong><span class="frac"><span class="n">2</span><span class="d">3</span></span></strong></div>
+        <div class="step"><span>解説(2)</span>÷<span class="frac"><span class="n">5</span><span class="d">12</span></span> を ×<span class="frac"><span class="n">12</span><span class="d">5</span></span> に → <span class="frac"><span class="n">5</span><span class="d">6</span></span>×<span class="frac"><span class="n">12</span><span class="d">5</span></span>=<span class="frac"><span class="n">60</span><span class="d">30</span></span>=<strong>2</strong></div>
+        <div class="bx bx-link">「わり算は逆数のかけ算」は中1の分数計算でそのまま使う。整数も「÷14＝×<span class="frac"><span class="n">1</span><span class="d">14</span></span>」と分数で考えられる。</div>
+        <div class="bx bx-warn">「<span class="frac"><span class="n">3</span><span class="d">4</span></span>÷2 → <span class="frac"><span class="n">3</span><span class="d">4</span></span>×2」としない。÷2 は ×<span class="frac"><span class="n">1</span><span class="d">2</span></span>。2の逆数は <span class="frac"><span class="n">1</span><span class="d">2</span></span>。逆数は上下をひっくり返すだけ。</div>
+        <div class="ans-final"><span>こたえ</span>(1) <span class="frac"><span class="n">2</span><span class="d">3</span></span>　(2) 2</div>
       </div>
       <div class="gq" data-gid="M-5a">
-        <div class="grade"><span class="gq-label">問題21（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5a','o')">○</button><button class="x" onclick="g(this,'M-5a','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">問題20（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5a','o')">○</button><button class="x" onclick="g(this,'M-5a','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
       <div class="gq" data-gid="M-5b">
-        <div class="grade"><span class="gq-label">問題22（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5b','o')">○</button><button class="x" onclick="g(this,'M-5b','x')">✕</button></div>
-        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
-      </div>
-      <div class="gq" data-gid="M-5c">
-        <div class="grade"><span class="gq-label">問題23（3）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5c','o')">○</button><button class="x" onclick="g(this,'M-5c','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">問題21（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5b','o')">○</button><button class="x" onclick="g(this,'M-5b','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-6 帯分数の乗除・文章 -->
     <div class="q calc" data-id="M-6">
-      <div class="qnum">問題24・25｜帯分数のわり算・文章題</div>
-      <div class="qbody">(1) 2と1/3 ÷ 1と3/4　(2) 面積 3/4 m² の長方形の縦が 3/8 m のとき、横の長さは？</div>
+      <div class="qnum">問題22｜文章題（面積から長さを求める）</div>
+      <div class="qbody">面積 <span class="frac"><span class="n">3</span><span class="d">4</span></span> m² の長方形の縦が <span class="frac"><span class="n">3</span><span class="d">8</span></span> m のとき、横の長さは？</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="step"><span>ステップ1</span>帯分数はまず仮分数に直す。わり算は逆数のかけ算に。</div>
-        <div class="step"><span>解説(1)</span>2と1/3=7/3、1と3/4=7/4 → 7/3÷7/4=7/3×4/7=28/21。最大公約数7で約分 → <strong>4/3</strong></div>
-        <div class="step"><span>解説(2)</span>横＝面積÷縦 → 3/4÷3/8=3/4×8/3=24/12=<strong>2</strong></div>
+        <div class="step"><span>ステップ1</span>「面積÷縦＝横」で式を立てる。わり算は逆数のかけ算に直す。</div>
+        <div class="step"><span>解説</span>横＝面積÷縦 → <span class="frac"><span class="n">3</span><span class="d">4</span></span>÷<span class="frac"><span class="n">3</span><span class="d">8</span></span>=<span class="frac"><span class="n">3</span><span class="d">4</span></span>×<span class="frac"><span class="n">8</span><span class="d">3</span></span>=<span class="frac"><span class="n">24</span><span class="d">12</span></span>=<strong>2</strong></div>
         <div class="bx bx-link">「面積÷縦＝横」のように、関係から立式する力は中1の文字式・方程式の文章題にそのままつながる。</div>
         <div class="bx bx-warn">帯分数のかけ算・わり算は「仮分数に直してから」が鉄則。帯分数のまま計算しようとしない。</div>
-        <div class="ans-final"><span>こたえ</span>(1) 4/3（＝1と1/3）　(2) 2 m</div>
-      </div>
-      <div class="gq" data-gid="M-6a">
-        <div class="grade"><span class="gq-label">問題24（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6a','o')">○</button><button class="x" onclick="g(this,'M-6a','x')">✕</button></div>
-        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+        <div class="ans-final"><span>こたえ</span>2 m</div>
       </div>
       <div class="gq" data-gid="M-6b">
-        <div class="grade"><span class="gq-label">問題25（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6b','o')">○</button><button class="x" onclick="g(this,'M-6b','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">問題22</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6b','o')">○</button><button class="x" onclick="g(this,'M-6b','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-7 演算順序＋分数 -->
     <div class="q calc" data-id="M-7">
-      <div class="qnum">問題26｜計算の順番＋分数</div>
-      <div class="qbody">2/9 ＋ 16/9 × 3/8　（かけ算を先に！）</div>
+      <div class="qnum">問題23｜計算の順番＋分数</div>
+      <div class="qbody"><span class="frac"><span class="n">2</span><span class="d">9</span></span> ＋ <span class="frac"><span class="n">16</span><span class="d">9</span></span> × <span class="frac"><span class="n">3</span><span class="d">8</span></span>　（かけ算を先に！）</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="step"><span>ステップ1</span>分数でもかけ算が先。先に 16/9×3/8 を処理する。</div>
-        <div class="step"><span>ステップ2</span>16/9×3/8=48/72。最大公約数24で約分 → 2/3</div>
-        <div class="step"><span>ステップ3</span>2/9+2/3=2/9+6/9=<strong>8/9</strong></div>
+        <div class="step"><span>ステップ1</span>分数でもかけ算が先。先に <span class="frac"><span class="n">16</span><span class="d">9</span></span>×<span class="frac"><span class="n">3</span><span class="d">8</span></span> を処理する。</div>
+        <div class="step"><span>ステップ2</span><span class="frac"><span class="n">16</span><span class="d">9</span></span>×<span class="frac"><span class="n">3</span><span class="d">8</span></span>=<span class="frac"><span class="n">48</span><span class="d">72</span></span>。最大公約数24で約分 → <span class="frac"><span class="n">2</span><span class="d">3</span></span></div>
+        <div class="step"><span>ステップ3</span><span class="frac"><span class="n">2</span><span class="d">9</span></span>+<span class="frac"><span class="n">2</span><span class="d">3</span></span>=<span class="frac"><span class="n">2</span><span class="d">9</span></span>+<span class="frac"><span class="n">6</span><span class="d">9</span></span>=<strong><span class="frac"><span class="n">8</span><span class="d">9</span></span></strong></div>
         <div class="bx bx-link">「×÷が先」は中1の正負の数 <span class="math">2+(-3)×4</span> でもまったく同じ。分数でも変わらない。</div>
-        <div class="bx bx-warn">「先に 2/9+16/9=2 を計算」が最多ミス。式を見た瞬間「×がある！先に」と動けるようにする。</div>
-        <div class="ans-final"><span>こたえ</span>8/9</div>
+        <div class="bx bx-warn">「先に <span class="frac"><span class="n">2</span><span class="d">9</span></span>+<span class="frac"><span class="n">16</span><span class="d">9</span></span>=2 を計算」が最多ミス。式を見た瞬間「×がある！先に」と動けるようにする。</div>
+        <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">8</span><span class="d">9</span></span></div>
       </div>
       <div class="gq" data-gid="M-7">
-        <div class="grade"><span class="gq-label">問題26</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">問題23</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
     <!-- M-8 3分数の加減 -->
     <div class="q calc" data-id="M-8">
-      <div class="qnum">問題27｜3つの分数の加減</div>
-      <div class="qbody">5/4 ＋ 7/10 − 1/5</div>
+      <div class="qnum">問題24｜3つの分数の加減</div>
+      <div class="qbody"><span class="frac"><span class="n">5</span><span class="d">4</span></span> ＋ <span class="frac"><span class="n">7</span><span class="d">10</span></span> − <span class="frac"><span class="n">1</span><span class="d">5</span></span></div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
         <div class="step"><span>ステップ1</span>分母4・10・5の最小公倍数20にそろえる。</div>
-        <div class="step"><span>ステップ2</span>5/4=25/20、7/10=14/20、1/5=4/20</div>
-        <div class="step"><span>ステップ3</span>(25+14−4)/20=35/20。最大公約数5で約分 → <strong>7/4</strong></div>
+        <div class="step"><span>ステップ2</span><span class="frac"><span class="n">5</span><span class="d">4</span></span>=<span class="frac"><span class="n">25</span><span class="d">20</span></span>、<span class="frac"><span class="n">7</span><span class="d">10</span></span>=<span class="frac"><span class="n">14</span><span class="d">20</span></span>、<span class="frac"><span class="n">1</span><span class="d">5</span></span>=<span class="frac"><span class="n">4</span><span class="d">20</span></span></div>
+        <div class="step"><span>ステップ3</span>(25+14−4)/20=<span class="frac"><span class="n">35</span><span class="d">20</span></span>。最大公約数5で約分 → <strong><span class="frac"><span class="n">7</span><span class="d">4</span></span></strong></div>
         <div class="bx bx-link">通分→計算→約分の3ステップは、中1の分数計算でもまったく同じ。3つ以上でも考え方は変わらない。</div>
-        <div class="bx bx-warn">答えを 35/20 で止めない。最後の約分まで忘れずに。「約分まで」が合い言葉。</div>
-        <div class="ans-final"><span>こたえ</span>7/4（＝1と3/4）</div>
+        <div class="bx bx-warn">答えを <span class="frac"><span class="n">35</span><span class="d">20</span></span> で止めない。最後の約分まで忘れずに。「約分まで」が合い言葉。</div>
+        <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">7</span><span class="d">4</span></span>（＝1<span class="frac"><span class="n">3</span><span class="d">4</span></span>）</div>
       </div>
       <div class="gq" data-gid="M-8">
-        <div class="grade"><span class="gq-label">問題27</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">問題24</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>

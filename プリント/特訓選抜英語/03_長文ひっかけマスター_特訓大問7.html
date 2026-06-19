@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 特訓選抜 英語 大問7対策「長文ひっかけマスター」。2023実物の大問7(対話読解・3語英作・適語補充・内容一致○×のひっかけ)を再現。人物×好き嫌い×曜日×否定の逆を仕込む。夏前プリントCSS/JS流用。KEY=tokkun_e_rd7。-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓 英語 長文ひっかけマスター（大問7）｜20分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+.howto{background:#fffaf0;border:1px solid #e8d6a8;border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:13.5px;color:#7a5a1e}
+.howto b{color:#8a5a19}
+.passage{background:#fff;border:1px solid #d8e2f0;border-left:6px solid #9fb8d9;border-radius:8px;padding:16px 18px;margin-bottom:20px;font-size:15px;line-height:2.05;color:#2c3a4e}
+.passage .sp{font-weight:800;color:#31527a}
+.passage .nt{font-size:12.5px;color:#7a8aa3;margin-top:8px}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:14px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#e4f1ef;border-left:6px solid #91bdb7}
+.sec-hd h2{font-size:16px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-body{padding:14px 20px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:12px 0}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:8px}
+.qen{font-size:16px;font-weight:800;color:#31415f;margin-bottom:6px}
+.qjp{font-size:14px;color:#4c5b70;margin-bottom:8px}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+.ans-btn{margin-top:2px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;margin-top:10px}
+.ans-box.open{display:block}
+.rw-why{background:#f4faf9;border:1px solid #cfe6e2;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.9;color:#33524d}
+.rw-why b{color:#2f5a52}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#8a5a19}
+.bx-warn::before{content:"⚠️ ひっかけ注意（本番でここを落とす）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-warn .ng{color:#9b514d;font-weight:800}.bx-warn .ok{color:#3f7a4a;font-weight:800}
+.ans-final{margin-top:10px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important}
+  .write3{display:block!important}
+  .sec,.q,.passage{break-inside:avoid;page-break-inside:avoid}
+  .sec{box-shadow:none;margin-bottom:16px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓選抜 英語</span><span class="pg-badge">大問7 長文対話</span><span class="pg-badge">全8問</span></div>
+  <h1>長文ひっかけマスター（特訓 大問7）</h1>
+  <p>目安 約20分　＝対話を読んで、3語英作・適語補充・内容一致○×に答える。</p>
+  <p class="pg-sub">🌸 大問7は「読めるか」より「ひっかけに気づくか」。だれが何を好き・曜日・否定をチェック！</p>
+</div>
+
+<div class="howto">
+  <b>読むコツ（先に知っておこう）</b>：本番は <b>①だれが何を好き ②だれが何をする ③曜日 ④否定（〜しない）</b> を入れかえてひっかけてくる。読みながら<b>人物ごとに線を引く</b>と落とさない。
+</div>
+
+<!-- 本文 -->
+<div class="passage">
+  Emi is a junior high school student. Lucy is a student from Australia.<br>
+  <span class="sp">Lucy:</span> I like math and music. Do you like math, Emi?<br>
+  <span class="sp">Emi:</span> No, I don't. I like science. I'm in the science club.<br>
+  <span class="sp">Lucy:</span> Nice! On Sundays, I swim at the pool. Do you swim, too?<br>
+  <span class="sp">Emi:</span> No, I don't swim. I play tennis with my brother on Sundays.<br>
+  <span class="sp">Lucy:</span> Tennis is fun! Let's go to the library next Saturday and study together.<br>
+  <span class="sp">Emi:</span> OK! See you on Saturday.
+  <div class="nt">語注：Australia オーストラリア／science club 科学部／pool プール／library 図書館</div>
+</div>
+
+<!-- 問1 3語英作 -->
+<div class="sec"><div class="sec-hd"><h2>問1　Emi になったつもりで、3語の英語で答えよう</h2><span class="badge-grade">3語英作</span></div><div class="sec-body">
+
+  <div class="q" data-id="Q-1"><div class="qnum-e">問題1</div>
+    <div class="qen">Do you like math?</div><div class="qjp">（あなたは数学が好きですか）</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-why">Emi は「No, I don't. I like science.」と言っている＝数学は<b>好きでない</b>。一般動詞 like の否定の答えは <b>don't</b>。</div>
+      <div class="bx-warn">数学が好きなのは <span class="ng">Lucy</span>。Emi と混同しない。否定の答えは No, I <span class="ok">don't</span>.</div>
+      <div class="ans-final"><span>こたえ</span>No, I don't.</div>
+    </div>
+    <div class="gq" data-gid="Q-1"><div class="grade">合ってた？ <button class="o" onclick="g(this,'Q-1','o')">○</button><button class="x" onclick="g(this,'Q-1','x')">✕</button></div><div class="write3">📝 まちがえたら3回　No, I don't.　＿＿＿＿＿</div></div>
+  </div>
+
+  <div class="q" data-id="Q-2"><div class="qnum-e">問題2</div>
+    <div class="qen">Does your brother play tennis?</div><div class="qjp">（あなたのお兄さんはテニスをしますか）</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-why">Emi は「I play tennis with my brother on Sundays.」＝兄と<b>いっしょにテニスをする</b>。だから兄もする。3単現の答えは <b>does</b>。</div>
+      <div class="bx-warn">主語が your brother（3人称単数）なので、答えは Yes, he <span class="ok">does</span>.（do ではない）。</div>
+      <div class="ans-final"><span>こたえ</span>Yes, he does.</div>
+    </div>
+    <div class="gq" data-gid="Q-2"><div class="grade">合ってた？ <button class="o" onclick="g(this,'Q-2','o')">○</button><button class="x" onclick="g(this,'Q-2','x')">✕</button></div><div class="write3">📝 まちがえたら3回　Yes, he does.　＿＿＿＿＿</div></div>
+  </div>
+
+</div></div>
+
+<!-- 問2 適語補充 -->
+<div class="sec"><div class="sec-hd"><h2>問2　本文に合うよう、英語で答えよう</h2><span class="badge-grade">適語補充</span></div><div class="sec-body">
+
+  <div class="q" data-id="Q-3"><div class="qnum-e">問題3</div>
+    <div class="qen">What does Emi like?</div><div class="qjp">（Emi は何が好きですか）— She likes （　）.</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-why">Emi は「I like science.」と言っている。3単現なので She <b>likes</b> science.</div>
+      <div class="bx-warn">数学・音楽が好きなのは <span class="ng">Lucy</span>。Emi は <span class="ok">science</span>。likes の -s を忘れない。</div>
+      <div class="ans-final"><span>こたえ</span>She likes science.</div>
+    </div>
+    <div class="gq" data-gid="Q-3"><div class="grade">合ってた？ <button class="o" onclick="g(this,'Q-3','o')">○</button><button class="x" onclick="g(this,'Q-3','x')">✕</button></div><div class="write3">📝 まちがえたら3回　She likes science.　＿＿＿＿＿</div></div>
+  </div>
+
+  <div class="q" data-id="Q-4"><div class="qnum-e">問題4</div>
+    <div class="qen">Where does Lucy swim?</div><div class="qjp">（Lucy はどこで泳ぎますか）— She swims （　）（　）（　）.</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-why">Lucy は「I swim at the pool.」と言っている。場所をたずねる Where の答えは「at the pool」。</div>
+      <div class="bx-warn">泳ぐのは <span class="ng">Lucy</span>（Emi は「I don't swim」）。場所は <span class="ok">at the pool</span>。</div>
+      <div class="ans-final"><span>こたえ</span>She swims at the pool.</div>
+    </div>
+    <div class="gq" data-gid="Q-4"><div class="grade">合ってた？ <button class="o" onclick="g(this,'Q-4','o')">○</button><button class="x" onclick="g(this,'Q-4','x')">✕</button></div><div class="write3">📝 まちがえたら3回　She swims at the pool.　＿＿＿＿＿</div></div>
+  </div>
+
+</div></div>
+
+<!-- 問3 内容一致○× -->
+<div class="sec"><div class="sec-hd"><h2>問3　本文に合えば○、合わなければ✕</h2><span class="badge-grade">内容一致○×</span></div><div class="sec-body">
+
+  <div class="q" data-id="Q-5"><div class="qnum-e">問題5</div>
+    <div class="qjp">（1）Emi は数学が好きである。　→　○か✕か、ノートに書いてから答えを見よう</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-why">Emi は「No, I don't. I like science.」＝数学は好きでない。数学が好きなのは Lucy。</div>
+      <div class="bx-warn">人物の取りちがえ＝<span class="ng">Emi と Lucy を逆にしない</span>。数学好き＝Lucy。</div>
+      <div class="ans-final"><span>こたえ</span>✕（Emi は理科が好き。数学が好きなのは Lucy）</div>
+    </div>
+    <div class="gq" data-gid="Q-5"><div class="grade">合ってた？ <button class="o" onclick="g(this,'Q-5','o')">○</button><button class="x" onclick="g(this,'Q-5','x')">✕</button></div><div class="write3">📝 ✕（理由：理科が好き）をノートに書こう</div></div>
+  </div>
+
+  <div class="q" data-id="Q-6"><div class="qnum-e">問題6</div>
+    <div class="qjp">（2）Lucy は日曜日にプールで泳ぐ。　→　○か✕か</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-why">Lucy は「On Sundays, I swim at the pool.」＝日曜にプールで泳ぐ。本文どおり。</div>
+      <div class="bx-warn">これは本文と<span class="ok">合っている</span>＝○。正しいものを✕にしないよう注意。</div>
+      <div class="ans-final"><span>こたえ</span>○</div>
+    </div>
+    <div class="gq" data-gid="Q-6"><div class="grade">合ってた？ <button class="o" onclick="g(this,'Q-6','o')">○</button><button class="x" onclick="g(this,'Q-6','x')">✕</button></div><div class="write3">📝 ○ をノートに書こう</div></div>
+  </div>
+
+  <div class="q" data-id="Q-7"><div class="qnum-e">問題7</div>
+    <div class="qjp">（3）Emi は日曜日に兄とテニスをする。　→　○か✕か</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-why">Emi は「I play tennis with my brother on Sundays.」＝日曜に兄とテニス。本文どおり。</div>
+      <div class="bx-warn">泳ぐ(swim)のは Lucy、テニスは Emi。<span class="ok">○</span>。動作の人物を取りちがえない。</div>
+      <div class="ans-final"><span>こたえ</span>○</div>
+    </div>
+    <div class="gq" data-gid="Q-7"><div class="grade">合ってた？ <button class="o" onclick="g(this,'Q-7','o')">○</button><button class="x" onclick="g(this,'Q-7','x')">✕</button></div><div class="write3">📝 ○ をノートに書こう</div></div>
+  </div>
+
+  <div class="q" data-id="Q-8"><div class="qnum-e">問題8</div>
+    <div class="qjp">（4）Emi と Lucy は次の日曜日に図書館へ行く。　→　○か✕か</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-why">Lucy は「Let's go to the library next <b>Saturday</b>.」＝次の<b>土曜</b>。日曜ではない。</div>
+      <div class="bx-warn">曜日のひっかけ＝<span class="ng">日曜 ≠ 土曜</span>。next Saturday なので✕。曜日は必ず本文で確認。</div>
+      <div class="ans-final"><span>こたえ</span>✕（次の土曜日＝Saturday。日曜ではない）</div>
+    </div>
+    <div class="gq" data-gid="Q-8"><div class="grade">合ってた？ <button class="o" onclick="g(this,'Q-8','o')">○</button><button class="x" onclick="g(this,'Q-8','x')">✕</button></div><div class="write3">📝 ✕（理由：土曜日）をノートに書こう</div></div>
+  </div>
+
+</div></div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 ぜんぶ読めた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">「だれが・何を・いつ・する/しない」を本文で確認するクセがつけば、ひっかけは怖くないよ。</div>
+
+</div>
+<script>
+var KEY='tokkun_e_rd7';
+function t(b){if(!b.dataset.label)b.dataset.label=b.textContent;var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');b.textContent=open?'とじる':b.dataset.label;}
+function g(btn,id,v){var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);var w3=box.querySelector('.write3');if(v==='x'){if(w3)w3.style.display='block';}else{if(w3)w3.style.display='none';}}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よく読めた！ひっかけに気づく力がついてきたね 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);if(!v)return;var b=box.querySelector('.'+v);if(b)b.classList.add('sel');if(v==='x'){var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}});if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}};
+</script>
+</body>
+</html>

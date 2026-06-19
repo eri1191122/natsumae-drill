@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>復習08 場合の数・規則性・数列｜15分</title>
+<title>復習08 場合の数・規則性・数列｜約30分</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
@@ -78,9 +79,31 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 .q.calc .qbody{font-size:18px;font-weight:700;margin:2px 0 4px;color:#31415f}
 .q.calc .qcue{font-size:12px;color:#8a93a0;margin-bottom:6px}
 
+/* 英語カード専用 */
+.qnum-e{font-size:12px;font-weight:800;color:#5f4b8a;margin-bottom:2px}
+.qword{font-size:20px;font-weight:700;color:#2f3b4a;margin:2px 0 4px}
+.qhint{font-size:12px;color:#8a93a0;margin-bottom:6px}
+.ans-main{font-size:20px;font-weight:900;color:#2f6b45;margin-bottom:4px}
+.ans-read{font-size:13px;color:#607086;margin-bottom:6px}
+
 /* 図・書き欄 */
 .fig{font-family:'Courier New',monospace;background:#f2f4f5;border:1px solid #dde2e4;border-radius:6px;padding:10px 14px;margin:8px 0;font-size:14px;line-height:1.9;white-space:pre;overflow-x:auto;color:#2f3b4a}
 .draw{background:#fffdf6;border:1px dashed #d9b46d;border-radius:8px;padding:12px 14px;margin:8px 0;font-size:13px;color:#8a5a19;min-height:54px}
+
+/* 英作文専用 */
+.ew-task{font-size:13px;color:#8a5a19;font-weight:700;margin-bottom:4px}
+.ew-jp{font-size:19px;font-weight:900;color:#2f3b4a;margin:6px 0}
+.ew-line{font-size:14px;color:#607086;margin-bottom:8px}
+.deep-head{font-size:13px;font-weight:900;color:#3f6f4a;margin-bottom:6px}
+.deep{background:#f6fbf7;border-left:4px solid #9abf9d;border-radius:6px;padding:10px 14px;margin:6px 0 10px;font-size:13px;color:#2f3b4a}
+.deep p{margin:4px 0}
+.ok{color:#2f6b45;font-weight:800}
+.ng{color:#9b514d;font-weight:800}
+.fill{background:#fffdf3;border:1px dashed #d9b46d;border-radius:6px;padding:10px 14px;margin:10px 0}
+.fill-q{font-size:13px;color:#5a4a2a;margin-bottom:6px}
+.fill-btn{font-size:12px;background:#e6cf8f;color:#5a3e10;border:none;border-radius:12px;padding:4px 12px;cursor:pointer;font-weight:700}
+.fill-a{display:none;margin-top:6px;font-size:13px;font-weight:700;color:#2f6b45}
+.fill-a.open{display:block}
 
 /* 答えボタン・答え枠 */
 .ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
@@ -133,14 +156,90 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
   <div><span class="pg-badge">復習08</span><span class="pg-badge">数学：場合の数・規則性・数列</span></div>
   <h1>場合の数・規則性・数列（8問）</h1>
-  <p>6/24(水)　対象: 中1</p>
-  <p class="pg-cheer">きょうは場合の数と規則性だけ・約15分。全統中で落とした「4n−4」と「並べる数え方」をここで取り返そう。まず1問ずつ、図をかいてから答えを見ればOK。いっしょにいこう！</p>
+  <p>6/24(水)　目安：英語10＋熟語3＋英作文1＋数学・約30分　対象: 中1</p>
+  <div class="pg-cheer">🌸 きょうは英語10＋熟語3＋英作文1＋場合の数と規則性。模試で落とした「4n−4」と「並べる数え方」をここで取り返そう。まず1問ずつ、図をかいてから答えを見ればOK。いっしょにいこう！</div>
+</div>
+
+<!-- ============ 英語：単語 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語</span>
+  <span class="unit-name">単語 10問（意味 → ノートに英語）</span>
+  <span class="unit-time">意味を見て、ノートに英語を書こう</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>単語を書いてみよう</h2><span class="badge-grade">中1必須</span></div>
+  <div class="sec-body">
+    <div class="q vocab" data-id="W-1"><div class="qnum-e">英①｜単語</div><div class="qword">7（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">seven</div><div class="ans-read">読み：セブン</div><div class="bx bx-warn">s-e-v-e-n。v を b にしない。</div></div><div class="gq" data-gid="W-1"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-2"><div class="qnum-e">英②｜単語</div><div class="qword">9（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">nine</div><div class="ans-read">読み：ナイン</div><div class="bx bx-warn">n-i-n-e。最後の e を落とさない。</div></div><div class="gq" data-gid="W-2"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-3"><div class="qnum-e">英③｜単語</div><div class="qword">10（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">ten</div><div class="ans-read">読み：テン</div><div class="bx bx-warn">t-e-n。シンプルだが ten＋teen（十代）の土台。</div></div><div class="gq" data-gid="W-3"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-4"><div class="qnum-e">英④｜単語</div><div class="qword">11（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">eleven</div><div class="ans-read">読み：イレブン</div><div class="bx bx-warn">e-l-e-v-e-n。<span class="red">l は1つ・e は3つ</span>。エレベン。</div></div><div class="gq" data-gid="W-4"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-5"><div class="qnum-e">英⑤｜単語</div><div class="qword">12（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">twelve</div><div class="ans-read">読み：トゥウェルブ</div><div class="bx bx-warn"><span class="red">twelve</span>：t-w-e-l-v-e。w を落とさない。12は「twel-」なので 20（twenty）とつづりが全然ちがう。</div></div><div class="gq" data-gid="W-5"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-6"><div class="qnum-e">英⑥｜単語</div><div class="qword">13（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">thirteen</div><div class="ans-read">読み：サーティーン</div><div class="bx bx-warn"><span class="red">thir-teen</span>：thr<b>ee</b>（3）のeが消えて thir になる。teen（＝10代）をあとにつなぐ。3→<b>thir</b>teen。</div></div><div class="gq" data-gid="W-6"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-6','o')">○</button><button class="x" onclick="g(this,'W-6','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-7"><div class="qnum-e">英⑦｜単語</div><div class="qword">15（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">fifteen</div><div class="ans-read">読み：フィフティーン</div><div class="bx bx-warn"><span class="red">fif-teen</span>：five（5）のveが<b>f</b>に変わる → fif+teen。<span class="ng">✕ fiveteen</span> → <span class="ok">○ fifteen</span>。</div></div><div class="gq" data-gid="W-7"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-7','o')">○</button><button class="x" onclick="g(this,'W-7','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-8"><div class="qnum-e">英⑧｜単語</div><div class="qword">18（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">eighteen</div><div class="ans-read">読み：エイティーン</div><div class="bx bx-warn"><span class="red">eight-een</span>：eight（8）にeenをそのままつなぐ。t が重ならないことに注意（eightt ではない）。</div></div><div class="gq" data-gid="W-8"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-8','o')">○</button><button class="x" onclick="g(this,'W-8','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-9"><div class="qnum-e">英⑨｜単語</div><div class="qword">20（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">twenty</div><div class="ans-read">読み：トゥウェンティ</div><div class="bx bx-warn"><span class="red">twenty</span>：t-w-e-n-t-y。two（2）の語形がかわる。<span class="ng">✕ twety</span> → <span class="ok">○ twenty</span>。語尾は y。</div></div><div class="gq" data-gid="W-9"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-9','o')">○</button><button class="x" onclick="g(this,'W-9','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-10"><div class="qnum-e">英⑩｜単語</div><div class="qword">30（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">thirty</div><div class="ans-read">読み：サーティ</div><div class="bx bx-warn"><span class="red">thirty</span>：t-h-i-r-t-y。thirteen（13）と同じ「thir-」を使う。語尾は ty（teen ではない）。</div></div><div class="gq" data-gid="W-10"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-10','o')">○</button><button class="x" onclick="g(this,'W-10','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+  </div>
+</div>
+
+<!-- ============ 英語：熟語 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語</span>
+  <span class="unit-name">熟語 3問</span>
+  <span class="unit-time">小さいことば（at / up / a）を落とさない</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>熟語を書いてみよう</h2><span class="badge-grade">中1</span></div>
+  <div class="sec-body">
+    <div class="q vocab" data-id="P-1"><div class="qnum-e">英⑪｜熟語</div><div class="qword">〜を見る</div><div class="qhint">英語（2語）で書こう</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">look at ～</div><div class="ans-read">読み：ルック アット</div><div class="bx bx-warn"><strong>at を落とさない</strong>。Look at the board.（黒板を見て）。look for（さがす）と混ぜない。</div></div><div class="gq" data-gid="P-1"><div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="P-2"><div class="qnum-e">英⑫｜熟語</div><div class="qword">起きる</div><div class="qhint">英語（2語）で書こう</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">get up</div><div class="ans-read">読み：ゲット アップ</div><div class="bx bx-warn"><strong>up を落とさない</strong>。I get up at 7.（7時に起きる）。get と up はセットで覚える。</div></div><div class="gq" data-gid="P-2"><div class="grade">書けた？ <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="P-3"><div class="qnum-e">英⑬｜熟語</div><div class="qword">風呂に入る</div><div class="qhint">英語（3語）で書こう</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">take a bath</div><div class="ans-read">読み：テイク ア バース</div><div class="bx bx-warn"><strong>a を落とさない</strong>。take a bath で「入浴する」。<span class="red">bath</span> は名詞（お風呂）。take が動詞。</div></div><div class="gq" data-gid="P-3"><div class="grade">書けた？ <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+  </div>
+</div>
+
+<!-- ============ 英語：英作文 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語</span>
+  <span class="unit-name">英作文 1問</span>
+  <span class="unit-time">復習08／文法：一般動詞の疑問文（Do you ～?）</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>英作文にチャレンジ</h2><span class="badge-grade">中1</span></div>
+  <div class="sec-body">
+    <div class="q writing" data-id="EW-1">
+      <div class="qnum-e">英⑭｜英作文</div>
+      <div class="ew-task">📝 この日本語を、英語にして下の線に書こう（文法は自分で考える）</div>
+      <div class="ew-jp">「あなたは犬が好きですか。」</div>
+      <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="deep-head">📖 文法のせつめい（読んでから下の答えへ。わかる子は読みとばしてOK）</div>
+        <div class="deep">
+          <p><b>一般動詞（like / play / have など「〜する」）の疑問文は、文の先頭に <span class="ok">Do</span> を置き、主語と動詞原形を続ける。</b></p>
+          <p>You like dogs.（好きです）→ <b>Do</b> you like dogs?（好きですか？）。<br>最後は <b>?</b> をつける。文末の動詞は<b>原形のまま</b>（likes にしない）。</p>
+          <p><b>be動詞とは作り方が違う。</b>be動詞の疑問文は Are you ～? と動詞を前に出す。一般動詞は <b>Do＋主語＋動詞原形</b>。<span class="ng">✕ Are you like dogs?</span> → <span class="ok">○ Do you like dogs?</span></p>
+          <p><b>答え方：</b>Yes, I do. / No, I don't.（don't＝do not）。</p>
+          <p><b>ゴール🌸</b>：「〜しますか？」は Do you ＋動詞原形? で作れる。be動詞と混ぜない。</p>
+        </div>
+        <div class="fill">
+          <div class="fill-q">✍ 確認：一般動詞の疑問文は（ ① ）＋主語＋動詞の（ ② ）?</div>
+          <button class="fill-btn" onclick="this.nextElementSibling.classList.toggle('open')">確認の答えを見る</button>
+          <div class="fill-a">① Do ／ ② 原形</div>
+        </div>
+        <div class="ans-final"><span>こたえ</span>Do you like dogs?</div>
+      </div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら、正しい文を3回書こう　＿＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿＿</div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- ============ 数学：場合の数・規則性・数列 ============ -->
@@ -153,9 +252,9 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   <div class="sec-hd"><h2>まず自分で解く → 答え・解説を見る</h2><span class="badge-grade">小5〜6</span></div>
   <div class="sec-body">
 
-    <!-- 問題1 樹形図 並べる（おさらいカードはこの答え枠の先頭に同梱＝解く前は非表示） -->
+    <!-- 数① 樹形図 並べる（おさらいカードはこの答え枠の先頭に同梱＝解く前は非表示） -->
     <div class="q calc" data-id="M-1">
-      <div class="qnum">問1　L1 基礎</div>
+      <div class="qnum">数①　L1 基礎</div>
       <div class="qbody">A・B・C の3人を1列に並べます。並べ方は全部で何通りありますか。<br>樹形図をかいて数えよう。</div>
       <svg viewBox="0 0 360 180" style="max-width:360px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="樹形図の型（最初の枝分かれだけ）">
         <text x="30" y="20" font-size="11" fill="#8a93a0">1番目</text>
@@ -237,14 +336,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>6通り</div>
       </div>
       <div class="gq" data-gid="M-1">
-        <div class="grade"><span class="gq-label">問題1</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数①</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1','o')">○</button><button class="x" onclick="g(this,'M-1','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
-    <!-- 問題2 4色から3つ並べる ★全統中同型 -->
+    <!-- 数② 4色から3つ並べる ★模試同型 -->
     <div class="q calc" data-id="M-2">
-      <div class="qnum">問2　L2 標準　★全統中と同じ型・重要</div>
+      <div class="qnum">数②　L2 標準　★模試と同じ型・重要</div>
       <div class="qbody">赤・青・黄・緑 の4色から、ちがう3色を選んで1列に並べます。並べ方は何通りありますか。</div>
       <div class="qcue">まず1番目から、使える色が何通りかを順に書こう ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
@@ -257,14 +356,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>24通り</div>
       </div>
       <div class="gq" data-gid="M-2">
-        <div class="grade"><span class="gq-label">問題2</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数②</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2','o')">○</button><button class="x" onclick="g(this,'M-2','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
-    <!-- 問題3 組合せ 5人から2人 -->
+    <!-- 数③ 組合せ 5人から2人 -->
     <div class="q calc" data-id="M-3">
-      <div class="qnum">問3　L2 標準</div>
+      <div class="qnum">数③　L2 標準</div>
       <div class="qbody">A・B・C・D・E の5人から、係を2人選びます。選び方は何通りありますか。<br>（順番は関係ありません）</div>
       <div class="qcue">「並べる」のか「選ぶだけ」なのかを先に判断しよう ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
@@ -277,14 +376,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>10通り</div>
       </div>
       <div class="gq" data-gid="M-3">
-        <div class="grade"><span class="gq-label">問題3</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数③</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3','o')">○</button><button class="x" onclick="g(this,'M-3','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
-    <!-- 問題4 2つの箱から1個ずつ 和 ★期末6(7)同型 -->
+    <!-- 数④ 2つの箱から1個ずつ 和 ★期末6(7)同型 -->
     <div class="q calc" data-id="M-4">
-      <div class="qnum">問4　L3 応用　★期末6(7)と同じ型</div>
+      <div class="qnum">数④　★難問(L3)　★期末6(7)と同じ型</div>
       <div class="qbody">箱Aには 2, 5 の2枚、箱Bには 3, 7 の2枚のカードが入っています。<br>箱A・箱Bからそれぞれ1枚ずつ取り出すとき、2枚の数の<strong>和</strong>を全部書き出し、和が<strong>いちばん小さくなる</strong>組を答えなさい。</div>
       <svg viewBox="0 0 360 150" style="max-width:360px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="箱Aと箱Bから1枚ずつ取り出す対応の型">
         <defs>
@@ -317,14 +416,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>和の最小は 5（箱A=2 と 箱B=3 の組）</div>
       </div>
       <div class="gq" data-gid="M-4">
-        <div class="grade"><span class="gq-label">問題4</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数④</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4','o')">○</button><button class="x" onclick="g(this,'M-4','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
-    <!-- 問題5 規則性 等差 4n-1 -->
+    <!-- 数⑤ 規則性 等差 4n-1 -->
     <div class="q calc" data-id="M-5">
-      <div class="qnum">問5　L2 標準</div>
+      <div class="qnum">数⑤　L2 標準</div>
       <div class="qbody">3, 7, 11, 15, … と数がならんでいます。<br>n番目の数を n を使った式で表しなさい。</div>
       <div class="qcue">となりとの差はいくつ？ それが手がかり ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
@@ -337,14 +436,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>4n − 1</div>
       </div>
       <div class="gq" data-gid="M-5">
-        <div class="grade"><span class="gq-label">問題5</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5','o')">○</button><button class="x" onclick="g(this,'M-5','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数⑤</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5','o')">○</button><button class="x" onclick="g(this,'M-5','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
-    <!-- 問題6 正方形の辺に石 4n-4 ★全統中標準1(3)同型 最重要 -->
+    <!-- 数⑥ 正方形の辺に石 4n-4 ★模試標準1(3)同型 最重要 -->
     <div class="q calc" data-id="M-6">
-      <div class="qnum">問6　L3 応用　★全統中 標準1(3)と同じ型・最重要</div>
+      <div class="qnum">数⑥　★難問(L3)　★模試 標準1(3)と同じ型・最重要</div>
       <div class="qbody">正方形の形に、各辺に石を n 個ずつならべます。<br>石は全部で何個になりますか。n を使った式で表しなさい。</div>
       <svg viewBox="-85 0 480 230" style="max-width:480px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="正方形の各辺にn個ずつ石を並べた図（n=3）。角は2辺で共有されダブる">
         <text x="180" y="18" font-size="13" fill="#31415f" text-anchor="middle">n = 3（1辺に3個ずつ）</text>
@@ -380,18 +479,18 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="step"><span>角をひく</span>4すみの石は、となり合う2辺の両方で数えられている＝4個ぶん多い。だから −4。式は <strong>4n−4</strong>。</div>
         <div class="step"><span>確かめ</span>n=3 → 4×3−4＝12−4＝<strong>8個</strong>。上の図を数えても●は8個。合う。</div>
         <div class="bx bx-link">「重なって数えた分をひく」考え方は中学の規則性・集合の問題で必須。図で二重に数えた点を指でなぞると、なぜ−4かが体でわかる。</div>
-        <div class="bx bx-warn">「4n」と答えるミスが全統中で出た。これは4すみを2回ずつ数えている。角は4個、それぞれ1回多いので −4 が必要。正しくは 4n−4（n=3なら8個、4n=12ではない）。</div>
+        <div class="bx bx-warn">「4n」と答えるミスが模試で出た。これは4すみを2回ずつ数えている。角は4個、それぞれ1回多いので −4 が必要。正しくは 4n−4（n=3なら8個、4n=12ではない）。</div>
         <div class="ans-final"><span>こたえ</span>4n − 4</div>
       </div>
       <div class="gq" data-gid="M-6">
-        <div class="grade"><span class="gq-label">問題6</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数⑥</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
-    <!-- 問題7 周期 最小公倍数 連除法 -->
+    <!-- 数⑦ 周期 最小公倍数 連除法 -->
     <div class="q calc" data-id="M-7">
-      <div class="qnum">問7　L2 標準</div>
+      <div class="qnum">数⑦　L2 標準</div>
       <div class="qbody">3つのランプが、6秒・8秒・10秒 ごとに点滅します。<br>3つが同時に点滅したあと、次に同時に点滅するのは何秒後ですか。</div>
       <svg viewBox="0 0 440 130" style="max-width:440px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="連除法（はしご算）で6,8,10を2でわる図">
         <text x="40" y="56" font-size="16" fill="#31415f" text-anchor="middle">2</text>
@@ -420,14 +519,14 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>120秒後</div>
       </div>
       <div class="gq" data-gid="M-7">
-        <div class="grade"><span class="gq-label">問題7</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数⑦</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
 
-    <!-- 問題8 魔方陣 ★期末6(9)同型 -->
+    <!-- 数⑧ 魔方陣 ★期末6(9)同型 -->
     <div class="q calc" data-id="M-8">
-      <div class="qnum">問8　L3 応用　★期末6(9)と同じ型</div>
+      <div class="qnum">数⑧　★難問(L3)　★期末6(9)と同じ型</div>
       <div class="qbody">3×3 のマスに 1〜9 を1個ずつ入れ、たて・よこ・ななめのどの3つの和も 15 になるようにします。<br>下のア・イ・ウに入る数を求めなさい。</div>
       <svg viewBox="0 0 390 230" style="max-width:390px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="3×3魔方陣。たて・よこ・ななめの和が15">
         <rect x="50" y="30" width="210" height="210" rx="4" fill="#fff" stroke="#33485a" stroke-width="2"/>
@@ -467,7 +566,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
         <div class="ans-final"><span>こたえ</span>ア = 1、イ = 7、ウ = 4</div>
       </div>
       <div class="gq" data-gid="M-8">
-        <div class="grade"><span class="gq-label">問題8</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
+        <div class="grade"><span class="gq-label">数⑧</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
         <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
       </div>
     </div>
@@ -477,7 +576,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（復習08 完了）</button>
 <div class="fin" id="fin"></div>
-<div class="endcheer">きょうのカギは2つ。「並べるときは使った分だけかける数が減る（4×3×2）」と「外わくの石は角を二重に数えるから 4n−4」。全統中で落とした2問を、今日ここで取り返せた。よくがんばったね。あしたも5分からでOK。</div>
+<div class="endcheer">きょうのカギは2つ。「並べるときは使った分だけかける数が減る（4×3×2）」と「外わくの石は角を二重に数えるから 4n−4」。模試で落とした2問を、今日ここで取り返せた。よくがんばったね。あしたも5分からでOK。</div>
 
 </div>
 

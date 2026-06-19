@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>復習04 概数と数直線｜30分</title>
@@ -146,12 +147,16 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 .osarai .miss::before{content:"⚠️ かんちがい注意";display:block;font-size:11.5px;font-weight:800;color:#9b514d;margin-bottom:3px}
 .osarai b{color:#7a4e12}
 .osarai .ng{color:#9b514d;font-weight:800}.osarai .ok{color:#3f7a4a;font-weight:800}
+/* 武装版分数縦組み（!important でspecificityバグ対策） */
+.frac{display:inline-flex!important;flex-direction:column!important;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.95em;border:none!important;background:none!important;border-radius:0!important;padding:0!important}
+.frac .n{display:block!important;border:none!important;border-bottom:1.6px solid currentColor!important;background:none!important;border-radius:0!important;padding:0 4px 1px!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+.frac .d{display:block!important;border:none!important;background:none!important;border-radius:0!important;padding:1px 4px 0!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
@@ -586,7 +591,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="q calc" data-id="M-7">
       <div class="qnum">問題20｜小さい順に並べる</div>
       <div class="qbody">次の数を小さい順に並べよう。<br>
-        9/2　 3.1　 9/5　 5　 0.5　 2</div>
+        <span class="frac"><span class="n">9</span><span class="d">2</span></span>　 3.1　 <span class="frac"><span class="n">9</span><span class="d">5</span></span>　 5　 0.5　 2</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
@@ -595,16 +600,16 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
           <p>数直線＝数を<b>横の線</b>の上にならべた地図。左がわが小さい数、<b>右にいくほど大きい数</b>。</p>
           <p>目もり（線）の間が「1」とは限らない。「1目もりがいくつ分か」をまず見る（0.1ずつ、0.5ずつ、など）。</p>
           <div class="ex">分数と小数がまざったら、<b>同じ形にそろえて</b>から数直線にならべる。<br>
-            れい：9/2＝9÷2＝<b>4.5</b>、9/5＝9÷5＝<b>1.8</b> と小数になおすと、ならべやすい。</div>
+            れい：<span class="frac"><span class="n">9</span><span class="d">2</span></span>＝9÷2＝<b>4.5</b>、<span class="frac"><span class="n">9</span><span class="d">5</span></span>＝9÷5＝<b>1.8</b> と小数になおすと、ならべやすい。</div>
           <p><b>0からのきょり</b>＝0からどれだけ離れているか。0に近い数ほど、数直線で0のそばにある。これは中1で習う「<b>絶対値</b>」の入口だよ。</p>
           <div class="miss">「右が大きい」を「左が大きい」と逆に覚えやすい。<b>右＝大きい</b>。これは中1の正負の数（−3 ＜ −1）でもずっと使うよ。</div>
         </div>
-        <div class="step"><span>ステップ1</span>分数を小数にそろえる：9/2＝9÷2＝4.5、9/5＝9÷5＝1.8</div>
+        <div class="step"><span>ステップ1</span>分数を小数にそろえる：<span class="frac"><span class="n">9</span><span class="d">2</span></span>＝9÷2＝4.5、<span class="frac"><span class="n">9</span><span class="d">5</span></span>＝9÷5＝1.8</div>
         <div class="step"><span>ステップ2</span>小数で小さい順 → 0.5, 1.8, 2, 3.1, 4.5, 5</div>
-        <div class="step"><span>ステップ3</span>1.8→9/5、4.5→9/2 と元の表記に戻して答える。</div>
+        <div class="step"><span>ステップ3</span>1.8→<span class="frac"><span class="n">9</span><span class="d">5</span></span>、4.5→<span class="frac"><span class="n">9</span><span class="d">2</span></span> と元の表記に戻して答える。</div>
         <div class="bx bx-link">数直線では左から右へ大きくなる。この感覚は、中1で −3＜−1 のように負の数の大小を判断するときの基礎になる。</div>
         <div class="bx bx-warn">分数と小数が混ざったら、同じ形にそろえてから比べる。そろえずに見た目だけで並べると順番をまちがえる。</div>
-        <div class="ans-final"><span>こたえ</span>0.5 ＜ 9/5 ＜ 2 ＜ 3.1 ＜ 9/2 ＜ 5</div>
+        <div class="ans-final"><span>こたえ</span>0.5 ＜ <span class="frac"><span class="n">9</span><span class="d">5</span></span> ＜ 2 ＜ 3.1 ＜ <span class="frac"><span class="n">9</span><span class="d">2</span></span> ＜ 5</div>
       </div>
       <div class="gq" data-gid="M-7">
         <div class="grade"><span class="gq-label">問題20</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7','o')">○</button><button class="x" onclick="g(this,'M-7','x')">✕</button></div>
@@ -616,16 +621,16 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="q calc" data-id="M-8">
       <div class="qnum">問題21｜0に2番目に近い数</div>
       <div class="qbody">数直線で 0 に2番目に近い数はどれか。<br>
-        3.1　 5　 2　 9/5　 0.5</div>
+        3.1　 5　 2　 <span class="frac"><span class="n">9</span><span class="d">5</span></span>　 0.5</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
-        <div class="step"><span>ステップ1</span>「0に近い」＝数直線で0からの距離が小さい。9/5＝1.8 に直して比べる。</div>
+        <div class="step"><span>ステップ1</span>「0に近い」＝数直線で0からの距離が小さい。<span class="frac"><span class="n">9</span><span class="d">5</span></span>＝1.8 に直して比べる。</div>
         <div class="step"><span>ステップ2</span>0から近い順：0.5 → 1.8 → 2 → 3.1 → 5</div>
-        <div class="step"><span>ステップ3</span>0から2番目に近いのは 1.8 → 元の表記は <strong>9/5</strong></div>
+        <div class="step"><span>ステップ3</span>0から2番目に近いのは 1.8 → 元の表記は <strong><span class="frac"><span class="n">9</span><span class="d">5</span></span></strong></div>
         <div class="bx bx-link">「0からの距離」で大小を考える見方は、中1で習う絶対値（数直線上での0からのきょり）そのもの。今その入口に立っている。</div>
         <div class="bx bx-warn">「大きい順」ではなく「0から近い順」。単純に小さい方が近いとは限らないので、数直線上の位置を確認してから判断する。</div>
-        <div class="ans-final"><span>こたえ</span>9/5（＝1.8）</div>
+        <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">9</span><span class="d">5</span></span>（＝1.8）</div>
       </div>
       <div class="gq" data-gid="M-8">
         <div class="grade"><span class="gq-label">問題21</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>

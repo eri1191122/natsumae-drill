@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P7c 方程式の利用（発展L4・大問6対策）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 文章→式の型カード（毎回これにそって解く）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai .ot{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai p{font-size:13.5px;line-height:1.95;color:#5a4520;margin:4px 0}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.9;color:#5a4520}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.zukai{background:#fbfaf5;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Courier New',monospace;font-size:13px;color:#6a5a32;white-space:pre-wrap;line-height:1.7}
+.zukai::before{content:"📐 図（線分図・表）";display:block;font-family:'Hiragino Kaku Gothic ProN',sans-serif;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.svgfig{background:#fbfdff;border:1px solid #dbe7f3;border-radius:8px;padding:10px 12px;margin:8px 0}
+.svgfig::before{content:"📐 図";display:block;font-size:11px;font-weight:800;color:#3f6f9f;margin-bottom:4px}
+.svgfig svg{display:block;max-width:100%;height:auto}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:0.9em}
+.frac .n{border-bottom:1.6px solid currentColor;padding:0 4px 1px}
+.frac .d{padding:1px 4px 0}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P7c</span><span class="pg-badge">数学：方程式の利用</span><span class="pg-badge">★発展 L3-L4（大問6・最難対策）</span></div>
+  <h1>方程式の利用・発展｜9月特訓選抜の「大問6（速さの最難問）」を直撃する4問</h1>
+  <p>夏・特訓対策　目安：約35分（問1〜問4・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">ここは特訓選抜の<strong>いちばんの山＝大問6</strong>。出会い・追い越し・時刻の逆算・動点と、ひとつ上のレベルがそろっている。むずかしいけれど、やることは今までと同じ＝<strong>①図をかく ②等しいものを＝で結ぶ ③解いて文章にもどす</strong>。今日は<strong>4問だけ</strong>。1問ずつ図をていねいにかいて、「型」を体に入れよう。とけなくても、図がかければ大きな一歩だ。</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 何を求める？</b> → それを <span class="math">x</span> とおく（時刻を聞かれても、まず「○分後」を x にすると楽）</li>
+    <li><b>② 図にする</b>（線分図・ダイヤ図・動点図）＝だれがどこをどれだけ進むかを見える形に</li>
+    <li><b>③ 等しい関係を式に</b>（道のり・面積などで「＝で結べる2つの言い方」をさがす）</li>
+    <li><b>④ 解く</b>（移項して x ＝ の形へ。分数は両辺×分母で払う）</li>
+    <li><b>⑤ 検算＆もどす</b>（出た x を文章に戻す。時刻は「出発時刻＋x分」で何時何分かに直す）</li>
+  </ol>
+</div>
+
+<!-- ===== 問1 出会い + 時刻 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">★出会い＋出会う時刻（同時出発・向かい合い）L3 発展</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問1</span>1800mはなれたP地点とQ地点がある。9時ちょうどに、きみはPを分速70mで、もう1人はQを分速80mで、同時に向かい合って歩き出した。(1) 2人は出発して何分後に出会うか。(2) 出会う時刻は何時何分か。</div>
+  <div class="note-draw">向かい合って進むと、2人の進んだ道のりを合わせると、はじめの距離（1800m）になる。出会うまでの時間を x にして、まず(1)。時刻(2)は「9時＋x分」で出す。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">
+      <div class="ot">⓪ 速さの3つの関係</div>
+      <ul>
+        <li><b>道のり＝速さ×時間</b>　<b>時間＝道のり÷速さ</b>　<b>速さ＝道のり÷時間</b></li>
+        <li>「出会い」＝向かい合って近づく → 2人の道のりを<b>足す</b>と、はじめの間の距離になる。</li>
+      </ul>
+    </div>
+    <div class="bx bx-key">出会い算＝<strong>2人の進んだ道のりの合計＝はじめにはなれていた距離</strong>。同時出発なので、2人とも進んだ時間は同じ x。時刻は最後に<strong>「出発時刻＋x分」</strong>で直す。</div>
+    <div class="step q1"><span>①x</span>出発してから x 分後に出会うとする（2人とも x 分歩く）。</div>
+    <div class="svgfig"><svg viewBox="0 0 360 100" role="img" aria-label="出会い算ダイヤの線分図">
+      <line x1="30" y1="42" x2="330" y2="42" stroke="#cdbf96" stroke-width="2"/>
+      <circle cx="30" cy="42" r="4" fill="#2f5a8a"/><circle cx="330" cy="42" r="4" fill="#8a5a19"/>
+      <text x="14" y="64" font-size="12" fill="#2f5a8a">P</text>
+      <text x="322" y="64" font-size="12" fill="#8a5a19">Q</text>
+      <text x="148" y="20" font-size="12" fill="#33433a">1800m</text>
+      <line x1="30" y1="42" x2="170" y2="42" stroke="#7aa7d9" stroke-width="4"/>
+      <line x1="192" y1="42" x2="330" y2="42" stroke="#e0a85c" stroke-width="4"/>
+      <text x="52" y="80" font-size="11" fill="#3f6f9f">きみ 70x →</text>
+      <text x="238" y="80" font-size="11" fill="#8a5a19">← 80x</text>
+      <text x="172" y="36" font-size="13" fill="#9b514d">●出会う</text>
+    </svg></div>
+    <div class="step q1"><span>③式</span>道のりの合計＝1800：きみは 70x m、もう1人は 80x m 進む。<span class="math">70x＋80x＝1800</span>。</div>
+    <div class="step q1"><span>④解</span>150x＝1800 → x＝12。（1）の答え＝12分後。</div>
+    <div class="step q1"><span>⑤検算＆もどす</span>きみ 70×12＝840m、相手 80×12＝960m。840＋960＝1800m○。時刻は 9時00分＋12分＝<strong>9時12分</strong>。</div>
+    <div class="bx bx-warn"><span class="red">「合計」を「差」にしない</span>。向かい合うと近づくので、2人の道のりは<strong>足す</strong>。差にすると追い越し算とまざる。<span class="red">(2)で「12」とだけ書かない</span>＝聞かれたのは時刻。9時に12分を足して「9時12分」と答える。</div>
+    <div class="bx bx-link">出会い→出会う時刻は特訓選抜 大問6(1)の定番。「○分後」を出してから「出発時刻＋○分」で時刻に直す流れは、次の問2（追い越し）でもそのまま使う。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 12分後　(2) 9時12分</div>
+  </div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1) 何分後</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">式が作れない（K）</button><button onclick="m(this)">図はかけたが解けない（A）</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2) 出会う時刻</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">式が作れない（K）</button><button onclick="m(this)">図はかけたが解けない（A）</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問2 追い越し + 時刻逆算（最難の同型） ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">★追い越し＋時刻の逆算（後から出た人が追いつく時刻）L4 発展・最難</span><span class="unit-time">目安 10分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問2</span>妹が8時50分に家を出て、分速60mで駅へ歩き出した。姉は8時59分に家を出て、同じ道を分速150mで自転車で追いかけた。姉が妹に追いつくのは何時何分か。</div>
+  <div class="note-draw">追いつく＝「2人の進んだ道のりが同じ」になったとき。妹は姉より早く出ている（差は何分？）。姉が出発してからの時間を x にして、まず「何分後に追いつくか」を出し、最後に時刻へ逆算しよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">追い越し算＝<strong>2人の進んだ道のりが等しくなる</strong>。同じ家から同じ道を進むので、追いついた瞬間は「家からの道のり」が一致＝<strong>＝で結ぶ</strong>。出会い（合計）とちがう点に注意。時刻は最後に<strong>「姉の出発時刻＋x分」</strong>で直す（時をまたぐので+−に注意）。</div>
+    <div class="step q2"><span>①x</span>姉が出発してから x 分後に追いつくとする。先に出た差は 8時59分−8時50分＝<strong>9分</strong>。だから、そのとき妹は <span class="math">(x＋9)</span> 分歩いている。</div>
+    <div class="svgfig"><svg viewBox="0 0 360 110" role="img" aria-label="追い越し算の線分図">
+      <text x="14" y="24" font-size="12" fill="#8a5a17">家</text>
+      <line x1="30" y1="32" x2="320" y2="32" stroke="#e0a85c" stroke-width="4"/>
+      <text x="58" y="24" font-size="11" fill="#8a5a17">妹 60×(x+9)　（先に9分）</text>
+      <line x1="30" y1="64" x2="320" y2="64" stroke="#7aa7d9" stroke-width="4"/>
+      <text x="62" y="84" font-size="11" fill="#3f6f9f">姉 150×x</text>
+      <line x1="320" y1="24" x2="320" y2="72" stroke="#9b514d" stroke-width="1.5" stroke-dasharray="3 3"/>
+      <text x="276" y="104" font-size="12" fill="#9b514d">●追いつく（道のり同じ）</text>
+    </svg></div>
+    <div class="step q2"><span>③式</span>道のりが等しい：姉 150x ＝ 妹 60(x＋9)。<span class="math">150x＝60(x＋9)</span>。</div>
+    <div class="step q2"><span>④解</span>150x＝60x＋540 → 150x−60x＝540 → 90x＝540 → x＝6。姉が出発してから6分後。</div>
+    <div class="step q2"><span>⑤検算＆もどす</span>姉 150×6＝900m、妹 60×(6＋9)＝60×15＝900m。どちらも900mで一致○。時刻は 8時59分＋6分。59＋6＝65分＝1時間5分くりあがるので <strong>9時05分</strong>。</div>
+    <div class="bx bx-warn"><span class="red">妹の時間を x にしない</span>（妹は x＋9 分歩いている）。<span class="red">60(x＋9) を 60x＋9 としない</span>＝かっこの中の全部に60をかける（＝60x＋540）。<span class="red">時刻のくりあがりに注意</span>＝8時59分＋6分は「8時65分」ではなく9時05分。</div>
+    <div class="bx bx-link">これが特訓選抜 大問6(2)の<strong>最難パターンそのもの</strong>。「先に出た人は時間が多い → ＋で式に入れる」「答えを時刻に逆算する（くりあがり）」の2つが山。問1の出会い（足す）と見くらべ、足すか＝かを図で判断しよう。</div>
+    <div class="ans-final"><span>こたえ</span>9時05分（姉が出発して6分後）</div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">式が作れない（K）</button><button onclick="m(this)">時刻の逆算ミス（C）</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問3 バス2台の速さ推定 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★バス2台のすれ違い（速さを先に求める）L4 本番級</span><span class="unit-time">目安 9分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問3</span>A駅とB駅は24kmはなれています。バスPは9時00分にA駅を出発し、バスQは9時06分にB駅を出発して、たがいに向かい合って同じ速さで走りました。2台は9時18分にすれ違いました。バスの速さは時速何kmですか。</div>
+  <div class="note-draw">2台の速さを v km/h とする。Pは18分、Qは12分走っている。時間を「時間」に直して、2台の進んだ道のりの和＝24km にする。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">本番の速さ発展は、いきなり自転車を考えず、まず<strong>バスの速さを条件から推定</strong>する。すれ違いは、2台の進んだ道のりの和がA駅〜B駅の距離になる。</div>
+    <div class="step q3"><span>①x</span>バスP・Qの速さを v km/h とする。</div>
+    <div class="zukai">P：9:00→9:18 ＝ 18分 ＝ 18/60時間
+Q：9:06→9:18 ＝ 12分 ＝ 12/60時間
+Pの道のり + Qの道のり = 24km</div>
+    <div class="step q3"><span>③式</span><span class="math">v×18/60＋v×12/60＝24</span>。</div>
+    <div class="step q3"><span>④解</span>18/60＋12/60＝30/60＝1/2。だから <span class="math">v×1/2＝24</span> → v＝48。</div>
+    <div class="step q3"><span>⑤検算</span>Pは48×18/60＝14.4km、Qは48×12/60＝9.6km。14.4＋9.6＝24km○。</div>
+    <div class="bx bx-warn"><span class="red">18分と12分をそのまま18時間・12時間として使わない</span>。時速なので、分は必ず60で割って時間に直す。<span class="red">PとQの時間は同じではない</span>。Qは9時06分出発なので12分だけ。</div>
+    <div class="bx bx-link">9月特訓選抜 大問6の前半に近い型。ここで求めたバスの速さを、次の問4で使う。<strong>前問の結果を次問へつなぐ</strong>のが本番級。</div>
+    <div class="ans-final"><span>こたえ</span>時速48km</div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★L4</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">時間を分→時間に直せない（K）</button><button onclick="m(this)">すれ違いの式が作れない（A）</button></div><div class="write3">📝 まちがえたら、18/60・12/60 と道のりの和をノートに書こう</div></div>
+</div>
+
+<!-- ===== 問4 バス2台＋自転車の出発時刻逆算 ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★バス2台＋自転車（追い越し・すれ違い時刻逆算）L4-L5</span><span class="unit-time">目安 12分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問4</span>問3と同じA駅・B駅間で、バスPは9時00分にA駅を出発し、バスQは9時06分にB駅を出発します。ある人が自転車でA駅を出発したところ、9時10分にバスPに追い越され、その12分後にバスQとすれ違いました。自転車がA駅を出発した時刻を求めなさい。</div>
+  <div class="note-draw">問3のバスの速さ48km/hを使う。9:10にバスPがいる位置、9:22にバスQがいる位置をそれぞれA駅からの距離で出す。自転車はその2点を12分で進んだ。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">これは本番最難型。<strong>バスの位置を2回出す → その間の自転車の速さを出す → 追い越された時刻から出発時刻を逆算</strong>する。1本の式で終わらない、2段処理の問題。</div>
+    <div class="step q4"><span>①Pの位置</span>バスPは9:00から9:10まで10分走る。48km/h×10/60＝<span class="math">8km</span>。9:10に自転車はA駅から8kmの地点で追い越された。</div>
+    <div class="step q4"><span>②Qの位置</span>「その12分後」は9:22。バスQは9:06から9:22まで16分走る。B駅から48×16/60＝12.8km進む。A駅から見ると 24−12.8＝<span class="math">11.2km</span>。</div>
+    <div class="step q4"><span>③自転車の速さ</span>自転車は9:10から9:22の12分で、8km地点から11.2km地点まで進む。進んだ道のりは3.2km。速さ＝3.2÷(12/60)＝<span class="math">16km/h</span>。</div>
+    <div class="step q4"><span>④出発時刻</span>自転車がA駅から8km地点まで行く時間は、8÷16＝0.5時間＝30分。9:10の30分前に出発したので、<span class="math">8時40分</span>。</div>
+    <div class="step q4"><span>⑤検算</span>8:40→9:10で30分、16km/hなら8km進む。9:10→9:22で12分、さらに3.2km進んで11.2km地点。Qも9:22にAから11.2km地点なので一致○。</div>
+    <div class="bx bx-warn"><span class="red">Qの位置をB駅からの距離のまま使わない</span>。自転車はA駅から進むので、Qの位置もA駅からの距離に直す（24−12.8）。<span class="red">最後に「30分」と答えない</span>。聞かれているのは出発時刻。</div>
+    <div class="bx bx-link">9月特訓選抜 大問6(2)の同型。追い越し・すれ違い・時刻逆算が同時に入るので、ここが解ければ後半L4を拾える。</div>
+    <div class="ans-final"><span>こたえ</span>8時40分</div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★L4-L5</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">A駅からの距離に直せない（K）</button><button onclick="m(this)">出発時刻へ戻せない（A）</button></div><div class="write3">📝 まちがえたら、Pの位置→Qの位置→自転車の速さ→出発時刻を4行で書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P7c 発展L4・大問6対策 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">大問6対策の発展4問、本当におつかれさま！今日の収穫は<strong>「速さの問題は、時刻ごとの位置をA駅からの距離にそろえる」</strong>こと。出会い＝道のりの合計、追い越し＝道のりが等しい、そして本番級は「バスの速さを先に求める→別の時刻の位置を出す→出発時刻へ戻す」。とけなかった問題は、時刻・位置・速さを表にしてノートに書き直そう。この山を登れたら、特訓選抜の大問6はきみの得点源になる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m07c';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！発展L4・大問6対策 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
+<meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>復習01 小学校算数スタート＋中1単語・熟語｜30分</title>
@@ -156,12 +157,16 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
   .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
   .q{break-inside:avoid;page-break-inside:avoid}
 }
+/* 武装版分数縦組み（!important でspecificityバグ対策） */
+.frac{display:inline-flex!important;flex-direction:column!important;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.95em;border:none!important;background:none!important;border-radius:0!important;padding:0!important}
+.frac .n{display:block!important;border:none!important;border-bottom:1.6px solid currentColor!important;background:none!important;border-radius:0!important;padding:0 4px 1px!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+.frac .d{display:block!important;border:none!important;background:none!important;border-radius:0!important;padding:1px 4px 0!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index.html">← もどる</a>
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <!-- ページヘッダー -->
 <div class="pg-hd">
@@ -446,16 +451,16 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <!-- M-2 演算順序 分数混じり -->
     <div class="q calc" data-id="M-2">
       <div class="qnum">問題13・14｜計算の順番（分数）</div>
-      <div class="qbody">(1) 1/2 ＋ 1/4 × 2　(2) 2 ×（1/3 ＋ 1/6）− 1/4</div>
+      <div class="qbody">(1) <span class="frac"><span class="n">1</span><span class="d">2</span></span> ＋ <span class="frac"><span class="n">1</span><span class="d">4</span></span> × 2　(2) 2 ×（<span class="frac"><span class="n">1</span><span class="d">3</span></span> ＋ <span class="frac"><span class="n">1</span><span class="d">6</span></span>）− <span class="frac"><span class="n">1</span><span class="d">4</span></span></div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
         <div class="step"><span>ステップ1</span>鉛筆を動かす前に「×÷はどこ？カッコは？」を確認。</div>
-        <div class="step"><span>解説(1)</span>先に 1/4×2=1/2 → 1/2+1/2=<strong>1</strong></div>
-        <div class="step"><span>解説(2)</span>カッコ内 1/3+1/6=2/6+1/6=3/6=1/2 → 2×1/2=1 → 1−1/4=<strong>3/4</strong></div>
+        <div class="step"><span>解説(1)</span>先に <span class="frac"><span class="n">1</span><span class="d">4</span></span>×2=<span class="frac"><span class="n">1</span><span class="d">2</span></span> → <span class="frac"><span class="n">1</span><span class="d">2</span></span>+<span class="frac"><span class="n">1</span><span class="d">2</span></span>=<strong>1</strong></div>
+        <div class="step"><span>解説(2)</span>カッコ内 <span class="frac"><span class="n">1</span><span class="d">3</span></span>+<span class="frac"><span class="n">1</span><span class="d">6</span></span>=<span class="frac"><span class="n">2</span><span class="d">6</span></span>+<span class="frac"><span class="n">1</span><span class="d">6</span></span>=<span class="frac"><span class="n">3</span><span class="d">6</span></span>=<span class="frac"><span class="n">1</span><span class="d">2</span></span> → 2×<span class="frac"><span class="n">1</span><span class="d">2</span></span>=1 → 1−<span class="frac"><span class="n">1</span><span class="d">4</span></span>=<strong><span class="frac"><span class="n">3</span><span class="d">4</span></span></strong></div>
         <div class="bx bx-link">分数が入っても順番ルールは変わらない。中1の正負＋分数の計算でも「×÷が先」は同じ。</div>
         <div class="bx bx-warn">いちばん多いのは「左から順に計算」。式をながめてから解き始めるクセが、中学の計算でそのまま得点になる。</div>
-        <div class="ans-final"><span>こたえ</span>(1) 1　(2) 3/4</div>
+        <div class="ans-final"><span>こたえ</span>(1) 1　(2) <span class="frac"><span class="n">3</span><span class="d">4</span></span></div>
       </div>
       <div class="gq" data-gid="M-2a">
         <div class="grade"><span class="gq-label">問題13（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2a','o')">○</button><button class="x" onclick="g(this,'M-2a','x')">✕</button></div>
@@ -470,13 +475,13 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <!-- M-3 分数の加減 -->
     <div class="q calc" data-id="M-3">
       <div class="qnum">問題15・16｜分数のたし算・ひき算</div>
-      <div class="qbody">(1) 1/3 ＋ 1/4　(2) 5/6 − 3/4　（答えは約分まで）</div>
+      <div class="qbody">(1) <span class="frac"><span class="n">1</span><span class="d">3</span></span> ＋ <span class="frac"><span class="n">1</span><span class="d">4</span></span>　(2) <span class="frac"><span class="n">5</span><span class="d">6</span></span> − <span class="frac"><span class="n">3</span><span class="d">4</span></span>　（答えは約分まで）</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
         <div class="osarai">
           <div class="ot">② 分数のたし算・ひき算・かけ算・わり算</div>
-          <p><b>意味：</b>分数は「1を何個に分けたうちの何個分か」を表す数。3/4 なら「1を4個に分けた3個分」。</p>
+          <p><b>意味：</b>分数は「1を何個に分けたうちの何個分か」を表す数。<span class="frac"><span class="n">3</span><span class="d">4</span></span> なら「1を4個に分けた3個分」。</p>
           <p><b>たし算・ひき算のやり方：</b></p>
           <ol>
             <li><b>通分</b>する（＝分母をそろえる。両方の分母の最小公倍数にする）</li>
@@ -488,15 +493,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
             <li>かけ算 → <b>分子どうし・分母どうし</b>をかける</li>
             <li>わり算 → わる数を<b>逆数（上下をひっくり返した数）</b>にして、かけ算に直す</li>
           </ol>
-          <div class="ex">1/3 ＋ 1/4 をやってみる。<br>→ 分母3と4をそろえる。最小公倍数は12。<br>→ 1/3＝4/12、1/4＝3/12。<br>→ 分子だけたして 4＋3＝7 → <b>7/12</b>。</div>
-          <div class="miss">たし算で「1/3＋1/4＝2/7」と分母どうしも足すのは×。分母は「ピザの切り方」。切り方（分母）をそろえてから、枚数（分子）だけ計算する。</div>
+          <div class="ex"><span class="frac"><span class="n">1</span><span class="d">3</span></span> ＋ <span class="frac"><span class="n">1</span><span class="d">4</span></span> をやってみる。<br>→ 分母3と4をそろえる。最小公倍数は12。<br>→ <span class="frac"><span class="n">1</span><span class="d">3</span></span>＝<span class="frac"><span class="n">4</span><span class="d">12</span></span>、<span class="frac"><span class="n">1</span><span class="d">4</span></span>＝<span class="frac"><span class="n">3</span><span class="d">12</span></span>。<br>→ 分子だけたして 4＋3＝7 → <b><span class="frac"><span class="n">7</span><span class="d">12</span></span></b>。</div>
+          <div class="miss">たし算で「<span class="frac"><span class="n">1</span><span class="d">3</span></span>＋<span class="frac"><span class="n">1</span><span class="d">4</span></span>＝<span class="frac"><span class="n">2</span><span class="d">7</span></span>」と分母どうしも足すのは×。分母は「ピザの切り方」。切り方（分母）をそろえてから、枚数（分子）だけ計算する。</div>
         </div>
         <div class="step"><span>ステップ1</span>たし算・ひき算は通分（分母をそろえる）してから分子を計算。</div>
-        <div class="step"><span>解説(1)</span>3と4の最小公倍数12で通分 → 4/12+3/12=<strong>7/12</strong></div>
-        <div class="step"><span>解説(2)</span>6と4の最小公倍数12で通分 → 10/12−9/12=<strong>1/12</strong></div>
+        <div class="step"><span>解説(1)</span>3と4の最小公倍数12で通分 → <span class="frac"><span class="n">4</span><span class="d">12</span></span>+<span class="frac"><span class="n">3</span><span class="d">12</span></span>=<strong><span class="frac"><span class="n">7</span><span class="d">12</span></span></strong></div>
+        <div class="step"><span>解説(2)</span>6と4の最小公倍数12で通分 → <span class="frac"><span class="n">10</span><span class="d">12</span></span>−<span class="frac"><span class="n">9</span><span class="d">12</span></span>=<strong><span class="frac"><span class="n">1</span><span class="d">12</span></span></strong></div>
         <div class="bx bx-link">分数の加減は中1の「負の数を含む分数計算」でもまったく同じ手順。ここが全単元の土台。</div>
-        <div class="bx bx-warn">「1/3+1/4=2/7」と分母どうしを足すのは誤り。分母は「ピザの切り方」。切り方をそろえて（通分して）から枚数（分子）を計算する。</div>
-        <div class="ans-final"><span>こたえ</span>(1) 7/12　(2) 1/12</div>
+        <div class="bx bx-warn">「<span class="frac"><span class="n">1</span><span class="d">3</span></span>+<span class="frac"><span class="n">1</span><span class="d">4</span></span>=<span class="frac"><span class="n">2</span><span class="d">7</span></span>」と分母どうしを足すのは誤り。分母は「ピザの切り方」。切り方をそろえて（通分して）から枚数（分子）を計算する。</div>
+        <div class="ans-final"><span>こたえ</span>(1) <span class="frac"><span class="n">7</span><span class="d">12</span></span>　(2) <span class="frac"><span class="n">1</span><span class="d">12</span></span></div>
       </div>
       <div class="gq" data-gid="M-3a">
         <div class="grade"><span class="gq-label">問題15（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3a','o')">○</button><button class="x" onclick="g(this,'M-3a','x')">✕</button></div>
@@ -511,16 +516,16 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <!-- M-4 分数の乗除 -->
     <div class="q calc" data-id="M-4">
       <div class="qnum">問題17・18｜分数のかけ算・わり算</div>
-      <div class="qbody">(1) 3/4 × 8/9　(2) 5/6 ÷ 5/12</div>
+      <div class="qbody">(1) <span class="frac"><span class="n">3</span><span class="d">4</span></span> × <span class="frac"><span class="n">8</span><span class="d">9</span></span>　(2) <span class="frac"><span class="n">5</span><span class="d">6</span></span> ÷ <span class="frac"><span class="n">5</span><span class="d">12</span></span></div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
         <div class="step"><span>ステップ1</span>かけ算は分子どうし・分母どうし。わり算は逆数（上下を入れかえた数）をかける。</div>
-        <div class="step"><span>解説(1)</span>3×8=24、4×9=36 → 24/36。最大公約数12で約分 → <strong>2/3</strong></div>
-        <div class="step"><span>解説(2)</span>÷5/12 を ×12/5 に変える → 5/6×12/5=60/30=<strong>2</strong></div>
+        <div class="step"><span>解説(1)</span>3×8=24、4×9=36 → <span class="frac"><span class="n">24</span><span class="d">36</span></span>。最大公約数12で約分 → <strong><span class="frac"><span class="n">2</span><span class="d">3</span></span></strong></div>
+        <div class="step"><span>解説(2)</span>÷<span class="frac"><span class="n">5</span><span class="d">12</span></span> を ×<span class="frac"><span class="n">12</span><span class="d">5</span></span> に変える → <span class="frac"><span class="n">5</span><span class="d">6</span></span>×<span class="frac"><span class="n">12</span><span class="d">5</span></span>=<span class="frac"><span class="n">60</span><span class="d">30</span></span>=<strong>2</strong></div>
         <div class="bx bx-link">「わり算は逆数のかけ算」は中1の分数計算でもそのまま使う。仕組みごと覚えると強い。</div>
-        <div class="bx bx-warn">「÷2」は「半分にする＝×1/2」と同じ。だから「÷5/12」は「×12/5」。逆数は上下をひっくり返すだけ。</div>
-        <div class="ans-final"><span>こたえ</span>(1) 2/3　(2) 2</div>
+        <div class="bx bx-warn">「÷2」は「半分にする＝×<span class="frac"><span class="n">1</span><span class="d">2</span></span>」と同じ。だから「÷<span class="frac"><span class="n">5</span><span class="d">12</span></span>」は「×<span class="frac"><span class="n">12</span><span class="d">5</span></span>」。逆数は上下をひっくり返すだけ。</div>
+        <div class="ans-final"><span>こたえ</span>(1) <span class="frac"><span class="n">2</span><span class="d">3</span></span>　(2) 2</div>
       </div>
       <div class="gq" data-gid="M-4a">
         <div class="grade"><span class="gq-label">問題17（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4a','o')">○</button><button class="x" onclick="g(this,'M-4a','x')">✕</button></div>
@@ -535,7 +540,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <!-- M-5 割合「残りの」 -->
     <div class="q calc" data-id="M-5">
       <div class="qnum">問題19・20・21｜割合「残りの〜」</div>
-      <div class="qbody">全体を100とする。① 全体の 1/4 を取り除いた。残りは？　② その<strong>残りの</strong> 2/5 を使った。使った量は？　③ 最終的に残るのは？</div>
+      <div class="qbody">全体を100とする。① 全体の <span class="frac"><span class="n">1</span><span class="d">4</span></span> を取り除いた。残りは？　② その<strong>残りの</strong> <span class="frac"><span class="n">2</span><span class="d">5</span></span> を使った。使った量は？　③ 最終的に残るのは？</div>
       <div class="qcue">まず自分で解いてから ↓</div>
       <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
       <div class="ans-box">
@@ -547,11 +552,11 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
             <li>「全体の◯」は<b>全体</b>にかける</li>
             <li>「<b>残りの</b>◯」と書いてあったら、全体ではなく<b>残った数</b>にかける（ここが切りかわるポイント）</li>
           </ol>
-          <div class="ex">全体100。1/4 を取り除いた残りの 2/5 を使う。<br>→ 残り＝100×(1−1/4)＝100×3/4＝<b>75</b>。<br>→ 使う量＝「残り75」の2/5＝75×2/5＝<b>30</b>。（全体100の2/5＝40 にしない！）</div>
+          <div class="ex">全体100。<span class="frac"><span class="n">1</span><span class="d">4</span></span> を取り除いた残りの <span class="frac"><span class="n">2</span><span class="d">5</span></span> を使う。<br>→ 残り＝100×(1−<span class="frac"><span class="n">1</span><span class="d">4</span></span>)＝100×<span class="frac"><span class="n">3</span><span class="d">4</span></span>＝<b>75</b>。<br>→ 使う量＝「残り75」の<span class="frac"><span class="n">2</span><span class="d">5</span></span>＝75×<span class="frac"><span class="n">2</span><span class="d">5</span></span>＝<b>30</b>。（全体100の<span class="frac"><span class="n">2</span><span class="d">5</span></span>＝40 にしない！）</div>
           <div class="miss">「残りの」の3文字が出たしゅんかん、かける相手が全体から「残り」に変わる。この合図に気づけるかがカギ。</div>
         </div>
-        <div class="step"><span>①</span>100×(1−1/4)=100×3/4=<strong>75</strong></div>
-        <div class="step"><span>②</span><strong>残り75</strong>の2/5 → 75×2/5=<strong>30</strong>（全体100の2/5=40ではない！）</div>
+        <div class="step"><span>①</span>100×(1−<span class="frac"><span class="n">1</span><span class="d">4</span></span>)=100×<span class="frac"><span class="n">3</span><span class="d">4</span></span>=<strong>75</strong></div>
+        <div class="step"><span>②</span><strong>残り75</strong>の<span class="frac"><span class="n">2</span><span class="d">5</span></span> → 75×<span class="frac"><span class="n">2</span><span class="d">5</span></span>=<strong>30</strong>（全体100の<span class="frac"><span class="n">2</span><span class="d">5</span></span>=40ではない！）</div>
         <div class="step"><span>③</span>75−30=<strong>45</strong></div>
         <div class="bx bx-link">「全体・残り・部分」を整理する力は、中1の文章題で式の意味を見失わないために必要になる。</div>
         <div class="bx bx-warn">「残りの」の3文字が出た瞬間、かける相手が全体から「残り」に変わる。この基準スイッチに気づけるかがカギ。</div>
