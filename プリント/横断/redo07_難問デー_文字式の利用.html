@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>redo07 難問デー（L4）｜文字式の利用｜30分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
+
+/* もどる */
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+
+/* ヘッダー */
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+
+/* セクション */
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-hd .badge-time{font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;background:rgba(255,255,255,.45);border:1px solid rgba(80,96,112,.12);margin-left:auto}
+.sec-body{padding:16px 20px}
+
+/* 色テーマ */
+.th-red .sec-hd{background:#f7e6e4;border-left:6px solid #d8a09a}
+.th-org .sec-hd{background:#f6eadb;border-left:6px solid #d8b27c}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.th-grn .sec-hd{background:#e7f1e8;border-left:6px solid #9abf9d}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+
+/* 単元バナー */
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+
+/* ボックス類 */
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+
+/* おさらいカード（数学ans-box先頭・解く前は非表示） */
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 14px}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai .ot{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai p{font-size:13.5px;line-height:1.95;color:#5a4520;margin:4px 0}
+.osarai ol,.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.9;color:#5a4520}
+.osarai li{margin:2px 0}
+.osarai .ex{background:#fff;border:1px dashed #e0c98a;border-radius:6px;padding:8px 11px;margin:6px 0;font-size:13.5px;color:#5a4520}
+.osarai .ex::before{content:"✏️ いっしょに1回";display:block;font-size:11px;font-weight:800;color:#8a5a19;margin-bottom:3px}
+.osarai .miss{background:#fdeee6;border-left:4px solid #d8a07a;border-radius:6px;padding:7px 11px;margin:6px 0;font-size:13px;color:#8a4a2a}
+.osarai .miss::before{content:"⚠️ ありがちな勘ちがい";display:block;font-size:11px;font-weight:800;color:#a85a2a;margin-bottom:2px}
+.osarai b{color:#7a4f12}
+
+/* ぜんぶ知る */
+.deep{margin-top:8px;background:#fbfaff;border:1px solid #e3dcf0;border-radius:8px;padding:12px 14px;font-size:13.5px;line-height:1.95;color:#3a3550}
+.deep p{margin:7px 0}.deep b{color:#4a3a6b}
+.deep table{width:100%;border-collapse:collapse;margin:7px 0;font-size:13px}
+.deep th,.deep td{border:1px solid #e0dcec;padding:5px 8px;text-align:left}
+.deep th{background:#efeaf7}
+.deep .ng{color:#9b514d;font-weight:800}.deep .ok{color:#3f7a4a;font-weight:800}
+.deep-head{font-size:13px;font-weight:800;color:#5f4b7a;margin-bottom:6px}
+
+/* 問題番号（見える番号） */
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+
+/* よみとり確認（穴埋め） */
+.fill{background:#fff7e8;border:1px solid #e6c98d;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:13.5px}
+.fill-q{font-weight:700;color:#8a5a19}
+.fill-btn{margin-top:6px;background:#d9b46d;color:#fff;border:none;border-radius:16px;padding:5px 12px;font-size:12px;font-weight:800;cursor:pointer}
+.fill-a{display:none;margin-top:6px;font-weight:800;color:#3f7a4a}.fill-a.open{display:block}
+
+/* 英文の答え（一番下） */
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+
+/* 英作文：書かせる方式 */
+.ew-task{font-size:13px;color:#4c5b70;margin-bottom:6px}
+.ew-jp{font-size:22px;font-weight:900;color:#31415f;background:#fffefb;border:2px solid #c8d4e6;border-left:6px solid #9fb8d9;border-radius:8px;padding:12px 16px;margin:4px 0 10px}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+
+/* 図を描く欄 */
+.draw{background:#f4f7fb;border:2px dashed #aebfd6;border-radius:8px;padding:14px 16px;margin:10px 0;min-height:120px}
+.draw::before{content:"✏️ ここに図や計算をかこう";display:block;font-size:12px;font-weight:800;color:#3f6f9f;margin-bottom:6px}
+
+/* 英語の1問 */
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:12px 0}
+.q.vocab .qword{font-size:22px;font-weight:900;color:#31415f}
+.q.vocab .qhint{font-size:13px;color:#4c5b70;margin-top:2px}
+
+/* 数学の1問 */
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:18px;font-weight:700;margin:2px 0 4px;color:#31415f}
+
+/* 図（SVG）枠 */
+.fig{background:#fff;border:1px solid #dfe6ea;border-radius:8px;padding:10px;margin:10px 0;text-align:center}
+.fig svg{max-width:100%;height:auto}
+.fig-cap{font-size:12px;color:#6a7684;margin-top:4px}
+
+/* 英語スライド枠のプレースホルダ */
+.slide-ph{background:#faf7fc;border:2px dashed #c3b3da;border-radius:8px;padding:16px 18px;font-size:13.5px;color:#6a5a86;line-height:1.9}
+.slide-ph b{color:#5f4b7a}
+
+/* 答えボタン・答え枠 */
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .ans-main{font-size:18px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-box .ans-read{font-size:13px;color:#405060;margin-bottom:2px}
+.ans-box .ans-why{font-size:13px;color:#405060;margin:4px 0}
+.ans-box .step{margin:4px 0;font-size:13px}
+.ans-box .step span{display:inline-block;background:#fff;border:1px solid #c9decf;border-radius:4px;padding:1px 8px;margin-right:4px;font-weight:700;color:#3f6f4a;font-size:11px}
+
+/* 採点ユニット（小問ごと） */
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+
+/* 自己採点 */
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+
+/* ✕のとき：3回書く */
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+
+/* ミス分類（✕のときだけ） */
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+
+/* 数式・色 */
+.math{font-family:'Courier New',monospace;background:#f2f4f5;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+
+/* できたボタン */
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+
+/* 印刷設定 */
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .deep{display:block}
+  .fill-a{display:block!important}
+  .write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec{break-inside:avoid;page-break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+.frac{display:inline-flex!important;flex-direction:column!important;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.95em;border:none!important;background:none!important;border-radius:0!important;padding:0!important}
+.frac .n{display:block!important;border:none!important;border-bottom:1.6px solid currentColor!important;background:none!important;border-radius:0!important;padding:0 4px 1px!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+.frac .d{display:block!important;border:none!important;background:none!important;border-radius:0!important;padding:1px 4px 0!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<!-- ページヘッダー -->
+<div class="pg-hd">
+  <div><span class="pg-badge">redo07</span><span class="pg-badge">★難問デー（L4）</span><span class="pg-badge">数学：文字式の利用</span><span class="pg-badge">英語：スライド枠</span></div>
+  <h1>redo07｜7/11(金)｜★難問の日（L4）</h1>
+  <p>7/11(金)　目安30分（英語はスライド＋数学の難問）　対象: 中1</p>
+  <p class="pg-cheer">きょうは★難問デー。テーマは「文字式の利用」。数や図のようすを <strong>a や x の文字で表す</strong>、中1の大きな山をL4でじっくり2問＋できたらでOKの★1問。方程式はまだ使わないよ。文章や図を「文字の式」に直して、ことばで説明できたら大成功。むずかしくて当たり前。むずかしい問題に向かったその時間が、いちばん力になるよ。いっしょにいこう。</p>
+</div>
+
+<!-- ============ 英語①：単語10（スライド枠） ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ①</span>
+  <span class="unit-name">単語 10問（意味 → ノートに英語）</span>
+  <span class="unit-time">目安 5分</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-body">
+    <div class="slide-ph">
+      <b>📥 ここに通常テストの「単語10」をスライドします（ユーザー作業）。</b><br>
+      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
+      <!-- 単語10問ぶんの .q.vocab ブロックをここへ貼り付け。採点gidはスライド時に付与する。 -->
+    </div>
+  </div>
+</div>
+
+<!-- ============ 英語②：熟語3（スライド枠） ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ②</span>
+  <span class="unit-name">熟語を3つ（意味 → ノートに英語）</span>
+  <span class="unit-time">目安 2分</span>
+</div>
+<div class="sec th-teal">
+  <div class="sec-body">
+    <div class="slide-ph">
+      <b>📥 ここに通常テストの「熟語3」をスライドします（ユーザー作業）。</b><br>
+      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
+      <!-- 熟語3問ぶんの .q.vocab ブロックをここへ貼り付け。採点gidはスライド時に付与する。 -->
+    </div>
+  </div>
+</div>
+
+<!-- ============ 英語③：英作文1（スライド枠） ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ③</span>
+  <span class="unit-name">英作文1問（いまの文法を確認）</span>
+  <span class="unit-time">目安 3分</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-body">
+    <div class="slide-ph">
+      <b>📥 ここに通常テストの「英作文1」をスライドします（ユーザー作業）。</b><br>
+      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
+      <!-- 英作文1問ぶんの .q.writing ブロックをここへ貼り付け。採点gidはスライド時に付与する。 -->
+    </div>
+  </div>
+</div>
+
+<!-- ============ 数学：★難問デー（L4）文字式の利用 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">数学（★難問 L4）</span>
+  <span class="unit-name">文字式の利用　コア2問＋★さらに挑戦1問　まず自分で文字の式を立てる → 答え</span>
+  <span class="unit-time">目安 20分</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-body">
+
+    <!-- M-1 定価のx割引きの売値 L4（2段階） -->
+    <div class="q calc" data-id="M-1">
+      <div class="qnum">数①｜L4 難問　文章を2段階で文字式にする（割引きの売値）</div>
+      <div class="qbody">ある品物の定価は <strong>a 円</strong> です。<br>
+        このお店で、定価の <strong>x 割引き</strong> で売ることにしました。<br>
+        (1) <strong>x 割引き</strong> のとき、売値（実際にはらうねだん）を、a と x を使った式で表しなさい。<br>
+        (2) 定価が <strong>2000円</strong>、<strong>3割引き</strong> のとき、売値は何円ですか。(1)の式を使って求めなさい。</div>
+      <div class="draw"></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="osarai">
+          <div class="ot">⓪ 「割引き」って文字式でどう書くの？</div>
+          <p><b>やさしく言うと：</b>「1割」は全体を10こに分けた <b>1こぶん</b>。だから「1割＝<span class="frac"><span class="n">1</span><span class="d">10</span></span>＝0.1」。「x 割」は <b><span class="frac"><span class="n">x</span><span class="d">10</span></span></b> のこと。「x 割引き」は、定価から x 割ぶんを <b>ひいた残り</b>をはらう、という意味だよ。</p>
+          <div class="ot">① わかっていること／求めること</div>
+          <ul>
+            <li><b>わかっている：</b>定価は a 円。x 割引きで売る。</li>
+            <li><b>求める(1)：</b>x 割引きの売値を a と x の式で。</li>
+            <li><b>求める(2)：</b>a＝2000、x＝3 のときの売値（円）。</li>
+          </ul>
+          <div class="ex">定価1000円を「2割引き」なら？ → ひく分＝1000の2割＝1000×<span class="frac"><span class="n">2</span><span class="d">10</span></span>＝200円。売値＝1000−200＝<b>800円</b>。「定価−ひく分」が売値。</div>
+          <div class="miss"><b>「x 割引き」を「定価の x 割」とまちがえる</b>のが最頻。x 割は「ひく分」。はらうのは <b>残り</b>。だから (10−x) 割ぶんをはらう、と考えるとはやい。</div>
+        </div>
+        <div class="step"><span>ステップ1（1割を式に）</span>1割＝<span class="frac"><span class="n">1</span><span class="d">10</span></span>。だから定価 a 円の「x 割」＝a×<span class="frac"><span class="n">x</span><span class="d">10</span></span>＝<span class="frac"><span class="n">ax</span><span class="d">10</span></span>（円）。これが <strong>ひく分</strong>。</div>
+        <div class="step"><span>ステップ2（売値＝定価−ひく分）</span>売値＝a−<span class="frac"><span class="n">ax</span><span class="d">10</span></span>（円）。これでも正解。</div>
+        <div class="step"><span>ステップ3(1)（まとめてきれいに）</span>はらうのは「残りの (10−x) 割」とも言える。残りの割合＝<span class="frac"><span class="n">10−x</span><span class="d">10</span></span>。だから売値＝a×<span class="frac"><span class="n">10−x</span><span class="d">10</span></span>＝<span class="frac"><span class="n">a(10−x)</span><span class="d">10</span></span>（円）。<strong>a−<span class="frac"><span class="n">ax</span><span class="d">10</span></span> と <span class="frac"><span class="n">a(10−x)</span><span class="d">10</span></span> は同じ式</strong>（カッコを開くと a−<span class="frac"><span class="n">ax</span><span class="d">10</span></span>）。</div>
+        <div class="step"><span>ステップ4(2)（数を入れる）</span>a＝2000、x＝3 を入れる。売値＝<span class="frac"><span class="n">2000×(10−3)</span><span class="d">10</span></span>＝<span class="frac"><span class="n">2000×7</span><span class="d">10</span></span>＝<span class="frac"><span class="n">14000</span><span class="d">10</span></span>＝<strong>1400円</strong>。</div>
+        <div class="step"><span>確かめ</span>べつのやり方でも出す。3割引きのひく分＝2000×<span class="frac"><span class="n">3</span><span class="d">10</span></span>＝600円。売値＝2000−600＝1400円。式の答えと一致。</div>
+        <div class="bx bx-warn"><span class="red">「x 割引き」を「x 割をはらう」と読まない</span>。x 割は <b>ひく分</b>で、はらうのは残りの (10−x) 割。<span class="red">1割を <span class="frac"><span class="n">1</span><span class="d">100</span></span> や x×10 などにしない</span>（1割＝<span class="frac"><span class="n">1</span><span class="d">10</span></span>、x割＝<span class="frac"><span class="n">x</span><span class="d">10</span></span>）。<span class="red">(2)で式を使わず暗算だけで答えない</span>（(1)の式に a＝2000、x＝3 を入れて計算する練習がねらい）。</div>
+        <div class="bx bx-link">「全体を文字 a で、割合を <span class="frac"><span class="n">x</span><span class="d">10</span></span> や (10−x) で表す」は、このあとの <b>方程式の文章題（割合・売買・速さ）</b> で必ず使う。「文章の中の割引き・増し・○%を文字の式に直す」力は、中1〜中3を通じていちばん問われる場面のひとつ。塾のテストでも割引き・割合の文字式はL4の定番。2つの形（a−<span class="frac"><span class="n">ax</span><span class="d">10</span></span> と <span class="frac"><span class="n">a(10−x)</span><span class="d">10</span></span>）が同じだと気づけたら大きな前進。</div>
+        <div class="ans-final"><span>こたえ</span>(1) <span class="frac"><span class="n">a(10−x)</span><span class="d">10</span></span> 円（＝ a−<span class="frac"><span class="n">ax</span><span class="d">10</span></span> 円）　(2) 1400円</div>
+      </div>
+      <div class="gq" data-gid="redo07_M1a">
+        <div class="grade"><span class="gq-label">数①(1) 売値の式</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M1a','o')">○</button><button class="x" onclick="g(this,'redo07_M1a','x')">✕</button></div>
+        <div class="write3">「定価−ひく分」または「残り(10−x)割」の形で、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="redo07_M1b">
+        <div class="grade"><span class="gq-label">数①(2) 売値の数</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M1b','o')">○</button><button class="x" onclick="g(this,'redo07_M1b','x')">✕</button></div>
+        <div class="write3">(1)の式に a＝2000、x＝3 を入れる計算を、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+
+    <!-- M-2 複合図形（長方形から正方形を切る）の面積と周 L4 -->
+    <div class="q calc" data-id="M-2">
+      <div class="qnum">数②｜L4 難問　図のようすを文字式で表す（面積と周の長さ）</div>
+      <div class="qbody">下の図のように、たて <strong>a cm</strong>、よこ <strong>b cm</strong> の長方形があります。<br>
+        この長方形の <strong>右下の角</strong> から、1辺が <strong>x cm</strong> の正方形を切り取りました。<br>
+        (1) 切り取ったあとの図形（色のついた部分）の <strong>面積</strong> を、a・b・x を使った式で表しなさい。<br>
+        (2) 切り取ったあとの図形の <strong>まわりの長さ（周）</strong> を、a・b を使った式で表しなさい。</div>
+      <div class="fig">
+        <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="たてa よこb の長方形の右下から1辺xの正方形を切り取ったL字形">
+          <!-- L字形（外周） -->
+          <polygon points="40,30 240,30 240,120 160,120 160,170 40,170"
+                   fill="#dbeafe" stroke="#3f6f9f" stroke-width="2.5"/>
+          <!-- 切り取った正方形（点線） -->
+          <polygon points="160,120 240,120 240,170 160,170"
+                   fill="#f4f7fb" stroke="#9aa7b5" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text x="160" y="148" font-size="11" fill="#9aa7b5" text-anchor="middle">切り取り</text>
+          <!-- たて a（左辺の外） -->
+          <text x="24" y="104" font-size="14" fill="#31415f" text-anchor="middle">a</text>
+          <!-- よこ b（上辺の上） -->
+          <text x="140" y="22" font-size="14" fill="#31415f" text-anchor="middle">b</text>
+          <!-- 正方形の辺 x（下の小辺） -->
+          <text x="200" y="187" font-size="13" fill="#9b514d" text-anchor="middle">x</text>
+          <!-- 正方形の辺 x（右の小辺） -->
+          <text x="254" y="148" font-size="13" fill="#9b514d" text-anchor="middle">x</text>
+        </svg>
+        <div class="fig-cap">色のついたL字形が「切り取ったあと」。点線の正方形（1辺 x cm）を切り取った。</div>
+      </div>
+      <div class="draw"></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="osarai">
+          <div class="ot">⓪ 面積と周は、文字でどう表す？</div>
+          <p><b>やさしく言うと：</b>長方形の <b>面積＝たて×よこ</b>、正方形の <b>面積＝1辺×1辺</b>。文字でも同じ。たて a・よこ b なら面積は <b>a×b＝ab</b>。1辺 x の正方形は <b>x×x＝x²</b>。<b>周（まわりの長さ）</b>は、外側をぐるっと1周した長さの合計だよ。</p>
+          <div class="ot">① わかっていること／求めること</div>
+          <ul>
+            <li><b>わかっている：</b>もとは たて a・よこ b の長方形。右下から 1辺 x の正方形を切った。</li>
+            <li><b>求める(1)：</b>残った色つき部分の面積（a・b・x の式）。</li>
+            <li><b>求める(2)：</b>残った図形の周（a・b の式。x は消える）。</li>
+          </ul>
+          <div class="ex">たて5・よこ8の長方形から1辺2の正方形を切ると面積は？ → 全体5×8＝40、切った2×2＝4、残り＝40−4＝<b>36</b>。「全体−切った分」でOK。</div>
+          <div class="miss"><b>周も「もとから減る」と思って x をひいてしまう</b>のが最頻。角を切ると、へこんだぶん辺が増えるので <b>周は変わらない</b>。図でへこみの2辺をずらすと、もとの長方形の周とぴったり同じ長さになるよ。</div>
+        </div>
+        <div class="step"><span>ステップ1(1)（全体の面積）</span>もとの長方形の面積＝たて×よこ＝a×b＝<strong>ab</strong>（cm²）。</div>
+        <div class="step"><span>ステップ2(1)（切った分・残り）</span>切り取った正方形の面積＝x×x＝<strong>x²</strong>（cm²）。残り＝全体−切った分＝<strong>ab−x²</strong>（cm²）。これが(1)の答え。</div>
+        <div class="step"><span>ステップ3(2)（周を辺ごとにたす）</span>L字形の周を上から順に：上 b ＋ 右(上) (a−x) ＋ 切り口・横 x ＋ 切り口・たて x ＋ 下(左) (b−x) ＋ 左 a。全部たすと b＋(a−x)＋x＋x＋(b−x)＋a。</div>
+        <div class="step"><span>ステップ4(2)（x が消える）</span>x の符号をまとめると −x＋x＋x−x＝0。残るのは a＋a＋b＋b＝<strong>2a＋2b</strong>（cm）。<strong>周はもとの長方形と同じ（x で変わらない）</strong>。</div>
+        <div class="step"><span>確かめ</span>a＝8、b＝10、x＝3 で計算。(1)面積＝8×10−3²＝80−9＝71cm²。(2)周＝2×8＋2×10＝16＋20＝36cm。図でへこみ部分の2辺を外へずらすと、たて8・よこ10の長方形の周になるので 36cm で一致。</div>
+        <div class="bx bx-warn"><span class="red">面積を ab−x としない</span>（正方形の面積は x×x＝<b>x²</b>。x ではない）。<span class="red">周から x をひいて 2a＋2b−2x などとしない</span>（角を切ると辺が増え、へこみの2辺がへった2辺をちょうど埋めるので、周は変わらず 2a＋2b）。<span class="red">(2)に x を残さない</span>（計算すると x は消える。残ったら計算ミス）。</div>
+        <div class="bx bx-link">「全体−部分」で面積を文字式にする、辺を1本ずつ文字でたして周を出す——この2つは、図形を数で考える <b>図形と式</b> の基本。「角を切っても周は変わらない」は、中2・中3の図形でも出てくる有名な性質。図のようすを ab や x² の文字式に直せると、長方形・正方形の面積の公式が「文字でも同じ」と腑に落ちる。</div>
+        <div class="ans-final"><span>こたえ</span>(1) ab−x²（cm²）　(2) 2a＋2b（cm）</div>
+      </div>
+      <div class="gq" data-gid="redo07_M2a">
+        <div class="grade"><span class="gq-label">数②(1) 面積の式</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M2a','o')">○</button><button class="x" onclick="g(this,'redo07_M2a','x')">✕</button></div>
+        <div class="write3">「全体 ab − 切った x²」の形で、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="redo07_M2b">
+        <div class="grade"><span class="gq-label">数②(2) 周の式</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M2b','o')">○</button><button class="x" onclick="g(this,'redo07_M2b','x')">✕</button></div>
+        <div class="write3">辺を1本ずつたして x が消えること（2a＋2b）を、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+
+    <!-- M-3 ★さらに挑戦：規則性のn式（碁石を正方形の外周に並べる）任意 L4 -->
+    <div class="q calc" data-id="M-3">
+      <div class="qnum">数③｜★さらに挑戦（できたらでOK）　L4　規則を見つけて n の式にする（碁石ならべ）</div>
+      <div class="qbody">碁石（ごいし）を、正方形の <strong>外周（まわり）</strong> にすき間なく1列に並べます。<br>
+        1辺に <strong>n 個</strong> ずつ並べるとき、<br>
+        (1) 使う碁石の <strong>全部の個数</strong> を、n を使った式で表しなさい。<br>
+        (2) 全部で <strong>96 個</strong> 使ったとき、1辺は何個ですか。(1)の式を使って求めなさい。</div>
+      <div class="fig">
+        <svg viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="正方形の外周に1辺5個の碁石を並べた図">
+          <!-- 1辺n=5 の外周（角は1回だけ数える）。16個 -->
+          <g fill="#4a5b6e">
+            <!-- 上の行 5個 -->
+            <circle cx="40" cy="40" r="11"/><circle cx="80" cy="40" r="11"/><circle cx="120" cy="40" r="11"/><circle cx="160" cy="40" r="11"/><circle cx="200" cy="40" r="11" transform="translate(-40,0)"/>
+            <!-- 下の行 5個 -->
+            <circle cx="40" cy="160" r="11"/><circle cx="80" cy="160" r="11"/><circle cx="120" cy="160" r="11"/><circle cx="160" cy="160" r="11"/>
+            <!-- 左の列（上下をのぞく3個） -->
+            <circle cx="40" cy="80" r="11"/><circle cx="40" cy="120" r="11"/>
+            <!-- 右の列（上下をのぞく3個） -->
+            <circle cx="160" cy="80" r="11"/><circle cx="160" cy="120" r="11"/>
+          </g>
+          <text x="100" y="195" font-size="11" fill="#6a7684" text-anchor="middle">1辺 n＝5 のれい（全部で 16 個）</text>
+        </svg>
+        <div class="fig-cap">図は 1辺 n＝5 の例。角の碁石は2つの辺で共通だから「数えすぎ」に注意。</div>
+      </div>
+      <div class="draw"></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="osarai">
+          <div class="ot">⓪ 「外周だけ・角は1回」で数える</div>
+          <p><b>やさしく言うと：</b>正方形には辺が4つ。1辺 n 個だから単純には 4×n 個…と思うけど、<b>4つの角の碁石は、となりあう2辺で1個を2回数えている</b>。だから数えすぎた分（角4個）をひく必要があるよ。</p>
+          <div class="ot">① わかっていること／求めること</div>
+          <ul>
+            <li><b>わかっている：</b>正方形の外周に、1辺 n 個ずつ並べる。</li>
+            <li><b>求める(1)：</b>全部の個数を n の式で。</li>
+            <li><b>求める(2)：</b>全部で96個のときの n（1辺の個数）。</li>
+          </ul>
+          <div class="ex">1辺 n＝5 で数えてみる。4辺ぶん＝4×5＝20。でも角を2回ずつ数えたので 4個ひく → 20−4＝<b>16個</b>。図と一致。</div>
+          <div class="miss"><b>4×n でそのまま答えてしまう（角を引き忘れる）</b>のが最頻。角の4個は重なって2回数えているので、必ず −4 する。</div>
+        </div>
+        <div class="step"><span>ステップ1(1)（まず4辺ぶん）</span>1辺 n 個が4辺ぶんで n×4＝<strong>4n</strong>（個）。ただし角を数えすぎている。</div>
+        <div class="step"><span>ステップ2(1)（数えすぎをひく）</span>正方形の角は4つ。各角の碁石は、となりあう2辺で1回ずつ＝2回数えている。だから余分は4個。全部＝4n−4＝<strong>4n−4</strong>（個）。これが(1)の答え。</div>
+        <div class="step"><span>ステップ3(2)（式に96を入れる）</span>(1)より全部の個数は 4n−4。これが96個だから、文章を読みかえると「4n−4＝96 になる n を求める」。4n−4＝96 → 4n＝100 → n＝<strong>25</strong>（個）。</div>
+        <div class="step"><span>確かめ</span>n＝25 を(1)の式に入れる：4×25−4＝100−4＝96個。たしかに96個で、(2)と一致。</div>
+        <div class="bx bx-warn"><span class="red">4×n でそのまま答えない</span>（角の4個を2回数えているので −4）。<span class="red">「角を4回ぜんぶ余分」と思って −8 などにしない</span>（角は2回数えたうちの1回ぶん＝1個ずつ余分。4角で −4）。<span class="red">(2)を「96÷4＝24」で答えない</span>（−4を戻し忘れ。正しくは 4n−4＝96 → 4n＝100 → n＝25）。</div>
+        <div class="bx bx-link">「図や並びのきまりを見つけて n の式にする」のが <b>規則性（数の並び・図形の数え方）</b>。高校入試でも超頻出で、中3まで形を変えて出続ける。「単純に数える → 重なりをひく」という考え方は、組み合わせや表の数え方にもつながる強力な道具。1辺 n の例で先に試して式を確かめるクセは、規則性をとくときの王道だよ。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 4n−4（個）　(2) 25個</div>
+      </div>
+      <div class="gq" data-gid="redo07_M3a">
+        <div class="grade"><span class="gq-label">数③(1) 個数の式</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M3a','o')">○</button><button class="x" onclick="g(this,'redo07_M3a','x')">✕</button></div>
+        <div class="write3">「4辺で4n − 角の重なり4」で 4n−4 になることを、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+      <div class="gq" data-gid="redo07_M3b">
+        <div class="grade"><span class="gq-label">数③(2) 1辺の個数</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M3b','o')">○</button><button class="x" onclick="g(this,'redo07_M3b','x')">✕</button></div>
+        <div class="write3">4n−4＝96 → 4n＝100 → n＝25 の流れを、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（redo07 難問デー 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">きょうは★難問デー。テーマは「文字式の利用」。割引きの売値を a と x の2段階の式に、図のようすを ab−x² と 2a＋2b の文字式に、そして碁石の並びを 4n−4 の式に——L4でじっくり向かった。文章や図を「文字の式」に直して、ことばで説明し、最後に数を入れて確かめ算までできたら大成功。ここで身につけた「ようすを文字で表す力」は、このあとの方程式の文章題でずっと効いてくる。よくがんばったね。</div>
+
+</div>
+
+<script>
+var KEY='redo07';
+
+// 答えトグル
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+// 自己採点 ○✕（採点ユニット .gq 単位＝小問ごと）
+function g(btn,id,v){
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');
+  var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{
+    if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}
+    if(w3)w3.style.display='none';
+  }
+}
+
+// ミス分類（.gq の data-gid 単位）
+function m(btn){
+  var w=btn.parentNode;
+  w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);
+}
+
+// 完了
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+
+// 復元（.gq＝採点ユニット単位）
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var mt=box.querySelector('.mt');
+        if(mt){
+          mt.classList.add('open');
+          var mv=localStorage.getItem(KEY+'_'+id+'_m');
+          if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}
+        }
+        var w3=box.querySelector('.write3');
+        if(w3)w3.style.display='block';
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
+};
+</script>
+</body>
+</html>

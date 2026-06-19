@@ -100,6 +100,15 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f
   </div>
 </div>
 
+<!-- ④ 英語きそ（中1文法マニュアル） -->
+<div class="sec">
+  <div class="sec-hd"><h2>④ 英語きそ（中1文法マニュアル U1〜U10）</h2><span class="cnt" id="cntE">0</span></div>
+  <div class="sec-body">
+    <div class="legend">中1文法を1単元30分で一巡。be動詞〜前置詞まで「読む→すぐ書く」で産出に直結。1枚30分・○✕＋まちがえたら3回書き。</div>
+    <div id="englishRows"></div>
+  </div>
+</div>
+
 <div class="foot">できた枚数がふえたら、それが伸びたしるし。1日5分からでOK。🌸</div>
 
 </div>
@@ -165,6 +174,19 @@ var KOKUGO = [
   {day:"国06", title:"長文読解②（文学・本物の名作＝芥川龍之介「トロッコ」抜粋1536字＋語彙/指示語/抜き出し/心情・理由記述/内容一致8問・青空文庫/著作権切れ・iPad自己完結）", k:"tokkun_jr02", f:"プリント/国語プリント/国語読解02_トロッコ_芥川.html"}
 ];
 
+var ENGLISH = [
+  {day:"U1", title:"be動詞（am/is/are・肯定否定疑問・this/these）", k:"tokkun_eg_be", f:"プリント/英語基礎/U1_be動詞_基礎深化.html"},
+  {day:"U2", title:"一般動詞（be動詞との区別・don't/Do）", k:"tokkun_eg_v", f:"プリント/英語基礎/U2_一般動詞_基礎深化.html"},
+  {day:"U3", title:"三単現の-s（-s/es/ies・doesn't/Does）", k:"tokkun_eg_s", f:"プリント/英語基礎/U3_三単現_基礎深化.html"},
+  {day:"U4", title:"名詞の複数形（-s/es/ies/ves・How many）", k:"tokkun_eg_pl", f:"プリント/英語基礎/U4_名詞の複数形_基礎深化.html"},
+  {day:"U5", title:"代名詞（I-my-me-mine の全体系）", k:"tokkun_eg_pron", f:"プリント/英語基礎/U5_代名詞_基礎深化.html"},
+  {day:"U6", title:"can（〜できる・can't/Can you）", k:"tokkun_eg_can", f:"プリント/英語基礎/U6_can_基礎深化.html"},
+  {day:"U7", title:"命令文・Let's（主語を消す・Don't）", k:"tokkun_eg_imp", f:"プリント/英語基礎/U7_命令文_基礎深化.html"},
+  {day:"U8", title:"疑問詞（what/where/when/how・順8補完）", k:"tokkun_eg_wh", f:"プリント/英語基礎/U8_疑問詞_基礎深化.html"},
+  {day:"U9", title:"形容詞・副詞（2用法・頻度副詞の位置・very）", k:"tokkun_eg_adj", f:"プリント/英語基礎/U9_形容詞副詞_基礎深化.html"},
+  {day:"U10", title:"前置詞（in/on/at 場所と時・listen to）", k:"tokkun_eg_prep", f:"プリント/英語基礎/U10_前置詞_基礎深化.html"}
+];
+
 function done(k){ return localStorage.getItem(k+'_done')==='1'; }
 
 var allN=0, doneN=0;
@@ -210,6 +232,14 @@ KOKUGO.forEach(function(r){
 });
 document.getElementById('kokugoRows').innerHTML=kH;
 
+var eH='';
+ENGLISH.forEach(function(r){
+  eH+='<div class="row"><span class="day">'+r.day+'</span>'
+    +'<span class="ttl">'+r.title+'</span>'
+    +go(r.f,'ひらく',' ')+chk(r.k,r.f)+'</div>';
+});
+document.getElementById('englishRows').innerHTML=eH;
+
 /* 件数・進捗バー */
 document.getElementById('allN').textContent=allN;
 document.getElementById('doneN').textContent=doneN;
@@ -220,9 +250,11 @@ document.getElementById('fill').style.width=pct+'%';
 var ca=0; AMNESIA.forEach(function(r){if(r.f1)ca++; if(r.f2)ca++;});
 var cm=0; MATH.forEach(function(r){if(r.f)cm++;});
 var ck=0; KOKUGO.forEach(function(r){if(r.f)ck++;});
+var ce=0; ENGLISH.forEach(function(r){if(r.f)ce++;});
 document.getElementById('cntA').textContent='公開 '+ca+' 枚';
 document.getElementById('cntM').textContent='公開 '+cm+' 枚';
 document.getElementById('cntK').textContent='公開 '+ck+' 枚';
+document.getElementById('cntE').textContent='公開 '+ce+' 枚';
 </script>
 </body>
 </html>

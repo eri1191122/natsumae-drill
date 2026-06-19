@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>復習・数学（まちがえだけ）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f8f7;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:760px;margin:0 auto;padding:16px 14px 90px}
+.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#eef2f7;color:#27374a;padding:20px 20px;border:1px solid #cdd9e6;border-radius:10px;margin-bottom:14px}
+.pg-hd h1{font-size:20px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4a5b6e}
+.pg-badge{display:inline-block;background:#dce8f5;color:#2f5a8a;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #bcd3ee;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.progress{background:#fff;border:2px solid #6f93c2;border-radius:10px;padding:12px 16px;margin:0 0 16px;font-size:15px;font-weight:800;color:#2f5a8a;text-align:center}
+.progress .left{color:#9b514d}
+.allclear{display:none;text-align:center;background:linear-gradient(90deg,#7a9ed0,#e8c04a);color:#fff;font-size:18px;font-weight:900;padding:18px;border-radius:14px;margin-bottom:16px}
+.allclear.show{display:block}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:10px;padding:14px 16px;margin:14px 0}
+.q.grad{display:none}
+.q .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 9px;border-radius:12px}
+.badge.suchoku{background:#e6f0fb;color:#2f5a8a;border:1px solid #bcd3ee}
+.badge.keisan{background:#e9f3ea;color:#2f6a44;border:1px solid #bbe0c4}
+.badge.bunsho{background:#fbe9cf;color:#8a5a17;border:1px solid #eccf9a}
+.date{font-size:11.5px;color:#8a7d6a;font-weight:700;background:#fbf6ec;border:1px solid #ecdcc0;border-radius:10px;padding:2px 9px}
+.cnt{font-size:11px;color:#3f6f9f;font-weight:800;margin-left:auto}
+.jp{font-size:18px;font-weight:800;color:#31415f;margin:6px 0 4px;line-height:1.85}
+.choices{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:20px;font-weight:800;color:#27374a;background:#f4f7fb;border:1px solid #d6e2ee;border-radius:8px;padding:12px 14px;margin:8px 0 2px}
+.ans-btn{margin-top:10px;background:#657789;color:#fff;border:none;border-radius:20px;padding:9px 18px;font-size:13.5px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:8px}
+.ans-box.open{display:block}
+.en{font-size:20px;font-weight:900;color:#2f5a8a;background:#eaf2fb;border:2px solid #9bbfdf;border-radius:8px;padding:10px 14px;margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.kaisetsu{font-size:13.5px;line-height:1.95;color:#33433a}
+.kaisetsu .chunk{background:#eef1f2;padding:1px 6px;border-radius:3px;font-weight:800;color:#2f5a8a}
+.kaisetsu .lab{display:inline-block;font-size:11px;font-weight:800;color:#2f5a8a;background:#dde9f5;border:1px solid #aecbe6;border-radius:8px;padding:1px 8px;margin-right:6px}
+.kaisetsu p{margin:7px 0}
+.distbl{width:100%;border-collapse:collapse;margin:8px 0;font-size:14px}
+.distbl th,.distbl td{border:1px solid #cfd9d2;padding:6px 8px;text-align:center}
+.distbl th{background:#eef3ef;color:#2f5a8a;font-weight:800}
+.distbl td.hit{background:#fff3cf;font-weight:900;color:#9b6a17}
+.red{color:#9b514d;font-weight:800}
+.grade{margin-top:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.grade .lbl{font-size:13px;color:#607086;font-weight:700}
+.o,.x{width:48px;height:48px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:22px;font-weight:700;cursor:pointer;color:#8a8794}
+.o:active,.x:active{transform:scale(.94)}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.grad-note{text-align:center;color:#3f6f9f;font-weight:900;font-size:15px;padding:6px}
+.reset{display:block;margin:30px auto 0;background:#fff;border:1px solid #e0d8d6;color:#a08a86;font-size:12px;font-weight:700;padding:7px 14px;border-radius:18px;cursor:pointer}
+.reset:hover{background:#fdf6f4}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:18px;line-height:1.9}
+/* 分数 縦組み（特訓P1標準・本文プレーンa/b禁止／ここは子孫span全箱化ルールが無いので!important不要） */
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 1px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">復習キュー</span><span class="pg-badge">数学：まちがえ直し</span></div>
+  <h1>復習・数学（まちがえだけ）</h1>
+  <p>まず<strong>自分で解いて</strong>から「こたえを見る」を押そう。合っていたら○、ちがったら✕。○を<strong>2回</strong>連続でとれたら「卒業」＝もう出てこなくなるよ。✕を押すと0からやり直し。<strong>うっかりミスこそ、何回も出して体にしみこませる</strong>のがいちばん効く🌸</p>
+</div>
+
+<div class="allclear" id="allclear">🌸 ぜんぶ卒業！おめでとう 🌸</div>
+<div class="progress" id="progress">のこり <span class="left" id="remain">0</span> 問／卒業 <span id="grad">0</span> 問</div>
+
+<div id="list"></div>
+
+<button class="reset" onclick="resetAll()">↺ もう一度ぜんぶ出す（リセット）</button>
+
+<div class="endcheer">
+  「分かってたのに最後でまちがえた」は、やり方の問題じゃなくて<strong>たしかめ方の問題</strong>。<br>
+  同じ形をくり返すと、本番でも勝手に手が止まらなくなるよ。今日できなくても明日また出てくるから大丈夫🌸
+</div>
+
+</div>
+
+<script>
+// ===== 復習・数学（まちがえだけ）：自己完結の軽量キュー（隔離試作とは無関係） =====
+// ★day は必ず「M/D」形式（例 6/18）で記入する。「初日／2日目」等の相対表記は禁止（忘却曲線の起算日が不明になるため）。実日付が不明なら、出題日または採点日を入れる。
+// id1=6/18（夏前ドリル 数学18日 問題21「0に2番目に近い数」のうっかりミス＝C型を、数字を難化して収録）。
+var QS=[
+ {id:1, kind:'数直線・絶対値', badge:'suchoku', day:'6/18',
+  jp:'つぎの5つの数のうち、<strong>0に2番目に近い数</strong>はどれ？',
+  choices:'<span>−1.6</span><span><span class="frac"><span class="n">9</span><span class="d">5</span></span></span><span><span class="frac"><span class="n">7</span><span class="d">4</span></span></span><span>−2.1</span><span><span class="frac"><span class="n">11</span><span class="d">4</span></span></span>',
+  en:'<span class="frac"><span class="n">7</span><span class="d">4</span></span><span>（＝1.75）</span>',
+  k:'<p><span class="lab">いいかえ</span>「0に近い」＝<span class="red">数直線で、0からのきょり（長さ）が小さい</span>ということ。＋でも−でも関係なく「0からどれだけはなれているか」だけを見る。これが中1で習う<strong>絶対値（0からのきょり）</strong>の考え方そのものだよ。</p>'+
+    '<p><span class="lab">手順1</span>まず分数を小数に直す：<span class="chunk"><span class="frac"><span class="n">9</span><span class="d">5</span></span>＝1.8</span>、<span class="chunk"><span class="frac"><span class="n">7</span><span class="d">4</span></span>＝1.75</span>、<span class="chunk"><span class="frac"><span class="n">11</span><span class="d">4</span></span>＝2.75</span>。<span class="red">目分量で「<span class="frac"><span class="n">7</span><span class="d">4</span></span> と <span class="frac"><span class="n">9</span><span class="d">5</span></span>、どっちが近い？」と決めない</span>。1.75 と 1.8、必ず小数にそろえてから比べる。</p>'+
+    '<p><span class="lab">手順2</span>つぎに「0からのきょり」にする。マイナスはきょりにすると符号を外す：<span class="chunk">−1.6 → 1.6</span>、<span class="chunk">−2.1 → 2.1</span>。</p>'+
+    '<table class="distbl"><tr><th>数</th><td>−1.6</td><td class="hit"><span class="frac"><span class="n">7</span><span class="d">4</span></span></td><td><span class="frac"><span class="n">9</span><span class="d">5</span></span></td><td>−2.1</td><td><span class="frac"><span class="n">11</span><span class="d">4</span></span></td></tr>'+
+    '<tr><th>0からのきょり</th><td>1.6</td><td class="hit">1.75</td><td>1.8</td><td>2.1</td><td>2.75</td></tr>'+
+    '<tr><th>近い順</th><td>1番</td><td class="hit">2番</td><td>3番</td><td>4番</td><td>5番</td></tr></table>'+
+    '<p><span class="lab">こたえ</span>近い順は <span class="chunk">1.6 → 1.75 → 1.8 → 2.1 → 2.75</span>。1番目は −1.6、<span class="red">2番目に近いのは 1.75 ＝ <span class="frac"><span class="n">7</span><span class="d">4</span></span></span>。</p>'+
+    '<p><span class="red">よくある間違い①</span>「2番目」なのに、いちばん近い <span class="chunk">−1.6</span> を選んでしまう。← まさに前回のうっかりはここ。<strong>聞かれているのは「1番」か「2番」か、指で押さえて確認</strong>。</p>'+
+    '<p><span class="red">よくある間違い②</span>「−の数は小さい＝0から遠い」と思いこむ。ちがう。<span class="chunk">−1.6 は 0 から 1.6 しかはなれていない＝かなり近い</span>。きょりに直せば符号は消える。</p>'+
+    '<p><span class="red">よくある間違い③</span><span class="frac"><span class="n">7</span><span class="d">4</span></span>（1.75）と <span class="frac"><span class="n">9</span><span class="d">5</span></span>（1.8）を見た目で判断。0.05しか違わないから、<strong>必ず小数に直してから</strong>くらべる。</p>'+
+    '<p><span class="lab">たしかめのコツ</span>①ぜんぶ小数にそろえる ②マイナスはきょり（符号を外す）にする ③小さい順に並べて「何番目か」を指でかぞえる。この3ステップなら、本番でも取りこぼさないよ。</p>'}
+];
+
+var PRE='revmq_'; // localStorageキー: revmq_1 ..
+var BOARD='tokkun_revm_queue'; // 記録ボード連携キー
+var GRADUATE=2; // 2回○で卒業
+
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function load(id){try{return JSON.parse(localStorage.getItem(PRE+id))||{cnt:0,lastX:''};}catch(e){return {cnt:0,lastX:''};}}
+function save(id,st){localStorage.setItem(PRE+id,JSON.stringify(st));}
+
+// 記録ボード連携：全体の○総数・✕総数を集計して書き出す
+function writeBoard(){
+  var o=0,x=0;
+  QS.forEach(function(q){
+    try{var b=JSON.parse(localStorage.getItem(PRE+q.id+'_log'))||{o:0,x:0};o+=b.o;x+=b.x;}catch(e){}
+  });
+  localStorage.setItem(BOARD, JSON.stringify({o:o,x:x}));
+}
+function bumpLog(id,key){
+  var b;try{b=JSON.parse(localStorage.getItem(PRE+id+'_log'))||{o:0,x:0};}catch(e){b={o:0,x:0};}
+  b[key]=(b[key]||0)+1;localStorage.setItem(PRE+id+'_log',JSON.stringify(b));writeBoard();
+}
+
+function render(){
+  var list=document.getElementById('list');list.innerHTML='';
+  var remain=0,grad=0;
+  QS.forEach(function(q){
+    var st=load(q.id);
+    if(st.cnt>=GRADUATE){grad++;return;} // 卒業した問題は出さない
+    remain++;
+    var el=document.createElement('div');el.className='q';el.id='q'+q.id;
+    var dateStr='まちがえた日：'+q.day+(st.lastX?'（再×'+st.lastX+'）':'');
+    el.innerHTML=
+      '<div class="top">'+
+        '<span class="badge '+q.badge+'">'+q.kind+'</span>'+
+        '<span class="date">'+dateStr+'</span>'+
+        '<span class="cnt">○ '+st.cnt+' / '+GRADUATE+'</span>'+
+      '</div>'+
+      '<div class="jp">'+q.jp+'</div>'+
+      '<div class="choices">'+q.choices+'</div>'+
+      '<button class="ans-btn" onclick="toggle('+q.id+',this)">こたえを見る</button>'+
+      '<div class="ans-box" id="a'+q.id+'">'+
+        '<div class="en">'+q.en+'</div>'+
+        '<div class="kaisetsu">'+q.k+'</div>'+
+        '<div class="grade"><span class="lbl">合ってた？</span>'+
+          '<button class="o" onclick="mark('+q.id+',1)">○</button>'+
+          '<button class="x" onclick="mark('+q.id+',0)">✕</button>'+
+        '</div>'+
+      '</div>';
+    list.appendChild(el);
+  });
+  document.getElementById('remain').textContent=remain;
+  document.getElementById('grad').textContent=grad;
+  var ac=document.getElementById('allclear');
+  if(remain===0){ac.classList.add('show');document.getElementById('progress').style.display='none';}
+  else{ac.classList.remove('show');document.getElementById('progress').style.display='';}
+}
+
+function toggle(id,b){
+  var a=document.getElementById('a'+id);var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':'こたえを見る';
+}
+
+function mark(id,ok){
+  var st=load(id);
+  if(ok){ st.cnt=st.cnt+1; bumpLog(id,'o'); }
+  else  { st.cnt=0; st.lastX=today(); bumpLog(id,'x'); }
+  save(id,st);
+  if(ok && st.cnt>=GRADUATE){
+    var el=document.getElementById('q'+id);
+    if(el){el.classList.add('grad');el.innerHTML='<div class="grad-note">🎉 卒業！もう出てこないよ。よくがんばった！</div>';}
+    setTimeout(render,900);
+  }else{
+    render();
+  }
+}
+
+function resetAll(){
+  if(!confirm('ぜんぶの○✕をリセットして、もう一度ぜんぶ出すよ。いい？'))return;
+  QS.forEach(function(q){localStorage.removeItem(PRE+q.id);localStorage.removeItem(PRE+q.id+'_log');});
+  localStorage.setItem(BOARD,JSON.stringify({o:0,x:0}));
+  render();
+}
+
+window.onload=function(){render();writeBoard();};
+</script>
+</body>
+</html>
