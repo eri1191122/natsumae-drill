@@ -195,10 +195,155 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 </div>
 <div class="sec th-prp">
   <div class="sec-body">
-    <div class="slide-ph">
-      <b>📥 ここに通常テストの「単語10」をスライドします（ユーザー作業）。</b><br>
-      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
-      <!-- 単語10問ぶんの .q.vocab ブロックをここへ貼り付け。採点gid（W-1〜W-10）はスライド時に付与する。 -->
+    <div class="q vocab" data-id="W-1">
+      <div class="qword">夢</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">dream</div>
+        <div class="ans-read">読み：ドリーム</div>
+        <div class="ans-why">なぜこの語か：将来の夢。 例：I have a dream to be a doctor.（私は医者になるという夢を持っています。）</div>
+        <div class="bx-warn">dr で始まる。</div>
+      </div>
+      <div class="gq" data-gid="W-1">
+        <div class="grade"><span class="gq-label">単語①</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-2">
+      <div class="qword">理由</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">reason</div>
+        <div class="ans-read">読み：リーズン</div>
+        <div class="ans-why">なぜこの語か：「〜の理由」。 例：The reason is clear.（その理由は明らかです。）</div>
+        <div class="bx-warn">rea-son。</div>
+      </div>
+      <div class="gq" data-gid="W-2">
+        <div class="grade"><span class="gq-label">単語②</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-3">
+      <div class="qword">文化</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">culture</div>
+        <div class="ans-read">読み：カルチャー</div>
+        <div class="ans-why">なぜこの語か：外国の文化。 例：I like Japanese culture.（私は日本の文化が好きです。）</div>
+        <div class="bx-warn">cul-ture。</div>
+      </div>
+      <div class="gq" data-gid="W-3">
+        <div class="grade"><span class="gq-label">単語③</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-4">
+      <div class="qword">自然</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">nature</div>
+        <div class="ans-read">読み：ネイチャー</div>
+        <div class="ans-why">なぜこの語か：自然を守る。 例：I love nature.（私は自然が大好きです。）</div>
+        <div class="bx-warn">na-ture（「ネイチャー」）。</div>
+      </div>
+      <div class="gq" data-gid="W-4">
+        <div class="grade"><span class="gq-label">単語④</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-5">
+      <div class="qword">未来・将来</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">future</div>
+        <div class="ans-read">読み：フューチャー</div>
+        <div class="ans-why">なぜこの語か：in the future。 例：I want to be a teacher in the future.（私は将来、先生になりたいです。）</div>
+        <div class="bx-warn">fu-ture。</div>
+      </div>
+      <div class="gq" data-gid="W-5">
+        <div class="grade"><span class="gq-label">単語⑤</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-6">
+      <div class="qword">思い出・記憶</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">memory</div>
+        <div class="ans-read">読み：メモリー</div>
+        <div class="ans-why">なぜこの語か：よい思い出。 例：This is a good memory.（これはよい思い出です。）</div>
+        <div class="bx-warn">mem-o-ry。</div>
+      </div>
+      <div class="gq" data-gid="W-6">
+        <div class="grade"><span class="gq-label">単語⑥</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-6','o')">○</button><button class="x" onclick="g(this,'W-6','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-7">
+      <div class="qword">問題・困りごと</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">problem</div>
+        <div class="ans-read">読み：プロブレム</div>
+        <div class="ans-why">なぜこの語か：問題を解決する。 例：I have a problem.（私には困りごとがあります。）</div>
+        <div class="bx-warn">prob-lem。<span class="red">b</span> を忘れない。</div>
+      </div>
+      <div class="gq" data-gid="W-7">
+        <div class="grade"><span class="gq-label">単語⑦</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-7','o')">○</button><button class="x" onclick="g(this,'W-7','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-8">
+      <div class="qword">機会・チャンス</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">chance</div>
+        <div class="ans-read">読み：チャンス</div>
+        <div class="ans-why">なぜこの語か：「〜する機会」。 例：I have a chance to study English.（私は英語を勉強する機会があります。）</div>
+        <div class="bx-warn">ch で始まる。</div>
+      </div>
+      <div class="gq" data-gid="W-8">
+        <div class="grade"><span class="gq-label">単語⑧</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-8','o')">○</button><button class="x" onclick="g(this,'W-8','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-9">
+      <div class="qword">平和</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">peace</div>
+        <div class="ans-read">読み：ピース</div>
+        <div class="ans-why">なぜこの語か：世界の平和。 例：I want peace in the world.（私は世界に平和を望みます。）</div>
+        <div class="bx-warn">piece（一切れ）と区別。</div>
+      </div>
+      <div class="gq" data-gid="W-9">
+        <div class="grade"><span class="gq-label">単語⑨</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-9','o')">○</button><button class="x" onclick="g(this,'W-9','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-10">
+      <div class="qword">趣味</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">hobby</div>
+        <div class="ans-read">読み：ホビー</div>
+        <div class="ans-why">なぜこの語か：「私の趣味は〜」。 例：My hobby is reading books.（私の趣味は読書です。）</div>
+        <div class="bx-warn"><span class="red">b は2つ</span>（hoby ✕）。</div>
+      </div>
+      <div class="gq" data-gid="W-10">
+        <div class="grade"><span class="gq-label">単語⑩</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-10','o')">○</button><button class="x" onclick="g(this,'W-10','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
   </div>
 </div>
@@ -211,10 +356,50 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 </div>
 <div class="sec th-teal">
   <div class="sec-body">
-    <div class="slide-ph">
-      <b>📥 ここに通常テストの「熟語3」をスライドします（ユーザー作業）。</b><br>
-      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
-      <!-- 熟語3問ぶんの .q.vocab ブロックをここへ貼り付け。採点gid（P-1〜P-3）はスライド時に付与する。 -->
+    <div class="q vocab" data-id="P-1">
+      <div class="qword">〜に参加する</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">take part in ～</div>
+        <div class="ans-read">読み：テイク パート イン</div>
+        <div class="ans-why">なぜこの語か：イベントに参加。 例：I take part in the school event.（私は学校のイベントに参加します。）</div>
+        <div class="bx-warn">part と in のまとまり。</div>
+      </div>
+      <div class="gq" data-gid="P-1">
+        <div class="grade"><span class="gq-label">熟語①</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="P-2">
+      <div class="qword">成長する・大人になる</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">grow up</div>
+        <div class="ans-read">読み：グロウ アップ</div>
+        <div class="ans-why">なぜこの語か：「大きくなる」。 例：I want to grow up to be kind.（私は優しい人に成長したいです。）</div>
+        <div class="bx-warn">up とセット。</div>
+      </div>
+      <div class="gq" data-gid="P-2">
+        <div class="grade"><span class="gq-label">熟語②</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="P-3">
+      <div class="qword">初めて</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">for the first time</div>
+        <div class="ans-read">読み：フォー ザ ファースト タイム</div>
+        <div class="ans-why">なぜこの語か：「生まれて初めて」。 例：I cooked for the first time yesterday.（私は昨日、初めて料理をしました。）</div>
+        <div class="bx-warn">first time のまとまり。</div>
+      </div>
+      <div class="gq" data-gid="P-3">
+        <div class="grade"><span class="gq-label">熟語③</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
   </div>
 </div>
@@ -227,10 +412,25 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 </div>
 <div class="sec th-prp">
   <div class="sec-body">
-    <div class="slide-ph">
-      <b>📥 ここに通常テストの「英作文1」をスライドします（ユーザー作業）。</b><br>
-      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
-      <!-- 英作文1問ぶんの .q.writing ブロックをここへ貼り付け。採点gid（EW-1）はスライド時に付与する。 -->
+    <div class="q vocab" data-id="EW-1">
+      <div class="qword">あなたは本を何冊持っていますか。</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">How many books do you have?</div>
+        <div class="ans-read">読み：ハウ メニー ブックス ドゥ ユー ハブ</div>
+        <div class="ans-why"><b>① 日本語を分ける：</b>「あなたは／本を何冊／持っていますか」。数をたずねる疑問文。</div>
+        <div class="ans-why"><b>② 使う文法：</b>数をきくのは <span class="red">How many ＋ 複数名詞</span>。そのあとは疑問文の語順。</div>
+        <div class="ans-why"><b>③ 語順（左から組む）：</b>How many books ＋ do you have？（How many＋名詞＋do＋主語＋動詞）。</div>
+        <div class="ans-why"><b>④ 形のチェック：</b>How many の後ろは必ず複数 <span class="red">books</span>（book にしない）。</div>
+        <div class="bx-warn">✕ How many book（単数）→ ○ books。<br>✕ How many books you have?（do 抜け）→ ○ do you have?。<br>✕ How much books（数えられる物に much）→ ○ How many。</div>
+        <div class="ans-why"><b>⑤ 確かめ算：</b>「How many＋複数名詞」「do＋主語＋原形」の2つができていれば正解。</div>
+        <div class="ans-why"><b>🌸 ゴール：</b>数をたずねる文を How many＋複数名詞＋疑問文の形で作れる。</div>
+      </div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade"><span class="gq-label">英作文</span>答えを見て丸つけ → <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
   </div>
 </div>

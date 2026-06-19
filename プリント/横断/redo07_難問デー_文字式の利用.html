@@ -195,10 +195,155 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 </div>
 <div class="sec th-prp">
   <div class="sec-body">
-    <div class="slide-ph">
-      <b>📥 ここに通常テストの「単語10」をスライドします（ユーザー作業）。</b><br>
-      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
-      <!-- 単語10問ぶんの .q.vocab ブロックをここへ貼り付け。採点gidはスライド時に付与する。 -->
+    <div class="q vocab" data-id="W-1">
+      <div class="qword">山</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">mountain</div>
+        <div class="ans-read">読み：マウンテン</div>
+        <div class="ans-why">なぜこの語か：高くそびえる大きな山のこと。「mount（登る）」からきたことばで、登山＝mountain climbing。 例：There is a big mountain behind our school.（わたしたちの学校の後ろに大きな山があります。）</div>
+        <div class="bx-warn">moun-tain。</div>
+      </div>
+      <div class="gq" data-gid="W-1">
+        <div class="grade"><span class="gq-label">単語①</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-2">
+      <div class="qword">湖</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">lake</div>
+        <div class="ans-read">読み：レイク</div>
+        <div class="ans-why">なぜこの語か：陸に囲まれた大きな池のこと。「池」の pond より大きい。有名な湖の名前にも lake が使われる（Lake Biwa＝琵琶湖）。 例：We swim in the lake every summer.（わたしたちは毎年夏にその湖で泳ぎます。）</div>
+        <div class="bx-warn">lake。</div>
+      </div>
+      <div class="gq" data-gid="W-2">
+        <div class="grade"><span class="gq-label">単語②</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-3">
+      <div class="qword">森</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">forest</div>
+        <div class="ans-read">読み：フォレスト</div>
+        <div class="ans-why">なぜこの語か：木がたくさん密集しているところ。「wood（小さな雑木林）」より広い。映画「フォレスト・ガンプ」の Forrest は人の名前なので別物。 例：Many animals live in the forest.（たくさんの動物がその森に住んでいます。）</div>
+        <div class="bx-warn">for-est。</div>
+      </div>
+      <div class="gq" data-gid="W-3">
+        <div class="grade"><span class="gq-label">単語③</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-4">
+      <div class="qword">星</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">star</div>
+        <div class="ans-read">読み：スター</div>
+        <div class="ans-why">なぜこの語か：夜空に光る星のこと。「有名人・スター」の意味もある（同じつづり）。星型の形も star shaped という。 例：I can see many stars in the sky tonight.（今夜は空にたくさんの星が見えます。）</div>
+        <div class="bx-warn">star。</div>
+      </div>
+      <div class="gq" data-gid="W-4">
+        <div class="grade"><span class="gq-label">単語④</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-5">
+      <div class="qword">月</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">moon</div>
+        <div class="ans-read">読み：ムーン</div>
+        <div class="ans-why">なぜこの語か：夜空に見える月のこと。「month（月）」と語源がつながっている。「sun（太陽）」とセットで覚えると便利。 例：The moon is very bright tonight.（今夜は月がとても明るいです。）</div>
+        <div class="bx-warn"><span class="red">o は2つ</span>（mon ✕）。</div>
+      </div>
+      <div class="gq" data-gid="W-5">
+        <div class="grade"><span class="gq-label">単語⑤</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-6">
+      <div class="qword">うで</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">arm</div>
+        <div class="ans-read">読み：アーム</div>
+        <div class="ans-why">なぜこの語か：肩から手首までの部分。「leg（脚）」と対で覚えると体のパーツがまとめて入る。「arm chair（ひじかけいす）」のように日本語にもなっている。 例：She has long arms.（彼女は腕が長いです。）</div>
+        <div class="bx-warn">arm。</div>
+      </div>
+      <div class="gq" data-gid="W-6">
+        <div class="grade"><span class="gq-label">単語⑥</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-6','o')">○</button><button class="x" onclick="g(this,'W-6','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-7">
+      <div class="qword">あし（脚）</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">leg</div>
+        <div class="ans-read">読み：レッグ</div>
+        <div class="ans-why">なぜこの語か：腰から足首までの脚全体のこと。「foot（足先）」「arm（腕）」と合わせて体パーツをセットで覚えよう。テーブルの脚も leg という。 例：My leg hurts after the game.（試合のあと脚が痛いです。）</div>
+        <div class="bx-warn"><span class="red">g は2つ</span>（leg）。</div>
+      </div>
+      <div class="gq" data-gid="W-7">
+        <div class="grade"><span class="gq-label">単語⑦</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-7','o')">○</button><button class="x" onclick="g(this,'W-7','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-8">
+      <div class="qword">ゆび</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">finger</div>
+        <div class="ans-read">読み：フィンガー</div>
+        <div class="ans-why">なぜこの語か：手の指のこと（足のゆびは toe）。「フィンガーフード」など日本語にもなっている。hand（手）の中に5本の finger がある、とイメージして覚えよう。 例：She cut her finger while cooking.（彼女は料理中に指を切りました。）</div>
+        <div class="bx-warn">fin-ger。</div>
+      </div>
+      <div class="gq" data-gid="W-8">
+        <div class="grade"><span class="gq-label">単語⑧</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-8','o')">○</button><button class="x" onclick="g(this,'W-8','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-9">
+      <div class="qword">かみの毛</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">hair</div>
+        <div class="ans-read">読み：ヘア</div>
+        <div class="ans-why">なぜこの語か：頭の毛のまとまり全体を指す（数えないときは不可算名詞）。「hare（野ウサギ）」と読みが似ているので注意。ヘアスタイルの「ヘア」がこの語。 例：She has long hair.（彼女は髪が長いです。）</div>
+        <div class="bx-warn">hair。</div>
+      </div>
+      <div class="gq" data-gid="W-9">
+        <div class="grade"><span class="gq-label">単語⑨</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-9','o')">○</button><button class="x" onclick="g(this,'W-9','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-10">
+      <div class="qword">くび</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">neck</div>
+        <div class="ans-read">読み：ネック</div>
+        <div class="ans-why">なぜこの語か：頭と胴体をつなぐ部分。「ネックレス（necklace）」の「ネック」がこの語。「ボトルネック（bottleneck）」など日本語にもなっている。 例：I have a pain in my neck.（首が痛いです。）</div>
+        <div class="bx-warn">neck。</div>
+      </div>
+      <div class="gq" data-gid="W-10">
+        <div class="grade"><span class="gq-label">単語⑩</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-10','o')">○</button><button class="x" onclick="g(this,'W-10','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
   </div>
 </div>
@@ -211,10 +356,50 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 </div>
 <div class="sec th-teal">
   <div class="sec-body">
-    <div class="slide-ph">
-      <b>📥 ここに通常テストの「熟語3」をスライドします（ユーザー作業）。</b><br>
-      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
-      <!-- 熟語3問ぶんの .q.vocab ブロックをここへ貼り付け。採点gidはスライド時に付与する。 -->
+    <div class="q vocab" data-id="P-1">
+      <div class="qword">〜を拾い上げる・迎えに行く</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">pick up</div>
+        <div class="ans-read">読み：ピック アップ</div>
+        <div class="ans-why">なぜこの語か：pick（つまむ）＋ up（上へ）で「下から拾い上げる」イメージ。「車で迎えに行く」にも使う。目的語が代名詞のときは pick it up と間に入る。 例：Can you pick up the pen for me?（そのペンを拾い上げてもらえますか？）</div>
+        <div class="bx-warn">up とセット。</div>
+      </div>
+      <div class="gq" data-gid="P-1">
+        <div class="grade"><span class="gq-label">熟語①</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="P-2">
+      <div class="qword">〜を捨てる</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">throw away</div>
+        <div class="ans-read">読み：スロー アウェイ</div>
+        <div class="ans-why">なぜこの語か：throw（投げる）＋ away（遠くへ）で「遠くへ投げ捨てる」イメージ。ゴミを捨てるときに使う。「throwaway（使い捨ての）」という形容詞にもなる。 例：Please throw away the old newspaper.（古い新聞紙を捨ててください。）</div>
+        <div class="bx-warn">throw のつづり（<span class="red">th</span>）。</div>
+      </div>
+      <div class="gq" data-gid="P-2">
+        <div class="grade"><span class="gq-label">熟語②</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="P-3">
+      <div class="qword">〜を書きとめる</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">write down</div>
+        <div class="ans-read">読み：ライト ダウン</div>
+        <div class="ans-why">なぜこの語か：write（書く）＋ down（下へ・固定する）で「メモとして書きとめる」イメージ。大事なことを忘れないように記録するときに使う。 例：Please write down your name and phone number.（名前と電話番号を書きとめてください。）</div>
+        <div class="bx-warn">down とセット。</div>
+      </div>
+      <div class="gq" data-gid="P-3">
+        <div class="grade"><span class="gq-label">熟語③</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
   </div>
 </div>
@@ -227,10 +412,25 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 </div>
 <div class="sec th-prp">
   <div class="sec-body">
-    <div class="slide-ph">
-      <b>📥 ここに通常テストの「英作文1」をスライドします（ユーザー作業）。</b><br>
-      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
-      <!-- 英作文1問ぶんの .q.writing ブロックをここへ貼り付け。採点gidはスライド時に付与する。 -->
+    <div class="q vocab" data-id="EW-1">
+      <div class="qword">私の父は東京で働いています。</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">My father works in Tokyo.</div>
+        <div class="ans-read">読み：マイ ファーザー ワークス イン トウキョウ</div>
+        <div class="ans-why"><b>① 日本語を分ける：</b>「私の父は／東京で／働いています」。主語は my father＝三人称単数。「〜で」は場所。</div>
+        <div class="ans-why"><b>② 使う文法：</b>主語が三人称単数なので work→<span class="red">works</span>。「〜で（都市など広い場所）」は <span class="red">in</span>。</div>
+        <div class="ans-why"><b>③ 語順（左から組む）：</b>My father ＋ works ＋ in Tokyo.</div>
+        <div class="ans-why"><b>④ 形のチェック：</b>三単現の s を忘れず works。都市は in Tokyo。</div>
+        <div class="bx-warn">✕ My father work in Tokyo（s がない）→ ○ works。<br>✕ at Tokyo（都市に at）→ ○ in Tokyo。都市・国など広い場所は in。</div>
+        <div class="ans-why"><b>⑤ 確かめ算：</b>「三単現の s」「場所の前置詞 in」の2つができていれば正解。</div>
+        <div class="ans-why"><b>🌸 ゴール：</b>三単現の s を付け、都市など広い場所に in を選べる。</div>
+      </div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade"><span class="gq-label">英作文</span>答えを見て丸つけ → <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
   </div>
 </div>

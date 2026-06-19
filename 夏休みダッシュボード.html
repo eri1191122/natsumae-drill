@@ -1,260 +1,217 @@
 <!DOCTYPE html>
 <html lang="ja">
-<!--
- 夏休み 学習ダッシュボード（夏前キットの index とは別）。
- ・暗記カード60（Day01〜30・その1/その2）＋夏の特訓数学（P1〜P12d）の入口。
- ・完了は各プリントが保存する localStorage[KEY+'_done'] を読んで ✓ を表示。
- ・正本＝プリント/暗記カード/暗記60_配信スケジュール.md ／ プリント/夏_特訓数学プリント/。
- ・実施日は夏休み開始日の確定後に date を埋める（今は Day 番号で順序のみ）。
--->
 <head>
 <meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>夏休み 学習ダッシュボード</title>
+<title>🌻 ほのちゃんの夏休みダッシュボード</title>
 <style>
+:root{
+  --bg1:#fff2f8; --bg2:#eaf4ff; --card:#fff; --ink:#4a3a44; --sub:#9b8893;
+  --pink:#f48fb6; --pink-d:#e26b9a; --mint:#3fb89e; --blue:#5a9fe0; --lav:#a98fe0;
+  --gold:#f4b740; --line:#f3e4ed; --good:#54c08a; --shadow:0 6px 20px rgba(190,120,160,.16);
+}
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
-body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f8fb;color:#26323f;font-size:15px;line-height:1.7}
-.wrap{max-width:960px;margin:0 auto;padding:18px 14px 80px}
-.hd{background:linear-gradient(120deg,#3f5c86,#5b86b8);color:#fff;border-radius:14px;padding:22px 22px;margin-bottom:16px;box-shadow:0 4px 14px rgba(63,92,134,.25)}
-.hd h1{font-size:23px;font-weight:900;margin-bottom:6px}
-.hd p{font-size:13px;opacity:.95}
-.hd .note{margin-top:8px;font-size:12.5px;background:rgba(255,255,255,.16);border-radius:8px;padding:7px 11px}
-.nav{margin:10px 0 18px}
-.nav a{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-right:14px}
-.nav a:hover{text-decoration:underline}
-.bar{background:#fff;border:1px solid #dde4ee;border-radius:12px;padding:14px 18px;margin-bottom:18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
-.bar .big{font-size:30px;font-weight:900;color:#3f5c86}
-.bar .lbl{font-size:13px;color:#5a6b80}
-.bar .track{flex:1;min-width:160px;height:12px;background:#eef2f7;border-radius:8px;overflow:hidden}
-.bar .fill{height:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);width:0}
-.sec{background:#fff;border:1px solid #e1e7f0;border-radius:12px;margin-bottom:20px;overflow:hidden;box-shadow:0 2px 8px rgba(60,80,110,.06)}
-.sec-hd{padding:14px 18px;background:#eef3fa;border-left:6px solid #9fb8d9;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-.sec-hd h2{font-size:17px;font-weight:900;color:#2f3b4a}
-.sec-hd .cnt{font-size:12px;font-weight:800;color:#4c5b70;background:#fff;border:1px solid #cdd8e8;border-radius:10px;padding:2px 9px}
-.sec-hd.amnesia{background:#f0ecf8;border-left-color:#b8a4d6}
-.sec-hd.math{background:#e9f1ee;border-left-color:#91bdb7}
-.sec-body{padding:10px 14px 16px}
-.row{display:flex;align-items:center;gap:10px;padding:9px 8px;border-bottom:1px dashed #e6ebf2;flex-wrap:wrap}
-.row:last-child{border-bottom:none}
-.row .day{font-size:12px;font-weight:800;color:#5a6b80;background:#eef2f7;border-radius:8px;padding:3px 8px;min-width:54px;text-align:center}
-.row .ttl{flex:1;min-width:180px;font-size:14px;font-weight:700;color:#31415f}
-.row .ttl small{display:block;font-size:11.5px;color:#8392a5;font-weight:500;margin-top:1px}
-.row a.go{font-size:12.5px;font-weight:800;text-decoration:none;color:#fff;background:#657b97;border-radius:16px;padding:6px 13px}
-.row a.go.s2{background:#9079b0}
-.row a.go:hover{background:#4f617a}
-.row a.go.s2:hover{background:#74609a}
-.row .soon{font-size:12px;color:#aab4c2;background:#f1f4f8;border:1px solid #e2e8f0;border-radius:16px;padding:6px 12px}
-.row .chk{font-size:13px;font-weight:800;min-width:62px;text-align:center}
-.row .chk.done{color:#3f8f5a}
-.row .chk.todo{color:#c2ccd8}
-.legend{font-size:12px;color:#7a8699;margin:2px 4px 10px}
-.foot{text-align:center;font-size:12px;color:#8392a5;margin-top:16px}
-@media print{.nav,.bar .track{display:none}}
+body{font-family:'Hiragino Maru Gothic ProN','Hiragino Kaku Gothic ProN',-apple-system,sans-serif;
+  background:linear-gradient(165deg,var(--bg1),var(--bg2));color:var(--ink);line-height:1.6;
+  font-size:15px;padding-bottom:60px;min-height:100vh}
+.wrap{max-width:600px;margin:0 auto;padding:16px 14px}
+
+/* ヘッダー */
+.head{background:linear-gradient(135deg,#fbb1cd,#b79fe6 75%);color:#fff;border-radius:26px;
+  padding:22px 22px;box-shadow:var(--shadow);margin-bottom:14px;position:relative;overflow:hidden}
+.head::after{content:"🌻";position:absolute;right:-8px;bottom:-14px;font-size:88px;opacity:.20}
+.head h1{font-size:21px;font-weight:800;margin-bottom:8px;letter-spacing:.3px}
+.head .goal{display:inline-block;background:rgba(255,255,255,.30);border-radius:20px;padding:6px 16px;font-size:13px;font-weight:800}
+.head .date{font-size:12.5px;margin-top:10px;opacity:.97;font-weight:700}
+.head .cheer{margin-top:10px;background:rgba(255,255,255,.9);color:var(--pink-d);border-radius:16px;padding:9px 14px;font-size:13.5px;font-weight:800;position:relative;z-index:1}
+
+/* 今日のカード */
+.today{background:var(--card);border-radius:26px;padding:6px;box-shadow:0 8px 26px rgba(226,107,154,.2);margin-bottom:16px}
+.today .inner{border:2px dashed #f3c6da;border-radius:22px;padding:16px 14px}
+.today.alldone .inner{border-color:#bfe8d2;background:#f4fbf7}
+.today .tag{display:inline-block;background:#ffe3ef;color:var(--pink-d);font-size:12px;font-weight:800;border-radius:14px;padding:4px 13px;margin-bottom:8px}
+.today .dtitle{font-size:18px;font-weight:800;color:var(--pink-d);margin-bottom:3px}
+.today .lead{font-size:12.5px;color:var(--sub);margin-bottom:6px;font-weight:700}
+.today .pbar{height:9px;background:#f1e6ec;border-radius:6px;overflow:hidden;margin:10px 0 14px}
+.today .pfill{height:100%;background:linear-gradient(90deg,#f48fb6,#a98fe0);width:0;border-radius:6px;transition:width .5s}
+
+.task{display:flex;align-items:center;gap:11px;padding:12px;border-radius:18px;margin-bottom:10px}
+.task.amn{background:#fff6e9}.task.eng{background:#e7f7f2}.task.mat{background:#eaf2fc}
+.task .ic{width:44px;height:44px;border-radius:15px;display:flex;align-items:center;justify-content:center;font-size:23px;flex-shrink:0;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.05)}
+.task .body{flex:1;min-width:0}
+.task .nm{font-size:11px;font-weight:800}
+.task.amn .nm{color:#e0962f}.task.eng .nm{color:#2faa90}.task.mat .nm{color:#4f8fd6}
+.task .ti{font-size:14.5px;font-weight:800;color:var(--ink);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.task .acts{display:flex;gap:6px;margin-top:7px;flex-wrap:wrap}
+.go{font-size:12.5px;font-weight:800;color:#fff;border-radius:16px;padding:6px 16px;text-decoration:none;white-space:nowrap}
+.task.amn .go{background:#eaa33f}.task.eng .go{background:#2faa90}.task.mat .go{background:#4f8fd6}
+.go.g2{opacity:.78}
+.go.soon{background:#cdbfc8 !important}
+.chk{width:52px;height:52px;border-radius:50%;border:3px solid #efdbe6;background:#fff;font-size:12px;font-weight:800;color:#cbb3c1;flex-shrink:0;cursor:pointer;line-height:1.1;transition:.18s}
+.chk.on{background:var(--good);border-color:var(--good);color:#fff;transform:scale(1.08)}
+.celebrate{text-align:center;font-size:16px;font-weight:800;color:var(--good);padding:8px 0 2px}
+
+/* スタンプ帳 */
+.stamp{background:var(--card);border-radius:22px;padding:16px 18px;box-shadow:var(--shadow);margin-bottom:16px}
+.stamp .sh{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.stamp .sh .t{font-size:15px;font-weight:800;color:var(--lav)}
+.stamp .sh .c{font-size:13px;font-weight:800;color:var(--pink-d)}
+.sgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+.cell{aspect-ratio:1;border-radius:13px;display:flex;align-items:center;justify-content:center;font-size:19px;background:#faf0f5;color:#cba9bd;font-weight:800}
+.cell.done{background:linear-gradient(135deg,#ffe0ee,#ffd2e8)}
+.cell.today{border:3px solid var(--pink-d);color:var(--pink-d);background:#fff}
+
+/* 全日程 */
+.cal{background:var(--card);border-radius:20px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:14px}
+.cal-h{padding:15px 18px;font-size:14.5px;font-weight:800;color:var(--lav);cursor:pointer;display:flex;justify-content:space-between;align-items:center}
+.cal-b{padding:0 12px 12px;display:none}
+.drow{display:flex;align-items:center;gap:10px;padding:11px 10px;border-top:1px solid var(--line);font-size:13px}
+.drow.today{background:#fff6fa;border-radius:14px;border-top-color:transparent}
+.drow .dn{min-width:72px;font-weight:800;color:var(--pink-d);font-size:11.5px}
+.drow .dl{flex:1;color:#6a5a63;font-size:12px}
+.drow .mk{font-size:17px;min-width:24px;text-align:center}
+.foot{text-align:center;font-size:12.5px;color:var(--sub);padding:12px;font-weight:700;line-height:1.9}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<div class="hd">
-  <h1>🌻 夏休み 学習ダッシュボード</h1>
-  <p>暗記カード（毎日15分・その1＝書いて覚える／その2＝かくしてテスト）＋ 特訓数学。夏前キットとは別のページです。</p>
-  <div class="note">📅 <b>Day01＝7/18（土）から毎日</b>（Day30＝8/16）。<b>暗記は休みの日もやる</b>（15分だけでもOK）。旅行で1日とんでも、次のDayから続けよう。</div>
-</div>
-
-<div class="nav">
-  <a href="index_iPad_学習ダッシュボード.html">← 夏前キットのダッシュボードへ</a>
-  <a href="プリント/暗記カード/暗記60_配信スケジュール.md">配信スケジュール（正本）</a>
-</div>
-
-<div class="bar">
-  <div><span class="big" id="pct">0%</span> <span class="lbl">今できている割合</span></div>
-  <div class="track"><div class="fill" id="fill"></div></div>
-  <div class="lbl"><span id="doneN">0</span> / <span id="allN">0</span> 枚 完了</div>
-</div>
-
-<!-- ① 暗記カード -->
-<div class="sec">
-  <div class="sec-hd amnesia"><h2>① 暗記カード（毎日15分）</h2><span class="cnt" id="cntA">0</span></div>
-  <div class="sec-body">
-    <div class="legend">各Day＝「その1（意味→書く）」と「その2（かくして思い出す）」の2枚。まずその1、あとでその2。</div>
-    <div id="amnesiaRows"></div>
+  <div class="head">
+    <h1>🌻 ほのちゃんの夏休みダッシュボード</h1>
+    <div class="goal">めざせ！ とっくん選抜クラス 合格 ✨</div>
+    <div class="date" id="headDate">　</div>
+    <div class="cheer" id="cheerMsg">　</div>
   </div>
-</div>
 
-<!-- ② 特訓数学 -->
-<div class="sec">
-  <div class="sec-hd math"><h2>② 特訓数学（全31枚・P1〜P12d）</h2><span class="cnt" id="cntM">0</span></div>
-  <div class="sec-body">
-    <div class="legend">方程式・図形・規則性・グラフ水そう・過去問通しまで。通常は1枚30分、通しセットは本番モード。</div>
-    <div id="mathRows"></div>
+  <div id="todayBox"></div>
+
+  <div class="stamp">
+    <div class="sh"><span class="t">🌸 がんばりスタンプ帳</span><span class="c" id="stampCnt">0 / 30</span></div>
+    <div class="sgrid" id="stampGrid"></div>
   </div>
-</div>
 
-<!-- ③ 国語プリント -->
-<div class="sec">
-  <div class="sec-hd"><h2>③ 国語プリント（特訓 大問三型）</h2><span class="cnt" id="cntK">0</span></div>
-  <div class="sec-body">
-    <div class="legend">漢字読み書き・四字熟語・文節の働き・慣用句を特訓本番の形で。1枚30分・○✕＋ミス分類。</div>
-    <div id="kokugoRows"></div>
+  <div class="cal">
+    <div class="cal-h" onclick="toggleCal()"><span>📅 ぜんぶの日程（7/18〜30日）</span><span id="calTgl">ひらく ＋</span></div>
+    <div class="cal-b" id="calBody"></div>
   </div>
-</div>
 
-<!-- ④ 英語きそ（中1文法マニュアル） -->
-<div class="sec">
-  <div class="sec-hd"><h2>④ 英語きそ（中1文法マニュアル U1〜U10）</h2><span class="cnt" id="cntE">0</span></div>
-  <div class="sec-body">
-    <div class="legend">中1文法を1単元30分で一巡。be動詞〜前置詞まで「読む→すぐ書く」で産出に直結。1枚30分・○✕＋まちがえたら3回書き。</div>
-    <div id="englishRows"></div>
-  </div>
-</div>
-
-<div class="foot">できた枚数がふえたら、それが伸びたしるし。1日5分からでOK。🌸</div>
+  <div class="foot">毎日ここを開いて、3つできたら 🌸<br>むりせず、できる分だけでだいじょうぶ。</div>
 
 </div>
 
 <script>
-/* ===== 暗記カード Day01〜30（その1=tokkun_kaNN / その2=tokkun_kbNN）。file が null は「準備中」 ===== */
-var AMNESIA = [
-  {day:"Day01", title:"英 ocean/mountain/yacht/eight/bear ＋ 漢字 激流/派手/均質・発揮/推移", rote:"英熟語(get up/look at/be good at)", k1:"tokkun_ka01", f1:"プリント/暗記カード/月_暗記カード.html", k2:"tokkun_kb01", f2:"プリント/暗記カード/月_暗記カード_その2.html"},
-  {day:"Day02", title:"英 white/February/Wednesday/friend/people ＋ 漢字 抽象/具体/矛盾・著しい/促す", rote:"四字熟語(一石二鳥/因果応報/温故知新)", k1:"tokkun_ka02", f1:"プリント/暗記カード/火_暗記カード.html", k2:"tokkun_kb02", f2:"プリント/暗記カード/火_暗記カード_その2.html"},
-  {day:"Day03", title:"英 question/answer/library/restaurant/vegetable ＋ 漢字 価値/評価/構造・装う/幼い", rote:"部首(部/複/馬の画数)", k1:"tokkun_ka03", f1:"プリント/暗記カード/水_暗記カード.html", k2:"tokkun_kb03", f2:"プリント/暗記カード/水_暗記カード_その2.html"},
-  {day:"Day04", title:"英 dictionary/daughter/Tuesday/Saturday/August ＋ 漢字 概念/象徴/普遍・敬う/名残", rote:"英熟語(listen to/get to/go to bed)", k1:"tokkun_ka04", f1:"プリント/暗記カード/木_暗記カード.html", k2:"tokkun_kb04", f2:"プリント/暗記カード/木_暗記カード_その2.html"},
-  {day:"Day05", title:"英 weather/breakfast/hour/night/know ＋ 漢字 対象/根拠/批判・行方/出納", rote:"慣用句(顔が広い/気が置けない/目が高い)", k1:"tokkun_ka05", f1:"プリント/暗記カード/金_暗記カード.html", k2:"tokkun_kb05", f2:"プリント/暗記カード/金_暗記カード_その2.html"}
-];
-/* Day06〜30（DayNN_その1.html / DayNN_その2.html）。中身は配信スケジュール §3 のルールでDBから充当済み。 */
-var ROTE={6:"英熟語",7:"四字熟語",8:"部首画数",9:"英熟語",10:"慣用句",11:"英熟語",12:"四字熟語",13:"部首画数",14:"英熟語",15:"慣用句",16:"英熟語",17:"四字熟語",18:"部首画数",19:"英熟語",20:"慣用句",21:"英熟語",22:"四字熟語",23:"部首画数",24:"英熟語",25:"慣用句",26:"英熟語",27:"四字熟語",28:"部首画数",29:"英熟語",30:"慣用句(直前仕上げ)"};
-for(var d=6; d<=30; d++){
-  var nn=(d<10?'0':'')+d;
-  AMNESIA.push({day:"Day"+nn, title:"英単語5＋漢字5＋特訓ブリッジ", rote:ROTE[d]+"3", k1:"tokkun_ka"+nn, f1:"プリント/暗記カード/Day"+nn+"_その1.html", k2:"tokkun_kb"+nn, f2:"プリント/暗記カード/Day"+nn+"_その2.html"});
-}
-
-/* ===== 特訓数学（9月特訓選抜の全6大問カバー。KEYは各プリント/記録ボードと統一） ===== */
-var MATH = [
-  {day:"P1", title:"正負の数 L3-L4", k:"tokkun_m01", f:"プリント/夏_特訓数学プリント/特訓P1_正負の数_L3L4.html"},
-  {day:"P2a", title:"文字式 演習 L2-L3", k:"tokkun_m02a", f:"プリント/夏_特訓数学プリント/特訓P2a_文字式_演習.html"},
-  {day:"P2b", title:"文字式 特訓 L3（立式）", k:"tokkun_m02b", f:"プリント/夏_特訓数学プリント/特訓P2b_文字式_特訓_立式.html"},
-  {day:"P3", title:"方程式の解法 演習", k:"tokkun_m03", f:"プリント/夏_特訓数学プリント/特訓P3_方程式の解法_演習.html"},
-  {day:"P3b", title:"方程式の解法 ドリル（小数・分数係数）", k:"tokkun_m03b", f:"プリント/夏_特訓数学プリント/特訓P3b_方程式の解法_ドリル.html"},
-  {day:"P4", title:"文章を式に①（個数・過不足）", k:"tokkun_m04", f:"プリント/夏_特訓数学プリント/特訓P4_文章を式に1_型カード_個数過不足.html"},
-  {day:"P4b", title:"文章を式に①-2（個数・過不足）", k:"tokkun_m04b", f:"プリント/夏_特訓数学プリント/特訓P4b_文章を式に_個数過不足2.html"},
-  {day:"P4c", title:"文章を式に①-3（個数・過不足）", k:"tokkun_m04c", f:"プリント/夏_特訓数学プリント/特訓P4c_文章を式に_個数過不足3.html"},
-  {day:"P4d", title:"文章を式に④（整数・比例配分・利益）", k:"tokkun_m04d", f:"プリント/夏_特訓数学プリント/特訓P4d_文章を式に_整数比例配分利益.html"},
-  {day:"P5", title:"文章を式に②（速さ・割合利益）", k:"tokkun_m05", f:"プリント/夏_特訓数学プリント/特訓P5_文章を式に2_速さ_割合利益.html"},
-  {day:"P5b", title:"文章を式に②-2（速さ）", k:"tokkun_m05b", f:"プリント/夏_特訓数学プリント/特訓P5b_文章を式に_速さ2.html"},
-  {day:"P5c", title:"文章を式に②-3（割合・食塩水）", k:"tokkun_m05c", f:"プリント/夏_特訓数学プリント/特訓P5c_文章を式に_割合食塩水.html"},
-  {day:"P6", title:"文章を式に③（正負の文章）", k:"tokkun_m06", f:"プリント/夏_特訓数学プリント/特訓P6_文章を式に3_正負の文章.html"},
-  {day:"P6b", title:"文章を式に③-2（正負の文章）", k:"tokkun_m06b", f:"プリント/夏_特訓数学プリント/特訓P6b_文章を式に_正負文章2.html"},
-  {day:"P7", title:"方程式の利用 4型混合", k:"tokkun_m07", f:"プリント/夏_特訓数学プリント/特訓P7_方程式の利用_4型混合演習.html"},
-  {day:"P7b", title:"★過去問同型 大問3（個数・速さ・過不足・割合）", k:"tokkun_m07b", f:"プリント/夏_特訓数学プリント/特訓P7b_方程式の利用_過去問同型.html"},
-  {day:"P7c", title:"★発展L4 大問6（出会い・追い越し・時刻逆算）", k:"tokkun_m07c", f:"プリント/夏_特訓数学プリント/特訓P7c_方程式の利用_発展L4.html"},
-  {day:"P8a", title:"図形 演習（面積・円・角度）", k:"tokkun_m08a", f:"プリント/夏_特訓数学プリント/特訓P8a_図形_演習.html"},
-  {day:"P8", title:"複合図形・円・折り返し角", k:"tokkun_m08", f:"プリント/夏_特訓数学プリント/特訓P8_複合図形_円_折り返し角.html"},
-  {day:"P8b", title:"★複合図形L4 大問2（砂時計・折り返し・花びら）", k:"tokkun_m08b", f:"プリント/夏_特訓数学プリント/特訓P8b_複合図形L4_砂時計折り返し花びら.html"},
-  {day:"P9a", title:"規則性 演習（差→n式）", k:"tokkun_m09a", f:"プリント/夏_特訓数学プリント/特訓P9a_規則性_演習.html"},
-  {day:"P9", title:"規則性 n式", k:"tokkun_m09", f:"プリント/夏_特訓数学プリント/特訓P9_規則性_n式.html"},
-  {day:"P9b", title:"★規則性L4 大問4（タイルn式・逆算）", k:"tokkun_m09b", f:"プリント/夏_特訓数学プリント/特訓P9b_規則性L4_タイルn式逆算.html"},
-  {day:"P10a", title:"グラフ 演習（読み取り）", k:"tokkun_m10a", f:"プリント/夏_特訓数学プリント/特訓P10a_速さグラフ_水そう_演習.html"},
-  {day:"P10", title:"速さグラフ・水そう L4", k:"tokkun_m10", f:"プリント/夏_特訓数学プリント/特訓P10_速さグラフ_水そう.html"},
-  {day:"P10b", title:"★グラフ水そうL4 大問5（給水量・満水時刻逆算）", k:"tokkun_m10b", f:"プリント/夏_特訓数学プリント/特訓P10b_グラフ水そうL4.html"},
-  {day:"P11", title:"ケアレス潰し・答案化", k:"tokkun_m11", f:"プリント/夏_特訓数学プリント/特訓P11_ケアレス潰し_答案化.html"},
-  {day:"P12", title:"特訓選抜 過去問形式 通し①", k:"tokkun_m12", f:"プリント/夏_特訓数学プリント/特訓P12_過去問形式_通しセット.html"},
-  {day:"P12b", title:"特訓選抜 過去問形式 通し②", k:"tokkun_m12b", f:"プリント/夏_特訓数学プリント/特訓P12b_過去問形式_通しセット2.html"},
-  {day:"P12c", title:"特訓選抜 過去問形式 通し③", k:"tokkun_m12c", f:"プリント/夏_特訓数学プリント/特訓P12c_過去問形式_通しセット3.html"},
-  {day:"P12d", title:"★過去問通し④ 本番モード（大問1〜6・100点）", k:"tokkun_m12d", f:"プリント/夏_特訓数学プリント/特訓P12d_過去問通し4.html"}
-];
-
-/* ===== 国語プリント（通常＝特訓大問三型・KEY=tokkun_jNN）。file が null は準備中 ===== */
-var KOKUGO = [
-  {day:"国01", title:"特訓 大問三型（漢字読み書き8／四字熟語空欄4／文節の働き・修飾6／慣用句3）", k:"tokkun_j01", f:"プリント/国語プリント/国語通常01_特訓大問三型_知識.html"},
-  {day:"国02", title:"記述（読解短文＋記述4・型カード・自己採点＋AI採点対応）", k:"tokkun_jk01", f:"プリント/国語プリント/国語記述01_読解短文と記述_型カード.html"},
-  {day:"国03", title:"知識 総点検①（漢字読み書き10／部首画数4／四字空欄5／対義・類義4／慣用句5／文節の働き6＝全34問・抜けなし・ミス分類C/K/A）", k:"tokkun_j02", f:"プリント/国語プリント/国語通常02_特訓大問三型_知識総点検.html"},
-  {day:"国04", title:"知識 総点検②（語を入れ替えた反復・全34問）", k:"tokkun_j03", f:"プリント/国語プリント/国語通常03_特訓大問三型_知識総点検02.html"},
-  {day:"国05", title:"長文読解①（文学・特訓大問一型＝AI自作の現代小説900字＋語彙/指示語/抜き出し/心情・理由記述/内容一致8問・iPad自己完結）", k:"tokkun_jr01", f:"プリント/国語プリント/国語読解01_文学長文_特訓大問一型.html"},
-  {day:"国06", title:"長文読解②（文学・本物の名作＝芥川龍之介「トロッコ」抜粋1536字＋語彙/指示語/抜き出し/心情・理由記述/内容一致8問・青空文庫/著作権切れ・iPad自己完結）", k:"tokkun_jr02", f:"プリント/国語プリント/国語読解02_トロッコ_芥川.html"}
-];
-
-var ENGLISH = [
-  {day:"U1", title:"be動詞（am/is/are・肯定否定疑問・this/these）", k:"tokkun_eg_be", f:"プリント/英語基礎/U1_be動詞_基礎深化.html"},
-  {day:"U2", title:"一般動詞（be動詞との区別・don't/Do）", k:"tokkun_eg_v", f:"プリント/英語基礎/U2_一般動詞_基礎深化.html"},
-  {day:"U3", title:"三単現の-s（-s/es/ies・doesn't/Does）", k:"tokkun_eg_s", f:"プリント/英語基礎/U3_三単現_基礎深化.html"},
-  {day:"U4", title:"名詞の複数形（-s/es/ies/ves・How many）", k:"tokkun_eg_pl", f:"プリント/英語基礎/U4_名詞の複数形_基礎深化.html"},
-  {day:"U5", title:"代名詞（I-my-me-mine の全体系）", k:"tokkun_eg_pron", f:"プリント/英語基礎/U5_代名詞_基礎深化.html"},
-  {day:"U6", title:"can（〜できる・can't/Can you）", k:"tokkun_eg_can", f:"プリント/英語基礎/U6_can_基礎深化.html"},
-  {day:"U7", title:"命令文・Let's（主語を消す・Don't）", k:"tokkun_eg_imp", f:"プリント/英語基礎/U7_命令文_基礎深化.html"},
-  {day:"U8", title:"疑問詞（what/where/when/how・順8補完）", k:"tokkun_eg_wh", f:"プリント/英語基礎/U8_疑問詞_基礎深化.html"},
-  {day:"U9", title:"形容詞・副詞（2用法・頻度副詞の位置・very）", k:"tokkun_eg_adj", f:"プリント/英語基礎/U9_形容詞副詞_基礎深化.html"},
-  {day:"U10", title:"前置詞（in/on/at 場所と時・listen to）", k:"tokkun_eg_prep", f:"プリント/英語基礎/U10_前置詞_基礎深化.html"}
-];
-
-function done(k){ return localStorage.getItem(k+'_done')==='1'; }
-
-var allN=0, doneN=0;
-
-function chk(k,f){
-  if(!f) return '<span class="chk todo">—</span>';
-  allN++;
-  if(done(k)){ doneN++; return '<span class="chk done">✓ できた</span>'; }
-  return '<span class="chk todo">まだ</span>';
-}
-function go(f,label,cls){
-  if(!f) return '<span class="soon">準備中</span>';
-  return '<a class="go '+(cls||'')+'" href="'+f+'">'+label+'</a>';
-}
-
-/* Day01=2026/7/18(土) から毎日。開始日を変えるならここだけ。 */
-var START=new Date(2026,6,18);
+/* ===== 設定（すべてGlobで実在確認したファイルのみ） ===== */
+var START=new Date(2026,6,18);            // 夏休み初日 7/18(土)
+var TOTAL_DAYS=30;
 var WD=['日','月','火','水','木','金','土'];
-function dateOf(i){ var d=new Date(START); d.setDate(d.getDate()+i); return (d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+')'; }
+var AMN_WD=['月','火','水','木','金'];
+var PRE_AMN='プリント/暗記カード/';
+var PRE_ENG='プリント/英語基礎/';
+var PRE_MAT='プリント/夏_特訓数学プリント/';
+var CHEERS=[
+ 'きょうもコツコツ、えらい！🌸','1個できたら大成功！✨','つづけるあなたが最強💪',
+ 'むりせず、できる分でOK🍀','とっくん選抜、ぜったいいけるよ！','きのうの自分をこえよう🌟',
+ 'がんばりは、ぜんぶ未来の力💕','ちょっとずつで、ちゃんと進んでる🌱','えがおでいこう😊','今日のあなたも、すてき🌷'
+];
+var EG=[
+ ['U1_be動詞_基礎深化.html','U1 be動詞'],['U2_一般動詞_基礎深化.html','U2 一般動詞'],
+ ['U3_三単現_基礎深化.html','U3 三単現'],['U4_名詞の複数形_基礎深化.html','U4 複数形'],
+ ['U5_代名詞_基礎深化.html','U5 代名詞'],['U6_can_基礎深化.html','U6 can'],
+ ['U7_命令文_基礎深化.html','U7 命令文'],['U8_疑問詞_基礎深化.html','U8 疑問詞'],
+ ['U9_形容詞副詞_基礎深化.html','U9 形容詞・副詞'],['U10_前置詞_基礎深化.html','U10 前置詞']
+];
+var MA=[
+ ['特訓P1_正負の数_L3L4.html','P1 正負の数'],['特訓P1b_正負の数_計算精度ドリル.html','P1b 正負の計算'],
+ ['特訓P2a_文字式_演習.html','P2a 文字式'],['特訓P2b_文字式_特訓_立式.html','P2b 文字式の立式'],
+ ['特訓P2c_文字式_計算精度ドリル.html','P2c 文字式の計算'],['特訓P3_方程式の解法_演習.html','P3 方程式の解き方'],
+ ['特訓P3b_方程式の解法_ドリル.html','P3b 方程式ドリル'],['特訓P4_文章を式に1_型カード_個数過不足.html','P4 文章を式に①'],
+ ['特訓P4b_文章を式に_個数過不足2.html','P4b 文章を式に②'],['特訓P4c_文章を式に_個数過不足3.html','P4c 文章を式に③'],
+ ['特訓P4d_文章を式に_整数比例配分利益.html','P4d 文章を式に④'],['特訓P5_文章を式に2_速さ_割合利益.html','P5 速さと割合'],
+ ['特訓P5b_文章を式に_速さ2.html','P5b 速さ②'],['特訓P5c_文章を式に_割合食塩水.html','P5c 割合・食塩水'],
+ ['特訓P6_文章を式に3_正負の文章.html','P6 正負の文章'],['特訓P6b_文章を式に_正負文章2.html','P6b 正負の文章②'],
+ ['特訓P7_方程式の利用_4型混合演習.html','P7 方程式の利用'],['特訓P7b_方程式の利用_過去問同型.html','P7b 利用・過去問型'],
+ ['特訓P7c_方程式の利用_発展L4.html','P7c 利用・発展'],['特訓P8a_図形_演習.html','P8a 図形のきほん'],
+ ['特訓P8_複合図形_円_折り返し角.html','P8 複合図形'],['特訓P8b_複合図形L4_砂時計折り返し花びら.html','P8b 複合図形L4'],
+ ['特訓P8c_図形角度集中.html','P8c 図形・角度'],['特訓P8d_図形複合面積2.html','P8d 複合面積'],
+ ['特訓P8e_円とおうぎ形.html','P8e 円とおうぎ'],['特訓P8f_等積変形面積一定.html','P8f 等積変形'],
+ ['特訓P9a_規則性_演習.html','P9a 規則性'],['特訓P9_規則性_n式.html','P9 規則性のn式'],
+ ['特訓P9b_規則性L4_タイルn式逆算.html','P9b 規則性L4'],['特訓P9c_規則性碁石マッチ2.html','P9c 碁石・マッチ']
+];
 
-var aH='';
-AMNESIA.forEach(function(r,i){
-  aH+='<div class="row"><span class="day">'+r.day+'<small style="display:block;font-weight:700;color:#7a8699">'+dateOf(i)+'</small></span>'
-    +'<span class="ttl">'+r.title+'<small>ローテ：'+r.rote+'</small></span>'
-    +go(r.f1,'その1',' ')+go(r.f2,'その2','s2')
-    +chk(r.k1,r.f1)+chk(r.k2,r.f2)+'</div>';
-});
-document.getElementById('amnesiaRows').innerHTML=aH;
+/* ===== ユーティリティ ===== */
+function pad2(n){return (n<10?'0':'')+n;}
+function dateObj(day){ var d=new Date(START); d.setDate(d.getDate()+(day-1)); return d; }
+function dateLabel(day){ var d=dateObj(day); return (d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+')'; }
+function amnOf(day){ if(day<=5){var w=AMN_WD[day-1];return [w+'_暗記カード.html',w+'_暗記カード_その2.html'];} var nn=pad2(day); return ['Day'+nn+'_その1.html','Day'+nn+'_その2.html']; }
+function engOf(day){ return day<=EG.length? EG[day-1] : null; }
+function matOf(day){ return day<=MA.length? MA[day-1] : null; }
+function todayDay(){ var n=new Date(); var t=new Date(n.getFullYear(),n.getMonth(),n.getDate()); return Math.floor((t-START)/86400000)+1; }
+function k(day,s){ return 'hns_d'+day+'_'+s; }
+function isOn(day,s){ return localStorage.getItem(k(day,s))==='1'; }
+function setOn(day,s,v){ if(v)localStorage.setItem(k(day,s),'1'); else localStorage.removeItem(k(day,s)); }
+function subjList(day){ var a=['amn','mat']; if(engOf(day)) a.splice(1,0,'eng'); return a; }
+function dayAllDone(day){ return subjList(day).every(function(s){return isOn(day,s);}); }
+function countDone(){ var c=0; for(var d=1;d<=TOTAL_DAYS;d++){ if(dayAllDone(d))c++; } return c; }
 
-var mH='';
-MATH.forEach(function(r){
-  mH+='<div class="row"><span class="day">'+r.day+'</span>'
-    +'<span class="ttl">'+r.title+'</span>'
-    +go(r.f,'ひらく',' ')+chk(r.k,r.f)+'</div>';
-});
-document.getElementById('mathRows').innerHTML=mH;
+/* ===== 今日のカード ===== */
+function goBtn(pre,file,label,cls){ return file? '<a class="go '+(cls||'')+'" href="'+pre+file+'">'+label+'</a>' : '<span class="go soon">じゅんび中</span>'; }
+function taskRow(day,s){
+  var on=isOn(day,s),html='';
+  if(s==='amn'){ var f=amnOf(day); html='<div class="task amn"><div class="ic">📕</div><div class="body"><div class="nm">あんき</div><div class="ti">Day'+pad2(day)+'　たんご＋かんじ</div><div class="acts">'+goBtn(PRE_AMN,f[0],'その1')+goBtn(PRE_AMN,f[1],'その2','g2')+'</div></div>'; }
+  else if(s==='eng'){ var e=engOf(day); html='<div class="task eng"><div class="ic">📗</div><div class="body"><div class="nm">えいご</div><div class="ti">'+e[1]+'</div><div class="acts">'+goBtn(PRE_ENG,e[0],'ひらく')+'</div></div>'; }
+  else { var m=matOf(day); html='<div class="task mat"><div class="ic">📘</div><div class="body"><div class="nm">すうがく</div><div class="ti">'+(m?m[1]:'（おやすみ）')+'</div><div class="acts">'+(m?goBtn(PRE_MAT,m[0],'ひらく'):'')+'</div></div>'; }
+  html+='<button class="chk'+(on?' on':'')+'" onclick="toggle('+day+',\''+s+'\')">'+(on?'✓<br>できた':'やる！')+'</button></div>';
+  return html;
+}
+function renderToday(){
+  var day=todayDay(), box=document.getElementById('todayBox'), disp, before=false, after=false;
+  if(day<1){ disp=1; before=true; } else if(day>TOTAL_DAYS){ after=true; } else { disp=day; }
+  if(after){ box.innerHTML='<div class="today alldone"><div class="inner"><span class="tag">おつかれさま</span><div class="dtitle">🌸 '+TOTAL_DAYS+'日間 よくがんばったね！</div><div class="lead">あとは まちがえた問題の見直しと、とっくん演習をやろう。</div></div></div>'; return; }
+  var subs=subjList(disp), done=subs.filter(function(s){return isOn(disp,s);}).length, all=subs.length, allDone=(done===all);
+  var h='<div class="today'+(allDone&&!before?' alldone':'')+'"><div class="inner">';
+  if(before){ h+='<span class="tag">もうすぐ夏休み 🌻</span><div class="dtitle">7/18(土) スタート！</div><div class="lead">1日目はこんなメニュー。今からのぞいて、やってみてもOK！</div>'; }
+  else { h+='<span class="tag">きょうのメニュー</span><div class="dtitle">📅 '+dateLabel(disp)+'（'+disp+'日目）</div><div class="lead">この'+all+'つをやろう。できたら右の○をタップ！</div>'; }
+  h+='<div class="pbar"><div class="pfill" style="width:'+(all?Math.round(done/all*100):0)+'%"></div></div>';
+  subs.forEach(function(s){ h+=taskRow(disp,s); });
+  if(allDone&&!before) h+='<div class="celebrate">🌸 きょうのぶん、ぜんぶできた！すごい！</div>';
+  h+='</div></div>'; box.innerHTML=h;
+}
+function toggle(day,s){ setOn(day,s,!isOn(day,s)); renderToday(); renderStamp(); renderCal(); }
 
-var kH='';
-KOKUGO.forEach(function(r){
-  kH+='<div class="row"><span class="day">'+r.day+'</span>'
-    +'<span class="ttl">'+r.title+'</span>'
-    +go(r.f,'ひらく',' ')+chk(r.k,r.f)+'</div>';
-});
-document.getElementById('kokugoRows').innerHTML=kH;
+/* ===== スタンプ帳 ===== */
+function renderStamp(){
+  var td=todayDay(), h='', done=0;
+  for(var d=1; d<=TOTAL_DAYS; d++){
+    var cls='cell', inner=d;
+    if(dayAllDone(d)){ cls+=' done'; inner='🌸'; done++; }
+    else if(d===td){ cls+=' today'; }
+    h+='<div class="'+cls+'">'+inner+'</div>';
+  }
+  document.getElementById('stampGrid').innerHTML=h;
+  document.getElementById('stampCnt').textContent=done+' / '+TOTAL_DAYS;
+}
 
-var eH='';
-ENGLISH.forEach(function(r){
-  eH+='<div class="row"><span class="day">'+r.day+'</span>'
-    +'<span class="ttl">'+r.title+'</span>'
-    +go(r.f,'ひらく',' ')+chk(r.k,r.f)+'</div>';
-});
-document.getElementById('englishRows').innerHTML=eH;
+/* ===== 全日程 ===== */
+function renderCal(){
+  var td=todayDay(), h='';
+  for(var d=1; d<=TOTAL_DAYS; d++){
+    var e=engOf(d), m=matOf(d);
+    var label='英 '+(e?e[1].replace(/^U\d+ /,''):'復習')+'　/　数 '+(m?m[1].replace(/^P\w+ /,''):'おやすみ');
+    var mk=dayAllDone(d)?'🌸':(subjList(d).some(function(s){return isOn(d,s);})?'🖊️':'');
+    h+='<div class="drow'+(d===td?' today':'')+'"><span class="dn">'+dateLabel(d)+'</span><span class="dl">'+label+'</span><span class="mk">'+mk+'</span></div>';
+  }
+  document.getElementById('calBody').innerHTML=h;
+}
+function toggleCal(){ var b=document.getElementById('calBody'); var op=(b.style.display==='none'); b.style.display=op?'block':'none'; document.getElementById('calTgl').textContent=op?'とじる －':'ひらく ＋'; }
 
-/* 件数・進捗バー */
-document.getElementById('allN').textContent=allN;
-document.getElementById('doneN').textContent=doneN;
-var pct=allN?Math.round(doneN/allN*100):0;
-document.getElementById('pct').textContent=pct+'%';
-document.getElementById('fill').style.width=pct+'%';
-/* セクション件数（存在する枚数） */
-var ca=0; AMNESIA.forEach(function(r){if(r.f1)ca++; if(r.f2)ca++;});
-var cm=0; MATH.forEach(function(r){if(r.f)cm++;});
-var ck=0; KOKUGO.forEach(function(r){if(r.f)ck++;});
-var ce=0; ENGLISH.forEach(function(r){if(r.f)ce++;});
-document.getElementById('cntA').textContent='公開 '+ca+' 枚';
-document.getElementById('cntM').textContent='公開 '+cm+' 枚';
-document.getElementById('cntK').textContent='公開 '+ck+' 枚';
-document.getElementById('cntE').textContent='公開 '+ce+' 枚';
+/* ===== 起動 ===== */
+(function(){
+  var n=new Date();
+  document.getElementById('headDate').textContent='きょうは '+(n.getMonth()+1)+'月'+n.getDate()+'日（'+WD[n.getDay()]+'）';
+  document.getElementById('cheerMsg').textContent=CHEERS[n.getDate()%CHEERS.length];
+  renderToday(); renderStamp(); renderCal();
+})();
 </script>
 </body>
 </html>

@@ -190,10 +190,155 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 </div>
 <div class="sec th-prp">
   <div class="sec-body">
-    <div class="slide-ph">
-      <b>📥 ここに通常テストの「単語10」をスライドします（ユーザー作業）。</b><br>
-      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
-      <!-- 単語10問ぶんの .q.vocab ブロックをここへ貼り付け。採点gid（W-1〜W-10）はスライド時に付与する。 -->
+    <div class="q vocab" data-id="W-1">
+      <div class="qword">医者</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">doctor</div>
+        <div class="ans-read">読み：ドクター</div>
+        <div class="ans-why">なぜこの語か：病院ではたらく「医者」。-doctor の語尾 -or は「〜する人」を表すことが多い（cf. actor / visitor）。 例：My father is a doctor.（私の父は医者です。）</div>
+        <div class="bx-warn">doc-tor。語尾 -or。</div>
+      </div>
+      <div class="gq" data-gid="W-1">
+        <div class="grade"><span class="gq-label">単語①</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-2">
+      <div class="qword">看護師</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">nurse</div>
+        <div class="ans-read">読み：ナース</div>
+        <div class="ans-why">なぜこの語か：病院で患者をケアする「看護師」。日本語でも「ナース」と言うのでそのまま覚えられる。 例：She is a nurse at this hospital.（彼女はこの病院の看護師です。）</div>
+        <div class="bx-warn">nurse。</div>
+      </div>
+      <div class="gq" data-gid="W-2">
+        <div class="grade"><span class="gq-label">単語②</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-3">
+      <div class="qword">歌手</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">singer</div>
+        <div class="ans-read">読み：シンガー</div>
+        <div class="ans-why">なぜこの語か：「歌う（sing）＋ 人（-er）」で「歌手」。動詞に -er をつけると「〜する人」になるパターン（play → player も同じ）。 例：My sister wants to be a singer.（私の姉は歌手になりたいです。）</div>
+        <div class="bx-warn">sing＋er。</div>
+      </div>
+      <div class="gq" data-gid="W-3">
+        <div class="grade"><span class="gq-label">単語③</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-4">
+      <div class="qword">作家</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">writer</div>
+        <div class="ans-read">読み：ライター</div>
+        <div class="ans-why">なぜこの語か：「書く（write）＋ 人（-r）」で「作家・物書き」。write の語末の e を消して -r をつけるスペルに注意。 例：He is a writer of many books.（彼はたくさんの本の作家です。）</div>
+        <div class="bx-warn">write→writer（e を消して r）。</div>
+      </div>
+      <div class="gq" data-gid="W-4">
+        <div class="grade"><span class="gq-label">単語④</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-5">
+      <div class="qword">農家</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">farmer</div>
+        <div class="ans-read">読み：ファーマー</div>
+        <div class="ans-why">なぜこの語か：「農場（farm）＋ 人（-er）」で「農家の人」。farm はそのまま -er をつければよい。 例：My grandfather is a farmer.（私の祖父は農家です。）</div>
+        <div class="bx-warn">farm＋er。</div>
+      </div>
+      <div class="gq" data-gid="W-5">
+        <div class="grade"><span class="gq-label">単語⑤</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-6">
+      <div class="qword">空港</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">airport</div>
+        <div class="ans-read">読み：エアポート</div>
+        <div class="ans-why">なぜこの語か：「空気・空（air）＋ 港（port）」で「空の港＝空港」。2つの単語をつなげた複合語。日本語でも「エアポート」と言う。 例：Let's meet at the airport at nine.（9時に空港で会いましょう。）</div>
+        <div class="bx-warn">air＋port。</div>
+      </div>
+      <div class="gq" data-gid="W-6">
+        <div class="grade"><span class="gq-label">単語⑥</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-6','o')">○</button><button class="x" onclick="g(this,'W-6','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-7">
+      <div class="qword">銀行</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">bank</div>
+        <div class="ans-read">読み：バンク</div>
+        <div class="ans-why">なぜこの語か：お金を預けたり引き出したりする「銀行」。日本語でも「バンク」と使う（フードバンク等）。短くて覚えやすい。 例：There is a bank near my school.（私の学校の近くに銀行があります。）</div>
+        <div class="bx-warn">bank。</div>
+      </div>
+      <div class="gq" data-gid="W-7">
+        <div class="grade"><span class="gq-label">単語⑦</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-7','o')">○</button><button class="x" onclick="g(this,'W-7','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-8">
+      <div class="qword">橋</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">bridge</div>
+        <div class="ans-read">読み：ブリッジ</div>
+        <div class="ans-why">なぜこの語か：川や谷に「かける橋」。日本語でも「ブリッジ」と言う。brid-ge と区切り、<span class="red">d</span> を落とさないようにセットで書く練習を。 例：There is a big bridge over the river.（川に大きな橋がかかっています。）</div>
+        <div class="bx-warn">brid-ge。<span class="red">d</span> を忘れない。</div>
+      </div>
+      <div class="gq" data-gid="W-8">
+        <div class="grade"><span class="gq-label">単語⑧</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-8','o')">○</button><button class="x" onclick="g(this,'W-8','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-9">
+      <div class="qword">寺</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">temple</div>
+        <div class="ans-read">読み：テンプル</div>
+        <div class="ans-why">なぜこの語か：仏教・神道などの宗教的な建物「お寺」。外国語で日本のお寺を紹介するときに必ず使う単語。tem-ple と2音節。 例：We visited a famous temple in Kyoto.（私たちは京都の有名なお寺を訪れました。）</div>
+        <div class="bx-warn">tem-ple。</div>
+      </div>
+      <div class="gq" data-gid="W-9">
+        <div class="grade"><span class="gq-label">単語⑨</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-9','o')">○</button><button class="x" onclick="g(this,'W-9','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-10">
+      <div class="qword">村</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">village</div>
+        <div class="ans-read">読み：ビレッジ</div>
+        <div class="ans-why">なぜこの語か：town（町）よりも小さな「村」。vil-lage と区切り、語尾 -age（ヴィレッジ）で1まとまりにして覚える。 例：My grandmother lives in a small village.（私の祖母は小さな村に住んでいます。）</div>
+        <div class="bx-warn">vil-lage。語尾 -age。</div>
+      </div>
+      <div class="gq" data-gid="W-10">
+        <div class="grade"><span class="gq-label">単語⑩</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-10','o')">○</button><button class="x" onclick="g(this,'W-10','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
   </div>
 </div>
@@ -206,10 +351,50 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 </div>
 <div class="sec th-teal">
   <div class="sec-body">
-    <div class="slide-ph">
-      <b>📥 ここに通常テストの「熟語3」をスライドします（ユーザー作業）。</b><br>
-      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
-      <!-- 熟語3問ぶんの .q.vocab ブロックをここへ貼り付け。採点gid（P-1〜P-3）はスライド時に付与する。 -->
+    <div class="q vocab" data-id="P-1">
+      <div class="qword">〜の準備ができている</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">be ready for ～</div>
+        <div class="ans-read">読み：ビー レディ フォー</div>
+        <div class="ans-why">なぜこの語か：「（何かに対して）準備ができている」状態を表す。be（状態）＋ ready（準備OK）＋ for（〜に向けて）の3語セット。for の後ろには名詞がくる。 例：I am ready for the test.（私はテストの準備ができています。）</div>
+        <div class="bx-warn">ready と for。</div>
+      </div>
+      <div class="gq" data-gid="P-1">
+        <div class="grade"><span class="gq-label">熟語①</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="P-2">
+      <div class="qword">〜でいっぱいである</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">be full of ～</div>
+        <div class="ans-read">読み：ビー フル オブ</div>
+        <div class="ans-why">なぜこの語か：「〜でいっぱいの状態にある」。full（いっぱい）＋ of（〜で）がセット。of の後ろには「中身」を表す名詞がくる。 例：This box is full of books.（この箱は本でいっぱいです。）</div>
+        <div class="bx-warn">full と of。</div>
+      </div>
+      <div class="gq" data-gid="P-2">
+        <div class="grade"><span class="gq-label">熟語②</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="P-3">
+      <div class="qword">時間どおりに</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">on time</div>
+        <div class="ans-read">読み：オン タイム</div>
+        <div class="ans-why">なぜこの語か：「決められた時刻ぴったりに・遅れずに」の意味。on（〜の上に＝ぴったり）＋ time（時間）で「時間にぴったり」のイメージ。 例：The train arrived on time.（電車は時間どおりに到着しました。）</div>
+        <div class="bx-warn">in time（間に合って）と区別。</div>
+      </div>
+      <div class="gq" data-gid="P-3">
+        <div class="grade"><span class="gq-label">熟語③</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
   </div>
 </div>
@@ -222,10 +407,25 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 </div>
 <div class="sec th-prp">
   <div class="sec-body">
-    <div class="slide-ph">
-      <b>📥 ここに通常テストの「英作文1」をスライドします（ユーザー作業）。</b><br>
-      <!-- ここに通常テストの英語をスライド（ユーザー作業） -->
-      <!-- 英作文1問ぶんの .q.writing ブロックをここへ貼り付け。採点gid（EW-1）はスライド時に付与する。 -->
+    <div class="q vocab" data-id="EW-1">
+      <div class="qword">これは私の姉の自転車です。</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">This is my sister's bike.</div>
+        <div class="ans-read">読み：ディス イズ マイ シスターズ バイク</div>
+        <div class="ans-why"><b>① 日本語を分ける：</b>「これは／私の姉の／自転車／です」。「姉の」は持ち主を表す。</div>
+        <div class="ans-why"><b>② 使う文法：</b>「〜の（持ち主）」は 名詞＋<span class="red">アポストロフィ s（'s）</span>。</div>
+        <div class="ans-why"><b>③ 語順（左から組む）：</b>This is ＋ my sister's ＋ bike.（持ち主's ＋ もの）。</div>
+        <div class="ans-why"><b>④ 形のチェック：</b>sister に 's を付けて <span class="red">sister's</span>。my はそのまま（my sister's＝私の姉の）。</div>
+        <div class="bx-warn">✕ my sister bike（'s がない）→ ○ my sister's bike。<br>✕ my sisters bike（複数の s と混同）→ ○ sister's（アポストロフィが要る）。</div>
+        <div class="ans-why"><b>⑤ 確かめ算：</b>「持ち主に 's」「その後ろにもの（bike）」の2つができていれば正解。</div>
+        <div class="ans-why"><b>🌸 ゴール：</b>「〜の」を 名詞＋'s で表し、持ち主＋もの の順に置ける。</div>
+      </div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade"><span class="gq-label">英作文</span>答えを見て丸つけ → <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">やり方がわからない</button><button onclick="m(this)">習ったけど使えない</button></div>
+      </div>
     </div>
   </div>
 </div>
