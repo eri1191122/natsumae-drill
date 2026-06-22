@@ -236,11 +236,13 @@ var QS=[
 var DYN_KEY='revq_dyn';      // 送り手(英語プリント)が書く配列 [{kind,badge,jp,en,day,k,src}]
 var DYN_MAP='revq_dynmap';   // {正規化en: 確定id} 永続マップ（idの安定化）
 var DYN_SEQ='revq_dynseq';   // 発番カウンタ（単調増加。idを使い回さない）
-function normEn(s){return String(s==null?'':s).toLowerCase().replace(/\s+/g,' ').trim();}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function normEn(s){return String(s==null?'':s).toLowerCase().replace(/[\s　]+/g,' ').trim();}
 function mergeDyn(){
+  var added=0;
   var arr;try{arr=JSON.parse(localStorage.getItem(DYN_KEY));}catch(e){arr=null;}
-  if(!Array.isArray(arr)||!arr.length)return;
-  var seen={};QS.forEach(function(q){if(q.en)seen[normEn(q.en)]=true;});
+  if(!Array.isArray(arr)||!arr.length)return added;
+  var seen={},idByKey={};QS.forEach(function(q){if(q.en){var nk=normEn(q.en);seen[nk]=true;idByKey[nk]=q.id;}});
   var map;try{map=JSON.parse(localStorage.getItem(DYN_MAP));}catch(e){map=null;}
   if(!map||typeof map!=='object')map={};
   var maxStatic=0;QS.forEach(function(q){if(typeof q.id==='number'&&q.id>maxStatic)maxStatic=q.id;});
@@ -248,18 +250,32 @@ function mergeDyn(){
   if(seq<maxStatic)seq=maxStatic;
   Object.keys(map).forEach(function(k){if(map[k]>seq)seq=map[k];});
   var mapChanged=false;
+  // ★プリント○同期：プリントで2回連続正解(po>=2)なら受け皿でも卒業(mastered)にする
+  function syncPrintMastered(id,d){
+    if(!d||typeof d.po!=='number')return; // 旧データ(po未定義)は何もしない
+    if(d.po<2)return;
+    var st=load(id);
+    if(st.mastered)return; // 既にmastered＝何もしない（ユーザー操作を壊さない）
+    st.mastered=true;
+    if(st.cnt<GRADUATE)st.cnt=GRADUATE;
+    save(id,st);
+  }
   arr.forEach(function(d){
     if(!d||typeof d!=='object')return;
     var key=normEn(d.en);
     if(!key)return;
-    if(seen[key])return;
+    if(seen[key]){syncPrintMastered(idByKey[key],d);return;} // 既存(静的/既merge済)もpo同期だけ行う
     seen[key]=true;
     var id=map[key];
     if(typeof id!=='number'){id=++seq;map[key]=id;mapChanged=true;}
+    idByKey[key]=id;
     QS.push({id:id,kind:(d.kind||'単語'),badge:(d.badge||'tango'),jp:(d.jp||''),en:d.en,day:(d.day||today()),k:(d.k||'<p>（この問題の解説はまだないよ。答えと見くらべて覚えてね🌸）</p>'),src:(d.src||'dyn')});
+    added++;
+    syncPrintMastered(id,d);
   });
   if(mapChanged)safeSet(DYN_MAP,JSON.stringify(map));
   if(seq>(+localStorage.getItem(DYN_SEQ)||0))safeSet(DYN_SEQ,String(seq));
+  return added;
 }
 // id未記入の問題に自動採番（既存idは尊重＝既存の保存データを壊さない）
 (function(){var m=0;QS.forEach(function(q){if(typeof q.id==='number'&&q.id>m)m=q.id;});QS.forEach(function(q){if(typeof q.id!=='number')q.id=++m;});})();
@@ -277,7 +293,7 @@ function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
 function nowMs(){return Date.now();}
 function dayNum(ms){var d=new Date(ms);return Math.floor(new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()/86400000);}
 function epoch(){var k=PRE+'__epoch';var v=+localStorage.getItem(k);if(!v){v=nowMs();safeSet(k,String(v));}return v;}
-function clampSt(st){st.cnt=Math.max(0,Math.min(99,(+st.cnt||0)));st.gradTs=(+st.gradTs>0)?+st.gradTs:0;st.mastered=(st.mastered===true);st.lastX=(typeof st.lastX==='string')?st.lastX:'';if(st.mastered)st.cnt=Math.max(st.cnt,GRADUATE);if(st.cnt<GRADUATE&&st.gradTs)st.gradTs=0;return st;}
+function clampSt(st){st.cnt=Math.max(0,Math.min(99,(+st.cnt||0)));st.gradTs=(+st.gradTs>0)?+st.gradTs:0;st.mastered=(st.mastered===true);st.lastX=(typeof st.lastX==='string')?st.lastX:'';if(st.mastered)st.cnt=Math.max(st.cnt,GRADUATE);if(st.cnt<GRADUATE&&st.gradTs)st.gradTs=0;if(st.gradTs>Date.now())st.gradTs=Date.now();if(st.cnt>=GRADUATE && !(st.gradTs>0) && !st.mastered)st.gradTs=Date.now();return st;}
 function stateOf(st){if(st.mastered)return'mastered';if(st.cnt>=GRADUATE){var e=dayNum(nowMs())-dayNum(st.gradTs);return (st.gradTs>0&&e>=0&&e>=DUE_DAYS)?'due':'graduated';}return'learning';}
 function safeSet(k,v){try{localStorage.setItem(k,v);return true;}catch(e){return false;}}
 function safeRemove(k){try{localStorage.removeItem(k);}catch(e){}}
@@ -288,7 +304,7 @@ function save(id,st){if(!safeSet(PRE+id,JSON.stringify(st))&&!window._svWarn){wi
 function writeBoard(){
   var o=0,x=0;
   QS.forEach(function(q){
-    try{var b=JSON.parse(localStorage.getItem(PRE+q.id+'_log'))||{o:0,x:0};o+=b.o;x+=b.x;}catch(e){}
+    try{var b=JSON.parse(localStorage.getItem(PRE+q.id+'_log'))||{o:0,x:0};o+=(+b.o||0);x+=(+b.x||0);}catch(e){}
   });
   safeSet(BOARD, JSON.stringify({o:o,x:x}));
 }
@@ -304,18 +320,18 @@ function render(){
     remain++;
     var isDue=(ph==='due');
     var el=document.createElement('div');el.className='q';el.id='q'+q.id;
-    var dateStr=isDue?('🔁 1週間ぶりの定着チェック'):('間違えた日：'+q.day+(st.lastX?'（再×'+st.lastX+'）':''));
+    var dateStr=isDue?('🔁 1週間ぶりの定着チェック'):('間違えた日：'+esc(q.day)+(st.lastX?'（再×'+esc(st.lastX)+'）':''));
     el.innerHTML=
       '<div class="top">'+
-        '<span class="badge '+q.badge+'">'+q.kind+'</span>'+
+        '<span class="badge '+q.badge+'">'+esc(q.kind)+'</span>'+
         (isDue?'<span class="badge jukugo">🔁 定着チェック</span>':'')+
         '<span class="date">'+dateStr+'</span>'+
         (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+'</span>')+
       '</div>'+
-      '<div class="jp">'+q.jp+'</div>'+
+      '<div class="jp">'+esc(q.jp)+'</div>'+
       '<button class="ans-btn" onclick="toggle('+q.id+',this)">答えを見る</button>'+
       '<div class="ans-box" id="a'+q.id+'">'+
-        '<div class="en">'+q.en+'</div>'+
+        '<div class="en">'+esc(q.en)+'</div>'+
         '<div class="kaisetsu">'+q.k+'</div>'+
         '<div class="grade"><span class="lbl">合ってた？</span>'+
           '<button class="o" onclick="mark('+q.id+',1)">○</button>'+
@@ -340,12 +356,12 @@ function mark(id,ok){
   var st=load(id);var wasDue=(stateOf(st)==='due');
   if(ok)bumpLog(id,'o');else bumpLog(id,'x');
   if(wasDue){
-    if(ok){st.mastered=true;save(id,st);var e1=document.getElementById('q'+id);if(e1){e1.classList.add('grad');e1.innerHTML='<div class="grad-note">🌸 定着！1週間あけても覚えてた。もう完ぺき。</div>';}setTimeout(render,900);return;}
+    if(ok){st.mastered=true;save(id,st);var e1=document.getElementById('q'+id);if(e1){e1.classList.add('grad');e1.innerHTML='<div class="grad-note">🌸 定着！1週間あけても覚えてた。もう完ぺき。</div>';}window._gradAnim=true;setTimeout(function(){render();window._gradAnim=false;},900);return;}
     else{st.cnt=0;st.lastX=today();st.gradTs=0;save(id,st);render();return;}
   }
   if(ok){st.cnt=st.cnt+1;}else{st.cnt=0;st.lastX=today();}
   save(id,st);
-  if(ok&&st.cnt>=GRADUATE){st.gradTs=nowMs();save(id,st);var e2=document.getElementById('q'+id);if(e2){e2.classList.add('grad');e2.innerHTML='<div class="grad-note">🎉 卒業！7日後にもう一度だけ出るよ。そこで○なら完ぺき！</div>';}setTimeout(render,900);}
+  if(ok&&st.cnt>=GRADUATE){st.gradTs=nowMs();save(id,st);var e2=document.getElementById('q'+id);if(e2){e2.classList.add('grad');e2.innerHTML='<div class="grad-note">🎉 卒業！7日後にもう一度だけ出るよ。そこで○なら完ぺき！</div>';}window._gradAnim=true;setTimeout(function(){render();window._gradAnim=false;},900);}
   else{render();}
 }
 
@@ -405,9 +421,9 @@ function renderDict(){
   var done=rows.filter(function(r){return r.grad;}).length;
   var html='<div class="dict-note">間違えた回数が多い順に 並べたよ。🎓は「もう卒業（できるようになった）」しるし。今できるのは <b>'+done+'個</b>🌸　「もう一度」でいつでも 復習にもどせるよ。</div>';
   rows.forEach(function(r){
-    var jp=String(r.q.jp).replace(/<[^>]+>/g,'').slice(0,40);
+    var jp=esc(String(r.q.jp).replace(/<[^>]+>/g,'').slice(0,40));
     html+='<div class="dict-row'+(r.grad?' grad':'')+'">'+
-      '<div class="dict-main"><span class="badge '+r.q.badge+'">'+r.q.kind+'</span><span class="dict-jp">'+jp+'</span></div>'+
+      '<div class="dict-main"><span class="badge '+r.q.badge+'">'+esc(r.q.kind)+'</span><span class="dict-jp">'+jp+'</span></div>'+
       '<div class="dict-stat"><span class="cnt-x">✕'+r.lg.x+'</span><span class="cnt-o">○'+r.lg.o+'</span>'+
       (r.grad?'<span class="dict-grad">🎓できた</span><button class="redo" onclick="redo('+r.q.id+')">もう一度</button>':'<span class="dict-now">練習中</span>')+
       '</div></div>';
@@ -470,7 +486,10 @@ window.onload=function(){
 };
 // ページに戻るたび（bfcache復帰・タブ再表示）に revq_dyn を取り込み直して再描画
 function refreshFromDyn(){
-  try{mergeDyn();}catch(e){}
+  if(window._gradAnim)return; // 卒業演出中は再描画しない（演出を壊さない）
+  var added=0;
+  try{added=mergeDyn();}catch(e){added=0;}
+  if(!(added>0))return; // 増分0なら再描画しない（スクロール位置・解説展開・押下途中状態を保持）
   try{
     if(typeof VIEW==='undefined'||VIEW==='review'){render();}
     else if(VIEW==='dict'){renderDict();}

@@ -783,7 +783,7 @@ function g(btn,id,v){
   var box=btn.closest('.gq');
   box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
   btn.classList.add('sel');
-  localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id);}catch(e){}}
+  localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}
   var mt=box.querySelector('.mt');
   var w3=box.querySelector('.write3');
   if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
@@ -833,8 +833,8 @@ window.onload=function(){
     document.getElementById('doneBtn').textContent='✓ 完了ずみ';
   }
 };
-/* ===== 復習英語キュー送りフック（×時・英語問題のみ・自己ループ防止） ===== */
-function sendToRevQ(btn,id){
+/* ===== 復習英語キュー送りフック（×/○・英語問題のみ・自己ループ防止） ===== */
+function sendToRevQ(btn,id,result){
   if(typeof PRE!=='undefined' && PRE==='revq_') return;        // 受け皿自身では動かさない
   if(typeof KEY==='undefined') return;
   if(KEY.indexOf('revq')===0) return;
@@ -845,20 +845,23 @@ function sendToRevQ(btn,id){
   if(!engPrint && !isVocab && !isWriting) return;               // 混在で英語クラス無し→送らない
   var kindEl=q.querySelector('.qnum-e'); var kindRaw=kindEl?(kindEl.textContent||''):'';
   if(/漢字|書き|読み/.test(kindRaw)) return;                    // 暗記カードの漢字除外
-  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.lead.jp')||q.querySelector('.qbody');
+  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.qbody');
   var enEl=q.querySelector('.ans-final')||q.querySelector('.ans-box .ans-main');
   if(!jpEl||!enEl) return;
   var jp=cleanRevQText(jpEl), en=cleanRevQText(enEl);
   if(!jp||!en) return;
   if(!/[A-Za-z]/.test(en)) return;                              // 答えに英字なし→英語でない→除外
+  if(result==='o'){bumpRevQPo(en);return;}                      // ○：既存項目の po++ のみ（新規追加しない）
   var kind='単語',badge='tango';
   if(isWriting||/英作文/.test(kindRaw)){kind='英作文';badge='eisaku';}
   else if(/熟語/.test(kindRaw)){kind='熟語';badge='jukugo';}
   pushRevQDyn({jp:jp,en:en,kind:kind,badge:badge,day:revqToday(),src:(KEY+'_'+id)});
 }
-function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/\s+/g,' ').trim();return t;}
+function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[（(][^）)]*でもOK[^）)]*[）)]/g,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
 function revqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
-function pushRevQDyn(item){try{var K='revq_dyn';var arr;try{arr=JSON.parse(localStorage.getItem(K));}catch(e){arr=null;}if(!Array.isArray(arr))arr=[];var norm=function(s){return String(s||'').toLowerCase().replace(/\s+/g,' ').trim();};var key=norm(item.en);for(var i=0;i<arr.length;i++){if(norm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
+function revqNorm(s){return String(s||'').toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function bumpRevQPo(en){try{var K='revq_dyn';var raw=localStorage.getItem(K);if(raw==null)return;var arr;try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;var key=revqNorm(en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].po=(+arr[i].po||0)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}}catch(e){}}
+function pushRevQDyn(item){try{var K='revq_dyn';var raw=localStorage.getItem(K);var arr;if(raw==null){arr=[];}else{try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;}var key=revqNorm(item.en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;arr[i].po=0;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;item.po=0;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
 </script>
 </body>
 </html>
