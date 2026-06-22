@@ -366,7 +366,6 @@ window.onload=function(){try{migrate();}catch(e){}try{selfCheck();}catch(e){}ren
 };
 // ページに戻るたび（bfcache復帰・タブ再表示）に revq_dyn を取り込み直して再描画
 function refreshFromDyn(){
-  try{mergeDyn();}catch(e){}
   try{
     if(typeof VIEW==='undefined'||VIEW==='review'){render();}
     else if(VIEW==='dict'){renderDict();}

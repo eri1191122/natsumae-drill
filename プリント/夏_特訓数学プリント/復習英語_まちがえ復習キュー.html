@@ -108,7 +108,10 @@ window.addEventListener('load',function(){setTimeout(function(){
 },400);});
 </script>
 
-<button class="reset" onclick="resetAll()">↺ 卒業もふくめて ぜんぶ最初から出す</button>
+<details style="margin:24px auto 0;max-width:420px">
+  <summary style="cursor:pointer;text-align:center;color:#a08a86;font-size:12px;font-weight:700;list-style:none">⚙ もっと（ぜんぶリセットなど）</summary>
+  <button class="reset" onclick="resetAll()">↺ 卒業もふくめて ぜんぶ最初から出す</button>
+</details>
 
 <div class="endcheer">
   英語は「ちょっとずつ何回も」がいちばん強い。今日できなくても、明日もう一回出てくるから大丈夫。<br>
@@ -274,8 +277,11 @@ function mergeDyn(){
     added++;
     syncPrintMastered(id,d);
   });
-  if(mapChanged)safeSet(DYN_MAP,JSON.stringify(map));
-  if(seq>(+localStorage.getItem(DYN_SEQ)||0))safeSet(DYN_SEQ,String(seq));
+  // ★MAP/SEQ保存失敗を検知：失敗すると次回id再発番→全リセットになる。1回だけ警告（_dynWarnでguard）
+  var dynOK=true;
+  if(mapChanged&&!safeSet(DYN_MAP,JSON.stringify(map)))dynOK=false;
+  if(seq>(+localStorage.getItem(DYN_SEQ)||0)&&!safeSet(DYN_SEQ,String(seq)))dynOK=false;
+  if(!dynOK&&!window._dynWarn){window._dynWarn=1;alert('復習データの保存に失敗したみたい。ブラウザの容量やシークレットモードを確認してね🌸（このままだと記録がリセットされることがあるよ）');}
   return added;
 }
 // id未記入の問題に自動採番（既存idは尊重＝既存の保存データを壊さない）
@@ -284,6 +290,7 @@ function mergeDyn(){
 var PRE='revq_'; // localStorageキー: revq_1 .. revq_17
 var BOARD='tokkun_reve_queue'; // 記録ボード連携キー
 var GRADUATE=2; // 2回○で卒業
+var DAILY_CAP=20; // learning(通常の未卒業)の1画面あたり表示上限。due(定着チェック)は全件優先で別枠
 var DUE_DAYS=7;
 var SUBJECT='英語'; // ← 3ファイルでここだけ差し替え（英語/数学/国語）
 function histKeys(){var ks=[PRE+'hist',BOARD];QS.forEach(function(q){ks.push(PRE+q.id+'_log');});return ks;} // 卒業データrevq_<id>は含めない
@@ -312,35 +319,59 @@ function writeBoard(){
 function bumpLog(id,key){var b;try{b=JSON.parse(localStorage.getItem(PRE+id+'_log'))||{o:0,x:0};}catch(e){b={o:0,x:0};}b[key]=(b[key]||0)+1;safeSet(PRE+id+'_log',JSON.stringify(b));pushHist(id,key);writeBoard();}
 function pushHist(id,key){var h;try{h=JSON.parse(localStorage.getItem(PRE+'hist'))||[];}catch(e){h=[];}h.push({t:nowMs(),id:id,r:key});if(h.length>400)h=h.slice(h.length-400);safeSet(PRE+'hist',JSON.stringify(h));}
 
+// 1枚のカードDOMを作る（due/learning共通）
+function buildCard(q,st,isDue){
+  var el=document.createElement('div');el.className='q'+(isDue?'':(st.cnt>=1?' lv1':' lv0'));el.id='q'+q.id;
+  var dateStr=isDue?('🔁 1週間ぶりの定着チェック'):('間違えた日：'+esc(q.day)+(st.lastX?'（再×'+esc(st.lastX)+'）':''));
+  el.innerHTML=
+    '<div class="top">'+
+      '<span class="badge '+q.badge+'">'+esc(q.kind)+'</span>'+
+      (isDue?'<span class="badge jukugo">🔁 定着チェック</span>':'')+
+      '<span class="date">'+dateStr+'</span>'+
+      (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+(st.cnt===1?'　1回め○'+(st.lastO?':'+esc(st.lastO):'済'):'')+'</span>')+
+    '</div>'+
+    '<div class="jp">'+esc(q.jp)+'</div>'+
+    '<button class="ans-btn" onclick="toggle('+q.id+',this)">答えを見る</button>'+
+    '<div class="ans-box" id="a'+q.id+'">'+
+      '<div class="en">'+esc(q.en)+'</div>'+
+      '<div class="kaisetsu">'+q.k+'</div>'+
+      '<div class="grade"><span class="lbl">合ってた？</span>'+
+        '<button class="o" onclick="mark('+q.id+',1)">○</button>'+
+        '<button class="x" onclick="mark('+q.id+',0)">✕</button>'+
+      '</div>'+
+    '</div>';
+  return el;
+}
 function render(){
   var list=document.getElementById('list');list.innerHTML='';
-  var remain=0,grad=0;
+  var grad=0;
+  var dues=[],learns=[]; // 未卒業を due/learning に仕分け（データは全件保持・表示だけ制限）
   QS.forEach(function(q){
     var st=load(q.id);var ph=stateOf(st);
     if(ph==='mastered'||ph==='graduated'){grad++;return;} // 卒業した問題は出さない（dueは復活）
-    remain++;
-    var isDue=(ph==='due');
-    var el=document.createElement('div');el.className='q'+(isDue?'':(st.cnt>=1?' lv1':' lv0'));el.id='q'+q.id;
-    var dateStr=isDue?('🔁 1週間ぶりの定着チェック'):('間違えた日：'+esc(q.day)+(st.lastX?'（再×'+esc(st.lastX)+'）':''));
-    el.innerHTML=
-      '<div class="top">'+
-        '<span class="badge '+q.badge+'">'+esc(q.kind)+'</span>'+
-        (isDue?'<span class="badge jukugo">🔁 定着チェック</span>':'')+
-        '<span class="date">'+dateStr+'</span>'+
-        (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+(st.cnt===1?'　1回め○'+(st.lastO?':'+esc(st.lastO):'済'):'')+'</span>')+
-      '</div>'+
-      '<div class="jp">'+esc(q.jp)+'</div>'+
-      '<button class="ans-btn" onclick="toggle('+q.id+',this)">答えを見る</button>'+
-      '<div class="ans-box" id="a'+q.id+'">'+
-        '<div class="en">'+esc(q.en)+'</div>'+
-        '<div class="kaisetsu">'+q.k+'</div>'+
-        '<div class="grade"><span class="lbl">合ってた？</span>'+
-          '<button class="o" onclick="mark('+q.id+',1)">○</button>'+
-          '<button class="x" onclick="mark('+q.id+',0)">✕</button>'+
-        '</div>'+
-      '</div>';
-    list.appendChild(el);
+    if(ph==='due')dues.push({q:q,st:st});
+    else learns.push({q:q,st:st}); // learning
   });
+  // remain は全件（隠した分も「残り」に数える＝卒業判定・進捗は全件で動く）
+  var remain=dues.length+learns.length;
+  // learning の表示優先順位：lastX（最後に×した日 M/D）が新しい順、なければ既存順（安定ソート）
+  function lastXKey(s){ // 'M/D' を比較可能な数値へ。空は最小。年跨ぎは想定しない（M*100+D）
+    var m=/^(\d{1,2})\/(\d{1,2})$/.exec(s.st.lastX||'');
+    return m?(+m[1]*100+ +m[2]):-1;
+  }
+  learns.forEach(function(s,i){s._i=i;}); // 既存順の保持用
+  learns.sort(function(a,b){var d=lastXKey(b)-lastXKey(a);return d!==0?d:(a._i-b._i);});
+  // ① due は全件優先表示（7日経過の復活を逃さない）
+  dues.forEach(function(s){list.appendChild(buildCard(s.q,s.st,true));});
+  // ② learning は最大 DAILY_CAP 問。超過分は出さずメッセージ
+  var shown=learns.slice(0,DAILY_CAP);
+  shown.forEach(function(s){list.appendChild(buildCard(s.q,s.st,false));});
+  var over=learns.length-shown.length;
+  if(over>0){
+    var note=document.createElement('div');note.className='endcheer';note.style.marginTop='14px';
+    note.textContent='のこり '+over+'問は、また順番に出すね🌸（今日はここまででOK）';
+    list.appendChild(note);
+  }
   document.getElementById('remain').textContent=remain;
   document.getElementById('grad').textContent=grad;
   var ac=document.getElementById('allclear');
@@ -417,19 +448,49 @@ function setView(v){
 }
 function renderDict(){
   var list=document.getElementById('list');if(!list)return;list.innerHTML='';
-  var rows=QS.map(function(q){var st=load(q.id),lg=getLog(q.id);return{q:q,st:st,lg:lg,grad:(st.cnt>=GRADUATE)};})
+  var rows=QS.map(function(q){var st=load(q.id),lg=getLog(q.id);return{q:q,st:st,lg:lg,grad:(st.cnt>=GRADUATE),ph:stateOf(st)};})
     .sort(function(a,b){return errScore(b.q.id)-errScore(a.q.id);});
   var done=rows.filter(function(r){return r.grad;}).length;
-  var html='<div class="dict-note">間違えた回数が多い順に 並べたよ。🎓は「もう卒業（できるようになった）」しるし。今できるのは <b>'+done+'個</b>🌸　「もう一度」でいつでも 復習にもどせるよ。</div>';
+  var html='<div class="dict-note">間違えた回数が多い順に 並べたよ。🎓は「もう卒業（できるようになった）」しるし。今できるのは <b>'+done+'個</b>🌸　「もう一度」でいつでも 復習にもどせるよ。あやまって ✕した問題は「🗑 消す」でリストから消せるよ。</div>';
   rows.forEach(function(r){
     var jp=esc(String(r.q.jp).replace(/<[^>]+>/g,'').slice(0,40));
+    // learning または due の問題だけ「🗑 消す」（mastered/graduatedには出さない）
+    var canDel=(r.ph==='learning'||r.ph==='due');
     html+='<div class="dict-row'+(r.grad?' grad':'')+'">'+
       '<div class="dict-main"><span class="badge '+r.q.badge+'">'+esc(r.q.kind)+'</span><span class="dict-jp">'+jp+'</span></div>'+
       '<div class="dict-stat"><span class="cnt-x">✕'+r.lg.x+'</span><span class="cnt-o">○'+r.lg.o+'</span>'+
       (r.grad?'<span class="dict-grad">🎓できた</span><button class="redo" onclick="redo('+r.q.id+')">もう一度</button>':'<span class="dict-now">練習中</span>')+
+      (canDel?'<button class="redo" style="background:#c08a86" onclick="delItem('+r.q.id+')">🗑 消す</button>':'')+
       '</div></div>';
   });
   list.innerHTML=html;
+}
+// 誤×の取り消し：ユーザー操作時のみ。SRS状態と記録を消す。dyn由来なら受け皿の動的データからも消す（id解放）
+function delItem(id){
+  if(!confirm('この問題を復習リストから消すよ。いい？'))return;
+  // 1) SRS状態・記録を削除（静的33問はこれだけ＝learningリセット。次回また出る）
+  safeRemove(PRE+id);
+  safeRemove(PRE+id+'_log');
+  // 2) dyn由来か判定：revq_dyn に同じ en があれば dyn。dynなら dyn配列・MAP・メモリQS から消してidを解放
+  var q=qById(id);
+  var key=q&&q.en?normEn(q.en):'';
+  if(key){
+    var arr;try{arr=JSON.parse(localStorage.getItem(DYN_KEY));}catch(e){arr=null;}
+    var isDyn=Array.isArray(arr)&&arr.some(function(d){return d&&d.en&&normEn(d.en)===key;});
+    if(isDyn){
+      // revq_dyn 配列から該当 en を削除
+      var arr2=arr.filter(function(d){return !(d&&d.en&&normEn(d.en)===key);});
+      safeSet(DYN_KEY,JSON.stringify(arr2));
+      // DYN_MAP から該当 en キーを削除（id解放）
+      var map;try{map=JSON.parse(localStorage.getItem(DYN_MAP));}catch(e){map=null;}
+      if(map&&typeof map==='object'&&Object.prototype.hasOwnProperty.call(map,key)){
+        delete map[key];safeSet(DYN_MAP,JSON.stringify(map));
+      }
+      // メモリ上の QS からも取り除く（再mergeで戻らないように。静的33問はここを通らず残る）
+      for(var i=QS.length-1;i>=0;i--){if(QS[i].id===id){QS.splice(i,1);break;}}
+    }
+  }
+  renderDict();
 }
 function redo(id){var st=load(id);st.cnt=GRADUATE-1;st.gradTs=0;st.mastered=false;save(id,st);renderDict();}
 function qById(id){for(var i=0;i<QS.length;i++){if(QS[i].id===id)return QS[i];}return null;}
