@@ -20,6 +20,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f
 .allclear{display:none;text-align:center;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;padding:18px;border-radius:14px;margin-bottom:16px}
 .allclear.show{display:block}
 .q{background:#fffefb;border:1px solid #e3e2d9;border-radius:10px;padding:14px 16px;margin:14px 0}
+.q.lv1{background:#f1f9f4;border-color:#9bcfae}
 .q.grad{display:none}
 .q .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
 .badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 9px;border-radius:12px}
@@ -185,7 +186,7 @@ function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
 function nowMs(){return Date.now();}
 function dayNum(ms){var d=new Date(ms);return Math.floor(new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()/86400000);}
 function epoch(){var k=PRE+'__epoch';var v=+localStorage.getItem(k);if(!v){v=nowMs();safeSet(k,String(v));}return v;}
-function clampSt(st){st.cnt=Math.max(0,Math.min(99,(+st.cnt||0)));st.gradTs=(+st.gradTs>0)?+st.gradTs:0;st.mastered=(st.mastered===true);st.lastX=(typeof st.lastX==='string')?st.lastX:'';if(st.mastered)st.cnt=Math.max(st.cnt,GRADUATE);if(st.cnt<GRADUATE&&st.gradTs)st.gradTs=0;return st;}
+function clampSt(st){st.cnt=Math.max(0,Math.min(99,(+st.cnt||0)));st.gradTs=(+st.gradTs>0)?+st.gradTs:0;st.mastered=(st.mastered===true);st.lastX=(typeof st.lastX==='string')?st.lastX:'';st.lastO=(typeof st.lastO==='string')?st.lastO:'';if(st.mastered)st.cnt=Math.max(st.cnt,GRADUATE);if(st.cnt<GRADUATE&&st.gradTs)st.gradTs=0;return st;}
 function stateOf(st){if(st.mastered)return'mastered';if(st.cnt>=GRADUATE){var e=dayNum(nowMs())-dayNum(st.gradTs);return (st.gradTs>0&&e>=0&&e>=DUE_DAYS)?'due':'graduated';}return'learning';}
 function safeSet(k,v){try{localStorage.setItem(k,v);return true;}catch(e){return false;}}
 function safeRemove(k){try{localStorage.removeItem(k);}catch(e){}}
@@ -211,14 +212,14 @@ function render(){
     if(ph==='mastered'||ph==='graduated'){grad++;return;} // 卒業した問題は出さない（dueは復活）
     remain++;
     var isDue=(ph==='due');
-    var el=document.createElement('div');el.className='q';el.id='q'+q.id;
+    var el=document.createElement('div');el.className='q'+(isDue?'':(st.cnt>=1?' lv1':' lv0'));el.id='q'+q.id;
     var dateStr=isDue?('🔁 1週間ぶりの定着チェック'):((q.badge==='sentori'?'先取り問題':'間違えた日：'+q.day)+(st.lastX?'（再×'+st.lastX+'）':''));
     el.innerHTML=
       '<div class="top">'+
         '<span class="badge '+q.badge+'">'+q.kind+'</span>'+
         (isDue?'<span class="badge sentori">🔁 定着チェック</span>':'')+
         '<span class="date">'+dateStr+'</span>'+
-        (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+'</span>')+
+        (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+(st.cnt===1&&st.lastO?'　1回め○:'+esc(st.lastO):'')+'</span>')+
       '</div>'+
       '<div class="jp">'+q.jp+'</div>'+
       '<button class="ans-btn" onclick="toggle('+q.id+',this)">答えを見る</button>'+
@@ -251,7 +252,7 @@ function mark(id,ok){
     if(ok){st.mastered=true;save(id,st);var e1=document.getElementById('q'+id);if(e1){e1.classList.add('grad');e1.innerHTML='<div class="grad-note">🌸 定着！1週間あけても覚えてた。もう完ぺき。</div>';}setTimeout(render,900);return;}
     else{st.cnt=0;st.lastX=today();st.gradTs=0;save(id,st);render();return;}
   }
-  if(ok){st.cnt=st.cnt+1;}else{st.cnt=0;st.lastX=today();}
+  if(ok){st.cnt=st.cnt+1;if(st.cnt===1)st.lastO=today();}else{st.cnt=0;st.lastX=today();}
   save(id,st);
   if(ok&&st.cnt>=GRADUATE){st.gradTs=nowMs();save(id,st);var e2=document.getElementById('q'+id);if(e2){e2.classList.add('grad');e2.innerHTML='<div class="grad-note">🎉 卒業！7日後にもう一度だけ出るよ。そこで○なら完ぺき！</div>';}setTimeout(render,900);}
   else{render();}
