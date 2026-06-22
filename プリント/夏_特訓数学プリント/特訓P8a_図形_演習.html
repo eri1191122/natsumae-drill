@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -82,7 +82,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P8a</span><span class="pg-badge">数学：平面図形</span><span class="pg-badge">演習 L2-L3（公式と手順を固める）</span></div>
@@ -116,10 +116,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-warn">問3 <span class="red">平行四辺形を÷2しない</span>（三角形だけ÷2）。問4 <span class="red">先に(上底＋下底)をかっこでまとめる</span>。高さは「ななめの辺」でなく垂直の高さ。</div>
     <div class="ans-final"><span>こたえ</span>問1 40／問2 30／問3 40／問4 40 cm²</div>
   </div>
-  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span><button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">公式まちがい</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
-  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span><button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">÷2忘れ</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
-  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span><button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">÷2してしまう</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
-  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span><button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">公式まちがい</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span><button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span><button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span><button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span><button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
 </div>
 
 <!-- ===== 大問B 複合図形やさしめ（問5〜問6） ===== -->
@@ -138,8 +138,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-warn">複合図形は<span class="red">分かる長さを全部書きこむ</span>のが先。問5は「たて8cm」を上下に分けて使う。</div>
     <div class="ans-final"><span>こたえ</span>問5 76cm²／問6 89cm²</div>
   </div>
-  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span><button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">分け方</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら図に線を入れてノートに書こう</div></div>
-  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span><button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">引き方</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら図に引く部分を書こう</div></div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span><button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら図に線を入れてノートに書こう</div></div>
+  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span><button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら図に引く部分を書こう</div></div>
 </div>
 
 <!-- ===== 大問C 円・半円（問7〜問9） ===== -->
@@ -160,9 +160,9 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-warn"><span class="red">面積で「2×半径×<span class="pi">π</span>」を使わない</span>（それは円周）。面積は「半径×半径×<span class="pi">π</span>」。半径と直径を取り違えない。</div>
     <div class="ans-final"><span>こたえ</span>問7 周6<span class="pi">π</span> cm・面積9<span class="pi">π</span> cm²／問8 25<span class="pi">π</span> cm²／問9 4<span class="pi">π</span> cm²</div>
   </div>
-  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7</span><button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">周と面積の混同</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
-  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8</span><button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">公式まちがい</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
-  <div class="gq" data-gid="q09"><div class="grade"><span class="gq-label">問9</span><button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">÷4忘れ</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7</span><button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8</span><button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
+  <div class="gq" data-gid="q09"><div class="grade"><span class="gq-label">問9</span><button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら公式と式をノートに3回書こう</div></div>
 </div>
 
 <!-- ===== 大問D 角度の基礎（問10〜問12） ===== -->
@@ -187,9 +187,9 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-warn">問10 <span class="red">となりの角(70°)と混同しない</span>（対頂角＝向かい合う角＝等しい）。問12 外角は「となり合わない2内角の和」。</div>
     <div class="ans-final"><span>こたえ</span>問10 110°／問11 75°／問12 x＝70°・y＝110°</div>
   </div>
-  <div class="gq" data-gid="q10"><div class="grade"><span class="gq-label">問10</span><button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">対頂角の混同</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら角の名前と関係をノートに書こう</div></div>
-  <div class="gq" data-gid="q11"><div class="grade"><span class="gq-label">問11</span><button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">同位角/錯角の混同</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら角の名前と関係をノートに書こう</div></div>
-  <div class="gq" data-gid="q12"><div class="grade"><span class="gq-label">問12</span><button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">内角の和/外角</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら内角の和・外角をノートに書こう</div></div>
+  <div class="gq" data-gid="q10"><div class="grade"><span class="gq-label">問10</span><button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら角の名前と関係をノートに書こう</div></div>
+  <div class="gq" data-gid="q11"><div class="grade"><span class="gq-label">問11</span><button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら角の名前と関係をノートに書こう</div></div>
+  <div class="gq" data-gid="q12"><div class="grade"><span class="gq-label">問12</span><button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら内角の和・外角をノートに書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8a 図形 演習 完了）</button>

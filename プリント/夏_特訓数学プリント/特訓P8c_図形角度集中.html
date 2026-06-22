@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -86,7 +86,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P8c</span><span class="pg-badge">数学：平面図形（角度）</span><span class="pg-badge">★折り返し・平行線・外角 L3-L4（9月大問2直撃）</span></div>
@@ -140,7 +140,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="layer q1"><span>⑦検算＋コツ</span>三角形の3つの角を足すと <span class="math">68＋68＋44＝180</span>。ちゃんと180°になったから合っている。<strong>コツ：折り返しが出たら、まず「折ると等しくなる角」に印をつける</strong>。それから三角形を探す。</div>
     <div class="ans-final"><span>こたえ</span>x＝44°</div>
   </div>
-  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが使えない（A）</button></div><div class="write3">📝 まちがえたら、「折ると角は等しい＋三角形の内角和180°」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「折ると角は等しい＋三角形の内角和180°」をノートに図つきで書こう</div></div>
 </div>
 
 <!-- ===== 問2 平行線と角 ===== -->
@@ -186,7 +186,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="layer q2"><span>⑦検算＋コツ</span>x を上下に分けた角がそれぞれ50°・65°。足して115°、x もちゃんと90°より大きい鈍角になっていて図と合う。<strong>コツ：平行線で詰まったら「折れ点に平行な補助線」をまず引く</strong>。</div>
     <div class="ans-final"><span>こたえ</span>x＝115°</div>
   </div>
-  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが使えない（A）</button></div><div class="write3">📝 まちがえたら、「折れ点に平行な補助線→錯角を2つ→足す」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「折れ点に平行な補助線→錯角を2つ→足す」をノートに図つきで書こう</div></div>
 </div>
 
 <!-- ===== 問3 三角形の外角・内角 ===== -->
@@ -233,7 +233,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="layer q3"><span>⑦検算＋コツ</span>C の内角は180−35−80＝65°。外角ととなりの内角は一直線だから<span class="math">115＋65＝180</span>でちょうど一直線。合っている。<strong>コツ：外角を見たら「離れた2つの内角を足す」とまず考える</strong>。</div>
     <div class="ans-final"><span>こたえ</span>x＝115°</div>
   </div>
-  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが使えない（A）</button></div><div class="write3">📝 まちがえたら、「外角＝離れた2内角の和」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「外角＝離れた2内角の和」をノートに図つきで書こう</div></div>
 </div>
 
 <!-- ===== 問4 折り返し＋平行線の複合(発展) ===== -->
@@ -281,7 +281,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="layer q4"><span>⑦検算＋コツ</span>折り返した辺が下の辺と116°、上の辺と64°。平行線をはさむ同じ側の角どうしで <span class="math">116＋64＝180</span>。ちゃんと一直線分の180°になっているから合っている。<strong>コツ：折り返しが出たら①まず等しい角に印②平行線で角をうつす③鋭角か鈍角かを最後に確認</strong>。</div>
     <div class="ans-final"><span>こたえ</span>x＝64°</div>
   </div>
-  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが使えない（A）</button></div><div class="write3">📝 まちがえたら、「①折り返しで等しい角→②平行線でうつす→③180°で鋭角/鈍角を調整」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「①折り返しで等しい角→②平行線でうつす→③180°で鋭角/鈍角を調整」をノートに図つきで書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8c 図形・角度集中 完了）</button>

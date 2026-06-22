@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -84,7 +84,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P10b</span><span class="pg-badge">数学：関数的・グラフ</span><span class="pg-badge">★グラフ・水そう L3-L4（9月大問5直撃）</span></div>
@@ -144,8 +144,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問5(1)の「毎分何L」の読み取りそのもの。ここを正確に読めると(2)以降が全部つながる。</div>
     <div class="ans-final"><span>こたえ</span>(1) 5L/分　(2) 50L</div>
   </div>
-  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1)</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">グラフが読めない</button><button onclick="m(this)">読めたが計算ミス</button></div><div class="write3">📝 まちがえたら、2点の数値と「÷」の式をノートに書こう</div></div>
-  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2)</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">グラフが読めない</button><button onclick="m(this)">読めたが計算ミス</button></div><div class="write3">📝 まちがえたら、5×10 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1)</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、2点の数値と「÷」の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2)</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、5×10 の式をノートに書こう</div></div>
 </div>
 
 <!-- ===== 問2 満水時刻の逆算 L4 ===== -->
@@ -192,8 +192,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問5(2)の核。「割合→容積÷割合→開始時刻にたす」の3段は、満水・排水・くみ上げどの問題でも同じ型で効く。</div>
     <div class="ans-final"><span>こたえ</span>(1) 3L/分　(2) 午前9時20分</div>
   </div>
-  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1)</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">グラフが読めない</button><button onclick="m(this)">読めたが計算ミス</button></div><div class="write3">📝 まちがえたら、15÷5 の式をノートに書こう</div></div>
-  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2) 満水時刻</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">容積を使い忘れた</button><button onclick="m(this)">時刻にたし忘れた</button></div><div class="write3">📝 まちがえたら、60÷3＝20分→9:00+20分 をノートに書こう</div></div>
+  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1)</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、15÷5 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2) 満水時刻</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、60÷3＝20分→9:00+20分 をノートに書こう</div></div>
 </div>
 
 <!-- ===== 問3 L字水そう・寸法図＋グラフ L4 ===== -->
@@ -249,8 +249,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問5の本番型。寸法図→断面積、グラフ→水位変化、そこから給水量と満水時刻を出す。<strong>図とグラフを同時に読む</strong>ことが得点の分かれ目。</div>
     <div class="ans-final"><span>こたえ</span>(1) 240cm³/分　(2) 7分後</div>
   </div>
-  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1)★L4</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">断面積が出せない</button><button onclick="m(this)">グラフは読めたが体積にできない</button></div><div class="write3">📝 まちがえたら、20×10×6÷5 をノートに書こう</div></div>
-  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2)★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">段差後の断面積ミス</button><button onclick="m(this)">5分を足し忘れた</button></div><div class="write3">📝 まちがえたら、8×10×6÷240＋5 をノートに書こう</div></div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1)★L4</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、20×10×6÷5 をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2)★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、8×10×6÷240＋5 をノートに書こう</div></div>
 </div>
 
 <!-- ===== 問4 距離-時間グラフ（行き・休み・帰り） L3-L4 ===== -->
@@ -302,8 +302,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問6（速さ・ダイヤグラム）に直結。「のぼり・横ばい・くだり」を区間で分けて読む力は、水そうの折れ線（大問5）とまったく同じ考え方。</div>
     <div class="ans-final"><span>こたえ</span>(1) 分速80m　(2) 分速120m／帰りの方が速い</div>
   </div>
-  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 行き</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">グラフが読めない</button><button onclick="m(this)">読めたが計算ミス</button></div><div class="write3">📝 まちがえたら、1200÷15 の式をノートに書こう</div></div>
-  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 帰り</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">帰りの時間を取り違えた</button><button onclick="m(this)">読めたが計算ミス</button></div><div class="write3">📝 まちがえたら、1200÷(31−21) をノートに書こう</div></div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 行き</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、1200÷15 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 帰り</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、1200÷(31−21) をノートに書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P10b グラフ・水そうL4 完了）</button>

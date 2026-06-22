@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -84,7 +84,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P9a</span><span class="pg-badge">数学：規則性</span><span class="pg-badge">演習 L2-L3（差→n式の基礎）</span></div>
@@ -116,10 +116,10 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-warn">問3 <span class="red">減るときは差がマイナス（−3）</span>。差だけで終わらず「1番目−差」の調整を必ず足す。</div>
     <div class="ans-final"><span>こたえ</span>問1 3n−1／問2 4n−3／問3 −3n＋23／問4 6n−1</div>
   </div>
-  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span><button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">調整忘れ</button><button onclick="m(this)">差のミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
-  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span><button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">調整忘れ</button><button onclick="m(this)">差のミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
-  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span><button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">マイナスの差</button><button onclick="m(this)">調整ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
-  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span><button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">調整忘れ</button><button onclick="m(this)">差のミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span><button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span><button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span><button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span><button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
 </div>
 
 <!-- ===== 大問B 表からn式（問5〜問6） ===== -->
@@ -135,8 +135,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-key">表でも数列でも同じ：<strong>差がnの係数</strong>、調整は「1番目−差」。表は差が見つけやすいので便利。</div>
     <div class="ans-final"><span>こたえ</span>問5 3n＋1／問6 5n＋1</div>
   </div>
-  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span><button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">調整忘れ</button><button onclick="m(this)">差のミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
-  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span><button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">調整忘れ</button><button onclick="m(this)">差のミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span><button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
+  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span><button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら差とn式をノートに書こう</div></div>
 </div>
 
 <!-- ===== 大問C ●の規則（問7〜問8） ===== -->
@@ -165,8 +165,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-warn">図でも「1・2・3番目の数を並べて差を見る」が基本。<span class="red">●を数え間違えない</span>よう図に数を書く。</div>
     <div class="ans-final"><span>こたえ</span>問7 2n−1／問8 2n</div>
   </div>
-  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7</span><button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">数え間違い</button><button onclick="m(this)">調整忘れ</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら表と差をノートに書こう</div></div>
-  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8</span><button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">数え間違い</button><button onclick="m(this)">調整忘れ</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら表と差をノートに書こう</div></div>
+  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7</span><button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら表と差をノートに書こう</div></div>
+  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8</span><button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら表と差をノートに書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P9a 規則性 演習 完了）</button>

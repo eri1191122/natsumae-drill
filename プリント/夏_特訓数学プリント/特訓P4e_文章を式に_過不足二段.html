@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P4e 文章を式に（過不足・二段）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 文章→式の型カード（毎回これにそって解く）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.cardbox .card-tip{margin-top:10px;font-size:12.5px;line-height:1.85;color:#2f6a44;background:#eaf4ee;border-left:4px solid #6aa97a;border-radius:0 8px 8px 0;padding:8px 12px}
+.cardbox .card-tip b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.svgbox{background:#fbfcff;border:1px solid #d3deee;border-radius:8px;padding:10px 12px;margin:10px 0;text-align:center}
+.svgbox .svg-cap{display:block;font-size:11px;font-weight:800;color:#3f6f9f;margin-bottom:6px;text-align:left}
+.svgbox svg{max-width:100%;height:auto}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P4e</span><span class="pg-badge">数学：方程式の利用</span><span class="pg-badge">★文章→式 L3-L4（過不足・二段）</span></div>
+  <h1>文章を式にする⑤｜「最初の□脚は○人ずつ・残りは△人ずつ」二段の過不足を型で固める</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">今日は<strong>「最初の何脚かだけ人数が違う」二段タイプ</strong>。これは<strong>9月の特訓選抜 大問3(3)とそっくり同じ形</strong>だよ。コツは1つだけ＝<strong>「前の区間」と「後ろの区間」を分けて、人数を足し算で表す</strong>こと。型カードにそって、4問だけじっくり。式が作れたら、もうこの型は体に入ったということ🌸</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 何を求める？</b> → それを <span class="math">x</span> とおく（「□を x とする」と書く）</li>
+    <li><b>② 図か表にする</b>（線分図・表）＝目で見える形に</li>
+    <li><b>③ 等しい関係を式に</b>（＝で結べる2つの言い方を探す）</li>
+    <li><b>④ 解く</b>（移項して x ＝ の形へ）</li>
+    <li><b>⑤ 検算</b>（出た数を文章に戻して合うか確かめる）</li>
+  </ol>
+  <div class="card-tip"><b>★過不足・二段のコツ：</b>「最初の□脚は○人ずつ・残りは△人ずつ」は、人数を〔○×□＋△×(脚数−□)〕のように<b>区間ごとに足し算</b>で表す。前の区間と後ろの区間を分けて数え、最後に足すのがポイント。</div>
+</div>
+
+<!-- ===== 問1 本番同型 長椅子・二段ぴったり ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">★本番同型 二段の過不足（ぴったり埋まる）L4 応用</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問1</span>生徒が長椅子に座ります。最初の9脚に7人ずつ、残りの長椅子に5人ずつ座ったら、生徒は全部で83人で、長椅子はちょうど全部うまりました。長椅子は何脚ありますか。</div>
+  <div class="note-draw">長椅子の数を x にする。前の9脚（7人ずつ）と、残りの脚（5人ずつ）に分けて、座った人数を足し算で表そう。残りの脚数は「全部−9＝(x−9)」。</div>
+  <div class="svgbox">
+    <span class="svg-cap">📐 図：前ブロック（9脚×7人）／後ブロック（残り(x−9)脚×5人）に区切る</span>
+    <svg viewBox="0 0 560 150" role="img" aria-label="二段の過不足を前区間と後区間に区切った図">
+      <!-- 前ブロック -->
+      <rect x="20" y="40" width="220" height="56" fill="#e6f0fb" stroke="#7aa7d9" stroke-width="2"/>
+      <text x="130" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#2f5a8a">前ブロック</text>
+      <text x="130" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#2f5a8a">最初の 9脚</text>
+      <text x="130" y="84" text-anchor="middle" font-size="12" fill="#2f5a8a">7人ずつ → 9×7＝63人</text>
+      <!-- 区切り線 -->
+      <line x1="280" y1="28" x2="280" y2="108" stroke="#9b514d" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="280" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#9b514d">区切り</text>
+      <!-- 後ブロック -->
+      <rect x="320" y="40" width="220" height="56" fill="#eef7f5" stroke="#5fa89a" stroke-width="2"/>
+      <text x="430" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6a5c">後ブロック</text>
+      <text x="430" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6a5c">残り (x−9)脚</text>
+      <text x="430" y="84" text-anchor="middle" font-size="12" fill="#2f6a5c">5人ずつ → 5(x−9)人</text>
+      <!-- 全体注記 -->
+      <text x="280" y="142" text-anchor="middle" font-size="12" font-weight="800" fill="#2f6b45">前 ＋ 後 ＝ 全部で83人（ぴったり）</text>
+    </svg>
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">二段の過不足は<strong>「前の区間」と「後ろの区間」を分けて人数を足す</strong>。前9脚は7人ずつ＝<strong>9×7＝63人</strong>、残りは(x−9)脚に5人ずつ＝<strong>5(x−9)人</strong>。合計が83人。</div>
+    <div class="step q1"><span>①x</span>長椅子の数を x 脚とする（求めるもの）。残りの脚数は (x−9) 脚。</div>
+    <div class="step q1"><span>③式</span>前9脚＝9×7＝63人、残り＝5(x−9)人。合計83人だから <span class="math">63＋5(x−9)＝83</span>。</div>
+    <div class="step q1"><span>④解</span>63＋5x−45＝83 → 5x＋18＝83 → 5x＝65 → x＝13。</div>
+    <div class="step q1"><span>⑤検算</span>前9脚×7＝63人、残り(13−9)＝4脚×5＝20人。63＋20＝83人○。長椅子は13脚でちょうど埋まる。</div>
+    <div class="bx bx-warn"><span class="red">残りの脚数は (x−9)</span>。全部の x 脚に5人ずつ座ると考えて 5x としない。前の9脚はすでに7人ずつで埋まっているから、5人ずつなのは「残り(x−9)脚」だけ。</div>
+    <div class="bx bx-link">これが<strong>9月の特訓選抜 大問3(3)そのもの</strong>。「最初の□脚だけ人数が違う」二段の長椅子問題は出題定番。区間で分けて足す型をそのまま使える。</div>
+    <div class="ans-final"><span>こたえ</span>長椅子 13脚</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問2 テント・二段ぴったり ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">二段の過不足（テント・ぴったり）L3-L4</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問2</span>生徒がテントに泊まります。最初の4張りに6人ずつ、残りのテントに4人ずつ泊まったら、生徒は52人で、テントはちょうど全部使いました。テントは何張りありますか。</div>
+  <div class="note-draw">問1と同じ二段の型。テントの数を x にして、前4張り（6人ずつ）と残り(x−4)張り（4人ずつ）に分けて足そう。</div>
+  <div class="svgbox">
+    <span class="svg-cap">📐 図：前ブロック（4張り×6人）／後ブロック（残り(x−4)張り×4人）に区切る</span>
+    <svg viewBox="0 0 560 150" role="img" aria-label="テントの二段を前区間と後区間に区切った図">
+      <rect x="20" y="40" width="220" height="56" fill="#fdf7ee" stroke="#e0a85c" stroke-width="2"/>
+      <text x="130" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#8a5a17">前ブロック</text>
+      <text x="130" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#8a5a17">最初の 4張り</text>
+      <text x="130" y="84" text-anchor="middle" font-size="12" fill="#8a5a17">6人ずつ → 4×6＝24人</text>
+      <line x1="280" y1="28" x2="280" y2="108" stroke="#9b514d" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="280" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#9b514d">区切り</text>
+      <rect x="320" y="40" width="220" height="56" fill="#eef7f5" stroke="#5fa89a" stroke-width="2"/>
+      <text x="430" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6a5c">後ブロック</text>
+      <text x="430" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6a5c">残り (x−4)張り</text>
+      <text x="430" y="84" text-anchor="middle" font-size="12" fill="#2f6a5c">4人ずつ → 4(x−4)人</text>
+      <text x="280" y="142" text-anchor="middle" font-size="12" font-weight="800" fill="#2f6b45">前 ＋ 後 ＝ 生徒52人（ぴったり）</text>
+    </svg>
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">前4張りは6人ずつ＝<strong>4×6＝24人</strong>、残りは(x−4)張りに4人ずつ＝<strong>4(x−4)人</strong>。合計52人で式を作る。</div>
+    <div class="step q2"><span>①x</span>テントの数を x 張りとする。残りは (x−4) 張り。</div>
+    <div class="step q2"><span>③式</span>前4張り＝4×6＝24人、残り＝4(x−4)人。合計52人だから <span class="math">24＋4(x−4)＝52</span>。</div>
+    <div class="step q2"><span>④解</span>24＋4x−16＝52 → 4x＋8＝52 → 4x＝44 → x＝11。</div>
+    <div class="step q2"><span>⑤検算</span>前4張り×6＝24人、残り(11−4)＝7張り×4＝28人。24＋28＝52人○。</div>
+    <div class="bx bx-warn"><span class="red">残りの張り数は (x−4)</span>。前の4張りはもう6人ずつで埋まっているから、4人ずつなのは残り(x−4)張りだけ。全部に4人ずつとして 4x としない。</div>
+    <div class="ans-final"><span>こたえ</span>テント 11張り</div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問3 長椅子・二段ぴったり（L4） ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★二段の過不足（長椅子・ぴったり）L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問3</span>長椅子に、最初の5脚に8人ずつ、残りの長椅子に6人ずつ座ると、ちょうど全員座れました。生徒は82人です。長椅子は何脚ありますか。</div>
+  <div class="note-draw">同じ二段の型。長椅子の数を x にして、前5脚（8人ずつ）と残り(x−5)脚（6人ずつ）に分けて足そう。</div>
+  <div class="svgbox">
+    <span class="svg-cap">📐 図：前ブロック（5脚×8人）／後ブロック（残り(x−5)脚×6人）に区切る</span>
+    <svg viewBox="0 0 560 150" role="img" aria-label="長椅子の二段を前区間と後区間に区切った図">
+      <rect x="20" y="40" width="220" height="56" fill="#eef7f5" stroke="#5fa89a" stroke-width="2"/>
+      <text x="130" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6a5c">前ブロック</text>
+      <text x="130" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6a5c">最初の 5脚</text>
+      <text x="130" y="84" text-anchor="middle" font-size="12" fill="#2f6a5c">8人ずつ → 5×8＝40人</text>
+      <line x1="280" y1="28" x2="280" y2="108" stroke="#9b514d" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="280" y="122" text-anchor="middle" font-size="11" font-weight="700" fill="#9b514d">区切り</text>
+      <rect x="320" y="40" width="220" height="56" fill="#f4f8fd" stroke="#7aa7d9" stroke-width="2"/>
+      <text x="430" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#2f5a8a">後ブロック</text>
+      <text x="430" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#2f5a8a">残り (x−5)脚</text>
+      <text x="430" y="84" text-anchor="middle" font-size="12" fill="#2f5a8a">6人ずつ → 6(x−5)人</text>
+      <text x="280" y="142" text-anchor="middle" font-size="12" font-weight="800" fill="#2f6b45">前 ＋ 後 ＝ 生徒82人（ぴったり）</text>
+    </svg>
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">前5脚は8人ずつ＝<strong>5×8＝40人</strong>、残りは(x−5)脚に6人ずつ＝<strong>6(x−5)人</strong>。合計82人で式を作る。</div>
+    <div class="step q3"><span>①x</span>長椅子の数を x 脚とする。残りは (x−5) 脚。</div>
+    <div class="step q3"><span>③式</span>前5脚＝5×8＝40人、残り＝6(x−5)人。合計82人だから <span class="math">40＋6(x−5)＝82</span>。</div>
+    <div class="step q3"><span>④解</span>40＋6x−30＝82 → 6x＋10＝82 → 6x＝72 → x＝12。</div>
+    <div class="step q3"><span>⑤検算</span>前5脚×8＝40人、残り(12−5)＝7脚×6＝42人。40＋42＝82人○。</div>
+    <div class="bx bx-warn"><span class="red">6(x−5) の展開に注意</span>＝6x−30。x にも5にも6をかける。6x−5 としない。残りの脚数も (x−5) で、6x としない。</div>
+    <div class="bx bx-link">前の人数（8人）の方が後ろ（6人）より多い形でも、考え方は同じ。「前の区間＋後ろの区間＝全部」を崩さないことが特訓選抜の得点源。</div>
+    <div class="ans-final"><span>こたえ</span>長椅子 12脚</div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問4 最難 二段＋あまり ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★最難 二段＋あまり（座れない人がいる）L4</span><span class="unit-time">目安 9分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問4</span>長椅子に、最初の6脚に9人ずつ、残りの長椅子に7人ずつ座らせたら、4人が座れずにあまりました。長椅子は10脚あります。生徒は何人ですか。</div>
+  <div class="note-draw">今度は<strong>長椅子の数（10脚）が分かっていて、生徒の人数を求める</strong>。前6脚（9人ずつ）＋残り(10−6)脚（7人ずつ）＝座れた人数。座れない4人は人が多いから足す。</div>
+  <div class="svgbox">
+    <span class="svg-cap">📐 図：前ブロック（6脚×9人）／後ブロック（残り4脚×7人）／座れないあまり4人</span>
+    <svg viewBox="0 0 560 165" role="img" aria-label="二段プラスあまりを前区間・後区間・あまりに区切った図">
+      <rect x="20" y="40" width="200" height="56" fill="#f7f2fc" stroke="#a98ed0" stroke-width="2"/>
+      <text x="120" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#5f4a8a">前ブロック</text>
+      <text x="120" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#5f4a8a">最初の 6脚</text>
+      <text x="120" y="84" text-anchor="middle" font-size="12" fill="#5f4a8a">9人ずつ → 6×9＝54人</text>
+      <line x1="250" y1="28" x2="250" y2="108" stroke="#9b514d" stroke-width="2" stroke-dasharray="6 4"/>
+      <rect x="280" y="40" width="170" height="56" fill="#eef7f5" stroke="#5fa89a" stroke-width="2"/>
+      <text x="365" y="30" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6a5c">後ブロック</text>
+      <text x="365" y="64" text-anchor="middle" font-size="13" font-weight="700" fill="#2f6a5c">残り 4脚</text>
+      <text x="365" y="84" text-anchor="middle" font-size="12" fill="#2f6a5c">7人ずつ → 4×7＝28人</text>
+      <line x1="460" y1="28" x2="460" y2="108" stroke="#9b514d" stroke-width="2" stroke-dasharray="6 4"/>
+      <rect x="475" y="40" width="70" height="56" fill="#fff7e8" stroke="#d9b46d" stroke-width="2"/>
+      <text x="510" y="30" text-anchor="middle" font-size="12" font-weight="700" fill="#8a5a19">あまり</text>
+      <text x="510" y="68" text-anchor="middle" font-size="12" font-weight="700" fill="#8a5a19">座れ</text>
+      <text x="510" y="84" text-anchor="middle" font-size="12" font-weight="700" fill="#8a5a19">ない4人</text>
+      <text x="280" y="125" text-anchor="middle" font-size="11" font-weight="700" fill="#9b514d">区切り</text>
+      <text x="280" y="155" text-anchor="middle" font-size="12" font-weight="800" fill="#2f6b45">前 ＋ 後 ＋ あまり ＝ 生徒の全員</text>
+    </svg>
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">二段＋あまり＝<strong>区間ごとの「着席人数」を足して、座れない分を＋する</strong>。前6脚＝6×9＝54人、後ろ＝(10−6)＝4脚×7＝28人、座れない4人を足す。生徒＝54＋28＋4。</div>
+    <div class="step q4"><span>①x</span>求めるのは生徒の人数。長椅子の数は10脚と分かっているので、人数を順に足していく。</div>
+    <div class="step q4"><span>③式</span>前6脚＝9×6＝54人、残り(10−6)＝4脚＝7×4＝28人、座れず4人あまる。生徒＝<span class="math">9×6＋7×(10−6)＋4</span>。</div>
+    <div class="step q4"><span>④解</span>9×6＋7×(10−6)＋4＝54＋28＋4＝86。</div>
+    <div class="step q4"><span>⑤検算</span>前6脚に54人、後4脚に28人で着席は82人。これに座れない4人を足して82＋4＝86人○。</div>
+    <div class="bx bx-warn"><span class="red">座れない4人を引かない</span>。座れない＝椅子より人が多いということ＝<strong>＋</strong>。着席82人「だけ」を答えにせず、あまった4人を足す。</div>
+    <div class="bx bx-link">「ぴったり」「たりない」「あまる（座れない）」の3パターンを区間ごとの足し算でそろえると、特訓選抜のどの形が来ても同じ手順で解ける。</div>
+    <div class="ans-final"><span>こたえ</span>生徒 86人</div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P4e 過不足・二段 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">4問おつかれさま！今日の収穫は<strong>「前の区間と後ろの区間を分けて、人数を足し算で表す」</strong>という二段の型。長椅子もテントも、ぴったりでも・あまりでも、全部この1つの考え方でつながっている。とくに問1は<strong>9月の特訓選抜 大問3(3)とそっくり同じ形</strong>。式が作れた問題は、もう本番でも解ける力がついた証拠だよ。式が作れなかった問題は「前の区間は何人」「残りの脚数は (x−□)」をノートで言葉に書き直そう。少しずつでいい、きみは確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m04e';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！過不足・二段 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

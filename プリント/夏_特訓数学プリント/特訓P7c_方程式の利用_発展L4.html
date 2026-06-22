@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -97,7 +97,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P7c</span><span class="pg-badge">数学：方程式の利用</span><span class="pg-badge">★発展 L3-L4（大問6・最難対策）</span></div>
@@ -152,8 +152,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">出会い→出会う時刻は特訓選抜 大問6(1)の定番。「○分後」を出してから「出発時刻＋○分」で時刻に直す流れは、次の問2（追い越し）でもそのまま使う。</div>
     <div class="ans-final"><span>こたえ</span>(1) 12分後　(2) 9時12分</div>
   </div>
-  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1) 何分後</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">式が作れない（K）</button><button onclick="m(this)">図はかけたが解けない（A）</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
-  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2) 出会う時刻</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">式が作れない（K）</button><button onclick="m(this)">図はかけたが解けない（A）</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1) 何分後</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2) 出会う時刻</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
 </div>
 
 <!-- ===== 問2 追い越し + 時刻逆算（最難の同型） ===== -->
@@ -182,7 +182,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">これが特訓選抜 大問6(2)の<strong>最難パターンそのもの</strong>。「先に出た人は時間が多い → ＋で式に入れる」「答えを時刻に逆算する（くりあがり）」の2つが山。問1の出会い（足す）と見くらべ、足すか＝かを図で判断しよう。</div>
     <div class="ans-final"><span>こたえ</span>9時05分（姉が出発して6分後）</div>
   </div>
-  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">式が作れない（K）</button><button onclick="m(this)">時刻の逆算ミス（C）</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
 </div>
 
 <!-- ===== 問3 バス2台の速さ推定 ===== -->
@@ -205,7 +205,7 @@ Pの道のり + Qの道のり = 24km</div>
     <div class="bx bx-link">9月特訓選抜 大問6の前半に近い型。ここで求めたバスの速さを、次の問4で使う。<strong>前問の結果を次問へつなぐ</strong>のが本番級。</div>
     <div class="ans-final"><span>こたえ</span>時速48km</div>
   </div>
-  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★L4</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">時間を分→時間に直せない（K）</button><button onclick="m(this)">すれ違いの式が作れない（A）</button></div><div class="write3">📝 まちがえたら、18/60・12/60 と道のりの和をノートに書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★L4</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、18/60・12/60 と道のりの和をノートに書こう</div></div>
 </div>
 
 <!-- ===== 問4 バス2台＋自転車の出発時刻逆算 ===== -->
@@ -226,7 +226,7 @@ Pの道のり + Qの道のり = 24km</div>
     <div class="bx bx-link">9月特訓選抜 大問6(2)の同型。追い越し・すれ違い・時刻逆算が同時に入るので、ここが解ければ後半L4を拾える。</div>
     <div class="ans-final"><span>こたえ</span>8時40分</div>
   </div>
-  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★L4-L5</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">A駅からの距離に直せない（K）</button><button onclick="m(this)">出発時刻へ戻せない（A）</button></div><div class="write3">📝 まちがえたら、Pの位置→Qの位置→自転車の速さ→出発時刻を4行で書こう</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★L4-L5</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、Pの位置→Qの位置→自転車の速さ→出発時刻を4行で書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P7c 発展L4・大問6対策 完了）</button>

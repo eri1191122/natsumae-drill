@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -102,7 +102,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P10e</span><span class="pg-badge">数学：比例と座標・グラフ</span><span class="pg-badge">★関数の入口 L2-L4（9月選抜・関数領域）</span></div>
@@ -212,8 +212,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜の関数領域は、まずこの「座標を正しく読む・書く」が土台。ここがズレると比例の式 y=ax も全部ズレる。座標が読めれば、問2・問3のグラフ読み取りがそのまま得点になる。</div>
     <div class="ans-final"><span>こたえ</span>(1) A(3, 2)　(2) E は x軸の上／F は y軸の上</div>
   </div>
-  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1) Aの座標</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C ケアレス（横たて逆など）</button><button onclick="m(this)">K 仕組み不理解（座標の意味）</button><button onclick="m(this)">A 応用不足（読めるが書けない）</button><span class="mt-note">C=書き方の練習／K=座標の基礎へ／A=類題演習</span></div><div class="write3">📝 まちがえたら、原点から「右に3・上に2」と矢印つきでノートに書こう</div></div>
-  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2) E・Fの軸</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C ケアレス（軸の名前ミス）</button><button onclick="m(this)">K 仕組み不理解（軸とは何か）</button><button onclick="m(this)">A 応用不足</button><span class="mt-note">C=書き方の練習／K=軸の基礎へ／A=類題演習</span></div><div class="write3">📝 まちがえたら、E(−4,0) と F(0,−3) の「0の場所」をノートに書こう</div></div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1) Aの座標</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、原点から「右に3・上に2」と矢印つきでノートに書こう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2) E・Fの軸</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、E(−4,0) と F(0,−3) の「0の場所」をノートに書こう</div></div>
 </div>
 
 <!-- ===== 問2 比例 y=ax 表とグラフ L3 ===== -->
@@ -285,8 +285,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜の関数領域の中心。「表・グラフ → y=ax の式を作る」は配点が大きい定番。ここで a＝y÷x の意味をつかんでおくと、問3（点が通るか判定）も同じ式で解ける。</div>
     <div class="ans-final"><span>こたえ</span>(1) y＝3x　(2) y＝15</div>
   </div>
-  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1) 式 y=ax</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C ケアレス（÷の向きミス）</button><button onclick="m(this)">K 仕組み不理解（比例とは）</button><button onclick="m(this)">A 応用不足</button><span class="mt-note">C=計算の練習／K=比例の基礎へ／A=類題演習</span></div><div class="write3">📝 まちがえたら、a＝y÷x＝6÷2＝3 をノートに書こう</div></div>
-  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2) x=5のy</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C ケアレス（計算ミス）</button><button onclick="m(this)">K 仕組み不理解（代入とは）</button><button onclick="m(this)">A 応用不足</button><span class="mt-note">C=計算の練習／K=代入の基礎へ／A=類題演習</span></div><div class="write3">📝 まちがえたら、y＝3×5＝15 をノートに書こう</div></div>
+  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1) 式 y=ax</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、a＝y÷x＝6÷2＝3 をノートに書こう</div></div>
+  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2) x=5のy</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、y＝3×5＝15 をノートに書こう</div></div>
 </div>
 
 <!-- ===== 問3 グラフから式を作り点を通るか判定 L3-L4 ===== -->
@@ -362,8 +362,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜の関数領域では「グラフ→式→点の判定」が一連で問われる。a の符号（右上がり＝＋／右下がり＝−）と、代入による点判定は、2年の一次関数 y=ax+b へそのまま続く最重要スキル。</div>
     <div class="ans-final"><span>こたえ</span>(1) y＝−2x　(2) y＝−2×(−4)＝8 で点Pの y と一致 → 通る</div>
   </div>
-  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1) 式</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C ケアレス（符号落とし）</button><button onclick="m(this)">K 仕組み不理解（a=y÷x）</button><button onclick="m(this)">A 応用不足</button><span class="mt-note">C=符号の練習／K=比例の基礎へ／A=類題演習</span></div><div class="write3">📝 まちがえたら、a＝(−6)÷3＝−2 をノートに書こう</div></div>
-  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2) 点P判定★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C ケアレス（−×−の符号）</button><button onclick="m(this)">K 仕組み不理解（代入判定とは）</button><button onclick="m(this)">A 応用不足（判定の使い方）</button><span class="mt-note">C=符号の練習／K=代入判定の基礎へ／A=類題演習</span></div><div class="write3">📝 まちがえたら、y＝−2×(−4)＝8、8＝8 だから通る、をノートに書こう</div></div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1) 式</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、a＝(−6)÷3＝−2 をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2) 点P判定★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、y＝−2×(−4)＝8、8＝8 だから通る、をノートに書こう</div></div>
 </div>
 
 <!-- ===== 問4 比例の文章＋グラフ（速さ・量） L3-L4 ===== -->
@@ -433,8 +433,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜の関数・速さ領域の土台。「速さ＝道のり÷時間」を a＝y÷x として比例でとらえると、後の一次関数・速さのグラフ（ダイヤグラム）まで一本の考え方でつながる。</div>
     <div class="ans-final"><span>こたえ</span>(1) y＝60x（分速60m）　(2) 420m</div>
   </div>
-  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 式・分速</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C ケアレス（÷の向き・単位）</button><button onclick="m(this)">K 仕組み不理解（速さ=y÷x）</button><button onclick="m(this)">A 応用不足（文章→比例）</button><span class="mt-note">C=計算の練習／K=比例と速さの基礎へ／A=類題演習</span></div><div class="write3">📝 まちがえたら、a＝240÷4＝60、y＝60x をノートに書こう</div></div>
-  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 7分の道のり</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C ケアレス（計算ミス）</button><button onclick="m(this)">K 仕組み不理解（代入とは）</button><button onclick="m(this)">A 応用不足</button><span class="mt-note">C=計算の練習／K=代入の基礎へ／A=類題演習</span></div><div class="write3">📝 まちがえたら、y＝60×7＝420 をノートに書こう</div></div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 式・分速</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、a＝240÷4＝60、y＝60x をノートに書こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 7分の道のり</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、y＝60×7＝420 をノートに書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P10e 比例と座標・グラフ 完了）</button>

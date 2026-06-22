@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -97,7 +97,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P9c</span><span class="pg-badge">数学：規則性</span><span class="pg-badge">★碁石・マッチ棒→n式→逆算 L3-L4（9月大問4直撃）</span></div>
@@ -183,7 +183,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <div class="ans-final"><span>こたえ</span>1番目 4本／2番目 7本／3番目 10本　差は3（3本ずつ増える）</div>
   </div>
-  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 数え方・差がわからない</button><button onclick="m(this)">A わかったが計算ミス</button></div><div class="write3">📝 まちがえたら、図のマッチ棒を1本ずつ○をつけて数え直し、表の差（7−4、10−7）をノートに書こう</div></div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、図のマッチ棒を1本ずつ○をつけて数え直し、表の差（7−4、10−7）をノートに書こう</div></div>
 </div>
 
 <!-- ============================================================ 問2 n式 ============================================================ -->
@@ -223,7 +223,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <div class="ans-final"><span>こたえ</span>n番目＝3n＋1（本）</div>
   </div>
-  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2★L4</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 式の作り方がわからない</button><button onclick="m(this)">A 考え方は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「差×n＋（1番目−差）」＝「3×n＋(4−3)」を書いて、n＝1で検算しよう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2★L4</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「差×n＋（1番目−差）」＝「3×n＋(4−3)」を書いて、n＝1で検算しよう</div></div>
 </div>
 
 <!-- ============================================================ 問3 逆算 ============================================================ -->
@@ -264,8 +264,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <div class="ans-final"><span>こたえ</span>(1) 61本／(2) 33番目</div>
   </div>
-  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1) 代入</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 代入の仕方がわからない</button><button onclick="m(this)">A わかったが計算ミス</button></div><div class="write3">📝 まちがえたら、式に n＝20 を入れる手順をノートに書こう</div></div>
-  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2) 逆算★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 方程式の立て方がわからない</button><button onclick="m(this)">A 立てたが計算ミス</button></div><div class="write3">📝 まちがえたら、「3n＋1＝100」を立てて、−1してから÷3の順で書こう</div></div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1) 代入</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、式に n＝20 を入れる手順をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2) 逆算★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「3n＋1＝100」を立てて、−1してから÷3の順で書こう</div></div>
 </div>
 
 <!-- ============================================================ 問4 別パターン 碁石 ============================================================ -->
@@ -340,8 +340,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 
     <div class="ans-final"><span>こたえ</span>(1) 4n−4（個）／(2) 1辺16個</div>
   </div>
-  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 碁石の式</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K n式が作れない</button><button onclick="m(this)">A 調整−4を忘れた</button></div><div class="write3">📝 まちがえたら、表から「差4、n＝2で4個」をノートに書き、4n−4 を導こう</div></div>
-  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 逆算★L4</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">C うっかりミス</button><button onclick="m(this)">K 方程式の立て方がわからない</button><button onclick="m(this)">A 割るだけにした</button></div><div class="write3">📝 まちがえたら、「4n−4＝60」を立てて、＋4してから÷4の順で書こう</div></div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 碁石の式</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、表から「差4、n＝2で4個」をノートに書き、4n−4 を導こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 逆算★L4</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「4n−4＝60」を立てて、＋4してから÷4の順で書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P9c 規則性 碁石・マッチ棒② 完了）</button>

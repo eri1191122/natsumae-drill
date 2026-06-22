@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -83,7 +83,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P8b</span><span class="pg-badge">数学：平面図形</span><span class="pg-badge">★複合図形 L3-L4（9月大問2直撃）</span></div>
@@ -122,7 +122,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2の砂時計型に近い処理。<strong>底辺共通＋高さの和＝長方形の高さ</strong>で、影2つの和を一撃で出す。</div>
     <div class="ans-final"><span>こたえ</span>63cm²</div>
   </div>
-  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1★</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">考え方がわからない</button><button onclick="m(this)">考え方は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「底辺が同じ・高さが同じ→面積も同じ」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1★</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「底辺が同じ・高さが同じ→面積も同じ」をノートに図つきで書こう</div></div>
 </div>
 
 <!-- ===== 問2 折り返し・角度 ===== -->
@@ -152,7 +152,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2の角度問題は「折り返し＋平行線（錯角・同位角）」が定番。<strong>折ると等しい・平行なら錯角が等しい</strong>の2本柱で必ず解ける。</div>
     <div class="ans-final"><span>こたえ</span>x＝64°</div>
   </div>
-  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">考え方がわからない</button><button onclick="m(this)">考え方は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「折ると等しい＋平行線」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「折ると等しい＋平行線」をノートに図つきで書こう</div></div>
 </div>
 
 <!-- ===== 問3 花びら・円の組合せ ===== -->
@@ -198,7 +198,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2の「花びら型（<span class="pi">π</span>）」直撃。<strong>半径が変わっても「曲線でかこまれた図形＝大きい形−まわりのすき間」</strong>の考え方は同じ。重なりは「全部足して正方形を1回引く」と覚えよう。</div>
     <div class="ans-final"><span>こたえ</span>32<span class="pi">π</span>−64 cm²</div>
   </div>
-  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">分け方がわからない</button><button onclick="m(this)">公式は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「半円4つ−正方形」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「半円4つ−正方形」をノートに図つきで書こう</div></div>
 </div>
 
 <!-- ===== 問4 おうぎ形 ===== -->
@@ -230,8 +230,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2では「おうぎ形＋三角形」「おうぎ形−おうぎ形」の複合も出る。まず<strong>おうぎ形ひとつを「円の(中心角/360)」で出せる</strong>ことが土台。弧は2×半径×<span class="pi">π</span>系、面積は半径×半径×<span class="pi">π</span>系、と分けて覚えよう。</div>
     <div class="ans-final"><span>こたえ</span>(1)弧＝4<span class="pi">π</span> cm／(2)面積＝12<span class="pi">π</span> cm²</div>
   </div>
-  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1)弧</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">公式がわからない</button><button onclick="m(this)">公式は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「弧＝2×半径×π×(中心角/360)」をノートに書こう</div></div>
-  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2)面積</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">公式がわからない</button><button onclick="m(this)">公式は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「面積＝半径×半径×π×(中心角/360)」をノートに書こう</div></div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1)弧</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「弧＝2×半径×π×(中心角/360)」をノートに書こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2)面積</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「面積＝半径×半径×π×(中心角/360)」をノートに書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8b 複合図形L4 完了）</button>

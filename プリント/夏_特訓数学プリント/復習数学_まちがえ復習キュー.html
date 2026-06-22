@@ -4,12 +4,12 @@
 <meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>復習・数学（まちがえだけ）</title>
+<title>復習・数学（間違えただけ）</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f8f7;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:760px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:760px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#eef2f7;color:#27374a;padding:20px 20px;border:1px solid #cdd9e6;border-radius:10px;margin-bottom:14px}
 .pg-hd h1{font-size:20px;font-weight:900;margin-bottom:6px}
@@ -58,6 +58,28 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f
 .frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 1px}
 .frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
 .frac .d{padding:2px 5px 0}
+.back-foot{display:block;text-align:center;min-height:48px;line-height:48px;max-width:420px;margin:26px auto 0;background:#6f93c2;color:#fff;font-size:16px;font-weight:800;border-radius:26px;text-decoration:none}
+.back-foot:active{background:#5f82b1}
+.totop{position:fixed;left:14px;bottom:14px;width:48px;height:48px;border-radius:50%;border:none;background:rgba(101,119,137,.85);color:#fff;font-size:22px;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.2);display:none;z-index:30;cursor:pointer}
+.totop.show{display:block}
+.qa-warn{background:#fff7e8;border:1px solid #e6cf9a;color:#8a5a19;font-size:11.5px;padding:6px 10px;border-radius:8px;margin-bottom:8px;line-height:1.7}
+@media print{.totop{display:none!important}}
+.viewseg{display:flex;gap:0;background:#eef2f7;border:1px solid #cdd9e6;border-radius:24px;padding:4px;margin:0 0 14px}
+.seg{flex:1;min-height:44px;border:none;background:transparent;font-size:14px;font-weight:800;color:#4a5b6e;border-radius:20px;cursor:pointer}
+.seg.on{background:#6f93c2;color:#fff;box-shadow:0 1px 4px rgba(47,90,138,.3)}
+.seg:active{transform:scale(.98)}
+.dict-note{font-size:12.5px;color:#5a6b7e;background:#f4f7fb;border:1px solid #d6e2ee;border-radius:8px;padding:8px 12px;margin-bottom:10px;line-height:1.7}
+.dict-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:#fffefb;border:1px solid #e3e2d9;border-radius:10px;padding:10px 14px;margin:8px 0}
+.dict-row.grad{background:#f3f6f2}
+.dict-main{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.dict-jp{font-size:14px;font-weight:700;color:#31415f}
+.dict-stat{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cnt-x{color:#9b514d;font-weight:900;font-size:14px}
+.cnt-o{color:#2f6a44;font-weight:800;font-size:13px}
+.dict-grad{font-size:11px;font-weight:800;color:#3f6f9f;background:#eaf2fb;border:1px solid #bcd3ee;border-radius:10px;padding:2px 8px}
+.dict-now{font-size:11px;font-weight:800;color:#8a5a17;background:#fbf6ec;border:1px solid #ecdcc0;border-radius:10px;padding:2px 8px}
+.redo{background:#657789;color:#fff;border:none;border-radius:16px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer}
+.redo:active{transform:scale(.96)}
 </style>
 </head>
 <body>
@@ -66,29 +88,61 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f
 <a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
-  <div><span class="pg-badge">復習キュー</span><span class="pg-badge">数学：まちがえ直し</span></div>
-  <h1>復習・数学（まちがえだけ）</h1>
-  <p>まず<strong>自分で解いて</strong>から「こたえを見る」を押そう。合っていたら○、ちがったら✕。○を<strong>2回</strong>連続でとれたら「卒業」＝もう出てこなくなるよ。✕を押すと0からやり直し。<strong>うっかりミスこそ、何回も出して体にしみこませる</strong>のがいちばん効く🌸</p>
+  <div><span class="pg-badge">復習キュー</span><span class="pg-badge">数学：間違え直し</span></div>
+  <h1>復習・数学（間違えただけ）</h1>
+  <p>まず<strong>自分で解いて</strong>から「答えを見る」を押そう。合っていたら○、ちがったら✕。○を<strong>2回</strong>連続でとれたら「卒業」＝もう出てこなくなるよ。✕を押すと0からやり直し。1週間あけてもう一度だけ「定着チェック」が出るよ。<strong>うっかりミスこそ、何回も出して体にしみこませる</strong>のがいちばん効く🌸</p>
 </div>
 
-<div class="allclear" id="allclear">🌸 ぜんぶ卒業！おめでとう 🌸</div>
-<div class="progress" id="progress">のこり <span class="left" id="remain">0</span> 問／卒業 <span id="grad">0</span> 問</div>
+<div class="allclear" id="allclear">🌸 全部卒業！おめでとう 🌸</div>
+<div class="progress" id="progress">残り <span class="left" id="remain">0</span> 問／卒業 <span id="grad">0</span> 問</div>
+
+<div class="viewseg">
+  <button class="seg on" id="segReview" onclick="setView('review')">📝 復習</button>
+  <button class="seg" id="segDict" onclick="setView('dict')">📖 辞書（間違えた回数順）</button>
+  <button class="seg" id="segLog" onclick="setView('log')">🗓️ 記録</button>
+</div>
 
 <div id="list"></div>
 
-<button class="reset" onclick="resetAll()">↺ もう一度ぜんぶ出す（リセット）</button>
+<script>
+/* 安全網：本体scriptが構文エラー（カンマ抜け等）で止まってもこれは動く */
+window.addEventListener('load',function(){setTimeout(function(){
+  var L=document.getElementById('list');
+  if(typeof QS==='undefined'||!L||!L.innerHTML){
+    if(L)L.innerHTML='<div class="q" style="border-color:#d08a86"><p class="red">データの読みこみに失敗しました。</p><p>さいきん問題を足したなら、<b>カンマ「,」のつけ忘れ</b>か<b>かっこの閉じわすれ</b>が原因のことが多いです。直前に足した行を見直してください。（保護者の方へ）</p></div>';
+  }
+},400);});
+</script>
+
+<button class="reset" onclick="resetAll()">↺ 卒業もふくめて ぜんぶ最初から出す</button>
 
 <div class="endcheer">
-  「分かってたのに最後でまちがえた」は、やり方の問題じゃなくて<strong>たしかめ方の問題</strong>。<br>
+  「分かってたのに最後で間違えた」は、やり方の問題じゃなくて<strong>たしかめ方の問題</strong>。<br>
   同じ形をくり返すと、本番でも勝手に手が止まらなくなるよ。今日できなくても明日また出てくるから大丈夫🌸
 </div>
 
+<a class="back-foot" href="../../index_iPad_学習ダッシュボード.html">← ダッシュボードにもどる</a>
+
 </div>
 
+<button id="toTop" class="totop" aria-label="上へ" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
 <script>
-// ===== 復習・数学（まちがえだけ）：自己完結の軽量キュー（隔離試作とは無関係） =====
+// ===== 復習・数学（間違えただけ）：自己完結の軽量キュー（隔離試作とは無関係） =====
 // ★day は必ず「M/D」形式（例 6/18）で記入する。「初日／2日目」等の相対表記は禁止（忘却曲線の起算日が不明になるため）。実日付が不明なら、出題日または採点日を入れる。
 // id1=6/18（夏前ドリル 数学18日 問題21「0に2番目に近い数」のうっかりミス＝C型を、数字を難化して収録）。
+// ╔══ 問題を1問ふやすとき（保護者の方へ）══╗
+// ① 足すのは必ず配列のいちばん下（];の直前）。途中に入れない（卒業記録がずれる）
+// ② 下のひな型をコピーして書きかえる。badge は suchoku(数直線・絶対値)/keisan(計算)/bunsho(文章題)
+// ③ id は書かなくてOK（自動でつく）／day は「6/21」の形／前の行のおしりに「,」を必ず
+// ④ choices（選たくし）が要らない問題は、その行ごと消してOK（無くても動く）
+// ── コピー用ひな型（このまま QS の ]; の直前に貼る）──
+// ,{kind:'計算', badge:'keisan', day:'6/21',
+//   jp:'ここに問題（日本語）',
+//   choices:'<span>選たくし1</span><span>選たくし2</span>',  // 選たくし不要なら行ごと削除
+//   en:'ここに答え',
+//   k:'<p><span class="lab">考え方</span>ここに解説。<span class="red">よくある間違い</span></p>'}
+// ╚════════════════════════════════╝
 var QS=[
  {id:1, kind:'数直線・絶対値', badge:'suchoku', day:'6/18',
   jp:'つぎの5つの数のうち、<strong>0に2番目に近い数</strong>はどれ？',
@@ -106,14 +160,28 @@ var QS=[
     '<p><span class="red">よくある間違い③</span><span class="frac"><span class="n">7</span><span class="d">4</span></span>（1.75）と <span class="frac"><span class="n">9</span><span class="d">5</span></span>（1.8）を見た目で判断。0.05しか違わないから、<strong>必ず小数に直してから</strong>くらべる。</p>'+
     '<p><span class="lab">たしかめのコツ</span>①ぜんぶ小数にそろえる ②マイナスはきょり（符号を外す）にする ③小さい順に並べて「何番目か」を指でかぞえる。この3ステップなら、本番でも取りこぼさないよ。</p>'}
 ];
+// id未記入の問題に自動採番（既存idは尊重＝既存の保存データを壊さない）
+(function(){var m=0;QS.forEach(function(q){if(typeof q.id==='number'&&q.id>m)m=q.id;});QS.forEach(function(q){if(typeof q.id!=='number')q.id=++m;});})();
 
 var PRE='revmq_'; // localStorageキー: revmq_1 ..
 var BOARD='tokkun_revm_queue'; // 記録ボード連携キー
 var GRADUATE=2; // 2回○で卒業
+var DUE_DAYS=7;
+var SUBJECT='数学'; // ← 3ファイルでここだけ差し替え（英語/数学/国語）
+function histKeys(){var ks=[PRE+'hist',BOARD];QS.forEach(function(q){ks.push(PRE+q.id+'_log');});return ks;} // 卒業データrevmq_<id>は含めない
+function fmtD(ms){var d=new Date(ms);var w=['日','月','火','水','木','金','土'][d.getDay()];return (d.getMonth()+1)+'/'+d.getDate()+'('+w+')';}
+function copyText(txt){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){alert('コピーしたよ！先生（AI）にはりつけてね🌸');},function(){window.prompt('コピーして先生にわたしてね',txt);});}else{window.prompt('コピーして先生にわたしてね',txt);}}
 
 function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
-function load(id){try{return JSON.parse(localStorage.getItem(PRE+id))||{cnt:0,lastX:''};}catch(e){return {cnt:0,lastX:''};}}
-function save(id,st){localStorage.setItem(PRE+id,JSON.stringify(st));}
+function nowMs(){return Date.now();}
+function dayNum(ms){var d=new Date(ms);return Math.floor(new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()/86400000);}
+function epoch(){var k=PRE+'__epoch';var v=+localStorage.getItem(k);if(!v){v=nowMs();safeSet(k,String(v));}return v;}
+function clampSt(st){st.cnt=Math.max(0,Math.min(99,(+st.cnt||0)));st.gradTs=(+st.gradTs>0)?+st.gradTs:0;st.mastered=(st.mastered===true);st.lastX=(typeof st.lastX==='string')?st.lastX:'';if(st.mastered)st.cnt=Math.max(st.cnt,GRADUATE);if(st.cnt<GRADUATE&&st.gradTs)st.gradTs=0;return st;}
+function stateOf(st){if(st.mastered)return'mastered';if(st.cnt>=GRADUATE){var e=dayNum(nowMs())-dayNum(st.gradTs);return (st.gradTs>0&&e>=0&&e>=DUE_DAYS)?'due':'graduated';}return'learning';}
+function safeSet(k,v){try{localStorage.setItem(k,v);return true;}catch(e){return false;}}
+function safeRemove(k){try{localStorage.removeItem(k);}catch(e){}}
+function load(id){var o;try{o=JSON.parse(localStorage.getItem(PRE+id));}catch(e){o=null;}if(!o||typeof o!=='object')o={cnt:0,lastX:''};if(typeof o.gradTs!=='number'){o.gradTs=(o.cnt>=GRADUATE)?epoch():0;}if(typeof o.mastered!=='boolean')o.mastered=false;return clampSt(o);}
+function save(id,st){if(!safeSet(PRE+id,JSON.stringify(st))&&!window._svWarn){window._svWarn=1;alert('きろくが保存できなかったみたい。シークレットモードだと保存できないことがあるよ。ふつうのモードで開いてね🌸');}}
 
 // 記録ボード連携：全体の○総数・✕総数を集計して書き出す
 function writeBoard(){
@@ -121,31 +189,31 @@ function writeBoard(){
   QS.forEach(function(q){
     try{var b=JSON.parse(localStorage.getItem(PRE+q.id+'_log'))||{o:0,x:0};o+=b.o;x+=b.x;}catch(e){}
   });
-  localStorage.setItem(BOARD, JSON.stringify({o:o,x:x}));
+  safeSet(BOARD, JSON.stringify({o:o,x:x}));
 }
-function bumpLog(id,key){
-  var b;try{b=JSON.parse(localStorage.getItem(PRE+id+'_log'))||{o:0,x:0};}catch(e){b={o:0,x:0};}
-  b[key]=(b[key]||0)+1;localStorage.setItem(PRE+id+'_log',JSON.stringify(b));writeBoard();
-}
+function bumpLog(id,key){var b;try{b=JSON.parse(localStorage.getItem(PRE+id+'_log'))||{o:0,x:0};}catch(e){b={o:0,x:0};}b[key]=(b[key]||0)+1;safeSet(PRE+id+'_log',JSON.stringify(b));pushHist(id,key);writeBoard();}
+function pushHist(id,key){var h;try{h=JSON.parse(localStorage.getItem(PRE+'hist'))||[];}catch(e){h=[];}h.push({t:nowMs(),id:id,r:key});if(h.length>400)h=h.slice(h.length-400);safeSet(PRE+'hist',JSON.stringify(h));}
 
 function render(){
   var list=document.getElementById('list');list.innerHTML='';
   var remain=0,grad=0;
   QS.forEach(function(q){
-    var st=load(q.id);
-    if(st.cnt>=GRADUATE){grad++;return;} // 卒業した問題は出さない
+    var st=load(q.id);var ph=stateOf(st);
+    if(ph==='mastered'||ph==='graduated'){grad++;return;} // 卒業した問題は出さない（dueは復活）
     remain++;
+    var isDue=(ph==='due');
     var el=document.createElement('div');el.className='q';el.id='q'+q.id;
-    var dateStr='まちがえた日：'+q.day+(st.lastX?'（再×'+st.lastX+'）':'');
+    var dateStr=isDue?('🔁 1週間ぶりの定着チェック'):('間違えた日：'+q.day+(st.lastX?'（再×'+st.lastX+'）':''));
     el.innerHTML=
       '<div class="top">'+
         '<span class="badge '+q.badge+'">'+q.kind+'</span>'+
+        (isDue?'<span class="badge keisan">🔁 定着チェック</span>':'')+
         '<span class="date">'+dateStr+'</span>'+
-        '<span class="cnt">○ '+st.cnt+' / '+GRADUATE+'</span>'+
+        (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+'</span>')+
       '</div>'+
       '<div class="jp">'+q.jp+'</div>'+
-      '<div class="choices">'+q.choices+'</div>'+
-      '<button class="ans-btn" onclick="toggle('+q.id+',this)">こたえを見る</button>'+
+      (q.choices?'<div class="choices">'+q.choices+'</div>':'')+
+      '<button class="ans-btn" onclick="toggle('+q.id+',this)">答えを見る</button>'+
       '<div class="ans-box" id="a'+q.id+'">'+
         '<div class="en">'+q.en+'</div>'+
         '<div class="kaisetsu">'+q.k+'</div>'+
@@ -165,31 +233,136 @@ function render(){
 
 function toggle(id,b){
   var a=document.getElementById('a'+id);var open=a.classList.toggle('open');
-  b.textContent=open?'とじる':'こたえを見る';
+  b.textContent=open?'とじる':'答えを見る';
 }
 
 function mark(id,ok){
-  var st=load(id);
-  if(ok){ st.cnt=st.cnt+1; bumpLog(id,'o'); }
-  else  { st.cnt=0; st.lastX=today(); bumpLog(id,'x'); }
-  save(id,st);
-  if(ok && st.cnt>=GRADUATE){
-    var el=document.getElementById('q'+id);
-    if(el){el.classList.add('grad');el.innerHTML='<div class="grad-note">🎉 卒業！もう出てこないよ。よくがんばった！</div>';}
-    setTimeout(render,900);
-  }else{
-    render();
+  var st=load(id);var wasDue=(stateOf(st)==='due');
+  if(ok)bumpLog(id,'o');else bumpLog(id,'x');
+  if(wasDue){
+    if(ok){st.mastered=true;save(id,st);var e1=document.getElementById('q'+id);if(e1){e1.classList.add('grad');e1.innerHTML='<div class="grad-note">🌸 定着！1週間あけても覚えてた。もう完ぺき。</div>';}setTimeout(render,900);return;}
+    else{st.cnt=0;st.lastX=today();st.gradTs=0;save(id,st);render();return;}
   }
+  if(ok){st.cnt=st.cnt+1;}else{st.cnt=0;st.lastX=today();}
+  save(id,st);
+  if(ok&&st.cnt>=GRADUATE){st.gradTs=nowMs();save(id,st);var e2=document.getElementById('q'+id);if(e2){e2.classList.add('grad');e2.innerHTML='<div class="grad-note">🎉 卒業！7日後にもう一度だけ出るよ。そこで○なら完ぺき！</div>';}setTimeout(render,900);}
+  else{render();}
 }
 
 function resetAll(){
-  if(!confirm('ぜんぶの○✕をリセットして、もう一度ぜんぶ出すよ。いい？'))return;
-  QS.forEach(function(q){localStorage.removeItem(PRE+q.id);localStorage.removeItem(PRE+q.id+'_log');});
-  localStorage.setItem(BOARD,JSON.stringify({o:0,x:0}));
+  if(!confirm('全部の○✕をリセットして、もう一度'+QS.length+'問全部出すよ。いい？'))return;
+  QS.forEach(function(q){safeRemove(PRE+q.id);safeRemove(PRE+q.id+'_log');});
+  safeSet(BOARD,JSON.stringify({o:0,x:0}));
   render();
 }
 
-window.onload=function(){render();writeBoard();};
+function resetHist(){
+  if(!confirm('これまでの「○✕の足あと」と「記録タブ」を消して、ここから本番スタートするよ。\n\n★卒業した問題（できるようになった分）はそのまま残るよ。\nいい？'))return;
+  histKeys().forEach(function(k){safeRemove(k);});
+  safeSet(BOARD,JSON.stringify({o:0,x:0}));
+  if(typeof VIEW!=='undefined'&&VIEW==='log')renderLog();
+  alert('足あとをリセットしたよ。今日から本番スタート🌸');
+}
+
+function selfCheck(){
+  var OK=['suchoku','keisan','bunsho'],w=[],ids={};
+  QS.forEach(function(q,i){
+    var t=q.jp?('「'+String(q.jp).replace(/<[^>]+>/g,'').slice(0,12)+'」'):'';
+    var p='QS['+i+']'+t;
+    if(OK.indexOf(q.badge)<0)w.push(p+': badge「'+q.badge+'」はCSS未定義（無装飾になる）');
+    if(!q.jp||!q.en||!q.k)w.push(p+': jp/en/k のどれかが空');
+    if(!q.day)w.push(p+': day（間違えた日）が空');
+    if(ids[q.id])w.push(p+': id重複('+q.id+')');ids[q.id]=1;
+  });
+  if(w.length){
+    console.warn('【復習キュー点検】'+w.length+'件:\n'+w.join('\n'));
+    if(location.search.indexOf('check=1')>=0){
+      var d=document.createElement('div');d.className='qa-warn';
+      d.textContent='⚠ 追加データに'+w.length+'件の注意（くわしくはConsole）。保護者向け。';
+      var wrap=document.querySelector('.wrap'),ac=document.getElementById('allclear');
+      if(wrap&&ac)wrap.insertBefore(d,ac);
+    }
+  }
+}
+var VIEW='review';
+function getLog(id){var v=localStorage.getItem(PRE+id+'_log');if(!v)return{o:0,x:0};try{var p=JSON.parse(v);return{o:+p.o||0,x:+p.x||0};}catch(e){return{o:0,x:0};}}
+function errScore(id){var l=getLog(id);if(l.x===0)return -1;return l.x + l.x/(l.o+l.x);}
+function setView(v){
+  VIEW=v;
+  var sr=document.getElementById('segReview'),sd=document.getElementById('segDict'),sl=document.getElementById('segLog');
+  if(sr)sr.classList.toggle('on',v==='review');
+  if(sd)sd.classList.toggle('on',v==='dict');
+  if(sl)sl.classList.toggle('on',v==='log');
+  var pg=document.getElementById('progress'),ac=document.getElementById('allclear');
+  if(v==='review'){ if(pg)pg.style.display=''; render(); }
+  else if(v==='log'){ if(pg)pg.style.display='none'; if(ac)ac.classList.remove('show'); renderLog(); }
+  else { if(pg)pg.style.display='none'; if(ac)ac.classList.remove('show'); renderDict(); }
+}
+function renderDict(){
+  var list=document.getElementById('list');if(!list)return;list.innerHTML='';
+  var rows=QS.map(function(q){var st=load(q.id),lg=getLog(q.id);return{q:q,st:st,lg:lg,grad:(st.cnt>=GRADUATE)};})
+    .sort(function(a,b){return errScore(b.q.id)-errScore(a.q.id);});
+  var done=rows.filter(function(r){return r.grad;}).length;
+  var html='<div class="dict-note">間違えた回数が多い順に 並べたよ。🎓は「もう卒業（できるようになった）」しるし。今できるのは <b>'+done+'個</b>🌸　「もう一度」でいつでも 復習にもどせるよ。</div>';
+  rows.forEach(function(r){
+    var jp=String(r.q.jp).replace(/<[^>]+>/g,'').slice(0,40);
+    html+='<div class="dict-row'+(r.grad?' grad':'')+'">'+
+      '<div class="dict-main"><span class="badge '+r.q.badge+'">'+r.q.kind+'</span><span class="dict-jp">'+jp+'</span></div>'+
+      '<div class="dict-stat"><span class="cnt-x">✕'+r.lg.x+'</span><span class="cnt-o">○'+r.lg.o+'</span>'+
+      (r.grad?'<span class="dict-grad">🎓できた</span><button class="redo" onclick="redo('+r.q.id+')">もう一度</button>':'<span class="dict-now">練習中</span>')+
+      '</div></div>';
+  });
+  list.innerHTML=html;
+}
+function redo(id){var st=load(id);st.cnt=GRADUATE-1;st.gradTs=0;st.mastered=false;save(id,st);renderDict();}
+function qById(id){for(var i=0;i<QS.length;i++){if(QS[i].id===id)return QS[i];}return null;}
+function fmtDT(ms){var d=new Date(ms);var w=['日','月','火','水','木','金','土'][d.getDay()];return (d.getMonth()+1)+'/'+d.getDate()+'('+w+') '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);}
+function renderLog(){
+  var list=document.getElementById('list');if(!list)return;
+  var h;try{h=JSON.parse(localStorage.getItem(PRE+'hist'))||[];}catch(e){h=[];}
+  var ctrl='<div style="display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px">'+
+    '<button class="redo" onclick="copyLog(true)">📋 ✕だけコピー</button>'+
+    '<button class="redo" onclick="copyLog(false)">📋 ぜんぶコピー</button>'+
+    '<button class="reset" style="margin:0" onclick="resetHist()">🗑️ 記録を消して本番スタート</button>'+
+    '</div>';
+  if(!h.length){list.innerHTML='<div class="dict-note">まだ記録がないよ。「復習」で○✕をつけると、ここに日づけと時刻がたまっていくよ🌸</div>'+ctrl;return;}
+  var map={},order=[];
+  h.forEach(function(e){var d=new Date(e.t);var ymd=d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();var key=(d.getMonth()+1)+'/'+d.getDate();if(!map[ymd]){map[ymd]={ymd:ymd,key:key,o:0,x:0,xs:[]};order.push(ymd);}map[ymd][e.r==='o'?'o':'x']++;if(e.r==='x')map[ymd].xs.push(e);});
+  order.sort(function(a,b){return b-a;});
+  var html='<div class="dict-note">✕（まちがえた問題）を 日づけごとに まとめたよ。スクショ1枚で先生（AI）に わたせるよ🌸　○は数だけ表示。</div>'+ctrl;
+  html+='<div class="dict-row" style="background:#eef2f7;border-color:#cdd9e6"><div class="dict-main"><b>📸 きみ／'+SUBJECT+' まちがえ記録</b></div></div>';
+  order.forEach(function(ymd){var d=map[ymd];var tot=d.o+d.x;var rate=tot?Math.round(d.o/tot*100):0;
+    html+='<div class="dict-row" style="background:#fbf6ec;border-color:#ecdcc0"><div class="dict-main"><b style="font-size:15px">'+d.key+'</b></div><div class="dict-stat"><span class="cnt-x">✕'+d.x+'</span><span class="cnt-o">○'+d.o+'</span><span class="dict-grad">正答'+rate+'%</span></div></div>';
+    if(!d.xs.length){html+='<div style="margin:2px 0 12px;color:#2f6a44;font-weight:700;font-size:13px">　🌸 この日はぜんぶ○！</div>';return;}
+    d.xs.slice().reverse().forEach(function(e){var q=qById(e.id);var jp=q?String(q.jp).replace(/<[^>]+>/g,'').slice(0,30):('#'+e.id);html+='<div class="dict-row"><div class="dict-main"><span class="cnt-x" style="font-size:13px">✕</span><span class="date">'+fmtDT(e.t)+'</span><span class="dict-jp">'+jp+'</span></div></div>';});
+    html+='<div style="height:8px"></div>';});
+  list.innerHTML=html;
+}
+function copyLog(onlyX){
+  var h;try{h=JSON.parse(localStorage.getItem(PRE+'hist'))||[];}catch(e){h=[];}
+  var o=0,x=0;h.forEach(function(e){if(e.r==='o')o++;else x++;});
+  var range=h.length?(fmtD(h[0].t)+' 〜 '+fmtD(h[h.length-1].t)):'';
+  if(onlyX){
+    var agg={};h.forEach(function(e){if(e.r!=='x')return;if(!agg[e.id])agg[e.id]={n:0,days:[]};agg[e.id].n++;agg[e.id].days.push(fmtD(e.t));});
+    var ids=Object.keys(agg).sort(function(a,b){return agg[b].n-agg[a].n;});
+    var L=['=== きみ '+SUBJECT+' まちがえ記録（×だけ・回数順）==='];
+    L.push('教科='+SUBJECT+' / 期間='+range+' / 通算 ○'+o+' ✕'+x);
+    L.push('※テスト入力の可能性あり。本番開始日より前は弱点に反映しないこと');
+    L.push('--- まちがえた問題（×が多い順）---');
+    ids.forEach(function(id){var q=qById(+id);var jp=q?String(q.jp).replace(/<[^>]+>/g,''):'(不明)';var en=q&&q.en?String(q.en).replace(/<[^>]+>/g,''):'';var kind=q&&q.kind?q.kind:'';L.push('['+PRE+'#'+id+'] '+kind+' | '+jp+(en?' → 答え:'+en:'')+' | ✕'+agg[id].n+'回 ('+agg[id].days.join(',')+')');});
+    if(!ids.length)L.push('（まちがえはまだないよ🌸）');
+    L.push('=== END ('+PRE+') ===');copyText(L.join('\n'));
+  }else{
+    var L2=['=== きみ '+SUBJECT+' 復習記録（全件・時系列）==='];
+    L2.push('教科='+SUBJECT+' / 期間='+range+' / 通算 ○'+o+' ✕'+x);
+    h.forEach(function(e){var q=qById(e.id);var jp=q?String(q.jp).replace(/<[^>]+>/g,'').slice(0,30):'(不明)';L2.push(PRE+'#'+e.id+' | '+fmtDT(e.t)+' | '+jp+' | '+(e.r==='o'?'○':'✕'));});
+    L2.push('=== END ('+PRE+') ===');copyText(L2.join('\n'));
+  }
+}
+function migrate(){if(localStorage.getItem(PRE+'migr1'))return;var now=nowMs();QS.forEach(function(q){var raw=localStorage.getItem(PRE+q.id);if(!raw)return;var st;try{st=JSON.parse(raw);}catch(e){return;}if(!st||typeof st!=='object')return;var ch=false;if(st.cnt>=GRADUATE&&typeof st.gradTs!=='number'){st.gradTs=epoch();ch=true;}if(typeof st.mastered!=='boolean'){st.mastered=false;ch=true;}if(ch)save(q.id,st);});safeSet(PRE+'migr1','1');}
+window.onload=function(){try{migrate();}catch(e){}try{selfCheck();}catch(e){}render();writeBoard();
+  window.addEventListener('scroll',function(){var b=document.getElementById('toTop');if(!b)return;if(window.scrollY>500)b.classList.add('show');else b.classList.remove('show');},{passive:true});
+};
 </script>
 </body>
 </html>

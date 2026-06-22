@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -81,7 +81,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P12</span><span class="pg-badge">数学：総合（実戦）</span><span class="pg-badge">過去問形式 通し L2-L4</span></div>
@@ -115,11 +115,11 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-warn">問1 <span class="red">−6＋4＝−2 を先にしない</span>（×が先）。問3 <span class="red">−3×−5を−15にしない</span>。問5 分子のかたまりは( )。</div>
     <div class="ans-final"><span>こたえ</span>問1 −18／問2 −8／問3 −6x＋15／問4 x＝5／問5 x＝5</div>
   </div>
-  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span><button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号/計算順</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
-  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span><button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">符号/2乗3乗</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
-  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span><button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">分配/符号</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
-  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span><button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">移項の符号</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
-  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span><button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">分母払い/( )</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span><button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span><button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span><button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span><button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span><button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
 </div>
 
 <!-- ===== 大問2 小問集合（問6〜問8） ===== -->
@@ -139,9 +139,9 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-warn">問6 最後に基準80を足す。問7 x＝58としない。問8 <span class="pi">π</span>と数は混ぜない（18<span class="pi">π</span>−36のまま）。</div>
     <div class="ans-final"><span>こたえ</span>問6 81点／問7 64°／問8 18<span class="pi">π</span>−36 cm²</div>
   </div>
-  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span><button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">仮平均</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
-  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7</span><button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">折り返し角</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
-  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8★L4</span><button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">複合図形</button><button onclick="m(this)">やり方不明</button><button onclick="m(this)">うっかり</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span><button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7</span><button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8★L4</span><button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
 </div>
 
 <!-- ===== 大問3 方程式の利用（問9） ===== -->
@@ -155,7 +155,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="step"><span>解</span>5＋7＝6x−4x → 12＝2x → x＝6。あめ＝4×6＋5＝29。検算 6×6−7＝29○。</div>
     <div class="ans-final"><span>こたえ</span>子ども6人・あめ29個</div>
   </div>
-  <div class="gq" data-gid="q09"><div class="grade"><span class="gq-label">問9</span><button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">立式できない</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">答え忘れ(個数)</button></div><div class="write3">📝 まちがえたら型カードで解き直し＋誤答キュー</div></div>
+  <div class="gq" data-gid="q09"><div class="grade"><span class="gq-label">問9</span><button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら型カードで解き直し＋誤答キュー</div></div>
 </div>
 
 <!-- ===== 大問4 規則性（問10） ===== -->
@@ -170,7 +170,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-key">作戦：難問の規則性も(1)のn式が作れれば(2)は代入で取れる＝<strong>(1)を拾う</strong>。</div>
     <div class="ans-final"><span>こたえ</span>(1) 4n−4／(2) 56個</div>
   </div>
-  <div class="gq" data-gid="q10"><div class="grade"><span class="gq-label">問10★L4</span><button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">角を引けない</button><button onclick="m(this)">代入ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら「角を引く」を誤答キューへ</div></div>
+  <div class="gq" data-gid="q10"><div class="grade"><span class="gq-label">問10★L4</span><button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら「角を引く」を誤答キューへ</div></div>
 </div>
 
 <!-- ===== 大問5 グラフ・速さ（問11〜問12） ===== -->
@@ -186,8 +186,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="step"><span>問12</span>姉が x 分後に追いつく（妹は x＋6分歩く）。90x＝60(x＋6) → 90x＝60x＋360 → 30x＝360 → x＝<span class="math">12分後</span>。検算 90×12＝1080＝60×18○。</div>
     <div class="ans-final"><span>こたえ</span>問11 10分後／問12 12分後</div>
   </div>
-  <div class="gq" data-gid="q11"><div class="grade"><span class="gq-label">問11</span><button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">割合の出し方</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
-  <div class="gq" data-gid="q12"><div class="grade"><span class="gq-label">問12</span><button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">時間の取り方(x+6)</button><button onclick="m(this)">計算ミス</button><button onclick="m(this)">やり方不明</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q11"><div class="grade"><span class="gq-label">問11</span><button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q12"><div class="grade"><span class="gq-label">問12</span><button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P12 過去問形式 通し 完了）</button>

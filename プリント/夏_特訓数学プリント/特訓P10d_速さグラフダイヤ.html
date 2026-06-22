@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -97,7 +97,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P10d</span><span class="pg-badge">数学：関数的・速さのグラフ</span><span class="pg-badge">★速さ・ダイヤグラム L3-L4（9月大問6直撃）</span></div>
@@ -178,9 +178,9 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問6（速さ・ダイヤグラム）の土台。「のぼり・たいら・くだり」を区間で分けて読む力は、このあとの問2・問3（2人のグラフ）でそのまま効く。<br><strong>次に見ぬくコツ：グラフを見たら、まず指で「折れ目」に印をつけて、区間に分けてから読む。</strong></div>
     <div class="ans-final"><span>こたえ</span>(1) 分速50m　(2) 6分間　(3) 分速60m</div>
   </div>
-  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1) 行き</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス(C)</button><button onclick="m(this)">グラフが読めない(K)</button><button onclick="m(this)">読めたが式にできない(A)</button></div><div class="write3">📝 まちがえたら、900÷18 の式をノートに書こう</div></div>
-  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2) 休み</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス(C)</button><button onclick="m(this)">横ばいの意味がわからない(K)</button><button onclick="m(this)">読めたが引き算ミス(A)</button></div><div class="write3">📝 まちがえたら、24−18 の式をノートに書こう</div></div>
-  <div class="gq" data-gid="q01c"><div class="grade"><span class="gq-label">問1(3) 帰り</span>○✕ → <button class="o" onclick="g(this,'q01c','o')">○</button><button class="x" onclick="g(this,'q01c','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス(C)</button><button onclick="m(this)">帰りの時間を取り違えた(K)</button><button onclick="m(this)">読めたが計算ミス(A)</button></div><div class="write3">📝 まちがえたら、900÷(39−24) の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1) 行き</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、900÷18 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2) 休み</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、24−18 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q01c"><div class="grade"><span class="gq-label">問1(3) 帰り</span>○✕ → <button class="o" onclick="g(this,'q01c','o')">○</button><button class="x" onclick="g(this,'q01c','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、900÷(39−24) の式をノートに書こう</div></div>
 </div>
 
 <!-- ===== 問2 2人のグラフ（出会い） L3-L4 ===== -->
@@ -249,8 +249,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問6(2)の核。「2本の線の交点＝出会い」は、追いつき(問3)・往復・電車のすれちがいでも同じ読み方。<br><strong>次に見ぬくコツ：問題に「出会う」「すれちがう」と出たら、まず交点をさがす。</strong></div>
     <div class="ans-final"><span>こたえ</span>(1) 兄 分速60m／弟 分速40m　(2) 午前12分・家から720mの地点</div>
   </div>
-  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1) 速さ</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス(C)</button><button onclick="m(this)">どちらの線か混乱(K)</button><button onclick="m(this)">読めたが計算ミス(A)</button></div><div class="write3">📝 まちがえたら、兄1200÷20・弟1200÷30 をノートに書こう</div></div>
-  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2) 出会い</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス(C)</button><button onclick="m(this)">交点の読み方がわからない(K)</button><button onclick="m(this)">時刻と場所を取り違えた(A)</button></div><div class="write3">📝 まちがえたら、交点(12分,720m)を図に印して書こう</div></div>
+  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1) 速さ</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、兄1200÷20・弟1200÷30 をノートに書こう</div></div>
+  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2) 出会い</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、交点(12分,720m)を図に印して書こう</div></div>
 </div>
 
 <!-- ===== 問3 ダイヤグラム（追いつき） L4 ===== -->
@@ -324,8 +324,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問6の本番型（ダイヤグラム）。線が3本・4本でも、聞かれたことに関係する<strong>2本の交点だけ</strong>を読めばよい。出発時刻がずれている線は「始まりの位置」に注意。<br><strong>次に見ぬくコツ：おくれて出発する人は、線が途中から始まる。出発時刻を必ず確認。</strong></div>
     <div class="ans-final"><span>こたえ</span>(1) 姉 分速50m／妹 分速150m　(2) 午前15分・家から750mの地点</div>
   </div>
-  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1)★L4 速さ</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス(C)</button><button onclick="m(this)">妹の出発時刻を見落とした(K)</button><button onclick="m(this)">読めたが計算ミス(A)</button></div><div class="write3">📝 まちがえたら、姉1500÷30・妹1500÷(20−10) をノートに書こう</div></div>
-  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2)★L4 追いつき</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス(C)</button><button onclick="m(this)">交点の意味がわからない(K)</button><button onclick="m(this)">時刻と場所を取り違えた(A)</button></div><div class="write3">📝 まちがえたら、交点(15分,750m)を図に印して書こう</div></div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1)★L4 速さ</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、姉1500÷30・妹1500÷(20−10) をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2)★L4 追いつき</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、交点(15分,750m)を図に印して書こう</div></div>
 </div>
 
 <!-- ===== 問4 グラフから式を作り計算 L3-L4 ===== -->
@@ -392,9 +392,9 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問6では「グラフから式を作って、グラフに線がない時刻・地点を計算で求める」問題が出る。<strong>速さを出す→y＝(速さ)x の式→数を入れる</strong>の3手順は全問題で同じ。<br><strong>次に見ぬくコツ：原点を通る直線を見たら、まず1点から速さを出して y＝□x を作る。</strong></div>
     <div class="ans-final"><span>こたえ</span>(1) y＝80x　(2) 15分後　(3) 1600m</div>
   </div>
-  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 式</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス(C)</button><button onclick="m(this)">式の作り方がわからない(K)</button><button onclick="m(this)">速さは出せたが式にできない(A)</button></div><div class="write3">📝 まちがえたら、720÷9＝80 → y＝80x をノートに書こう</div></div>
-  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 1200m時刻</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス(C)</button><button onclick="m(this)">式に代入できない(K)</button><button onclick="m(this)">÷を×にした(A)</button></div><div class="write3">📝 まちがえたら、1200÷80 の式をノートに書こう</div></div>
-  <div class="gq" data-gid="q04c"><div class="grade"><span class="gq-label">問4(3) 20分後</span>○✕ → <button class="o" onclick="g(this,'q04c','o')">○</button><button class="x" onclick="g(this,'q04c','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス(C)</button><button onclick="m(this)">式に代入できない(K)</button><button onclick="m(this)">読めたが計算ミス(A)</button></div><div class="write3">📝 まちがえたら、80×20 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 式</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、720÷9＝80 → y＝80x をノートに書こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 1200m時刻</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、1200÷80 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q04c"><div class="grade"><span class="gq-label">問4(3) 20分後</span>○✕ → <button class="o" onclick="g(this,'q04c','o')">○</button><button class="x" onclick="g(this,'q04c','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、80×20 の式をノートに書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P10d 速さグラフ・ダイヤグラム 完了）</button>

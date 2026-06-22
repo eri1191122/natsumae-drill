@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -95,7 +95,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P8d</span><span class="pg-badge">数学：平面図形</span><span class="pg-badge">★複合図形の面積 L3-L4（9月大問2直撃）</span></div>
@@ -157,7 +157,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2は、L字や凸型の土地の面積から始まることが多い。<b>「点線で大きい四角を作る→引く」</b>が決まれば、大問2の最初の1問は確実に取れる。</div>
     <div class="ans-final"><span>こたえ</span>136cm²</div>
   </div>
-  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">分け方がわからない</button><button onclick="m(this)">分け方は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「点線で大きい長方形→引く」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「点線で大きい長方形→引く」をノートに図つきで書こう</div></div>
 </div>
 
 <!-- ===== 問2 階段状 ===== -->
@@ -207,7 +207,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2では、階段や凸凹の図形を「いくつの長方形に切れるか」で差がつく。<b>まっすぐな線で部品に切る</b>練習がそのまま得点になる。</div>
     <div class="ans-final"><span>こたえ</span>72cm²</div>
   </div>
-  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">分け方がわからない</button><button onclick="m(this)">分け方は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「横に切って帯3つ→足す」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「横に切って帯3つ→足す」をノートに図つきで書こう</div></div>
 </div>
 
 <!-- ===== 問3 円・半円・四分円の組合せ ===== -->
@@ -257,7 +257,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2の円問題は「半円＋四分円」「半円−半円」など組合せで出る。<b>÷2／÷4を正しく付ける</b>＋<b><span class="pi">π</span>を文字で通す</b>の2つができれば確実に取れる。</div>
     <div class="ans-final"><span>こたえ</span>22<span class="pi">π</span> cm²</div>
   </div>
-  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">分け方・公式がわからない</button><button onclick="m(this)">公式は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「半円＝円÷2／四分円＝円÷4」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「半円＝円÷2／四分円＝円÷4」をノートに図つきで書こう</div></div>
 </div>
 
 <!-- ===== 問4 くりぬき複合 ===== -->
@@ -305,7 +305,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2の山場が、この「正方形−円」「長方形−半円」などのくりぬき複合。<b>引く形の半径を正しく取る</b>＋<b><span class="pi">π</span>を最後まで文字で残す</b>。この2つでL4レベルも取れる。</div>
     <div class="ans-final"><span>こたえ</span>100−9<span class="pi">π</span> cm²</div>
   </div>
-  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス</button><button onclick="m(this)">分け方・公式がわからない</button><button onclick="m(this)">公式は分かるが計算ミス</button></div><div class="write3">📝 まちがえたら、「正方形−円（半径3）」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「正方形−円（半径3）」をノートに図つきで書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8d 複合面積② 完了）</button>

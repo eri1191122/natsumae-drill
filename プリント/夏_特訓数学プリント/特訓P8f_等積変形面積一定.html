@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -86,7 +86,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P8f</span><span class="pg-badge">数学：平面図形</span><span class="pg-badge">★等積変形・面積一定 L3-L4（9月大問2直撃）</span></div>
@@ -143,7 +143,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2の「砂時計型」は、まさにこれ。点が平行線の上を動く図を見せて「面積が変わらないことに気づけるか」を試してくる。<strong>平行を見たら高さ一定</strong>、これに気づけたら大問2は半分とったも同然。</div>
     <div class="ans-final"><span>こたえ</span>面積＝30cm²。点Pを上の直線にそってずらしても、面積は30cm²のまま変わらない。</div>
   </div>
-  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1★</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「平行線の上では高さが一定 → 面積も一定」を図つきでノートに書こう</div></div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1★</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「平行線の上では高さが一定 → 面積も一定」を図つきでノートに書こう</div></div>
 </div>
 
 <!-- ===== 問2 底辺共通・高さ等しい / 対角線で2等分 ===== -->
@@ -178,7 +178,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2では「底辺が共通で高さが同じ三角形は面積が等しい」がよく問われる。対角線2等分はその一番やさしい形。ここで「半分」の感覚をしっかり入れておこう。</div>
     <div class="ans-final"><span>こたえ</span>48cm²</div>
   </div>
-  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「対角線で分けた三角形＝長方形の半分」を図つきでノートに書こう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「対角線で分けた三角形＝長方形の半分」を図つきでノートに書こう</div></div>
 </div>
 
 <!-- ===== 問3 平行四辺形を長方形に等積変形 ===== -->
@@ -222,7 +222,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2では「平行四辺形や台形を、三角形や長方形に変形して面積を出す」問題が出る。<strong>切って移しても面積は変わらない</strong>という等積変形の感覚は、大問2の応用をとくための土台になる。</div>
     <div class="ans-final"><span>こたえ</span>84cm²（たて6cm・横14cmの長方形に変形できるから 14×6＝84）</div>
   </div>
-  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「平行四辺形→長方形に切り貼り＝高さ×底辺」を図つきでノートに書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「平行四辺形→長方形に切り貼り＝高さ×底辺」を図つきでノートに書こう</div></div>
 </div>
 
 <!-- ===== 問4 点がどこにあっても面積が変わらない（応用） ===== -->
@@ -264,7 +264,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2の本丸がこれ。「点Pをどこに動かしても面積が変わらないのはなぜか」を言葉で説明させる問題が出る。答えのカギはいつも同じ＝<strong>「平行だから高さが一定、底辺も共通だから面積も一定」</strong>。この一文をスラスラ言えるようにしておこう。</div>
     <div class="ans-final"><span>こたえ</span>面積＝30cm²。理由：Pは辺DC上にあり、辺DCはABと平行なので、ABからPまでの高さは平行線のはば5cmで一定。底辺AB＝12cmも変わらないので、Pをどこに動かしても面積は30cm²のまま変わらない。</div>
   </div>
-  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「平行な辺の上を動く点 → 高さ一定 → 面積一定」を図つきでノートに書こう</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「平行な辺の上を動く点 → 高さ一定 → 面積一定」を図つきでノートに書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8f 等積変形・面積一定 完了）</button>

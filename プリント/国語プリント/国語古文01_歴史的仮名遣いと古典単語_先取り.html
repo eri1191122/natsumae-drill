@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 国語 古文①（先取り）＝歴史的仮名遣い・古典単語・係り結び（知識面のみ・全17問）
+ ・「国語通常03 知識総点検02」の機構を全流用。○✕(data-gid)＋ミス分類C/K/A＋解説トグル＋印刷＋もどる＋KEY+'_done'同期＋onload復元。
+ ・塾中1で夏期講習から本格学習する古文の知識面を、初見ゼロでも進められるよう厚めの解説で先取り。読解は別。
+ ・大問一 歴史的仮名遣い→現代仮名遣い(8) ／ 大問二 古典単語の意味(6) ／ 大問三 係り結びの法則(3)。
+ ・解答前ヒント禁止（着眼・ルールは解説トグル＝答えを見る の中のみ）。KEY=tokkun_jko1。固有名詞なし。
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>国語 古文① 歴史的仮名遣いと古典単語（先取り）｜30分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:620px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+.howto{background:#fffefb;border:1px solid #e3e2d9;border-left:5px solid #91bdb7;border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:13.5px;color:#3a4a63}
+.howto b{color:#2f6b62}
+.intro{background:#f3edf8;border:1px solid #ddd0ee;border-left:5px solid #b7a3d6;border-radius:8px;padding:14px 18px;margin-bottom:18px;font-size:13.5px;color:#4a3d63;line-height:1.85}
+.intro b{color:#5f4b7a}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-body{padding:16px 20px}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.th-amber .sec-hd{background:#fbf2e2;border-left:6px solid #d9b46d}
+.th-rose .sec-hd{background:#f8e9ec;border-left:6px solid #d6a4b0}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:15px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#8a5a19}
+.bx-warn::before{content:"⚠️ よくあるまちがい";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#5f4b7a}
+.bx-link::before{content:"📖 なぜそうなるの？";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-ex{background:#eef7f6;border-left:4px solid #91bdb7;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#2f5650}
+.bx-ex::before{content:"✍️ 例文";display:block;font-size:12px;font-weight:800;color:#2f5650;margin-bottom:4px}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:12px 0}
+.qword{font-size:22px;font-weight:900;color:#31415f}
+.qhint{font-size:13px;color:#4c5b70;margin-top:2px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:13px}
+.ans-box.open{display:block}
+.ans-main{font-size:20px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-read{font-size:13px;color:#405060;margin-bottom:4px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.miss{display:none;margin-top:8px;align-items:center;gap:6px;flex-wrap:wrap;font-size:12px;color:#7a6a55}
+.miss.show{display:flex}
+.miss .ml{font-size:12px;font-weight:700;color:#7a6a55}
+.miss .m{min-width:30px;height:30px;border-radius:8px;border:1.5px solid #e0d6c4;background:#fff;font-size:13px;font-weight:800;cursor:pointer;color:#9a8a70;padding:0 8px}
+.miss .m.sel{background:#caa86a;color:#fff;border-color:#caa86a}
+.miss .mhint{font-size:11px;color:#9a8a70;flex-basis:100%;margin-top:2px}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.miss{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec{break-inside:avoid;page-break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">国語 古文①（先取り）</span><span class="pg-badge">歴史的仮名遣い・古典単語・係り結び</span><span class="pg-badge">全17問</span></div>
+  <h1>国語 古文① 歴史的仮名遣いと古典単語（先取り）</h1>
+  <p>目安 約30分　対象: 中1　＝古文の「知識」の土台（仮名遣い・単語・係り結び）を1枚で先取り。読解はべつのプリントで。</p>
+  <p class="pg-sub">🌸 はじめての古文。むずかしそうに見えるけど、ルールはほんの少し。今ここでルールを知っておくと、夏期講習が一気に楽になるよ。</p>
+</div>
+
+<div class="howto">
+  <b>使い方</b>　① まず自分で答えを考える（ノートに書く）　② 「答えを見る」で答え合わせ＋なぜそうなるかを読む　③ ○か✕をタップ　④ ✕のときは <b>C/K/A</b> を選んでから3回書く<br>
+  <span style="font-size:12.5px">C＝書き損じ・うっかり／K＝ルールを知らなかった／A＝知ってたが使えなかった　…　✕が多かった大問が、次にやるべき重点です。</span>
+</div>
+
+<div class="intro">
+  <b>そもそも「歴史的仮名遣い」って？</b><br>
+  古文は、今からずっと昔の人が書いた文章。だから書き方（かなのつづり方）も今とちがう。これを <b>歴史的仮名遣い</b> という。<br>
+  たとえば昔の人は「いう」を <b>いふ</b> と書いた。でも読むときは今の言い方になおして読む。<br>
+  古文の第一歩は、この <b>昔の書き方を、今の読み方になおす</b> こと。大問一でその練習をするよ。<br>
+  （ルールの一つ一つは、各問の「答えを見る」の中でくわしく説明します。）
+</div>
+
+<!-- 大問一 歴史的仮名遣い→現代仮名遣い（問1-8） -->
+<div class="unit-banner">
+  <span class="unit-num">大問一 歴史的仮名遣い</span>
+  <span class="unit-name">昔の書き方を、今の読み方（ひらがな）になおそう</span>
+  <span class="unit-time">問1〜8</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>歴史的仮名遣い → 現代仮名遣い</h2><span class="badge-grade">古文 基礎</span></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="qnum-e">問1｜大問一</div>
+      <div class="qword">いふ</div>
+      <div class="qhint">現代仮名遣いに直して、ひらがなで書こう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">いう</div>
+        <div class="ans-read">「言う」のこと。語のはじめ以外の「ふ」は「う」と読む。</div>
+        <div class="bx-link">昔は語の中や終わりの「は・ひ・ふ・へ・ほ」を、今の「わ・い・う・え・お」と発音していた。だから「いふ」の「ふ」は「う」になり、いう。これを「ハ行転呼（てんこ）」というよ。</div>
+        <div class="bx-warn">語のはじめの字は直さない。「ふね（船）」は「ふ」で始まるからそのまま。直すのは <span class="red">2字目より後ろ</span> のハ行だけ。</div>
+      </div>
+      <div class="gq" data-gid="q01">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div>
+        <div class="miss" data-mid="q01"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q01','C')">C</button><button class="m" onclick="m(this,'q01','K')">K</button><button class="m" onclick="m(this,'q01','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　いう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問2｜大問一</div>
+      <div class="qword">かは（川）</div>
+      <div class="qhint">現代仮名遣いに直して、ひらがなで書こう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">かわ</div>
+        <div class="ans-read">「川」のこと。語のはじめ以外の「は」は「わ」と読む。</div>
+        <div class="bx-link">これも問1と同じハ行のルール。「は」は今の「わ」の音だった。だから「かは」は「かわ」。今でも「私<b>は</b>」を「わ」と読むのは、この名残だよ。</div>
+        <div class="bx-warn">1字目の「か」は直さない。直すのは2字目の「<span class="red">は</span>」だけ。「かは」を「わわ」にしない。</div>
+      </div>
+      <div class="gq" data-gid="q02">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div>
+        <div class="miss" data-mid="q02"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q02','C')">C</button><button class="m" onclick="m(this,'q02','K')">K</button><button class="m" onclick="m(this,'q02','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　かわ　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問3｜大問一</div>
+      <div class="qword">をかし</div>
+      <div class="qhint">現代仮名遣いに直して、ひらがなで書こう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">おかし</div>
+        <div class="ans-read">「趣がある」という意味の古語。「を」は今の「お」と読む。</div>
+        <div class="bx-link">昔は「ゐ・ゑ・を」という、今は使わない字があった。読むときは <b>ゐ→い、ゑ→え、を→お</b> になる。だから「をかし」は「おかし」。</div>
+        <div class="bx-warn">今の「を」は「～を」と助詞でしか使わないけど、古文では言葉の中にも出てくる。見たら「<span class="red">お</span>」と読む、と覚える。</div>
+      </div>
+      <div class="gq" data-gid="q03">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div>
+        <div class="miss" data-mid="q03"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q03','C')">C</button><button class="m" onclick="m(this,'q03','K')">K</button><button class="m" onclick="m(this,'q03','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　おかし　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問4｜大問一</div>
+      <div class="qword">もみぢ</div>
+      <div class="qhint">現代仮名遣いに直して、ひらがなで書こう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">もみじ</div>
+        <div class="ans-read">秋に赤くなる「紅葉」のこと。「ぢ」は今の「じ」と読む。</div>
+        <div class="bx-link">昔は「ぢ・づ」と「じ・ず」を区別して書いていた。今はほとんど「じ・ず」にまとめるので、<b>ぢ→じ、づ→ず</b> になおす。だから「もみぢ」は「もみじ」。</div>
+        <div class="bx-warn">「ぢ」を「ち」にしない（音は「じ」）。にごる点（゛）は消さない。<span class="red">ぢ→じ</span> とまるごと入れかえる。</div>
+      </div>
+      <div class="gq" data-gid="q04">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div>
+        <div class="miss" data-mid="q04"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q04','C')">C</button><button class="m" onclick="m(this,'q04','K')">K</button><button class="m" onclick="m(this,'q04','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　もみじ　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問5｜大問一</div>
+      <div class="qword">やうやう</div>
+      <div class="qhint">現代仮名遣いに直して、ひらがなで書こう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ようよう</div>
+        <div class="ans-read">「だんだん・しだいに」という意味。「やう」は「よう」と読む。</div>
+        <div class="bx-link">「○ + う」で「アウ」の音になるところは、のばして「オー」の音にする。「やう（ya-u）」は「よう（yô）」に。だから「やうやう」は「ようよう」。少しむずかしいので、まずは「やう→よう」と形で覚えてOK。</div>
+        <div class="bx-warn">「やうやう」を「やうよう」のように半分だけ直さない。2つとも同じルールで <span class="red">よう・よう</span> になる。</div>
+      </div>
+      <div class="gq" data-gid="q05">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div>
+        <div class="miss" data-mid="q05"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q05','C')">C</button><button class="m" onclick="m(this,'q05','K')">K</button><button class="m" onclick="m(this,'q05','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　ようよう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問6｜大問一</div>
+      <div class="qword">けふ（今日）</div>
+      <div class="qhint">現代仮名遣いに直して、ひらがなで書こう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">きょう</div>
+        <div class="ans-read">「今日」のこと。「けふ」は「きょう」と読む。</div>
+        <div class="bx-link">「えう・けふ」のような形は、のばして「ヨー」の音になる。「けふ」は「きょう」。理くつより、よく出る言葉なので <b>けふ＝きょう</b> とそのまま覚えてしまうのが速いよ。</div>
+        <div class="bx-warn">字の見た目につられて「けふ」を「けふ」「けう」のまま残さない。読みは <span class="red">きょう</span>。</div>
+      </div>
+      <div class="gq" data-gid="q06">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div>
+        <div class="miss" data-mid="q06"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q06','C')">C</button><button class="m" onclick="m(this,'q06','K')">K</button><button class="m" onclick="m(this,'q06','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　きょう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問7｜大問一</div>
+      <div class="qword">てふ（蝶）</div>
+      <div class="qhint">現代仮名遣いに直して、ひらがなで書こう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ちょう</div>
+        <div class="ans-read">ひらひら飛ぶ「蝶（ちょう）」のこと。「てふ」は「ちょう」と読む。</div>
+        <div class="bx-link">問6の「けふ→きょう」と同じ仲間。「てふ」も、のばして「ちょう」になる。これも有名な例なので <b>てふ＝ちょう</b> とまるごと覚えよう。昔の人は蝶を「てふ」と書いていたんだね。</div>
+        <div class="bx-warn">「てふ」を「てう」や「てふ」のままにしない。読みは <span class="red">ちょう</span>。けふ・てふはセットで覚える。</div>
+      </div>
+      <div class="gq" data-gid="q07">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div>
+        <div class="miss" data-mid="q07"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q07','C')">C</button><button class="m" onclick="m(this,'q07','K')">K</button><button class="m" onclick="m(this,'q07','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　ちょう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問8｜大問一</div>
+      <div class="qword">こゑ（声）</div>
+      <div class="qhint">現代仮名遣いに直して、ひらがなで書こう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">こえ</div>
+        <div class="ans-read">「声」のこと。「ゑ」は今の「え」と読む。</div>
+        <div class="bx-link">問3で出た「ゐ・ゑ・を」の仲間。<b>ゑ→え</b> になおす。だから「こゑ」は「こえ」。今は使わない字なので、見たら「え」と読む、と覚えればOK。</div>
+        <div class="bx-warn">「ゑ」を見なれない字だからとそのまま残さない。今の <span class="red">え</span> に直す。ゐ→い／ゑ→え／を→お をまとめて覚える。</div>
+      </div>
+      <div class="gq" data-gid="q08">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div>
+        <div class="miss" data-mid="q08"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q08','C')">C</button><button class="m" onclick="m(this,'q08','K')">K</button><button class="m" onclick="m(this,'q08','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　こえ　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 大問二 古典単語の意味（問9-14） -->
+<div class="unit-banner">
+  <span class="unit-num">大問二 古典単語</span>
+  <span class="unit-name">古文によく出る言葉の意味を答えよう（今とちがう意味に注意）</span>
+  <span class="unit-time">問9〜14</span>
+</div>
+<div class="sec th-teal">
+  <div class="sec-hd"><h2>古典単語の意味</h2><span class="badge-grade">古文 重要語</span></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="qnum-e">問9｜大問二</div>
+      <div class="qword">あはれ</div>
+      <div class="qhint">古文での意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">しみじみとした趣・心が動かされること</div>
+        <div class="ans-read">美しいものや悲しいことを見て、心が深く動かされる気持ち。</div>
+        <div class="bx-link">今の「あわれ（かわいそう）」とちがって、古文の「あはれ」は <b>うれしい・悲しい・美しい</b> など、心がジーンと動くこと全部をさす広い言葉。古文を読む心の中心になる大切な語だよ。</div>
+        <div class="bx-warn">「かわいそう」だけの意味にしぼらない。<span class="red">心が動かされる感動</span> 全体をあらわす。書くときは「あわれ」と直る（は→わ）。</div>
+        <div class="bx-ex">「秋の夕暮れは <b>いとあはれ</b>なり。」→ 秋の夕暮れは とてもしみじみと趣がある。</div>
+      </div>
+      <div class="gq" data-gid="q09">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div>
+        <div class="miss" data-mid="q09"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q09','C')">C</button><button class="m" onclick="m(this,'q09','K')">K</button><button class="m" onclick="m(this,'q09','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　あはれ＝しみじみとした趣・心が動く　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問10｜大問二</div>
+      <div class="qword">をかし</div>
+      <div class="qhint">古文での意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">趣がある・おもしろい</div>
+        <div class="ans-read">明るく「いいなあ・おもしろいなあ」と感じる、心ひかれる気持ち。</div>
+        <div class="bx-link">「あはれ」がしみじみ静かな感動なら、「をかし」は <b>明るく知的に「すてき・おもしろい」</b> と感じる感動。古文では「いとをかし（とてもすてき）」の形でよく出るよ。</div>
+        <div class="bx-warn">今の「おかしい（へん・笑える）」の意味にしない。古文では <span class="red">よい・趣がある</span> というほめ言葉。読みは「おかし」（を→お）。</div>
+        <div class="bx-ex">「月の光、いと<b>をかし</b>。」→ 月の光は とてもすてきだ（趣がある）。</div>
+      </div>
+      <div class="gq" data-gid="q10">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div>
+        <div class="miss" data-mid="q10"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q10','C')">C</button><button class="m" onclick="m(this,'q10','K')">K</button><button class="m" onclick="m(this,'q10','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　をかし＝趣がある・おもしろい　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問11｜大問二</div>
+      <div class="qword">うつくし</div>
+      <div class="qhint">古文での意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">かわいい・いとしい</div>
+        <div class="ans-read">小さいものや幼いものを見て「かわいい」と感じる気持ち。</div>
+        <div class="bx-link">今の「美しい（きれい）」とちがって、古文の「うつくし」は <b>かわいい・いとおしい</b> が中心の意味。とくに小さな子どもや小動物に対して使うことが多いよ。意味がずれている代表的な単語。</div>
+        <div class="bx-warn">「美しい（きれい）」だけにしない。古文では <span class="red">かわいい</span> が中心。意味のずれに気をつける有名な語。</div>
+        <div class="bx-ex">「雀の子の、いと<b>うつくし</b>。」→ すずめの子が、とてもかわいい。</div>
+      </div>
+      <div class="gq" data-gid="q11">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div>
+        <div class="miss" data-mid="q11"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q11','C')">C</button><button class="m" onclick="m(this,'q11','K')">K</button><button class="m" onclick="m(this,'q11','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　うつくし＝かわいい・いとしい　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問12｜大問二</div>
+      <div class="qword">つとめて</div>
+      <div class="qhint">古文での意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">早朝・（その）翌朝</div>
+        <div class="ans-read">朝早い時間、または何かがあった次の日の朝のこと。</div>
+        <div class="bx-link">今の「つとめて（努力して）」とは別物。古文の「つとめて」は <b>朝はやく</b> という時間をあらわす名詞。前に出来事があると「その翌朝」の意味になることも多いよ。</div>
+        <div class="bx-warn">「努力して」と読まない。古文では <span class="red">早朝・翌朝</span> という時を表す言葉。動詞「努める」と混同しない。</div>
+        <div class="bx-ex">「冬は <b>つとめて</b>（をかし）。」→ 冬は 早朝（がよい）。</div>
+      </div>
+      <div class="gq" data-gid="q12">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div>
+        <div class="miss" data-mid="q12"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q12','C')">C</button><button class="m" onclick="m(this,'q12','K')">K</button><button class="m" onclick="m(this,'q12','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　つとめて＝早朝・翌朝　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問13｜大問二</div>
+      <div class="qword">やうやう</div>
+      <div class="qhint">古文での意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">だんだん・しだいに</div>
+        <div class="ans-read">少しずつ、ゆっくりと変わっていくようす。</div>
+        <div class="bx-link">大問一の問5で「やうやう→ようよう」と読み方を練習したね。この言葉の <b>意味</b> は「だんだん・しだいに」。「やうやう明るくなる」なら「だんだん明るくなる」ということ。読み方と意味、両方おさえよう。</div>
+        <div class="bx-warn">読み（ようよう）と意味（だんだん）を混同しない。聞かれているのが <span class="red">意味</span> なら「だんだん・しだいに」と答える。</div>
+        <div class="bx-ex">「<b>やうやう</b> 明るくなりゆく。」→ だんだん 明るくなっていく。</div>
+      </div>
+      <div class="gq" data-gid="q13">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q13','o')">○</button><button class="x" onclick="g(this,'q13','x')">✕</button></div>
+        <div class="miss" data-mid="q13"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q13','C')">C</button><button class="m" onclick="m(this,'q13','K')">K</button><button class="m" onclick="m(this,'q13','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　やうやう＝だんだん・しだいに　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問14｜大問二</div>
+      <div class="qword">いと</div>
+      <div class="qhint">古文での意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">とても・たいそう</div>
+        <div class="ans-read">あとの言葉を強めて「すごく〜」という意味の言葉。</div>
+        <div class="bx-link">「いと」は古文でいちばんよく出る副詞の一つ。今の「とても」と同じはたらき。「いとをかし」なら「とてもすてき」、「いとうつくし」なら「とてもかわいい」。見たら「とても」と頭の中で置きかえよう。</div>
+        <div class="bx-warn">糸（いと）とまちがえない。文の中で言葉を強めていたら、それは「<span class="red">とても</span>」の意味の「いと」。</div>
+        <div class="bx-ex">「<b>いと</b> うれし。」→ とても うれしい。</div>
+      </div>
+      <div class="gq" data-gid="q14">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q14','o')">○</button><button class="x" onclick="g(this,'q14','x')">✕</button></div>
+        <div class="miss" data-mid="q14"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q14','C')">C</button><button class="m" onclick="m(this,'q14','K')">K</button><button class="m" onclick="m(this,'q14','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　いと＝とても・たいそう　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 大問三 係り結びの法則（問15-17） -->
+<div class="unit-banner">
+  <span class="unit-num">大問三 係り結びの法則</span>
+  <span class="unit-name">特別な言葉が出たら、文の終わりの形が変わるルール</span>
+  <span class="unit-time">問15〜17</span>
+</div>
+<div class="intro">
+  <b>そもそも「活用形」ってなに？（はじめての人へ）</b><br>
+  ことば（とくに「咲く」「言ふ」のような動きを表す言葉）は、下につづく言葉によって、形（しっぽ）が少し変わる。これを「活用」といいます。このあとの問題（問15〜17）を解く前に、3つの形だけ知っておこう。<br><br>
+  ・<b>終止形（しゅうしけい）</b>＝言い切りの形。「花が 咲く。」の「咲く」。ふつう文はこの形で終わる。<br>
+  ・<b>連体形（れんたいけい）</b>＝下に名詞（人・物などの名前＝体言）がつづく形。「咲く とき／咲く 花」の「咲く」。※中1の段階では終止形と同じ形に見えることも多いが、"下に名詞がつづくときの形"と覚える。<br>
+  ・<b>已然形（いぜんけい）</b>＝「〜ば」などにつづく形。「咲け ば」の「咲け」。「もうそうなっている」ことを表す形。<br><br>
+  このあと出てくる「連体形」「已然形」は、この3つのうちの形の名前。むずかしく考えず、終止形(言い切り)→連体形(名詞につづく)→已然形(〜ばにつづく)の3つだけ、まず形の名前を知ればOK。
+</div>
+<div class="sec th-amber">
+  <div class="sec-hd"><h2>係り結びの法則</h2><span class="badge-grade">古文 文法</span></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="qnum-e">問15｜大問三</div>
+      <div class="qword">「花ぞ咲く」の結びの「咲く」は何形か。</div>
+      <div class="qhint">活用形（〇〇形）で答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">連体形</div>
+        <div class="ans-read">「ぞ」があると、文の終わりの言葉は連体形になる。</div>
+        <div class="bx-link">古文では <b>ぞ・なむ・や・か</b> という言葉が文の中に出ると、ふつう「言い切り（終止形）」で終わる文末が <b>連体形</b> に変わる。これが「係り結びの法則」。「花ぞ咲く」の「咲く」は連体形だよ。<br>（上の入門で確認：「咲く」は終止形の形のまま見えても、「ぞ」がある文では名詞につづく"連体形"の位置にいる、と考えるよ。）</div>
+        <div class="bx-warn">「咲く」の見た目が終止形と同じでも、「ぞ」があるなら答えは <span class="red">連体形</span>。係りの言葉を先に見つけるのがコツ。</div>
+      </div>
+      <div class="gq" data-gid="q15">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q15','o')">○</button><button class="x" onclick="g(this,'q15','x')">✕</button></div>
+        <div class="miss" data-mid="q15"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q15','C')">C</button><button class="m" onclick="m(this,'q15','K')">K</button><button class="m" onclick="m(this,'q15','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　連体形　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問16｜大問三</div>
+      <div class="qword">「こそ」を受けたときの結びは何形か。</div>
+      <div class="qhint">活用形（〇〇形）で答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">已然形（いぜんけい）</div>
+        <div class="ans-read">「こそ」があると、文の終わりの言葉は已然形になる。</div>
+        <div class="bx-link">「ぞ・なむ・や・か」は連体形を結びにするけれど、<b>「こそ」だけは特別で、結びが已然形になる</b>。已然形は「もう起きてしまったこと」を表すときの形。「こそ」を見たら已然形、とセットで覚えよう。<br>（入門の例で言うと：「咲く（終止形）」→「咲く（連体形）」→「咲け（已然形）」。「こそ」が来ると「咲け」のように形の末尾が変わるよ。）</div>
+        <div class="bx-warn">「こそ」を他の係りの言葉といっしょに「連体形」と答えない。「こそ」だけは <span class="red">已然形</span>。ここが一番ねらわれるポイント。</div>
+      </div>
+      <div class="gq" data-gid="q16">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q16','o')">○</button><button class="x" onclick="g(this,'q16','x')">✕</button></div>
+        <div class="miss" data-mid="q16"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q16','C')">C</button><button class="m" onclick="m(this,'q16','K')">K</button><button class="m" onclick="m(this,'q16','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　已然形　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問17｜大問三</div>
+      <div class="qword">ぞ・なむ・や・か・こそ のうち、結びが已然形になるのはどれか。</div>
+      <div class="qhint">1つえらんで答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">こそ</div>
+        <div class="ans-read">已然形で結ぶのは「こそ」だけ。残りの4つは連体形で結ぶ。</div>
+        <div class="bx-link">係り結びは2グループに分けて覚えると速い。<b>ぞ・なむ・や・か → 連体形</b>／<b>こそ → 已然形</b>。だから已然形になるのは「こそ」ただ一つ。問15・問16の総まとめだよ。<br>（具体例：「花ぞ咲く」の「咲く」は連体形、「花こそ咲け」の「咲け」は已然形。終止形「咲く」が係りの言葉によって変わる様子を思い出してね。）</div>
+        <div class="bx-warn">「や・か」など他の語を選ばない。已然形は <span class="red">こそ</span> ひとつだけ。「こそ＝已然」と最後に唱えて覚える。</div>
+      </div>
+      <div class="gq" data-gid="q17">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q17','o')">○</button><button class="x" onclick="g(this,'q17','x')">✕</button></div>
+        <div class="miss" data-mid="q17"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q17','C')">C</button><button class="m" onclick="m(this,'q17','K')">K</button><button class="m" onclick="m(this,'q17','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=ルールを知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　こそ　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日やりきった！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">はじめての古文、ルールを一つずつ知っていけば必ず読めるようになる。✕が多かった大問が、次にやれば一番のびる場所だよ。よくがんばったね。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_jko1';   /* 国語 古文①（先取り）。記録ボード/ダッシュボード規約=tokkun_jNN（jko=国語古文） */
+
+function t(b){
+  if(!b.dataset.label)b.dataset.label=b.textContent;
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':b.dataset.label;
+}
+
+function g(btn,id,v){
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var w3=box.querySelector('.write3');
+  var miss=box.querySelector('.miss');
+  if(v==='x'){
+    if(w3)w3.style.display='block';
+    if(miss)miss.classList.add('show');
+  }else{
+    if(w3)w3.style.display='none';
+    if(miss)miss.classList.remove('show');
+  }
+}
+
+function m(btn,id,v){
+  var box=btn.closest('.miss');
+  box.querySelectorAll('.m').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id+'_m',v);
+}
+
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var w3=box.querySelector('.write3');
+        if(w3)w3.style.display='block';
+        var miss=box.querySelector('.miss');
+        if(miss)miss.classList.add('show');
+      }
+    }
+    var mv=localStorage.getItem(KEY+'_'+id+'_m');
+    if(mv){
+      var miss=box.querySelector('.miss');
+      if(miss){
+        var mb=miss.querySelector('.m[onclick*="\'"+mv+"\'"]');
+        if(!mb){
+          miss.querySelectorAll('.m').forEach(function(e){
+            if(e.textContent===mv)mb=e;
+          });
+        }
+        if(mb)mb.classList.add('sel');
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
+};
+</script>
+</body>
+</html>

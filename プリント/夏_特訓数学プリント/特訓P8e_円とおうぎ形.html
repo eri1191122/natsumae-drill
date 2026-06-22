@@ -8,8 +8,8 @@
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
-.wrap{max-width:900px;margin:0 auto;padding:16px 14px 90px}
-.back{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-bottom:8px}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
 .back:hover{text-decoration:underline}
 .pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
 .pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
@@ -98,7 +98,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
 <body>
 <div class="wrap">
 
-<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
 
 <div class="pg-hd">
   <div><span class="pg-badge">特訓P8e</span><span class="pg-badge">数学：平面図形</span><span class="pg-badge">★円・おうぎ形 L2-L4（9月大問2直撃）</span></div>
@@ -150,8 +150,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2は、この「周＝2×半径×<span class="pi">π</span>・面積＝半径×半径×<span class="pi">π</span>」が全ての土台。ここがあやふやだと、おうぎ形も複合図形もくずれる。今日いちばんに固めよう。</div>
     <div class="ans-final"><span>こたえ</span>(1)周＝14<span class="pi">π</span> cm／(2)面積＝49<span class="pi">π</span> cm²</div>
   </div>
-  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1)周</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「周＝2×半径×π」をノートに図つきで書こう</div></div>
-  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2)面積</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「面積＝半径×半径×π」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1)周</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「周＝2×半径×π」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2)面積</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「面積＝半径×半径×π」をノートに図つきで書こう</div></div>
 </div>
 
 <!-- ===== 問2 おうぎ形 弧と面積 ===== -->
@@ -190,8 +190,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2の本丸。「おうぎ形＝円×(中心角/360)」がスッと出れば、次の問3（中心角を逆算）や複合図形にそのまま進める。弧は長さ系・面積は広さ系、と分けて覚えよう。</div>
     <div class="ans-final"><span>こたえ</span>(1)弧＝6<span class="pi">π</span> cm／(2)面積＝27<span class="pi">π</span> cm²</div>
   </div>
-  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1)弧★</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「弧＝2×半径×π×(中心角/360)」をノートに書こう</div></div>
-  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2)面積★</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「面積＝半径×半径×π×(中心角/360)」をノートに書こう</div></div>
+  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1)弧★</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「弧＝2×半径×π×(中心角/360)」をノートに書こう</div></div>
+  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2)面積★</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「面積＝半径×半径×π×(中心角/360)」をノートに書こう</div></div>
 </div>
 
 <!-- ===== 問3 中心角を逆に求める ===== -->
@@ -232,8 +232,8 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2では「弧の長さから中心角」「面積から半径」など逆向きの問いがよく出る。<strong>『割合（何分の一か）を先に出す』</strong>という一手で、順向きも逆向きも同じやり方で解けるようになる。</div>
     <div class="ans-final"><span>こたえ</span>(1)中心角＝120°／(2)面積＝12<span class="pi">π</span> cm²</div>
   </div>
-  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1)中心角★</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「弧の割合＝角の割合（中心角＝360×弧÷円周）」をノートに書こう</div></div>
-  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2)面積</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「面積＝割合×円の面積」をノートに書こう</div></div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1)中心角★</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「弧の割合＝角の割合（中心角＝360×弧÷円周）」をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2)面積</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「面積＝割合×円の面積」をノートに書こう</div></div>
 </div>
 
 <!-- ===== 問4 円と正方形 影の面積 ===== -->
@@ -278,7 +278,7 @@ body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f
     <div class="bx bx-link">9月特訓選抜 大問2の「影の面積」直撃。<strong>「すき間＝外側の形−内側の形」</strong>という引き算の発想は、円と正方形だけでなく、おうぎ形−三角形・正方形−おうぎ形など、複合図形すべての土台になる。</div>
     <div class="ans-final"><span>こたえ</span>100−25<span class="pi">π</span> cm²</div>
   </div>
-  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">うっかりミス（C）</button><button onclick="m(this)">考え方がわからない（K）</button><button onclick="m(this)">考え方は分かるが計算ミス（A）</button></div><div class="write3">📝 まちがえたら、「すき間＝正方形−円（直径＝1辺、半径は半分）」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「すき間＝正方形−円（直径＝1辺、半径は半分）」をノートに図つきで書こう</div></div>
 </div>
 
 <button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8e 円とおうぎ形 完了）</button>
