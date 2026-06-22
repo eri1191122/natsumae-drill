@@ -379,13 +379,13 @@ function pk(btn,q,correct){
   var wrap=btn.parentNode;wrap.querySelectorAll('button').forEach(function(e){e.classList.remove('ok','ng');});
   btn.classList.add(correct?'ok':'ng');localStorage.setItem(KEY+'_pk_'+q,correct?'1':'0');
 }
-function g(btn,id,v){
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
   var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}
   var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
   if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
   else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
 }
-function m(btn){var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
 function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！復習・英語② クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
 window.onload=function(){
   document.querySelectorAll('.pick').forEach(function(wrap){var q=wrap.dataset.q;var v=localStorage.getItem(KEY+'_pk_'+q);
