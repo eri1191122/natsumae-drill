@@ -327,7 +327,7 @@ function render(){
         '<span class="badge '+q.badge+'">'+esc(q.kind)+'</span>'+
         (isDue?'<span class="badge jukugo">🔁 定着チェック</span>':'')+
         '<span class="date">'+dateStr+'</span>'+
-        (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+(st.cnt===1&&st.lastO?'　1回め○:'+esc(st.lastO):'')+'</span>')+
+        (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+(st.cnt===1?'　1回め○'+(st.lastO?':'+esc(st.lastO):'済'):'')+'</span>')+
       '</div>'+
       '<div class="jp">'+esc(q.jp)+'</div>'+
       '<button class="ans-btn" onclick="toggle('+q.id+',this)">答えを見る</button>'+

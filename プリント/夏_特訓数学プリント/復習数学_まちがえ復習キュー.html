@@ -210,7 +210,7 @@ function render(){
         '<span class="badge '+q.badge+'">'+q.kind+'</span>'+
         (isDue?'<span class="badge keisan">🔁 定着チェック</span>':'')+
         '<span class="date">'+dateStr+'</span>'+
-        (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+(st.cnt===1&&st.lastO?'　1回め○:'+esc(st.lastO):'')+'</span>')+
+        (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+(st.cnt===1?'　1回め○'+(st.lastO?':'+esc(st.lastO):'済'):'')+'</span>')+
       '</div>'+
       '<div class="jp">'+q.jp+'</div>'+
       (q.choices?'<div class="choices">'+q.choices+'</div>':'')+
