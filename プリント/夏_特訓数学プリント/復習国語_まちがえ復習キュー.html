@@ -371,6 +371,17 @@ function migrate(){if(localStorage.getItem(PRE+'migr1'))return;var now=nowMs();Q
 window.onload=function(){try{migrate();}catch(e){}try{selfCheck();}catch(e){}render();writeBoard();
   window.addEventListener('scroll',function(){var b=document.getElementById('toTop');if(!b)return;if(window.scrollY>500)b.classList.add('show');else b.classList.remove('show');},{passive:true});
 };
+// ページに戻るたび（bfcache復帰・タブ再表示）に revq_dyn を取り込み直して再描画
+function refreshFromDyn(){
+  try{mergeDyn();}catch(e){}
+  try{
+    if(typeof VIEW==='undefined'||VIEW==='review'){render();}
+    else if(VIEW==='dict'){renderDict();}
+    else if(VIEW==='log'){renderLog();}
+  }catch(e){}
+}
+window.addEventListener('pageshow', function(){ refreshFromDyn(); });
+document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='visible'){ refreshFromDyn(); } });
 </script>
 </body>
 </html>
