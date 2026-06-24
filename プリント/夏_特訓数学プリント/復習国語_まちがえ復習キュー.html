@@ -186,6 +186,7 @@ function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
 function nowMs(){return Date.now();}
 function dayNum(ms){var d=new Date(ms);return Math.floor(new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()/86400000);}
 function epoch(){var k=PRE+'__epoch';var v=+localStorage.getItem(k);if(!v){v=nowMs();safeSet(k,String(v));}return v;}
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function clampSt(st){st.cnt=Math.max(0,Math.min(99,(+st.cnt||0)));st.gradTs=(+st.gradTs>0)?+st.gradTs:0;st.mastered=(st.mastered===true);st.lastX=(typeof st.lastX==='string')?st.lastX:'';st.lastO=(typeof st.lastO==='string')?st.lastO:'';if(st.mastered)st.cnt=Math.max(st.cnt,GRADUATE);if(st.cnt<GRADUATE&&st.gradTs)st.gradTs=0;return st;}
 function stateOf(st){if(st.mastered)return'mastered';if(st.cnt>=GRADUATE){var e=dayNum(nowMs())-dayNum(st.gradTs);return (st.gradTs>0&&e>=0&&e>=DUE_DAYS)?'due':'graduated';}return'learning';}
 function safeSet(k,v){try{localStorage.setItem(k,v);return true;}catch(e){return false;}}
