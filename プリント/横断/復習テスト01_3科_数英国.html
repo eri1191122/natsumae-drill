@@ -73,6 +73,8 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
 .frac sup{font-size:.7em;vertical-align:.5em;font-weight:inherit}
 .qmath{font-size:1.16em;line-height:1.85;display:inline-block}
 .qmath sup{font-size:.62em;vertical-align:.55em}
+.easy{display:block;background:#eafaf0;border-left:4px solid #5fb87a;border-radius:7px;padding:7px 12px;margin:-2px 0 9px;font-size:13.5px;font-weight:800;color:#246b40;line-height:1.65}
+.easy b{color:#15823f}
 @media print{
   body{background:#fff;font-size:13px}
   .back,.done,.ans-btn,.grade,.miss{display:none}
@@ -109,18 +111,18 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">＝<span class="frac"><span class="n">1</span><span class="d">3</span></span></div>
-      <div class="bx"><b>順番は「かっこ・累乗・かけ算わり算が先、たし算ひき算はあと」。</b><br><b>①</b> まず <span class="red">−3<sup>2</sup></span>。これは『3を2回かけて9、その頭にマイナス』で <span class="red">−9</span>。(−3)<sup>2</sup>（マイナスごと2乗）ではないので ＋9 にしない。だから −<span class="frac"><span class="n">3<sup>2</sup></span><span class="d">4</span></span>＝−<span class="frac"><span class="n">9</span><span class="d">4</span></span>（<span class="red">マイナス</span>）。← ここが「−だよね？」の答え＝そう、マイナス。<br><b>②</b> ÷ は『下と上をひっくり返してかけ算』。÷(−<span class="frac"><span class="n">9</span><span class="d">2</span></span>) → ×(−<span class="frac"><span class="n">2</span><span class="d">9</span></span>)。<br><b>③</b> −<span class="frac"><span class="n">9</span><span class="d">4</span></span>×(−<span class="frac"><span class="n">2</span><span class="d">9</span></span>) は マイナス×マイナスで＋、<span class="red">9どうしが消えて</span> <span class="frac"><span class="n">2</span><span class="d">4</span></span>＝<span class="frac"><span class="n">1</span><span class="d">2</span></span>。だから (−<span class="frac"><span class="n">9</span><span class="d">4</span></span>)÷(−<span class="frac"><span class="n">9</span><span class="d">2</span></span>)＝＋<span class="frac"><span class="n">1</span><span class="d">2</span></span>。<br><b>④</b> さいご。式の左にある「<span class="red">−</span>」は“ひく”の印。<span class="frac"><span class="n">5</span><span class="d">6</span></span> −（③の答え <span class="frac"><span class="n">1</span><span class="d">2</span></span>）＝<span class="frac"><span class="n">5</span><span class="d">6</span></span>−<span class="frac"><span class="n">3</span><span class="d">6</span></span>＝<span class="frac"><span class="n">2</span><span class="d">6</span></span>＝<span class="red"><span class="frac"><span class="n">1</span><span class="d">3</span></span></span>。<br>👀 大事なのは2つ：<span class="red">−3<sup>2</sup>＝−9（負）</span> と、÷は逆数のかけ算。</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>−3<sup>2</sup>は−9（マイナス）／÷はひっくり返してかけ算</b>。この2つだけ覚えれば勝ち！</span><b>順番は「かっこ・累乗・かけ算わり算が先、たし算ひき算はあと」。</b><br><b>①</b> まず <span class="red">−3<sup>2</sup></span>。これは『3を2回かけて9、その頭にマイナス』で <span class="red">−9</span>。(−3)<sup>2</sup>（マイナスごと2乗）ではないので ＋9 にしない。だから −<span class="frac"><span class="n">3<sup>2</sup></span><span class="d">4</span></span>＝−<span class="frac"><span class="n">9</span><span class="d">4</span></span>（<span class="red">マイナス</span>）。← ここが「−だよね？」の答え＝そう、マイナス。<br><b>②</b> ÷ は『下と上をひっくり返してかけ算』。÷(−<span class="frac"><span class="n">9</span><span class="d">2</span></span>) → ×(−<span class="frac"><span class="n">2</span><span class="d">9</span></span>)。<br><b>③</b> −<span class="frac"><span class="n">9</span><span class="d">4</span></span>×(−<span class="frac"><span class="n">2</span><span class="d">9</span></span>) は マイナス×マイナスで＋、<span class="red">9どうしが消えて</span> <span class="frac"><span class="n">2</span><span class="d">4</span></span>＝<span class="frac"><span class="n">1</span><span class="d">2</span></span>。だから (−<span class="frac"><span class="n">9</span><span class="d">4</span></span>)÷(−<span class="frac"><span class="n">9</span><span class="d">2</span></span>)＝＋<span class="frac"><span class="n">1</span><span class="d">2</span></span>。<br><b>④</b> さいご。式の左にある「<span class="red">−</span>」は“ひく”の印。<span class="frac"><span class="n">5</span><span class="d">6</span></span> −（③の答え <span class="frac"><span class="n">1</span><span class="d">2</span></span>）＝<span class="frac"><span class="n">5</span><span class="d">6</span></span>−<span class="frac"><span class="n">3</span><span class="d">6</span></span>＝<span class="frac"><span class="n">2</span><span class="d">6</span></span>＝<span class="red"><span class="frac"><span class="n">1</span><span class="d">3</span></span></span>。<br>👀 大事なのは2つ：<span class="red">−3<sup>2</sup>＝−9（負）</span> と、÷は逆数のかけ算。</div></div>
     <div class="gq" data-gid="q01" data-pt="8"><div class="grade">できた？<button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button><span class="pt-badge">8点</span></div>
       <div class="miss" data-mid="q01">ミスの型→<button class="m" onclick="m(this,'q01','C')">C</button><button class="m" onclick="m(this,'q01','K')">K</button><button class="m" onclick="m(this,'q01','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
 
   <div class="q">
     <div class="qnum">q02｜正誤（8点）</div>
-    <div class="qword">次の①〜③について、正しいものに○、まちがっているものに×を書きなさい。<br>　① −(<span class="frac"><span class="n">2</span><span class="d">5</span></span>)²<(−<span class="frac"><span class="n">5</span><span class="d">2</span></span>)² である。<br>　② 6に整数をたすと、その和はいつでも6より大きくなる。<br>　③ 自然数と自然数の積は、いつでも自然数になる。</div>
+    <div class="qword">次の①〜③について、正しいものに○、まちがっているものに×を書きなさい。<br>　① <span class="qmath">−(<span class="frac"><span class="n">2</span><span class="d">5</span></span>)<sup>2</sup> &lt; (−<span class="frac"><span class="n">5</span><span class="d">2</span></span>)<sup>2</sup></span> である。<br>　② 6に整数をたすと、その和はいつでも6より大きくなる。<br>　③ 自然数と自然数の積は、いつでも自然数になる。</div>
     <div class="lines">（書く欄）　①＿＿　②＿＿　③＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">①○　②×　③○</div>
-      <div class="bx">①は『マイナスがカッコの外か中か』を見る。<br>−(<span class="frac"><span class="n">2</span><span class="d">5</span></span>)² は <span class="frac"><span class="n">2</span><span class="d">5</span></span> だけを2乗してから頭にマイナス→ <span class="red">−<span class="frac"><span class="n">4</span><span class="d">25</span></span>（マイナス）</span>。<br>(−<span class="frac"><span class="n">5</span><span class="d">2</span></span>)² は −<span class="frac"><span class="n">5</span><span class="d">2</span></span> をまるごと2回かける→ マイナス×マイナスで <span class="red"><span class="frac"><span class="n">25</span><span class="d">4</span></span>（プラス）</span>。マイナス＜プラスで○。<br>②整数には0や負の数もふくむ。−3をたせば6より小さくなる→×。<br>③自然数どうしのかけ算はいつでも自然数→○（ひき算・わり算ははみ出すことも）。</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>マイナスが「カッコの外」か「中」かを見るだけ</b>。外なら最後にマイナス、中（まるごと）の2乗はプラス。</span>① −(<span class="frac"><span class="n">2</span><span class="d">5</span></span>)<sup>2</sup> は <span class="frac"><span class="n">2</span><span class="d">5</span></span> だけ2乗して頭にマイナス→<span class="red">−<span class="frac"><span class="n">4</span><span class="d">25</span></span>（マイナス）</span>。(−<span class="frac"><span class="n">5</span><span class="d">2</span></span>)<sup>2</sup> は まるごと2回かけてマイナス×マイナス→<span class="red">＋<span class="frac"><span class="n">25</span><span class="d">4</span></span>（プラス）</span>。だから「マイナス ＜ プラス」で正しい→<span class="red">○</span>。<br>② わなはココ！整数には <span class="red">0やマイナス</span>も入る。6に−3をたせば6より小さくなる→だから×。<br>③ 自然数どうしの <b>かけ算だけ</b> はいつでも自然数→○（ひき算・わり算ははみ出すことも）。<br>👀 まちがえたのは②！「整数＝…−2,−1,<span class="red">0</span>,1,2…」を思い出せば次は○だよ。</div></div>
     <div class="gq" data-gid="q02" data-pt="8"><div class="grade">できた？<button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button><span class="pt-badge">8点</span></div>
       <div class="miss" data-mid="q02">ミスの型→<button class="m" onclick="m(this,'q02','C')">C</button><button class="m" onclick="m(this,'q02','K')">K</button><button class="m" onclick="m(this,'q02','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -131,7 +133,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿＿＿＿　個</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">9個</div>
-      <div class="bx">絶対値は『0からのきょり』。きょりが5より近い整数をさがす。<br>「5より小さい＝5は入らない（未満）」。−4,−3,−2,−1,<span class="red">0</span>,1,2,3,4 ＝ プラス4個＋マイナス4個＋まん中の0で <span class="red">9個</span>。<br>👀コツは2つ。①0を入れる ②±5は入れない。これでバッチリ！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>数直線で −4 から 4 まで指で数えるだけ</b>。0を入れて、5は入れない。</span>絶対値は『0からのきょり』。きょりが5より近い整数をさがす。<br>「5より小さい＝<span class="red">5は入らない</span>（未満）」だから、<br>　−4,−3,−2,−1,<span class="red">0</span>,1,2,3,4 → マイナス4個＋プラス4個＋まん中の0で <span class="red">ぜんぶで9個</span>。<br>👀 まちがえやすいのは2つ。①<span class="red">0を入れ忘れない</span> ②±5は入れない。ここさえ気をつければ次は○！</div></div>
     <div class="gq" data-gid="q03" data-pt="6"><div class="grade">できた？<button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button><span class="pt-badge">6点</span></div>
       <div class="miss" data-mid="q03">ミスの型→<button class="m" onclick="m(this,'q03','C')">C</button><button class="m" onclick="m(this,'q03','K')">K</button><button class="m" onclick="m(this,'q03','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -142,7 +144,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）　(1)＿＿＿＿度　(2)＿＿＿＿度</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">(1) 108度　(2) 120度</div>
-      <div class="bx">頂点から線を引くと、五角形は三角形<span class="red">3コ</span>・六角形は三角形<span class="red">4コ</span>に分けられる。<br>三角形1コの角の和は180°。だから 五角形＝180×3＝540°、六角形＝180×4＝720°（これが内角の和）。<br>正多角形は角がぜんぶ同じだから角の数で割る。540÷5＝<span class="red">108°</span>、720÷6＝<span class="red">120°</span>。<br>合言葉『三角形の数＝辺の数−2』！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>「三角形の数＝辺の数−2」→ ×180 → 角の数で割る</b>。この3手で全部の正多角形が出せる！</span>1つの頂点から線を引くと、五角形は三角形<span class="red">3コ</span>（5−2）・六角形は三角形<span class="red">4コ</span>（6−2）に分かれる。<br>三角形1コの角の和は180° → 五角形＝180×3＝540°、六角形＝180×4＝720°（これが内角の<b>和</b>）。<br>正多角形は角がぜんぶ同じ → 角の数で割る。540÷5＝<span class="red">108°</span>、720÷6＝<span class="red">120°</span>。<br>👀 「和」を出して終わりにしないこと！最後に<span class="red">角の数で割る</span>のを忘れずに。</div></div>
     <div class="gq" data-gid="q04" data-pt="8"><div class="grade">できた？<button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button><span class="pt-badge">8点</span></div>
       <div class="miss" data-mid="q04">ミスの型→<button class="m" onclick="m(this,'q04','C')">C</button><button class="m" onclick="m(this,'q04','K')">K</button><button class="m" onclick="m(this,'q04','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -164,7 +166,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿＿＿＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">trumpet</div>
-      <div class="bx">trumpet＝tr＋um＋pet。ラッパは『プーッ』と鳴る→ 真ん中に <span class="red">p</span>、さいごは pet（ペット）。<br>👀出だしが tr で書けたらOK！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>tr＋um＋pet の3つに区切って書く</b>。</span>「トランペット」は <span class="red">tr</span>umpet。出だしは <span class="red">tr</span>（トラ）、まん中は um、さいごは <span class="red">pet</span>（ペット）。<br>ラッパは『プーッ』と鳴る → まん中に <span class="red">p</span> が入る、と音で覚えよう。<br>👀 出だし tr と さいご pet が書けたら、もうほぼ勝ち！</div></div>
     <div class="gq" data-gid="q05" data-pt="5"><div class="grade">できた？<button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button><span class="pt-badge">5点</span></div>
       <div class="miss" data-mid="q05">ミスの型→<button class="m" onclick="m(this,'q05','C')">C</button><button class="m" onclick="m(this,'q05','K')">K</button><button class="m" onclick="m(this,'q05','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -175,7 +177,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿＿＿＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">octopus</div>
-      <div class="bx">oct＝8（足が8本）＋ o ＋ pus。足が8本だから oct を思い出す。さいごは -pus（パスではなくプス）。<br>👀oct が出たら半分勝ち！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>oct（8）＋ o ＋ pus に区切る</b>。タコの足は8本だから oct！</span>「タコ」は <span class="red">oct</span>opus。oct は『8』の意味（足が8本）。さいごは <span class="red">-pus</span>（“パス”じゃなく“プス”）。<br>👀 出だし oct が出たら半分勝ち。あとは o＋pus をつなげるだけ！</div></div>
     <div class="gq" data-gid="q06" data-pt="5"><div class="grade">できた？<button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button><span class="pt-badge">5点</span></div>
       <div class="miss" data-mid="q06">ミスの型→<button class="m" onclick="m(this,'q06','C')">C</button><button class="m" onclick="m(this,'q06','K')">K</button><button class="m" onclick="m(this,'q06','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -186,7 +188,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿＿＿＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">violin</div>
-      <div class="bx">violin＝vi＋o＋lin。さいしょは <span class="red">vio</span>（ヴィオ）。『バイオ』の音につられて vaio と書きやすいので vio の順を守る。<br>つづりに r は入らない・l（エル）は1つ・o を忘れない。<br>👀vio の順で書けたらOK！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>vi＋o＋lin に区切る。出だしは vio の順</b>。</span>「バイオリン」は <span class="red">vio</span>lin。『バイオ』の音につられて <span class="red">vaio</span> と書きやすいけど、正しくは <span class="red">vio</span> の順。<br>気をつける3つ → <span class="red">r は入らない</span>・l（エル）は<span class="red">1つ</span>・o を忘れない。<br>👀 vio の順で書き出せたらOK！</div></div>
     <div class="gq" data-gid="q07" data-pt="5"><div class="grade">できた？<button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button><span class="pt-badge">5点</span></div>
       <div class="miss" data-mid="q07">ミスの型→<button class="m" onclick="m(this,'q07','C')">C</button><button class="m" onclick="m(this,'q07','K')">K</button><button class="m" onclick="m(this,'q07','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -198,7 +200,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">エ shrine（神社）</div>
-      <div class="bx">チーズ・たまご・りんごは <span class="red">食べ物</span>のなかま。shrine（神社）だけ食べ物じゃない。だからエ。<br>👀『多数派の共通点』を先に見つけるのがコツ！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>1つ選ぶ前に「多数派の共通点」を先に見つける</b>。</span>cheese（チーズ）・egg（たまご）・apple（りんご）は ぜんぶ <span class="red">食べ物</span>のなかま。<br>shrine（神社）だけ食べ物じゃない → だから仲間外れは <span class="red">エ</span>。<br>👀 「3つに共通するもの」を先に決めると、残り1つがスッと見える！</div></div>
     <div class="gq" data-gid="q08" data-pt="5"><div class="grade">できた？<button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button><span class="pt-badge">5点</span></div>
       <div class="miss" data-mid="q08">ミスの型→<button class="m" onclick="m(this,'q08','C')">C</button><button class="m" onclick="m(this,'q08','K')">K</button><button class="m" onclick="m(this,'q08','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -209,7 +211,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）　(1)＿＿＿＿　(2)＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">(1) do　(2) am</div>
-      <div class="bx">答えは『質問の<span class="red">最初の単語</span>で決まる』。<br>Do you〜? は Do で聞いているから Yes, I <span class="red">do</span>。<br>Are you〜? は Are（be動詞）だから Yes, I <span class="red">am</span>。<br>最初の単語を見て同じ仲間を返すだけ。Do の質問に am で返さない。<br>👀『聞かれた言葉で返す』が言えたらOK！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>質問の「最初の単語」をそのまま返すだけ</b>。Do→do、Are→am。</span>(1) <span class="red">Do</span> you play tennis? は Do で聞いている → Yes, I <span class="red">do</span>。<br>(2) <span class="red">Are</span> you a student? は Are（be動詞）で聞いている → Yes, I <span class="red">am</span>。<br>👀 まちがえやすいのは「Do の質問に am で返す」こと。<span class="red">聞かれた言葉で返す</span>、これだけ守れば次は○！</div></div>
     <div class="gq" data-gid="q09" data-pt="8"><div class="grade">できた？<button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button><span class="pt-badge">8点</span></div>
       <div class="miss" data-mid="q09">ミスの型→<button class="m" onclick="m(this,'q09','C')">C</button><button class="m" onclick="m(this,'q09','K')">K</button><button class="m" onclick="m(this,'q09','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -220,7 +222,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）　(1)＿＿＿＿　(2)＿＿＿＿／＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">(1) a　(2) a ／ too</div>
-      <div class="bx">英語は『1人の選手』のとき player の前に <span class="red">a</span>（1つの、の印）が必要。日本語に『1』が無くてもつける。<br>『〜も』は文の最後に <span class="red">too</span>、その前にコンマ（,）→ a soccer player, too。<br>👀名詞の前に a をつけられたら満点！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>1人・1つの名詞の前は a。「〜も」は最後に , too</b>。</span>(1)(2) どちらも『1人の選手』→ player の前に <span class="red">a</span>（“1つの”の印）。日本語に『1』が無くてもつけるのがルール。<br>(2)『私<span class="red">も</span>』は文の最後に <span class="red">too</span>、その前にコンマ → a soccer player<span class="red">, too</span>。<br>👀 まちがえやすいのは a の付け忘れ。名詞の前に a が言えたら満点！</div></div>
     <div class="gq" data-gid="q10" data-pt="8"><div class="grade">できた？<button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button><span class="pt-badge">8点</span></div>
       <div class="miss" data-mid="q10">ミスの型→<button class="m" onclick="m(this,'q10','C')">C</button><button class="m" onclick="m(this,'q10','K')">K</button><button class="m" onclick="m(this,'q10','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -231,7 +233,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">I am not your teacher.（I'm not your teacher. も可）</div>
-      <div class="bx">『私は』→主語 <span class="red">I</span>、『〜です』→ am。否定は am のすぐうしろに <span class="red">not</span>。<br>『あなたの先生』→ <span class="red">your</span> teacher。→ I am not your teacher.<br>👀日本語の『私は』『あなたの』を指さしてから書くと、I と you・my と your が逆にならないよ！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>「I am」→ うしろに not → 残りをつなぐ</b>。否定は am のすぐ後ろに not！</span>『私は』→ <span class="red">I</span>、『〜です』→ am、否定だから am のすぐうしろに <span class="red">not</span>。<br>『あなたの先生』→ <span class="red">your</span> teacher。つなげて → <span class="red">I am not your teacher.</span><br>👀 まちがえやすいのは I と you、my と your の取りちがえ。日本語の『私は』『あなたの』を<span class="red">指さしてから</span>書こう！</div></div>
     <div class="gq" data-gid="q11" data-pt="9"><div class="grade">できた？<button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button><span class="pt-badge">9点</span></div>
       <div class="miss" data-mid="q11">ミスの型→<button class="m" onclick="m(this,'q11','C')">C</button><button class="m" onclick="m(this,'q11','K')">K</button><button class="m" onclick="m(this,'q11','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -253,7 +255,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">こうぎょう</div>
-      <div class="bx">「行」は語によって読みが変わる。旅行＝こう／行事＝<span class="red">ぎょう</span>。興行はこの『ぎょう』側で <span class="red">こうぎょう</span>＝もよおし・上演のこと。<br>👀『こうこう』と読みたくなるけど ぎょう、で覚えよう！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>「行」を“ぎょう”で読む</b>。興行＝こう＋<span class="red">ぎょう</span>。</span>「行」は語で読みが変わる字。旅行＝こう／行事＝<span class="red">ぎょう</span>。興行はこの“ぎょう”側で <span class="red">こうぎょう</span>（＝もよおし・上演のこと）。<br>👀 「こう<span class="red">こう</span>」と読みたくなるのが落とし穴。“ぎょう”で覚えよう！</div></div>
     <div class="gq" data-gid="q12" data-pt="6"><div class="grade">できた？<button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button><span class="pt-badge">6点</span></div>
       <div class="miss" data-mid="q12">ミスの型→<button class="m" onclick="m(this,'q12','C')">C</button><button class="m" onclick="m(this,'q12','K')">K</button><button class="m" onclick="m(this,'q12','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -264,7 +266,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">こがい</div>
-      <div class="bx">「戸」は訓読み『と』・音読み『こ』。漢字2字の熟語は音読みになりやすいので、戸外は <span class="red">こがい</span>＝家の外・屋外。<br>👀熟語は音読みを先にうたがう。『とがい』としない！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>2字の熟語は「音読み」を先にうたがう</b>。戸（こ）＋外（がい）。</span>「戸」は 訓読み『と』・音読み『こ』。漢字2字の熟語は音読みになりやすいので、戸外＝<span class="red">こがい</span>（＝家の外・屋外）。<br>👀 つい「<span class="red">と</span>がい」と訓で読みたくなるのが落とし穴。熟語は音読みから！</div></div>
     <div class="gq" data-gid="q13" data-pt="6"><div class="grade">できた？<button class="o" onclick="g(this,'q13','o')">○</button><button class="x" onclick="g(this,'q13','x')">✕</button><span class="pt-badge">6点</span></div>
       <div class="miss" data-mid="q13">ミスの型→<button class="m" onclick="m(this,'q13','C')">C</button><button class="m" onclick="m(this,'q13','K')">K</button><button class="m" onclick="m(this,'q13','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -275,7 +277,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">専門</div>
-      <div class="bx">「専」はてっぺんに点（丶）を<span class="red">つけない</span>のがポイント。点があるのは『博』、ないのが『専』。ここで見分ける。<br>専門＝そのことだけを深く知っている分野のこと。<br>👀点をつけずに書けたらOK！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>「専」は右上に点（丶）を“つけない”</b>。ここだけ気をつける！</span>点があるのは『<span class="red">博</span>』、点が<span class="red">ない</span>のが『専』。この一点で見分ける。<br>専門＝そのことだけを深く知っている分野のこと。<br>👀 まちがえやすいのは点の付けすぎ。点を<span class="red">つけずに</span>書けたらOK！</div></div>
     <div class="gq" data-gid="q14" data-pt="7"><div class="grade">できた？<button class="o" onclick="g(this,'q14','o')">○</button><button class="x" onclick="g(this,'q14','x')">✕</button><span class="pt-badge">7点</span></div>
       <div class="miss" data-mid="q14">ミスの型→<button class="m" onclick="m(this,'q14','C')">C</button><button class="m" onclick="m(this,'q14','K')">K</button><button class="m" onclick="m(this,'q14','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
@@ -286,7 +288,7 @@ body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',ser
     <div class="lines">（書く欄）＿＿＿＿＿＿＿＿</div>
     <button class="ans-btn" onclick="t(this)">答えを見る</button>
     <div class="ans-box"><div class="ans-main">耕す</div>
-      <div class="bx">「たがやす」は『耕す』。漢字は『耕』、送りがなは最後の <span class="red">す</span> だけ（耕やす・耕がやす は×）。<br>左がわは『畑の道具』を表す部分＝田畑に関係する漢字、と覚える。<br>👀言い切りが『〜す』の動詞は最後の『す』を送る（話す・耕す）。これでバッチリ！</div></div>
+      <div class="bx"><span class="easy">💡 いちばんカンタン：<b>漢字は「耕」、送るのは最後の「す」だけ</b>。</span>「たがやす」→ <span class="red">耕す</span>。送りがなは <span class="red">す</span> の1文字だけ（<span class="red">耕やす・耕がやす は×</span>）。<br>左がわ（耒）は『田畑の道具』を表す部分＝土を耕すのなかま、と覚える。<br>👀 言い切りが『〜す』の動詞は最後の『す』を送る（話<span class="red">す</span>・耕<span class="red">す</span>）。これでバッチリ！</div></div>
     <div class="gq" data-gid="q15" data-pt="6"><div class="grade">できた？<button class="o" onclick="g(this,'q15','o')">○</button><button class="x" onclick="g(this,'q15','x')">✕</button><span class="pt-badge">6点</span></div>
       <div class="miss" data-mid="q15">ミスの型→<button class="m" onclick="m(this,'q15','C')">C</button><button class="m" onclick="m(this,'q15','K')">K</button><button class="m" onclick="m(this,'q15','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
   </div>
