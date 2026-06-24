@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ テスト復習テスト①（3科横断・数学＋英語＋国語漢字・100点）
+ ・6月のテストでまちがえた所だけを集めた復習プリント。30分。
+ ・大問1＝数学（理解の確認）30点・q01〜q04／大問2＝英語（単語と文）45点・q05〜q11／大問3＝国語（漢字）25点・q12〜q15。
+ ・機構（CSS・採点JS t/g/m/finish・localStorage・○✕＋ミス分類C/K/A・印刷・もどる・onload復元・解説トグル）は国語本番通し①を完全踏襲。クラス名・関数名・onload不変（復習キュー/記録ボードが依存）。
+ ・data-gid は q01〜q15 通し連番（全15問ユニーク）。各 gq に data-pt=配点（合計100）。finish()で○の配点合計を#finに表示。
+ ・KEY=tokkun_hisshu_review01。もどる=../../index_iPad_学習ダッシュボード.html。解答前ヒント禁止（解法/理由/公式/図の描き方は ans-box 内のみ）。
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>テスト復習テスト①｜数学＋英語＋国語漢字｜30分・100点</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Mincho ProN','Hiragino Kaku Gothic ProN','Meiryo',serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.9}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18);font-family:sans-serif}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.pg-hd{background:#eef0e8;color:#2b3a2e;padding:22px;border:1px solid #d6ddc9;border-radius:10px;margin-bottom:16px;font-family:'Hiragino Kaku Gothic ProN',sans-serif}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dde6cf;color:#3a5030;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c7d3b3;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-time{display:inline-block;background:#2f3b4a;color:#fff;font-size:12px;font-weight:800;padding:4px 12px;border-radius:14px;margin-top:8px;font-family:sans-serif}
+.daimon{display:flex;align-items:center;gap:12px;background:#2b3a2e;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px;font-family:'Hiragino Kaku Gothic ProN',sans-serif}
+.daimon .dnum{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.daimon .dname{font-size:15px;font-weight:900;letter-spacing:.04em}
+.daimon .dpt{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.passbox{background:#fffdf6;border:1px solid #e3ddc7;border-radius:0 0 10px 10px;padding:18px 20px;margin-bottom:20px;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.passbox h2{font-size:16px;font-weight:900;color:#5a4a2a;margin-bottom:10px;font-family:'Hiragino Kaku Gothic ProN',sans-serif}
+.summary{background:#f2f6ec;border-left:4px solid #8aba7a;border-radius:8px;padding:10px 14px;margin-bottom:14px;font-size:13.5px;color:#3a5030;font-family:'Hiragino Kaku Gothic ProN',sans-serif}
+.summary::before{content:"📖 ここまでのあらすじ";display:block;font-size:12px;font-weight:800;color:#2d5a2a;margin-bottom:4px}
+.passage p{margin:0 0 12px;text-indent:1em}
+.psrc{font-size:12px;color:#8a8576;margin-top:10px;text-align:right;font-family:sans-serif}
+.passage2{background:#fffdf7;border:1px solid #e6e0cf;border-radius:0 0 10px 10px;padding:16px 20px;margin-bottom:20px;line-height:2.05;color:#2c3540}
+.passage2 .ttl{font-size:18px;font-weight:900;color:#3a5030;text-align:center;margin-bottom:4px;font-family:'Hiragino Kaku Gothic ProN',sans-serif}
+.passage2 .by{font-size:11.5px;color:#9aa0a6;text-align:center;margin-bottom:12px;font-family:sans-serif}
+.passage2 p{margin:0 0 10px;text-indent:1em}
+.passage2 .bl{font-weight:800;color:#3a5030}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:0 0 8px 8px;margin-bottom:16px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.05);font-family:'Hiragino Kaku Gothic ProN',sans-serif}
+.sec-body{padding:14px 18px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 15px;margin:11px 0}
+.qnum{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.qword{font-size:16px;font-weight:800;color:#31415f}
+.qhint{font-size:13px;color:#4c5b70;margin-top:2px}
+.lines{border:1px dashed #c9d2bd;border-radius:8px;background:#fcfdfa;min-height:54px;margin-top:8px;padding:8px 10px;font-size:12.5px;color:#9aa48c}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 15px;margin-top:8px;font-size:13.5px}
+.ans-box.open{display:block}
+.ans-main{font-size:17px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-read{font-size:13px;color:#405060;margin-bottom:4px}
+.bx{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:9px 13px;margin-top:6px;font-size:12.5px;color:#8a5a19}
+.check{background:#eef4fb;border-left:4px solid #9fb8d9;border-radius:8px;padding:9px 13px;margin-top:6px;font-size:12.5px;color:#33506f}
+.check::before{content:"✅ 記述の自己チェック（3つ全部そろえる）";display:block;font-weight:800;margin-bottom:3px}
+.red{color:#9b514d;font-weight:800}
+.gq{margin-top:9px}
+.grade{font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:38px;height:38px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:17px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.pt-badge{display:inline-block;font-size:11px;font-weight:800;color:#7a5512;background:#fbf2e2;border:1px solid #e6d2a6;border-radius:10px;padding:2px 8px;margin-left:6px}
+.miss{display:none;margin-top:7px;font-size:12px;color:#7a5512;align-items:center;gap:6px;flex-wrap:wrap}
+.miss.show{display:flex}
+.miss .m{border:1px solid #e6c98d;background:#fff;border-radius:14px;padding:3px 11px;font-size:12px;font-weight:800;cursor:pointer;color:#7a5512}
+.miss .m.sel{background:#d9b46d;color:#fff;border-color:#d9b46d}
+.miss .mhint{font-size:11px;color:#9a865a}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:17px;font-weight:900;border:none;padding:15px;border-radius:30px;margin-top:18px;cursor:pointer;font-family:sans-serif}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:12px;min-height:18px;font-weight:800}
+@media print{
+  body{background:#fff;font-size:13px}
+  .back,.done,.ans-btn,.grade,.miss{display:none}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .sec,.passbox,.passage2,.daimon{break-inside:avoid;box-shadow:none}
+  .q{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">テスト復習①</span><span class="pg-badge">3科横断</span><span class="pg-badge">数学＋英語＋国語漢字</span><span class="pg-badge">全15問</span></div>
+  <h1>テスト復習テスト（数学＋英語＋国語漢字）</h1>
+  <p>6月にまちがえた所だけ。30分。　まず自分で解いて、解けたら「答えを見る」で自己採点。最後に「今日できた！」で得点を出す。○✕をつけて、✕はC／K／Aのどれか選んでね。</p>
+  <span class="pg-time">⏱ 30分・100点（大問1 数学30点／大問2 英語45点／大問3 国語漢字25点）</span>
+</div>
+
+<!-- ============================ 大問1 数学（理解の確認・30点・q01〜q04） ============================ -->
+<div class="daimon">
+  <span class="dnum">大問1 数学</span>
+  <span class="dname">理解の確認</span>
+  <span class="dpt">30点・q01〜q04</span>
+</div>
+<div class="sec">
+<div class="sec-body">
+
+  <div class="q">
+    <div class="qnum">q01｜計算（8点）</div>
+    <div class="qword">次を計算しなさい。<br>　5/6 −(−3²/4)÷(−9/2)</div>
+    <div class="lines">（書く欄）＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">1/3</div>
+      <div class="bx">−3² は『3を2回かけて9、頭にマイナス』で −9。それが4の上だから −9/4。<br>÷は『上と下をひっくり返してかけ算』。÷(−9/2) → ×(−2/9)。<br>−9/4×(−2/9) は <span class="red">9どうしが消えて</span> 2/4＝1/2（マイナス×マイナスで＋）。<br>さいごは 5/6−1/2。下を6にそろえて 5/6−3/6＝2/6＝<span class="red">1/3</span>。<br>👀『÷はひっくり返してかけ算』ができたらOK！</div></div>
+    <div class="gq" data-gid="q01" data-pt="8"><div class="grade">できた？<button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button><span class="pt-badge">8点</span></div>
+      <div class="miss" data-mid="q01">ミスの型→<button class="m" onclick="m(this,'q01','C')">C</button><button class="m" onclick="m(this,'q01','K')">K</button><button class="m" onclick="m(this,'q01','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q02｜正誤（8点）</div>
+    <div class="qword">次の①〜③について、正しいものに○、まちがっているものに×を書きなさい。<br>　① −(2/5)²<(−5/2)² である。<br>　② 6に整数をたすと、その和はいつでも6より大きくなる。<br>　③ 自然数と自然数の積は、いつでも自然数になる。</div>
+    <div class="lines">（書く欄）　①＿＿　②＿＿　③＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">①○　②×　③○</div>
+      <div class="bx">①は『マイナスがカッコの外か中か』を見る。<br>−(2/5)² は 2/5 だけを2乗してから頭にマイナス→ <span class="red">−4/25（マイナス）</span>。<br>(−5/2)² は −5/2 をまるごと2回かける→ マイナス×マイナスで <span class="red">25/4（プラス）</span>。マイナス＜プラスで○。<br>②整数には0や負の数もふくむ。−3をたせば6より小さくなる→×。<br>③自然数どうしのかけ算はいつでも自然数→○（ひき算・わり算ははみ出すことも）。</div></div>
+    <div class="gq" data-gid="q02" data-pt="8"><div class="grade">できた？<button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button><span class="pt-badge">8点</span></div>
+      <div class="miss" data-mid="q02">ミスの型→<button class="m" onclick="m(this,'q02','C')">C</button><button class="m" onclick="m(this,'q02','K')">K</button><button class="m" onclick="m(this,'q02','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q03｜整数の個数（6点）</div>
+    <div class="qword">絶対値が5より小さい整数は、全部で何個あるか答えなさい。</div>
+    <div class="lines">（書く欄）＿＿＿＿＿＿＿　個</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">9個</div>
+      <div class="bx">絶対値は『0からのきょり』。きょりが5より近い整数をさがす。<br>「5より小さい＝5は入らない（未満）」。−4,−3,−2,−1,<span class="red">0</span>,1,2,3,4 ＝ プラス4個＋マイナス4個＋まん中の0で <span class="red">9個</span>。<br>👀コツは2つ。①0を入れる ②±5は入れない。これでバッチリ！</div></div>
+    <div class="gq" data-gid="q03" data-pt="6"><div class="grade">できた？<button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button><span class="pt-badge">6点</span></div>
+      <div class="miss" data-mid="q03">ミスの型→<button class="m" onclick="m(this,'q03','C')">C</button><button class="m" onclick="m(this,'q03','K')">K</button><button class="m" onclick="m(this,'q03','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q04｜内角（8点）</div>
+    <div class="qword">(1) 正五角形の1つの内角は何度か。<br>　(2) 正六角形の1つの内角は何度か。</div>
+    <div class="lines">（書く欄）　(1)＿＿＿＿度　(2)＿＿＿＿度</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">(1) 108度　(2) 120度</div>
+      <div class="bx">頂点から線を引くと、五角形は三角形<span class="red">3コ</span>・六角形は三角形<span class="red">4コ</span>に分けられる。<br>三角形1コの角の和は180°。だから 五角形＝180×3＝540°、六角形＝180×4＝720°（これが内角の和）。<br>正多角形は角がぜんぶ同じだから角の数で割る。540÷5＝<span class="red">108°</span>、720÷6＝<span class="red">120°</span>。<br>合言葉『三角形の数＝辺の数−2』！</div></div>
+    <div class="gq" data-gid="q04" data-pt="8"><div class="grade">できた？<button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button><span class="pt-badge">8点</span></div>
+      <div class="miss" data-mid="q04">ミスの型→<button class="m" onclick="m(this,'q04','C')">C</button><button class="m" onclick="m(this,'q04','K')">K</button><button class="m" onclick="m(this,'q04','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+</div></div>
+
+<!-- ============================ 大問2 英語（単語と文・45点・q05〜q11） ============================ -->
+<div class="daimon">
+  <span class="dnum">大問2 英語</span>
+  <span class="dname">単語と文</span>
+  <span class="dpt">45点・q05〜q11</span>
+</div>
+<div class="sec">
+<div class="sec-body">
+
+  <div class="q">
+    <div class="qnum">q05｜英単語（5点）</div>
+    <div class="qword">「トランペット」を英語で書きなさい。</div>
+    <div class="lines">（書く欄）＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">trumpet</div>
+      <div class="bx">trumpet＝tr＋um＋pet。ラッパは『プーッ』と鳴る→ 真ん中に <span class="red">p</span>、さいごは pet（ペット）。<br>👀出だしが tr で書けたらOK！</div></div>
+    <div class="gq" data-gid="q05" data-pt="5"><div class="grade">できた？<button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button><span class="pt-badge">5点</span></div>
+      <div class="miss" data-mid="q05">ミスの型→<button class="m" onclick="m(this,'q05','C')">C</button><button class="m" onclick="m(this,'q05','K')">K</button><button class="m" onclick="m(this,'q05','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q06｜英単語（5点）</div>
+    <div class="qword">「タコ（海の生き物）」を英語で書きなさい。</div>
+    <div class="lines">（書く欄）＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">octopus</div>
+      <div class="bx">oct＝8（足が8本）＋ o ＋ pus。足が8本だから oct を思い出す。さいごは -pus（パスではなくプス）。<br>👀oct が出たら半分勝ち！</div></div>
+    <div class="gq" data-gid="q06" data-pt="5"><div class="grade">できた？<button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button><span class="pt-badge">5点</span></div>
+      <div class="miss" data-mid="q06">ミスの型→<button class="m" onclick="m(this,'q06','C')">C</button><button class="m" onclick="m(this,'q06','K')">K</button><button class="m" onclick="m(this,'q06','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q07｜英単語（5点）</div>
+    <div class="qword">「バイオリン」を英語で書きなさい。</div>
+    <div class="lines">（書く欄）＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">violin</div>
+      <div class="bx">violin＝vi＋o＋lin。さいしょは <span class="red">vio</span>（ヴィオ）。『バイオ』の音につられて vaio と書きやすいので vio の順を守る。<br>つづりに r は入らない・l（エル）は1つ・o を忘れない。<br>👀vio の順で書けたらOK！</div></div>
+    <div class="gq" data-gid="q07" data-pt="5"><div class="grade">できた？<button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button><span class="pt-badge">5点</span></div>
+      <div class="miss" data-mid="q07">ミスの型→<button class="m" onclick="m(this,'q07','C')">C</button><button class="m" onclick="m(this,'q07','K')">K</button><button class="m" onclick="m(this,'q07','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q08｜なかま外れ（5点）</div>
+    <div class="qword">次のア〜エのうち、なかま外れの語を1つ選びなさい。</div>
+    <div class="qhint">ア cheese　イ egg　ウ apple　エ shrine</div>
+    <div class="lines">（書く欄）＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">エ shrine（神社）</div>
+      <div class="bx">チーズ・たまご・りんごは <span class="red">食べ物</span>のなかま。shrine（神社）だけ食べ物じゃない。だからエ。<br>👀『多数派の共通点』を先に見つけるのがコツ！</div></div>
+    <div class="gq" data-gid="q08" data-pt="5"><div class="grade">できた？<button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button><span class="pt-badge">5点</span></div>
+      <div class="miss" data-mid="q08">ミスの型→<button class="m" onclick="m(this,'q08','C')">C</button><button class="m" onclick="m(this,'q08','K')">K</button><button class="m" onclick="m(this,'q08','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q09｜応答（8点）</div>
+    <div class="qword">次の問いに英語で答えなさい。<br>　(1) Do you play tennis? — Yes, I ____.<br>　(2) Are you a student? — Yes, I ____.</div>
+    <div class="lines">（書く欄）　(1)＿＿＿＿　(2)＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">(1) do　(2) am</div>
+      <div class="bx">答えは『質問の<span class="red">最初の単語</span>で決まる』。<br>Do you〜? は Do で聞いているから Yes, I <span class="red">do</span>。<br>Are you〜? は Are（be動詞）だから Yes, I <span class="red">am</span>。<br>最初の単語を見て同じ仲間を返すだけ。Do の質問に am で返さない。<br>👀『聞かれた言葉で返す』が言えたらOK！</div></div>
+    <div class="gq" data-gid="q09" data-pt="8"><div class="grade">できた？<button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button><span class="pt-badge">8点</span></div>
+      <div class="miss" data-mid="q09">ミスの型→<button class="m" onclick="m(this,'q09','C')">C</button><button class="m" onclick="m(this,'q09','K')">K</button><button class="m" onclick="m(this,'q09','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q10｜語補充（8点）</div>
+    <div class="qword">日本語に合うように、英文の____に1語ずつ入れなさい。<br>　(1) あなたはサッカー選手です。　You are ____ soccer player.<br>　(2) 私もサッカー選手です。　I am ____ soccer player, ____.</div>
+    <div class="lines">（書く欄）　(1)＿＿＿＿　(2)＿＿＿＿／＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">(1) a　(2) a ／ too</div>
+      <div class="bx">英語は『1人の選手』のとき player の前に <span class="red">a</span>（1つの、の印）が必要。日本語に『1』が無くてもつける。<br>『〜も』は文の最後に <span class="red">too</span>、その前にコンマ（,）→ a soccer player, too。<br>👀名詞の前に a をつけられたら満点！</div></div>
+    <div class="gq" data-gid="q10" data-pt="8"><div class="grade">できた？<button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button><span class="pt-badge">8点</span></div>
+      <div class="miss" data-mid="q10">ミスの型→<button class="m" onclick="m(this,'q10','C')">C</button><button class="m" onclick="m(this,'q10','K')">K</button><button class="m" onclick="m(this,'q10','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q11｜英作文（9点）</div>
+    <div class="qword">「私はあなたの先生ではありません。」を英語にしなさい。</div>
+    <div class="lines">（書く欄）＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">I am not your teacher.（I'm not your teacher. も可）</div>
+      <div class="bx">『私は』→主語 <span class="red">I</span>、『〜です』→ am。否定は am のすぐうしろに <span class="red">not</span>。<br>『あなたの先生』→ <span class="red">your</span> teacher。→ I am not your teacher.<br>👀日本語の『私は』『あなたの』を指さしてから書くと、I と you・my と your が逆にならないよ！</div></div>
+    <div class="gq" data-gid="q11" data-pt="9"><div class="grade">できた？<button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button><span class="pt-badge">9点</span></div>
+      <div class="miss" data-mid="q11">ミスの型→<button class="m" onclick="m(this,'q11','C')">C</button><button class="m" onclick="m(this,'q11','K')">K</button><button class="m" onclick="m(this,'q11','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+</div></div>
+
+<!-- ============================ 大問3 国語（漢字・25点・q12〜q15） ============================ -->
+<div class="daimon">
+  <span class="dnum">大問3 国語</span>
+  <span class="dname">漢字</span>
+  <span class="dpt">25点・q12〜q15</span>
+</div>
+<div class="sec">
+<div class="sec-body">
+
+  <div class="q">
+    <div class="qnum">q12｜漢字の読み（6点）</div>
+    <div class="qword">漢字の読みを答えなさい。<br>　「映画の<b>興行</b>成績」</div>
+    <div class="lines">（書く欄）＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">こうぎょう</div>
+      <div class="bx">「行」は語によって読みが変わる。旅行＝こう／行事＝<span class="red">ぎょう</span>。興行はこの『ぎょう』側で <span class="red">こうぎょう</span>＝もよおし・上演のこと。<br>👀『こうこう』と読みたくなるけど ぎょう、で覚えよう！</div></div>
+    <div class="gq" data-gid="q12" data-pt="6"><div class="grade">できた？<button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button><span class="pt-badge">6点</span></div>
+      <div class="miss" data-mid="q12">ミスの型→<button class="m" onclick="m(this,'q12','C')">C</button><button class="m" onclick="m(this,'q12','K')">K</button><button class="m" onclick="m(this,'q12','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q13｜漢字の読み（6点）</div>
+    <div class="qword">漢字の読みを答えなさい。<br>　「<b>戸外</b>で遊ぶ」</div>
+    <div class="lines">（書く欄）＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">こがい</div>
+      <div class="bx">「戸」は訓読み『と』・音読み『こ』。漢字2字の熟語は音読みになりやすいので、戸外は <span class="red">こがい</span>＝家の外・屋外。<br>👀熟語は音読みを先にうたがう。『とがい』としない！</div></div>
+    <div class="gq" data-gid="q13" data-pt="6"><div class="grade">できた？<button class="o" onclick="g(this,'q13','o')">○</button><button class="x" onclick="g(this,'q13','x')">✕</button><span class="pt-badge">6点</span></div>
+      <div class="miss" data-mid="q13">ミスの型→<button class="m" onclick="m(this,'q13','C')">C</button><button class="m" onclick="m(this,'q13','K')">K</button><button class="m" onclick="m(this,'q13','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q14｜漢字の書き（7点）</div>
+    <div class="qword">漢字に直しなさい。<br>　「<b>センモン</b>用語」</div>
+    <div class="lines">（書く欄）＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">専門</div>
+      <div class="bx">「専」はてっぺんに点（丶）を<span class="red">つけない</span>のがポイント。点があるのは『博』、ないのが『専』。ここで見分ける。<br>専門＝そのことだけを深く知っている分野のこと。<br>👀点をつけずに書けたらOK！</div></div>
+    <div class="gq" data-gid="q14" data-pt="7"><div class="grade">できた？<button class="o" onclick="g(this,'q14','o')">○</button><button class="x" onclick="g(this,'q14','x')">✕</button><span class="pt-badge">7点</span></div>
+      <div class="miss" data-mid="q14">ミスの型→<button class="m" onclick="m(this,'q14','C')">C</button><button class="m" onclick="m(this,'q14','K')">K</button><button class="m" onclick="m(this,'q14','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+  <div class="q">
+    <div class="qnum">q15｜漢字の書き・送りがな（6点）</div>
+    <div class="qword">漢字に直しなさい（送りがなも書くこと）。<br>　「畑を<b>タガヤ</b>す」</div>
+    <div class="lines">（書く欄）＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">答えを見る</button>
+    <div class="ans-box"><div class="ans-main">耕す</div>
+      <div class="bx">「たがやす」は『耕す』。漢字は『耕』、送りがなは最後の <span class="red">す</span> だけ（耕やす・耕がやす は×）。<br>左がわは『畑の道具』を表す部分＝田畑に関係する漢字、と覚える。<br>👀言い切りが『〜す』の動詞は最後の『す』を送る（話す・耕す）。これでバッチリ！</div></div>
+    <div class="gq" data-gid="q15" data-pt="6"><div class="grade">できた？<button class="o" onclick="g(this,'q15','o')">○</button><button class="x" onclick="g(this,'q15','x')">✕</button><span class="pt-badge">6点</span></div>
+      <div class="miss" data-mid="q15">ミスの型→<button class="m" onclick="m(this,'q15','C')">C</button><button class="m" onclick="m(this,'q15','K')">K</button><button class="m" onclick="m(this,'q15','A')">A</button><span class="mhint">C=うっかり（符号・つづり・字形）／K=覚えていない（語・漢字・公式）／A=やり方が組めない</span></div></div>
+  </div>
+
+</div></div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（得点を出す）</button>
+<div class="fin" id="fin"></div>
+
+</div>
+
+<script>
+var KEY='tokkun_hisshu_review01';
+function t(b){if(!b.dataset.label)b.dataset.label=b.textContent;var a=b.parentNode.querySelector('.ans-box');var o=a.classList.toggle('open');b.textContent=o?'とじる':b.dataset.label;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);var miss=box.querySelector('.miss');if(v==='x'){if(miss)miss.classList.add('show');}else{if(miss)miss.classList.remove('show');}}
+function m(btn,id,v){var box=btn.closest('.miss');box.querySelectorAll('.m').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id+'_m',v);}
+function finish(){localStorage.setItem(KEY+'_done','1');var score=0;document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var pt=parseInt(box.dataset.pt||'0',10);if(localStorage.getItem(KEY+'_'+id)==='o')score+=pt;});document.getElementById('fin').innerHTML='よくがんばった！ダッシュボードにチェックがつきました 🎉<br>今日の得点：'+score+' / 100点（○の配点合計）';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');if(v==='x'){var miss=box.querySelector('.miss');if(miss)miss.classList.add('show');}}var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){var miss=box.querySelector('.miss');if(miss){miss.querySelectorAll('.m').forEach(function(e){if(e.getAttribute('onclick').indexOf("'"+mv+"'")>-1)e.classList.add('sel');});}}});if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}};
+</script>
+</body>
+</html>

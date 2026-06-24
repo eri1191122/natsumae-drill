@@ -365,7 +365,7 @@ function migrate(){if(localStorage.getItem(PRE+'migr1'))return;var now=nowMs();Q
 window.onload=function(){try{migrate();}catch(e){}try{selfCheck();}catch(e){}render();writeBoard();
   window.addEventListener('scroll',function(){var b=document.getElementById('toTop');if(!b)return;if(window.scrollY>500)b.classList.add('show');else b.classList.remove('show');},{passive:true});
 };
-// ページに戻るたび（bfcache復帰・タブ再表示）に revq_dyn を取り込み直して再描画
+// ページに戻るたび（bfcache復帰・タブ再表示）に再描画（このキューは静的問題のみ・動的流入なし／mergeDyn は呼ばない）
 function refreshFromDyn(){
   try{
     if(typeof VIEW==='undefined'||VIEW==='review'){render();}
