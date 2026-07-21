@@ -1,0 +1,718 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>redo07 難問デー（L4）｜文字式の利用｜30分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+
+/* もどる */
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+
+/* ヘッダー */
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+
+/* セクション */
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-hd .badge-time{font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;background:rgba(255,255,255,.45);border:1px solid rgba(80,96,112,.12);margin-left:auto}
+.sec-body{padding:16px 20px}
+
+/* 色テーマ */
+.th-red .sec-hd{background:#f7e6e4;border-left:6px solid #d8a09a}
+.th-org .sec-hd{background:#f6eadb;border-left:6px solid #d8b27c}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.th-grn .sec-hd{background:#e7f1e8;border-left:6px solid #9abf9d}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+
+/* 単元バナー */
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+
+/* ボックス類 */
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+
+/* おさらいカード（数学ans-box先頭・解く前は非表示） */
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 14px}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai .ot{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai p{font-size:13.5px;line-height:1.95;color:#5a4520;margin:4px 0}
+.osarai ol,.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.9;color:#5a4520}
+.osarai li{margin:2px 0}
+.osarai .ex{background:#fff;border:1px dashed #e0c98a;border-radius:6px;padding:8px 11px;margin:6px 0;font-size:13.5px;color:#5a4520}
+.osarai .ex::before{content:"✏️ いっしょに1回";display:block;font-size:11px;font-weight:800;color:#8a5a19;margin-bottom:3px}
+.osarai .miss{background:#fdeee6;border-left:4px solid #d8a07a;border-radius:6px;padding:7px 11px;margin:6px 0;font-size:13px;color:#8a4a2a}
+.osarai .miss::before{content:"⚠️ ありがちな勘ちがい";display:block;font-size:11px;font-weight:800;color:#a85a2a;margin-bottom:2px}
+.osarai b{color:#7a4f12}
+
+/* ぜんぶ知る */
+.deep{margin-top:8px;background:#fbfaff;border:1px solid #e3dcf0;border-radius:8px;padding:12px 14px;font-size:13.5px;line-height:1.95;color:#3a3550}
+.deep p{margin:7px 0}.deep b{color:#4a3a6b}
+.deep table{width:100%;border-collapse:collapse;margin:7px 0;font-size:13px}
+.deep th,.deep td{border:1px solid #e0dcec;padding:5px 8px;text-align:left}
+.deep th{background:#efeaf7}
+.deep .ng{color:#9b514d;font-weight:800}.deep .ok{color:#3f7a4a;font-weight:800}
+.deep-head{font-size:13px;font-weight:800;color:#5f4b7a;margin-bottom:6px}
+
+/* 問題番号（見える番号） */
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+
+/* よみとり確認（穴埋め） */
+.fill{background:#fff7e8;border:1px solid #e6c98d;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:13.5px}
+.fill-q{font-weight:700;color:#8a5a19}
+.fill-btn{margin-top:6px;background:#d9b46d;color:#fff;border:none;border-radius:16px;padding:5px 12px;font-size:12px;font-weight:800;cursor:pointer}
+.fill-a{display:none;margin-top:6px;font-weight:800;color:#3f7a4a}.fill-a.open{display:block}
+
+/* 英文の答え（一番下） */
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+
+/* 英作文：書かせる方式 */
+.ew-task{font-size:13px;color:#4c5b70;margin-bottom:6px}
+.ew-jp{font-size:22px;font-weight:900;color:#31415f;background:#fffefb;border:2px solid #c8d4e6;border-left:6px solid #9fb8d9;border-radius:8px;padding:12px 16px;margin:4px 0 10px}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+
+/* 図を描く欄 */
+.draw{background:#f4f7fb;border:2px dashed #aebfd6;border-radius:8px;padding:14px 16px;margin:10px 0;min-height:120px}
+.draw::before{content:"✏️ ここに図や計算をかこう";display:block;font-size:12px;font-weight:800;color:#3f6f9f;margin-bottom:6px}
+
+/* 英語の1問 */
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:12px 0}
+.q.vocab .qword{font-size:22px;font-weight:900;color:#31415f}
+.q.vocab .qhint{font-size:13px;color:#4c5b70;margin-top:2px}
+
+/* 数学の1問 */
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:18px;font-weight:700;margin:2px 0 4px;color:#31415f}
+
+/* 図（SVG）枠 */
+.fig{background:#fff;border:1px solid #dfe6ea;border-radius:8px;padding:10px;margin:10px 0;text-align:center}
+.fig svg{max-width:100%;height:auto}
+.fig-cap{font-size:12px;color:#6a7684;margin-top:4px}
+
+/* 英語スライド枠のプレースホルダ */
+.slide-ph{background:#faf7fc;border:2px dashed #c3b3da;border-radius:8px;padding:16px 18px;font-size:13.5px;color:#6a5a86;line-height:1.9}
+.slide-ph b{color:#5f4b7a}
+
+/* 答えボタン・答え枠 */
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .ans-main{font-size:18px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-box .ans-read{font-size:13px;color:#405060;margin-bottom:2px}
+.ans-box .ans-why{font-size:13px;color:#405060;margin:4px 0}
+.ans-box .step{margin:4px 0;font-size:13px}
+.ans-box .step span{display:inline-block;background:#fff;border:1px solid #c9decf;border-radius:4px;padding:1px 8px;margin-right:4px;font-weight:700;color:#3f6f4a;font-size:11px}
+
+/* 採点ユニット（小問ごと） */
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+
+/* 自己採点 */
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+
+/* ✕のとき：3回書く */
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+
+/* ミス分類（✕のときだけ） */
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+
+/* 数式・色 */
+.math{font-family:'Courier New',monospace;background:#f2f4f5;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+
+/* できたボタン */
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+
+/* 印刷設定 */
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .deep{display:block}
+  .fill-a{display:block!important}
+  .write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec{break-inside:avoid;page-break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+.frac{display:inline-flex!important;flex-direction:column!important;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.95em;border:none!important;background:none!important;border-radius:0!important;padding:0!important}
+.frac .n{display:block!important;border:none!important;border-bottom:1.6px solid currentColor!important;background:none!important;border-radius:0!important;padding:0 4px 1px!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+.frac .d{display:block!important;border:none!important;background:none!important;border-radius:0!important;padding:1px 4px 0!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<!-- ページヘッダー -->
+<div class="pg-hd">
+  <div><span class="pg-badge">redo07</span><span class="pg-badge">★難問デー（L4）</span><span class="pg-badge">数学：文字式の利用</span><span class="pg-badge">英語：スライド枠</span></div>
+  <h1>redo07｜7/11(金)｜★難問の日（L4）</h1>
+  <p>7/11(金)　目安30分（英語はスライド＋数学の難問）　対象: 中1</p>
+  <p class="pg-cheer">きょうは★難問デー。テーマは「文字式の利用」。数や図のようすを <strong>a や x の文字で表す</strong>、中1の大きな山をL4でじっくり2問＋できたらでOKの★1問。方程式はまだ使わないよ。文章や図を「文字の式」に直して、ことばで説明できたら大成功。むずかしくて当たり前。むずかしい問題に向かったその時間が、いちばん力になるよ。いっしょにいこう。</p>
+</div>
+
+<!-- ============ 英語①：単語10（スライド枠） ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ①</span>
+  <span class="unit-name">単語 10問（意味 → ノートに英語）</span>
+  <span class="unit-time">目安 5分</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-body">
+    <div class="q vocab" data-id="W-1">
+      <div class="qword">山</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">mountain</div>
+        <div class="ans-read">読み：マウンテン</div>
+        <div class="ans-why">なぜこの語か：高くそびえる大きな山のこと。「mount（登る）」からきたことばで、登山＝mountain climbing。 例：There is a big mountain behind our school.（わたしたちの学校の後ろに大きな山があります。）</div>
+        <div class="bx-warn">moun-tain。</div>
+      </div>
+      <div class="gq" data-gid="W-1">
+        <div class="grade"><span class="gq-label">単語①</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-2">
+      <div class="qword">湖</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">lake</div>
+        <div class="ans-read">読み：レイク</div>
+        <div class="ans-why">なぜこの語か：陸に囲まれた大きな池のこと。「池」の pond より大きい。有名な湖の名前にも lake が使われる（Lake Biwa＝琵琶湖）。 例：We swim in the lake every summer.（わたしたちは毎年夏にその湖で泳ぎます。）</div>
+        <div class="bx-warn">lake。</div>
+      </div>
+      <div class="gq" data-gid="W-2">
+        <div class="grade"><span class="gq-label">単語②</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-3">
+      <div class="qword">森</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">forest</div>
+        <div class="ans-read">読み：フォレスト</div>
+        <div class="ans-why">なぜこの語か：木がたくさん密集しているところ。「wood（小さな雑木林）」より広い。映画「フォレスト・ガンプ」の Forrest は人の名前なので別物。 例：Many animals live in the forest.（たくさんの動物がその森に住んでいます。）</div>
+        <div class="bx-warn">for-est。</div>
+      </div>
+      <div class="gq" data-gid="W-3">
+        <div class="grade"><span class="gq-label">単語③</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-4">
+      <div class="qword">星</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">star</div>
+        <div class="ans-read">読み：スター</div>
+        <div class="ans-why">なぜこの語か：夜空に光る星のこと。「有名人・スター」の意味もある（同じつづり）。星型の形も star shaped という。 例：I can see many stars in the sky tonight.（今夜は空にたくさんの星が見えます。）</div>
+        <div class="bx-warn">star。</div>
+      </div>
+      <div class="gq" data-gid="W-4">
+        <div class="grade"><span class="gq-label">単語④</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-5">
+      <div class="qword">月</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">moon</div>
+        <div class="ans-read">読み：ムーン</div>
+        <div class="ans-why">なぜこの語か：夜空に見える月のこと。「month（月）」と語源がつながっている。「sun（太陽）」とセットで覚えると便利。 例：The moon is very bright tonight.（今夜は月がとても明るいです。）</div>
+        <div class="bx-warn"><span class="red">o は2つ</span>（mon ✕）。</div>
+      </div>
+      <div class="gq" data-gid="W-5">
+        <div class="grade"><span class="gq-label">単語⑤</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-6">
+      <div class="qword">うで</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">arm</div>
+        <div class="ans-read">読み：アーム</div>
+        <div class="ans-why">なぜこの語か：肩から手首までの部分。「leg（脚）」と対で覚えると体のパーツがまとめて入る。「arm chair（ひじかけいす）」のように日本語にもなっている。 例：She has long arms.（彼女は腕が長いです。）</div>
+        <div class="bx-warn">arm。</div>
+      </div>
+      <div class="gq" data-gid="W-6">
+        <div class="grade"><span class="gq-label">単語⑥</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-6','o')">○</button><button class="x" onclick="g(this,'W-6','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-7">
+      <div class="qword">あし（脚）</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">leg</div>
+        <div class="ans-read">読み：レッグ</div>
+        <div class="ans-why">なぜこの語か：腰から足首までの脚全体のこと。「foot（足先）」「arm（腕）」と合わせて体パーツをセットで覚えよう。テーブルの脚も leg という。 例：My leg hurts after the game.（試合のあと脚が痛いです。）</div>
+        <div class="bx-warn"><span class="red">g は2つ</span>（leg）。</div>
+      </div>
+      <div class="gq" data-gid="W-7">
+        <div class="grade"><span class="gq-label">単語⑦</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-7','o')">○</button><button class="x" onclick="g(this,'W-7','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-8">
+      <div class="qword">ゆび</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">finger</div>
+        <div class="ans-read">読み：フィンガー</div>
+        <div class="ans-why">なぜこの語か：手の指のこと（足のゆびは toe）。「フィンガーフード」など日本語にもなっている。hand（手）の中に5本の finger がある、とイメージして覚えよう。 例：She cut her finger while cooking.（彼女は料理中に指を切りました。）</div>
+        <div class="bx-warn">fin-ger。</div>
+      </div>
+      <div class="gq" data-gid="W-8">
+        <div class="grade"><span class="gq-label">単語⑧</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-8','o')">○</button><button class="x" onclick="g(this,'W-8','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-9">
+      <div class="qword">かみの毛</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">hair</div>
+        <div class="ans-read">読み：ヘア</div>
+        <div class="ans-why">なぜこの語か：頭の毛のまとまり全体を指す（数えないときは不可算名詞）。「hare（野ウサギ）」と読みが似ているので注意。ヘアスタイルの「ヘア」がこの語。 例：She has long hair.（彼女は髪が長いです。）</div>
+        <div class="bx-warn">hair。</div>
+      </div>
+      <div class="gq" data-gid="W-9">
+        <div class="grade"><span class="gq-label">単語⑨</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-9','o')">○</button><button class="x" onclick="g(this,'W-9','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="W-10">
+      <div class="qword">くび</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">neck</div>
+        <div class="ans-read">読み：ネック</div>
+        <div class="ans-why">なぜこの語か：頭と胴体をつなぐ部分。「ネックレス（necklace）」の「ネック」がこの語。「ボトルネック（bottleneck）」など日本語にもなっている。 例：I have a pain in my neck.（首が痛いです。）</div>
+        <div class="bx-warn">neck。</div>
+      </div>
+      <div class="gq" data-gid="W-10">
+        <div class="grade"><span class="gq-label">単語⑩</span>答えを見て丸つけ → <button class="o" onclick="g(this,'W-10','o')">○</button><button class="x" onclick="g(this,'W-10','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 英語②：熟語3（スライド枠） ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ②</span>
+  <span class="unit-name">熟語を3つ（意味 → ノートに英語）</span>
+  <span class="unit-time">目安 2分</span>
+</div>
+<div class="sec th-teal">
+  <div class="sec-body">
+    <div class="q vocab" data-id="P-1">
+      <div class="qword">〜を拾い上げる・迎えに行く</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">pick up</div>
+        <div class="ans-read">読み：ピック アップ</div>
+        <div class="ans-why">なぜこの語か：pick（つまむ）＋ up（上へ）で「下から拾い上げる」イメージ。「車で迎えに行く」にも使う。目的語が代名詞のときは pick it up と間に入る。 例：Can you pick up the pen for me?（そのペンを拾い上げてもらえますか？）</div>
+        <div class="bx-warn">up とセット。</div>
+      </div>
+      <div class="gq" data-gid="P-1">
+        <div class="grade"><span class="gq-label">熟語①</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="P-2">
+      <div class="qword">〜を捨てる</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">throw away</div>
+        <div class="ans-read">読み：スロー アウェイ</div>
+        <div class="ans-why">なぜこの語か：throw（投げる）＋ away（遠くへ）で「遠くへ投げ捨てる」イメージ。ゴミを捨てるときに使う。「throwaway（使い捨ての）」という形容詞にもなる。 例：Please throw away the old newspaper.（古い新聞紙を捨ててください。）</div>
+        <div class="bx-warn">throw のつづり（<span class="red">th</span>）。</div>
+      </div>
+      <div class="gq" data-gid="P-2">
+        <div class="grade"><span class="gq-label">熟語②</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+    <div class="q vocab" data-id="P-3">
+      <div class="qword">〜を書きとめる</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">write down</div>
+        <div class="ans-read">読み：ライト ダウン</div>
+        <div class="ans-why">なぜこの語か：write（書く）＋ down（下へ・固定する）で「メモとして書きとめる」イメージ。大事なことを忘れないように記録するときに使う。 例：Please write down your name and phone number.（名前と電話番号を書きとめてください。）</div>
+        <div class="bx-warn">down とセット。</div>
+      </div>
+      <div class="gq" data-gid="P-3">
+        <div class="grade"><span class="gq-label">熟語③</span>答えを見て丸つけ → <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 英語③：英作文1（スライド枠） ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ③</span>
+  <span class="unit-name">英作文1問（いまの文法を確認）</span>
+  <span class="unit-time">目安 3分</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-body">
+    <div class="q vocab" data-id="EW-1">
+      <div class="qword">私の父は東京で働いています。</div>
+      <div class="qcue">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">My father works in Tokyo.</div>
+        <div class="ans-read">読み：マイ ファーザー ワークス イン トウキョウ</div>
+        <div class="ans-why"><b>① 日本語を分ける：</b>「私の父は／東京で／働いています」。主語は my father＝三人称単数。「〜で」は場所。</div>
+        <div class="ans-why"><b>② 使う文法：</b>主語が三人称単数なので work→<span class="red">works</span>。「〜で（都市など広い場所）」は <span class="red">in</span>。</div>
+        <div class="ans-why"><b>③ 語順（左から組む）：</b>My father ＋ works ＋ in Tokyo.</div>
+        <div class="ans-why"><b>④ 形のチェック：</b>三単現の s を忘れず works。都市は in Tokyo。</div>
+        <div class="bx-warn">✕ My father work in Tokyo（s がない）→ ○ works。<br>✕ at Tokyo（都市に at）→ ○ in Tokyo。都市・国など広い場所は in。</div>
+        <div class="ans-why"><b>⑤ 確かめ算：</b>「三単現の s」「場所の前置詞 in」の2つができていれば正解。</div>
+        <div class="ans-why"><b>🌸 ゴール：</b>三単現の s を付け、都市など広い場所に in を選べる。</div>
+      </div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade"><span class="gq-label">英作文</span>答えを見て丸つけ → <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 数学：★難問デー（L4）文字式の利用 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">数学（★難問 L4）</span>
+  <span class="unit-name">文字式の利用　コア2問＋★さらに挑戦1問　まず自分で文字の式を立てる → 答え</span>
+  <span class="unit-time">目安 20分</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-body">
+
+    <!-- M-1 定価のx割引きの売値 L4（2段階） -->
+    <div class="q calc" data-id="M-1">
+      <div class="qnum">数①｜L4 難問　文章を2段階で文字式にする（割引きの売値）</div>
+      <div class="qbody">ある品物の定価は <strong>a 円</strong> です。<br>
+        このお店で、定価の <strong>x 割引き</strong> で売ることにしました。<br>
+        (1) <strong>x 割引き</strong> のとき、売値（実際にはらうねだん）を、a と x を使った式で表しなさい。<br>
+        (2) 定価が <strong>2000円</strong>、<strong>3割引き</strong> のとき、売値は何円ですか。(1)の式を使って求めなさい。</div>
+      <div class="draw"></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="osarai">
+          <div class="ot">⓪ 「割引き」って文字式でどう書くの？</div>
+          <p><b>やさしく言うと：</b>「1割」は全体を10こに分けた <b>1こぶん</b>。だから「1割＝<span class="frac"><span class="n">1</span><span class="d">10</span></span>＝0.1」。「x 割」は <b><span class="frac"><span class="n">x</span><span class="d">10</span></span></b> のこと。「x 割引き」は、定価から x 割ぶんを <b>ひいた残り</b>をはらう、という意味だよ。</p>
+          <div class="ot">① わかっていること／求めること</div>
+          <ul>
+            <li><b>わかっている：</b>定価は a 円。x 割引きで売る。</li>
+            <li><b>求める(1)：</b>x 割引きの売値を a と x の式で。</li>
+            <li><b>求める(2)：</b>a＝2000、x＝3 のときの売値（円）。</li>
+          </ul>
+          <div class="ex">定価1000円を「2割引き」なら？ → ひく分＝1000の2割＝1000×<span class="frac"><span class="n">2</span><span class="d">10</span></span>＝200円。売値＝1000−200＝<b>800円</b>。「定価−ひく分」が売値。</div>
+          <div class="miss"><b>「x 割引き」を「定価の x 割」とまちがえる</b>のが最頻。x 割は「ひく分」。はらうのは <b>残り</b>。だから (10−x) 割ぶんをはらう、と考えるとはやい。</div>
+        </div>
+        <div class="step"><span>ステップ1（1割を式に）</span>1割＝<span class="frac"><span class="n">1</span><span class="d">10</span></span>。だから定価 a 円の「x 割」＝a×<span class="frac"><span class="n">x</span><span class="d">10</span></span>＝<span class="frac"><span class="n">ax</span><span class="d">10</span></span>（円）。これが <strong>ひく分</strong>。</div>
+        <div class="step"><span>ステップ2（売値＝定価−ひく分）</span>売値＝a−<span class="frac"><span class="n">ax</span><span class="d">10</span></span>（円）。これでも正解。</div>
+        <div class="step"><span>ステップ3(1)（まとめてきれいに）</span>はらうのは「残りの (10−x) 割」とも言える。残りの割合＝<span class="frac"><span class="n">10−x</span><span class="d">10</span></span>。だから売値＝a×<span class="frac"><span class="n">10−x</span><span class="d">10</span></span>＝<span class="frac"><span class="n">a(10−x)</span><span class="d">10</span></span>（円）。<strong>a−<span class="frac"><span class="n">ax</span><span class="d">10</span></span> と <span class="frac"><span class="n">a(10−x)</span><span class="d">10</span></span> は同じ式</strong>（カッコを開くと a−<span class="frac"><span class="n">ax</span><span class="d">10</span></span>）。</div>
+        <div class="step"><span>ステップ4(2)（数を入れる）</span>a＝2000、x＝3 を入れる。売値＝<span class="frac"><span class="n">2000×(10−3)</span><span class="d">10</span></span>＝<span class="frac"><span class="n">2000×7</span><span class="d">10</span></span>＝<span class="frac"><span class="n">14000</span><span class="d">10</span></span>＝<strong>1400円</strong>。</div>
+        <div class="step"><span>確かめ</span>べつのやり方でも出す。3割引きのひく分＝2000×<span class="frac"><span class="n">3</span><span class="d">10</span></span>＝600円。売値＝2000−600＝1400円。式の答えと一致。</div>
+        <div class="bx bx-warn"><span class="red">「x 割引き」を「x 割をはらう」と読まない</span>。x 割は <b>ひく分</b>で、はらうのは残りの (10−x) 割。<span class="red">1割を <span class="frac"><span class="n">1</span><span class="d">100</span></span> や x×10 などにしない</span>（1割＝<span class="frac"><span class="n">1</span><span class="d">10</span></span>、x割＝<span class="frac"><span class="n">x</span><span class="d">10</span></span>）。<span class="red">(2)で式を使わず暗算だけで答えない</span>（(1)の式に a＝2000、x＝3 を入れて計算する練習がねらい）。</div>
+        <div class="bx bx-link">「全体を文字 a で、割合を <span class="frac"><span class="n">x</span><span class="d">10</span></span> や (10−x) で表す」は、このあとの <b>方程式の文章題（割合・売買・速さ）</b> で必ず使う。「文章の中の割引き・増し・○%を文字の式に直す」力は、中1〜中3を通じていちばん問われる場面のひとつ。塾のテストでも割引き・割合の文字式はL4の定番。2つの形（a−<span class="frac"><span class="n">ax</span><span class="d">10</span></span> と <span class="frac"><span class="n">a(10−x)</span><span class="d">10</span></span>）が同じだと気づけたら大きな前進。</div>
+        <div class="ans-final"><span>こたえ</span>(1) <span class="frac"><span class="n">a(10−x)</span><span class="d">10</span></span> 円（＝ a−<span class="frac"><span class="n">ax</span><span class="d">10</span></span> 円）　(2) 1400円</div>
+      </div>
+      <div class="gq" data-gid="redo07_M1a">
+        <div class="grade"><span class="gq-label">数①(1) 売値の式</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M1a','o')">○</button><button class="x" onclick="g(this,'redo07_M1a','x')">✕</button></div>
+        <div class="write3">「定価−ひく分」または「残り(10−x)割」の形で、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="redo07_M1b">
+        <div class="grade"><span class="gq-label">数①(2) 売値の数</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M1b','o')">○</button><button class="x" onclick="g(this,'redo07_M1b','x')">✕</button></div>
+        <div class="write3">(1)の式に a＝2000、x＝3 を入れる計算を、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- M-2 複合図形（長方形から正方形を切る）の面積と周 L4 -->
+    <div class="q calc" data-id="M-2">
+      <div class="qnum">数②｜L4 難問　図のようすを文字式で表す（面積と周の長さ）</div>
+      <div class="qbody">下の図のように、たて <strong>a cm</strong>、よこ <strong>b cm</strong> の長方形があります。<br>
+        この長方形の <strong>右下の角</strong> から、1辺が <strong>x cm</strong> の正方形を切り取りました。<br>
+        (1) 切り取ったあとの図形（色のついた部分）の <strong>面積</strong> を、a・b・x を使った式で表しなさい。<br>
+        (2) 切り取ったあとの図形の <strong>まわりの長さ（周）</strong> を、a・b を使った式で表しなさい。</div>
+      <div class="fig">
+        <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="たてa よこb の長方形の右下から1辺xの正方形を切り取ったL字形">
+          <!-- L字形（外周） -->
+          <polygon points="40,30 240,30 240,110 180,110 180,170 40,170"
+                   fill="#dbeafe" stroke="#3f6f9f" stroke-width="2.5"/>
+          <!-- 切り取った正方形（点線）60×60 -->
+          <polygon points="180,110 240,110 240,170 180,170"
+                   fill="#f4f7fb" stroke="#9aa7b5" stroke-width="1.5" stroke-dasharray="5 4"/>
+          <text x="210" y="144" font-size="11" fill="#9aa7b5" text-anchor="middle">切り取り</text>
+          <!-- たて a（左辺の外） -->
+          <text x="24" y="104" font-size="14" fill="#31415f" text-anchor="middle">a</text>
+          <!-- よこ b（上辺の上） -->
+          <text x="140" y="22" font-size="14" fill="#31415f" text-anchor="middle">b</text>
+          <!-- 正方形の辺 x（下の小辺） -->
+          <text x="210" y="187" font-size="13" fill="#9b514d" text-anchor="middle">x</text>
+          <!-- 正方形の辺 x（右の小辺） -->
+          <text x="254" y="144" font-size="13" fill="#9b514d" text-anchor="middle">x</text>
+        </svg>
+        <div class="fig-cap">色のついたL字形が「切り取ったあと」。点線の正方形（1辺 x cm）を切り取った。</div>
+      </div>
+      <div class="draw"></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="osarai">
+          <div class="ot">⓪ 面積と周は、文字でどう表す？</div>
+          <p><b>やさしく言うと：</b>長方形の <b>面積＝たて×よこ</b>、正方形の <b>面積＝1辺×1辺</b>。文字でも同じ。たて a・よこ b なら面積は <b>a×b＝ab</b>。1辺 x の正方形は <b>x×x＝x²</b>。<b>周（まわりの長さ）</b>は、外側をぐるっと1周した長さの合計だよ。</p>
+          <div class="ot">① わかっていること／求めること</div>
+          <ul>
+            <li><b>わかっている：</b>もとは たて a・よこ b の長方形。右下から 1辺 x の正方形を切った。</li>
+            <li><b>求める(1)：</b>残った色つき部分の面積（a・b・x の式）。</li>
+            <li><b>求める(2)：</b>残った図形の周（a・b の式。x は消える）。</li>
+          </ul>
+          <div class="ex">たて5・よこ8の長方形から1辺2の正方形を切ると面積は？ → 全体5×8＝40、切った2×2＝4、残り＝40−4＝<b>36</b>。「全体−切った分」でOK。</div>
+          <div class="miss"><b>周も「もとから減る」と思って x をひいてしまう</b>のが最頻。角を切ると、へこんだぶん辺が増えるので <b>周は変わらない</b>。図でへこみの2辺をずらすと、もとの長方形の周とぴったり同じ長さになるよ。</div>
+        </div>
+        <div class="step"><span>ステップ1(1)（全体の面積）</span>もとの長方形の面積＝たて×よこ＝a×b＝<strong>ab</strong>（cm²）。</div>
+        <div class="step"><span>ステップ2(1)（切った分・残り）</span>切り取った正方形の面積＝x×x＝<strong>x²</strong>（cm²）。残り＝全体−切った分＝<strong>ab−x²</strong>（cm²）。これが(1)の答え。</div>
+        <div class="step"><span>ステップ3(2)（周を辺ごとにたす）</span>L字形の周を上から順に：上 b ＋ 右(上) (a−x) ＋ 切り口・横 x ＋ 切り口・たて x ＋ 下(左) (b−x) ＋ 左 a。全部たすと b＋(a−x)＋x＋x＋(b−x)＋a。</div>
+        <div class="step"><span>ステップ4(2)（x が消える）</span>x の符号をまとめると −x＋x＋x−x＝0。残るのは a＋a＋b＋b＝<strong>2a＋2b</strong>（cm）。<strong>周はもとの長方形と同じ（x で変わらない）</strong>。</div>
+        <div class="step"><span>確かめ</span>a＝8、b＝10、x＝3 で計算。(1)面積＝8×10−3²＝80−9＝71cm²。(2)周＝2×8＋2×10＝16＋20＝36cm。図でへこみ部分の2辺を外へずらすと、たて8・よこ10の長方形の周になるので 36cm で一致。</div>
+        <div class="bx bx-warn"><span class="red">面積を ab−x としない</span>（正方形の面積は x×x＝<b>x²</b>。x ではない）。<span class="red">周から x をひいて 2a＋2b−2x などとしない</span>（角を切ると辺が増え、へこみの2辺がへった2辺をちょうど埋めるので、周は変わらず 2a＋2b）。<span class="red">(2)に x を残さない</span>（計算すると x は消える。残ったら計算ミス）。</div>
+        <div class="bx bx-link">「全体−部分」で面積を文字式にする、辺を1本ずつ文字でたして周を出す——この2つは、図形を数で考える <b>図形と式</b> の基本。「角を切っても周は変わらない」は、中2・中3の図形でも出てくる有名な性質。図のようすを ab や x² の文字式に直せると、長方形・正方形の面積の公式が「文字でも同じ」と腑に落ちる。</div>
+        <div class="ans-final"><span>こたえ</span>(1) ab−x²（cm²）　(2) 2a＋2b（cm）</div>
+      </div>
+      <div class="gq" data-gid="redo07_M2a">
+        <div class="grade"><span class="gq-label">数②(1) 面積の式</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M2a','o')">○</button><button class="x" onclick="g(this,'redo07_M2a','x')">✕</button></div>
+        <div class="write3">「全体 ab − 切った x²」の形で、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="redo07_M2b">
+        <div class="grade"><span class="gq-label">数②(2) 周の式</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M2b','o')">○</button><button class="x" onclick="g(this,'redo07_M2b','x')">✕</button></div>
+        <div class="write3">辺を1本ずつたして x が消えること（2a＋2b）を、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- M-3 ★さらに挑戦：規則性のn式（碁石を正方形の外周に並べる）任意 L4 -->
+    <div class="q calc" data-id="M-3">
+      <div class="qnum">数③｜★さらに挑戦（できたらでOK）　L4　規則を見つけて n の式にする（碁石ならべ）</div>
+      <div class="qbody">碁石（ごいし）を、正方形の <strong>外周（まわり）</strong> にすき間なく1列に並べます。<br>
+        1辺に <strong>n 個</strong> ずつ並べるとき、<br>
+        (1) 使う碁石の <strong>全部の個数</strong> を、n を使った式で表しなさい。<br>
+        (2) 全部で <strong>96 個</strong> 使ったとき、1辺は何個ですか。(1)の式を使って求めなさい。</div>
+      <div class="fig">
+        <svg viewBox="0 0 240 240" width="200" height="200" role="img" aria-label="正方形の外周に1辺5個の碁石を並べた図">
+          <!-- 1辺n=5 の外周（角は1回だけ数える）。16個 = 4n-4 -->
+          <g fill="#4a5b6e">
+            <!-- 上の行 5個 -->
+            <circle cx="40" cy="40" r="11"/><circle cx="80" cy="40" r="11"/><circle cx="120" cy="40" r="11"/><circle cx="160" cy="40" r="11"/><circle cx="200" cy="40" r="11"/>
+            <!-- 下の行 5個 -->
+            <circle cx="40" cy="200" r="11"/><circle cx="80" cy="200" r="11"/><circle cx="120" cy="200" r="11"/><circle cx="160" cy="200" r="11"/><circle cx="200" cy="200" r="11"/>
+            <!-- 左の列（上下をのぞく3個） -->
+            <circle cx="40" cy="80" r="11"/><circle cx="40" cy="120" r="11"/><circle cx="40" cy="160" r="11"/>
+            <!-- 右の列（上下をのぞく3個） -->
+            <circle cx="200" cy="80" r="11"/><circle cx="200" cy="120" r="11"/><circle cx="200" cy="160" r="11"/>
+          </g>
+          <text x="120" y="228" font-size="11" fill="#6a7684" text-anchor="middle">1辺 n＝5 のれい（全部で 16 個）</text>
+        </svg>
+        <div class="fig-cap">図は 1辺 n＝5 の例。角の碁石は2つの辺で共通だから「数えすぎ」に注意。</div>
+      </div>
+      <div class="draw"></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="osarai">
+          <div class="ot">⓪ 「外周だけ・角は1回」で数える</div>
+          <p><b>やさしく言うと：</b>正方形には辺が4つ。1辺 n 個だから単純には 4×n 個…と思うけど、<b>4つの角の碁石は、となりあう2辺で1個を2回数えている</b>。だから数えすぎた分（角4個）をひく必要があるよ。</p>
+          <div class="ot">① わかっていること／求めること</div>
+          <ul>
+            <li><b>わかっている：</b>正方形の外周に、1辺 n 個ずつ並べる。</li>
+            <li><b>求める(1)：</b>全部の個数を n の式で。</li>
+            <li><b>求める(2)：</b>全部で96個のときの n（1辺の個数）。</li>
+          </ul>
+          <div class="ex">1辺 n＝5 で数えてみる。4辺ぶん＝4×5＝20。でも角を2回ずつ数えたので 4個ひく → 20−4＝<b>16個</b>。図と一致。</div>
+          <div class="miss"><b>4×n でそのまま答えてしまう（角を引き忘れる）</b>のが最頻。角の4個は重なって2回数えているので、必ず −4 する。</div>
+        </div>
+        <div class="step"><span>ステップ1(1)（まず4辺ぶん）</span>1辺 n 個が4辺ぶんで n×4＝<strong>4n</strong>（個）。ただし角を数えすぎている。</div>
+        <div class="step"><span>ステップ2(1)（数えすぎをひく）</span>正方形の角は4つ。各角の碁石は、となりあう2辺で1回ずつ＝2回数えている。だから余分は4個。全部＝4n−4＝<strong>4n−4</strong>（個）。これが(1)の答え。</div>
+        <div class="step"><span>ステップ3(2)（式に96を入れる）</span>(1)より全部の個数は 4n−4。これが96個だから、文章を読みかえると「4n−4＝96 になる n を求める」。4n−4＝96 → 4n＝100 → n＝<strong>25</strong>（個）。</div>
+        <div class="step"><span>確かめ</span>n＝25 を(1)の式に入れる：4×25−4＝100−4＝96個。たしかに96個で、(2)と一致。</div>
+        <div class="bx bx-warn"><span class="red">4×n でそのまま答えない</span>（角の4個を2回数えているので −4）。<span class="red">「角を4回ぜんぶ余分」と思って −8 などにしない</span>（角は2回数えたうちの1回ぶん＝1個ずつ余分。4角で −4）。<span class="red">(2)を「96÷4＝24」で答えない</span>（−4を戻し忘れ。正しくは 4n−4＝96 → 4n＝100 → n＝25）。</div>
+        <div class="bx bx-link">「図や並びのきまりを見つけて n の式にする」のが <b>規則性（数の並び・図形の数え方）</b>。高校入試でも超頻出で、中3まで形を変えて出続ける。「単純に数える → 重なりをひく」という考え方は、組み合わせや表の数え方にもつながる強力な道具。1辺 n の例で先に試して式を確かめるクセは、規則性をとくときの王道だよ。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 4n−4（個）　(2) 25個</div>
+      </div>
+      <div class="gq" data-gid="redo07_M3a">
+        <div class="grade"><span class="gq-label">数③(1) 個数の式</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M3a','o')">○</button><button class="x" onclick="g(this,'redo07_M3a','x')">✕</button></div>
+        <div class="write3">「4辺で4n − 角の重なり4」で 4n−4 になることを、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="redo07_M3b">
+        <div class="grade"><span class="gq-label">数③(2) 1辺の個数</span>答えを見て丸つけ → <button class="o" onclick="g(this,'redo07_M3b','o')">○</button><button class="x" onclick="g(this,'redo07_M3b','x')">✕</button></div>
+        <div class="write3">4n−4＝96 → 4n＝100 → n＝25 の流れを、もう3回書いてみよう。</div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（redo07 難問デー 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">きょうは★難問デー。テーマは「文字式の利用」。割引きの売値を a と x の2段階の式に、図のようすを ab−x² と 2a＋2b の文字式に、そして碁石の並びを 4n−4 の式に——L4でじっくり向かった。文章や図を「文字の式」に直して、ことばで説明し、最後に数を入れて確かめ算までできたら大成功。ここで身につけた「ようすを文字で表す力」は、このあとの方程式の文章題でずっと効いてくる。よくがんばったね。</div>
+
+</div>
+
+<script>
+var KEY='redo07';
+
+// 答えトグル
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+// 自己採点 ○✕（採点ユニット .gq 単位＝小問ごと）
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}
+  var mt=box.querySelector('.mt');
+  var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{
+    if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}
+    if(w3)w3.style.display='none';
+  }
+}
+
+// ミス分類（.gq の data-gid 単位）
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}
+  var w=btn.parentNode;
+  w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);
+}
+
+// 完了
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+
+// 復元（.gq＝採点ユニット単位）
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var mt=box.querySelector('.mt');
+        if(mt){
+          mt.classList.add('open');
+          var mv=localStorage.getItem(KEY+'_'+id+'_m');
+          if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}
+        }
+        var w3=box.querySelector('.write3');
+        if(w3)w3.style.display='block';
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
+};
+/* ===== 復習英語キュー送りフック（×/○・英語問題のみ・自己ループ防止） ===== */
+function sendToRevQ(btn,id,result){
+  if(typeof PRE!=='undefined' && PRE==='revq_') return;        // 受け皿自身では動かさない
+  if(typeof KEY==='undefined') return;
+  if(KEY.indexOf('revq')===0) return;
+  var q=btn&&btn.closest?btn.closest('.q'):null; if(!q) return;
+  if(q.classList.contains('calc')) return;                      // 数学除外
+  var engPrint=!!document.querySelector('[data-eng="1"]');
+  var isVocab=q.classList.contains('vocab'), isWriting=q.classList.contains('writing');
+  if(!engPrint && !isVocab && !isWriting) return;               // 混在で英語クラス無し→送らない
+  var kindEl=q.querySelector('.qnum-e'); var kindRaw=kindEl?(kindEl.textContent||''):'';
+  if(/漢字|書き|読み/.test(kindRaw)) return;                    // 暗記カードの漢字除外
+  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.qbody');
+  var enEl=q.querySelector('.ans-final')||q.querySelector('.ans-box .ans-main');
+  if(!jpEl||!enEl) return;
+  var jp=cleanRevQText(jpEl), en=cleanRevQText(enEl);
+  if(!jp||!en) return;
+  if(!/[A-Za-z]/.test(en)) return;                              // 答えに英字なし→英語でない→除外
+  if(result==='o'){bumpRevQPo(en);return;}                      // ○：既存項目の po++ のみ（新規追加しない）
+  var kind='単語',badge='tango';
+  if(isWriting||/英作文/.test(kindRaw)||/[.!?]\s*$/.test(en)){kind='英作文';badge='eisaku';}
+  else if(/熟語/.test(kindRaw)){kind='熟語';badge='jukugo';}
+  pushRevQDyn({jp:jp,en:en,kind:kind,badge:badge,day:revqToday(),src:(KEY+'_'+id)});
+}
+function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[（(][^）)]*でもOK[^）)]*[）)]/g,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function revqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function revqNorm(s){return String(s||'').toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function bumpRevQPo(en){try{var K='revq_dyn';var raw=localStorage.getItem(K);if(raw==null)return;var arr;try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;var key=revqNorm(en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].po=(+arr[i].po||0)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}}catch(e){}}
+function pushRevQDyn(item){try{var K='revq_dyn';var raw=localStorage.getItem(K);var arr;if(raw==null){arr=[];}else{try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;}var key=revqNorm(item.en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;arr[i].po=0;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;item.po=0;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
+</script>
+</body>
+</html>

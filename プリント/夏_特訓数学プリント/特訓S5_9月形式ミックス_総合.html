@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓S5 9月形式ミックス ― 単元は自分で見抜け｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.timer-note{background:#fdeef0;border:2px solid #e3b3bb;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;color:#8a3a48;font-weight:700}
+.timer-note::before{content:"⏱ 時間の目安";display:block;font-size:13px;font-weight:900;color:#a23a4c;margin-bottom:4px}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:12px 16px;margin:14px 0}
+.cardbox::before{content:"📋 配点（ぜんぶで100点ぶん）と走り方";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:6px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13px;line-height:1.95;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ これは何の問題だった？（単元の正体）";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ ★よくある間違い（ここで20点が消える）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-chk{background:#eef6fb;border-left:4px solid #5b8fbf}
+.bx-chk::before{content:"✅ 検算（本番でも必ずやる）";display:block;font-size:12px;font-weight:800;color:#2f5a8a;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.qtable{border-collapse:collapse;margin:10px 0;font-size:13px}
+.qtable th,.qtable td{border:1px solid #c9cfc6;padding:5px 12px;text-align:center}
+.qtable th{background:#eef1ec;font-weight:800;color:#46524a}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e3e2d9;border-radius:8px;padding:8px;width:100%;height:auto}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.step.q5{border-left-color:#d98aa7;background:#fdf2f6}
+.step.q5 > span:first-child{background:#f7dce8;border-color:#eebccf;color:#9a3f63}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:16px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:.95em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="full-n1" data-audited-units="8" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓S5</span><span class="pg-badge">数学：9月形式ミックス</span><span class="pg-badge">短縮ミックス8採点単位／旧L表示</span></div>
+  <h1>特訓S5 9月形式ミックス ― 30分の短縮ミックス</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問8・自作配点100点）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">このプリントには<strong>単元名がどこにも書いてない</strong>。それがねらい。きみは今、むずかしい問題が解けないんじゃない。<strong>「どの道具を使えばいいか」を決めるところ</strong>でつまずいてる。単元名が書いてあれば解ける問題も、伏せられると手が止まる。だからここでは、問題文だけを読んで「これは何の問題だ？」を自分で見抜く練習をする。今まで S1〜S4 とプリントで、道具はぜんぶそろえてきた。今日はその道具箱から<strong>自分で選ぶ日</strong>だよ🌸</p>
+</div>
+
+<div class="timer-note">
+  タイマーを<strong>30分</strong>にセットしてスタート。途中で解説を開かない。30分で止めて、そのあと○✕で自己採点しよう。<br>
+  本番の9月は50分・観測実物は20採点単位。本紙は8採点単位の短縮ミックスであり、本番通しの再現ではありません。
+</div>
+
+<div class="cardbox"><ol>
+  <li><b>問1・問2 … 各8点</b>　／　<b>問3 … 10点</b>　／　<b>問4・問5 … 各14点</b></li>
+  <li><b>問6 … 16点</b>　／　<b>問7 … 16点</b>　／　<b>問8 … 14点</b>　（合計100点）</li>
+  <li>順番どおりに解かなくていい。<b>まず全部ざっと読んで、解けそうな問題から取る</b>。</li>
+  <li>手が止まったら、<b>分かっていることを式か図にする</b>。書けば道具は見えてくる。</li>
+  <li>空欄をつくらない。<b>途中式まででも書けば、それが点になる</b>。</li>
+  <li>終わったら○✕とミス型を記録 → ✕は自動で復習キューに入る。</li>
+</ol></div>
+
+<div class="unit-banner"><span class="unit-num">本番形式</span><span class="unit-name">問1 〜 問8（単元名は伏せてあります）</span><span class="unit-time">目安 30分・100点</span></div>
+
+<!-- ===== 問1 ===== -->
+<div class="q calc" data-id="1">
+  <div class="qbody">
+    <span class="lead">問1</span>次の計算をしなさい。<br>
+    <span class="math">(−3)<sup>3</sup> ÷ <span class="frac"><span class="n">9</span><span class="d">2</span></span> − 4 × (−3<sup>2</sup>)</span></div>
+  <div class="note-draw">まず何を聞かれているか、何が分かっているかをノートに書き出そう。単元は自分で見抜こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">これは <strong>「正負の数・累乗・分数のわり算」の混合計算</strong>だった。9月の大問1にそのまま出る型。ここは絶対に落とせない8点。むずかしさゼロ、でも罠が3つ仕込んである。順番は 累乗 → かけ算わり算 → たし算ひき算、これだけ。</div>
+    <div class="step q1"><span>①</span>累乗を先に：<span class="math">(−3)<sup>3</sup></span> は −3 を3回かける → −3×−3×−3 ＝ −27（マイナスが3回＝奇数回だから答えはマイナス）</div>
+    <div class="step q1"><span>②</span>もうひとつの累乗：<span class="math">−3<sup>2</sup></span> は 3 を2乗してからマイナス → −(3×3) ＝ −9（カッコがないから、マイナスは2乗されない）</div>
+    <div class="step q1"><span>③</span>分数のわり算は逆数をかける：−27 ÷ <span class="frac"><span class="n">9</span><span class="d">2</span></span> ＝ −27 × <span class="frac"><span class="n">2</span><span class="d">9</span></span> ＝ −6</div>
+    <div class="step q1"><span>④</span>もう一方：4 × (−9) ＝ −36</div>
+    <div class="step q1"><span>⑤</span>最後に引き算：−6 − (−36) ＝ −6 ＋ 36 ＝ 30</div>
+    <div class="bx bx-warn">
+      ①<span class="red">(−3)<sup>3</sup> を ＋27 としない</span>。マイナスは3回かかる（奇数回＝マイナス）。2乗なら＋、3乗なら−、と指の本数で数えよう。<br>
+      ②−3<sup>2</sup> を (−3)<sup>2</sup>＝＋9 と読み違えない。これが本番でいちばん多い落とし方。<strong>カッコがあるか無いかだけ</strong>を見る。カッコなし → マイナスは外に置いてけぼり → −9。<br>
+      ③−(−36) の符号を落として −6−36＝−42 としない。「−」と「−」で＋。ここで符号を1つ落とすだけで8点が消える。
+    </div>
+    <div class="bx bx-chk">出た答え 30 を、順番を変えて確かめる：−27×<span class="frac"><span class="n">2</span><span class="d">9</span></span>＝−6、4×(−9)＝−36。−6−(−36)＝30。もう一度、符号だけを目で追って一致すればOK。</div>
+    <div class="ans-final"><span>こたえ</span>30</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m22_1"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'m22_1','o')">○</button><button class="x" onclick="g(this,'m22_1','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">どの単元か見抜けなかった</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①何を聞かれたか ②どの道具（単元）を使うか をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問2 ===== -->
+<div class="q calc" data-id="2">
+  <div class="qbody">
+    <span class="lead">問2</span>次の方程式を解きなさい。<br>
+    <span class="math"><span class="frac"><span class="n">2x＋1</span><span class="d">5</span></span> − <span class="frac"><span class="n">x−3</span><span class="d">2</span></span> ＝ 1</span></div>
+  <div class="note-draw">まず何を聞かれているか、何が分かっているかをノートに書き出そう。単元は自分で見抜こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">これは <strong>「分数をふくむ一次方程式」</strong>だった。やることはたった1つ、分母をはらって整数の式にする。分母 5 と 2 の最小公倍数 10 を、両辺のぜんぶにかける。</div>
+    <div class="step q2"><span>①</span>両辺に10をかける：10×<span class="frac"><span class="n">2x＋1</span><span class="d">5</span></span> − 10×<span class="frac"><span class="n">x−3</span><span class="d">2</span></span> ＝ 10×1</div>
+    <div class="step q2"><span>②</span>分子はかたまり。必ずカッコをつける → <span class="math">2(2x＋1) − 5(x−3) ＝ 10</span></div>
+    <div class="step q2"><span>③</span>カッコをはずす：<span class="math">4x＋2 − 5x＋15 ＝ 10</span>（−5×(−3) ＝ ＋15）</div>
+    <div class="step q2"><span>④</span>まとめる：<span class="math">−x ＋ 17 ＝ 10</span> → <span class="math">−x ＝ −7</span> → <span class="math">x ＝ 7</span></div>
+    <div class="bx bx-warn">
+      ①<span class="red">分子にカッコをつけ忘れる</span>のが最大の失点源。カッコなしで 2×2x＋1 − 5×x−3 とすると、そこから先ぜんぶ狂う。分子が2文字以上ならカッコ、これは例外なし。<br>
+      ②−5(x−3) を −5x−15 としない。マイナス × マイナス は ＋。−5x ＋15。かける相手が2つあることを忘れない。<br>
+      ③右辺の 1 に10をかけ忘れない。「＝1」だからそのまま、は不正解。両辺すべてに10。等号の右も左も、同じことをする。
+    </div>
+    <div class="bx bx-chk">x＝7 を元の式に入れる：<span class="frac"><span class="n">2×7＋1</span><span class="d">5</span></span>＝<span class="frac"><span class="n">15</span><span class="d">5</span></span>＝3、<span class="frac"><span class="n">7−3</span><span class="d">2</span></span>＝<span class="frac"><span class="n">4</span><span class="d">2</span></span>＝2。3 − 2 ＝ 1 ○ 一致した。方程式は<strong>必ず代入して確かめられる</strong>。ここは検算しない理由がない。</div>
+    <div class="ans-final"><span>こたえ</span>x ＝ 7</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="m22_2"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'m22_2','o')">○</button><button class="x" onclick="g(this,'m22_2','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">どの単元か見抜けなかった</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①何を聞かれたか ②どの道具（単元）を使うか をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問3 ===== -->
+<div class="q calc" data-id="3">
+  <div class="qbody">
+    <span class="lead">問3</span>ある人が5回のテストを受けました。下の表は、<strong>70点を基準</strong>にして、各回の点数が基準より何点多いか少ないかを表したものです。この5回の<strong>平均点</strong>を求めなさい。
+    <table class="qtable">
+      <tr><th>回</th><td>1回目</td><td>2回目</td><td>3回目</td><td>4回目</td><td>5回目</td></tr>
+      <tr><th>基準との差（点）</th><td>＋8</td><td>−6</td><td>＋15</td><td>−11</td><td>＋4</td></tr>
+    </table>
+  </div>
+  <div class="note-draw">まず何を聞かれているか、何が分かっているかをノートに書き出そう。単元は自分で見抜こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">これは <strong>「正負の数の利用・基準を使った平均」</strong>だった。9月の大問2にほぼ毎年出る型。全部の点数を書き出して足してもいいけれど、差だけで平均を出して、最後に基準を足すほうがずっと速くてミスも少ない。それが「基準を決める」というやり方の意味。</div>
+    <div class="step q3"><span>①</span>差をぜんぶ足す（符号ごと足す）：＋8 −6 ＋15 −11 ＋4<br>プラス組：8＋15＋4 ＝ 27　／　マイナス組：6＋11 ＝ 17　→　27 − 17 ＝ ＋10</div>
+    <div class="step q3"><span>②</span>差の平均：10 ÷ 5 ＝ ＋2（平均して基準より2点多い、という意味）</div>
+    <div class="step q3"><span>③</span>基準を足してもどす：70 ＋ 2 ＝ 72点</div>
+    <div class="bx bx-warn">
+      ①<span class="red">答えを「2点」としない</span>。これがいちばん多い失点。2 は差の平均であって、聞かれているのは平均点。最後に基準70を足してもどすのを忘れない。問題文の最後の一言（「平均点を求めなさい」）に線を引いておこう。<br>
+      ②符号を落として 8＋6＋15＋11＋4＝44 としない。マイナスはマイナスのまま足す。プラス組・マイナス組に分けて先に合計すると、符号事故がほぼ消える。<br>
+      ③割る数は回数の5。項目の数を数えまちがえない。
+    </div>
+    <div class="bx bx-chk">本当の点数を書き出して確かめる：78、64、85、59、74。合計＝360。360 ÷ 5 ＝ 72 ○ ぴったり一致。<strong>「差でやったら、必ず実点で1回確かめる」</strong>クセをつければ、この10点は一生落とさない。</div>
+    <div class="ans-final"><span>こたえ</span>72点</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c8" target="_blank">マル秘テクニック集 第8章</a></div>
+  </div>
+  <div class="gq" data-gid="m22_3"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'m22_3','o')">○</button><button class="x" onclick="g(this,'m22_3','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">どの単元か見抜けなかった</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①何を聞かれたか ②どの道具（単元）を使うか をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問4 ===== -->
+<div class="q calc" data-id="4">
+  <div class="qbody">
+    <span class="lead">問4</span>何人かの子どもに、あめを配ります。1人に5個ずつ配ると12個あまり、1人に7個ずつ配ると6個たりません。子どもの人数と、あめの個数を求めなさい。</div>
+  <div class="note-draw">まず何を聞かれているか、何が分かっているかをノートに書き出そう。単元は自分で見抜こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">これは <strong>「方程式の利用・過不足（あまる／たりない）」</strong>だった。9月の大問3の定番。見抜くカギは「あまる」「たりない」という言葉。この2語を見たら、頭の中でこう唱える →「同じものを2通りの式で表して、＝で結ぶ」。今回、2通りで表せる同じものはあめの個数。</div>
+    <div class="step q4"><span>①</span>子どもの人数を <span class="math">x</span> 人とおく（あめの個数ではなく人数をxにするのがコツ）</div>
+    <div class="step q4"><span>②</span>5個ずつ配ると12個あまる → 配ったぶん 5x に、あまった12を足すと全部 → あめ ＝ <span class="math">5x ＋ 12</span></div>
+    <div class="step q4"><span>③</span>7個ずつ配ると6個たりない → 7x 必要なのに、6個足りない → あめは 7x より6少ない → あめ ＝ <span class="math">7x − 6</span></div>
+    <div class="step q4"><span>④</span>同じ「あめの個数」だから ＝ で結ぶ：<span class="math">5x ＋ 12 ＝ 7x − 6</span></div>
+    <div class="step q4"><span>⑤</span>解く：12 ＋ 6 ＝ 7x − 5x → 18 ＝ 2x → <span class="math">x ＝ 9</span>（子ども9人）<br>あめ ＝ 5×9 ＋ 12 ＝ 57個</div>
+    <div class="bx bx-warn">
+      ①<span class="red">「たりない」なのに ＋6 としない</span>。ここが過不足の心臓部。たりない＝必要な数のほうが多い。だから実際のあめは 7x − 6。「あまる＝＋」「たりない＝−」と、手のひらに書いておこう。<br>
+      ②x をあめの個数とおいてしまうと、式が作れなくて手が止まる。x は「配る相手（人数）」。人数が決まれば、あめは2通りで書ける。<br>
+      ③最後に人数だけ答えて終わらない。聞かれているのは人数とあめの個数の2つ。答えを書く前に問題文の最後の行をもう一度読む。
+    </div>
+    <div class="bx bx-chk">9人・57個で確かめる。5個ずつ → 5×9＝45個配って 57−45＝12個あまる○。7個ずつ → 7×9＝63個必要だが57個しかない → 63−57＝6個たりない○。<strong>両方の条件で合う</strong>から正解。過不足は必ず2回検算できる。</div>
+    <div class="ans-final"><span>こたえ</span>子ども 9人／あめ 57個</div>
+      <div class="tec-link">型：<b>過不足型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="m22_4"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'m22_4','o')">○</button><button class="x" onclick="g(this,'m22_4','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">どの単元か見抜けなかった</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①何を聞かれたか ②どの道具（単元）を使うか をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問5 ===== -->
+<div class="q calc" data-id="5">
+  <div class="qbody">
+    <span class="lead">問5</span>ある品物に、原価の<strong>25%</strong>の利益を見込んで定価をつけました。しかし売れなかったので、<strong>定価の1割引き</strong>で売ったところ、利益は<strong>150円</strong>になりました。この品物の原価はいくらですか。</div>
+  <div class="note-draw">まず何を聞かれているか、何が分かっているかをノートに書き出そう。単元は自分で見抜こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">これは <strong>「方程式の利用・割合（原価と定価と利益）」</strong>だった。きみがいちばん多く点を落としているのがこの型。でも、覚えることはたった3行しかない。<br>
+      ・定価 ＝ 原価 ×（1 ＋ 利益の割合）<br>
+      ・◯割引きの売値 ＝ 定価 ×（1 − 割引きの割合）<br>
+      ・利益 ＝ 売れた値段 − 原価（定価ではない！実際に売れた値段）<br>
+      この3行を先にノートに書いてから、数を入れるだけ。</div>
+    <div class="step q5"><span>①</span>原価を <span class="math">x</span> 円とおく</div>
+    <div class="step q5"><span>②</span>25% ＝ 0.25。定価 ＝ x ×（1 ＋ 0.25）＝ <span class="math">1.25x</span> 円</div>
+    <div class="step q5"><span>③</span>1割引き ＝ 0.1 ぶん引く ＝ ×0.9。売値 ＝ 1.25x × 0.9 ＝ <span class="math">1.125x</span> 円</div>
+    <div class="step q5"><span>④</span>利益 ＝ 売値 − 原価 ＝ 150 → <span class="math">1.125x − x ＝ 150</span> → <span class="math">0.125x ＝ 150</span></div>
+    <div class="step q5"><span>⑤</span><span class="math">x ＝ 150 ÷ 0.125 ＝ 1200</span> → 原価 1200円</div>
+    <div class="bx bx-warn">
+      ①<span class="red">25% を 0.2 と読まない</span>。ここが最大の落とし穴。「2が見えたから0.2」ではない。%は100でわる → 25% ＝ 0.25。もし原価が600円なら、定価は 600×1.2＝720円 ではなく 600×1.25＝750円。この1回の読みまちがいで14点が消える。<br>
+      ②1割引きを ×0.1 としない。引くのは1割で、残るのは9割 → ×0.9。「引き」と書いてあったら 1から引いた数をかける。<br>
+      ③利益＝定価−原価 としない。売れたのは定価ではなく1割引きの値段。「実際にいくらで売れたか」を必ず先に出す。<br>
+      ④%と割をごちゃまぜにしない。1割＝10%＝0.1。この問題はわざと「%」と「割」を混ぜてある。本番も混ぜてくる。落ち着いて、両方とも小数に直してから使う。
+    </div>
+    <div class="bx bx-chk">原価1200円で確かめる。定価 ＝ 1200×1.25 ＝ 1500円。1割引き ＝ 1500×0.9 ＝ 1350円。利益 ＝ 1350 − 1200 ＝ 150円 ○ 問題文とぴったり一致。<strong>割合の問題は、出た答えを頭からたどり直せば必ず検算できる</strong>。ここを検算する20秒が、14点を守る。</div>
+    <div class="ans-final"><span>こたえ</span>原価 1200円</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c3" target="_blank">マル秘テクニック集 第3章</a></div>
+  </div>
+  <div class="gq" data-gid="m22_5"><div class="grade"><span class="gq-label">問5</span>○✕ → <button class="o" onclick="g(this,'m22_5','o')">○</button><button class="x" onclick="g(this,'m22_5','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">どの単元か見抜けなかった</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①何を聞かれたか ②どの道具（単元）を使うか をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問6 ===== -->
+<div class="q calc" data-id="6">
+  <div class="qbody">
+    <span class="lead">問6</span>下の図のように、碁石を<strong>正方形の形の周りだけ</strong>にならべます。1辺に3個ならべると全部で8個、1辺に4個ならべると全部で12個必要です。<br>
+    ① 1辺に n 個ならべるとき、必要な碁石の個数を n を使った式で表しなさい。<br>
+    ② 碁石を全部で<strong>96個</strong>使ったとき、1辺には何個ならんでいますか。</div>
+  <svg class="fig" style="max-width:460px" viewBox="0 0 460 190" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="46" cy="52" r="9" fill="#3f4a5a"/><circle cx="72" cy="52" r="9" fill="#3f4a5a"/><circle cx="98" cy="52" r="9" fill="#3f4a5a"/>
+    <circle cx="46" cy="78" r="9" fill="#3f4a5a"/><circle cx="98" cy="78" r="9" fill="#3f4a5a"/>
+    <circle cx="46" cy="104" r="9" fill="#3f4a5a"/><circle cx="72" cy="104" r="9" fill="#3f4a5a"/><circle cx="98" cy="104" r="9" fill="#3f4a5a"/>
+    <text x="30" y="166" font-size="12" font-weight="700" fill="#31415f">1辺に3個 → 8個</text>
+    <circle cx="250" cy="52" r="9" fill="#3f4a5a"/><circle cx="276" cy="52" r="9" fill="#3f4a5a"/><circle cx="302" cy="52" r="9" fill="#3f4a5a"/><circle cx="328" cy="52" r="9" fill="#3f4a5a"/>
+    <circle cx="250" cy="78" r="9" fill="#3f4a5a"/><circle cx="328" cy="78" r="9" fill="#3f4a5a"/>
+    <circle cx="250" cy="104" r="9" fill="#3f4a5a"/><circle cx="328" cy="104" r="9" fill="#3f4a5a"/>
+    <circle cx="250" cy="130" r="9" fill="#3f4a5a"/><circle cx="276" cy="130" r="9" fill="#3f4a5a"/><circle cx="302" cy="130" r="9" fill="#3f4a5a"/><circle cx="328" cy="130" r="9" fill="#3f4a5a"/>
+    <text x="234" y="166" font-size="12" font-weight="700" fill="#31415f">1辺に4個 → 12個</text>
+  </svg>
+  <div class="note-draw">まず何を聞かれているか、何が分かっているかをノートに書き出そう。単元は自分で見抜こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">これは <strong>「規則性・文字式で表す＋逆算」</strong>だった。9月の大問4の型。規則性の問題は2段構え。前半で n の式を作り、後半でその式を方程式として逆に解く。②は「式に代入する」のではなく「式＝96 を解く」。ここが分かれ目。</div>
+    <div class="step q1"><span>①-a</span>ふえ方を見る：1辺3個 → 8個、1辺4個 → 12個。1辺が1ふえると4ふえる。だから式は <span class="math">4n ＋ ◯</span> の形。</div>
+    <div class="step q1"><span>①-b</span>n＝3 を入れて 4×3＋◯＝8 → 12＋◯＝8 → ◯＝−4。よって <span class="math">4n − 4</span>（個）</div>
+    <div class="step q1"><span>①-c</span>なぜ −4 なのか：4辺それぞれに n 個で 4n。でもそれだと4すみの碁石を2回ずつ数えている。だぶった4個をひく → 4n − 4。丸暗記じゃなく、この理由で覚える。</div>
+    <div class="step q1"><span>②</span>逆算：<span class="math">4n − 4 ＝ 96</span> → <span class="math">4n ＝ 100</span> → <span class="math">n ＝ 25</span> → 1辺に25個</div>
+    <div class="bx bx-warn">
+      ①<span class="red">答えを 4n としない</span>。かどの碁石を2回数えている。図で n＝3 を実際に数えると 4×3＝12 ではなく 8個。作った式は、必ず問題の数（n＝3、n＝4）を入れて合うか確かめる。<br>
+      ②96 ÷ 4 ＝ 24 と答えない。式は 4n −4。先に ＋4 してから ÷4。「−4を無視して割る」は規則性でいちばん多い失点。<br>
+      ③②で n に96を代入しない。96は碁石の個数であって n ではない。「いま持っている数はどっちの数か」を、式を書く前にはっきりさせる。
+    </div>
+    <div class="bx bx-chk">n＝25 を式にもどす：4×25 − 4 ＝ 100 − 4 ＝ 96 ○ 問題文と一致。さらに式そのものも n＝4 で検算：4×4−4＝12 ○。<strong>式を作ったら、必ず与えられた数で1回試す</strong>。これで規則性の事故は消える。</div>
+    <div class="ans-final"><span>こたえ</span>① 4n − 4（個）　② 25個</div>
+      <div class="tec-link">型：<b>規則性（n式）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m22_6"><div class="grade"><span class="gq-label">問6</span>○✕ → <button class="o" onclick="g(this,'m22_6','o')">○</button><button class="x" onclick="g(this,'m22_6','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">どの単元か見抜けなかった</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①何を聞かれたか ②どの道具（単元）を使うか をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問7 ===== -->
+<div class="q calc" data-id="7">
+  <div class="qbody">
+    <span class="lead">問7</span>下の図のような、階段の形をした水そうがあります。底から高さ<strong>5cm</strong> までは、<strong>幅20cm・奥行き9cm</strong> の部分ぜんぶに水が入ります。高さ5cm より上は、<strong>幅8cm・奥行き9cm</strong> の部分だけに水が入ります。水そうの深さは <strong>10cm</strong> です。<br>
+    この水そうに、<strong>一定の割合</strong>で水を入れたところ、グラフのように <strong>6分後</strong>に水面の高さが <strong>5cm</strong> になりました。<br>
+    ① 1分間に入る水の量は何 cm<sup>3</sup> ですか。<br>
+    ② 満水になるのは、水を入れ始めてから何分何秒後ですか。</div>
+  <svg class="fig" style="max-width:560px" viewBox="0 0 560 240" xmlns="http://www.w3.org/2000/svg">
+    <text x="44" y="22" font-size="12" font-weight="800" fill="#31415f">【水そうの形】</text>
+    <polygon points="60,60 124,60 124,120 220,120 220,180 60,180" fill="#e6f2fa" stroke="#3f6f9f" stroke-width="2.5"/>
+    <rect x="124" y="60" width="96" height="60" fill="#f0f0ee" stroke="#b7bcb4" stroke-width="1" stroke-dasharray="4 4"/>
+    <text x="130" y="96" font-size="10" font-weight="700" fill="#8a8794">水は入らない</text>
+    <line x1="60" y1="188" x2="220" y2="188" stroke="#5b6b80" stroke-width="1.2"/>
+    <line x1="60" y1="183" x2="60" y2="193" stroke="#5b6b80" stroke-width="1.2"/>
+    <line x1="220" y1="183" x2="220" y2="193" stroke="#5b6b80" stroke-width="1.2"/>
+    <text x="116" y="202" font-size="11" font-weight="700" fill="#46524a">20cm</text>
+    <line x1="60" y1="52" x2="124" y2="52" stroke="#5b6b80" stroke-width="1.2"/>
+    <line x1="60" y1="47" x2="60" y2="57" stroke="#5b6b80" stroke-width="1.2"/>
+    <line x1="124" y1="47" x2="124" y2="57" stroke="#5b6b80" stroke-width="1.2"/>
+    <text x="74" y="46" font-size="11" font-weight="700" fill="#46524a">8cm</text>
+    <line x1="50" y1="120" x2="50" y2="180" stroke="#5b6b80" stroke-width="1.2"/>
+    <line x1="45" y1="120" x2="55" y2="120" stroke="#5b6b80" stroke-width="1.2"/>
+    <line x1="45" y1="180" x2="55" y2="180" stroke="#5b6b80" stroke-width="1.2"/>
+    <text x="10" y="156" font-size="11" font-weight="700" fill="#46524a">5cm</text>
+    <line x1="50" y1="60" x2="50" y2="120" stroke="#5b6b80" stroke-width="1.2"/>
+    <line x1="45" y1="60" x2="55" y2="60" stroke="#5b6b80" stroke-width="1.2"/>
+    <text x="10" y="96" font-size="11" font-weight="700" fill="#46524a">5cm</text>
+    <text x="40" y="222" font-size="11" font-weight="700" fill="#46524a">奥行き9cm</text>
+    <text x="290" y="22" font-size="12" font-weight="800" fill="#31415f">【グラフ】</text>
+    <text x="280" y="40" font-size="10" font-weight="700" fill="#46524a">水位(cm)</text>
+    <line x1="300" y1="190" x2="300" y2="46" stroke="#5b6b80" stroke-width="2"/>
+    <line x1="300" y1="190" x2="540" y2="190" stroke="#5b6b80" stroke-width="2"/>
+    <line x1="300" y1="60" x2="540" y2="60" stroke="#c0563f" stroke-width="1.5" stroke-dasharray="5 4"/>
+    <text x="336" y="54" font-size="11" font-weight="700" fill="#c0563f">満水は水位10cm</text>
+    <line x1="300" y1="125" x2="444" y2="125" stroke="#9fb3c8" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="444" y1="190" x2="444" y2="125" stroke="#9fb3c8" stroke-width="1" stroke-dasharray="4 4"/>
+    <line x1="300" y1="190" x2="444" y2="125" stroke="#2f6a44" stroke-width="2.5"/>
+    <line x1="444" y1="125" x2="492" y2="60" stroke="#2f6a44" stroke-width="2" stroke-dasharray="5 4"/>
+    <circle cx="444" cy="125" r="4" fill="#2f6a44"/>
+    <text x="452" y="118" font-size="11" font-weight="700" fill="#2f6a44">6分で水位5cm</text>
+    <text x="498" y="95" font-size="13" font-weight="800" fill="#8a8794">？</text>
+    <text x="274" y="64" font-size="11" font-weight="700" fill="#46524a">10</text>
+    <text x="286" y="129" font-size="11" font-weight="700" fill="#46524a">5</text>
+    <text x="288" y="206" font-size="11" font-weight="700" fill="#46524a">0</text>
+    <text x="440" y="206" font-size="11" font-weight="700" fill="#46524a">6</text>
+    <text x="478" y="206" font-size="10" font-weight="700" fill="#46524a">時間(分)</text>
+  </svg>
+  <div class="note-draw">まず何を聞かれているか、何が分かっているかをノートに書き出そう。単元は自分で見抜こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">これは <strong>「グラフと水そう（比例・変化の割合の利用）」</strong>だった。9月の大問5の型。むずかしそうに見えるけど、やることは体積 ÷ 時間と体積 ÷ 1分の量の2回のわり算だけ。カギは「段の上と下で底面積がちがう」ことに気づけるかどうか。それだけ。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ①-a〜②-a</div><div class="step q3"><span>①-a</span>下の段の底面積：20 × 9 ＝ 180 cm<sup>2</sup></div>
+    <div class="step q3"><span>①-b</span>下の段の体積（高さ5cmぶん）：180 × 5 ＝ 900 cm<sup>3</sup></div>
+    <div class="step q3"><span>①-c</span>この 900cm<sup>3</sup> が 6分で入った → 900 ÷ 6 ＝ 150 cm<sup>3</sup>（1分間に入る水の量）</div>
+    <div class="step q3"><span>②-a</span>上の段の底面積は 20×9 ではなく 8×9 ＝ 72 cm<sup>2</sup>（水が入るのは細い部分だけ）</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ②-b〜②-d</div><div class="step q3"><span>②-b</span>上の段の体積（高さ 10−5＝5cmぶん）：72 × 5 ＝ 360 cm<sup>3</sup></div>
+    <div class="step q3"><span>②-c</span>かかる時間：360 ÷ 150 ＝ 2.4分。0.4分 ＝ 0.4 × 60 ＝ 24秒 → 2分24秒</div>
+    <div class="step q3"><span>②-d</span>満水まで：6分 ＋ 2分24秒 ＝ 8分24秒後</div>
+    <div class="bx bx-warn">
+      ①<span class="red">「水の量」と「水位の上がる速さ」を混同しない</span>。①で聞かれているのは cm<sup>3</sup>（量）。5 ÷ 6 ＝ 0.83… は水位の上がる速さ（cm）で、これは答えじゃない。単位が答えを教えてくれる。cm<sup>3</sup> と書いてあったら体積を出す。<br>
+      ②上の段でも底面積を 20×9 のまま使わない。段より上は細い部分だけに水が入る → 8×9。ここを見落とすと、時間が長く出て、答えがまるごとズレる。図の「水は入らない」に自分でぐりぐり印をつけよう。<br>
+      ③2.4分 を「2分4秒」としない。小数の分は ×60 して秒に直す。0.4分＝24秒。時計は10進法じゃない。<br>
+      ④「2分24秒」で終わらない。聞かれているのは入れ始めてから。最初の6分を足して 8分24秒後。
+    </div>
+    <div class="bx bx-chk">別ルートで確かめる。水そう全体に入る水の量 ＝ 900 ＋ 360 ＝ 1260 cm<sup>3</sup>。これを1分150cm<sup>3</sup>で割ると 1260 ÷ 150 ＝ 8.4分。0.4分＝24秒だから 8分24秒 ○ 一致した。<strong>「合計でやり直す」</strong>のは水そう問題の最強の検算。20秒でできる。</div>
+    <div class="ans-final"><span>こたえ</span>① 150 cm<sup>3</sup>（1分間あたり）　② 8分24秒後</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="m22_7"><div class="grade"><span class="gq-label">問7</span>○✕ → <button class="o" onclick="g(this,'m22_7','o')">○</button><button class="x" onclick="g(this,'m22_7','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">どの単元か見抜けなかった</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①何を聞かれたか ②どの道具（単元）を使うか をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問8 ===== -->
+<div class="q calc" data-id="8">
+  <div class="qbody">
+    <span class="lead">問8</span>妹は8時00分に家を出発し、分速60m で駅に向かいました。兄は8時12分に家を出発し、同じ道を分速150m で追いかけました。兄が妹に追いつくのは<strong>何時何分</strong>ですか。また、それは家から<strong>何m</strong> の地点ですか。</div>
+  <div class="note-draw">まず何を聞かれているか、何が分かっているかをノートに書き出そう。単元は自分で見抜こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">これは <strong>「方程式の利用・速さ（追いつき／時刻の逆算）」</strong>だった。9月の大問6の型。同じ向きに進んで追いかけるときの合言葉はひとつ →「差でちぢまる」。2人の間のすき間は、速さの差のぶんだけ1分ごとにちぢんでいく。出会い（向かい合わせ）なら「和でちぢまる」。向きを見て、差か和かを決める。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ①〜③</div><div class="step q4"><span>①</span>兄が出るとき、妹はどこまで進んでいる？　妹は12分歩いている → 60 × 12 ＝ 720m 先（これが最初のすき間）</div>
+    <div class="step q4"><span>②</span>1分でどれだけちぢむ？　150 − 60 ＝ 90m（速さの差）</div>
+    <div class="step q4"><span>③</span>追いつくまでの時間：720 ÷ 90 ＝ 8分（兄が出てから8分）</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ④〜別解</div><div class="step q4"><span>④</span>時刻にもどす：8時12分 ＋ 8分 ＝ 8時20分</div>
+    <div class="step q4"><span>⑤</span>場所：兄は8分で 150 × 8 ＝ 1200m 進んだ → 家から1200mの地点</div>
+    <div class="step q4"><span>別解</span>方程式で書くなら、兄が出てから x 分後として <span class="math">150x ＝ 60(x ＋ 12)</span> → 150x ＝ 60x ＋ 720 → 90x ＝ 720 → x ＝ 8。同じ答え。「2人の進んだ道のりが等しい」で式を立てる。</div>
+    <div class="bx bx-warn">
+      ①<span class="red">720 ÷ 150 ＝ 4.8分 としない</span>。追いかけている間も妹は進み続けている。だから割るのは兄の速さではなく 速さの差 90。ここが追いつき問題の心臓部。<br>
+      ②答えを「8分後」で終わらせない。聞かれているのは時刻。しかも兄が出た8時12分からの8分。8時00分＋8分＝8時08分としない。「誰の出発から数えた時間か」を式の横に書いておく。<br>
+      ③聞かれているのは2つ（時刻と地点）。片方だけ書いて次に行かない。<br>
+      ④線分図を1本書く。家 ─── 妹(720m) ─── 追いつく点。図を書けば、差でちぢむことが目で見える。
+    </div>
+    <div class="bx bx-chk">妹の側から確かめる。妹は 8時00分 → 8時20分 で 20分歩いた。60 × 20 ＝ 1200m。兄が進んだ 1200m とぴったり同じ ○ 同じ地点にいる＝追いついた、で正しい。<strong>速さの問題は「もう一方の人でやり直す」</strong>のが最速の検算。</div>
+    <div class="ans-final"><span>こたえ</span>8時20分／家から1200m の地点</div>
+      <div class="tec-link">型：<b>追いつき型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="m22_8"><div class="grade"><span class="gq-label">問8</span>○✕ → <button class="o" onclick="g(this,'m22_8','o')">○</button><button class="x" onclick="g(this,'m22_8','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">どの単元か見抜けなかった</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①何を聞かれたか ②どの道具（単元）を使うか をノートに書き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓S5 9月形式ミックス 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">8問、単元名なしで走りきったこと自体がすごい。今日いちばん大事なのは、○の数じゃなくて<strong>「これは何の問題か」を自分で言えたかどうか</strong>。言えた問題は、本番でもぜったい言える。言えなかった問題は、解説の⭐の一行だけノートに写しておこう。それが次の1点になる。道具はもう全部そろってる。あとは、取り出す速さだけだよ🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m22';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+var RMQ_KIND='9月ミックス';
+
+/* ===== 数学キュー送りフック（×→revmq_dyn／○→po++）=====
+   受け皿=復習数学_まちがえ復習キュー.html の mergeDyn(revmq_dyn) が読む。 */
+var RMQ_DYN='revmq_dyn';
+function rmqClean(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function rmqToday(){var d=new Date();return (d.getMonth()+1)+'月'+d.getDate()+'日';}
+function sendToRevMQ(btn,id,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    if(String(KEY).indexOf('revmq')===0)return;              /* 受け皿自身では動かさない */
+    var q=btn&&btn.closest?btn.closest('.q'):null; if(!q)return;
+    var leadEl=q.querySelector('.lead'); if(!leadEl)return;
+    var label=rmqClean(leadEl);
+    if(/【例】/.test(label))return;                            /* 例題は復習に送らない */
+    var qtxt=leadEl.parentNode?rmqClean(leadEl.parentNode):'';
+    if(label&&qtxt.indexOf(label)===0)qtxt=qtxt.slice(label.length).trim();
+    var ans=rmqClean(q.querySelector('.ans-final'));
+    if(!qtxt||!ans)return;
+    var src=KEY+'_'+id;
+    var arr;try{arr=JSON.parse(localStorage.getItem(RMQ_DYN));}catch(e){arr=null;}
+    if(!Array.isArray(arr))arr=[];
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=rmqToday();}
+    else{arr.push({src:src,jp:qtxt,en:ans,kind:RMQ_KIND,badge:'suchoku',day:rmqToday(),po:0,px:1});}
+    try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}
+  }catch(e){}
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);try{sendToRevMQ(btn,id,v);}catch(e){}
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！9月形式ミックス クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

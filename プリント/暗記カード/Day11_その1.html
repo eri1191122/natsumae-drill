@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 暗記カード（朝A）Week3 Day11 ＝ 英単語5＋漢字書取3＋漢字読み2＋英熟語3＋特訓ブリッジ2（暗記コア15個）
+ KEY=tokkun_ka11。英単語：cousin/son/science/tomorrow/bread（順223/224/232/254/298）
+ 漢字書取：A#35理解・#36判断・#37比較　読み：B#17賄う・#18滞る　熟語：#6do my homework/#7have breakfast/#8get to
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>暗記カード Day11｜15分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-body{padding:16px 20px}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.th-amber .sec-hd{background:#fbf2e2;border-left:6px solid #d9b46d}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:15px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#8a5a19}
+.bx-warn::before{content:"⚠️ つまずき注意";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#5f4b7a}
+.bx-link::before{content:"🔗 特訓テストではこう出る";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:12px 0}
+.qword{font-size:22px;font-weight:900;color:#31415f}
+.qhint{font-size:13px;color:#4c5b70;margin-top:2px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:13px}
+.ans-box.open{display:block}
+.ans-main{font-size:20px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-read{font-size:13px;color:#405060;margin-bottom:4px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec{break-inside:avoid;page-break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+/* ===== 今日の1文（英作文・EW）2026-07-13 追加。既存ルールは1行も変更していない ===== */
+.th-grn .sec-hd{background:#e7f2e9;border-left:6px solid #7fae8a}
+.ew-jp{font-size:18px;font-weight:900;color:#2f4536;background:#fff;border:2px solid #c3ddc8;border-left:6px solid #7fae8a;border-radius:8px;padding:11px 15px;margin-bottom:8px}
+.ew-jp .cnt{display:block;margin-top:6px;font-size:14px;font-weight:800;color:#3f6f9f;background:#f3f7fb;border:1px solid #cdd9e6;border-radius:6px;padding:5px 10px}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+.q.writing .ans-box{background:transparent;border:none;padding:0}
+.rw-why{background:#f4faf6;border:1px solid #cfe6d6;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.95;color:#33513f}
+.rw-why b{color:#2f6b45}
+.rw-why ol{margin:2px 0 0 1.25em}
+.rw-why li{margin:5px 0}
+.rw-why .ng{color:#b5403a;font-weight:800}
+.rw-why .ask{display:block;background:#fffaf0;border-left:5px solid #e0b552;border-radius:6px;padding:9px 13px;margin-bottom:9px;font-size:14px;font-weight:800;color:#7a5a1e}
+.rw-why .ask b{color:#8a5a19}
+.rw-why .miss{display:block;margin-top:8px;background:#fdeeec;border-left:4px solid #d98a86;border-radius:6px;padding:7px 11px;font-size:13px;color:#8a3a36}
+.rw-why .miss b{color:#8a3a36}
+.ans-final{margin-top:10px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+@media print{
+  .q.writing{break-inside:avoid;page-break-inside:avoid}
+  .q.writing .ans-box{background:transparent!important;border:none!important;padding:0!important}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">暗記カード Week3</span><span class="pg-badge">Day11</span><span class="pg-badge">英単語5＋漢字5＋熟語3＋ブリッジ2</span></div>
+  <h1>暗記カード（Day11）</h1>
+  <p>目安 約15分　対象: 中1　＝意味・よみを見て、ノートに自分で書く（答えはタップで見る）</p>
+  <p class="pg-sub">まず自分で書いて、それから答えを見よう。まちがえた字は3回書けばOK。</p>
+</div>
+
+<!-- ① 英単語5 -->
+<div class="unit-banner">
+  <span class="unit-num">① 英単語</span>
+  <span class="unit-name">意味を見て、ノートに英語で書こう</span>
+  <span class="unit-time">5問</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>英単語（つづり）</h2><span class="badge-grade">英検5級</span></div>
+  <div class="sec-body">
+
+    <div class="q vocab" data-id="W-1">
+      <div class="qnum-e">問題1｜単語①</div>
+      <div class="qword">いとこ</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">cousin</div>
+        <div class="ans-read">読み：カズン</div>
+        <div class="bx-warn">つづりは <span class="red">cous-in</span>（ou の並びと発音注意。カズンと読む）。cosin としない。</div>
+      </div>
+      <div class="gq" data-gid="W-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　cousin　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q vocab" data-id="W-2">
+      <div class="qnum-e">問題2｜単語②</div>
+      <div class="qword">息子</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">son</div>
+        <div class="ans-read">読み：サン</div>
+        <div class="bx-warn"><span class="red">sun（太陽）と同音</span>。s-o-n。「日の光」の sun と混同しない。</div>
+      </div>
+      <div class="gq" data-gid="W-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　son　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q vocab" data-id="W-3">
+      <div class="qnum-e">問題3｜単語③</div>
+      <div class="qword">理科・科学</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">science</div>
+        <div class="ans-read">読み：サイエンス</div>
+        <div class="bx-warn"><span class="red">sci</span> の部分が「サイ」と読む特別な音。sience / sciance としない。</div>
+      </div>
+      <div class="gq" data-gid="W-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　science　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q vocab" data-id="W-4">
+      <div class="qnum-e">問題4｜単語④</div>
+      <div class="qword">明日</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">tomorrow</div>
+        <div class="ans-read">読み：トゥモロウ</div>
+        <div class="bx-warn"><span class="red">r を2つ</span>（to-mor-row）。o の位置も注意（tomorow / tommorrow としない）。</div>
+      </div>
+      <div class="gq" data-gid="W-4">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　tomorrow　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q vocab" data-id="W-5">
+      <div class="qnum-e">問題5｜単語⑤</div>
+      <div class="qword">パン</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">bread</div>
+        <div class="ans-read">読み：ブレッド</div>
+        <div class="bx-warn">つづりは <span class="red">-ea-</span>（「エ」と読む特別なパターン。bread / head / dead も同じ）。bred としない。</div>
+      </div>
+      <div class="gq" data-gid="W-5">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　bread　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ② 漢字 書き取り3 -->
+<div class="unit-banner">
+  <span class="unit-num">② 漢字 書き取り</span>
+  <span class="unit-name">よみを見て、ノートに漢字で書こう</span>
+  <span class="unit-time">3問</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-hd"><h2>漢字 書き取り</h2><span class="badge-grade">漢検5級</span></div>
+  <div class="sec-body">
+
+    <div class="q vocab" data-id="K-1">
+      <div class="qnum-e">問題6｜書き①</div>
+      <div class="qword">この内容を <span style="color:#3f6f9f">りかい</span> する。</div>
+      <div class="qhint">──の部分を漢字で（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">理解</div>
+        <div class="ans-read">よみ：りかい（意味をのみこむこと）</div>
+      </div>
+      <div class="gq" data-gid="K-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'K-1','o')">○</button><button class="x" onclick="g(this,'K-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　理解　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q vocab" data-id="K-2">
+      <div class="qnum-e">問題7｜書き②</div>
+      <div class="qword">状況を <span style="color:#3f6f9f">はんだん</span> する。</div>
+      <div class="qhint">──の部分を漢字で（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">判断</div>
+        <div class="ans-read">よみ：はんだん（見分けて決めること）</div>
+        <div class="bx-warn">「断」は <span class="red">米＋斤</span>。「切断」の断と同じ字。</div>
+      </div>
+      <div class="gq" data-gid="K-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'K-2','o')">○</button><button class="x" onclick="g(this,'K-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　判断　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q vocab" data-id="K-3">
+      <div class="qnum-e">問題8｜書き③</div>
+      <div class="qword">二つを <span style="color:#3f6f9f">ひかく</span> する。</div>
+      <div class="qhint">──の部分を漢字で（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">比較</div>
+        <div class="ans-read">よみ：ひかく（くらべること）</div>
+        <div class="bx-warn">「較」は <span class="red">車へん＋交</span>。「比べる」の意。「比格」としない。</div>
+      </div>
+      <div class="gq" data-gid="K-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'K-3','o')">○</button><button class="x" onclick="g(this,'K-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　比較　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ③ 漢字 読み2 -->
+<div class="unit-banner">
+  <span class="unit-num">③ 漢字 読み</span>
+  <span class="unit-name">漢字を見て、よみをノートに書こう</span>
+  <span class="unit-time">2問</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-hd"><h2>漢字 読み</h2><span class="badge-grade">漢検5級</span></div>
+  <div class="sec-body">
+
+    <div class="q vocab" data-id="K-4">
+      <div class="qnum-e">問題9｜読み①</div>
+      <div class="qword">生活費を <span style="color:#3f6f9f">賄う</span>。</div>
+      <div class="qhint">──のよみを（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">まかなう</div>
+        <div class="ans-read">意味：費用や食事をまとめてまかなうこと</div>
+        <div class="bx-warn">送り仮名は「<span class="red">う</span>」。「まかな」だけにしない。</div>
+      </div>
+      <div class="gq" data-gid="K-4">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'K-4','o')">○</button><button class="x" onclick="g(this,'K-4','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　まかなう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q vocab" data-id="K-5">
+      <div class="qnum-e">問題10｜読み②</div>
+      <div class="qword">仕事が <span style="color:#3f6f9f">滞る</span>。</div>
+      <div class="qhint">──のよみを（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">とどこおる</div>
+        <div class="ans-read">意味：物事がつかえてはかどらないこと</div>
+        <div class="bx-warn">送り仮名は「<span class="red">る</span>」。「とどこおる」は5文字。</div>
+      </div>
+      <div class="gq" data-gid="K-5">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'K-5','o')">○</button><button class="x" onclick="g(this,'K-5','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　とどこおる　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ④ 英熟語3（Day11ローテ） -->
+<div class="unit-banner">
+  <span class="unit-num">④ 英熟語</span>
+  <span class="unit-name">小さい語（my / to）を落とさない</span>
+  <span class="unit-time">3問</span>
+</div>
+<div class="sec th-teal">
+  <div class="sec-hd"><h2>英熟語</h2><span class="badge-grade">英検5級</span></div>
+  <div class="sec-body">
+
+    <div class="q vocab" data-id="P-1">
+      <div class="qnum-e">問題11｜熟語①</div>
+      <div class="qword">宿題をする</div>
+      <div class="qhint">英語（熟語）で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">do my homework</div>
+        <div class="ans-read">読み：ドゥー マイ ホームワーク／例 I do my homework after dinner.</div>
+        <div class="bx-warn">「宿題をする」は <span class="red">do</span>（make でない）。my も落とさない。</div>
+      </div>
+      <div class="gq" data-gid="P-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　do my homework　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q vocab" data-id="P-2">
+      <div class="qnum-e">問題12｜熟語②</div>
+      <div class="qword">朝食を食べる</div>
+      <div class="qhint">英語（熟語）で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">have breakfast</div>
+        <div class="ans-read">読み：ハヴ ブレックファスト／例 I have breakfast at seven.</div>
+        <div class="bx-warn">食事には <span class="red">a/the をつけない</span>（×a breakfast）。</div>
+      </div>
+      <div class="gq" data-gid="P-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　have breakfast　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q vocab" data-id="P-3">
+      <div class="qnum-e">問題13｜熟語③</div>
+      <div class="qword">〜に着く</div>
+      <div class="qhint">英語（熟語）で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">get to</div>
+        <div class="ans-read">読み：ゲット トゥー／例 What time do you get to school?</div>
+        <div class="bx-warn"><span class="red">to</span> を落とさない。ただし get home（家に着く）は to 不要。</div>
+      </div>
+      <div class="gq" data-gid="P-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　get to　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ⑤ 特訓 仕上げ（ブリッジ2） -->
+<div class="unit-banner">
+  <span class="unit-num">⑤ 特訓 仕上げ</span>
+  <span class="unit-name">覚えたことを「特訓テストの形」で使ってみる</span>
+  <span class="unit-time">2問</span>
+</div>
+<div class="sec th-amber">
+  <div class="sec-hd"><h2>特訓ブリッジ</h2><span class="badge-grade">特訓の出題形</span></div>
+  <div class="sec-body">
+
+    <div class="q vocab" data-id="B-1">
+      <div class="qnum-e">問題14｜語形（複数形）</div>
+      <div class="qword">I have two （hobby）.</div>
+      <div class="qhint">（　）の語を正しい形にして文を書こう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">I have two hobbies.</div>
+        <div class="ans-read">hobby → hobbies（y で終わる語 → y を i に変えて es）</div>
+        <div class="bx-link">特訓 大問6で必出。<span class="red">y→ies</span>。city→cities / family→families も同じルール。</div>
+      </div>
+      <div class="gq" data-gid="B-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'B-1','o')">○</button><button class="x" onclick="g(this,'B-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　I have two hobbies.</div>
+      </div>
+    </div>
+
+    <div class="q vocab" data-id="B-2">
+      <div class="qnum-e">問題15｜文法（主語・述語）</div>
+      <div class="qword">「公園で 子どもが 元気に 遊ぶ。」の主語と述語は？</div>
+      <div class="qhint">主語と述語をそれぞれノートに書こう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">主語＝子どもが／述語＝遊ぶ</div>
+        <div class="ans-read">主語＝「何が・誰が」(〜が/は/も)。述語＝「どうする・どんなだ・何だ」で文末。</div>
+        <div class="bx-link">特訓で主語・述語をつかむと係り受けが解ける。</div>
+      </div>
+      <div class="gq" data-gid="B-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'B-2','o')">○</button><button class="x" onclick="g(this,'B-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　主語＝子どもが／述語＝遊ぶ</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ⑥ 今日の1文（英作文・EW）2026-07-13 追加 -->
+<div class="unit-banner">
+  <span class="unit-num">⑥ 今日の1文</span>
+  <span class="unit-name">日本語を見て、英語の文にしよう</span>
+  <span class="unit-time">1問</span>
+</div>
+<div class="sec th-grn">
+  <div class="sec-hd"><h2>今日の1文</h2><span class="badge-grade">9月特訓 出題範囲</span></div>
+  <div class="sec-body">
+
+    <div class="q writing" data-id="EW-1">
+      <div class="qnum-e">問題16｜英作文</div>
+      <div class="ew-jp">私のおばは雲の写真を3枚撮ります。</div>
+      <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+      <button class="ans-btn" onclick="t(this)">こたえを見る</button>
+      <div class="ans-box">
+        <div class="rw-why">
+          <span class="ask">この1文が問うていたのは <b>数が2以上になったら a を消して名詞に -s</b>（複数形）でした。</span>
+          <ol>
+            <li><b>動詞の -s。</b>　My aunt は1人（三人称単数）→ take に -s → <b>takes</b>。<span class="ng">✕ My aunt take</span></li>
+            <li><b>名詞の -s（ここが本丸）。</b>　写真は <b>3枚</b> → a picture ではなく <b>three pictures</b>。<b>a と -s は同時に使えない</b>（a は「1つ」の意味だから）。<span class="ng">✕ three picture</span>　<span class="ng">✕ a three pictures</span></li>
+            <li><b>「〜の写真」は of。</b>　a picture <b>of</b> 〜 の形。<span class="ng">✕ takes three pictures the clouds</span>（of 落ち）</li>
+            <li><b>雲も複数。</b>　空に見えている雲＝<b>the</b>、そして1つではない → <b>the clouds</b>。</li>
+            <li><b>cloud のつづり。</b>　c-l-<b>o-u</b>-d。<b>ou</b> の順。<span class="ng">✕ clowd</span>　<span class="ng">✕ cloude</span></li>
+          </ol>
+          <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ My aunt take three pictures</span>（動詞の -s 落ち）／<span class="ng">✕ three picture</span>（名詞の -s 落ち）／<span class="ng">✕ clowd</span>（つづり）／<span class="ng">✕ pictures the clouds</span>（of 落ち）</span>
+        </div>
+        <div class="ans-final"><span>こたえ</span>My aunt takes three pictures of the clouds.</div>
+      </div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書こう　My aunt takes three pictures of the clouds.</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">あしたも朝5分からでOK。書けた数がふえたら、それが伸びたしるし。よくがんばったね。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_ka11';
+
+function t(b){
+  if(!b.dataset.label)b.dataset.label=b.textContent;
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':b.dataset.label;
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}
+  var w3=box.querySelector('.write3');
+  if(v==='x'){ if(w3)w3.style.display='block'; }
+  else{ if(w3)w3.style.display='none'; }
+}
+
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(!v)return;
+    var b=box.querySelector('.'+v);
+    if(b)b.classList.add('sel');
+    if(v==='x'){
+      var w3=box.querySelector('.write3');
+      if(w3)w3.style.display='block';
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
+};
+/* ===== 復習英語キュー送りフック（×/○・英語問題のみ・自己ループ防止） ===== */
+function sendToRevQ(btn,id,result){
+  if(typeof PRE!=='undefined' && PRE==='revq_') return;        // 受け皿自身では動かさない
+  if(typeof KEY==='undefined') return;
+  if(KEY.indexOf('revq')===0) return;
+  var q=btn&&btn.closest?btn.closest('.q'):null; if(!q) return;
+  if(q.classList.contains('calc')) return;                      // 数学除外
+  var engPrint=!!document.querySelector('[data-eng="1"]');
+  var isVocab=q.classList.contains('vocab'), isWriting=q.classList.contains('writing');
+  if(!engPrint && !isVocab && !isWriting) return;               // 混在で英語クラス無し→送らない
+  var kindEl=q.querySelector('.qnum-e'); var kindRaw=kindEl?(kindEl.textContent||''):'';
+  if(/漢字|書き|読み/.test(kindRaw)) return;                    // 暗記カードの漢字除外
+  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.qbody');
+  var enEl=q.querySelector('.ans-final')||q.querySelector('.ans-box .ans-main');
+  if(!jpEl||!enEl) return;
+  var jp=cleanRevQText(jpEl), en=cleanRevQText(enEl);
+  if(!jp||!en) return;
+  if(!/[A-Za-z]/.test(en)) return;                              // 答えに英字なし→英語でない→除外
+  if(result==='o'){bumpRevQPo(en);return;}                      // ○：既存項目の po++ のみ（新規追加しない）
+  var kind='単語',badge='tango';
+  if(isWriting||/英作文/.test(kindRaw)||/[.!?]\s*$/.test(en)){kind='英作文';badge='eisaku';}
+  else if(/熟語/.test(kindRaw)){kind='熟語';badge='jukugo';}
+  pushRevQDyn({jp:jp,en:en,kind:kind,badge:badge,day:revqToday(),src:(KEY+'_'+id)});
+}
+function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[（(][^）)]*でもOK[^）)]*[）)]/g,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function revqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function revqNorm(s){return String(s||'').toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function bumpRevQPo(en){try{var K='revq_dyn';var raw=localStorage.getItem(K);if(raw==null)return;var arr;try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;var key=revqNorm(en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].po=(+arr[i].po||0)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}}catch(e){}}
+function pushRevQDyn(item){try{var K='revq_dyn';var raw=localStorage.getItem(K);var arr;if(raw==null){arr=[];}else{try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;}var key=revqNorm(item.en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;arr[i].po=0;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;item.po=0;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
+</script>
+</body>
+</html>

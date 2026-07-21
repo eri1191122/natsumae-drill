@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 英語 基礎深化 U5 代名詞（30分）★金型v2。「1ルール説明→その場で確認問題」の交互構造。図(SVG)入り。I-my-me-mine の格変化を図と表で。its/it's・their/there/they're・your/you're の最小対を問題化。事前ヒント無し(.qnum-eは番号のみ)。確認8＋ミックス4＋連動2＝14問。KEY=tokkun_eg_pron。もどる=夏休みダッシュボード。-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>英語きそ U5 代名詞（30分）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8f0ea;color:#22402e;padding:24px 22px;border:1px solid #c3ddc8;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#41614c}
+.pg-badge{display:inline-block;background:#d7ebdb;color:#2f5a3e;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #bcdcc2;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#395c44;margin-top:8px}
+.goal{background:#fff;border:1px solid #dbe6de;border-left:6px solid #7fae8a;border-radius:10px;padding:14px 18px;margin-bottom:6px}
+.goal h2{font-size:14px;font-weight:900;color:#2f5a3e;margin-bottom:8px}
+.goal ul{margin:0 0 0 1.15em;font-size:13.5px;color:#33453a;line-height:1.95}
+.goal li{margin:3px 0}.goal b{color:#2f6b45}
+.step{display:flex;align-items:center;gap:10px;background:#2f5a3e;color:#fff;padding:11px 18px;border-radius:8px 8px 0 0;margin-top:24px}
+.step .n{font-size:13px;font-weight:900;background:rgba(255,255,255,.2);padding:3px 10px;border-radius:12px}
+.step .t{font-size:15px;font-weight:900}
+.step .time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto}
+.step + .body{background:#fff;border:1px solid #dbe6de;border-top:none;border-radius:0 0 8px 8px;padding:16px 20px;margin-bottom:6px}
+.lesson{font-size:14px;line-height:1.98;color:#33453a}
+.lesson p{margin:8px 0}.lesson b{color:#2f5a3e}
+.lesson table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px}
+.lesson th,.lesson td{border:1px solid #d6e3da;padding:6px 9px;text-align:left}
+.lesson th{background:#eaf3ec;color:#2f5a3e}
+.lesson .ok{color:#2f6b45;font-weight:800}.lesson .ng{color:#9b514d;font-weight:800}
+.lesson .c-sb{background:#fff4e3}.lesson .c-ps{background:#e8eefb}.lesson .c-ob{background:#e6f4ea}.lesson .c-pn{background:#fff5fa}
+.fig{background:#fcfdfc;border:1px solid #d6e3da;border-radius:10px;padding:12px 10px;margin:12px 0}
+.fig .cap{font-size:12px;font-weight:800;color:#5a8a6a;text-align:center;margin-bottom:6px}
+.fig svg{width:100%;height:auto;display:block}
+.why{background:#eef5f0;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px;color:#33513f}
+.why::before{content:"💡 なぜ？";display:block;font-size:12px;font-weight:800;color:#2f6b45;margin-bottom:3px}
+.ex{background:#f7faf8;border:1px dashed #bcdcc2;border-radius:8px;padding:9px 13px;margin:8px 0;font-size:13.5px;color:#3a4d42}
+.ex::before{content:"✏️ れい";display:block;font-size:12px;font-weight:800;color:#5a8a6a;margin-bottom:3px}
+.more{background:#eef2f8;border-left:5px solid #9fb8d9;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px;color:#33425a}
+.more::before{content:"➕ もう一歩（本番でねらわれる）";display:block;font-size:12px;font-weight:800;color:#31527a;margin-bottom:3px}
+.key{background:#fffaf0;border-left:5px solid #e0b552;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13.5px;color:#7a5a1e}
+.key b{color:#8a5a19}
+.pair{background:#fff5fa;border-left:5px solid #d99ab8;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13.5px;color:#7d3f5c}
+.pair::before{content:"🔤 アポストロフィ（'）— いちばん落としやすい";display:block;font-size:12px;font-weight:800;color:#a24d78;margin-bottom:4px}
+.pair b{color:#a24d78}.pair .ng{color:#b5403a;font-weight:800}.pair .ok{color:#2f6b45;font-weight:800}
+.warn{background:#fdeeec;border-left:5px solid #d98a86;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px;color:#8a3a36}
+.warn::before{content:"⚠️ ここをまちがえる（先に知っておこう）";display:block;font-size:12px;font-weight:800;margin-bottom:4px}
+.warn .ng{color:#b5403a;font-weight:800}.warn .ok{color:#2f6b45;font-weight:800}
+.chk{display:flex;align-items:center;gap:8px;background:#f1f7f3;border:1px dashed #a8c9b2;border-radius:8px;padding:9px 14px;margin:16px 0 4px;font-size:13px;font-weight:800;color:#3f7a4a}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:12px 0}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.ew-jp{font-size:18px;font-weight:900;color:#2f4536;background:#fff;border:2px solid #c3ddc8;border-left:6px solid #7fae8a;border-radius:8px;padding:11px 15px;margin-bottom:8px}
+.ew-jp .src{display:block;margin-top:6px;font-size:16px;font-weight:800;color:#3f6f9f;background:#f3f7fb;border:1px solid #cdd9e6;border-radius:6px;padding:6px 10px;letter-spacing:.3px}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+.ans-btn{margin-top:2px;background:#5a8a6a;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#487257}
+.ans-box{display:none;margin-top:10px}
+.ans-box.open{display:block}
+.rw-why{background:#f4faf6;border:1px solid #cfe6d6;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.95;color:#33513f}
+.rw-why b{color:#2f6b45}
+.rw-why ol{margin:2px 0 0 1.25em}
+.rw-why li{margin:5px 0}
+.rw-why .ng{color:#b5403a;font-weight:800}.rw-why .ok{color:#2f6b45;font-weight:800}
+.rw-why .miss{display:block;margin-top:8px;background:#fdeeec;border-left:4px solid #d98a86;border-radius:6px;padding:7px 11px;font-size:13px;color:#8a3a36}
+.rw-why .miss b{color:#8a3a36}
+.rw-why table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}
+.rw-why th,.rw-why td{border:1px solid #cfe6d6;padding:5px 8px;text-align:left}
+.rw-why th{background:#eaf3ec;color:#2f6b45}
+.ans-final{margin-top:10px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+.sum{background:#fff;border:1px solid #dbe6de;border-radius:10px;padding:16px 20px;margin-top:6px}
+.sum h2{font-size:15px;font-weight:900;color:#2f5a3e;margin-bottom:8px}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+.footnav{text-align:center;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.footnav{display:none}
+  .ans-box{display:block!important}.write3{display:block!important}
+  .step,.body,.q,.fig,.sum{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body data-eng="1">
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">英語きそ U5</span><span class="pg-badge">代名詞</span><span class="pg-badge">30分</span></div>
+  <h1>I - my - me - mine を、まよわず使い分ける</h1>
+  <p><b>ルールを1つ読む → すぐその場で書いて確かめる</b>。この2つをくり返して進むよ。読みっぱなしにしないのがコツ。</p>
+  <p class="pg-sub">ルール4つ（各2問）→ ミックス4問 → 連動2問 → まとめ表。ぜんぶで14問。</p>
+</div>
+
+<div class="goal">
+  <h2>🎯 このプリントが終わったら、できるようになること</h2>
+  <ul>
+    <li>その代名詞が<b>文の中でどんな役をしているか</b>を見て、形を自分で決められる。</li>
+    <li><b>its と it's</b>、<b>their と there と they're</b> を、まちがえずに書き分けられる。</li>
+    <li>名前（Tom / Tom's）を<b>代名詞に置きかえる</b>とき、2か所が別々の形になることを自分で直せる。</li>
+  </ul>
+</div>
+
+<!-- ===== ルール1 ===== -->
+<div class="step"><span class="n">ルール1</span><span class="t">代名詞は「文の中の役わり」で形が変わる</span><span class="time">6分</span></div>
+<div class="body">
+<div class="lesson">
+  <p><b>代名詞</b>は、名前のかわりに使うことば（I / you / he / she / it / we / they）。同じ「私」でも、<b>文の中でどんな役をしているか</b>で <b>I / my / me / mine</b> と形が変わる。</p>
+  <p>では、なぜ<b>4つも</b>あるの？　日本語は「私<b>は</b>／私<b>の</b>／私<b>を</b>／私<b>のもの</b>」のように、<b>うしろにつけることば（は・の・を）で役わりを示す</b>。ところが英語には、この「は・の・を」がない。だから英語は <b>ことばそのものを変えて</b>役わりを示す。これが I / my / me / mine の正体。</p>
+
+  <div class="fig">
+    <div class="cap">図1　日本語は「は・の・を」で示す　→　英語は「形」で示す</div>
+    <svg viewBox="0 0 600 205" role="img" aria-label="日本語の助詞と英語の格変化の対応図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <rect x="8" y="8" width="136" height="30" rx="6" fill="#f1f1ee" stroke="#c9c9c2" stroke-width="1.5"/>
+      <text x="76" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#5a6b50">私 は</text>
+      <rect x="152" y="8" width="136" height="30" rx="6" fill="#f1f1ee" stroke="#c9c9c2" stroke-width="1.5"/>
+      <text x="220" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#5a6b50">私 の</text>
+      <rect x="296" y="8" width="136" height="30" rx="6" fill="#f1f1ee" stroke="#c9c9c2" stroke-width="1.5"/>
+      <text x="364" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#5a6b50">私 を</text>
+      <rect x="440" y="8" width="136" height="30" rx="6" fill="#f1f1ee" stroke="#c9c9c2" stroke-width="1.5"/>
+      <text x="508" y="28" text-anchor="middle" font-size="13" font-weight="700" fill="#5a6b50">私 のもの</text>
+
+      <line x1="76" y1="40" x2="76" y2="54" stroke="#a8b0a0" stroke-width="2"/><polygon points="76,60 70,50 82,50" fill="#a8b0a0"/>
+      <line x1="220" y1="40" x2="220" y2="54" stroke="#a8b0a0" stroke-width="2"/><polygon points="220,60 214,50 226,50" fill="#a8b0a0"/>
+      <line x1="364" y1="40" x2="364" y2="54" stroke="#a8b0a0" stroke-width="2"/><polygon points="364,60 358,50 370,50" fill="#a8b0a0"/>
+      <line x1="508" y1="40" x2="508" y2="54" stroke="#a8b0a0" stroke-width="2"/><polygon points="508,60 502,50 514,50" fill="#a8b0a0"/>
+
+      <rect x="8" y="62" width="136" height="76" rx="10" fill="#fff4e3" stroke="#e0b552" stroke-width="2"/>
+      <text x="76" y="80" text-anchor="middle" font-size="11" font-weight="800" fill="#7a5a1e">主格（〜は）</text>
+      <text x="76" y="110" text-anchor="middle" font-size="26" font-weight="800" fill="#7a5a1e">I</text>
+      <text x="76" y="130" text-anchor="middle" font-size="11" fill="#7a5a1e">I know him.</text>
+
+      <rect x="152" y="62" width="136" height="76" rx="10" fill="#e8eefb" stroke="#7f9fd0" stroke-width="2"/>
+      <text x="220" y="80" text-anchor="middle" font-size="11" font-weight="800" fill="#31527a">所有格（〜の）</text>
+      <text x="220" y="110" text-anchor="middle" font-size="26" font-weight="800" fill="#31527a">my</text>
+      <text x="220" y="130" text-anchor="middle" font-size="11" fill="#31527a">my bag（＋名詞）</text>
+
+      <rect x="296" y="62" width="136" height="76" rx="10" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="364" y="80" text-anchor="middle" font-size="11" font-weight="800" fill="#2f5a3e">目的格（〜を）</text>
+      <text x="364" y="110" text-anchor="middle" font-size="26" font-weight="800" fill="#2f5a3e">me</text>
+      <text x="364" y="130" text-anchor="middle" font-size="11" fill="#2f5a3e">with me / knows me</text>
+
+      <rect x="440" y="62" width="136" height="76" rx="10" fill="#fff5fa" stroke="#d99ab8" stroke-width="2"/>
+      <text x="508" y="80" text-anchor="middle" font-size="11" font-weight="800" fill="#a24d78">所有代名詞</text>
+      <text x="508" y="110" text-anchor="middle" font-size="26" font-weight="800" fill="#a24d78">mine</text>
+      <text x="508" y="130" text-anchor="middle" font-size="11" fill="#a24d78">This is mine.（1語）</text>
+
+      <rect x="8" y="150" width="568" height="46" rx="8" fill="#fdeeec" stroke="#d98a86" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="22" y="170" font-size="13" font-weight="800" fill="#b5403a">✕ Me know him.　✕ I bag　✕ with I　✕ mine bag</text>
+      <text x="22" y="188" font-size="12" fill="#8a3a36">形をまちがえた瞬間、役わりが変わってしまう。だから4つセットで覚える。</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>だれ</th><th class="c-sb">〜は（主格）</th><th class="c-ps">〜の（所有格）</th><th class="c-ob">〜を（目的格）</th><th class="c-pn">〜のもの</th></tr>
+    <tr><td>私</td><td class="c-sb">I</td><td class="c-ps">my</td><td class="c-ob">me</td><td class="c-pn">mine</td></tr>
+    <tr><td>あなた（たち）</td><td class="c-sb">you</td><td class="c-ps">your</td><td class="c-ob">you</td><td class="c-pn">yours</td></tr>
+    <tr><td>彼</td><td class="c-sb">he</td><td class="c-ps">his</td><td class="c-ob">him</td><td class="c-pn">his</td></tr>
+    <tr><td>彼女</td><td class="c-sb">she</td><td class="c-ps">her</td><td class="c-ob">her</td><td class="c-pn">hers</td></tr>
+    <tr><td>それ</td><td class="c-sb">it</td><td class="c-ps">its</td><td class="c-ob">it</td><td class="c-pn">—</td></tr>
+    <tr><td>私たち</td><td class="c-sb">we</td><td class="c-ps">our</td><td class="c-ob">us</td><td class="c-pn">ours</td></tr>
+    <tr><td>彼ら・それら</td><td class="c-sb">they</td><td class="c-ps">their</td><td class="c-ob">them</td><td class="c-pn">theirs</td></tr>
+  </table>
+
+  <div class="why"><b>「役わり」って何？</b>　文のあたま（主語）にいるなら「〜は」＝主格。名詞の前にくっついているなら「〜の」＝所有格。動詞や前置詞のうしろにいるなら「〜を」＝目的格。<b>置かれた場所が、役わりを決める</b>。だから「どの形にする？」と迷ったら、まず<b>どこに置くのか</b>を見る。</div>
+  <div class="key"><b>声に出して</b>：「<b>I（は）— my（の）— me（を）— mine（のもの）</b>」を、he-his-him-his ／ she-her-her-hers ／ they-their-them-theirs まで、リズムで10回。</div>
+  <div class="more"><b>her は2回出る</b>（「彼女<b>の</b>」と「彼女<b>を</b>」が同じ形）。<b>his も2回出る</b>（「彼<b>の</b>」と「彼<b>のもの</b>」が同じ形）。形が同じでも役わりはちがう。だから<b>置かれた場所で読む</b>。特訓ではここがねらわれる。</div>
+  <div class="warn">日本語につられて <span class="ng">✕ with I</span>（「私と」の「と」を見て I にした）と書きやすい。<b>前置詞のうしろは、いつも目的格</b> → <span class="ok">with me</span>。</div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="PR-1"><div class="qnum-e">問題1</div>
+    <div class="ew-jp">彼女は私のおばです。私は彼女が大好きです。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>1文目の「彼女は」はどこにいる？</b>　文のあたま＝<b>主語</b>。主語の役わりなら形は <b>She</b>（主格）。<span class="ng">✕ Her is my aunt.</span>（her は「彼女の／彼女を」のときの形。主語にはできない）</li>
+        <li><b>「私のおば」は？</b>　「私の」は、うしろの名詞 aunt にくっついて「だれのおばか」を説明している ＝ <b>所有格 my</b>。<span class="ng">✕ I aunt</span>（I は「私は」の形）<span class="ng">✕ Mine aunt</span>（mine は1語で「私のもの」。うしろに名詞は置けない）</li>
+        <li><b>be動詞は？</b>　She は1人 → <b>is</b>。</li>
+        <li><b>つづり：a-u-n-t</b>（おば）。<b>u</b> を落とすと <span class="ng">✕ ant</span>＝「アリ」になってしまう。おじ <b>uncle</b> とセットで覚える。</li>
+        <li><b>2文目の「私は」は？</b>　また文のあたま＝主語 → <b>I</b>。<b>I は文のとちゅうでもいつも大文字</b>。</li>
+        <li><b>★「彼女が大好きです」の「彼女」は、じつは「彼女を」。</b>　like（好き）という<b>動詞のうしろ</b>にいる ＝ 目的の役わり → <b>目的格 her</b>。<span class="ng">✕ I like she.</span>　日本語が「彼女<b>が</b>」でも、英語では動詞のうしろだから <b>her</b>。<b>日本語の「が」に引っぱられない。</b></li>
+        <li><b>★ her は「彼女の」も「彼女を」も同じ形。</b>　だから<b>置き場所で読む</b>。名詞の前（her dog）なら「彼女の」、動詞のうしろ（like her）なら「彼女を」。この2役は特訓でねらわれる。</li>
+        <li><b>very much（とても）はどこ？</b>　文の<b>いちばんうしろ</b>に置く → I like her <b>very much</b>.</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Her is my aunt.</span>（主語に目的格）／<span class="ng">✕ She is mine aunt.</span>（mine のうしろに名詞）／<span class="ng">✕ I like she very much.</span>（動詞のうしろは her）／<span class="ng">✕ She is my ant.</span>（つづり＝アリ）／<span class="ng">✕ i like her</span>（I が小文字）</span>
+    </div><div class="ans-final"><span>こたえ</span>She is my aunt. I like her very much.</div></div>
+    <div class="gq" data-gid="PR-1"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-1','o')">○</button><button class="x" onclick="g(this,'PR-1','x')">✕</button></div><div class="write3">📝 3回　She is my aunt. I like her very much.</div></div>
+  </div>
+
+  <div class="q writing" data-id="PR-2"><div class="qnum-e">問題2</div>
+    <div class="ew-jp">私たちの英語の先生は中国出身です。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>「私たちの」の形は？</b>　うしろの名詞（teacher）にくっついて「だれの先生か」を説明している ＝ <b>所有格 our</b>。<span class="ng">✕ We English teacher</span>（we は「私たちは」）<span class="ng">✕ Us English teacher</span>（us は「私たちを」）<span class="ng">✕ Ours English teacher</span>（ours は1語で「私たちのもの」。うしろに名詞は置けない）</li>
+        <li><b>「英語の先生」のならび順は？</b>　<b>English teacher</b>。「何の先生か」を表す English は teacher の<b>前</b>。日本語の「英語 の 先生」と同じ順でいい。<span class="ng">✕ teacher English</span></li>
+        <li><b>主語はどこまで？</b>　<b>our English teacher</b> の3語でひとかたまり。中心の名詞は <b>teacher</b> で<b>1人</b> → be動詞は <b>is</b>。<span class="ng">✕ Our English teacher are from China.</span>（うしろの English や China につられない。<b>be動詞を決めるのは主語の中心</b>）</li>
+        <li><b>★「〜出身です」はどう作る？</b>　<b>be動詞 ＋ from ＋ 場所</b>。from は「〜<b>から</b>（来ている）」。is from China ＝「中国から来ている」＝「中国出身だ」。</li>
+        <li><b>★from を落とすと意味がこわれる。</b>　be動詞は「＝」でつなぐことば。<span class="ng">✕ Our English teacher is China.</span> は「<b>先生＝中国</b>」になってしまう。人と国はイコールにならない。</li>
+        <li><b>大文字！</b>　<b>C</b>hina は国の名前、<b>E</b>nglish は言語の名前。どちらも文のとちゅうでも<b>いつも大文字</b>で始める。</li>
+        <li><b>つづり：C-h-i-n-a</b>。（6月のテストで落とした語。もう落とさない）</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ We English teacher is from China.</span>（主格を名詞の前に置いた）／<span class="ng">✕ Our English teacher are from China.</span>（主語の中心は teacher ＝1人）／<span class="ng">✕ Our English teacher is China.</span>（from 落ち）／<span class="ng">✕ from china</span>（小文字）／<span class="ng">✕ Our english teacher</span>（小文字）</span>
+    </div><div class="ans-final"><span>こたえ</span>Our English teacher is from China.</div></div>
+    <div class="gq" data-gid="PR-2"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-2','o')">○</button><button class="x" onclick="g(this,'PR-2','x')">✕</button></div><div class="write3">📝 3回　Our English teacher is from China.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ルール2 ===== -->
+<div class="step"><span class="n">ルール2</span><span class="t">動詞・前置詞のうしろは、かならず「目的格」</span><span class="time">7分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>主格（I / he / she / we / they）は<b>動詞の前</b>にしか立てない。動詞のうしろ、そして <b>with / for / to / at</b> などの<b>前置詞のうしろ</b>に来たら、形は<b>目的格（me / him / her / us / them）</b>に変わる。</p>
+
+  <div class="fig">
+    <div class="cap">図2　置き場所が、形を決める</div>
+    <svg viewBox="0 0 600 200" role="img" aria-label="主格と目的格の置き場所の図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <text x="8" y="16" font-size="12" font-weight="800" fill="#2f5a3e">動詞の前 → 主格（〜は）　／　動詞・前置詞のうしろ → 目的格（〜を）</text>
+
+      <rect x="8" y="26" width="76" height="42" rx="8" fill="#fff4e3" stroke="#e0b552" stroke-width="2"/>
+      <text x="46" y="54" text-anchor="middle" font-size="19" font-weight="800" fill="#7a5a1e">I</text>
+      <rect x="92" y="26" width="110" height="42" rx="8" fill="#eef2ec" stroke="#c9d3c6" stroke-width="2"/>
+      <text x="147" y="54" text-anchor="middle" font-size="18" font-weight="800" fill="#4c5b70">know</text>
+      <rect x="210" y="26" width="86" height="42" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="253" y="54" text-anchor="middle" font-size="19" font-weight="800" fill="#2f5a3e">him</text>
+      <text x="302" y="54" font-size="18" font-weight="800" fill="#5a6b50">.</text>
+      <text x="322" y="53" font-size="13" font-weight="700" fill="#2f6b45">私は 彼を 知っている</text>
+
+      <rect x="8" y="78" width="76" height="42" rx="8" fill="#fff4e3" stroke="#e0b552" stroke-width="2"/>
+      <text x="46" y="106" text-anchor="middle" font-size="19" font-weight="800" fill="#7a5a1e">He</text>
+      <rect x="92" y="78" width="110" height="42" rx="8" fill="#eef2ec" stroke="#c9d3c6" stroke-width="2"/>
+      <text x="147" y="106" text-anchor="middle" font-size="18" font-weight="800" fill="#4c5b70">knows</text>
+      <rect x="210" y="78" width="86" height="42" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="253" y="106" text-anchor="middle" font-size="19" font-weight="800" fill="#2f5a3e">me</text>
+      <text x="302" y="106" font-size="18" font-weight="800" fill="#5a6b50">.</text>
+      <text x="322" y="105" font-size="13" font-weight="700" fill="#2f6b45">彼は 私を 知っている</text>
+
+      <text x="8" y="146" font-size="11" font-weight="800" fill="#5a6b50">前置詞も</text>
+      <text x="8" y="161" font-size="11" font-weight="800" fill="#5a6b50">同じ</text>
+      <rect x="92" y="130" width="110" height="42" rx="8" fill="#e8eefb" stroke="#7f9fd0" stroke-width="2"/>
+      <text x="147" y="158" text-anchor="middle" font-size="18" font-weight="800" fill="#31527a">with</text>
+      <rect x="210" y="130" width="86" height="42" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="253" y="158" text-anchor="middle" font-size="19" font-weight="800" fill="#2f5a3e">me</text>
+      <text x="322" y="157" font-size="13" font-weight="700" fill="#2f6b45">私と いっしょに</text>
+
+      <text x="8" y="192" font-size="13" font-weight="800" fill="#b5403a">✕ I know he.　✕ Me know him.　✕ with he　✕ with I</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>日本語</th><th>英語</th><th>なぜその形？</th></tr>
+    <tr><td>彼<b>は</b> 私<b>を</b> 知っている。</td><td><span class="ok">He</span> knows <span class="ok">me</span>.</td><td>He＝動詞の前／me＝動詞のうしろ</td></tr>
+    <tr><td>私<b>は</b> 彼<b>を</b> 知っている。</td><td><span class="ok">I</span> know <span class="ok">him</span>.</td><td>I＝動詞の前／him＝動詞のうしろ</td></tr>
+    <tr><td>私<b>と</b> いっしょに</td><td>with <span class="ok">me</span></td><td>前置詞 with のうしろ</td></tr>
+    <tr><td>私<b>たちを</b> 手伝う</td><td>help <span class="ok">us</span></td><td>動詞 help のうしろ</td></tr>
+  </table>
+
+  <div class="why"><b>なぜ形が変わるの？</b>　英語は語順で意味を決める言語。だから「だれがしたか」と「だれにされたか」を、<b>形そのもの</b>ではっきり分けている。He knows me. と Me knows he. は、形を見ただけで後者が壊れていると分かる。<b>形が役わりの名札</b>になっているということ。</div>
+  <div class="warn">日本語の「私<b>と</b>」「彼<b>が</b>」に引っぱられると形をまちがえる。<br><span class="ng">✕ Play tennis with I.</span> → <span class="ok">with me</span>　／　<span class="ng">✕ I like she.</span> → <span class="ok">I like her.</span><br><b>日本語の助詞ではなく、英語での置き場所を見る。</b></div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="PR-3"><div class="qnum-e">問題3</div>
+    <div class="ew-jp">私の兄はよく私といっしょにテニスをします。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>主語は？</b>　「私の兄」＝ <b>my brother</b>。「私の」は名詞 brother の前 → <b>所有格 my</b>。<span class="ng">✕ I brother</span>　<span class="ng">✕ Me brother</span></li>
+        <li><b>★動詞の形。</b>　主語 my brother は<b>1人</b>（＝ he で言いかえられる）。一般動詞の文で主語が he / she / it にあたるとき、動詞に <b>-s</b> をつける → play → <b>plays</b>。<span class="ng">✕ My brother play tennis</span>（-s 落ち）。<b>9月の特訓で必ず出るところ。</b></li>
+        <li><b>「よく」はどこに置く？</b>　often は「どれくらいの回数か」を表すことば。<b>一般動詞のすぐ前</b>に置く → my brother <b>often plays</b>。<span class="ng">✕ My brother plays often tennis.</span></li>
+        <li><b>★この問題の本丸：「私と」の形。</b>　「〜といっしょに」＝ <b>with</b>。with は<b>前置詞</b>で、<b>前置詞のうしろは目的格</b>。だから「私」は I ではなく <b>me</b> → <b>with me</b>。<span class="ng">✕ with I</span></li>
+        <li><b>なぜ I ではダメ？</b>　I は「<b>私は</b>」＝ 動詞の前に立つときの形。ここの「私」は<b>動作をする人ではなく、いっしょにいる相手</b>。役わりがちがうので形も変わる。<b>日本語の「私と」の「と」に引っぱられない。</b></li>
+        <li><b>語順のしあげ。</b>　「だれが → どうする → 何を → だれと」の順 → My brother often plays tennis with me.　<span class="ng">✕ My brother often plays with me tennis.</span></li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ My brother often plays tennis with I.</span>（前置詞のうしろは me）／<span class="ng">✕ My brother often play tennis with me.</span>（-s 落ち）／<span class="ng">✕ My brother plays often tennis with me.</span>（often の位置）／<span class="ng">✕ Me brother 〜</span></span>
+    </div><div class="ans-final"><span>こたえ</span>My brother often plays tennis with me.</div></div>
+    <div class="gq" data-gid="PR-3"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-3','o')">○</button><button class="x" onclick="g(this,'PR-3','x')">✕</button></div><div class="write3">📝 3回　My brother often plays tennis with me.</div></div>
+  </div>
+
+  <div class="q writing" data-id="PR-4"><div class="qnum-e">問題4</div>
+    <div class="ew-jp">彼は私を知っていますが、私は彼を知りません。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>前半の主語は？</b>　「彼は」＝ 文のあたま → <b>主格 He</b>。<span class="ng">✕ Him knows me.</span>（him は動詞のうしろ用の形）</li>
+        <li><b>動詞の形は？</b>　He は<b>1人</b> → know に <b>-s</b> → <b>knows</b>。</li>
+        <li><b>「私を」は？</b>　knows という<b>動詞のうしろ</b>にいる → <b>目的格 me</b>。<span class="ng">✕ He knows I.</span></li>
+        <li><b>2つの文をどうつなぐ？</b>　「〜ですが」＝ <b>but</b>。but の前に<b>コンマ（,）</b>を打つ → 〜 me<b>,</b> but 〜。</li>
+        <li><b>後半の主語は？</b>　「私は」＝ 文のあたま → <b>I</b>（いつも大文字）。<span class="ng">✕ me don't know him</span></li>
+        <li><b>「知りません」の作り方。</b>　know は一般動詞なので、否定は助っ人 <b>don't</b> を呼ぶ。主語が I なので doesn't ではなく <b>don't</b>。</li>
+        <li><b>★don't のうしろは原形。</b>　don't が「1人・現在」の情報を引き受けるので、動詞は -s のつかない形にもどる → <b>don't know</b>。<span class="ng">✕ I don't knows him.</span></li>
+        <li><b>「彼を」は？</b>　know という<b>動詞のうしろ</b> → <b>目的格 him</b>。<span class="ng">✕ I don't know he.</span></li>
+        <li><b>★この文の正体。</b>　同じ「彼」が、前半では <b>He</b>（動詞の前）、後半では <b>him</b>（動詞のうしろ）。同じ「私」が、前半では <b>me</b>、後半では <b>I</b>。<b>置き場所が入れかわると、形も入れかわる。</b>これが代名詞のすべて。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ He knows I, but I don't know he.</span>（両方とも目的格にしていない）／<span class="ng">✕ Him knows me 〜</span>／<span class="ng">✕ I don't knows him.</span>（原形にもどす）／<span class="ng">✕ I doesn't know him.</span>（I は don't）／コンマの書き忘れ</span>
+    </div><div class="ans-final"><span>こたえ</span>He knows me, but I don't know him.</div></div>
+    <div class="gq" data-gid="PR-4"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-4','o')">○</button><button class="x" onclick="g(this,'PR-4','x')">✕</button></div><div class="write3">📝 3回　He knows me, but I don't know him.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ルール3 ===== -->
+<div class="step"><span class="n">ルール3</span><span class="t">my＋名詞 と mine（1語で「私のもの」）</span><span class="time">6分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>「〜の」（my / your / his / her / our / their）は、<b>うしろに名詞がいないと立てない</b>。「〜のもの」（mine / yours / his / hers / ours / theirs）は、<b>それ1語で完成</b>していて、<b>うしろに名詞を置けない</b>。</p>
+
+  <div class="fig">
+    <div class="cap">図3　mine ＝ my ＋ 名詞　を1語にまとめたもの</div>
+    <svg viewBox="0 0 600 172" role="img" aria-label="所有格と所有代名詞の関係図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <text x="8" y="14" font-size="11" font-weight="800" fill="#31527a">所有格 ＋ 名詞（2語）</text>
+      <rect x="8" y="22" width="74" height="44" rx="8" fill="#e8eefb" stroke="#7f9fd0" stroke-width="2"/>
+      <text x="45" y="51" text-anchor="middle" font-size="19" font-weight="800" fill="#31527a">my</text>
+      <rect x="90" y="22" width="92" height="44" rx="8" fill="#eef2ec" stroke="#c9d3c6" stroke-width="2"/>
+      <text x="136" y="51" text-anchor="middle" font-size="19" font-weight="800" fill="#4c5b70">bag</text>
+
+      <text x="196" y="53" font-size="24" font-weight="800" fill="#5a6b50">=</text>
+
+      <text x="230" y="14" font-size="11" font-weight="800" fill="#a24d78">所有代名詞（1語）</text>
+      <rect x="230" y="22" width="120" height="44" rx="8" fill="#fff5fa" stroke="#d99ab8" stroke-width="2"/>
+      <text x="290" y="51" text-anchor="middle" font-size="19" font-weight="800" fill="#a24d78">mine</text>
+
+      <text x="366" y="40" font-size="12" font-weight="700" fill="#5a6b50">どちらも「私のかばん」。</text>
+      <text x="366" y="58" font-size="12" font-weight="700" fill="#5a6b50">名詞をくり返さないための形。</text>
+
+      <text x="8" y="90" font-size="13" font-weight="800" fill="#2f6b45">○ This is my bag.　　○ This bag is mine.</text>
+
+      <rect x="8" y="102" width="568" height="60" rx="8" fill="#fdeeec" stroke="#d98a86" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="22" y="124" font-size="13" font-weight="800" fill="#b5403a">✕ This is mine bag.　（mine のうしろに名詞は置けない）</text>
+      <text x="22" y="144" font-size="13" font-weight="800" fill="#b5403a">✕ This bag is my.　　（my は1語で終われない。名詞が要る）</text>
+      <text x="22" y="158" font-size="11" fill="#8a3a36">mine / yours / hers / ours / theirs に ' （アポストロフィ）は付けない。</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>〜の（うしろに名詞）</th><th>〜のもの（1語）</th><th>言いかえ</th></tr>
+    <tr><td class="c-ps">my bag</td><td class="c-pn">mine</td><td>This is my bag. ＝ This bag is mine.</td></tr>
+    <tr><td class="c-ps">her bag</td><td class="c-pn">hers</td><td>This is her bag. ＝ This bag is hers.</td></tr>
+    <tr><td class="c-ps">their bags</td><td class="c-pn">theirs</td><td>These are their bags. ＝ These bags are theirs.</td></tr>
+    <tr><td class="c-ps">his bag</td><td class="c-pn">his</td><td>his だけは<b>同じ形</b>（覚えるところ）</td></tr>
+  </table>
+
+  <div class="why"><b>なぜ「〜のもの」という形があるの？</b>　同じ名詞を2回言わずにすませるため。「私のかばんは青い。<b>彼女のかばん</b>は赤い。」を英語で言うと bag が2回出て、くどい。そこで <b>her bag → hers</b> と1語にまとめる。<b>hers は「彼女のかばん」の代わり</b>だと分かれば、うしろに名詞が要らない理由もわかる。</div>
+  <div class="key"><b>人に 's をつけても同じことができる</b>：This table is <b>my uncle's</b>.（このテーブルは私のおじのものです）。<b>'s</b> のうしろに名詞がなければ「〜<b>のもの</b>」の意味になる。</div>
+  <div class="more"><b>-s があっても複数ではない</b>。mine は、指すものが1つでも2つ以上でも <b>mine のまま</b>。<span class="ng">✕ These books are mines.</span>　yours / hers / ours / theirs も同じで、これ以上 -s は増えない。</div>
+  <div class="warn"><span class="ng">✕ mine bag ／ ✕ yours pen ／ ✕ hers dog</span>（「〜のもの」のうしろに名詞は置けない）<br><span class="ng">✕ her's ／ ✕ your's ／ ✕ their's</span>（アポストロフィは付けない）<br><span class="ng">✕ This bag is my.</span>（「〜の」で文を終われない → mine）</div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="PR-5"><div class="qnum-e">問題5</div>
+    <div class="ew-jp">このテーブルは私のおじのものです。私のものではありません。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>主語は？</b>　「このテーブル」＝ <b>this table</b>。<b>1つ</b> → be動詞は <b>is</b>。</li>
+        <li><b>★つづり：t-a-b-l-e。</b>　<span class="ng">✕ tabel</span>　<span class="ng">✕ teble</span>。「テイブ<b>ル</b>」の <b>l</b> は <b>e</b> より<b>前</b>、最後は <b>e</b> で終わる。（6月のテストで落とした語）</li>
+        <li><b>★「私のおじのもの」をどう書く？</b>　人を表すことばのうしろに <b>'s</b> をつけると「〜の」になる → my uncle<b>'s</b>。そして <b>'s のうしろに名詞がなければ「〜のもの」</b>という意味になる → <b>my uncle's</b> だけで「私のおじのもの」。</li>
+        <li><b>★'s を落とすと文がこわれる。</b>　<span class="ng">✕ This table is my uncle.</span> は「<b>このテーブル＝私のおじ</b>」という意味になってしまう（be動詞は「＝」でつなぐから）。<b>'s が「〜のもの」の印。</b></li>
+        <li><b>つづり：u-n-c-l-e</b>（おじ）。おば <b>aunt</b> とセット。</li>
+        <li><b>2文目の主語は？</b>　「（それは）私のものではありません」。前に出た table を受けるので <b>It</b>。ものを受ける代名詞は <b>it</b>。</li>
+        <li><b>「私のもの」は？</b>　1語で <b>mine</b>。否定は be動詞のうしろに not → <b>It is not mine.</b>（It isn't mine. でもOK）</li>
+        <li><b>★ここで my を使えない理由。</b>　my は「うしろに名詞がいないと立てない」形。<span class="ng">✕ It is not my.</span> は名詞がなくて終われない。かといって <span class="ng">✕ It is not mine table.</span> もダメ（mine のうしろに名詞は置けない）。<b>名詞を言わないなら mine ただ1語。</b></li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ This table is my uncle.</span>（'s 落ち＝テーブルがおじになる）／<span class="ng">✕ It is not my.</span>（my で終われない）／<span class="ng">✕ It is not mine table.</span>／<span class="ng">✕ This tabel is 〜</span>（つづり）／<span class="ng">✕ my uncles table</span>（アポストロフィ落ち）</span>
+    </div><div class="ans-final"><span>こたえ</span>This table is my uncle's. It is not mine.　<span style="font-size:13px;color:#3f7a4a">（It isn't mine. でもOK）</span></div></div>
+    <div class="gq" data-gid="PR-5"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-5','o')">○</button><button class="x" onclick="g(this,'PR-5','x')">✕</button></div><div class="write3">📝 3回　This table is my uncle's. It is not mine.</div></div>
+  </div>
+
+  <div class="q writing" data-id="PR-6"><div class="qnum-e">問題6</div>
+    <div class="ew-jp">私のかばんは青いですが、彼女のものは赤いです。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>前半の主語は？</b>　「私のかばん」＝ <b>my bag</b>（所有格＋名詞）。<b>1つ</b> → <b>is</b>。blue は「青い」＝ようすを表すことばなので、「です」の役は is がやる。</li>
+        <li><b>つなぎ方。</b>　「〜ですが」＝ <b>but</b>。前にコンマ → blue<b>,</b> but 〜。</li>
+        <li><b>★後半の「彼女のもの」の正体は「彼女のかばん」。</b>　同じ bag をもう一度言うとくどいので、<b>her bag を1語にまとめて hers</b> にする。これが「〜のもの」の形が存在する理由。</li>
+        <li><b>★her では文にならない。</b>　<span class="ng">✕ her is red.</span>　her は「彼女の」＝うしろに名詞が必要な形。名詞なしで主語にはできない。<b>名詞を言わないなら hers。</b></li>
+        <li><b>★hers のうしろに名詞は置けない。</b>　<span class="ng">✕ hers bag is red.</span>　名詞（bag）を言うなら <b>her bag</b>。<b>her bag か hers か、どちらか一方。</b></li>
+        <li><b>★アポストロフィを付けない。</b>　<span class="ng">✕ her's</span>。hers / yours / ours / theirs は、みんな <b>'なし</b>。（'s が付くのは <b>my sister's</b> のように「人の名前・人を表す語」のとき）</li>
+        <li><b>後半の be動詞は？</b>　hers ＝「彼女のかばん」＝<b>1つ</b> → <b>is</b>。<span class="ng">✕ hers are red.</span></li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ My bag is blue, but her is red.</span>（her で終われない）／<span class="ng">✕ but hers bag is red.</span>（hers のうしろに名詞）／<span class="ng">✕ but her's is red.</span>（アポストロフィ）／<span class="ng">✕ Mine bag is blue 〜</span>／<span class="ng">✕ but hers are red.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>My bag is blue, but hers is red.</div></div>
+    <div class="gq" data-gid="PR-6"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-6','o')">○</button><button class="x" onclick="g(this,'PR-6','x')">✕</button></div><div class="write3">📝 3回　My bag is blue, but hers is red.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ルール4 ===== -->
+<div class="step"><span class="n">ルール4</span><span class="t">its と it's ／ their と there と they're</span><span class="time">7分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>音が同じ（または、そっくり）なのに、はたらきがまったくちがうペアがある。ここは特訓で<b>必ずねらわれる</b>。見分ける鍵はたった1つ、<b>アポストロフィ（'）</b>。</p>
+
+  <div class="pair">
+    <b>'（アポストロフィ）は「文字が消えた印」</b>。だから <b>' があるものは、すべて2語の短縮形</b>。<br>
+    　<b>it's</b> ＝ <b>it is</b>（i が消えた印が '）　／　<b>they're</b> ＝ <b>they are</b>（a が消えた印が '）　／　<b>you're</b> ＝ <b>you are</b><br>
+    逆に、<b>「〜の」を表す代名詞に ' は付かない</b>。<b>its</b>／<b>their</b>／<b>your</b>／<b>hers</b>／<b>ours</b>／<b>theirs</b> は、ぜんぶ <span class="ng">'なし</span>。<br>
+    <b>見分け方はこれだけ</b>：<b>うしろに名詞が続く → 「〜の」（its / their / your）</b>。<b>「〜です」と読める → 短縮形（it's / they're / you're）</b>。
+  </div>
+
+  <div class="fig">
+    <div class="cap">図4　' があるかないかで、はたらきが変わる</div>
+    <svg viewBox="0 0 600 268" role="img" aria-label="its it's their there they are your you are の見分け図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <text x="8" y="18" font-size="12" font-weight="800" fill="#b5403a">★ ' があれば「短縮形（＝ is / are）」。' がなければ「〜の（所有格）」。</text>
+
+      <rect x="8" y="30" width="124" height="44" rx="8" fill="#e8eefb" stroke="#7f9fd0" stroke-width="2"/>
+      <text x="70" y="52" text-anchor="middle" font-size="19" font-weight="800" fill="#31527a">its</text>
+      <text x="70" y="68" text-anchor="middle" font-size="10.5" fill="#31527a">それの（所有格）</text>
+      <text x="140" y="57" font-size="12.5" font-weight="700" fill="#2f6b45">Its name is Momo.</text>
+      <rect x="310" y="30" width="140" height="44" rx="8" fill="#fff5fa" stroke="#d99ab8" stroke-width="2"/>
+      <text x="380" y="52" text-anchor="middle" font-size="19" font-weight="800" fill="#a24d78">it's</text>
+      <text x="380" y="68" text-anchor="middle" font-size="10.5" fill="#a24d78">＝ it is</text>
+      <text x="458" y="57" font-size="12.5" font-weight="700" fill="#2f6b45">It's my cat.</text>
+
+      <rect x="8" y="88" width="124" height="44" rx="8" fill="#e8eefb" stroke="#7f9fd0" stroke-width="2"/>
+      <text x="70" y="110" text-anchor="middle" font-size="19" font-weight="800" fill="#31527a">their</text>
+      <text x="70" y="126" text-anchor="middle" font-size="10.5" fill="#31527a">彼らの（所有格）</text>
+      <text x="140" y="115" font-size="12.5" font-weight="700" fill="#2f6b45">Their school is new.</text>
+      <rect x="310" y="88" width="140" height="44" rx="8" fill="#fff5fa" stroke="#d99ab8" stroke-width="2"/>
+      <text x="380" y="110" text-anchor="middle" font-size="19" font-weight="800" fill="#a24d78">they're</text>
+      <text x="380" y="126" text-anchor="middle" font-size="10.5" fill="#a24d78">＝ they are</text>
+      <text x="458" y="115" font-size="12.5" font-weight="700" fill="#2f6b45">They're kind.</text>
+
+      <rect x="8" y="146" width="124" height="44" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="70" y="168" text-anchor="middle" font-size="19" font-weight="800" fill="#2f5a3e">there</text>
+      <text x="70" y="184" text-anchor="middle" font-size="10.5" fill="#2f5a3e">そこに（場所）</text>
+      <text x="140" y="173" font-size="12.5" font-weight="700" fill="#2f6b45">It is over there.</text>
+      <text x="310" y="167" font-size="12.5" font-weight="800" fill="#b5403a">✕ There school is new.</text>
+      <text x="310" y="184" font-size="11" fill="#8a3a36">there は代名詞ではない</text>
+
+      <rect x="8" y="204" width="124" height="44" rx="8" fill="#e8eefb" stroke="#7f9fd0" stroke-width="2"/>
+      <text x="70" y="226" text-anchor="middle" font-size="19" font-weight="800" fill="#31527a">your</text>
+      <text x="70" y="242" text-anchor="middle" font-size="10.5" fill="#31527a">あなたの（所有格）</text>
+      <text x="140" y="231" font-size="12.5" font-weight="700" fill="#2f6b45">your bag</text>
+      <rect x="310" y="204" width="140" height="44" rx="8" fill="#fff5fa" stroke="#d99ab8" stroke-width="2"/>
+      <text x="380" y="226" text-anchor="middle" font-size="19" font-weight="800" fill="#a24d78">you're</text>
+      <text x="380" y="242" text-anchor="middle" font-size="10.5" fill="#a24d78">＝ you are</text>
+      <text x="458" y="231" font-size="12.5" font-weight="700" fill="#2f6b45">You're kind.</text>
+
+      <text x="8" y="263" font-size="11" font-weight="800" fill="#b5403a">✕ It's name is Momo.（It is name is 〜 になってしまう）　✕ They're school is new.</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>形</th><th>正体</th><th>見分ける合図</th><th>れい</th></tr>
+    <tr><td class="c-ps">its</td><td>それの（〜の）</td><td>うしろに<b>名詞</b>が続く</td><td>Its eyes are blue.</td></tr>
+    <tr><td class="c-pn">it's</td><td>it is の短縮</td><td>「それは〜です」と読める</td><td>It's a cat.</td></tr>
+    <tr><td class="c-ps">their</td><td>彼らの（〜の）</td><td>うしろに<b>名詞</b>が続く</td><td>Their school is new.</td></tr>
+    <tr><td class="c-ob">there</td><td>そこに（場所）</td><td>「そこに・あそこに」と読める</td><td>over there</td></tr>
+    <tr><td class="c-pn">they're</td><td>they are の短縮</td><td>「彼らは〜です」と読める</td><td>They're kind.</td></tr>
+  </table>
+
+  <div class="why"><b>音が同じでも、はたらきは別物。</b>　英語は<b>書いたときの形</b>で意味を区別する。だから、聞こえた音のまま書くと落とす。書く前に「これは<b>〜の</b>？ それとも<b>〜です</b>？」と自分に1回きく。それだけで防げる。</div>
+  <div class="warn"><span class="ng">✕ It's name is Momo.</span> → its（うしろに名詞 name がある）<br><span class="ng">✕ Its a cat.</span> → It's（「それは猫です」と読める）<br><span class="ng">✕ There school is new.</span> → Their（うしろに名詞 school がある）<br><span class="ng">✕ Their over there.</span> → They're（「彼らは〜です」と読める）</div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="PR-7"><div class="qnum-e">問題7</div>
+    <div class="ew-jp">それは私のネコです。その目は青いです。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>1文目の主語は？</b>　「それは」＝ <b>It</b>。動物やものを受ける代名詞は it。1つ（1ぴき） → be動詞は <b>is</b>。</li>
+        <li><b>「私のネコ」は？</b>　うしろに名詞 cat があるので <b>所有格 my</b> → <b>my cat</b>。<span class="ng">✕ mine cat</span></li>
+        <li><b>★2文目の「その目」は「そのネコの目」。</b>　「その」は<b>名詞 eyes にくっついて</b>「だれの目か」を説明している ＝ <b>所有格</b>。it の所有格は <b>its</b>。<b>アポストロフィを付けない。</b></li>
+        <li><b>★なぜ it's ではダメなのか、理由がある。</b>　<b>'（アポストロフィ）は「文字が消えた印」</b>。it's は <b>it is</b> の<b>短縮形</b>（i が消えた）。だから <span class="ng">✕ It's eyes are blue.</span> と書くと「<b>It is eyes are blue.</b>」＝「それは 目 である 青い」という<b>こわれた文</b>になってしまう。</li>
+        <li><b>★見分け方は1つだけ。</b>　<b>うしろに名詞（eyes）が続く → its</b>。<b>「それは〜です」と読める → it's</b>。この文では、1文目が「それは〜です」＝ <b>It is</b>（It's でもOK）、2文目が「その〜」＝ <b>Its</b>。<b>同じ音でも役わりがちがう。</b></li>
+        <li><b>be動詞は？</b>　目は<b>2つ</b>ある → eye<b>s</b>（複数） → <b>are</b>。<span class="ng">✕ Its eyes is blue.</span></li>
+        <li><b>blue に -s は付かない。</b>　-s が付くのは名詞だけ。「青い」は目が何個でも blue のまま。<span class="ng">✕ blues</span></li>
+        <li><b>文のあたまは大文字。</b>　2文目のあたまは <b>Its</b>（I を大文字に）。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ It's eyes are blue.</span>（＝It is eyes… になる。<b>いちばん多い</b>）／<span class="ng">✕ Its is my cat.</span>（1文目は It is）／<span class="ng">✕ Its eyes is blue.</span>（目は2つ → are）／<span class="ng">✕ Its' eyes</span>／<span class="ng">✕ It is mine cat.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>It is my cat. Its eyes are blue.　<span style="font-size:13px;color:#3f7a4a">（It's my cat. でもOK）</span></div></div>
+    <div class="gq" data-gid="PR-7"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-7','o')">○</button><button class="x" onclick="g(this,'PR-7','x')">✕</button></div><div class="write3">📝 3回　It is my cat. Its eyes are blue.</div></div>
+  </div>
+
+  <div class="q writing" data-id="PR-8"><div class="qnum-e">問題8</div>
+    <div class="ew-jp">彼らは私の友だちです。彼らの学校はあそこにあります。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>1文目の主語は？</b>　「彼らは」＝ 文のあたま → <b>主格 They</b>。<b>2人以上</b> → be動詞は <b>are</b>。<span class="ng">✕ Them are 〜</span></li>
+        <li><b>「私の友だち」は？</b>　彼ら（2人以上）＝ 友だちも<b>2人以上</b> → <b>friends</b>（-s）。所有格 my を前に → <b>my friends</b>。<span class="ng">✕ They are my friend.</span>（1人になってしまう）</li>
+        <li><b>★2文目の「彼らの学校」。</b>　「彼らの」は<b>名詞 school にくっついて</b>いる ＝ <b>所有格 their</b>。うしろに名詞がある → their。</li>
+        <li><b>★ there と書かない。</b>　<span class="ng">✕ There school is over there.</span>　<b>there は「そこに・あそこに」という場所のことばで、代名詞ではない</b>。名詞の前に置けない。音が同じでも別物。</li>
+        <li><b>★ they're とも書かない。</b>　<b>'（アポストロフィ）は「文字が消えた印」</b>で、they're は <b>they are</b> の<b>短縮形</b>。<span class="ng">✕ They're school is over there.</span> は「<b>They are school is 〜</b>」というこわれた文になる。</li>
+        <li><b>★3つの見分け方。</b>　<b>うしろに名詞 → their</b>／<b>「そこに」と読める → there</b>／<b>「彼らは〜です」と読める → they're</b>。この文には、じつは <b>their</b> と <b>there</b> が<b>両方</b>出てくる。</li>
+        <li><b>2文目のbe動詞は？</b>　主語は <b>Their school</b>。中心の名詞は school で<b>1つ</b> → <b>is</b>。<span class="ng">✕ Their school are 〜</span>（their につられて are にしない）</li>
+        <li><b>「あそこにあります」は？</b>　be動詞には「〜に<b>ある・いる</b>」の意味もある → <b>is over there</b>。over there ＝「あそこに」。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ There school is over there.</span>（名詞の前に there）／<span class="ng">✕ They're school is 〜</span>（＝They are school に）／<span class="ng">✕ Their school are over there.</span>（school は1つ）／<span class="ng">✕ They are my friend.</span>（-s 落ち）／<span class="ng">✕ Them are my friends.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>They are my friends. Their school is over there.</div></div>
+    <div class="gq" data-gid="PR-8"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-8','o')">○</button><button class="x" onclick="g(this,'PR-8','x')">✕</button></div><div class="write3">📝 3回　They are my friends. Their school is over there.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ミックス ===== -->
+<div class="step"><span class="n">ミックス</span><span class="t">どの形を使うかは、自分で決める（4問）</span><span class="time">6分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>ここからは<b>順番がバラバラ</b>。主格・所有格・目的格・所有代名詞が混ざっている。<b>ヒントは出さない</b>。日本語を読んで、<b>そのことばが文のどこに置かれるか</b>を自分で見きわめて書こう。</p>
+  <div class="key"><b>書く前の3秒チェック</b>：① 文のあたま（動詞の前）？ → <b>主格</b>　② うしろに名詞が続く？ → <b>所有格</b>　③ 動詞・前置詞のうしろ？ → <b>目的格</b>　④ 名詞を言わずに「〜のもの」で終わる？ → <b>所有代名詞</b></div>
+</div>
+
+  <div class="q writing" data-id="PR-9"><div class="qnum-e">ミックス1</div>
+    <div class="ew-jp">彼女の大好きな教科は英語です。私のは数学です。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>「彼女の」の形は？</b>　うしろに名詞（subject）が続く → <b>所有格 her</b>。<span class="ng">✕ She favorite subject</span>　<span class="ng">✕ Hers favorite subject</span>（hers のうしろに名詞は置けない）</li>
+        <li><b>ならび順は？</b>　<b>だれの → どんな → 何</b> の順 → her <b>favorite</b> subject。<span class="ng">✕ her subject favorite</span></li>
+        <li><b>★つづり：f-a-v-o-r-i-t-e。</b>　<span class="ng">✕ favarite</span>（2つめは <b>o</b>）／<span class="ng">✕ favorit</span>（最後の <b>e</b> を忘れない）。「フェイヴァ<b>リット</b>」と切って書く。（6月のテストで落とした語）</li>
+        <li><b>be動詞は？</b>　主語の中心は <b>subject</b>（1つ） → <b>is</b>。<span class="ng">✕ Her favorite subject are English.</span>（うしろの English につられない）</li>
+        <li><b>大文字！</b>　English は言語・教科の名前 → <b>E</b> は大文字。</li>
+        <li><b>★2文目「私のは」の正体は「私の教科は」。</b>　subject をくり返さないので、<b>my subject を1語にまとめて Mine</b>。文のあたまなので <b>M</b> は大文字。</li>
+        <li><b>★my では書けない。</b>　<span class="ng">✕ My is math.</span>　my は「うしろに名詞がいないと立てない」形。名詞を言うなら <b>My subject is math.</b>、言わないなら <b>Mine is math.</b>　<b>どちらか一方。</b><span class="ng">✕ Mine subject is math.</span></li>
+        <li><b>2文目の be動詞は？</b>　Mine ＝「私の教科」＝<b>1つ</b> → <b>is</b>。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Her favorite subject are English.</span>／<span class="ng">✕ My is math.</span>（my で終われない）／<span class="ng">✕ Mine subject is math.</span>／<span class="ng">✕ Her favarite subject 〜</span>（つづり）／<span class="ng">✕ 〜 is english.</span>（小文字）</span>
+    </div><div class="ans-final"><span>こたえ</span>Her favorite subject is English. Mine is math.</div></div>
+    <div class="gq" data-gid="PR-9"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-9','o')">○</button><button class="x" onclick="g(this,'PR-9','x')">✕</button></div><div class="write3">📝 3回　Her favorite subject is English. Mine is math.</div></div>
+  </div>
+
+  <div class="q writing" data-id="PR-10"><div class="qnum-e">ミックス2</div>
+    <div class="ew-jp">彼らは彼女のお兄さんを知っていますか。 — いいえ、知りません。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>主語は？</b>　「彼らは」＝ 主語 → <b>主格 they</b>。疑問文でも、主語の形は主格のまま。<span class="ng">✕ Do them know 〜?</span></li>
+        <li><b>疑問文はどう作る？</b>　know は一般動詞。一般動詞の疑問文は、文のあたまに <b>Do / Does</b> を置く。主語 they は<b>2人以上</b> → <b>Do</b>。（1人なら Does）</li>
+        <li><b>★Do のうしろの動詞は原形。</b>　<b>Do</b> they <b>know</b> 〜?　<span class="ng">✕ Do they knows 〜?</span></li>
+        <li><b>★「彼女のお兄さん」は？</b>　うしろに名詞（brother）が続く → <b>所有格 her</b> → <b>her brother</b>。<span class="ng">✕ she brother</span>　<span class="ng">✕ hers brother</span>（hers のうしろに名詞は置けない）</li>
+        <li><b>her の2役に注意。</b>　ここの her は「彼女<b>の</b>」（所有格）。もし「彼女<b>を</b>知っていますか」なら Do they know <b>her</b>? で、同じ her でも役わりは目的格。<b>形が同じでも、置き場所を見れば区別できる。</b></li>
+        <li><b>文の終わりは <b>?</b>。</b>　ピリオドではない。</li>
+        <li><b>★答え方。</b>　「いいえ、知りません」＝ <b>No, they don't.</b>　答えでも主語は<b>主格 they</b>。<span class="ng">✕ No, them don't.</span>　Do できかれたら <b>do / don't</b> で返す。<span class="ng">✕ No, they aren't.</span>（be動詞の文ではない）</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Do they knows her brother?</span>（原形にもどす）／<span class="ng">✕ Does they know 〜?</span>（they は複数）／<span class="ng">✕ Do they know she brother?</span>／<span class="ng">✕ No, they aren't.</span>／「?」の書き忘れ</span>
+    </div><div class="ans-final"><span>こたえ</span>Do they know her brother? — No, they don't.</div></div>
+    <div class="gq" data-gid="PR-10"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-10','o')">○</button><button class="x" onclick="g(this,'PR-10','x')">✕</button></div><div class="write3">📝 3回　Do they know her brother? — No, they don't.</div></div>
+  </div>
+
+  <div class="q writing" data-id="PR-11"><div class="qnum-e">ミックス3</div>
+    <div class="ew-jp">あなたのおじさんは毎週あなたを手伝ってくれますか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>主語は？</b>　「あなたのおじさん」＝ <b>your uncle</b>。うしろに名詞（uncle）が続くので <b>所有格 your</b>。<span class="ng">✕ You uncle</span>　<span class="ng">✕ Yours uncle</span>（yours のうしろに名詞は置けない）</li>
+        <li><b>★あなたではなく「おじさん」が主語。</b>　文のあたまに your があるので you につられがちだが、主語の中心は <b>uncle</b>＝<b>1人</b>（he で言いかえられる）。</li>
+        <li><b>疑問文のあたまは Do？ Does？</b>　主語が he / she / it にあたる<b>1人</b>なので <b>Does</b>。<span class="ng">✕ Do your uncle 〜?</span></li>
+        <li><b>★Does を使ったら、動詞は原形。</b>　-s の情報は Does が引き受けている → <b>help</b>（helps ではない）。<span class="ng">✕ Does your uncle helps you 〜?</span>　<b>ここは特訓でねらわれる。</b></li>
+        <li><b>★「あなたを」は？</b>　help という<b>動詞のうしろ</b> → <b>目的格</b>。you の目的格は、形が変わらず <b>you</b> のまま。</li>
+        <li><b>形が同じでも、役わりはちがう。</b>　「あなた<b>は</b>」も「あなた<b>を</b>」も you。I / me のように形が分かれないだけで、はたらきはきちんと目的語。<b>だから your（〜の）と混同しない</b>。<span class="ng">✕ Does your uncle help your every week?</span></li>
+        <li><b>「毎週」はどこ？</b>　時を表すことばは文の<b>いちばんうしろ</b> → every week。文の終わりは <b>?</b>。</li>
+        <li><b>つづり：u-n-c-l-e。</b></li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Does your uncle helps you every week?</span>（原形にもどす）／<span class="ng">✕ Do your uncle help 〜?</span>（uncle は1人）／<span class="ng">✕ Does you uncle 〜?</span>／<span class="ng">✕ 〜 help your every week?</span>／「?」の書き忘れ</span>
+    </div><div class="ans-final"><span>こたえ</span>Does your uncle help you every week?</div></div>
+    <div class="gq" data-gid="PR-11"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-11','o')">○</button><button class="x" onclick="g(this,'PR-11','x')">✕</button></div><div class="write3">📝 3回　Does your uncle help you every week?</div></div>
+  </div>
+
+  <div class="q writing" data-id="PR-12"><div class="qnum-e">ミックス4</div>
+    <div class="ew-jp">これらの本は私のものではありません。それらは彼らのものです。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>主語は？</b>　「これらの本」＝ <b>these books</b>。these（これら＝2つ以上）に合わせて、名詞も<b>複数形 books</b> にそろえる。<span class="ng">✕ these book</span></li>
+        <li><b>be動詞は？</b>　主語が複数 → <b>are</b>。否定は are のうしろに not → <b>are not</b>（<b>aren't</b> でもOK）。</li>
+        <li><b>★「私のものではありません」は？</b>　名詞（books）をくり返さないので、1語の <b>mine</b> を使う → not <b>mine</b>。<span class="ng">✕ are not my.</span>（my は1語で終われない）<span class="ng">✕ are not mine books.</span>（mine のうしろに名詞は置けない）</li>
+        <li><b>★mine に -s は付かない。</b>　<span class="ng">✕ These books are not mines.</span>　本が何冊でも <b>mine のまま</b>。mine / yours / hers / ours / theirs は、これ以上 -s が増えない形。</li>
+        <li><b>★2文目「それらは」の代名詞は？</b>　ものだから it… と思いがちだが、<b>2つ以上のものは they</b> で受ける。<b>they は「彼ら」だけでなく「それら」も表す</b>。→ <b>They</b>。<span class="ng">✕ It is theirs.</span>（本は複数）</li>
+        <li><b>be動詞は？</b>　They は複数 → <b>are</b>。</li>
+        <li><b>★「彼らのもの」は？</b>　名詞を言わないので <b>theirs</b>（1語）。<span class="ng">✕ They are their.</span>（their はうしろに名詞が必要）<span class="ng">✕ theirs books</span>　<span class="ng">✕ their's</span>（アポストロフィは付けない）</li>
+        <li><b>their と theirs の分かれ道。</b>　うしろに名詞を置く → <b>their books</b>。名詞を言わない → <b>theirs</b>。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ These books are not mines.</span>（-s は付かない）／<span class="ng">✕ These books are not my.</span>／<span class="ng">✕ It is theirs.</span>（複数なので They are）／<span class="ng">✕ They are their.</span>／<span class="ng">✕ They are their's.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>These books are not mine. They are theirs.　<span style="font-size:13px;color:#3f7a4a">（These books aren't mine. でもOK）</span></div></div>
+    <div class="gq" data-gid="PR-12"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-12','o')">○</button><button class="x" onclick="g(this,'PR-12','x')">✕</button></div><div class="write3">📝 3回　These books are not mine. They are theirs.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== 連動 ===== -->
+<div class="step"><span class="n">連動</span><span class="t">名前を代名詞にかえると、何か所つられて変わる？（2問）</span><span class="time">4分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>特訓選抜でよく出るのが「<b>下線部を代名詞にかえて書きかえなさい</b>」。同じ名前でも、<b>置かれた場所がちがえば、別の形になる</b>。1つでも直し忘れると×。</p>
+</div>
+
+  <div class="q writing" data-id="PR-13"><div class="qnum-e">連動1</div>
+    <div class="ew-jp">つぎの文の Tom と Tom's を、代名詞に置きかえて書きなさい。<span class="src">Tom's uncle helps Tom every Sunday.</span></div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <p>もとの文の意味は「<b>トムのおじは、毎週日曜日にトムを手伝う</b>」。同じ Tom が<b>2回</b>出てくるが、<b>置かれた場所がちがう</b>ので、代名詞にすると<b>別々の形</b>になる。</p>
+      <table>
+        <tr><th>どこ</th><th>もとの文</th><th>書きかえ後</th><th>なぜそうなるか</th></tr>
+        <tr><td>①</td><td>Tom's（uncle の前）</td><td class="ok">His</td><td>うしろに名詞 uncle が続く ＝「〜の」＝ 所有格</td></tr>
+        <tr><td>②</td><td>Tom（helps のうしろ）</td><td class="ok">him</td><td>動詞のうしろ ＝「〜を」＝ 目的格</td></tr>
+        <tr><td>③</td><td>helps</td><td class="ng">そのまま</td><td>主語 His uncle は1人のまま。-s は消さない</td></tr>
+      </table>
+      <ol>
+        <li><b>①なぜ his なのか。</b>　Tom's は「トム<b>の</b>」。うしろに名詞（uncle）がくっついている ＝ <b>所有格</b>の役わり。he の所有格は <b>his</b>。<span class="ng">✕ He uncle helps him.</span>（he は主格。名詞の前には置けない）</li>
+        <li><b>②なぜ him なのか。</b>　2つめの Tom は、動詞 helps の<b>うしろ</b>にいる ＝「トム<b>を</b>」＝ <b>目的格</b>。he の目的格は <b>him</b>。<span class="ng">✕ His uncle helps he.</span></li>
+        <li><b>★ここが山場。</b>　同じ Tom なのに <b>His</b> と <b>him</b> に分かれる。理由はただ1つ、<b>置かれた場所がちがうから</b>。日本語で「トムの」「トムを」と言い分けるのを、英語は<b>形</b>でやっている。</li>
+        <li><b>③動詞は動かさない。</b>　主語は Tom's uncle → His uncle。どちらも<b>1人</b>なので、helps の <b>-s はそのまま</b>。<span class="ng">✕ His uncle help him every Sunday.</span>　書きかえのとき、つい動詞までさわってしまう人が多い。<b>変えるのは指定された語だけ。</b></li>
+        <li><b>文のあたまは大文字。</b>　<b>H</b>is。Sunday は曜日の名前なので<b>大文字のまま</b>。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ He uncle helps him 〜</span>（主格を名詞の前に）／<span class="ng">✕ His uncle helps he 〜</span>（動詞のうしろは目的格）／<span class="ng">✕ His uncle help him 〜</span>（-s を消した）／<span class="ng">✕ Him uncle 〜</span>／<span class="ng">✕ his uncle 〜</span>（文頭が小文字）</span>
+    </div><div class="ans-final"><span>こたえ</span>His uncle helps him every Sunday.</div></div>
+    <div class="gq" data-gid="PR-13"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-13','o')">○</button><button class="x" onclick="g(this,'PR-13','x')">✕</button></div><div class="write3">📝 3回　His uncle helps him every Sunday.</div></div>
+  </div>
+
+  <div class="q writing" data-id="PR-14"><div class="qnum-e">連動2</div>
+    <div class="ew-jp">つぎの文の My sister and I と Tom's を、代名詞に置きかえて書きなさい。<span class="src">My sister and I are Tom's classmates.</span></div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <p>もとの文の意味は「<b>私の姉と私は、トムのクラスメイトだ</b>」。<b>「私の姉」＋「私」＝ 2人</b>。2人まとめて1語の代名詞にする。</p>
+      <table>
+        <tr><th>どこ</th><th>もとの文</th><th>書きかえ後</th><th>なぜそうなるか</th></tr>
+        <tr><td>①</td><td>My sister and I（主語）</td><td class="ok">We</td><td>2人まとめて「私たち」。文のあたま ＝ 主格</td></tr>
+        <tr><td>②</td><td>are</td><td class="ng">そのまま</td><td>We は2人＝複数。be動詞は are のまま</td></tr>
+        <tr><td>③</td><td>Tom's（classmates の前）</td><td class="ok">his</td><td>うしろに名詞 classmates が続く ＝ 所有格</td></tr>
+      </table>
+      <ol>
+        <li><b>①なぜ We なのか。</b>　「私の姉」と「私」を足すと<b>2人</b>＝「私たち」。しかも<b>文のあたま（動詞 are の前）</b>にいる ＝ <b>主格</b> → <b>We</b>。<span class="ng">✕ Us are his classmates.</span>（us は目的格。主語にはできない）</li>
+        <li><b>★もし置かれる場所がちがえば、形も変わる。</b>　たとえば Tom knows my sister and me. なら、下線部は<b>動詞のうしろ</b>＝目的格なので <b>us</b> になる（Tom knows <b>us</b>.）。<b>同じ2人でも、主語なら we、目的語なら us。</b></li>
+        <li><b>②be動詞はさわらない。</b>　My sister and I（2人）→ We（2人）。<b>人数は変わっていない</b>ので <b>are のまま</b>。<span class="ng">✕ We is his classmates.</span></li>
+        <li><b>③なぜ his なのか。</b>　Tom's は「トム<b>の</b>」で、うしろに名詞（classmates）が続く ＝ <b>所有格</b> → <b>his</b>。<span class="ng">✕ We are him classmates.</span>（him は目的格。名詞の前には置けない）<span class="ng">✕ We are he classmates.</span></li>
+        <li><b>classmates の -s はそのまま。</b>　「私たち」は2人だから、クラスメイトも<b>2人ぶん</b>。<span class="ng">✕ We are his classmate.</span>（1人になってしまう）</li>
+        <li><b>文のあたまは大文字。</b>　<b>W</b>e。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Us are his classmates.</span>（主語は主格）／<span class="ng">✕ We is his classmates.</span>（We は複数）／<span class="ng">✕ We are him classmates.</span>（名詞の前は所有格）／<span class="ng">✕ We are his classmate.</span>（-s 落ち）／<span class="ng">✕ We are hes classmates.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>We are his classmates.</div></div>
+    <div class="gq" data-gid="PR-14"><div class="grade">書けた？ <button class="o" onclick="g(this,'PR-14','o')">○</button><button class="x" onclick="g(this,'PR-14','x')">✕</button></div><div class="write3">📝 3回　We are his classmates.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== まとめ ===== -->
+<div class="step"><span class="n">まとめ</span><span class="t">この表だけ、目をつぶって言えるように</span><span class="time">2分</span></div>
+<div class="body"><div class="lesson">
+  <table>
+    <tr><th>だれ</th><th class="c-sb">〜は（主格）<br>動詞の前</th><th class="c-ps">〜の（所有格）<br>名詞の前</th><th class="c-ob">〜を（目的格）<br>動詞・前置詞の後ろ</th><th class="c-pn">〜のもの<br>1語で完成</th></tr>
+    <tr><td>私</td><td class="c-sb">I</td><td class="c-ps">my</td><td class="c-ob">me</td><td class="c-pn">mine</td></tr>
+    <tr><td>あなた（たち）</td><td class="c-sb">you</td><td class="c-ps">your</td><td class="c-ob">you</td><td class="c-pn">yours</td></tr>
+    <tr><td>彼</td><td class="c-sb">he</td><td class="c-ps"><b>his</b></td><td class="c-ob">him</td><td class="c-pn"><b>his</b></td></tr>
+    <tr><td>彼女</td><td class="c-sb">she</td><td class="c-ps"><b>her</b></td><td class="c-ob"><b>her</b></td><td class="c-pn">hers</td></tr>
+    <tr><td>それ</td><td class="c-sb">it</td><td class="c-ps">its</td><td class="c-ob">it</td><td class="c-pn">—</td></tr>
+    <tr><td>私たち</td><td class="c-sb">we</td><td class="c-ps">our</td><td class="c-ob">us</td><td class="c-pn">ours</td></tr>
+    <tr><td>彼ら・それら</td><td class="c-sb">they</td><td class="c-ps">their</td><td class="c-ob">them</td><td class="c-pn">theirs</td></tr>
+  </table>
+
+  <table>
+    <tr><th>まぎらわしいペア</th><th>見分ける合図</th><th>れい</th></tr>
+    <tr><td><b>its</b>（それの） ／ <b>it's</b>（it is）</td><td>うしろに名詞 → its／「〜です」→ it's</td><td>Its eyes are blue. ／ It's my cat.</td></tr>
+    <tr><td><b>their</b>（彼らの） ／ <b>there</b>（そこに） ／ <b>they're</b>（they are）</td><td>名詞 → their／場所 → there／「〜です」→ they're</td><td>Their school ／ over there ／ They're kind.</td></tr>
+    <tr><td><b>your</b>（あなたの） ／ <b>you're</b>（you are）</td><td>名詞 → your／「〜です」→ you're</td><td>your bag ／ You're kind.</td></tr>
+    <tr><td><b>her</b>（彼女の・彼女を）</td><td>名詞の前 → 「〜の」／動詞の後ろ → 「〜を」</td><td>her brother ／ I like her.</td></tr>
+    <tr><td><b>his</b>（彼の・彼のもの）</td><td>うしろに名詞あり → 「〜の」／なし → 「〜のもの」</td><td>his uncle ／ This is his.</td></tr>
+  </table>
+
+  <div class="key"><b>迷ったら、置き場所を見る</b>　① 動詞の前 → <b>主格</b>　② 名詞の前 → <b>所有格</b>　③ 動詞・前置詞のうしろ → <b>目的格</b>　④ 名詞なしで「〜のもの」 → <b>所有代名詞</b>。<b>日本語の「は・の・を・が・と」に引っぱられない。</b></div>
+  <div class="more"><b>' （アポストロフィ）は「消えた文字の印」</b>。it's / they're / you're は<b>すべて2語の短縮形</b>。一方、<b>hers / ours / yours / theirs / its に ' は付かない</b>。ここを1秒で見分けられるようになれば、特訓の代名詞問題は落とさない。</div>
+</div></div>
+
+<button class="done" id="doneBtn" onclick="finish()">代名詞、ぜんぶ書けた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">代名詞は「置き場所」がすべて。I-my-me-mine を体にしみこませたら、英作文の土台がもう1本できたということ。つぎは U6 へ。</div>
+<div class="footnav"><a class="back back-foot" href="../../夏休みダッシュボード.html#today" style="position:static;display:inline-flex;margin-top:16px">✓ 終わった → 次のおすすめへ</a></div>
+
+</div>
+<script>
+var KEY='tokkun_eg_pron';
+function t(b){if(!b.dataset.label)b.dataset.label=b.textContent;var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');b.textContent=open?'とじる':b.dataset.label;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}var w3=box.querySelector('.write3');if(v==='x'){if(w3)w3.style.display='block';}else{if(w3)w3.style.display='none';}}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！代名詞の形、ばっちりだね';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);if(!v)return;var b=box.querySelector('.'+v);if(b)b.classList.add('sel');if(v==='x'){var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}});if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}};
+/* ===== 復習英語キュー送りフック（×/○・英語問題のみ・自己ループ防止） ===== */
+function sendToRevQ(btn,id,result){
+  if(typeof PRE!=='undefined' && PRE==='revq_') return;        // 受け皿自身では動かさない
+  if(typeof KEY==='undefined') return;
+  if(KEY.indexOf('revq')===0) return;
+  var q=btn&&btn.closest?btn.closest('.q'):null; if(!q) return;
+  if(q.classList.contains('calc')) return;                      // 数学除外
+  var engPrint=!!document.querySelector('[data-eng="1"]');
+  var isVocab=q.classList.contains('vocab'), isWriting=q.classList.contains('writing');
+  if(!engPrint && !isVocab && !isWriting) return;               // 混在で英語クラス無し→送らない
+  var kindEl=q.querySelector('.qnum-e'); var kindRaw=kindEl?(kindEl.textContent||''):'';
+  if(/漢字|書き|読み/.test(kindRaw)) return;                    // 暗記カードの漢字除外
+  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.qbody');
+  var enEl=q.querySelector('.ans-final')||q.querySelector('.ans-box .ans-main');
+  if(!jpEl||!enEl) return;
+  var jp=cleanRevQText(jpEl), en=cleanRevQText(enEl);
+  if(!jp||!en) return;
+  if(!/[A-Za-z]/.test(en)) return;                              // 答えに英字なし→英語でない→除外
+  if(result==='o'){bumpRevQPo(en);return;}                      // ○：既存項目の po++ のみ（新規追加しない）
+  var kind='単語',badge='tango';
+  if(isWriting||/英作文/.test(kindRaw)||/[.!?]\s*$/.test(en)){kind='英作文';badge='eisaku';}
+  else if(/熟語/.test(kindRaw)){kind='熟語';badge='jukugo';}
+  pushRevQDyn({jp:jp,en:en,kind:kind,badge:badge,day:revqToday(),src:(KEY+'_'+id)});
+}
+function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[（(][^）)]*でもOK[^）)]*[）)]/g,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function revqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function revqNorm(s){return String(s||'').toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function bumpRevQPo(en){try{var K='revq_dyn';var raw=localStorage.getItem(K);if(raw==null)return;var arr;try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;var key=revqNorm(en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].po=(+arr[i].po||0)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}}catch(e){}}
+function pushRevQDyn(item){try{var K='revq_dyn';var raw=localStorage.getItem(K);var arr;if(raw==null){arr=[];}else{try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;}var key=revqNorm(item.en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;arr[i].po=0;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;item.po=0;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
+</script>
+</body>
+</html>

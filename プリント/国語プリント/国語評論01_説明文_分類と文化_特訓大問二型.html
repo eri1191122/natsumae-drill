@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 国語 評論プリント01（説明的文章 評論＋設問8・特訓 大問二型）＝完全オリジナル本文「色の名前と虹」(自作・約520字)。約30分。KEY=tokkun_je01（je=評論）。
+ ・本文は完全オリジナル（著作権フリー・実在作品の引用なし・固有名詞なし）。テーマ＝「ものの『分け方』は、自然でなく文化がつくる」（言語相対・分類論）。対比＝自然のまま↔人が分ける／連続↔分節。抽象語＝抽象/具体・恣意的・分節・区切る・普遍/相対・カテゴリーを文脈で取れるよう織り込む。筆者の主張を一文で言える構成。
+ ・○✕で測れる問（語彙1/接続語2/組合せ3/指示語4/抜き出し5/一文特定6/内容一致8）＝○✕＋ミス分類C/K/A（読解01のm()機構を踏襲。保存=KEY+'_'+gid+'_m'）。
+ ・記述7（25字以内「どういうことか」型）＝○✕でなく模範比較＋核心要素チェック（内容/文末/字数）＋ズレ診断（読解01の記述ルーブリック機構を踏襲）。型カード＝どういうこと→こと。
+ ・data-gid は q01〜q08連番。t/g/m/mw/localStorage/印刷/もどる/onload復元を読解01から踏襲。KEYのみtokkun_je01へ変更。もどる=../../夏休みダッシュボード.html（固定）。
+ ・解答前ヒント禁止：着眼・読み筋・記述の型は解説トグル(ans-box)内のみ。設問面の「型ヒント(qhint)」は本プリントでは出さない（qcue/解法着眼を解答前に置かない）。あらすじ・単元名は可。
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>国語 評論01｜説明的文章｜特訓 大問二型｜約30分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.85}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#eef0f7;color:#25324a;padding:24px 22px;border:1px solid #cdcfe6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#e3e2f3;color:#3a3160;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #cdc7e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+.howto{background:#fffefb;border:1px solid #e3e2d9;border-left:5px solid #9192bd;border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:13.5px;color:#3a4a63}
+.howto b{color:#4b3f86}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#3a3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:15px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-body{padding:16px 20px}
+/* 本文 */
+.passage{background:#fffdf7;border:1px solid #e6e0cf;border-radius:8px;padding:16px 18px;font-size:15.5px;line-height:2.05;color:#2c3540}
+.passage .ttl{font-size:18px;font-weight:900;color:#3a3a63;text-align:center;margin-bottom:4px}
+.passage .by{font-size:11.5px;color:#9aa0a6;text-align:center;margin-bottom:12px}
+.passage p{margin:0 0 10px;text-indent:1em}
+.passage p:last-of-type{margin-bottom:0}
+.passage .ul{text-decoration:underline;text-decoration-color:#c0392b;text-decoration-thickness:2px}
+.passage .blank{font-weight:900;color:#7a3f86;font-style:normal}
+.psrc{font-size:11.5px;color:#9aa0a6;margin-top:8px;text-align:right}
+/* 設問 */
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:14px 0}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eceef7;border:1px solid #dcdfe6;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.qtype{display:inline-block;font-size:11px;font-weight:800;color:#5f4b7a;background:#efe7f7;border:1px solid #d6c7ea;border-radius:10px;padding:2px 9px;margin-left:6px}
+.qword{font-size:16px;font-weight:800;color:#31415f}
+.choices{margin:8px 0 2px;font-size:14px;color:#33414f}
+.choices div{margin:3px 0;padding:4px 8px;border:1px solid #e6e6dc;border-radius:6px;background:#fff}
+.write-area{margin:10px 0 4px;background:#fff;border:1px dashed #c7cdbf;border-radius:8px;padding:10px 12px}
+.write-area .wl{display:block;border-bottom:1px solid #d7dccd;height:30px}
+.write-area .cap{font-size:11.5px;color:#8a93a0;margin-bottom:4px}
+.ans-btn{margin-top:8px;background:#69677a;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#565468}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:13px}
+.ans-box.open{display:block}
+.ans-main{font-size:17px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-read{font-size:13px;color:#405060;margin-bottom:4px}
+.checklist{font-size:13px;color:#3a5a45;margin:6px 0}
+.checklist .ci{display:block;margin:2px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#8a5a19}
+.bx-warn::before{content:"⚠️ よくあるズレ・注意";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-word{background:#eef3f8;border-left:4px solid #7e9fc0;border-radius:8px;padding:9px 14px;margin:8px 0 0;font-size:12.5px;color:#33506b}
+.bx-word::before{content:"📘 ことばの意味・対義語";display:block;font-size:12px;font-weight:800;color:#33506b;margin-bottom:3px}
+.gq{margin-top:10px}
+.grade{font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+/* ミス分類C/K/A（○✕問用） */
+.miss{display:none;margin-top:8px;align-items:center;gap:6px;flex-wrap:wrap;font-size:12px;color:#7a6a55}
+.miss.show{display:flex}
+.miss .ml{font-size:12px;font-weight:700;color:#7a6a55}
+.miss .m{min-width:30px;height:30px;border-radius:8px;border:1.5px solid #e0d6c4;background:#fff;font-size:13px;font-weight:800;cursor:pointer;color:#9a8a70;padding:0 8px}
+.miss .m.sel{background:#caa86a;color:#fff;border-color:#caa86a}
+.miss .mhint{font-size:11px;color:#9a8a70;flex-basis:100%;margin-top:2px}
+/* ズレ診断（記述問用） */
+.missw{display:none;margin-top:8px;background:#f6f3ee;border:1px dashed #cdbfa6;border-radius:8px;padding:8px 12px;font-size:12.5px;color:#6b5a3e}
+.missw.show{display:block}
+.missw .ml{font-weight:800;margin-right:6px}
+.missw button{font-size:12px;border:1px solid #cdbfa6;background:#fff;color:#6b5a3e;border-radius:14px;padding:3px 10px;margin:3px 4px 0 0;cursor:pointer}
+.missw button.sel{background:#b89b6a;color:#fff;border-color:#b89b6a}
+.missw .redo{display:block;margin-top:6px;color:#8a5a19;font-size:12.5px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#8a8bbf,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.miss,.missw{display:none}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .write-area .wl{height:26px}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec,.passage,.q{break-inside:avoid;page-break-inside:avoid}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">国語 評論01</span><span class="pg-badge">説明的文章（評論）</span><span class="pg-badge">特訓 大問二型</span><span class="pg-badge">全8問</span></div>
+  <h1>国語 評論プリント01｜説明的文章を読んで、筆者の考えを根拠でつかむ</h1>
+  <p>目安 約30分　対象: 中1　＝本文を読む→設問を解く→「答えを見る」で自己採点→記述はズレを直す。すべて本文に根拠があります。</p>
+  <p class="pg-sub">🌸 評論は「だれかの気持ち」ではなく「筆者の主張」を読む。<b>対比（くらべている二つ）</b>と<b>主張の一文</b>をつかめば必ず解ける。</p>
+</div>
+
+<div class="howto">
+  <b>使い方</b>　① まず本文を最後まで読む（線の部分・くらべている二つに注目）　② 設問を上から解く（記述はノートか枠に書く）　③ 「答えを見る」で答え合わせ　④ ○✕問は ✕なら <b>C/K/A</b> を選ぶ／記述問は模範とくらべ <b>核心要素チェック</b>→ズレた所（内容・文末・字数）を直す<br>
+  <span style="font-size:12.5px">C＝うっかり・読み落とし／K＝言葉や型を知らなかった／A＝知ってたが本文に当てはめられなかった</span>
+</div>
+
+<!-- ===== 本文（常時表示） ===== -->
+<div class="unit-banner">
+  <span class="unit-num">大問二 説明的文章</span>
+  <span class="unit-name">本文を読もう（解く前に必ず読む）</span>
+  <span class="unit-time">約520字</span>
+</div>
+<div class="sec">
+  <div class="sec-body">
+    <div class="passage">
+      <div class="ttl">色の名前と虹</div>
+      <div class="by">— 学習用オリジナル作品 —</div>
+      <p>空にかかる虹を見て、わたしたちは「七色だ」と言う。けれども、虹の色が本当に七つに分かれているわけではない。赤からむらさきまで、光の色は切れ目なく少しずつ変わっていく。その<span class="ul">連続したもの</span>を、わたしたちは「赤・橙・黄……」と七つに区切って数えているだけなのだ。</p>
+      <p>世界には、虹を三色や五色と数える人たちもいる。<span class="ul">同じ虹を見ているのに、いくつに分けるかがちがう。</span>これは、見えている光がちがうのではなく、その光を区切る言葉がちがうからである。<span class="blank">（&nbsp;A&nbsp;）</span>、ものの分け方は、目に映る自然がそのまま決めているのではない。それぞれの土地の言葉、つまり文化が、どこに線を引くかを決めているのである。</p>
+      <p>このような区切り方を、むずかしい言葉で<span class="ul">分節</span>という。連続して切れ目のないものを、言葉がいくつかのまとまりに切り分けることだ。そして、その切り分け方には「こう分けなければならない」という決まった正解はない。だから分け方は<span class="ul">恣意的</span>であり、土地や文化によって変わりうる。色の名づけ方が国によってちがうのは、その一つの表れにすぎない。</p>
+      <p>つまり、<span class="ul">ものの分け方は、自然がはじめから決めているのではなく、文化がつくり出しているのである。</span>わたしたちは、目の前の世界をありのまま見ていると思いがちだ。だが実際には、（&nbsp;C&nbsp;）の世界に、自分たちの言葉という（&nbsp;D&nbsp;）の網をかぶせて見ているのである。</p>
+      <div class="psrc">※本文は学習用のオリジナル（実在作品の引用なし・著作権フリー）</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 設問 ===== -->
+<div class="unit-banner">
+  <span class="unit-num">設問</span>
+  <span class="unit-name">問1〜問8（すべて本文に根拠あり）</span>
+  <span class="unit-time">8問</span>
+</div>
+<div class="sec">
+  <div class="sec-body">
+
+    <!-- 問1 語彙 -->
+    <div class="q">
+      <div><span class="qnum-e">問1</span><span class="qtype">語彙（○✕＋C/K/A）</span></div>
+      <div class="qword">本文中の <b>「恣意的（しいてき）」</b> の意味として最も適切なものを、次から一つ選びなさい。</div>
+      <div class="choices">
+        <div>ア　だれが見ても正しいと決まっていること</div>
+        <div>イ　その場の思いつきや都合で、自由に決められること</div>
+        <div>ウ　古くからずっと変わらずに伝わってきたこと</div>
+        <div>エ　science（科学）にもとづいて正確に決めること</div>
+      </div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">イ</div>
+        <div class="ans-read">恣意的＝決まった正解がなく、その人・その文化の都合で自由に決められるようす。</div>
+        <div class="bx-word">恣意的（しいてき）＝決まりがなく自由に決められる。⇔ 対義語：必然的・普遍的（だれにとっても同じ・そう決まっている）。本文「『こう分けなければならない』という決まった正解はない。だから分け方は恣意的」が根拠。</div>
+        <div class="bx-warn">ア（正しいと決まっている）は逆の意味。直前の「決まった正解はない。だから……」が決め手。「恣意的」は<span class="red">正解が一つに決まらない</span>ことを指す。</div>
+      </div>
+      <div class="gq" data-gid="q01">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div>
+        <div class="miss" data-mid="q01"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q01','C')">C</button><button class="m" onclick="m(this,'q01','K')">K</button><button class="m" onclick="m(this,'q01','A')">A</button><span class="mhint">C=うっかり・読み落とし／K=語の意味を知らなかった／A=知ってたが本文に当てはめられなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問2 接続語補充（6択） -->
+    <div class="q">
+      <div><span class="qnum-e">問2</span><span class="qtype">空欄補充・接続語（○✕＋C/K/A）</span></div>
+      <div class="qword">本文中の空欄 <b>（　A　）</b> に入る最も適切な接続語を、次の<b>六つ</b>から一つ選びなさい。</div>
+      <div class="choices">
+        <div>ア　しかし</div>
+        <div>イ　だから</div>
+        <div>ウ　つまり</div>
+        <div>エ　たとえば</div>
+        <div>オ　また</div>
+        <div>カ　ところが</div>
+      </div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ウ（つまり）</div>
+        <div class="ans-read">前の内容（光ではなく区切る言葉がちがう）を、後ろで「ものの分け方は自然が決めていない」と言いかえてまとめている＝説明・要約の接続語。</div>
+        <div class="bx-word">「つまり」＝前に言ったことを言いかえてまとめるときに使う。同じ仲間：すなわち・要するに。</div>
+        <div class="bx-warn">ア・カ（しかし／ところが＝逆接）は前後が反対のときに使うが、ここは反対ではなく<span class="red">同じ内容の言いかえ</span>。イ「だから」は原因→結果。エ「たとえば」は例を挙げるとき。ここは具体例ではなく前の話のまとめなので「つまり」。</div>
+      </div>
+      <div class="gq" data-gid="q02">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div>
+        <div class="miss" data-mid="q02"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q02','C')">C</button><button class="m" onclick="m(this,'q02','K')">K</button><button class="m" onclick="m(this,'q02','A')">A</button><span class="mhint">C=うっかり／K=接続語の種類を知らない／A=知ってたが前後関係を読み取れなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問3 抽象語の組合せ（4択） -->
+    <div class="q">
+      <div><span class="qnum-e">問3</span><span class="qtype">空欄補充・語の組合せ（○✕＋C/K/A）</span></div>
+      <div class="qword">本文中の空欄 <b>（　C　）</b>・<b>（　D　）</b> に入る語の組合せとして最も適切なものを、次から一つ選びなさい。<br><span style="font-size:14.5px">「……目の前の世界をありのまま見ていると思いがちだ。だが実際には、（&nbsp;C&nbsp;）の世界に、自分たちの言葉という（&nbsp;D&nbsp;）の網をかぶせて見ているのである。」</span></div>
+      <div class="choices">
+        <div>ア　C＝具体　／　D＝抽象</div>
+        <div>イ　C＝言葉　／　D＝自然</div>
+        <div>ウ　C＝連続　／　D＝分節（区切り）</div>
+        <div>エ　C＝相対　／　D＝普遍</div>
+      </div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ウ（C＝連続／D＝分節〈区切り〉）</div>
+        <div class="ans-read">本文の対比どおり。切れ目のない「連続」した世界に、言葉が「分節（区切り）」の網をかぶせる、という流れになる。</div>
+        <div class="bx-word">連続＝切れ目なくつながっていること。⇔ 分節＝言葉でいくつかに区切り分けること。本文全体が「連続↔分節」の対比でできている。</div>
+        <div class="bx-warn">イは「言葉という自然」となり、本文の「言葉＝文化（自然ではない）」と<span class="red">逆</span>。Dは「言葉がかぶせる網」だから〈区切り＝分節〉。Cは網をかぶせられる前の世界＝切れ目のない〈連続〉。</div>
+      </div>
+      <div class="gq" data-gid="q03">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div>
+        <div class="miss" data-mid="q03"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q03','C')">C</button><button class="m" onclick="m(this,'q03','K')">K</button><button class="m" onclick="m(this,'q03','A')">A</button><span class="mhint">C=うっかり／K=対比の言葉を知らない／A=知ってたが対応づけられなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問4 指示語（抜き出し） -->
+    <div class="q">
+      <div><span class="qnum-e">問4</span><span class="qtype">指示語（○✕）</span></div>
+      <div class="qword">──「<b>その連続したもの</b>を、わたしたちは『赤・橙・黄……』と七つに区切って」とあるが、「<b>その連続したもの</b>」が指す内容を、本文中から <b>そのまま抜き出し</b> なさい。</div>
+      <div class="write-area"><div class="cap">ここに書こう（本文の言葉のまま）</div><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">光の色</div>
+        <div class="ans-read">直前の一文「赤からむらさきまで、光の色は切れ目なく少しずつ変わっていく」を受けている。指している中心は「光の色」。</div>
+        <div class="bx-warn">指示語は<span class="red">すぐ前</span>をさがすのが基本。「虹」と答えたくなるが、直前で「切れ目なく少しずつ変わっていく」と言われているのは<span class="red">光の色</span>。それを七つに区切る、という流れ。</div>
+      </div>
+      <div class="gq" data-gid="q04">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div>
+        <div class="miss" data-mid="q04"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q04','C')">C</button><button class="m" onclick="m(this,'q04','K')">K</button><button class="m" onclick="m(this,'q04','A')">A</button><span class="mhint">C=うっかり・抜き出しミス／K=指示語の探し方を知らない／A=方法は分かるが当てられなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問5 一文抜き出し（字数指定） -->
+    <div class="q">
+      <div><span class="qnum-e">問5</span><span class="qtype">抜き出し（○✕）</span></div>
+      <div class="qword">「分節」とはどういうことか。それを説明した部分を、本文中から <b>二十五字以内</b> で抜き出しなさい（句読点も字数にふくむ）。</div>
+      <div class="write-area"><div class="cap">ここに書こう（25字以内・本文の言葉のまま）</div><span class="wl"></span><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">言葉がいくつかのまとまりに切り分けること</div>
+        <div class="ans-read">本文「連続して切れ目のないものを、言葉がいくつかのまとまりに切り分けることだ」が「分節」の説明。二十五字以内で抜くなら <span class="red">「言葉がいくつかのまとまりに切り分けること」</span>（20字）が中心。</div>
+        <div class="bx-warn">「分節という」の直後の一文が定義。字数オーバーに注意し、<span class="red">主語＋切り分ける</span>が入る部分を選ぶ。数えてから書く。</div>
+      </div>
+      <div class="gq" data-gid="q05">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div>
+        <div class="miss" data-mid="q05"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q05','C')">C</button><button class="m" onclick="m(this,'q05','K')">K</button><button class="m" onclick="m(this,'q05','A')">A</button><span class="mhint">C=うっかり・数えまちがい／K=抜き出しの探し方を知らない／A=分かるが選べなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問6 主張の一文特定（はじめの5字） -->
+    <div class="q">
+      <div><span class="qnum-e">問6</span><span class="qtype">主張の一文特定（○✕）</span></div>
+      <div class="qword">この文章で <b>筆者が最も言いたいこと（主張）</b> が一文で書かれている部分を、本文中からさがし、その一文の <b>はじめの五字</b> を抜き出しなさい。</div>
+      <div class="write-area"><div class="cap">ここに書こう（はじめの5字）</div><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ものの分け</div>
+        <div class="ans-read">主張の一文＝「ものの分け方は、自然がはじめから決めているのではなく、文化がつくり出しているのである。」（はじめの五字は「ものの分け」）。</div>
+        <div class="bx-warn">「つまり」で始まる最後から二番目の段落の一文が主張。<span class="red">「つまり」「〜のである」</span>はまとめ・主張の合図。例（虹・色の名前）の文ではなく、例から導いた<span class="red">結論の一文</span>を選ぶ。</div>
+      </div>
+      <div class="gq" data-gid="q06">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div>
+        <div class="miss" data-mid="q06"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q06','C')">C</button><button class="m" onclick="m(this,'q06','K')">K</button><button class="m" onclick="m(this,'q06','A')">A</button><span class="mhint">C=うっかり・数えまちがい／K=主張の見分け方を知らない／A=分かるが選べなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問7 記述（25字以内・どういうことか型） -->
+    <div class="q">
+      <div><span class="qnum-e">問7</span><span class="qtype">記述（模範比較＋核心要素チェック）</span></div>
+      <div class="qword">──「<b>同じ虹を見ているのに、いくつに分けるかがちがう</b>」とあるが、これは <b>どういうことか</b>。<b>二十五字以内</b> で書きなさい。</div>
+      <div class="write-area"><div class="cap">ここに書こう（25字以内）</div><span class="wl"></span><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">（模範）光を区切る言葉が文化によってちがうということ。（23字）</div>
+        <div class="checklist">
+          <span class="ci">□ 核心：見えている光（自然）は同じである</span>
+          <span class="ci">□ 核心：それを区切る言葉（文化）がちがう＝だから分け方がちがう</span>
+          <span class="ci">□ 文末：「〜こと。」になっている（「どういうことか」型）</span>
+          <span class="ci">□ 字数：25字以内</span>
+        </div>
+        <div class="bx-word">「どういうことか」＝文末は <span class="red">「〜こと。」</span> で結ぶ（型カード）。「なぜか」なら「〜から。」だが、この問いは「どういうことか」なので「〜こと。」。</div>
+        <div class="bx-warn">「人によってちがうということ。」だけでは弱い（＝内容ズレ）。本文「見えている光がちがうのではなく、その光を区切る言葉がちがうから」が根拠。<span class="red">光は同じ・区切る言葉（文化）がちがう</span>を必ず入れる。文末は「〜こと。」。</div>
+      </div>
+      <div class="gq" data-gid="q07">
+        <div class="grade">型どおり書けた？ <button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div>
+        <div class="missw"><span class="ml">どこがズレた？</span><button onclick="mw(this,'q07','内容')">内容</button><button onclick="mw(this,'q07','文末')">文末</button><button onclick="mw(this,'q07','字数')">字数</button><span class="redo">→ 模範とくらべて、ズレた所を直して書き直そう</span></div>
+      </div>
+    </div>
+
+    <!-- 問8 内容一致 -->
+    <div class="q">
+      <div><span class="qnum-e">問8</span><span class="qtype">内容一致（○✕＋C/K/A）</span></div>
+      <div class="qword">本文の内容に <b>合っているもの</b> を、次から一つ選びなさい。</div>
+      <div class="choices">
+        <div>ア　虹はもともと七つの色にはっきり分かれていて、世界中どこでも七色と数える。</div>
+        <div>イ　虹をいくつに分けるかは、見えている光のちがいによって決まる。</div>
+        <div>ウ　ものの分け方には決まった正解がなく、その土地の言葉（文化）によって変わる。</div>
+        <div>エ　わたしたちは、世界をいつもありのままに、言葉をはさまずに見ている。</div>
+      </div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ウ</div>
+        <div class="ans-read">本文「『こう分けなければならない』という決まった正解はない」「文化が、どこに線を引くかを決めている」と一致。</div>
+        <div class="bx-warn">ア＝×（光は切れ目なく変わる／三色・五色と数える人もいる）。イ＝×（「光がちがうのではなく」区切る言葉がちがう、と本文は否定）。エ＝×（言葉という網をかぶせて見ている＝ありのままではない）。<span class="red">本文の一文ずつと照合</span>する。</div>
+      </div>
+      <div class="gq" data-gid="q08">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div>
+        <div class="miss" data-mid="q08"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q08','C')">C</button><button class="m" onclick="m(this,'q08','K')">K</button><button class="m" onclick="m(this,'q08','A')">A</button><span class="mhint">C=うっかり・読み落とし／K=照合のやり方を知らない／A=分かるが選びきれなかった</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">評論は「対比（くらべている二つ）」と「主張の一文」をつかめば必ず解ける。きみは読む力が強いから、自然↔文化・連続↔分節のような対の言葉に線を引く練習をすれば、特訓の大問二は武器になる。よくがんばったね。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_je01';   /* 国語 評論プリント01（説明的文章 特訓大問二型）。je=評論 */
+
+function t(b){
+  if(!b.dataset.label)b.dataset.label=b.textContent;
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':b.dataset.label;
+}
+/* ○✕ */
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var miss=box.querySelector('.miss');      /* ○✕問用 C/K/A */
+  var missw=box.querySelector('.missw');    /* 記述問用 ズレ診断 */
+  if(v==='x'){
+    if(miss)miss.classList.add('show');
+    if(missw)missw.classList.add('show');
+  }else{
+    if(miss)miss.classList.remove('show');
+    if(missw)missw.classList.remove('show');
+    localStorage.removeItem(KEY+'_'+id+'_m');
+    box.querySelectorAll('.miss button, .missw button').forEach(function(e){e.classList.remove('sel');});
+  }
+}
+/* ○✕問のミス分類 C/K/A */
+function m(btn,id,v){
+  var miss=btn.closest('.miss');
+  miss.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id+'_m',v);
+}
+/* 記述問のズレ診断 内容/文末/字数 */
+function mw(btn,id,v){
+  var miss=btn.closest('.missw');
+  miss.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id+'_m',v);
+}
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var miss=box.querySelector('.miss');
+        var missw=box.querySelector('.missw');
+        if(miss)miss.classList.add('show');
+        if(missw)missw.classList.add('show');
+        var mv=localStorage.getItem(KEY+'_'+id+'_m');
+        if(mv){
+          var mb=box.querySelector('.miss button[onclick*="\''+mv+'\'"], .missw button[onclick*="\''+mv+'\'"]');
+          if(mb)mb.classList.add('sel');
+        }
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){ document.getElementById('doneBtn').textContent='✓ 完了ずみ'; }
+};
+</script>
+
+<script id="a16-recovery-hook-japanese-v1">
+(function(){
+'use strict';
+var DYN='revjq_dyn';
+function text(el){return el?String(el.textContent||'').replace(/^[\s　]*こたえ[\s　]*/,'').replace(/[\s　]+/g,' ').trim():'';}
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'),id=gq&&gq.dataset?gq.dataset.gid:'',q=btn.closest('.q');if(!id||!q)return;
+    var clone=q.cloneNode(true);clone.querySelectorAll('.ans-box,.gq,.mt,.write3,button,script,style,details').forEach(function(n){n.remove();});
+    var jp=text(clone),ans=text(q.querySelector('.ans-final,.ans-box .ans-main,.ans-main'));if(!jp||!ans)return;
+    var src=KEY+'_'+id,raw=localStorage.getItem(DYN),arr;try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();}else{arr.push({src:src,jp:jp,en:ans,kind:'国語',badge:'machigae',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null;if(!b)return;setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);});
+})();
+</script>
+</body>
+</html>

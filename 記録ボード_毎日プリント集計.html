@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>毎日プリント 集計ボード（○✕は自動で集まる）</title>
+<style>
+  :root{--bg:#f7f8f5;--ink:#263238;--sub:#4c5b70;--card:#fff;--line:#e2e7df;
+    --hd:#e8edf7;--hdbd:#c8d4e6;--hdink:#25324a;--ok:#56875b;--okso:#e7f1e8;--ng:#c0504a;--ngso:#fbe9e7;--acc:#3f6f9f;--mut:#9aa3ad;}
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;background:var(--bg);color:var(--ink);line-height:1.7;padding:18px 14px 70px;font-size:16px;}
+  .wrap{max-width:760px;margin:0 auto;}
+  .pg-hd{background:var(--hd);border:1px solid var(--hdbd);border-radius:12px;padding:20px;margin-bottom:14px;}
+  .pg-hd h1{font-size:21px;font-weight:900;color:var(--hdink);}
+  .pg-hd p{font-size:13.5px;color:var(--sub);margin-top:6px;}
+  .warn{background:#fff7e8;border:1px solid #e6c98d;color:#7a5512;border-radius:10px;padding:11px 14px;margin-bottom:14px;font-size:13px;font-weight:700;display:none;}
+  .total{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;margin-bottom:14px;box-shadow:0 2px 8px rgba(67,83,72,.06);text-align:center;}
+  .total .big{font-size:30px;font-weight:900;color:var(--acc);}
+  .total .sub{font-size:14px;color:var(--sub);}
+  .bar{height:16px;background:#eef2ec;border:1px solid #e0e6dd;border-radius:10px;overflow:hidden;margin-top:10px;}
+  .bar>i{display:block;height:100%;background:linear-gradient(90deg,#9abf9d,#7fae8a);width:0;transition:width .4s;}
+  .btnrow{display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:12px;}
+  button.act{font-size:13px;font-weight:800;border:1px solid var(--line);background:#fff;color:var(--sub);border-radius:18px;padding:9px 16px;cursor:pointer;}
+  button.up{background:var(--acc);color:#fff;border-color:var(--acc);}
+  .day{background:var(--card);border:1px solid var(--line);border-left:7px solid var(--line);border-radius:10px;padding:12px 14px;margin-bottom:9px;}
+  .day.done{border-left-color:var(--ok);}
+  .day.none{opacity:.6;border-left-color:var(--mut);}
+  .day .top{display:flex;justify-content:space-between;align-items:baseline;gap:8px;flex-wrap:wrap;}
+  .day .nm{font-size:15px;font-weight:800;}
+  .day .sc{font-size:14px;font-weight:900;}
+  .day .sc .o{color:var(--ok);} .day .sc .x{color:var(--ng);}
+  .day .xs{margin-top:6px;font-size:13px;color:var(--ng);}
+  .day .xs b{color:var(--ng);}
+  .day .nodata{font-size:12.5px;color:var(--mut);}
+  h2.sec{font-size:15px;font-weight:900;color:var(--hdink);margin:18px 2px 10px;}
+  textarea{width:100%;height:110px;font-size:12px;font-family:monospace;border:1px solid var(--line);border-radius:8px;padding:8px;margin-top:8px;}
+  .note{font-size:12.5px;color:var(--sub);line-height:1.85;margin-top:10px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;}
+</style>
+<style>.summer-return{position:relative;z-index:20;display:inline-flex;align-items:center;min-height:44px;margin:10px 14px;padding:9px 14px;border:1px solid #cdd8e8;border-radius:18px;background:#fff;color:#3f6f9f;font:800 13px/1.4 sans-serif;text-decoration:none}</style>
+</head>
+<body>
+<a class="summer-return" href="夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+<div class="wrap">
+  <header class="pg-hd">
+    <h1>📊 毎日プリント 集計ボード</h1>
+    <p>各プリントで付けた○✕を<b>自動で読み取って合計</b>します。ここで付け直す必要はありません。プリントを解いて○✕を付け、ここを開く（または「集計を更新」）だけ。</p>
+  </header>
+
+  <div class="warn" id="warn"></div>
+
+  <div class="total" id="total"></div>
+
+  <div id="days"></div>
+
+  <h2 class="sec">📌 ✕の一覧（誤答キューへ写す）</h2>
+  <div id="weak" class="note"></div>
+
+  <h2 class="sec">親へ結果をわたす（LINEで送るなら上の2つ）</h2>
+  <div class="btnrow" style="justify-content:flex-start">
+    <button class="act up" onclick="shareImage()">📸 画像で送る（LINE・AirDrop OK）</button>
+    <button class="act up" onclick="shareText()">✍️ 文字で送る／コピー</button>
+  </div>
+  <div class="btnrow" style="justify-content:flex-start;margin-top:8px">
+    <button class="act" onclick="shareResult()">🌐 ページHTMLで送る</button>
+    <button class="act" onclick="exportStandalone()">📁 保存してUSBへ</button>
+  </div>
+  <div class="note" style="margin-top:8px"><b>★LINEで送るなら「📸画像で送る」が確実です。</b>LINEは画像をそのまま送れます（HTMLファイルは「送れない形式」と出ます）。<br>「📸画像で送る」→ 共有メニュー → <b>AirDrop</b>で親のiPhoneへ／または直接<b>LINE</b>へ。iPhoneに届いた画像はLINEでPCへ送れます。<br>文章で十分なら「✍️文字で送る」→ LINEに貼り付けて送信。<br><b>USB派：</b>「📁保存してUSBへ」（HTMLは見やすいがLINE送付は不可）。</div>
+
+  <h2 class="sec">持ち運び（上級・端末またぎ生データ）</h2>
+  <div class="note" style="background:#fff7e8;border-color:#e6c98d;color:#7a5512;margin-bottom:8px"><b>📤 週に1回、「書き出す→コピー」でバックアップを取ろう。</b>iPad(Safari)は7日間まったく開かないと、保存した○✕が自動で消える設定（ITP）があります。週1回このデータをどこか（メモ帳・別端末）に貼って残しておけば安心です。</div>
+  <div class="btnrow" style="justify-content:flex-start">
+    <button class="act" onclick="doExport()">📤 書き出す</button>
+    <button class="act" onclick="doImport()">📥 読み込む</button>
+    <button class="act" onclick="copyOut()">コピー</button>
+  </div>
+  <textarea id="io" placeholder="「書き出す」で今の○✕データが出ます。別の端末ではここに貼り付けて「読み込む」。"></textarea>
+
+  <div class="note" id="howto"></div>
+</div>
+
+<script>
+// 毎日プリントと、その中で使われている localStorage の KEY（プリント本体が保存しているキー）。
+var DAYS=[
+ {key:'fukushu01',name:'復習01 小学校算数スタート'},
+ {key:'fukushu02',name:'復習02 分数の計算'},
+ {key:'fukushu03',name:'復習03 割合と百分率'},
+ {key:'fukushu04',name:'復習04 概数と数直線'},
+ {key:'fukushu05',name:'復習05 倍数約数と単位換算'},
+ {key:'fukushu06',name:'復習06 速さと比＋小学校総まとめ'},
+ {key:'weekend01',name:'週末復習01 第1週まとめ'},
+ {key:'fukushu07',name:'復習07 図形(面積・複合図形)'},
+ {key:'fukushu08',name:'復習08 場合の数と規則性'},
+ {key:'fukushu09',name:'復習09 速さと割合の応用'},
+ {key:'mix01',name:'通常01 四則混合＋疑問詞what'},
+ {key:'mix02',name:'通常02 正負の数の利用＋複数形'},
+ {key:'mix03',name:'通常03 英作文と数学ミニ'},
+ {key:'mix04',name:'通常04 正負まとめ＋速さグラフ復習'},
+ {key:'mix05',name:'通常05 文字式の表し方＋三単現'},
+ {key:'mix06',name:'通常06 文字式で数量を表す'},
+ {key:'mix07',name:'通常07 代入と式の値'},
+ {key:'mix08',name:'通常08 一次式の加法減法'},
+ {key:'mix09',name:'通常09 一次式の計算と分配'},
+ {key:'mix10',name:'通常10 文字式の利用(文章を式に)'},
+ {key:'mix11',name:'通常11 夏前総合 正負と文字式'},
+ // ===== 難問デー（横断 redo・★L4数学＋難問英語 単10熟3英作1・KEY=redoNN）=====
+ {key:'redo02',name:'難問デー redo02 6/30 正負の文章→式 L4＋英(動詞)'},
+ {key:'redo03',name:'難問デー redo03 7/2 正負と小学難問 L4＋英(抽象名詞)'},
+ {key:'redo05',name:'難問デー redo05 7/7 文字式で数量 L4＋英(形容詞)'},
+ {key:'redo06',name:'難問デー redo06 7/9 代入と一次式 L4＋英(人と場所)'},
+ {key:'redo07',name:'難問デー redo07 7/11 文字式の利用 L4＋英(自然と体)'},
+ {key:'redo09',name:'難問デー redo09 7/16 総合 L4＋英(評価形容詞)'},
+ // ===== 夏 特訓数学プリント（全31枚・夏_特訓数学プリント/）=====
+ {key:'tokkun_m01',name:'特訓P1 正負の数 L3-L4'},
+ {key:'tokkun_m02a',name:'特訓P2a 文字式 演習'},
+ {key:'tokkun_m02b',name:'特訓P2b 文字式 特訓(立式)'},
+ {key:'tokkun_m03',name:'特訓P3 方程式の解法'},
+ {key:'tokkun_m04',name:'特訓P4 文章を式に①(型カード・過不足)'},
+ {key:'tokkun_m05',name:'特訓P5 文章を式に②(速さ・割合)'},
+ {key:'tokkun_m06',name:'特訓P6 文章を式に③(正負の文章・仮平均)'},
+ {key:'tokkun_m07',name:'特訓P7 方程式の利用4型 混合'},
+ {key:'tokkun_m08a',name:'特訓P8a 図形 演習(面積・円・角度)'},
+ {key:'tokkun_m08',name:'特訓P8 複合図形・円・折り返し L4'},
+ {key:'tokkun_m09a',name:'特訓P9a 規則性 演習(差→n式)'},
+ {key:'tokkun_m09',name:'特訓P9 規則性 n式 L4(碁石の周)'},
+ {key:'tokkun_m10a',name:'特訓P10a グラフ 演習(読み取り)'},
+ {key:'tokkun_m10',name:'特訓P10 速さグラフ・水そう L4'},
+ {key:'tokkun_m11',name:'特訓P11 ケアレス潰し・答案化'},
+ {key:'tokkun_m12',name:'特訓P12 過去問形式 通し①'},
+ {key:'tokkun_m12b',name:'特訓P12b 過去問形式 通し②'},
+ {key:'tokkun_m12c',name:'特訓P12c 過去問形式 通し③'},
+ {key:'tokkun_m04b',name:'特訓P4b 文章を式に①-2（個数過不足）'},
+ {key:'tokkun_m04c',name:'特訓P4c 文章を式に①-3（個数過不足）'},
+ {key:'tokkun_m05b',name:'特訓P5b 文章を式に②-2（速さ）'},
+ {key:'tokkun_m05c',name:'特訓P5c 文章を式に②-3（割合・食塩水）'},
+ {key:'tokkun_m06b',name:'特訓P6b 文章を式に③-2（正負の文章）'},
+ {key:'tokkun_m04d',name:'特訓P4d 文章を式に④（整数・比例配分・利益）'},
+ {key:'tokkun_m07b',name:'特訓P7b 方程式の利用 過去問同型'},
+ {key:'tokkun_m07c',name:'特訓P7c 方程式の利用 発展L4'},
+ {key:'tokkun_m08b',name:'特訓P8b 複合図形L4（砂時計・折り返し・花びら）'},
+ {key:'tokkun_m09b',name:'特訓P9b 規則性L4（タイルn式・逆算）'},
+ {key:'tokkun_m10b',name:'特訓P10b グラフ水そう L4'},
+ {key:'tokkun_m03b',name:'特訓P3b 方程式の解法 ドリル'},
+ {key:'tokkun_m12d',name:'特訓P12d 過去問通し④'},
+ {key:'tokkun_m08c',name:'特訓P8c 図形角度集中'},
+ {key:'tokkun_m08d',name:'特訓P8d 図形複合面積②'},
+ {key:'tokkun_m09c',name:'特訓P9c 規則性碁石マッチ②'},
+ {key:'tokkun_m10c',name:'特訓P10c グラフ水そう②'},
+ {key:'tokkun_m08e',name:'特訓P8e 円とおうぎ形'},
+ {key:'tokkun_m09d',name:'特訓P9d 規則性 数表・三角数'},
+ {key:'tokkun_m10d',name:'特訓P10d 速さグラフ ダイヤ'},
+ {key:'tokkun_m01b',name:'特訓P1b 正負の数 計算精度ドリル'},
+ {key:'tokkun_m08f',name:'特訓P8f 等積変形・面積一定'},
+ {key:'tokkun_m09e',name:'特訓P9e 規則性総合'},
+ {key:'tokkun_m10e',name:'特訓P10e 比例と座標'},
+ {key:'tokkun_m02c',name:'特訓P2c 文字式 計算精度ドリル'},
+ {key:'tokkun_m08g',name:'特訓P8g 図形総合'},
+ {key:'tokkun_m10f',name:'特訓P10f グラフ総合'},
+ // ===== 国語プリント（特訓大問三型・KEY=tokkun_jNN／記述=tokkun_jkNN・プリント/国語プリント/）=====
+ {key:'tokkun_j01',name:'国語 通常01 特訓大問三型（知識21問）'},
+ {key:'tokkun_j02',name:'国語 通常02 知識総点検（34問・部首画数/対義類義も）'},
+ {key:'tokkun_j03',name:'国語 通常03 知識総点検②（反復・34問）'},
+ {key:'tokkun_j04',name:'国語 通常04 知識総点検③（熟語の構成/類義語/故事成語意味/敬語/詩歌・21問）'},
+ {key:'tokkun_jko1',name:'国語 古文01 先取り（歴史的仮名遣い/古典単語/係り結び・17問）'},
+ {key:'tokkun_jk01',name:'国語 記述01 読解短文＋記述4'},
+ {key:'tokkun_jr01',name:'国語 読解01 文学長文（特訓大問一型）'},
+ {key:'tokkun_jr02',name:'国語 読解02 トロッコ・芥川（名作・大問一型）'},
+ {key:'tokkun_je01',name:'国語 評論01 色の名前と虹（大問二型・導入級）'},
+ {key:'tokkun_je02',name:'国語 評論02 自分らしさのありか（大問二型・本番級）'},
+ // ===== 英語 基礎U1-12（英語基礎/・KEY=tokkun_eg_XX）2026-07-19 D5追加＝○✕が親集計・転記に載っていなかった穴 =====
+ {key:'tokkun_eg_be',name:'英語 基礎U1 be動詞（am/is/are）'},
+ {key:'tokkun_eg_v',name:'英語 基礎U2 一般動詞'},
+ {key:'tokkun_eg_s',name:'英語 基礎U3 三単現の-s'},
+ {key:'tokkun_eg_pl',name:'英語 基礎U4 名詞の複数形'},
+ {key:'tokkun_eg_pron',name:'英語 基礎U5 代名詞'},
+ {key:'tokkun_eg_can',name:'英語 基礎U6 can'},
+ {key:'tokkun_eg_imp',name:'英語 基礎U7 命令文・Letsの文'},
+ {key:'tokkun_eg_wh',name:'英語 基礎U8 疑問詞'},
+ {key:'tokkun_eg_adj',name:'英語 基礎U9 形容詞・副詞'},
+ {key:'tokkun_eg_prep',name:'英語 基礎U10 前置詞'},
+ {key:'tokkun_eg_prog',name:'英語 基礎U11 現在進行形（2学期先取り）'},
+ {key:'tokkun_eg_past',name:'英語 基礎U12 過去形（2学期先取り）'},
+ // ===== 特訓選抜英語 演習マスター（特訓選抜英語/・KEY=tokkun_e_XX）※本番通し09-11(toshi)は本番判定=記録ボード対象外(国語jtoshi・数学m12e/fと同様) =====
+ {key:'tokkun_e_rw6',name:'英語 特訓1 書きかえマスター（大問6型）'},
+ {key:'tokkun_e_re4',name:'英語 特訓2 並べ替えマスター（大問4型）'},
+ {key:'tokkun_e_rd7',name:'英語 特訓3 長文ひっかけマスター（大問7型）'},
+ {key:'tokkun_e_k1',name:'英語 特訓4 大問1マスター 適語補充'},
+ {key:'tokkun_e_k2',name:'英語 特訓5 大問2マスター 適語選択'},
+ {key:'tokkun_e_k3',name:'英語 特訓6 大問3マスター 適語補充'},
+ {key:'tokkun_e_k5',name:'英語 特訓7 大問5マスター 対話補充'},
+ {key:'tokkun_e_ws',name:'英語 特訓8 語数指定英作マスター'},
+ // ===== 弱点復習プリント（復習・算数／復習・数学／復習・英語）=====
+ {key:'tokkun_revm_wari1',name:'復習算数 割合 三用法・逆算・残り'},
+ {key:'tokkun_revm_queue',name:'復習数学 まちがえ復習キュー'},
+ {key:'tokkun_reve_queue',name:'復習英語 まちがえ復習キュー'},
+ {key:'tokkun_revj_queue',name:'復習国語 まちがえ復習キュー（部首画数の実×＋評論語/文法の先取り）'}
+];
+
+// 1日分の○✕を localStorage から数える（プリント本体が保存した KEY_<gid> を読む）
+function tally(key){
+  var o=0,x=0,xs=[];var pre=key+'_';
+  for(var i=0;i<localStorage.length;i++){
+    var k=localStorage.key(i);
+    if(!k||k.indexOf(pre)!==0)continue;
+    var suf=k.slice(pre.length);
+    if(suf==='done'||/_m$/.test(suf))continue; // 完了フラグ・ミス型メモは除外
+    var v=localStorage.getItem(k);
+    if(v==='o')o++;
+    else if(v==='x'){x++;var m=localStorage.getItem(k+'_m')||'';xs.push({gid:suf,m:m});}
+  }
+  return {o:o,x:x,xs:xs};
+}
+
+function render(){
+  var to=0,tx=0;var weakRows=[];
+  var html='';
+  DAYS.forEach(function(d){
+    var t=tally(d.key);var done=t.o+t.x;to+=t.o;tx+=t.x;
+    var cls=done?(t.x?'done':'done'):'none';
+    if(!done){
+      html+='<div class="day none"><div class="top"><span class="nm">'+d.name+'</span><span class="nodata">まだ記録なし</span></div></div>';
+    }else{
+      var rate=Math.round(t.o/done*100);
+      var xtxt=t.xs.length?('✕：'+t.xs.map(function(z){return z.gid+(z.m?'('+z.m+')':'');}).join('、')):'全問○！';
+      html+='<div class="day done"><div class="top"><span class="nm">'+d.name+'</span>'+
+            '<span class="sc"><span class="o">'+t.o+'○</span> / <span class="x">'+t.x+'✕</span>　'+rate+'%</span></div>'+
+            '<div class="xs">'+xtxt+'</div></div>';
+      if(t.xs.length){weakRows.push('<b>'+d.name+'</b>：'+t.xs.map(function(z){return z.gid+(z.m?'('+z.m+')':'');}).join('、'));}
+    }
+  });
+  document.getElementById('days').innerHTML=html;
+  var tdone=to+tx;var trate=tdone?Math.round(to/tdone*100):0;
+  document.getElementById('total').innerHTML=
+    '<div class="big">'+to+' ○ <span style="font-size:18px;color:#c0504a">/ '+tx+' ✕</span></div>'+
+    '<div class="sub">採点ぜんぶで '+tdone+' 問　正答率 '+trate+'%</div>'+
+    '<div class="bar"><i style="width:'+trate+'%"></i></div>'+
+    '<div class="btnrow"><button class="act up" onclick="render()">🔄 集計を更新</button></div>';
+  document.getElementById('weak').innerHTML=weakRows.length?weakRows.join('<br>'):'まだ✕はありません（または記録なし）。';
+}
+
+function doExport(){var o={};for(var i=0;i<localStorage.length;i++){var k=localStorage.key(i);if(k)o[k]=localStorage.getItem(k);}document.getElementById('io').value=JSON.stringify(o);}
+function doImport(){try{var o=JSON.parse(document.getElementById('io').value);Object.keys(o).forEach(function(k){localStorage.setItem(k,o[k]);});alert('読み込みました');render();}catch(e){alert('テキストが正しくありません。');}}
+function copyOut(){var t=document.getElementById('io');if(!t.value)doExport();t.select();try{document.execCommand('copy');alert('コピーしました');}catch(e){alert('長押しでコピーしてください');}}
+
+// HTMLエスケープ
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function pad(n){return (n<10?'0':'')+n;}
+
+// 結果を「自己完結HTML（PC/別端末でそのまま開ける静的ページ）」として組み立てる＝親への受け渡し用
+function buildResultDoc(){
+  var to=0,tx=0,dh='',wh='',any=false;
+  DAYS.forEach(function(d){
+    var t=tally(d.key);var dn=t.o+t.x;if(!dn)return;any=true;to+=t.o;tx+=t.x;
+    var r=Math.round(t.o/dn*100);
+    var xt=t.xs.length?('✕：'+t.xs.map(function(z){return esc(z.gid)+(z.m?'（'+esc(z.m)+'）':'');}).join('、')):'全問○';
+    dh+='<div class="day"><div class="nm">'+esc(d.name)+'</div><div class="sc"><span class="o">'+t.o+'○</span> / <span class="x">'+t.x+'✕</span>　'+r+'%</div><div class="xs">'+xt+'</div></div>';
+    if(t.xs.length)wh+='<div><b>'+esc(d.name)+'</b>：'+t.xs.map(function(z){return esc(z.gid)+(z.m?'（'+esc(z.m)+'）':'');}).join('、')+'</div>';
+  });
+  if(!any)return null;
+  var tdn=to+tx;var tr=tdn?Math.round(to/tdn*100):0;
+  var now=new Date();
+  var ts=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate())+'_'+pad(now.getHours())+pad(now.getMinutes());
+  var css='body{font-family:"Hiragino Kaku Gothic ProN","Meiryo",sans-serif;background:#f7f8f5;color:#263238;line-height:1.7;padding:18px 14px 50px}'
+    +'.wrap{max-width:760px;margin:0 auto}h1{font-size:20px;color:#25324a}'
+    +'.total{background:#fff;border:1px solid #e2e7df;border-radius:12px;padding:16px;margin:12px 0;text-align:center}'
+    +'.total .big{font-size:30px;font-weight:900;color:#3f6f9f}.total .sub{font-size:14px;color:#4c5b70}'
+    +'.day{background:#fff;border:1px solid #e2e7df;border-left:7px solid #56875b;border-radius:10px;padding:11px 14px;margin-bottom:8px}'
+    +'.day .nm{font-weight:800}.day .sc{font-weight:900;font-size:14px}.day .o{color:#56875b}.day .x{color:#c0504a}'
+    +'.day .xs{color:#c0504a;font-size:13px;margin-top:4px}'
+    +'.weak{background:#fffdf3;border:1px solid #e6cf8f;border-radius:10px;padding:12px 14px;margin-top:14px;font-size:13px;color:#5a4520;line-height:1.9}';
+  var doc='<!DOCTYPE html><html lang="ja"><head><meta charset="UTF-8">'
+    +'<meta name="viewport" content="width=device-width,initial-scale=1">'
+    +'<title>毎日プリント 結果 '+ts+'</title><style>'+css+'</style></head><body><div class="wrap">'
+    +'<h1>📊 毎日プリント 結果（書き出し '+ts+'）</h1>'
+    +'<div class="total"><div class="big">'+to+' ○ / '+tx+' ✕</div><div class="sub">採点ぜんぶで '+tdn+' 問・正答率 '+tr+'%</div></div>'
+    +dh
+    +'<div class="weak">📌 ✕の一覧（誤答キューへ写す）<br>'+(wh||'✕はありません')+'</div>'
+    +'</div></body></html>';
+  return {ts:ts,html:doc,name:'結果_'+ts+'.html'};
+}
+
+// ① ワンタップで親へ送る（AirDrop・メッセージ・ファイル保存）。オフラインでもAirDropは動く。
+function shareResult(){
+  var r=buildResultDoc();
+  if(!r){alert('まだ○✕の記録がありません。各プリントで○✕を付けてから送ってください。');return;}
+  try{
+    var file=new File([r.html],r.name,{type:'text/html'});
+    if(navigator.canShare&&navigator.canShare({files:[file]})){
+      navigator.share({files:[file],title:'毎日プリント 結果',text:'毎日プリントの○✕結果です'}).catch(function(){});
+      return;
+    }
+  }catch(e){}
+  // 共有が使えない端末は保存（ダウンロード）にフォールバック
+  alert('この端末では「送る」が使えないので、保存（ダウンロード）にします。保存先でUSBか「ファイル」を選んでください。');
+  exportStandalone();
+}
+
+// ② 保存してUSB等へ（従来方式・カメラ/ネット不要）
+function exportStandalone(){
+  var r=buildResultDoc();
+  if(!r){alert('まだ○✕の記録がありません。各プリントで○✕を付けてから書き出してください。');return;}
+  var blob=new Blob([r.html],{type:'text/html'});
+  var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=r.name;
+  document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(a.href);},800);
+}
+
+// ===== LINEで送れる形式（画像PNG・文字）=====
+function wrapLines(ctx,text,maxW){
+  var out=[],cur='';
+  for(var i=0;i<text.length;i++){
+    var ch=text.charAt(i);
+    if(ch==='\n'){out.push(cur);cur='';continue;}
+    var t=cur+ch;
+    if(cur&&ctx.measureText(t).width>maxW){out.push(cur);cur=ch;}else cur=t;
+  }
+  out.push(cur);return out;
+}
+function rrect(ctx,x,y,w,h,r){ctx.beginPath();ctx.moveTo(x+r,y);ctx.arcTo(x+w,y,x+w,y+h,r);ctx.arcTo(x+w,y+h,x,y+h,r);ctx.arcTo(x,y+h,x,y,r);ctx.arcTo(x,y,x+w,y,r);ctx.closePath();}
+function gather(){
+  var to=0,tx=0,any=false,rows=[],weak=[];
+  DAYS.forEach(function(d){var t=tally(d.key);var dn=t.o+t.x;if(!dn)return;any=true;to+=t.o;tx+=t.x;
+    var xt=t.xs.length?t.xs.map(function(z){return z.gid+(z.m?'('+z.m+')':'');}).join('、'):'';
+    rows.push({name:d.name,o:t.o,x:t.x,r:Math.round(t.o/dn*100),xt:xt});
+    if(t.xs.length)weak.push(d.name+'：'+xt);
+  });
+  if(!any)return null;
+  var tdn=to+tx;var now=new Date();
+  var ts=now.getFullYear()+'-'+pad(now.getMonth()+1)+'-'+pad(now.getDate());
+  return {to:to,tx:tx,tr:tdn?Math.round(to/tdn*100):0,rows:rows,weak:weak,ts:ts};
+}
+function renderResultCanvas(){
+  var g=gather();if(!g)return null;
+  var W=720,P=28,maxW=W-P*2,dpr=2;
+  var c=document.createElement('canvas');var ctx=c.getContext('2d');
+  var ops=[];
+  ops.push({t:'title',h:50});
+  ops.push({t:'total',h:62});
+  g.rows.forEach(function(r){
+    ops.push({t:'dayhd',h:32,r:r});
+    if(r.xt){ctx.font='400 20px sans-serif';var wl=wrapLines(ctx,'✕：'+r.xt,maxW-12);ops.push({t:'dayx',h:wl.length*26,lines:wl});}
+    ops.push({t:'gap',h:12});
+  });
+  ops.push({t:'weakhd',h:42});
+  ctx.font='400 20px sans-serif';
+  var wlines=[];(g.weak.length?g.weak:['✕はありません']).forEach(function(w){wlines=wlines.concat(wrapLines(ctx,'・'+w,maxW));});
+  ops.push({t:'weak',h:wlines.length*28+6,lines:wlines});
+  var H=P*2;ops.forEach(function(o){H+=o.h;});
+  c.width=W*dpr;c.height=H*dpr;ctx.scale(dpr,dpr);ctx.textBaseline='top';
+  ctx.fillStyle='#f7f8f5';ctx.fillRect(0,0,W,H);
+  var y=P;
+  ops.forEach(function(o){
+    if(o.t==='title'){ctx.fillStyle='#25324a';ctx.font='800 28px sans-serif';ctx.fillText('📊 毎日プリント 結果  '+g.ts,P,y);}
+    else if(o.t==='total'){ctx.fillStyle='#fff';rrect(ctx,P,y,maxW,50,10);ctx.fill();ctx.strokeStyle='#e2e7df';ctx.lineWidth=1;ctx.stroke();ctx.fillStyle='#3f6f9f';ctx.font='900 28px sans-serif';ctx.fillText(g.to+' ○  /  '+g.tx+' ✕     正答率 '+g.tr+'%',P+16,y+11);}
+    else if(o.t==='dayhd'){var r=o.r;ctx.fillStyle='#263238';ctx.font='800 21px sans-serif';ctx.fillText(r.name,P,y);var sc=r.o+'○ / '+r.x+'✕  '+r.r+'%';ctx.font='900 21px sans-serif';var sw=ctx.measureText(sc).width;ctx.fillStyle=r.x?'#c0504a':'#56875b';ctx.fillText(sc,W-P-sw,y);}
+    else if(o.t==='dayx'){ctx.fillStyle='#c0504a';ctx.font='400 20px sans-serif';o.lines.forEach(function(ln,i){ctx.fillText(ln,P+10,y+i*26);});}
+    else if(o.t==='weakhd'){ctx.fillStyle='#25324a';ctx.font='800 22px sans-serif';ctx.fillText('📌 ✕の一覧（復習に使う）',P,y+10);}
+    else if(o.t==='weak'){ctx.fillStyle='#5a4520';ctx.font='400 20px sans-serif';o.lines.forEach(function(ln,i){ctx.fillText(ln,P,y+i*28);});}
+    y+=o.h;
+  });
+  return {canvas:c,name:'結果_'+g.ts+'.png'};
+}
+// 画像で送る＝LINEで送れる・PCで見られる
+function shareImage(){
+  var r=renderResultCanvas();
+  if(!r){alert('まだ○✕の記録がありません。各プリントで○✕を付けてから送ってください。');return;}
+  r.canvas.toBlob(function(blob){
+    if(!blob){alert('画像を作れませんでした。文字で送るをお試しください。');return;}
+    try{var file=new File([blob],r.name,{type:'image/png'});
+      if(navigator.canShare&&navigator.canShare({files:[file]})){navigator.share({files:[file],title:'毎日プリント 結果'}).catch(function(){});return;}
+    }catch(e){}
+    var a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=r.name;document.body.appendChild(a);a.click();setTimeout(function(){document.body.removeChild(a);URL.revokeObjectURL(a.href);},800);
+  },'image/png');
+}
+function subjectOf(d){
+  if(/^tokkun_j/.test(d.key)||/^国語/.test(d.name))return '国語';
+  if(/^tokkun_m/.test(d.key)||/^復習数学/.test(d.name)||/^復習算数/.test(d.name))return '数学';
+  if(/^tokkun_e/.test(d.key)||/^英語/.test(d.name)||/^復習英語/.test(d.name))return '英語';
+  return '混合';
+}
+// 文字で送る＝LINEに貼って送れる。末尾は間違い集計表へそのまま転記できる1行形式。
+function buildResultText(){
+  var g=gather();if(!g)return null;
+  var L=[],T=[];
+  DAYS.forEach(function(d){
+    var t=tally(d.key),dn=t.o+t.x;if(!dn)return;
+    var xt=t.xs.length?t.xs.map(function(z){return z.gid+(z.m?'('+z.m+')':'');}).join('、'):'';
+    L.push(d.name+'  '+t.o+'○/'+t.x+'✕ '+Math.round(t.o/dn*100)+'%'+(xt?('  ✕:'+xt):''));
+    t.xs.forEach(function(z){
+      T.push(g.ts+' / '+subjectOf(d)+' / '+d.key+'・'+z.gid+' / '+d.name+' / '+(z.m||'要確認')+' / 要分析');
+    });
+  });
+  return '📊 毎日プリント 結果 '+g.ts+'\n合計 '+g.to+'○ / '+g.tx+'✕  正答率 '+g.tr+'%\n\n'+L.join('\n')+
+    '\n\n― ✕一覧 ―\n'+(g.weak.length?g.weak.join('\n'):'なし')+
+    '\n\n― 間違い集計表への転記用（日付 / 教科 / プリントKEY・問番 / 単元 / ミス型 / 次回アクション）―\n'+
+    (T.length?T.join('\n'):'転記対象なし');
+}
+function shareText(){
+  var s=buildResultText();
+  if(!s){alert('まだ○✕の記録がありません。');return;}
+  if(navigator.share){navigator.share({text:s,title:'毎日プリント 結果'}).catch(function(){});return;}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(s).then(function(){alert('コピーしました。LINEに貼り付けて送れます。');}).catch(cpfb);}else cpfb();
+  function cpfb(){var ta=document.getElementById('io');ta.value=s;ta.select();try{document.execCommand('copy');alert('コピーしました。LINEに貼り付けて送れます。');}catch(e){alert('下の枠の文字を長押しでコピーしてください。');}}
+}
+
+// 同一サイト判定の案内
+(function(){
+  var w=document.getElementById('warn');
+  var f=(location.protocol==='file:');
+  document.getElementById('howto').innerHTML=
+    '<b>使い方</b><br>① 各プリントを解いて、その中で ○✕ を付ける（ここで付け直さない）<br>'+
+    '② このページを開く／「🔄集計を更新」を押す → 自動で合計が出る<br>'+
+    '③ ✕一覧を <code>01_記録/誤答キュー.md</code> に写す（忘却曲線）<br>'+
+    '④ 別の端末や親へ渡すとき＝「書き出す→コピー」→ 相手側で貼り付け「読み込む」<br><br>'+
+    '<b>大事</b>：この自動集計は「プリントと同じサイトで開いたとき」だけ働きます。'+
+    '<b>公開版（オンライン／ホーム画面に追加したアプリ）で使ってください。</b>'+
+    'USBのファイルを直接開く方式（file://）だと、iPadでは○✕が保存・共有されず自動集計できません。';
+  try{localStorage.setItem('rb_t','1');localStorage.removeItem('rb_t');}catch(e){}
+  if(f){w.style.display='block';w.innerHTML='⚠ いまファイルを直接開いています（file://）。この方式だと各プリントの○✕が共有されず自動集計できません。<b>公開版（オンライン）で開いてください。</b>';}
+})();
+render();
+</script>
+</body>
+</html>

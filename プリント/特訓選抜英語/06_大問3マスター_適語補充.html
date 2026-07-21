@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 特訓選抜 英語 大問3対策「適語補充マスター」（9月2023実物・大問3＝日本文に合う英文の( )に適語1語ずつ）。文法軸=2026公式範囲（複数形/形容詞副詞/命令文・can/三単現）＋代名詞・前置詞・冠詞。産出穴語 cloud/uncle を1回ずつ書かせる。トピックはスポーツ・食べ物・週末のみ。KEY=tokkun_e_k3。data-id接頭辞K3はbuild_problem_inventory.pyのPREFIX_MAPに登録済み。-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓 英語 適語補充マスター（大問3）｜20分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+.howto{background:#fffaf0;border:1px solid #e8d6a8;border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:13.5px;color:#7a5a1e}
+.howto b{color:#8a5a19}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#e6eef8;border-left:6px solid #9fb8d9}
+.sec-hd h2{font-size:17px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-body{padding:16px 20px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:14px 0}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:8px}
+.jp-box{font-size:17px;font-weight:900;color:#31415f;background:#fff;border:2px solid #c8d4e6;border-left:6px solid #9fb8d9;border-radius:8px;padding:11px 15px;margin-bottom:10px}
+.en-q{font-size:18px;font-weight:800;color:#2f3b4a;background:#f6f8fc;border:1px solid #d8e2f0;border-radius:8px;padding:10px 14px;margin-bottom:10px;line-height:2;letter-spacing:.5px}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+.ans-btn{margin-top:2px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;margin-top:10px}
+.ans-box.open{display:block}
+.rw-type{display:inline-block;font-size:12px;font-weight:800;color:#31527a;background:#e6eef8;border:1px solid #c3d4e7;border-radius:8px;padding:2px 10px;margin-bottom:6px}
+.rw-why{background:#f7faff;border:1px solid #d8e2f0;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.9;color:#33425a}
+.rw-why b{color:#2f4a72}
+.rw-fill{font-size:14px;font-weight:800;color:#31527a;margin:6px 0 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#8a5a19}
+.bx-warn::before{content:"⚠️ ここでよくやる間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-warn .ng{color:#9b514d;font-weight:800}.bx-warn .ok{color:#3f7a4a;font-weight:800}
+.ans-final{margin-top:10px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important}
+  .write3{display:block!important}
+  .sec,.q{break-inside:avoid;page-break-inside:avoid}
+  .sec{box-shadow:none;margin-bottom:16px}
+}
+</style>
+</head>
+<body data-eng="1">
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓選抜 英語</span><span class="pg-badge">大問3 適語補充</span><span class="pg-badge">全8問</span></div>
+  <h1>適語補充マスター（特訓 大問3）</h1>
+  <p>目安 約20分　＝日本文に合うように、英文の（　）に英語を1語ずつ入れて書くよ。</p>
+  <p class="pg-sub">大問3は「<b>書いて</b>」答える。三単現の -s・名詞の複数形・冠詞 a / an・文の最初の大文字。ここで点を落としやすい。</p>
+</div>
+
+<div class="howto">
+  <b>やり方</b>：①日本語と英文を読む → ②答えを見る前に、（　）に入る語を<b>自分で書く</b> → ③「解説を読む→こたえへ」 → ④○✕、✕なら<b>3回</b>書く。<br>
+  <b>コツ</b>：まず<b>動詞</b>を決める。be動詞か一般動詞か、主語が3人称単数か。それで -s の有無・a / an が見えてくる。
+</div>
+
+<div class="sec"><div class="sec-hd"><h2>適語補充 8問（特訓 大問3・実物レベル）</h2><span class="badge-grade">L7-v3監査：L2×7／L3×1</span></div><div class="sec-body">
+
+  <!-- 1 三単現 + uncle産出 -->
+  <div class="q" data-id="K3-1"><div class="qnum-e">問題1</div>
+    <div class="jp-box">私のおじは毎週日曜日にカレーを作ります。</div>
+    <div class="en-q">My （　）（　） curry every Sunday.</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【三人称単数現在（-s）】</div>
+      <div class="rw-why">主語 My uncle は3人称単数。だから動詞は <b>makes</b>（-s をつける）。「毎週日曜日に」は every Sunday。<br>（a）は「おじ」= uncle（つづり注意）。
+      <div class="rw-fill">（a）uncle　（b）makes</div></div>
+      <div class="bx-warn">主語が3人称単数なので、動詞は <span class="ng">make</span> ではなく <span class="ok">makes</span>。-s を忘れやすい。</div>
+      <div class="ans-final"><span>こたえ</span>My uncle makes curry every Sunday.</div>
+    </div>
+    <div class="gq" data-gid="K3-1"><div class="grade">書けた？ <button class="o" onclick="g(this,'K3-1','o')">○</button><button class="x" onclick="g(this,'K3-1','x')">✕</button></div><div class="write3">📝 まちがえたら3回　My uncle makes curry every Sunday.</div></div>
+  </div>
+
+  <!-- 2 名詞の複数形 -->
+  <div class="q" data-id="K3-2"><div class="qnum-e">問題2</div>
+    <div class="jp-box">私は昼食にサンドイッチを2つ食べます。</div>
+    <div class="en-q">I （　） two （　） for lunch.</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【名詞の複数形（-es）】</div>
+      <div class="rw-why">主語は I なので動詞は原形 eat。「2つ」なので sandwich は複数 <b>sandwiches</b>（ch で終わる語は -es）。
+      <div class="rw-fill">（a）eat　（b）sandwiches</div></div>
+      <div class="bx-warn">2つ以上なのに <span class="ng">sandwich</span> のままにしない。ch のあとは <span class="ok">-es</span> をつけて sandwiches。</div>
+      <div class="ans-final"><span>こたえ</span>I eat two sandwiches for lunch.</div>
+    </div>
+    <div class="gq" data-gid="K3-2"><div class="grade">書けた？ <button class="o" onclick="g(this,'K3-2','o')">○</button><button class="x" onclick="g(this,'K3-2','x')">✕</button></div><div class="write3">📝 まちがえたら3回　I eat two sandwiches for lunch.</div></div>
+  </div>
+
+  <!-- 3 三単現 + 副詞 -->
+  <div class="q" data-id="K3-3"><div class="qnum-e">問題3</div>
+    <div class="jp-box">私の姉はとても速く走ります。</div>
+    <div class="en-q">My sister （　） very （　）.</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【三単現の -s ＋ ようすの副詞】</div>
+      <div class="rw-why">主語 My sister は3人称単数なので <b>runs</b>。「速く」は動詞のようすを言う副詞 fast。
+      <div class="rw-fill">（a）runs　（b）fast</div></div>
+      <div class="bx-warn">run に -s を忘れて <span class="ng">run</span> としない。3人称単数は <span class="ok">runs</span>。</div>
+      <div class="ans-final"><span>こたえ</span>My sister runs very fast.</div>
+    </div>
+    <div class="gq" data-gid="K3-3"><div class="grade">書けた？ <button class="o" onclick="g(this,'K3-3','o')">○</button><button class="x" onclick="g(this,'K3-3','x')">✕</button></div><div class="write3">📝 まちがえたら3回　My sister runs very fast.</div></div>
+  </div>
+
+  <!-- 4 can -->
+  <div class="q" data-id="K3-4"><div class="qnum-e">問題4</div>
+    <div class="jp-box">私の兄はとても上手に泳ぐことができます。</div>
+    <div class="en-q">My brother （　）（　） very well.</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【can ＋ 動詞の原形】</div>
+      <div class="rw-why">「〜できる」は <b>can</b>。can のあとの動詞はいつも原形 swim。主語が3人称単数でも -s はつけない。
+      <div class="rw-fill">（a）can　（b）swim</div></div>
+      <div class="bx-warn">can のあとを <span class="ng">swims</span> としない。can ＋ <span class="ok">swim</span>（原形）。</div>
+      <div class="ans-final"><span>こたえ</span>My brother can swim very well.</div>
+    </div>
+    <div class="gq" data-gid="K3-4"><div class="grade">書けた？ <button class="o" onclick="g(this,'K3-4','o')">○</button><button class="x" onclick="g(this,'K3-4','x')">✕</button></div><div class="write3">📝 まちがえたら3回　My brother can swim very well.</div></div>
+  </div>
+
+  <!-- 5 命令文 -->
+  <div class="q" data-id="K3-5"><div class="qnum-e">問題5</div>
+    <div class="jp-box">野菜をたくさん食べて、そして水を飲みなさい。</div>
+    <div class="en-q">（　） a lot of vegetables, and （　） water.</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【命令文（動詞の原形で始める）】</div>
+      <div class="rw-why">「〜しなさい」は主語を書かず、動詞の原形で始める。文のはじめは大文字 <b>Eat</b>。2つ目の動詞も原形 drink。
+      <div class="rw-fill">（a）Eat　（b）drink</div></div>
+      <div class="bx-warn">文のはじめを小文字の <span class="ng">eat</span> にしない。命令文は大文字 <span class="ok">Eat</span> で始める。</div>
+      <div class="ans-final"><span>こたえ</span>Eat a lot of vegetables, and drink water.</div>
+    </div>
+    <div class="gq" data-gid="K3-5"><div class="grade">書けた？ <button class="o" onclick="g(this,'K3-5','o')">○</button><button class="x" onclick="g(this,'K3-5','x')">✕</button></div><div class="write3">📝 まちがえたら3回　Eat a lot of vegetables, and drink water.</div></div>
+  </div>
+
+  <!-- 6 前置詞 + cloud産出（複数） -->
+  <div class="q" data-id="K3-6"><div class="qnum-e">問題6</div>
+    <div class="jp-box">日曜日、私たちは空にたくさんの雲を見ます。</div>
+    <div class="en-q">On （　）, we see many （　） in the sky.</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【曜日の on ＋ many ＋ 複数形】</div>
+      <div class="rw-why">「日曜日に」は On Sunday（文頭は大文字）。「たくさんの雲」は many のあとを複数 <b>clouds</b> にする。
+      <div class="rw-fill">（a）Sunday　（b）clouds</div></div>
+      <div class="bx-warn">many のあとを <span class="ng">cloud</span> のままにしない。数えられる名詞は <span class="ok">clouds</span>（複数）。</div>
+      <div class="ans-final"><span>こたえ</span>On Sunday, we see many clouds in the sky.</div>
+    </div>
+    <div class="gq" data-gid="K3-6"><div class="grade">書けた？ <button class="o" onclick="g(this,'K3-6','o')">○</button><button class="x" onclick="g(this,'K3-6','x')">✕</button></div><div class="write3">📝 まちがえたら3回　On Sunday, we see many clouds in the sky.</div></div>
+  </div>
+
+  <!-- 7 代名詞（目的格） -->
+  <div class="q" data-id="K3-7"><div class="qnum-e">問題7</div>
+    <div class="jp-box">私の友達は毎週土曜日に私といっしょにバスケットボールをします。</div>
+    <div class="en-q">My friends play basketball with （　） on （　）.</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【代名詞の目的格（〜と）＋ 曜日の複数】</div>
+      <div class="rw-why">「私と」は前置詞 with のあとなので目的格 <b>me</b>。「（毎週）土曜日に」は on Saturdays と複数にする。
+      <div class="rw-fill">（a）me　（b）Saturdays</div></div>
+      <div class="bx-warn">「私と」を <span class="ng">I</span> にしない。前置詞のあとは目的格 <span class="ok">me</span>。</div>
+      <div class="ans-final"><span>こたえ</span>My friends play basketball with me on Saturdays.</div>
+    </div>
+    <div class="gq" data-gid="K3-7"><div class="grade">書けた？ <button class="o" onclick="g(this,'K3-7','o')">○</button><button class="x" onclick="g(this,'K3-7','x')">✕</button></div><div class="write3">📝 まちがえたら3回　My friends play basketball with me on Saturdays.</div></div>
+  </div>
+
+  <!-- 8 冠詞 a/an + favorite -->
+  <div class="q" data-id="K3-8"><div class="qnum-e">問題8</div>
+    <div class="jp-box">これは私の大好きな果物です。オレンジです。</div>
+    <div class="en-q">This is my （　） fruit. It is （　） orange.</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【冠詞 a / an の使い分け】</div>
+      <div class="rw-why">「大好きな」は形容詞 favorite（つづり注意）。orange は母音（o）の音で始まるので、a ではなく <b>an</b>。
+      <div class="rw-fill">（a）favorite　（b）an</div></div>
+      <div class="bx-warn">orange の前を <span class="ng">a</span> にしない。母音の音で始まる語の前は <span class="ok">an</span>。</div>
+      <div class="ans-final"><span>こたえ</span>This is my favorite fruit. It is an orange.</div>
+    </div>
+    <div class="gq" data-gid="K3-8"><div class="grade">書けた？ <button class="o" onclick="g(this,'K3-8','o')">○</button><button class="x" onclick="g(this,'K3-8','x')">✕</button></div><div class="write3">📝 まちがえたら3回　This is my favorite fruit. It is an orange.</div></div>
+  </div>
+
+</div></div>
+
+<button class="done" id="doneBtn" onclick="finish()">ぜんぶ書けた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">「動詞を決める→三単現の -s・複数形・a / an をチェック」。この順で大問3は落とさないよ。</div>
+
+</div>
+<script>
+var KEY='tokkun_e_k3';
+function t(b){if(!b.dataset.label)b.dataset.label=b.textContent;var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');b.textContent=open?'とじる':b.dataset.label;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}var w3=box.querySelector('.write3');if(v==='x'){if(w3)w3.style.display='block';}else{if(w3)w3.style.display='none';}}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくできた！三単現の -s と複数形、しっかり書けたね';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);if(!v)return;var b=box.querySelector('.'+v);if(b)b.classList.add('sel');if(v==='x'){var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}});if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}};
+/* ===== 復習英語キュー送りフック（×/○・英語問題のみ・自己ループ防止） ===== */
+function sendToRevQ(btn,id,result){
+  if(typeof PRE!=='undefined' && PRE==='revq_') return;        // 受け皿自身では動かさない
+  if(typeof KEY==='undefined') return;
+  if(KEY.indexOf('revq')===0) return;
+  var q=btn&&btn.closest?btn.closest('.q'):null; if(!q) return;
+  if(q.classList.contains('calc')) return;                      // 数学除外
+  var engPrint=!!document.querySelector('[data-eng="1"]');
+  var isVocab=q.classList.contains('vocab'), isWriting=q.classList.contains('writing');
+  if(!engPrint && !isVocab && !isWriting) return;               // 混在で英語クラス無し→送らない
+  var kindEl=q.querySelector('.qnum-e'); var kindRaw=kindEl?(kindEl.textContent||''):'';
+  if(/漢字|書き|読み/.test(kindRaw)) return;                    // 暗記カードの漢字除外
+  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.qbody');
+  var enEl=q.querySelector('.ans-final')||q.querySelector('.ans-box .ans-main');
+  if(!jpEl||!enEl) return;
+  var jp=cleanRevQText(jpEl), en=cleanRevQText(enEl);
+  if(!jp||!en) return;
+  if(!/[A-Za-z]/.test(en)) return;                              // 答えに英字なし→英語でない→除外
+  if(result==='o'){bumpRevQPo(en);return;}                      // ○：既存項目の po++ のみ（新規追加しない）
+  var kind='単語',badge='tango';
+  if(isWriting||/英作文/.test(kindRaw)||/[.!?]\s*$/.test(en)){kind='英作文';badge='eisaku';}
+  else if(/熟語/.test(kindRaw)){kind='熟語';badge='jukugo';}
+  pushRevQDyn({jp:jp,en:en,kind:kind,badge:badge,day:revqToday(),src:(KEY+'_'+id)});
+}
+function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[（(][^）)]*でもOK[^）)]*[）)]/g,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function revqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function revqNorm(s){return String(s||'').toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function bumpRevQPo(en){try{var K='revq_dyn';var raw=localStorage.getItem(K);if(raw==null)return;var arr;try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;var key=revqNorm(en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].po=(+arr[i].po||0)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}}catch(e){}}
+function pushRevQDyn(item){try{var K='revq_dyn';var raw=localStorage.getItem(K);var arr;if(raw==null){arr=[];}else{try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;}var key=revqNorm(item.en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;arr[i].po=0;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;item.po=0;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
+</script>
+</body>
+</html>

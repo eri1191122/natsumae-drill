@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学習カレンダー</title>
+<style>
+  :root{
+    --bg:#f7f8f5; --ink:#263238; --sub:#4c5b70;
+    --card:#ffffff; --line:#e2e7df;
+    --hd-bg:#e8edf7; --hd-bd:#c8d4e6; --hd-ink:#25324a;
+    --math:#91bdb7; --math-soft:#e4f1ef; --math-ink:#33635d;
+    --eng:#d8a09a;  --eng-soft:#f7e6e4;  --eng-ink:#8a4f49;
+    --mix:#d8b27c;  --mix-soft:#f6eadb;  --mix-ink:#80592a;
+    --rev:#8fae8a;  --rev-soft:#e7f1e6;  --rev-ink:#3d6b3e;
+    --done:#9abf9d; --done-soft:#e7f1e8;
+    --accent:#3f6f9f;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.7; padding:20px 16px 64px; font-size:16px; overflow-x:hidden;}
+  .wrap{width:100%; max-width:680px; min-width:0; margin:0 auto;}
+
+  .pg-hd{background:var(--hd-bg); border:1px solid var(--hd-bd); border-radius:12px; padding:24px 22px; margin-bottom:18px;}
+  .pg-hd .badge{display:inline-block; background:#dbe7f3; color:#31415f; font-size:12px; font-weight:800; padding:3px 12px; border:1px solid #c3d4e7; border-radius:18px; margin-bottom:10px;}
+  .pg-hd h1{font-size:24px; font-weight:900; color:var(--hd-ink); margin-bottom:6px;}
+  .pg-hd p{font-size:14px; color:var(--sub);}
+
+  .progwrap{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:18px 20px; margin-bottom:18px; box-shadow:0 2px 8px rgba(67,83,72,.06);}
+  .progtop{display:flex; flex-wrap:wrap; gap:4px 12px; justify-content:space-between; align-items:baseline; font-size:15px; color:var(--sub); margin-bottom:10px;}
+  .progtop > span{min-width:0;}
+  .progtop > span:last-child{white-space:nowrap; margin-left:auto;}
+  .progtop .count{font-size:22px; font-weight:900; color:var(--accent);}
+  .progsub{font-size:12.5px; color:var(--sub); margin-top:8px; text-align:right;}
+  .bar{height:18px; background:#eef2ec; border-radius:12px; overflow:hidden; border:1px solid #e0e6dd;}
+  .bar > i{display:block; height:100%; width:0; background:linear-gradient(90deg,#9abf9d,#91bdb7); transition:width .5s ease;}
+  .cheer{font-size:15px; color:var(--rev-ink); margin-top:12px; text-align:center; font-weight:700; min-height:22px;}
+  .today{background:#fff9ec; border:2px solid #e2bd72; border-radius:12px; padding:15px 18px; margin-bottom:18px;}
+  .today .eyebrow{font-size:12px; font-weight:900; color:var(--mix-ink); margin-bottom:4px;}
+  .today .today-title{font-size:19px; font-weight:900; line-height:1.45;}
+  .today .today-desc{font-size:13.5px; color:var(--sub); margin-top:3px;}
+  .today a{display:inline-flex; align-items:center; justify-content:center; min-height:44px; margin-top:10px; color:#fff; background:var(--accent); border-radius:20px;
+    padding:8px 16px; font-size:14px; font-weight:800; text-decoration:none;}
+  .storageWarn{display:none; background:#fff0ef; border:1px solid #e5aaa5; color:#7f3530;
+    border-radius:10px; padding:10px 14px; margin-bottom:16px; font-size:13px; font-weight:700;}
+
+  /* 週見出し */
+  .weekhd{margin:22px 2px 12px; padding:8px 14px; border-radius:10px;
+    background:#eef2ec; border:1px solid #dfe6dc; color:var(--hd-ink);
+    font-size:15px; font-weight:900;}
+  .weekhd small{display:block; font-size:12px; font-weight:700; color:var(--sub); margin-top:2px;}
+
+  /* 上へもどる（縦長対策） */
+  .backtop{display:inline-flex; align-items:center; justify-content:center; min-height:44px; margin:2px 2px 10px; padding:8px 16px;
+    font-size:13px; font-weight:800; color:var(--sub); background:#fff; border:1px solid var(--line); border-radius:20px; text-decoration:none;}
+  .backtop:active{opacity:.7;}
+
+  /* 大カード（今やる・実物あり） */
+  .card{background:var(--card); border:1px solid var(--line); border-left:7px solid var(--line);
+    border-radius:12px; margin-bottom:12px; position:relative; box-shadow:0 2px 8px rgba(67,83,72,.06);}
+  .card .open{display:block; text-decoration:none; color:inherit; padding:16px 18px; border-radius:12px; transition:transform .1s ease;}
+  .card .open:active{transform:scale(.985);}
+  .card .date{display:inline-block; font-size:12px; font-weight:800; color:#fff; background:var(--accent);
+    border-radius:12px; padding:2px 10px; margin-bottom:6px;}
+  .card .title{font-size:19px; font-weight:900; line-height:1.4; margin-bottom:4px; padding-right:54px;}
+  .card .desc{font-size:13.5px; color:var(--sub); padding-right:54px;}
+  .card .tag{display:inline-block; font-size:12px; font-weight:800; padding:3px 12px; border-radius:14px; margin-top:10px;}
+  .card.math{border-left-color:var(--math);} .card.math .tag{background:var(--math-soft); color:var(--math-ink); border:1px solid #bcdbd6;}
+  .card.eng{border-left-color:var(--eng);}  .card.eng .tag{background:var(--eng-soft); color:var(--eng-ink); border:1px solid #e6bbb7;}
+  .card.mix{border-left-color:var(--mix);}  .card.mix .tag{background:var(--mix-soft); color:var(--mix-ink); border:1px solid #e6cd9b;}
+  .card.review{border-left-color:var(--rev);} .card.review .tag{background:var(--rev-soft); color:var(--rev-ink); border:1px solid #bcd6bb;}
+
+  .doneBtn{position:absolute; top:14px; right:14px; width:48px; height:48px; border-radius:50%;
+    border:3px solid #aeb8aa; background:#fff; font-size:22px; line-height:1; color:transparent;
+    cursor:pointer; display:flex; align-items:center; justify-content:center;}
+  .card.is-done{background:var(--done-soft); border-color:#bcd6bd;}
+  .card.is-done .doneBtn{background:#56875b; border-color:#56875b; color:#fff;}
+
+  /* 直し日 */
+  .slim{display:flex; align-items:center; gap:10px; padding:9px 14px; margin-bottom:7px;
+    background:#f5f8f2; border:1px dashed #aab9a5; border-radius:10px; color:#4d5a66;}
+  .slim.is-done{background:var(--done-soft); border-style:solid; border-color:#9db99d;}
+  .slim .sdate{font-size:12px; font-weight:800; color:#596779; min-width:64px;}
+  .slim .stitle{font-size:13.5px; flex:1;}
+  .slim .ssoon{font-size:11px; font-weight:800; color:#674619; background:var(--mix-soft);
+    border:1px solid #e6cd9b; border-radius:10px; padding:2px 8px; white-space:nowrap;}
+  .slimDone{width:44px; min-width:44px; height:44px; border-radius:50%; border:3px solid #aeb8aa;
+    background:#fff; color:transparent; font-size:20px; font-weight:900; cursor:pointer;}
+  .slim.is-done .slimDone{background:#56875b; border-color:#56875b; color:#fff;}
+
+  .note{font-size:13px; color:var(--sub); text-align:center; margin-top:24px; line-height:1.8;}
+  .reset{display:block; margin:16px auto 0; font-size:13px; color:var(--sub); background:#fff;
+    border:1px solid var(--line); border-radius:24px; min-height:44px; padding:9px 20px; cursor:pointer;}
+  .scope{background:#fff; border:1px solid var(--line); border-radius:12px; margin-top:20px; padding:14px 18px;}
+  .scope summary{font-weight:900; color:var(--hd-ink); cursor:pointer;}
+  .scope p{font-size:13.5px; color:var(--sub); margin-top:10px;}
+  .scope strong{color:var(--ink);}
+  button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #1d70b8; outline-offset:3px;}
+  /* 弱点復習セクション */
+  .tokkun{margin:20px 0;}
+  .tokkun h2{font-size:17px; font-weight:900; color:var(--hd-ink); margin-bottom:6px;}
+  .tokkun .lead{font-size:13px; color:var(--sub); margin-bottom:12px; line-height:1.7;}
+  .tk-grp{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:10px 14px; margin-bottom:10px;}
+  .tk-grp .gh{display:block; font-size:13px; font-weight:900; color:var(--sub); margin-bottom:6px;}
+  .tk{display:flex; justify-content:space-between; align-items:center; text-decoration:none; color:var(--ink); background:#f5f8f2; border:1px solid var(--line); border-radius:8px; padding:10px 12px; margin-top:6px; font-size:14px; font-weight:700; gap:8px;}
+  .tk:active{opacity:.75;}
+  .tk .pp{display:inline-block; font-size:11px; font-weight:800; background:var(--rev-soft); color:var(--rev-ink); border:1px solid #bcd6bb; border-radius:10px; padding:2px 8px; margin-right:6px;}
+  .tk .dn{font-size:12px; font-weight:800; color:var(--ok); white-space:nowrap;}
+  .tk.is-tdone{background:var(--done-soft); border-color:#bcd6bd;}
+  /* 夏休みダッシュボード（別フェーズ・別ファイル）への入口 */
+  .gotosummer{display:block; text-decoration:none; background:#fdeee2; border:1px solid #e6c39a; border-left:7px solid var(--mix); border-radius:12px; margin-top:24px; padding:16px 18px; color:var(--mix-ink); box-shadow:0 2px 8px rgba(67,83,72,.06);}
+  .gotosummer b{font-size:16px; font-weight:900;}
+  .gotosummer small{display:block; font-size:12.5px; color:var(--sub); margin-top:4px; font-weight:700;}
+  /* 弱点復習（赤・目立たせる・煽る） */
+  .rev{background:#fdecea; border:1px solid #f0b7b1; border-left:8px solid #d9534f; border-radius:12px; margin:14px 0 18px; padding:16px 18px; box-shadow:0 3px 12px rgba(217,83,79,.14);}
+  .rev > h2{font-size:19px; font-weight:900; color:#b23b34; display:flex; align-items:center; gap:8px; flex-wrap:wrap;}
+  .rev .revwarn{font-size:12px; font-weight:900; color:#fff; background:#d9534f; border-radius:12px; padding:2px 10px;}
+  .rev .lead{font-size:12.5px; color:#7a4a47; margin:6px 0 12px; line-height:1.8;}
+  .rev .lead b{color:#b23b34;}
+  .rev-row{display:flex; align-items:center; gap:10px; flex-wrap:wrap; background:#fff; border:1px solid #f0c7c3; border-radius:10px; padding:10px 12px; margin-bottom:8px;}
+  .rev-row .cat{font-size:11px; font-weight:900; color:#fff; background:#d9534f; border-radius:10px; padding:3px 9px; white-space:nowrap;}
+  .rev-row .body{flex:1; min-width:150px;}
+  .rev-row .ttl{font-size:14.5px; font-weight:800; color:var(--ink); text-decoration:none;}
+  .rev-row .ttl:active{opacity:.7;}
+  .rev-row .meta{display:block; font-size:11.5px; font-weight:800; margin-top:3px;}
+  .rev-row .meta.ok{color:#3d8f5a;} .rev-row .meta.warn{color:#c0392b;} .rev-row .meta.mut{color:#9aa3ad;}
+  .rev-row .did{font-size:13px; font-weight:900; color:#fff; background:#56875b; border:none; border-radius:18px; min-height:42px; padding:8px 15px; cursor:pointer; white-space:nowrap;}
+  .rev-row .did:active{opacity:.8;}
+  .rev-row.clear{background:#eef6ef; border-color:#bcd6bd; opacity:.72;}
+  .rev-row.clear .cat{background:#56875b;}
+  .rev-row .undo{font-size:11px; font-weight:800; color:#9aa3ad; background:none; border:none; cursor:pointer; text-decoration:underline; padding:6px;}
+  .rev-empty{font-size:13px; color:#3d8f5a; font-weight:800; text-align:center; padding:8px;}
+  @media print{
+    body{padding:0; background:#fff;}
+    .today,.doneBtn,.slimDone,.reset,.storageWarn,.backtop{display:none !important;}
+    .card,.slim,.progwrap,.scope{box-shadow:none; break-inside:avoid;}
+  }
+  @media (max-width:440px){
+    body{padding-left:10px; padding-right:10px;}
+    .pg-hd{padding:20px 18px;}
+    .pg-hd h1{font-size:22px;}
+    .progwrap{padding:16px;}
+    .progtop > span:first-child{width:100%;}
+    .card .title,.card .desc{padding-right:62px;}
+    .slim{flex-wrap:wrap;}
+    .slim .stitle{min-width:180px;}
+  }
+</style>
+<style>.summer-return{position:relative;z-index:20;display:inline-flex;align-items:center;min-height:44px;margin:10px 14px;padding:9px 14px;border:1px solid #cdd8e8;border-radius:18px;background:#fff;color:#3f6f9f;font:800 13px/1.4 sans-serif;text-decoration:none}</style>
+</head>
+<body>
+<a class="summer-return" href="夏休みダッシュボード.html#today">🌻 夏休みダッシュボードへもどる</a>
+<div class="wrap">
+
+  <header class="pg-hd">
+    <span class="badge">中1・6/15〜7/17</span>
+    <h1>学習カレンダー</h1>
+    <p>「その日にやること」が決まっています。目安30分。終わらなければ止めて、残りは直し日に回します。</p>
+    <a href="セットアップ_さいしょの設定.html" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:10px;margin-right:6px;color:#fff;background:#b06b2c;border-radius:20px;padding:8px 16px;font-size:14px;font-weight:800;text-decoration:none;">⚙️ さいしょの設定（おとな・1回だけ）</a>
+    <a href="つかいかた.html" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:10px;margin-right:6px;color:#fff;background:#56875b;border-radius:20px;padding:8px 16px;font-size:14px;font-weight:800;text-decoration:none;">🐵 つかいかた（はじめての人）</a>
+    <a href="記録ボード_毎日プリント集計.html" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:10px;color:#fff;background:#3f6f9f;border-radius:20px;padding:8px 16px;font-size:14px;font-weight:800;text-decoration:none;">📋 ○✕の記録ボード（集計・回収）</a>
+    <a href="数学問題インデックス.html" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:10px;margin-right:6px;color:#fff;background:#33635d;border-radius:20px;padding:8px 16px;font-size:14px;font-weight:800;text-decoration:none;">📐 数学インデックス</a>
+    <a href="英語問題インデックス.html" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:10px;margin-right:6px;color:#fff;background:#8a4f49;border-radius:20px;padding:8px 16px;font-size:14px;font-weight:800;text-decoration:none;">📘 英語インデックス</a>
+    <a href="国語問題インデックス.html" style="display:inline-flex;align-items:center;justify-content:center;min-height:44px;margin-top:10px;color:#fff;background:#6a4c93;border-radius:20px;padding:8px 16px;font-size:14px;font-weight:800;text-decoration:none;">📕 国語インデックス</a>
+  </header>
+
+  <section class="rev" id="revSec" aria-label="弱点復習（さいしょにやる）">
+    <h2>🔁 弱点復習（さいしょにやる）<span class="revwarn" id="revWarn"></span></h2>
+    <p class="lead">まず苦手をつぶそう。やったら <b>「✓ できた」</b> を押す。<b>やらないとどんどんたまるよ！</b>　○✕は <a href="記録ボード_毎日プリント集計.html">📋 記録ボード</a> に集計されます。</p>
+    <div id="revRows"></div>
+  </section>
+
+  <div class="storageWarn" id="storageWarn" role="alert">この環境では進捗を保存できません。表示は使えますが、再読み込みするとチェックが消えます。</div>
+  <section class="today" id="today" aria-live="polite"></section>
+
+  <div class="progwrap">
+    <div class="progtop">
+      <span>取り組んだ日 <small>（完了≠定着）</small></span>
+      <span><span class="count" id="cnt">0</span> / <span id="total">0</span> 日</span>
+    </div>
+    <div class="bar" id="progress" role="progressbar" aria-label="学習日程の進捗" aria-valuemin="0" aria-valuemax="33" aria-valuenow="0"><i id="fill"></i></div>
+    <div class="progsub" id="progsub">プリント 0/24・直し日 0/9</div>
+    <div class="cheer" id="cheer" aria-live="polite"></div>
+  </div>
+
+  <div id="board"></div>
+
+  <a class="gotosummer" href="夏休みダッシュボード.html">
+    <b>🌻 夏休みダッシュボード（8月〜）はこちら →</b>
+    <small>特訓数学31枚・暗記カード60・国語プリント。9月特訓選抜の対策で、夏前カレンダーとは別フェーズです。</small>
+  </a>
+
+  <a class="gotosummer" href="数学問題インデックス.html">
+    <b>📋 数学・問題インデックス（全問台帳）へ →</b>
+    <small>夏前の数学プリントを単元×難度×弱点で全部整理。どの問題が何問どこにあるか、弱点から逆引きできます。</small>
+  </a>
+
+  <div class="note">
+    プリントを開いたら、なかで○✕とミスの型をタップして記録できます。<br>
+    プリント末尾の「今日できた」で自動的に済になります。右上の丸は修正用です。<br>
+    直し日は、各プリントの✕と手動の誤答キューを見て解き直します。
+  </div>
+  <details class="scope">
+    <summary>このカレンダーで完成する範囲と、定着の判定</summary>
+    <p><strong>数学：</strong>小学算数の主要弱点、正負の数、文字式・一次式の計算と利用まで。方程式、比例反比例、中学図形、データ活用は別範囲です。</p>
+    <p><strong>英語：</strong>中1基礎の綴りと基本文の書き取りを補強します。長文、リスニング、会話・発表は別練習が必要です。8月31日の単語・熟語目標は別プランです。</p>
+    <p><strong>定着：</strong>33日のチェックだけでは判定しません。7月18日の初見混合テスト90%以上、7月31日の再テスト85%以上、空欄ゼロを目安にします。</p>
+  </details>
+  <button class="reset" onclick="resetCompletion()">取り組みチェックだけリセット</button>
+
+  <a class="backtop" href="#today" style="display:flex; width:100%; max-width:280px; margin:14px auto 0;">↑ いちばん上（きょうやること）へ</a>
+
+</div>
+
+<script>
+/* 週ごとのスケジュール。file があるものはプリント、file:null は手動の直し日。
+   key = 完了判定に使う localStorage のキー。 */
+const WEEKS = [
+ {hd:"第1週 6/15〜21", sub:"まず小学校算数を一気に復習して土台を作る", items:[
+   {date:"6/15(月)", type:"review", key:"fukushu01", title:"小学校算数スタート（総合）", desc:"演算順序・分数小数・割合・概数・数直線・四則＋中1単語/熟語", file:"プリント/横断/復習01_小学校算数スタート_中1単語熟語.html"},
+   {date:"6/16(火)", type:"review", key:"fukushu02", title:"分数の計算", desc:"通分・約分・たし算ひき算・かけ算わり算", file:"プリント/横断/復習02_分数の計算.html"},
+   {date:"6/17(水)", type:"review", key:"fukushu03", title:"割合・百分率・歩合", desc:"くらべる量÷もとにする量。%・歩合・「残りの〜」", file:"プリント/横断/復習03_割合と百分率.html"},
+   {date:"6/18(木)", type:"review", key:"fukushu04", title:"概数・整数の範囲・数直線", desc:"四捨五入／以上・未満／数直線（正負の数への橋わたし）", file:"プリント/横断/復習04_概数と数直線.html"},
+   {date:"6/19(金)", type:"review", key:"fukushu05", title:"倍数・約数・単位換算", desc:"公倍数・公約数（通分の土台）／長さ面積体積時間の換算", file:"プリント/横断/復習05_倍数約数と単位換算.html"},
+   {date:"6/20(土)", type:"review", key:"fukushu06", title:"速さ・比＋小学校総まとめ", desc:"速さと比＋これまでの確認テスト。ここで小学校算数の基礎編が完了！", file:"プリント/横断/復習06_速さと比_小学校総まとめ.html"},
+   {date:"6/21(日)", type:"mix", key:"weekend01", title:"週末復習（第1週まとめ）", desc:"英語は思い出して書く再テスト＋数学は数値をかえた類題。今週の総しあげ", file:"プリント/横断/週末復習01_第1週.html"},
+ ]},
+ {hd:"第2週 6/22〜28", sub:"小学算数の“応用”を仕上げる（図形・場合の数・速さ割合）→ 中1へ", items:[
+   {date:"6/22(月)", type:"review", key:"fukushu07", title:"図形（面積・複合図形・角度）", desc:"★テストで空欄だった「半円−三角形の影」直撃。複合図形は引き算で", file:"プリント/横断/復習07_図形_面積と複合図形.html"},
+   {date:"6/23(火)", type:"review", key:"fukushu08", title:"場合の数・規則性・数列", desc:"★模試で落とした順列(24通り)・各辺n個(4n−4)・魔方陣", file:"プリント/横断/復習08_場合の数と規則性.html"},
+   {date:"6/24(水)", type:"review", key:"fukushu09", title:"速さ・割合・整数の応用", desc:"★必修の速さグラフ・二段割合(線分図)・整数の個数・平方数", file:"プリント/横断/復習09_速さと割合の応用.html"},
+   {date:"6/25(木)", type:"redo", key:"redo01", title:"まちがい直しの日（復習07〜09の✕）", desc:"応用でつまずいた問題だけ、図を描いてもう一度", file:null},
+   {date:"6/26(金)", type:"math", key:"day1", title:"数学｜正負の数 わり算・逆数", desc:"ここから中1。わり算は逆数のかけ算になおす", file:"プリント/数学/Day01_数学_正負の数_除法逆数.html"},
+   {date:"6/27(土)", type:"eng", key:"day2", title:"英語｜スペリングと be 動詞", desc:"音と文字をつなげ、be動詞のかたちをつかむ", file:"プリント/英語/Day02_英語_スペリングとbe動詞.html"},
+   {date:"6/28(日)", type:"math", key:"day3", title:"数学｜正負の数 意味・文章を式に", desc:"ことばの場面を正負の式にあらわす", file:"プリント/数学/Day03_数学_正負の数_意味と文章を式に.html"},
+ ]},
+ {hd:"第3週 6/29〜7/5", sub:"中1 正負の数の通常回（数学＋英語の合体30分）", items:[
+   {date:"6/29(月)", type:"mix", key:"mix01", title:"数学 四則混合 ＋ 英語 what疑問文", desc:"30分＝数学13分＋英語12分。英語は What sport do you like? を自力で書く", file:"プリント/横断/通常01_数学四則混合と英語疑問詞.html"},
+   {date:"6/30(火)", type:"redo", key:"redo02", title:"★難問デー（L4）正負の数の文章 → 式", desc:"30分＝英語スライド＋数学L4難問2問＋★挑戦1問。中1最大の弱点を式にする", file:"プリント/横断/redo02_難問デー_正負の文章を式に.html"},
+   {date:"7/1(水)", type:"mix", key:"mix02", title:"正負の数の利用（文章題）＋英語 複数形", desc:"★文章を式にする練習（いちばんの弱点）＋名詞の複数形", file:"プリント/横断/通常02_正負の数の利用と英語複数形.html"},
+   {date:"7/2(木)", type:"redo", key:"redo03", title:"★難問デー（L4）正負＋小学の難問", desc:"30分＝英語スライド＋数学L4難問2問＋★挑戦1問。数の大小・速さグラフ・複合図形", file:"プリント/横断/redo03_難問デー_正負と小学難問.html"},
+   {date:"7/3(金)", type:"mix", key:"mix03", title:"英作文（形容詞）＋ 数学ミニ", desc:"日本語からヒントなしで英作文にちょうせん＋正負の数ミニ確認", file:"プリント/横断/通常03_英作文と数学ミニ.html"},
+   {date:"7/4(土)", type:"redo", key:"redo04", title:"ふりかえり／よゆうがあれば先取り", desc:"✕の解き直し。✕がなければ休みでもOK", file:null},
+   {date:"7/5(日)", type:"mix", key:"mix04", title:"正負の数まとめ ＋ 速さの復習（今日のチャレンジ1問）", desc:"絶対値・数の大小・正負の利用＋6/24にやった速さの応用をもう一度", file:"プリント/横断/通常04_正負の数まとめと速さのグラフ復習.html"},
+ ]},
+ {hd:"第4週 7/6〜12", sub:"文字式へ（表し方→数量を式に→代入→一次式）。直しの日で負担を調整", items:[
+   {date:"7/6(月)", type:"mix", key:"mix05", title:"文字式の表し方 ＋ 英語（三単現）", desc:"×÷の省略ルール＋今日のチャレンジ(二段割合)", file:"プリント/横断/通常05_文字式の表し方1と三単現.html"},
+   {date:"7/7(火)", type:"redo", key:"redo05", title:"★難問デー（L4）文字式で数量を表す", desc:"30分＝英語スライド＋数学L4難問2問＋★挑戦1問。文章を式に・等式不等式・規則性", file:"プリント/横断/redo05_難問デー_文字式で数量を表す.html"},
+   {date:"7/8(水)", type:"mix", key:"mix06", title:"数量を文字式で表す ＋ 英語", desc:"代金・速さ・面積を文字で＋今日のチャレンジ(複合図形)", file:"プリント/横断/通常06_文字式で数量を表す.html"},
+   {date:"7/9(木)", type:"redo", key:"redo06", title:"★難問デー（L4）代入と一次式", desc:"30分＝英語スライド＋数学L4難問2問＋★挑戦1問。負の数代入・一次式の分配・文字式で説明", file:"プリント/横断/redo06_難問デー_代入と一次式.html"},
+   {date:"7/10(金)", type:"mix", key:"mix07", title:"代入と式の値 ＋ 英語", desc:"★負の数の代入は必ずかっこ＋今日のチャレンジ(整数の個数)", file:"プリント/横断/通常07_代入と式の値.html"},
+   {date:"7/11(土)", type:"redo", key:"redo07", title:"★難問デー（L4）文字式の利用", desc:"30分＝英語スライド＋数学L4難問2問＋★挑戦1問。文章を式に多段階・複合図形・規則性", file:"プリント/横断/redo07_難問デー_文字式の利用.html"},
+   {date:"7/12(日)", type:"mix", key:"mix08", title:"一次式の加法・減法 ＋ 英語", desc:"同類項をまとめる・−( )の符号＋今日のチャレンジ(順列)", file:"プリント/横断/通常08_一次式の加法減法.html"},
+ ]},
+ {hd:"第5週 7/13〜17", sub:"一次式の計算→文字式の利用→夏前の総仕上げ", items:[
+   {date:"7/13(月)", type:"mix", key:"mix09", title:"一次式の計算・分配 ＋ 英語", desc:"3(2x−1)などかっこを外す＋今日のチャレンジ(計算順序)", file:"プリント/横断/通常09_一次式の計算と分配.html"},
+   {date:"7/14(火)", type:"redo", key:"redo08", title:"まちがい直しの日", desc:"各プリントの✕を見て、もう一度", file:null},
+   {date:"7/15(水)", type:"mix", key:"mix10", title:"文字式の利用（文章を式に） ＋ 英語", desc:"ことばを文字式に＋今日のチャレンジ(規則性4n−4)", file:"プリント/横断/通常10_文字式の利用_文章を式に.html"},
+   {date:"7/16(木)", type:"redo", key:"redo09", title:"★難問デー（L4・総合）夏前の総仕上げ", desc:"30分＝英語スライド＋数学L4難問2問＋★挑戦1問。正負＋文字式の総合・9月特訓選抜に直結", file:"プリント/横断/redo09_難問デー_総合.html"},
+   {date:"7/17(金)", type:"mix", key:"mix11", title:"夏前まとめ（正負＋文字式） ＋ 英語", desc:"ここまでの総まとめ＋今日のチャレンジ(平方数)。よくがんばりました！", file:"プリント/横断/通常11_夏前総合_正負と文字式.html"},
+ ]},
+];
+
+function label(t){return t==='math'?'数学':t==='eng'?'英語':t==='review'?'小学復習':'横断';}
+
+let storageAvailable=true;
+const memoryStore={};
+function storageGet(key){
+  try{return localStorage.getItem(key);}
+  catch(e){storageAvailable=false;return Object.prototype.hasOwnProperty.call(memoryStore,key)?memoryStore[key]:null;}
+}
+function storageSet(key,value){
+  try{localStorage.setItem(key,value);}
+  catch(e){storageAvailable=false;memoryStore[key]=value;}
+}
+function storageRemove(key){
+  try{localStorage.removeItem(key);}
+  catch(e){storageAvailable=false;delete memoryStore[key];}
+}
+function allItems(){
+  const items=[];
+  WEEKS.forEach(function(w){w.items.forEach(function(it){items.push(it);});});
+  return items;
+}
+function dateKey(it){
+  const m=it.date.match(/^(\d+)\/(\d+)/);
+  return '2026-'+String(m[1]).padStart(2,'0')+'-'+String(m[2]).padStart(2,'0');
+}
+function localTodayKey(){
+  const d=new Date();
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+function renderToday(){
+  const box=document.getElementById('today');
+  const items=allItems();
+  const today=localTodayKey();
+  const current=items.find(function(it){return dateKey(it)===today;});
+  if(current){
+    box.innerHTML='<div class="eyebrow">今日やること '+current.date+'</div>'+
+      '<div class="today-title">'+current.title+'</div>'+
+      (current.desc?'<div class="today-desc">'+current.desc+'</div>':'')+
+      (current.file?'<a href="'+current.file+'">今日のプリントを開く</a>':'<div class="today-desc">各プリントの✕を見て手動で解き直し、下の直し日にチェックします。</div>');
+  }else if(today<dateKey(items[0])){
+    box.innerHTML='<div class="eyebrow">開始前</div><div class="today-title">6月15日からスタート</div><div class="today-desc">今日は使い方だけ確認すればOKです。</div>';
+  }else{
+    box.innerHTML='<div class="eyebrow">夏前版の日程終了</div><div class="today-title">次は「定着したか」を確認</div><div class="today-desc">初見混合テストと遅延再テストで、完了ではなく定着を判定します。</div>';
+  }
+}
+
+function render(){
+  const board=document.getElementById('board');
+  board.innerHTML='';
+  let done=0, total=0, printDone=0, printTotal=0, redoDone=0, redoTotal=0;
+  WEEKS.forEach(w=>{
+    const h=document.createElement('div'); h.className='weekhd';
+    h.innerHTML=w.hd+'<small>'+w.sub+'</small>'; board.appendChild(h);
+    w.items.forEach(it=>{
+      total++;
+      const isDone=it.key && storageGet(it.key+'_done')==='1';
+      if(isDone) done++;
+      if(it.file){
+        printTotal++;
+        if(isDone) printDone++;
+        const card=document.createElement('div');
+        card.className='card '+it.type+(isDone?' is-done':'');
+        card.innerHTML=
+          '<button class="doneBtn" aria-label="'+it.date+' '+it.title+' の取り組み済みを切り替える" aria-pressed="'+isDone+'" onclick="toggleDone(event,\''+it.key+'\')">✓</button>'+
+          '<a class="open" href="'+it.file+'">'+
+            '<span class="date">'+it.date+'</span>'+
+            '<div class="title">'+it.title+'</div>'+
+            (it.desc?'<div class="desc">'+it.desc+'</div>':'')+
+            '<span class="tag">'+label(it.type)+'</span>'+
+          '</a>';
+        board.appendChild(card);
+      } else {
+        redoTotal++;
+        if(isDone) redoDone++;
+        const row=document.createElement('div'); row.className='slim';
+        if(isDone) row.className+=' is-done';
+        row.innerHTML='<span class="sdate">'+it.date+'</span>'+
+          '<span class="stitle">'+it.title+(it.desc?'<br><small>'+it.desc+'</small>':'')+'</span>'+
+          '<span class="ssoon">直し日</span>'+
+          '<button class="slimDone" aria-label="'+it.date+' '+it.title+' の取り組み済みを切り替える" aria-pressed="'+isDone+'" onclick="toggleDone(event,\''+it.key+'\')">✓</button>';
+        board.appendChild(row);
+      }
+    });
+    const bt=document.createElement('a');
+    bt.className='backtop'; bt.href='#today'; bt.textContent='▲ きょうやること／上へ';
+    board.appendChild(bt);
+  });
+  document.getElementById('cnt').textContent=done;
+  document.getElementById('total').textContent=total;
+  document.getElementById('fill').style.width=(total?done/total*100:0)+'%';
+  document.getElementById('progsub').textContent='プリント '+printDone+'/'+printTotal+'・直し日 '+redoDone+'/'+redoTotal;
+  document.getElementById('progress').setAttribute('aria-valuemax',total);
+  document.getElementById('progress').setAttribute('aria-valuenow',done);
+  document.getElementById('storageWarn').style.display=storageAvailable?'none':'block';
+  renderToday();
+  const cheer=document.getElementById('cheer');
+  if(done===0) cheer.textContent='6/15から、1日ずつ始めよう';
+  else if(done<total) cheer.textContent=done+'日取り組めました。✕は次の直し日へ';
+  else cheer.textContent='33日すべて取り組めました。次は初見テストで定着確認';
+}
+
+function annotateTokkun(){
+  document.querySelectorAll('.tokkun a.tk[data-key]').forEach(function(a){
+    var done=storageGet(a.getAttribute('data-key')+'_done')==='1';
+    a.classList.toggle('is-tdone',done);
+    var d=a.querySelector('.dn'); if(d) d.textContent=done?'✓ 済':'';
+  });
+}
+function toggleDone(e,key){
+  e.preventDefault(); e.stopPropagation();
+  if(!key) return;
+  const k=key+'_done';
+  if(storageGet(k)==='1') storageRemove(k); else storageSet(k,'1');
+  render();
+  annotateTokkun();
+}
+function resetCompletion(){
+  if(!confirm('このカレンダーの取り組みチェックだけを消します。各問題の○✕とミス記録は残ります。よろしいですか？')) return;
+  allItems().forEach(function(it){if(it.key) storageRemove(it.key+'_done');});
+  render();
+}
+window.addEventListener('pageshow',function(){render();annotateTokkun();});
+document.addEventListener('visibilitychange',function(){if(!document.hidden){render();annotateTokkun();}});
+render();
+annotateTokkun();
+
+/* ===== 弱点復習トラッカー（最終実施日と煽りだけ。正解/不正解の集計は 01_記録/間違い集計表.md で手動管理＝自動で消さない） ===== */
+var REVIEW=[
+  {key:'tokkun_hisshu_review01', cat:'⭐復習', title:'6月テスト復習（数学＋英語＋国語漢字）', file:'プリント/横断/復習テスト01_3科_数英国.html'},
+  {key:'tokkun_revm_wari1', cat:'📕算数', title:'割合 三用法・逆算・残り', file:'プリント/夏_特訓数学プリント/復習算数_割合_三用法と逆算と残り.html'},
+  {key:'tokkun_revm_queue', cat:'📐数学', title:'復習・数学（まちがえだけ）', file:'プリント/夏_特訓数学プリント/復習数学_まちがえ復習キュー.html'},
+  {key:'tokkun_reve_queue', cat:'📗英語', title:'復習・英語（まちがえだけ）', file:'プリント/夏_特訓数学プリント/復習英語_まちがえ復習キュー.html'}
+];
+function revToday(){var d=new Date();return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
+function revDays(iso){if(!iso)return null;var a=new Date(iso+'T00:00:00'),b=new Date(revToday()+'T00:00:00');return Math.round((b-a)/86400000);}
+function revDid(key){storageSet(key+'_revd',revToday());revRender();}
+function revRender(){
+  var rows='',pile=0;
+  REVIEW.forEach(function(r){
+    var d=storageGet(r.key+'_revd');
+    var ds=revDays(d);
+    var meta='',mcls='mut';
+    if(!d){meta='⚠ まだやってない！';mcls='warn';pile++;}
+    else if(ds>=3){meta='🔥 '+ds+'日ためてる！　最終実施日 '+d;mcls='warn';pile++;}
+    else{meta='最終実施日 '+d+'（'+(ds===0?'今日やった':ds+'日前')+'）';mcls='ok';}
+    rows+='<div class="rev-row">'
+      +'<span class="cat">'+r.cat+'</span>'
+      +'<span class="body"><a class="ttl" href="'+r.file+'">'+r.title+'</a>'
+      +'<span class="meta '+mcls+'">'+meta+'</span></span>'
+      +'<button class="did" onclick="revDid(\''+r.key+'\')">✓ やった</button>'
+      +'</div>';
+  });
+  document.getElementById('revRows').innerHTML=rows;
+  var w=document.getElementById('revWarn');
+  if(pile>0){w.textContent='やること '+pile+'件';w.style.display='';}else{w.style.display='none';}
+}
+window.addEventListener('pageshow',revRender);
+revRender();
+</script>
+</body>
+</html>

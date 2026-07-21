@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P9d 規則性（数表・三角数）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 規則性の型（どんな並びでもこの順で）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.tool-hint{margin:8px 0;border:1px dashed #c9b8d6;border-radius:8px;background:#faf7fc;padding:6px 10px;font-size:12.5px}
+.tool-hint summary{cursor:pointer;font-weight:700;color:#7a5a95}
+.tool-hint div{margin-top:6px;color:#4a3a56;line-height:1.8}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・9月大問4へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.qtable{border-collapse:collapse;margin:8px 0;font-size:13px}
+.qtable th,.qtable td{border:1px solid #c9cfc6;padding:4px 10px;text-align:center}
+.qtable th{background:#eef1ec;font-weight:800;color:#46524a}
+.qtable td.hl{background:#fdf3d6;font-weight:800;color:#8a5a19}
+.qtable th.hlc{background:#fbe9cf;color:#8a5a17}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.figcap{text-align:center;font-size:11.5px;color:#6a7280;margin:-4px 0 8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.ans-box .layer{margin:9px 0;border-left:4px solid #c2cfdf;background:#fbfcfe;border-radius:0 7px 7px 0;padding:7px 12px;font-size:13px;line-height:1.95}
+.ans-box .layer > b:first-child{display:block;font-size:11.5px;font-weight:900;color:#3a5a85;margin-bottom:3px;letter-spacing:.02em}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="partial-n1" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P9d</span><span class="pg-badge">数学：規則性</span><span class="pg-badge">★数表・三角数 L3-L4（9月大問4・別パターン）</span></div>
+  <h1>規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に「あほでもわかる」徹底解説つき</p>
+  <p class="pg-cheer">9月の特訓選抜・大問4は<strong>タイル以外の別パターン</strong>でも出る：三角数・カレンダー・階段・数表。やることは同じで<strong>①数えて表 → ②差や仕組みを見る → ③nの式 → ④大きい数を代入/逆算</strong>。きみの<strong>いちばんの伸びしろ</strong>＝規則性。今日は図と表をたっぷり使って、4つの別パターンを1つずつゆっくり通すよ。式さえ作れれば100番目でも一瞬だよ。</p>
+</div>
+
+<details class="tool-hint">
+<summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+<div>
+  <ol>
+    <li><b>① 1・2・3番目を表に書く</b>（図を数えて具体を並べる）</li>
+    <li><b>② 仕組みを見る</b>（毎回いくつ増える？　たて×よこ？　中央の何倍？）</li>
+    <li><b>③ nの式を作る</b>：差が一定なら<b>差×n＋（1番目−差）</b>。形がある時は図の工夫で式にする</li>
+    <li><b>④ 代入と逆算</b>：「○番目はいくつ？」は<b>代入</b>。「いくつになるのは何番目？」は<b>式＝○の方程式</b></li>
+    <li><b>⑤ 確かめ</b>：n＝1,2,3 や出た答えを式に入れて、表・図と合うか必ずチェック</li>
+  </ol>
+</div>
+</details>
+
+<!-- ===== 問1 三角数 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">三角数：●を三角に積む → n(n+1)/2 L3-L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead">問1</span>下の図のように、●を三角の形に1段ずつ増やして積んでいきます。1段目は1個、2段目までで3個、3段目までで6個…。このように積んだ●の合計を「三角数」といいます。
+    <svg class="fig" width="560" height="180" viewBox="0 0 560 180">
+      <!-- 1段目: 1個 -->
+      <g fill="#5a7fae">
+        <circle cx="40" cy="40" r="9"/>
+        <text x="20" y="100" font-size="12" fill="#555">1段目</text>
+        <text x="20" y="118" font-size="11" fill="#888">合計1個</text>
+      </g>
+      <!-- 2段目: 1+2=3個 -->
+      <g fill="#5a7fae" transform="translate(120,0)">
+        <circle cx="40" cy="40" r="9"/>
+        <circle cx="29" cy="62" r="9"/><circle cx="51" cy="62" r="9"/>
+        <text x="14" y="100" font-size="12" fill="#555">2段目まで</text>
+        <text x="20" y="118" font-size="11" fill="#888">合計3個</text>
+      </g>
+      <!-- 3段目: 1+2+3=6個 -->
+      <g fill="#5a7fae" transform="translate(250,0)">
+        <circle cx="51" cy="40" r="9"/>
+        <circle cx="40" cy="62" r="9"/><circle cx="62" cy="62" r="9"/>
+        <circle cx="29" cy="84" r="9"/><circle cx="51" cy="84" r="9"/><circle cx="73" cy="84" r="9"/>
+        <text x="22" y="116" font-size="12" fill="#555">3段目まで</text>
+        <text x="28" y="134" font-size="11" fill="#888">合計6個</text>
+      </g>
+      <!-- 4段目: 1+2+3+4=10個 -->
+      <g fill="#5a7fae" transform="translate(400,0)">
+        <circle cx="62" cy="40" r="9"/>
+        <circle cx="51" cy="62" r="9"/><circle cx="73" cy="62" r="9"/>
+        <circle cx="40" cy="84" r="9"/><circle cx="62" cy="84" r="9"/><circle cx="84" cy="84" r="9"/>
+        <circle cx="29" cy="106" r="9"/><circle cx="51" cy="106" r="9"/><circle cx="73" cy="106" r="9"/><circle cx="95" cy="106" r="9"/>
+        <text x="22" y="138" font-size="12" fill="#555">4段目まで</text>
+        <text x="26" y="156" font-size="11" fill="#888">合計10個</text>
+      </g>
+    </svg>
+    <div class="figcap">●を1, 2, 3, 4 …個ずつ下に足していく。合計の数が「三角数」</div>
+    (1) 5段目までの●の合計は何個ですか。<br>
+    (2) n段目までの●の合計を n の式で表しなさい。<br>
+    (3) 10段目までの●の合計は何個ですか。((2)の式を使う)
+  </div>
+  <div class="note-draw">まず番号と個数を表に書き出そう。そこから何が言えるかは、自分で見つけよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <table class="qtable"><tr><th>段目</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>…</th></tr><tr><th>合計(個)</th><td>1</td><td>3</td><td>6</td><td>10</td><td class="hl">15</td><td>…</td></tr></table>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 考え方（意味・図・作戦）</div><div class="layer"><b>① やさしい言い換え</b>「下の段ほど●が1個ずつ多い三角の山。何段かまで積んだとき、●はぜんぶで何個？」を聞いている問題だよ。</div>
+    <div class="layer"><b>② わかってること／求めること</b>わかってる→1段目1個、2段目までで3個、3段目までで6個（毎回足す数が 1→2→3→4 と1ずつ増える）。求めるのは→(1)5段目の合計、(2)n段目の式、(3)10段目の合計。</div>
+    <div class="layer"><b>③ 図でイメージ</b>4段目までの三角（合計10個）を思いうかべて。これと<strong>まったく同じ三角を逆さま（上下ひっくり返し）にして、右にぴったりくっつける</strong>と、たてが4個・横が5個の長方形になる！<span class="math">4×5＝20個</span>。長方形は三角2つ分だから、三角1つ分は <span class="math">20÷2＝10個</span>。表と合う。</div>
+    <div class="layer"><b>④ 作戦＋たとえ話</b>三角は数えにくいけど、逆さの三角をもう1つ重ねれば長方形（=たて×よこ）になる。長方形なら一瞬で数えられる。あとで半分にすればいい。＝「めんどうな三角は、ペアにして長方形に化けさせる」作戦。これが三角数の魔法。</div>
+    <div class="layer"><b>⑤ 1ステップずつ（なぜ付き）</b>
+      ・(1) 表を1つのばす。5段目は「4段目まで10個」に「5個」を足す→<span class="math">10＋5＝15個</span>。なぜ5個？ n段目には●が n 個あるから、5段目には5個。<br>
+      ・(2) n段目までの三角を、同じ三角の逆さでペアにすると、たて n 個・横 (n＋1) 個の長方形。なぜ横が n＋1？　逆さに重ねると、どの段も「●の数＋すきま」がそろって n＋1 個になるから。長方形＝<span class="math">n×(n＋1)</span>。三角1つ分はその半分→<span class="math">n(n＋1)÷2</span>。<br>
+      ・(3) (2)の式に n＝10 を代入→<span class="math">10×(10＋1)÷2＝10×11÷2＝110÷2＝55個</span>。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 実際に解く・たしかめる</div><div class="step q1"><span>(1)</span>5段目まで＝10＋5＝15個。</div>
+    <div class="step q1"><span>(2)</span>逆さ重ねで長方形 n×(n＋1)、その半分→<span class="math">n(n＋1)÷2</span>（個）。</div>
+    <div class="step q1"><span>(3)</span>n＝10：10×11÷2＝110÷2＝55個。</div>
+    <div class="layer"><b>⑥ よくある間違い（赤・先出し）</b>「n×n」や「n×n÷2」で答えない。横は n ではなく n＋1（逆さに重ねると1個ずれて長くなる）。÷2を忘れない＝長方形は三角2つ分だから、必ず半分にする。「5段目だけの●の数(=5個)」と「5段目までの合計(=15個)」を混同しない。聞かれているのは合計。</div>
+    <div class="layer"><b>⑦ 検算＋次に見抜くコツ</b>検算→n＝1:1×2÷2＝1○、n＝2:2×3÷2＝3○、n＝3:3×4÷2＝6○。表とぴったり。<strong>見抜くコツ</strong>＝「1,3,6,10,15…」や「足す数が1ずつ増える並び」を見たら三角数。<span class="math">n(n＋1)÷2</span> を思い出す。</div>
+    <div class="bx bx-key">三角数は「逆さに重ねて長方形 n×(n＋1)、その半分」。公式を丸暗記せず、<strong>長方形に化けさせて半分にする</strong>仕組みで思い出せる。</div>
+    <div class="bx bx-link">9月大問4で「●や○を三角に積む／1,3,6,10…と並ぶ」型が出たら、この逆さ重ねで即 n(n＋1)÷2 を作れる。タイルと並ぶ規則性の最重要パターン。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 15個／(2) n(n＋1)÷2 個／(3) 55個</div>
+      <div class="tec-link">型：<b>規則性（n式）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1) 5段目</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、表に「足す数 1,2,3,4,5」を書きこんで合計を出し直そう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2) n式★L4</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、三角を逆さに重ねて長方形 n×(n＋1) を絵に描き、÷2 をつけよう</div></div>
+  <div class="gq" data-gid="q01c"><div class="grade"><span class="gq-label">問1(3) 10段目</span>○✕ → <button class="o" onclick="g(this,'q01c','o')">○</button><button class="x" onclick="g(this,'q01c','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、式 n(n＋1)÷2 に n＝10 を入れる手順を1行ずつ書こう</div></div>
+</div>
+
+<!-- ===== 問2 カレンダー十字 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">カレンダーの十字の和 = 中央×5 L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead">問2</span>下のカレンダーで、ある日付を中央にして、その<strong>上・下・左・右・中央</strong>の5つの数を選び、十字（プラスの形）に囲みます。例として中央が9のとき、十字の5つの数の和を考えます。
+    <svg class="fig" width="380" height="210" viewBox="0 0 380 210">
+      <text x="20" y="20" font-size="12" fill="#555">日</text><text x="68" y="20" font-size="12" fill="#555">月</text><text x="116" y="20" font-size="12" fill="#555">火</text><text x="164" y="20" font-size="12" fill="#555">水</text><text x="212" y="20" font-size="12" fill="#555">木</text><text x="260" y="20" font-size="12" fill="#555">金</text><text x="308" y="20" font-size="12" fill="#555">土</text>
+      <!-- grid numbers 1..28, 7 cols -->
+      <g font-size="14" fill="#37404e" text-anchor="middle">
+        <!-- row1: 1..7 -->
+        <text x="28" y="48">1</text><text x="76" y="48">2</text><text x="124" y="48">3</text><text x="172" y="48">4</text><text x="220" y="48">5</text><text x="268" y="48">6</text><text x="316" y="48">7</text>
+        <!-- row2: 8..14, 中央十字: 上=2(no それは別行)…実際は中央9 上2 下16 左8 右10 -->
+        <text x="28" y="80">8</text>
+        <text x="124" y="80">10</text><text x="172" y="80">11</text><text x="220" y="80">12</text><text x="268" y="80">13</text><text x="316" y="80">14</text>
+        <!-- row3: 15..21 -->
+        <text x="28" y="112">15</text>
+        <text x="124" y="112">17</text><text x="172" y="112">18</text><text x="220" y="112">19</text><text x="268" y="112">20</text><text x="316" y="112">21</text>
+        <!-- row4: 22..28 -->
+        <text x="28" y="144">22</text><text x="76" y="144">23</text><text x="124" y="144">24</text><text x="172" y="144">25</text><text x="220" y="144">26</text><text x="268" y="144">27</text><text x="316" y="144">28</text>
+      </g>
+      <!-- 十字ハイライト: 中央9(76,80) 上2(76,48) 下16(76,112) 左8(28,80) 右10(124,80) -->
+      <g fill="none" stroke="#d08a86" stroke-width="2">
+        <rect x="60" y="34" width="32" height="20" rx="4"/>      <!-- 上 2 -->
+        <rect x="12" y="66" width="32" height="20" rx="4"/>      <!-- 左 8 -->
+        <rect x="60" y="66" width="32" height="20" rx="4" stroke="#b85" stroke-width="3"/> <!-- 中央 9 -->
+        <rect x="108" y="66" width="32" height="20" rx="4"/>     <!-- 右 10 -->
+        <rect x="60" y="98" width="32" height="20" rx="4"/>      <!-- 下 16 -->
+      </g>
+      <text x="76" y="80" font-size="14" fill="#9b514d" font-weight="bold" text-anchor="middle">9</text>
+      <text x="76" y="48" font-size="14" fill="#9b514d" font-weight="bold" text-anchor="middle">2</text>
+      <text x="76" y="112" font-size="14" fill="#9b514d" font-weight="bold" text-anchor="middle">16</text>
+      <text x="76" y="190" font-size="11" fill="#9b514d" text-anchor="middle">中央9・上2・下16・左8・右10</text>
+    </svg>
+    <div class="figcap">赤い十字＝中央(9)と、その上(2)・下(16)・左(8)・右(10)の5つ。カレンダーは横が7列</div>
+    (1) 中央が9のとき、十字の5つの数の和を求めなさい。<br>
+    (2) 中央の数を a とするとき、十字の5つの数の和を a の式で表しなさい。<br>
+    (3) 十字の5つの数の和が80になるのは、中央がいくつのときですか。
+  </div>
+  <div class="note-draw">まず番号と個数を表に書き出そう。そこから何が言えるかは、自分で見つけよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 考え方（意味・図・作戦）</div><div class="layer"><b>① やさしい言い換え</b>「カレンダーで十字に5つ選ぶと、その合計はいつも中央の何倍になる？」を探す問題だよ。</div>
+    <div class="layer"><b>② わかってること／求めること</b>わかってる→カレンダーは横7列。中央の右どなりは＋1、左は−1、1つ下は＋7、1つ上は−7。求めるのは→(1)中央9の和、(2)中央 a のときの式、(3)和が80になる中央。</div>
+    <div class="layer"><b>③ 図でイメージ</b>中央を a とすると、まわりは：上＝<span class="math">a−7</span>、下＝<span class="math">a＋7</span>、左＝<span class="math">a−1</span>、右＝<span class="math">a＋1</span>。十字に並べると、中央 a を真ん中に、上下・左右がペアになっている。</div>
+    <div class="layer"><b>④ 作戦＋たとえ話</b>5つをそのまま足すと、<strong>＋7と−7が打ち消し、＋1と−1も打ち消す</strong>。残るのは a が5個ぶん。＝「シーソーのように、＋とーが同じ大きさなら消える」。だから和は中央の5倍。</div>
+    <div class="layer"><b>⑤ 1ステップずつ（なぜ付き）</b>
+      ・(2) 和＝中央＋上＋下＋左＋右＝<span class="math">a＋(a−7)＋(a＋7)＋(a−1)＋(a＋1)</span>。なぜ−7と＋7？　1つ上は1週間前で7小さい、1つ下は1週間後で7大きいから。a を数えると5個。−7＋7＝0、−1＋1＝0で消える→<span class="math">5a</span>。<br>
+      ・(1) (2)に a＝9 を代入→<span class="math">5×9＝45</span>。または9＋2＋16＋8＋10＝45で確認。<br>
+      ・(3) 和＝80 だから <span class="math">5a＝80</span>、両辺÷5→<span class="math">a＝16</span>。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 実際に解く・たしかめる</div><div class="step q2"><span>(1)</span>9＋2＋16＋8＋10＝45（＝5×9）。</div>
+    <div class="step q2"><span>(2)</span>和＝a＋(a−7)＋(a＋7)＋(a−1)＋(a＋1)＝<span class="math">5a</span>。</div>
+    <div class="step q2"><span>(3)</span>5a＝80 → a＝80÷5＝16（中央が16）。</div>
+    <div class="layer"><b>⑥ よくある間違い（赤・先出し）</b>上下を ±1、左右を ±7 と逆にしない＝1つ上下は「1週間＝7」動く、左右が「1日＝1」。和を a＋5 にしない＝「a が5個」なので 5a（かけ算）。(3)で 80−5 などにしない＝5a＝80 は割り算 80÷5。</div>
+    <div class="layer"><b>⑦ 検算＋次に見抜くコツ</b>検算→中央16なら上9・下23・左15・右17。9＋23＋15＋17＋16＝80○。<strong>見抜くコツ</strong>＝表のマス目で「となりは＋1、1つ下は＋（列の数）」。十字や四角で囲む問題は、中央を文字にして「まわりを中央＋何」で書けば必ず解ける。</div>
+    <div class="bx bx-key">表のマス目は<strong>「右へ＋1、下へ＋7（列の数だけ）」</strong>。中央を文字にしてまわりを「中央±いくつ」で書くのが数表問題の必殺技。</div>
+    <div class="bx bx-link">9月大問4の「数の表を囲んで和を求める／逆に和から場所を当てる」型に直結。中央を文字でおく発想がそのまま使える。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 45／(2) 5a／(3) 中央が16</div>
+      <div class="tec-link">型：<b>規則性（n式）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1) 和</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、9・2・16・8・10 を1つずつ書いて足し直そう</div></div>
+  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2) a式★</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、上=a−7・下=a＋7・左=a−1・右=a＋1 を書いて足し、消える組を○で囲もう</div></div>
+  <div class="gq" data-gid="q02c"><div class="grade"><span class="gq-label">問2(3) 逆算</span>○✕ → <button class="o" onclick="g(this,'q02c','o')">○</button><button class="x" onclick="g(this,'q02c','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「5a＝80」を立てて両辺÷5 で書こう</div></div>
+</div>
+
+<!-- ===== 問3 階段状ブロック ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">階段ブロック：1段ごとに2個増える → 合計n² L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead">問3</span>下の図のように、ブロックを階段の形に積みます。1段目は1個、2段目は3個、3段目は5個…と、1段下がるごとに<strong>2個ずつ多く</strong>なります。
+    <svg class="fig" width="540" height="180" viewBox="0 0 540 180">
+      <!-- 各「番目」= その段までの合計を山形に。ここは「n段の階段全体」を3パターン -->
+      <!-- 1番目: 1段(1個) 合計1 -->
+      <g fill="#5fa07f" stroke="#3f7a5c" transform="translate(10,0)">
+        <rect x="40" y="120" width="20" height="20"/>
+        <text x="18" y="160" font-size="12" fill="#555">1番目</text>
+        <text x="18" y="176" font-size="11" fill="#888">合計1個</text>
+      </g>
+      <!-- 2番目: 1段目1個+2段目3個 = 合計4 ピラミッド状 -->
+      <g fill="#5fa07f" stroke="#3f7a5c" transform="translate(130,0)">
+        <rect x="50" y="98" width="20" height="20"/>
+        <rect x="30" y="120" width="20" height="20"/><rect x="50" y="120" width="20" height="20"/><rect x="70" y="120" width="20" height="20"/>
+        <text x="18" y="160" font-size="12" fill="#555">2番目</text>
+        <text x="18" y="176" font-size="11" fill="#888">合計4個</text>
+      </g>
+      <!-- 3番目: 1+3+5 = 合計9 -->
+      <g fill="#5fa07f" stroke="#3f7a5c" transform="translate(280,0)">
+        <rect x="70" y="76" width="20" height="20"/>
+        <rect x="50" y="98" width="20" height="20"/><rect x="70" y="98" width="20" height="20"/><rect x="90" y="98" width="20" height="20"/>
+        <rect x="30" y="120" width="20" height="20"/><rect x="50" y="120" width="20" height="20"/><rect x="70" y="120" width="20" height="20"/><rect x="90" y="120" width="20" height="20"/><rect x="110" y="120" width="20" height="20"/>
+        <text x="30" y="160" font-size="12" fill="#555">3番目</text>
+        <text x="30" y="176" font-size="11" fill="#888">合計9個</text>
+      </g>
+      <!-- 矢印で「全体を正方形に」イメージ用キャプション位置確保 -->
+    </svg>
+    <div class="figcap">各段が 1, 3, 5 …個（2個ずつ増える）。「n番目」＝n段ぜんぶ積んだときの合計を考える</div>
+    (1) 4番目（4段ぜんぶ）の合計は何個ですか。<br>
+    (2) n番目（n段ぜんぶ）の合計を n の式で表しなさい。<br>
+    (3) 合計がちょうど100個になるのは何番目ですか。
+  </div>
+  <div class="note-draw">まず番号と個数を表に書き出そう。そこから何が言えるかは、自分で見つけよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <table class="qtable"><tr><th>番目 n</th><th>1</th><th>2</th><th>3</th><th>4</th><th>…</th></tr><tr><th>各段の個数</th><td>1</td><td>3</td><td>5</td><td class="hl">7</td><td>…</td></tr><tr><th>合計(個)</th><td>1</td><td>4</td><td>9</td><td class="hl">16</td><td>…</td></tr></table>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 考え方（意味・図・作戦）</div><div class="layer"><b>① やさしい言い換え</b>「1段ごとに2個ずつ多くなる階段を n 段ぜんぶ積んだら、ブロックは合計で何個？」を聞いているよ。</div>
+    <div class="layer"><b>② わかってること／求めること</b>わかってる→各段は1,3,5…（奇数、2個ずつ増える）。合計は1,4,9…。求めるのは→(1)4番目の合計、(2)合計の n の式、(3)合計100になる番目。</div>
+    <div class="layer"><b>③ 図でイメージ</b>3番目の階段（合計9個）をよく見て。じつはこれ、<strong>たて3個・横3個の正方形に並べ替えられる</strong>（階段の出っぱりを反対側のへこみにはめると四角になる）。<span class="math">3×3＝9</span>。2番目なら2×2＝4。つまり合計は「番目の数を2回かけた数（正方形の数）」。</div>
+    <div class="layer"><b>④ 作戦＋たとえ話</b>「1＋3＋5＋…＋（奇数）」の合計は、いつもピッタリ正方形になる（奇数を足していくと四角がどんどん大きくなる）。＝「奇数を順に足すのは、四角形を1まわりずつ大きくしていくのと同じ」。だから合計＝n×n。</div>
+    <div class="layer"><b>⑤ 1ステップずつ（なぜ付き）</b>
+      ・(1) 4番目は3番目の合計9に「4段目の7個」を足す→<span class="math">9＋7＝16個</span>。なぜ7個？　n段目の個数は奇数 2n−1。4段目は2×4−1＝7。<br>
+      ・(2) 合計の並び 1,4,9,16 は <span class="math">1²,2²,3²,4²</span>。だから n 番目の合計＝<span class="math">n×n＝n²</span>。<br>
+      ・(3) 合計＝100 だから <span class="math">n²＝100</span>。同じ数を2回かけて100になるのは10×10。だからn＝10（10番目）。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 実際に解く・たしかめる</div><div class="step q3"><span>(1)</span>9＋7＝16個。</div>
+    <div class="step q3"><span>(2)</span>合計は 1,4,9,16＝1²,2²,3²,4²。よって <span class="math">n²</span>（個）。</div>
+    <div class="step q3"><span>(3)</span>n²＝100、10×10＝100 だから 10番目。</div>
+    <div class="layer"><b>⑥ よくある間違い（赤・先出し）</b>合計を「各段の個数 2n−1」と混同しない＝2n−1は「その段だけ」、合計は n²。聞かれているのは合計。(3)を 100÷2 などにしない＝n²＝100 は「2回かけて100」＝10。n²＝100 を n＝50 にしない（50×50は2500）。</div>
+    <div class="layer"><b>⑦ 検算＋次に見抜くコツ</b>検算→n＝1:1²＝1○、n＝2:2²＝4○、n＝3:3²＝9○、n＝4:4²＝16○。<strong>見抜くコツ</strong>＝合計の並びが「1,4,9,16,25…」なら正方形数 n²。各段が奇数（1,3,5…）で積む形は、ほぼ n² の合図。</div>
+    <div class="bx bx-key">奇数 1,3,5,7… を順に足した合計は、いつも <strong>n²（正方形）</strong>。階段は四角に並べ替えられる、と図で覚える。</div>
+    <div class="bx bx-link">9月大問4で「各段が一定数ずつ増える積み上げ」や「1,4,9,16…の並び」が出たら、正方形に化けさせて n² を即答できる。三角数とペアで頻出。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 16個／(2) n² 個／(3) 10番目</div>
+      <div class="tec-link">型：<b>規則性（n式）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1) 4番目</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、各段1,3,5,7を書いて1つずつ足し、合計を出そう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2) n式★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、合計 1,4,9,16 を 1×1,2×2,3×3,4×4 と書き直して n² を確かめよう</div></div>
+  <div class="gq" data-gid="q03c"><div class="grade"><span class="gq-label">問3(3) 逆算</span>○✕ → <button class="o" onclick="g(this,'q03c','o')">○</button><button class="x" onclick="g(this,'q03c','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「2回かけて100になる数」を探す（10×10）と書こう</div></div>
+</div>
+
+<!-- ===== 問4 数表（行列） ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★本番型：数を表に並べ「○行○列の数」を出す L3-L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead">問4</span>下の表のように、1, 2, 3, … と数を<strong>左から順に、1行に7個ずつ</strong>並べていきます。
+    <table class="qtable">
+      <tr><th>　</th><th>1列</th><th>2列</th><th>3列</th><th>4列</th><th>5列</th><th>6列</th><th>7列</th></tr>
+      <tr><th>1行</th><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+      <tr><th>2行</th><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+      <tr><th>3行</th><td>15</td><td>16</td><td>17</td><td class="hl">18</td><td>19</td><td>20</td><td>21</td></tr>
+      <tr><th>4行</th><td>22</td><td>23</td><td>24</td><td>25</td><td>26</td><td>27</td><td>28</td></tr>
+    </table>
+    (1) 3行4列の数を答えなさい。<br>
+    (2) r 行 c 列の数を、r と c の式で表しなさい。<br>
+    (3) 数の50は、何行何列にありますか。
+  </div>
+  <div class="note-draw">まず番号と個数を表に書き出そう。そこから何が言えるかは、自分で見つけよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 考え方（意味・図・作戦）</div><div class="layer"><b>① やさしい言い換え</b>「数を7個ずつ折り返して並べた表で、ある場所(行・列)の数を当てる／逆にその数の場所を当てる」問題だよ。</div>
+    <div class="layer"><b>② わかってること／求めること</b>わかってる→1行に7個ずつ。1行目は1〜7、2行目は8〜14…。求めるのは→(1)3行4列の数、(2)r行c列の式、(3)数50の場所。</div>
+    <div class="layer"><b>③ 図でイメージ</b>各行のおわりの数(右はし)に注目：1行目=7、2行目=14、3行目=21…＝<strong>7の倍数</strong>。だから「r 行の1つ前の行まで」で <span class="math">7×(r−1)</span> 個つかっている。r 行の c 列目は、そこから c 個進んだ数。</div>
+    <div class="layer"><b>④ 作戦＋たとえ話</b>本のページのよう：「前のページぶんを全部数えて、今のページで何個目か足す」。＝(前の行までの個数)＋(今の行で何列目か)。前の行までは 7×(r−1)、今の行は c。</div>
+    <div class="layer"><b>⑤ 1ステップずつ（なぜ付き）</b>
+      ・(1) 3行1列は「2行ぶん終わった次」＝<span class="math">7×2＝14</span> の次の15。4列目はそこから3つ進んで 15,16,17,18。式でいうと 7×(3−1)＋4＝14＋4＝18。<br>
+      ・(2) なぜ7×(r−1)？　r 行より前の行は (r−1) 行あり、各行7個だから 7×(r−1) 個つかい終わっている。そこから c 列目なので＋c。式＝<span class="math">7(r−1)＋c</span>。<br>
+      ・(3) 数50の場所。50 を「7でわって、何行ぶんか」を見る。50÷7＝7あまり1。7行ぴったり終わると 7×7＝49。49の次の50は、8行目の1列目。＝8行1列。式で確認：7×(8−1)＋1＝49＋1＝50○。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 実際に解く・たしかめる</div><div class="step q4"><span>(1)</span>7×(3−1)＋4＝14＋4＝18。</div>
+    <div class="step q4"><span>(2)</span>r行c列の数＝<span class="math">7(r−1)＋c</span>。</div>
+    <div class="step q4"><span>(3)</span>49＝7×7（7行目の右はし）。次の50は8行目の1列目＝8行1列。</div>
+    <div class="layer"><b>⑥ よくある間違い（赤・先出し）</b>7×r としない＝前の行は (r−1) 行ぶん。7×r だとその行の右はしを越えてしまう。(3)で「50÷7＝7あまり1 だから7行1列」としない＝7行目の右はしは49で、50はもう次の行。あまりが出たらその行は1つ進む。あまりが0のとき（例:49）は行をくり上げない＝49は7行7列でちょうど。</div>
+    <div class="layer"><b>⑦ 検算＋次に見抜くコツ</b>検算→(1)表の3行4列を見ると18○。(3)8行1列を式へ：7×7＋1＝50○。見抜くコツ＝「1行に□個ずつ並ぶ表」を見たら、式は□×(行−1)＋列。場所→数は代入、数→場所は「□でわってあまりを見る」。</div>
+    <div class="bx bx-key">7個ずつの表は <strong>「7×(行−1)＋列」</strong>。逆に数から場所は「7でわって商とあまり」。あまりが出たら行が1つ進む、あまり0ならその行の右はし。</div>
+    <div class="bx bx-link">9月大問4の本番型。<strong>場所→数(代入)と、数→場所(わり算で逆算)の両方</strong>を出せれば、数表の大問は満点をねらえる。タイル・三角数・階段とならぶ最重要パターン。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 18／(2) 7(r−1)＋c／(3) 8行1列</div>
+      <div class="tec-link">型：<b>規則性（n式）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 3行4列</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「2行ぶん=14個、その次が15」から4列目まで数えよう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 式★L4</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「前の行まで=7×(r−1)、今の行で＋c」を言葉で書いてから式にしよう</div></div>
+  <div class="gq" data-gid="q04c"><div class="grade"><span class="gq-label">問4(3) 逆算★L4</span>○✕ → <button class="o" onclick="g(this,'q04c','o')">○</button><button class="x" onclick="g(this,'q04c','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「50÷7＝7あまり1 → 7行終わりが49 → 次の50は8行1列」と書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P9d 規則性・数表/三角数 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">4問おつかれさま！今日のいちばんの収穫は<strong>タイル以外の規則性（三角数・カレンダー・階段・数表）も、ぜんぶ「①数えて表 → ②仕組みを見る → ③nの式 → ④代入と逆算」の同じ流れで解ける</strong>と分かったこと。三角は逆さ重ねで長方形、奇数の和は正方形、表は「□×(行−1)＋列」。これが9月大問4の別パターン対策そのもの。まちがえた問題は、図と表とnの式をノートに書き直そう。式が作れれば100番目でも一瞬。きみは確実に大問4に近づいている🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m09d';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！規則性・数表/三角数（大問4別パターン）クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01a":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問1(1) 5段目: 問1 下の図のように、●を三角の形に1段ずつ増やして積んでいきます。1段目は1個、2段目までで3個、3段目までで6個…。このように積んだ●の合計を「三角数」といいます。 1段目 合計1個 2段目まで 合計3個 3段目まで 合計6個 4段目まで 合計10個 ●を1, 2, 3, 4 …個ずつ下に足していく。合計の数が「三角数」 (1) 5段目までの●の合計は何個ですか。 (2) n段目までの●の合計を n の式で表しなさい。 (3) 10段目までの●の合計は何個ですか。((2)の式を使う)","en":"15個／"},"q01b":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問1(2) n式★L4: 問1 下の図のように、●を三角の形に1段ずつ増やして積んでいきます。1段目は1個、2段目までで3個、3段目までで6個…。このように積んだ●の合計を「三角数」といいます。 1段目 合計1個 2段目まで 合計3個 3段目まで 合計6個 4段目まで 合計10個 ●を1, 2, 3, 4 …個ずつ下に足していく。合計の数が「三角数」 (1) 5段目までの●の合計は何個ですか。 (2) n段目までの●の合計を n の式で表しなさい。 (3) 10段目までの●の合計は何個ですか。((2)の式を使う)","en":"n(n＋1)÷2 個／"},"q01c":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問1(3) 10段目: 問1 下の図のように、●を三角の形に1段ずつ増やして積んでいきます。1段目は1個、2段目までで3個、3段目までで6個…。このように積んだ●の合計を「三角数」といいます。 1段目 合計1個 2段目まで 合計3個 3段目まで 合計6個 4段目まで 合計10個 ●を1, 2, 3, 4 …個ずつ下に足していく。合計の数が「三角数」 (1) 5段目までの●の合計は何個ですか。 (2) n段目までの●の合計を n の式で表しなさい。 (3) 10段目までの●の合計は何個ですか。((2)の式を使う)","en":"55個"},"q02a":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問2(1) 和: 問2 下のカレンダーで、ある日付を中央にして、その 上・下・左・右・中央 の5つの数を選び、十字（プラスの形）に囲みます。例として中央が9のとき、十字の5つの数の和を考えます。 日 月 火 水 木 金 土 1 2 3 4 5 6 7 8 10 11 12 13 14 15 17 18 19 20 21 22 23 24 25 26 27 28 9 2 16 中央9・上2・下16・左8・右10 赤い十字＝中央(9)と、その上(2)・下(16)・左(8)・右(10)の5つ。カレンダーは横が7列 (1) 中央が9のとき、十字の5つの数の和を求めなさい。 (2) 中央の数を a とするとき、十字の5つの数の和を a の式で表しなさい。 (3) 十字の5つの数の和が80になるのは、中央がいくつのときですか。","en":"45／"},"q02b":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問2(2) a式★: 問2 下のカレンダーで、ある日付を中央にして、その 上・下・左・右・中央 の5つの数を選び、十字（プラスの形）に囲みます。例として中央が9のとき、十字の5つの数の和を考えます。 日 月 火 水 木 金 土 1 2 3 4 5 6 7 8 10 11 12 13 14 15 17 18 19 20 21 22 23 24 25 26 27 28 9 2 16 中央9・上2・下16・左8・右10 赤い十字＝中央(9)と、その上(2)・下(16)・左(8)・右(10)の5つ。カレンダーは横が7列 (1) 中央が9のとき、十字の5つの数の和を求めなさい。 (2) 中央の数を a とするとき、十字の5つの数の和を a の式で表しなさい。 (3) 十字の5つの数の和が80になるのは、中央がいくつのときですか。","en":"5a／"},"q02c":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問2(3) 逆算: 問2 下のカレンダーで、ある日付を中央にして、その 上・下・左・右・中央 の5つの数を選び、十字（プラスの形）に囲みます。例として中央が9のとき、十字の5つの数の和を考えます。 日 月 火 水 木 金 土 1 2 3 4 5 6 7 8 10 11 12 13 14 15 17 18 19 20 21 22 23 24 25 26 27 28 9 2 16 中央9・上2・下16・左8・右10 赤い十字＝中央(9)と、その上(2)・下(16)・左(8)・右(10)の5つ。カレンダーは横が7列 (1) 中央が9のとき、十字の5つの数の和を求めなさい。 (2) 中央の数を a とするとき、十字の5つの数の和を a の式で表しなさい。 (3) 十字の5つの数の和が80になるのは、中央がいくつのときですか。","en":"中央が16"},"q03a":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問3(1) 4番目: 問3 下の図のように、ブロックを階段の形に積みます。1段目は1個、2段目は3個、3段目は5個…と、1段下がるごとに 2個ずつ多く なります。 1番目 合計1個 2番目 合計4個 3番目 合計9個 各段が 1, 3, 5 …個（2個ずつ増える）。「n番目」＝n段ぜんぶ積んだときの合計を考える (1) 4番目（4段ぜんぶ）の合計は何個ですか。 (2) n番目（n段ぜんぶ）の合計を n の式で表しなさい。 (3) 合計がちょうど100個になるのは何番目ですか。","en":"16個／"},"q03b":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問3(2) n式★L4: 問3 下の図のように、ブロックを階段の形に積みます。1段目は1個、2段目は3個、3段目は5個…と、1段下がるごとに 2個ずつ多く なります。 1番目 合計1個 2番目 合計4個 3番目 合計9個 各段が 1, 3, 5 …個（2個ずつ増える）。「n番目」＝n段ぜんぶ積んだときの合計を考える (1) 4番目（4段ぜんぶ）の合計は何個ですか。 (2) n番目（n段ぜんぶ）の合計を n の式で表しなさい。 (3) 合計がちょうど100個になるのは何番目ですか。","en":"n² 個／"},"q03c":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問3(3) 逆算: 問3 下の図のように、ブロックを階段の形に積みます。1段目は1個、2段目は3個、3段目は5個…と、1段下がるごとに 2個ずつ多く なります。 1番目 合計1個 2番目 合計4個 3番目 合計9個 各段が 1, 3, 5 …個（2個ずつ増える）。「n番目」＝n段ぜんぶ積んだときの合計を考える (1) 4番目（4段ぜんぶ）の合計は何個ですか。 (2) n番目（n段ぜんぶ）の合計を n の式で表しなさい。 (3) 合計がちょうど100個になるのは何番目ですか。","en":"10番目"},"q04a":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問4(1) 3行4列: 問4 下の表のように、1, 2, 3, … と数を 左から順に、1行に7個ずつ 並べていきます。 1列 2列 3列 4列 5列 6列 7列 1行 1 2 3 4 5 6 7 2行 8 9 10 11 12 13 14 3行 15 16 17 18 19 20 21 4行 22 23 24 25 26 27 28 (1) 3行4列の数を答えなさい。 (2) r 行 c 列の数を、r と c の式で表しなさい。 (3) 数の50は、何行何列にありますか。","en":"18／"},"q04b":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問4(2) 式★L4: 問4 下の表のように、1, 2, 3, … と数を 左から順に、1行に7個ずつ 並べていきます。 1列 2列 3列 4列 5列 6列 7列 1行 1 2 3 4 5 6 7 2行 8 9 10 11 12 13 14 3行 15 16 17 18 19 20 21 4行 22 23 24 25 26 27 28 (1) 3行4列の数を答えなさい。 (2) r 行 c 列の数を、r と c の式で表しなさい。 (3) 数の50は、何行何列にありますか。","en":"7(r−1)＋c／"},"q04c":{"jp":"規則性④｜三角数・数表・階段で「nの式」を作って大きい数を逆算する / 問4(3) 逆算★L4: 問4 下の表のように、1, 2, 3, … と数を 左から順に、1行に7個ずつ 並べていきます。 1列 2列 3列 4列 5列 6列 7列 1行 1 2 3 4 5 6 7 2行 8 9 10 11 12 13 14 3行 15 16 17 18 19 20 21 4行 22 23 24 25 26 27 28 (1) 3行4列の数を答えなさい。 (2) r 行 c 列の数を、r と c の式で表しなさい。 (3) 数の50は、何行何列にありますか。","en":"8行1列"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

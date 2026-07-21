@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P16 単位換算ドリル｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"📝 今日のやり方（単位をかえる手順）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:12px 0}
+.osarai::before{content:"📖 まずおさらい｜なぜ面積は10000倍になるのか（今日の心臓部）";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.osarai .fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6ddc2;border-radius:8px;width:100%;max-width:520px;height:auto}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・本番へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ なぜそうなるの？";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.subq{margin:8px 0 0 4px;font-size:17px;font-weight:800;color:#31415f;line-height:2.2}
+.subq .no{display:inline-block;width:22px;color:#7a8798}
+.fill{display:inline-block;min-width:84px;border-bottom:2.5px solid #7aa7d9;text-align:center;font-weight:900;color:#2f5a8a;padding:0 6px}
+.wex{background:#eef6fb;border:2px solid #a8c8e4;border-left:7px solid #5b8fbf;border-radius:8px;padding:12px 14px;margin:10px 0}
+.wex::before{content:"👀 例：やり方をぜんぶ見せるよ（読んだらノートに写してから次へ）";display:block;font-size:12px;font-weight:900;color:#2f5a8a;margin-bottom:6px}
+.wex .wl{margin:5px 0;font-size:14px;line-height:1.95;color:#25415f}
+.wex .wl b{color:#c0392b}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.step.q5{border-left-color:#d98aa7;background:#fdf2f6}
+.step.q5 > span:first-child{background:#f7dce8;border-color:#eebccf;color:#9a3f63}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.zukai{background:#fbfaf5;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Courier New',monospace;font-size:13px;color:#6a5a32;white-space:pre-wrap;line-height:1.7}
+.zukai::before{content:"📐 図（しくみ）";display:block;font-family:'Hiragino Kaku Gothic ProN',sans-serif;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:.95em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P16</span><span class="pg-badge">数学：単位換算</span><span class="pg-badge">長さ・面積・体積・速さ L1-L3</span></div>
+  <h1>単位換算ドリル｜「100を何回かけるか」で全部決まる</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問12）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">単位換算は、今のきみの<strong>いちばんの伸びしろ</strong>。6月の特訓選抜でも、面積を cm<sup>2</sup> で表す問題で1万倍を落としたね。でも安心して。単位換算は<strong>覚えることがほとんどない</strong>。「1m＝100cm」というたった1つの事実から、面積も体積も全部作り出せる。今日はその作り方を体で覚える。ここを固めれば、二度と同じところで点を落とさない🌸</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① どっちが「大きい単位」か決める</b>（m と cm なら m が大きい）</li>
+    <li><b>② 大きい → 小さい なら ×</b>（数はふえる）。<b>小さい → 大きい なら ÷</b>（数はへる）</li>
+    <li><b>③ 何回かけるかを考える</b>（長さ・面積・体積でちがう。理由は大問2でわかる）</li>
+    <li><b>④ 単位を必ず書く</b>（数だけの答えは0点になることがある）</li>
+    <li><b>⑤ 検算</b>（出た数を逆向きに直して、元にもどるか確かめる）</li>
+    <li>最後に <b>○✕</b> をつける</li>
+  </ol>
+</div>
+
+<!-- ===== 大問1 長さ ===== -->
+<div class="unit-banner"><span class="unit-num">大問1</span><span class="unit-name">長さ｜km・m・cm・mm　L1</span><span class="unit-time">目安 4分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問1【例】</span>① 3.5km は何 m ですか。　② 250cm は何 m ですか。</div>
+  <div class="wex">
+    <div class="wl">① <b>km は m より大きい単位</b>。大きい → 小さい だから <b>×</b>。1km＝1000m なので <span class="math">3.5 × 1000 ＝ 3500</span> → <b>3500m</b>。</div>
+    <div class="wl">② <b>cm は m より小さい単位</b>。小さい → 大きい だから <b>÷</b>。1m＝100cm なので <span class="math">250 ÷ 100 ＝ 2.5</span> → <b>2.5m</b>。</div>
+    <div class="wl">検算：2.5m を cm にもどすと 2.5×100＝250cm。ちゃんと元にもどった○</div>
+    <div class="wl">長さは <b>100（や1000）を1回だけ</b> かける。ここが大事。次の大問2でこの「1回」が「2回」に変わるよ。</div>
+  </div>
+  <div class="note-draw">読んだら、同じ式をノートに写そう。写すときに「×か÷か」を自分の口で言ってみて。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">単位をかえるのは かけ算かわり算のどちらかだけ。迷ったら「数はふえる？へる？」で決める。3.5km を m にしたら数はふえるはず（m は小さいものさしだから本数が多く要る）→ だから ×。</div>
+    <div class="step q1"><span>①</span>1km＝1000m → 3.5 × 1000 ＝ 3500m</div>
+    <div class="step q1"><span>②</span>1m＝100cm → 250 ÷ 100 ＝ <strong>2.5m</strong></div>
+    <div class="bx bx-warn"><span class="red">×と÷をぎゃくにしない</span>。答えが出たら「これ、ふえるはずだったよね？」と一度だけ見直す。それだけでミスは半分に減る。</div>
+    <div class="ans-final"><span>こたえ</span>① 3500m　② 2.5m</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_1"><div class="grade"><span class="gq-label">問1【例】</span>写せた？ → <button class="o" onclick="g(this,'m16_1','o')">○</button><button class="x" onclick="g(this,'m16_1','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問2</span>□に あてはまる数を 書きなさい。</div>
+  <div class="subq"><span class="no">①</span>0.8km ＝ <span class="fill">　　</span> m</div>
+  <div class="subq"><span class="no">②</span>4600m ＝ <span class="fill">　　</span> km</div>
+  <div class="subq"><span class="no">③</span>7cm ＝ <span class="fill">　　</span> mm</div>
+  <div class="subq"><span class="no">④</span>35mm ＝ <span class="fill">　　</span> cm</div>
+  <div class="note-draw">まず単位をそろえてから考えよう。答えには単位を必ず書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">使う事実はたった2つ。<strong>1km＝1000m</strong>、1cm＝10mm。あとは「大きい→小さいは×、小さい→大きいは÷」を当てはめるだけ。</div>
+    <div class="step q1"><span>①</span>km→m は大きい→小さい。0.8 × 1000 ＝ 800m</div>
+    <div class="step q1"><span>②</span>m→km は小さい→大きい。4600 ÷ 1000 ＝ 4.6km</div>
+    <div class="step q1"><span>③</span>cm→mm は大きい→小さい。7 × 10 ＝ 70mm</div>
+    <div class="step q1"><span>④</span>mm→cm は小さい→大きい。35 ÷ 10 ＝ <strong>3.5cm</strong></div>
+    <div class="bx bx-warn"><span class="red">0.8×1000 を 8000 としない</span>。0.8 は 1 より小さいから、答えも 1000 より小さくなるはず（800）。けたが1つずれるのがいちばん多い失点。</div>
+    <div class="ans-final"><span>こたえ</span>① 800m　② 4.6km　③ 70mm　④ 3.5cm</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_2"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'m16_2','o')">○</button><button class="x" onclick="g(this,'m16_2','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 大問2 面積 ===== -->
+<div class="unit-banner"><span class="unit-num">大問2</span><span class="unit-name">面積｜m<sup>2</sup> と cm<sup>2</sup>　L2-L3</span><span class="unit-time">目安 9分</span></div>
+
+<div class="osarai">
+  <ul>
+    <li>長さは <b>1m ＝ 100cm</b>。じゃあ <b>1m<sup>2</sup> は何 cm<sup>2</sup></b>？ 「100倍」と答えたくなるけど、<b>ちがう</b>。</li>
+    <li>1辺 1m の正方形の中に、1辺 1cm の正方形（＝1cm<sup>2</sup>）が<b>いくつ入るか</b>を数えてみよう。</li>
+  </ul>
+  <svg class="fig" viewBox="0 0 520 380" width="100%" preserveAspectRatio="xMidYMid meet">
+    <text x="112" y="32" font-size="13" font-weight="700" fill="#31415f">よこ 1m ＝ 100cm</text>
+    <line x1="110" y1="44" x2="360" y2="44" stroke="#3f6f9f" stroke-width="1.5"/>
+    <line x1="110" y1="38" x2="110" y2="50" stroke="#3f6f9f" stroke-width="1.5"/>
+    <line x1="360" y1="38" x2="360" y2="50" stroke="#3f6f9f" stroke-width="1.5"/>
+    <line x1="96" y1="70" x2="96" y2="320" stroke="#3f6f9f" stroke-width="1.5"/>
+    <line x1="90" y1="70" x2="102" y2="70" stroke="#3f6f9f" stroke-width="1.5"/>
+    <line x1="90" y1="320" x2="102" y2="320" stroke="#3f6f9f" stroke-width="1.5"/>
+    <text x="8" y="186" font-size="12" font-weight="700" fill="#31415f">たて</text>
+    <text x="8" y="204" font-size="12" font-weight="700" fill="#31415f">1m</text>
+    <text x="8" y="222" font-size="12" font-weight="700" fill="#31415f">＝100cm</text>
+    <rect x="110" y="70" width="250" height="250" fill="#fbfdff" stroke="#3f6f9f" stroke-width="2.5"/>
+    <rect x="110" y="70" width="25" height="25" fill="#ffe9a3" stroke="#d9b46d" stroke-width="1.5"/>
+    <rect x="135" y="70" width="25" height="25" fill="#fff8e2" stroke="#d9b46d" stroke-width="1"/>
+    <rect x="160" y="70" width="25" height="25" fill="#fff8e2" stroke="#d9b46d" stroke-width="1"/>
+    <rect x="185" y="70" width="25" height="25" fill="#fff8e2" stroke="#d9b46d" stroke-width="1"/>
+    <rect x="110" y="95" width="25" height="25" fill="#fff8e2" stroke="#d9b46d" stroke-width="1"/>
+    <rect x="110" y="120" width="25" height="25" fill="#fff8e2" stroke="#d9b46d" stroke-width="1"/>
+    <rect x="110" y="145" width="25" height="25" fill="#fff8e2" stroke="#d9b46d" stroke-width="1"/>
+    <line x1="215" y1="82" x2="352" y2="82" stroke="#d9b46d" stroke-width="2" stroke-dasharray="5 5"/>
+    <line x1="122" y1="175" x2="122" y2="312" stroke="#d9b46d" stroke-width="2" stroke-dasharray="5 5"/>
+    <rect x="142" y="218" width="14" height="14" fill="#ffe9a3" stroke="#d9b46d" stroke-width="1.5"/>
+    <text x="162" y="230" font-size="14" font-weight="700" fill="#31415f">1辺1cmの正方形（1cm<tspan font-size="9" dy="-5">2</tspan><tspan dy="5">）が</tspan></text>
+    <text x="162" y="258" font-size="15" font-weight="800" fill="#c0392b">100 × 100 ＝ 10000 個</text>
+    <rect x="50" y="336" width="300" height="30" rx="6" fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5"/>
+    <text x="64" y="356" font-size="15" font-weight="800" fill="#2f6b45">だから 1m<tspan font-size="10" dy="-6">2</tspan><tspan dy="6"> ＝ 10000cm</tspan><tspan font-size="10" dy="-6">2</tspan></text>
+  </svg>
+  <ul>
+    <li>よこに 100個、たてに 100個。だから <b>100 × 100 ＝ 10000個</b>。つまり <b>1m<sup>2</sup> ＝ 10000cm<sup>2</sup></b>。</li>
+    <li><b>「1万倍」と丸暗記するな。「100を2回かけるから」</b>と理由で覚える。面積は たて×よこ ＝ 長さを2回かけるものだから、単位も2回かかる。</li>
+    <li>ぎゃくに cm<sup>2</sup> → m<sup>2</sup> は <b>÷10000</b>。1cm<sup>2</sup> は 1m<sup>2</sup> の <span class="frac"><span class="n">1</span><span class="d">10000</span></span> の大きさ、ということ。</li>
+  </ul>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問3【例】</span>5m<sup>2</sup> は何 cm<sup>2</sup> ですか。</div>
+  <div class="wex">
+    <div class="wl">m<sup>2</sup> は cm<sup>2</sup> より<b>大きい単位</b>。大きい → 小さい だから <b>×</b>。</div>
+    <div class="wl">1m＝100cm。面積は長さを<b>2回</b>かけるから <span class="math">100 × 100 ＝ 10000</span> 倍。</div>
+    <div class="wl">よって <span class="math">5 × 10000 ＝ 50000</span> → <b>50000cm<sup>2</sup></b>（0が4つ増える）。</div>
+    <div class="wl">検算：50000 ÷ 10000 ＝ 5。ちゃんと 5m<sup>2</sup> にもどった○</div>
+  </div>
+  <div class="note-draw">読んだら、同じ式をノートに写そう。「0が4つ増える」を目で確かめて。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">面積の単位換算は長さの倍率を2回かける。1m＝100cm だから 100を2回 → 10000倍。だから m<sup>2</sup>→cm<sup>2</sup> は ×10000。</div>
+    <div class="step q2"><span>式</span>5 × 10000 ＝ <strong>50000cm<sup>2</sup></strong></div>
+    <div class="bx bx-warn"><span class="red">5m<sup>2</sup>＝500cm<sup>2</sup> としない</span>（100倍にしてしまう間違い）。100倍は<span class="red">長さのときの倍率</span>。面積は2回かけるから10000倍。</div>
+    <div class="ans-final"><span>こたえ</span>50000cm<sup>2</sup></div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_3"><div class="grade"><span class="gq-label">問3【例】</span>写せた？ → <button class="o" onclick="g(this,'m16_3','o')">○</button><button class="x" onclick="g(this,'m16_3','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問4</span>□に あてはまる数を 書きなさい。</div>
+  <div class="subq"><span class="no">①</span>3m<sup>2</sup> ＝ <span class="fill">　　</span> cm<sup>2</sup></div>
+  <div class="subq"><span class="no">②</span>2.5m<sup>2</sup> ＝ <span class="fill">　　</span> cm<sup>2</sup></div>
+  <div class="note-draw">まず単位をそろえてから考えよう。答えには単位を必ず書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">m<sup>2</sup> → cm<sup>2</sup> は 大きい→小さい なので <strong>×</strong>。倍率は100を2回かけて 10000。</div>
+    <div class="step q2"><span>①</span>3 × 10000 ＝ 30000cm<sup>2</sup></div>
+    <div class="step q2"><span>②</span>2.5 × 10000 ＝ <strong>25000cm<sup>2</sup></strong></div>
+    <div class="bx bx-warn"><span class="red">2.5×10000 を 250000 としない</span>。2.5 は 2 と 3 の間だから、答えも 20000 と 30000 の間（25000）になるはず。けた数を先に予想してから計算すると事故が消える。</div>
+    <div class="ans-final"><span>こたえ</span>① 30000cm<sup>2</sup>　② 25000cm<sup>2</sup></div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_4"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'m16_4','o')">○</button><button class="x" onclick="g(this,'m16_4','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="E">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問5</span>□に あてはまる数を 書きなさい。</div>
+  <div class="subq"><span class="no">①</span>4500cm<sup>2</sup> ＝ <span class="fill">　　</span> m<sup>2</sup></div>
+  <div class="subq"><span class="no">②</span>80000cm<sup>2</sup> ＝ <span class="fill">　　</span> m<sup>2</sup></div>
+  <div class="note-draw">まず単位をそろえてから考えよう。答えには単位を必ず書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">今度は <strong>小さい → 大きい</strong> だから ÷10000。数はへる（答えは小さくなる）はず、と先に思っておく。</div>
+    <div class="step q3"><span>①</span>4500 ÷ 10000 ＝ 0.45m<sup>2</sup>（小数点を左に4つ動かす）</div>
+    <div class="step q3"><span>②</span>80000 ÷ 10000 ＝ <strong>8m<sup>2</sup></strong></div>
+    <div class="bx bx-warn"><span class="red">4500cm<sup>2</sup>＝45m<sup>2</sup> としない</span>（÷100 にしてしまう間違い）。1m<sup>2</sup> は 10000cm<sup>2</sup> もあるのだから、4500cm<sup>2</sup> は1m<sup>2</sup> より小さい。答えが1より小さくなって正しい。</div>
+    <div class="ans-final"><span>こたえ</span>① 0.45m<sup>2</sup>　② 8m<sup>2</sup></div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_5"><div class="grade"><span class="gq-label">問5</span>○✕ → <button class="o" onclick="g(this,'m16_5','o')">○</button><button class="x" onclick="g(this,'m16_5','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 大問3 体積 ===== -->
+<div class="unit-banner"><span class="unit-num">大問3</span><span class="unit-name">体積・かさ｜m<sup>3</sup>・cm<sup>3</sup>・L　L2-L3</span><span class="unit-time">目安 8分</span></div>
+
+<div class="q calc" data-id="F">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問6【例】</span>2m<sup>3</sup> は何 cm<sup>3</sup> ですか。</div>
+  <div class="wex">
+    <div class="wl">体積は <b>たて × よこ × 高さ</b>。長さを<b>3回</b>かけるから、単位も<b>3回</b>かかる。</div>
+    <div class="wl">1m＝100cm なので <span class="math">100 × 100 × 100 ＝ 1000000</span> 倍（0が6つ）。</div>
+    <div class="wl">よって <span class="math">2 × 1000000 ＝ 2000000</span> → <b>2000000cm<sup>3</sup></b>。</div>
+    <div class="wl">おまけの大事な事実：<b>1L ＝ 1000cm<sup>3</sup></b>、<b>1mL ＝ 1cm<sup>3</sup></b>。この2つは覚えておく。</div>
+  </div>
+  <div class="zukai">長さ  100を1回 → 100倍         （m → cm）
+面積  100を2回 → 10000倍       （m2 → cm2）
+体積  100を3回 → 1000000倍     （m3 → cm3）
+      かけ算の回数＝右上の小さい数字（2乗・3乗）と同じ！</div>
+  <div class="note-draw">読んだら、同じ式をノートに写そう。「2乗なら2回、3乗なら3回」を声に出して。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">面積で「100を2回」だったのは、面積が長さの<strong>2回のかけ算</strong>だったから。体積は3回のかけ算だから、100も3回かける。右上の小さい数字＝かける回数と覚えれば一生忘れない。</div>
+    <div class="step q3"><span>式</span>2 × 1000000 ＝ <strong>2000000cm<sup>3</sup></strong></div>
+    <div class="bx bx-warn"><span class="red">1m<sup>3</sup>＝1000cm<sup>3</sup> としない</span>。1000cm<sup>3</sup> は1L（牛乳パック1本）の大きさ。1m<sup>3</sup> はお風呂より大きい。数の感覚でおかしいと気づける。</div>
+    <div class="ans-final"><span>こたえ</span>2000000cm<sup>3</sup></div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_6"><div class="grade"><span class="gq-label">問6【例】</span>写せた？ → <button class="o" onclick="g(this,'m16_6','o')">○</button><button class="x" onclick="g(this,'m16_6','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="G">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問7</span>□に あてはまる数を 書きなさい。</div>
+  <div class="subq"><span class="no">①</span>1.2L ＝ <span class="fill">　　</span> cm<sup>3</sup></div>
+  <div class="subq"><span class="no">②</span>3500cm<sup>3</sup> ＝ <span class="fill">　　</span> L</div>
+  <div class="note-draw">まず単位をそろえてから考えよう。答えには単位を必ず書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">使う事実は1つだけ。<strong>1L ＝ 1000cm<sup>3</sup></strong>。L のほうが大きい単位だから、L → cm<sup>3</sup> は ×1000、cm<sup>3</sup> → L は ÷1000。</div>
+    <div class="step q3"><span>①</span>1.2 × 1000 ＝ 1200cm<sup>3</sup></div>
+    <div class="step q3"><span>②</span>3500 ÷ 1000 ＝ <strong>3.5L</strong></div>
+    <div class="bx bx-warn"><span class="red">1L＝100cm<sup>3</sup> と思い込まない</span>。1辺10cm の立方体が 1L で、10×10×10＝1000cm<sup>3</sup>。1辺10cm の箱を思い浮かべれば作り出せる。</div>
+    <div class="ans-final"><span>こたえ</span>① 1200cm<sup>3</sup>　② 3.5L</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_7"><div class="grade"><span class="gq-label">問7</span>○✕ → <button class="o" onclick="g(this,'m16_7','o')">○</button><button class="x" onclick="g(this,'m16_7','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問8</span>□に あてはまる数を 書きなさい。</div>
+  <div class="subq"><span class="no">①</span>0.5m<sup>3</sup> ＝ <span class="fill">　　</span> cm<sup>3</sup></div>
+  <div class="subq"><span class="no">②</span>1m<sup>3</sup> ＝ <span class="fill">　　</span> L</div>
+  <div class="note-draw">まず単位をそろえてから考えよう。②は cm<sup>3</sup> を通り道にすると見えてくる。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">②は m<sup>3</sup> から L へ<strong>直接いこうとしない</strong>。知っている単位（cm<sup>3</sup>）を通り道にして2段階で進む。これが単位換算の王道テクニック。</div>
+    <div class="step q4"><span>①</span>m<sup>3</sup> → cm<sup>3</sup> は ×1000000。0.5 × 1000000 ＝ 500000cm<sup>3</sup></div>
+    <div class="step q4"><span>②</span>1m<sup>3</sup> ＝ 1000000cm<sup>3</sup>。1L＝1000cm<sup>3</sup> だから 1000000 ÷ 1000 ＝ 1000L</div>
+    <div class="step q4"><span>なぜわり算？</span>1L の中には 1000cm<sup>3</sup> 入っている。聞かれているのは「1000000cm<sup>3</sup> の中に、1000cm<sup>3</sup> が何個分あるか」。<br>「何個入るか」を数えるのだから → <strong>わり算</strong>。</div>
+    <div class="step q4"><span>感覚</span>1m<sup>3</sup> は牛乳パック（1L）が1000本分。お風呂1杯が約0.2m<sup>3</sup>だと思えば大きさが実感できる。</div>
+    <div class="bx bx-warn"><span class="red">0.5×1000000 を 5000000 としない</span>。0.5 は 1 の半分だから、答えも 1000000 の半分（500000）。半分になっているかを最後に見る。</div>
+    <div class="ans-final"><span>こたえ</span>① 500000cm<sup>3</sup>　② 1000L</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_8"><div class="grade"><span class="gq-label">問8</span>○✕ → <button class="o" onclick="g(this,'m16_8','o')">○</button><button class="x" onclick="g(this,'m16_8','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 大問4 速さ ===== -->
+<div class="unit-banner"><span class="unit-num">大問4</span><span class="unit-name">速さ｜時速・分速・秒速　L2-L3</span><span class="unit-time">目安 7分</span></div>
+
+<div class="q calc" data-id="I">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問9【例】</span>時速72km は、分速何 m ですか。</div>
+  <div class="wex">
+    <div class="wl">速さの換算は<b>2つの単位を別々に</b>直す。「km → m」と「時 → 分」を1つずつ。</div>
+    <div class="wl">まず道のり：<span class="math">72km ＝ 72 × 1000 ＝ 72000m</span>。つまり<b>1時間に72000m進む</b>。</div>
+    <div class="wl">次に時間：1時間 ＝ 60分。72000m を <b>60分で割る</b> → <span class="math">72000 ÷ 60 ＝ 1200</span>。</div>
+    <div class="wl">よって <b>分速1200m</b>。検算：1200 × 60 ＝ 72000m ＝ 72km○</div>
+    <div class="wl">コツ：<b>時速 → 分速 は「1時間ぶんを60でわって1分ぶんにする」</b>。だから数はへる。</div>
+  </div>
+  <div class="note-draw">読んだら、同じ式をノートに写そう。「道のり」と「時間」を分けて直すのがポイント。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">時速は「1時間に進む道のり」、分速は「1分に進む道のり」。<strong>1時間は1分の60倍</strong>だから、1分ぶんにするには÷60。単位をおきかえるのではなく意味で考えると迷わない。</div>
+    <div class="step q4"><span>①</span>道のりを直す：72km ＝ 72000m</div>
+    <div class="step q4"><span>②</span>時間を直す：72000 ÷ 60 ＝ <strong>1200</strong> → 分速1200m</div>
+    <div class="bx bx-warn"><span class="red">km を m に直すのを忘れない</span>。72 ÷ 60 ＝ 1.2 として「分速1.2m」としたら、歩くより遅い車になってしまう。答えが現実的かを必ず見る。</div>
+    <div class="ans-final"><span>こたえ</span>分速1200m</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_9"><div class="grade"><span class="gq-label">問9【例】</span>写せた？ → <button class="o" onclick="g(this,'m16_9','o')">○</button><button class="x" onclick="g(this,'m16_9','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="J">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問10</span>□に あてはまる数を 書きなさい。</div>
+  <div class="subq"><span class="no">①</span>分速80m ＝ 時速 <span class="fill">　　</span> km</div>
+  <div class="subq"><span class="no">②</span>時速18km ＝ 分速 <span class="fill">　　</span> m</div>
+  <div class="note-draw">まず単位をそろえてから考えよう。答えには単位を必ず書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">分速 → 時速 は「1分ぶんを60個集めて1時間ぶんにする」から <strong>×60</strong>（数はふえる）。時速 → 分速 はその逆で ÷60（数はへる）。</div>
+    <div class="step q4"><span>①</span>80 × 60 ＝ 4800 → 時速4800m。m→km は ÷1000 → 時速4.8km</div>
+    <div class="step q4"><span>②</span>18km ＝ 18000m。18000 ÷ 60 ＝ <strong>分速300m</strong></div>
+    <div class="bx bx-warn"><span class="red">最後の km への直しを忘れない</span>。①で「時速4800m」で止めると、聞かれているのは km なので不正解。問題文の単位を答えの横に必ず書いて確かめる。</div>
+    <div class="ans-final"><span>こたえ</span>① 時速4.8km　② 分速300m</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_10"><div class="grade"><span class="gq-label">問10</span>○✕ → <button class="o" onclick="g(this,'m16_10','o')">○</button><button class="x" onclick="g(this,'m16_10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="K">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問11</span>□に あてはまる数を 書きなさい。</div>
+  <div class="subq"><span class="no">①</span>秒速15m ＝ 時速 <span class="fill">　　</span> km</div>
+  <div class="subq"><span class="no">②</span>時速36km ＝ 秒速 <span class="fill">　　</span> m</div>
+  <div class="note-draw">まず単位をそろえてから考えよう。一気にやろうとせず、通り道を1つ置くと安全。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">秒 と 時 は遠い。だから<strong>分速を通り道にする</strong>。秒速 →（×60）→ 分速 →（×60）→ 時速。逆に進むときは ÷60 を2回。</div>
+    <div class="step q5"><span>①</span>15 × 60 ＝ 900（分速900m）→ 900 × 60 ＝ 54000（時速54000m）→ ÷1000 で 時速54km</div>
+    <div class="step q5"><span>②</span>①と同じで、÷60 を2回する。36km ＝ 36000m（1時間に進む道のり）。<br><span class="math">36000 ÷ 60 ＝ 600</span> → 分速600m。<span class="math">600 ÷ 60 ＝ 10</span> → <strong>秒速10m</strong>。<br>（<span class="math">60×60＝3600</span> で一気にわっても、同じ答えになる）</div>
+    <div class="step q5"><span>感覚</span>秒速15m は 時速54km。車くらいの速さ。数が急に大きく見えても、これで正しい。</div>
+    <div class="bx bx-warn"><span class="red">×60 を1回で止めない</span>。秒→時 は 60 を2回（＝3600）。ここは面積の「100を2回」と同じ考え方。何段のぼるかを先に数える。</div>
+    <div class="ans-final"><span>こたえ</span>① 時速54km　② 秒速10m</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_11"><div class="grade"><span class="gq-label">問11</span>○✕ → <button class="o" onclick="g(this,'m16_11','o')">○</button><button class="x" onclick="g(this,'m16_11','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 大問5 文字式 ===== -->
+<div class="unit-banner"><span class="unit-num">大問5 ★</span><span class="unit-name">文字式で表す｜本番でおとした問題　L3</span><span class="unit-time">目安 5分</span></div>
+
+<div class="q calc" data-id="L">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問12 ★</span>縦 a m、横 b m の長方形があります。この長方形の面積を、cm<sup>2</sup> を使って表しなさい。</div>
+  <div class="note-draw">まず単位をそろえてから考えよう。文字が入っていても、数のときとやることは同じ。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">文字だからといって特別なことは何もない。<strong>先に長さを cm に直してから、たて×よこ</strong>をする。それだけ。</div>
+    <div class="step q5"><span>①</span>縦 a m を cm に直す：1m＝100cm だから <span class="math">a × 100 ＝ 100a</span> cm</div>
+    <div class="step q5"><span>②</span>横 b m を cm に直す：同じく <span class="math">100b</span> cm</div>
+    <div class="step q5"><span>③</span>面積＝たて×よこ＝<span class="math">100a × 100b</span>。<br>この計算は数どうし・文字どうしに分ける。数：<span class="math">100 × 100 ＝ 10000</span>　文字：<span class="math">a × b ＝ ab</span>。<br>合わせて <span class="math">10000ab</span> → 10000ab cm<sup>2</sup></div>
+    <div class="step q5"><span>④</span>確かめ：a＝1、b＝1 のとき 1m×1m＝1m<sup>2</sup>。式に入れると 10000×1×1＝10000cm<sup>2</sup>。1m<sup>2</sup>＝10000cm<sup>2</sup> と一致○</div>
+    <div class="bx bx-warn"><span class="red">答えを ab としない</span>（6月の特訓選抜で落としたのがこれ）。ab はm<sup>2</sup> のままの面積。cm<sup>2</sup> にするには 100 を2回かけて 10000倍。100ab も間違い（1回しかかけていない）。</div>
+    <div class="bx bx-link">「文字で表せ」＋「単位が変わる」の組み合わせは特訓選抜の頻出。文字は数と同じように扱えばいいだけ。<strong>a に 1 を入れて確かめる</strong>クセをつければ、本番でも自分でミスを見つけられる。</div>
+    <div class="ans-final"><span>こたえ</span>10000ab cm<sup>2</sup></div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c2" target="_blank">マル秘テクニック集 第2章</a></div>
+  </div>
+  <div class="gq" data-gid="m16_12"><div class="grade"><span class="gq-label">問12 ★</span>○✕ → <button class="o" onclick="g(this,'m16_12','o')">○</button><button class="x" onclick="g(this,'m16_12','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P16 単位換算ドリル 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">12問おつかれさま！今日いちばん覚えてほしいのは、たった一言。<strong>「長さは1回、面積は2回、体積は3回」</strong>。100を何回かけるかは、右上の小さい数字（2乗・3乗）が教えてくれる。もう「1万倍」を丸暗記しなくていい。作り出せるようになったきみは、6月に落とした 10000ab を、次はぜったいに取れる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m16';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+var RMQ_KIND='単位換算';
+
+/* ===== 数学キュー送りフック（×→revmq_dyn／○→po++）2026-07-12 新設 =====
+   従来 数学プリントは復習キューへ何も送っておらず（49枚中0枚）、×が溜まらなかった。
+   受け皿=復習数学_まちがえ復習キュー.html の mergeDyn(revmq_dyn) が読む。 */
+var RMQ_DYN='revmq_dyn';
+function rmqClean(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function rmqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function sendToRevMQ(btn,id,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    if(String(KEY).indexOf('revmq')===0)return;              /* 受け皿自身では動かさない */
+    var q=btn&&btn.closest?btn.closest('.q'):null; if(!q)return;
+    var leadEl=q.querySelector('.lead'); if(!leadEl)return;
+    var label=rmqClean(leadEl);
+    if(/【例】/.test(label))return;                            /* 例題は復習に送らない */
+    var qtxt=leadEl.parentNode?rmqClean(leadEl.parentNode):'';
+    if(label&&qtxt.indexOf(label)===0)qtxt=qtxt.slice(label.length).trim();
+    var ans=rmqClean(q.querySelector('.ans-final'));
+    if(!qtxt||!ans)return;
+    var src=KEY+'_'+id;
+    var arr;try{arr=JSON.parse(localStorage.getItem(RMQ_DYN));}catch(e){arr=null;}
+    if(!Array.isArray(arr))arr=[];
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=rmqToday();}
+    else{arr.push({src:src,jp:qtxt,en:ans,kind:RMQ_KIND,badge:'suchoku',day:rmqToday(),po:0,px:1});}
+    try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}
+  }catch(e){}
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);try{sendToRevMQ(btn,id,v);}catch(e){}
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！単位換算ドリル クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

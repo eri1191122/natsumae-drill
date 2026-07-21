@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P1 正負の数 L2-L3（特訓選抜レベル・徹底解説）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai .ot{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai p{font-size:13.5px;line-height:1.95;color:#5a4520;margin:4px 0}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.9;color:#5a4520}
+.osarai .ex{background:#fff;border:1px dashed #e0c98a;border-radius:6px;padding:8px 11px;margin:6px 0;font-size:13.5px;color:#5a4520}
+.osarai .ex::before{content:"✏️ いっしょに1回";display:block;font-size:11px;font-weight:800;color:#8a5a19;margin-bottom:3px}
+.osarai .miss{background:#fdeee6;border-left:4px solid #d8a07a;border-radius:6px;padding:7px 11px;margin:6px 0;font-size:13px;color:#8a4a2a}
+.osarai .miss::before{content:"⚠️ ありがちな勘ちがい";display:block;font-size:11px;font-weight:800;color:#a85a2a;margin-bottom:2px}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:18px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+/* 解説ステップ：既定は無彩色。小問ごとに .q1〜.q4 で色分け（色＝どの小問の説明か） */
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:0.9em}
+.frac .n{border-bottom:1.6px solid currentColor;padding:0 4px 1px}
+.frac .d{padding:1px 4px 0}
+.qtable{border-collapse:collapse;margin:12px 0;font-size:15px;width:100%;max-width:580px}
+.qtable th,.qtable td{border:1.5px solid #c8d4e6;padding:7px 6px;text-align:center}
+.qtable th{background:#e8edf7;color:#25324a;font-weight:800}
+.qtable td.rowh{background:#f1f5fb;font-weight:800;color:#3a4a63;white-space:nowrap}
+.qtable td.val{font-weight:800;font-family:'Courier New',monospace}
+.qtable td.hatch{background:repeating-linear-gradient(45deg,#eef0f2,#eef0f2 5px,#fff 5px,#fff 10px);color:#9aa3ad}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}
+  .write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P1</span><span class="pg-badge">数学：正負の数</span><span class="pg-badge">L2-L3（特訓選抜レベル）</span></div>
+  <h1>正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問17・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">正負の数は「計算できる」だけでなく、特訓選抜では <strong>累乗の符号（−5²と(−5)²）・絶対値・大小・正負の表</strong> で差がつくよ。まず自分で解いて、それから「解説を読む→こたえ」を開こう。解説は<strong>小問ごとに色分け</strong>してあるから、どこが何の説明か一目で分かるよ。途中式はノートに。</p>
+</div>
+
+<!-- ============ 大問A 累乗の符号（問1〜問4） ============ -->
+<div class="unit-banner"><span class="unit-num">問1〜4</span><span class="unit-name">累乗の符号（かっこの有無で変わる）L2 基礎</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qnum">★累乗の符号　次を計算しよう。</div>
+  <div class="qbody">
+    <span style="color:#2f5a8a">問1</span> <span class="math">(−3)²</span>
+    <span style="color:#8a5a17">問2</span> <span class="math">−3²</span>
+    <span style="color:#2f6a5c">問3</span> <span class="math">(−2)³</span>
+    <span style="color:#5f4a8a">問4</span> <span class="math">−2³</span></div>
+  <div class="note-draw">途中式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">
+      <div class="ot">⓪ 累乗（るいじょう）の意味</div>
+      <p><b>2乗＝同じ数を2回かける</b>、3乗＝3回かける。<span class="math">a²＝a×a</span>、<span class="math">a³＝a×a×a</span>。</p>
+      <div class="ot">① かっこが「ある」と「ない」で意味が変わる</div>
+      <ul>
+        <li><b>(−3)²</b>＝<b>(−3)×(−3)</b>＝＋9。<b>かっこごと2乗</b>するので −の符号も一緒に2乗されて消える。</li>
+        <li><b>−3²</b>＝<b>−(3²)</b>＝−9。この「−」は<b>2乗の外側</b>。先に3²＝9を出して、最後にマイナスをつける。</li>
+      </ul>
+      <div class="ex">合言葉：<b>「かっこの中だけ2乗される」</b>。</div>
+      <div class="miss">−3² を ＋9 にするのが最大のワナ。−3²＝−9。</div>
+    </div>
+    <div class="step q1"><span>問1</span><span class="math">(−3)²＝(−3)×(−3)＝＋9</span>。かっこごと2乗＝−も2乗されて消える。</div>
+    <div class="step q2"><span>問2</span><span class="math">−3²＝−(3×3)＝−9</span>。−は2乗の外。先に9を出して最後に−。</div>
+    <div class="step q3"><span>問3</span><span class="math">(−2)³＝(−2)×(−2)×(−2)＝4×(−2)＝−8</span>。</div>
+    <div class="step q4"><span>問4</span><span class="math">−2³＝−(2×2×2)＝−8</span>。3乗（奇数乗）は問3と同じ−8（偶数乗のときだけ符号が変わる）。</div>
+    <div class="bx bx-link">「−5²と(−5)²の区別」は特訓選抜・模試の大問1で毎回ねらわれる。中3の平方根や2次関数までずっと効く。</div>
+    <div class="bx bx-warn"><span class="red">−3² を ＋9 としない</span>（＝−9）。<span class="red">(−3)² を −9 としない</span>（＝＋9）。</div>
+    <div class="ans-final"><span>こたえ</span>問1 9　／　問2 −9　／　問3 −8　／　問4 −8</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ============ 大問B 四則混合（問5〜問7） ============ -->
+<div class="unit-banner"><span class="unit-num">問5〜7</span><span class="unit-name">累乗・分数の入った四則混合 L2→L3 標準</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qnum">計算の順番は「累乗 → ×÷ → ＋−」。次を計算しよう。</div>
+  <div class="qbody">
+    <span style="color:#2f5a8a">問5</span> <span class="math">−2²＋(−3)²</span>
+    <span style="color:#8a5a17">問6</span> <span class="math">(−4)²÷(−8)−3×(−2)</span><br>
+    <span style="color:#2f6a5c">問7</span> <span class="math">−<span class="frac"><span class="n">5</span><span class="d">4</span></span> ＋ <span class="frac"><span class="n">7</span><span class="d">10</span></span> − <span class="frac"><span class="n">1</span><span class="d">5</span></span></span></div>
+  <div class="note-draw">途中式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>順序</span>四則混合は <strong>累乗 → ×÷ → ＋−</strong> の順。これを守るだけでミスが激減する。</div>
+    <div class="step q1"><span>問5</span>累乗を先に：<span class="math">−2²＝−4</span>、<span class="math">(−3)²＝＋9</span>。だから <span class="math">−4＋9＝5</span>。</div>
+    <div class="step q2"><span>問6</span>累乗：<span class="math">(−4)²＝16</span>。次に×÷：<span class="math">16÷(−8)＝−2</span>、<span class="math">3×(−2)＝−6</span>。最後に <span class="math">−2−(−6)＝＋4</span>。</div>
+    <div class="step q3"><span>問7</span>分母4,10,5の最小公倍数20で通分：−<span class="frac"><span class="n">25</span><span class="d">20</span></span>＋<span class="frac"><span class="n">14</span><span class="d">20</span></span>−<span class="frac"><span class="n">4</span><span class="d">20</span></span>＝<span class="math">(−25＋14−4)÷20＝</span>−<span class="frac"><span class="n">15</span><span class="d">20</span></span>＝−<span class="frac"><span class="n">3</span><span class="d">4</span></span>。</div>
+    <div class="step"><span>検算</span>問5 −4＋9＝5。問6 −2＋6＝4。問7 分子 −25＋14−4＝−15、5で約分して −<span class="frac"><span class="n">3</span><span class="d">4</span></span>。</div>
+    <div class="bx bx-warn">問5で <span class="red">−2² を ＋4 としない</span>（＝−4）。問7で <span class="red">−<span class="frac"><span class="n">5</span><span class="d">4</span></span> のマイナスを落とさない</span>（分子は −25＋14−4＝−15）。答えが正になったら符号ミスを疑う。</div>
+    <div class="ans-final"><span>こたえ</span>問5 5　／　問6 4　／　問7 −<span class="frac"><span class="n">3</span><span class="d">4</span></span></div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span>○✕ → <button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6</span>○✕ → <button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7★5月の弱点</span>○✕ → <button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ============ 大問C 分配の工夫（問8〜問9） ============ -->
+<div class="unit-banner"><span class="unit-num">問8〜9</span><span class="unit-name">分配法則で工夫して計算 L3 標準〜応用（塾級）</span><span class="unit-time">目安 4分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qnum">くふうして計算しよう。</div>
+  <div class="qbody">
+    <span style="color:#2f5a8a">問8</span> <span class="math">(−36)×(<span class="frac"><span class="n">5</span><span class="d">9</span></span> − <span class="frac"><span class="n">3</span><span class="d">4</span></span>)</span>
+    <span style="color:#8a5a17">問9</span> <span class="math">7×(−15) ＋ 7×(−85)</span></div>
+  <div class="note-draw">★まず自分のやり方で解こう。解けたら「もっとラクな・速いやり方はなかった？」も考えてから解説へ。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">分配法則 <span class="math">a×(b＋c)＝a×b＋a×c</span> は<strong>左にも右にも使える</strong>。「分けると約分でラク」「まとめるとキリのいい数」のときに使う。</div>
+    <div class="step q1"><span>問8</span><span class="math">(−36)×</span><span class="frac"><span class="n">5</span><span class="d">9</span></span> − <span class="math">(−36)×</span><span class="frac"><span class="n">3</span><span class="d">4</span></span>。9で約分して <span class="math">−4×5＝−20</span>、4で約分して <span class="math">−9×3＝−27</span>。だから <span class="math">−20−(−27)＝＋7</span>。</div>
+    <div class="step q1"><span>問8 確かめ</span>中を先に：<span class="frac"><span class="n">5</span><span class="d">9</span></span>−<span class="frac"><span class="n">3</span><span class="d">4</span></span>＝−<span class="frac"><span class="n">7</span><span class="d">36</span></span>。<span class="math">(−36)×</span>(−<span class="frac"><span class="n">7</span><span class="d">36</span></span>)＝7。同じ。</div>
+    <div class="step q2"><span>問9</span>共通の7でくくる：<span class="math">7×(−15−85)＝7×(−100)＝−700</span>。</div>
+    <div class="step q2"><span>問9 確かめ</span>分けたまま：−105＋(−595)＝−700。合う。</div>
+    <div class="bx bx-link">「分けてかける／共通因数でまとめる」は文字式（3(x＋2)＝3x＋6）や因数分解の入口。工夫計算で制限時間に強くなる。</div>
+    <div class="bx bx-warn">問8で <span class="red">−(−27) を −27 のままにしない</span>（＝＋27）。問9で <span class="red">−15−85 を −70 としない</span>（＝−100）。</div>
+    <div class="ans-final"><span>こたえ</span>問8 7　／　問9 −700</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8</span>○✕ → <button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q09"><div class="grade"><span class="gq-label">問9</span>○✕ → <button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ============ 大問D 絶対値の大小（問10） ============ -->
+<div class="unit-banner"><span class="unit-num">問10</span><span class="unit-name">絶対値の大小 L3 標準（★5月必修で落とした型）</span><span class="unit-time">目安 3分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">次のア〜カの数のうち、<strong>絶対値が3番目に小さい数</strong>はどれですか。記号で答えよう。<br>
+    ア <span class="math">−3.1</span>　イ <span class="math">＋5</span>　ウ <span class="math">−2</span>　エ <span class="math">−<span class="frac"><span class="n">9</span><span class="d">5</span></span></span>　オ <span class="math">−<span class="frac"><span class="n">9</span><span class="d">2</span></span></span>　カ <span class="math">0.5</span></div>
+  <div class="note-draw">途中をノートに書いてから答えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">
+      <div class="ot">⓪ 絶対値（ぜったいち）とは</div>
+      <p><b>数直線で0からどれだけ離れているか（きょり）</b>。符号（＋−）を取った数。<span class="math">|−2|＝2</span>、<span class="math">|＋5|＝5</span>。だから絶対値はいつも0以上。</p>
+      <div class="ex">分数は小数に：|−<span class="frac"><span class="n">9</span><span class="d">5</span></span>|＝1.8、|−<span class="frac"><span class="n">9</span><span class="d">2</span></span>|＝4.5。</div>
+      <div class="miss">もとの数の大小で並べない（−<span class="frac"><span class="n">9</span><span class="d">2</span></span>は数では最小だが絶対値は4.5で大きい方）。</div>
+    </div>
+    <div class="step"><span>絶対値</span>ア 3.1、イ 5、ウ 2、エ 1.8、オ 4.5、カ 0.5。</div>
+    <div class="step"><span>小さい順</span><span class="math">0.5（カ）＜1.8（エ）＜2（ウ）＜3.1（ア）＜4.5（オ）＜5（イ）</span>。</div>
+    <div class="step"><span>3番目</span>1番目カ、2番目エ、<strong>3番目はウ（−2）</strong>。</div>
+    <div class="bx bx-warn"><span class="red">もとの数の大小で並べない</span>。きかれているのは絶対値の順。<span class="red">|−<span class="frac"><span class="n">9</span><span class="d">5</span></span>|を9や5にしない</span>（＝1.8）。</div>
+    <div class="ans-final"><span>こたえ</span>ウ（−2）</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c8" target="_blank">マル秘テクニック集 第8章</a></div>
+  </div>
+  <div class="gq" data-gid="q10"><div class="grade"><span class="gq-label">問10★5月の弱点</span>○✕ → <button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい考え方と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ============ 大問E 絶対値<4の整数（問11〜問12） ============ -->
+<div class="unit-banner"><span class="unit-num">問11〜12</span><span class="unit-name">絶対値が4未満の整数（個数と和）L3 応用</span><span class="unit-time">目安 3分</span></div>
+<div class="q calc" data-id="E">
+  <div class="qbody"><strong>絶対値が4より小さい整数</strong>について　<span style="color:#2f5a8a">問11</span> 全部で何個ありますか。　<span style="color:#8a5a17">問12</span> その和はいくつですか。</div>
+  <div class="note-draw">途中をノートに書いてから答えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>意味を直す</span>絶対値が4未満 ＝ <span class="math">|x|＜4</span> ＝ <span class="math">−4＜x＜4</span>（−4と4は入らない）。</div>
+    <div class="step"><span>書き出す</span>整数は <span class="math">−3, −2, −1, 0, 1, 2, 3</span>。0を必ず入れる。</div>
+    <div class="step q1"><span>問11 個数</span>7個。</div>
+    <div class="step q2"><span>問12 和</span><span class="math">(−3)＋(−2)＋(−1)＋0＋1＋2＋3</span>。−3と＋3…が打ち消し合うので <strong>和は0</strong>。</div>
+    <div class="step"><span>確かめ</span>0を中心に左右対称だから和は0。個数は片側3＋0＋片側3＝7。</div>
+    <div class="bx bx-warn"><span class="red">0を忘れて6個としない</span>。<span class="red">「4未満」に−4・4を入れない</span>（「以下」なら9個・和0）。</div>
+    <div class="ans-final"><span>こたえ</span>問11 7個　／　問12 0</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="q11"><div class="grade"><span class="gq-label">問11</span>○✕ → <button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい考え方と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q12"><div class="grade"><span class="gq-label">問12</span>○✕ → <button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい考え方と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ============ 大問F 大小・不等号（問13〜問14） ============ -->
+<div class="unit-banner"><span class="unit-num">問13〜14</span><span class="unit-name">大小と不等号 L3 標準（★5月必修で落とした型）</span><span class="unit-time">目安 4分</span></div>
+<div class="q calc" data-id="F">
+  <div class="qbody">
+    <span style="color:#2f5a8a">問13</span> 次の数を<strong>小さい順</strong>にならべよう。<span class="math">−0.8　＋<span class="frac"><span class="n">3</span><span class="d">4</span></span>　−<span class="frac"><span class="n">5</span><span class="d">6</span></span>　＋0.5　−1</span><br>
+    <span style="color:#8a5a17">問14</span> 「＋1, ＋4, ＋5 の大小を不等号で表すと <span class="math">＋5＞＋1＜＋4</span>」。これは正しいですか。正しくなければ直そう。</div>
+  <div class="note-draw">途中をノートに書いてから答えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q1"><span>問13 小数化</span><span class="math">−0.8、＋0.75、−0.833…、＋0.5、−1</span>。</div>
+    <div class="step q1"><span>問13 並べる</span>マイナスは絶対値が大きいほど小さい。<span class="math">−1 ＜ −<span class="frac"><span class="n">5</span><span class="d">6</span></span> ＜ −0.8 ＜ ＋0.5 ＜ ＋<span class="frac"><span class="n">3</span><span class="d">4</span></span></span>。</div>
+    <div class="step q2"><span>問14 ルール</span>3つ以上を1式で表すときは 不等号の向きをそろえる。＋5＞＋1＜＋4 は向きがバラバラで×。</div>
+    <div class="step q2"><span>問14 直す</span>小さい順に <strong>＋1＜＋4＜＋5</strong>（または ＋5＞＋4＞＋1）。</div>
+    <div class="step"><span>確かめ</span>問13 −1が最小・＋<span class="frac"><span class="n">3</span><span class="d">4</span></span>が最大。負どうし −1＜−<span class="frac"><span class="n">5</span><span class="d">6</span></span>＜−0.8。OK。</div>
+    <div class="bx bx-warn">問13で <span class="red">−<span class="frac"><span class="n">5</span><span class="d">6</span></span> と −0.8 の大小を逆にしない</span>（−<span class="frac"><span class="n">5</span><span class="d">6</span></span>＝−0.833…が小さい）。問14で <span class="red">＞と＜を混ぜない</span>。</div>
+    <div class="ans-final"><span>こたえ</span>問13 −1＜−<span class="frac"><span class="n">5</span><span class="d">6</span></span>＜−0.8＜＋0.5＜＋<span class="frac"><span class="n">3</span><span class="d">4</span></span>　／　問14 正しくない。＋1＜＋4＜＋5</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="q13"><div class="grade"><span class="gq-label">問13</span>○✕ → <button class="o" onclick="g(this,'q13','o')">○</button><button class="x" onclick="g(this,'q13','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい考え方と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q14"><div class="grade"><span class="gq-label">問14★5月の弱点</span>○✕ → <button class="o" onclick="g(this,'q14','o')">○</button><button class="x" onclick="g(this,'q14','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい考え方と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ============ 大問G 正負の表・平均（問15〜問16） ============ -->
+<div class="unit-banner"><span class="unit-num">問15〜16</span><span class="unit-name">正負の数の表・平均 L3 応用（特訓選抜 大問2と同型）</span><span class="unit-time">目安 4分</span></div>
+<div class="q calc" data-id="G">
+  <div class="qbody">下の表は、計算テスト 第1回〜第5回 の点数について、それぞれ<strong>「前回より何点高かったか（前回との差）」</strong>を正負の数で表したものです。第1回は前回がないので空らん（／）。<strong>第3回の点数は70点</strong>でした。
+    <table class="qtable">
+      <tr><th>回</th><th>第1回</th><th>第2回</th><th>第3回</th><th>第4回</th><th>第5回</th></tr>
+      <tr><td class="rowh">前回との差(点)</td><td class="hatch">／</td><td class="val">＋4</td><td class="val">−12</td><td class="val">＋8</td><td class="val">−2</td></tr>
+    </table>
+    <div style="font-size:13.5px;color:#4c5b70;margin:2px 0 8px">読み方の例：第2回は第1回より <strong>4点高い</strong>（＋4）。第3回は第2回より <strong>12点低い</strong>（−12）。第3回が70点と分かっているので、これを手がかりに各回の点数を求めよう。</div>
+    <span style="color:#2f5a8a">問15</span> 点数がもっとも高かったのは第何回ですか。　<span style="color:#8a5a17">問16</span> この5回の平均点は何点ですか。</div>
+  <div class="note-draw">途中をノートに書いてから答えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>各回を出す</span>「前回との差」＝(その回)−(前回)。第3回＝70。差−12より <span class="math">第2回＝70−(−12)＝82</span>。差＋4より <span class="math">第1回＝82−4＝78</span>。差＋8より <span class="math">第4回＝70＋8＝78</span>。差−2より <span class="math">第5回＝78−2＝76</span>。</div>
+    <div class="step"><span>一覧</span>第1回78、第2回82、第3回70、第4回78、第5回76。</div>
+    <div class="step q1"><span>問15 最高</span><strong>第2回（82点）</strong>。</div>
+    <div class="step q2"><span>問16 平均</span><span class="math">(78＋82＋70＋78＋76)÷5＝384÷5＝76.8点</span>。</div>
+    <div class="step"><span>検算</span>合計384。差も確認：82−78＝＋4○、70−82＝−12○、78−70＝＋8○、76−78＝−2○。</div>
+    <div class="bx bx-warn"><span class="red">差の向きを逆にしない</span>（第2回＝70＋12であって70−12ではない）。<span class="red">「差の平均」で出さない</span>。各回の点数を出してから平均する。</div>
+    <div class="ans-final"><span>こたえ</span>問15 第2回（82点）　／　問16 76.8点</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="q15"><div class="grade"><span class="gq-label">問15</span>○✕ → <button class="o" onclick="g(this,'q15','o')">○</button><button class="x" onclick="g(this,'q15','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい考え方と答えをノートに3回書こう</div></div>
+  <div class="gq" data-gid="q16"><div class="grade"><span class="gq-label">問16</span>○✕ → <button class="o" onclick="g(this,'q16','o')">○</button><button class="x" onclick="g(this,'q16','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい考え方と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ============ 大問H 基準法・平均（問17） ============ -->
+<div class="unit-banner"><span class="unit-num">問17</span><span class="unit-name">基準を決めて平均を出す L3 応用（正負の数の最高難度）</span><span class="unit-time">目安 3分</span></div>
+<div class="q calc" data-id="H">
+  <div class="qbody">5人の身長を、<strong>150cmを基準</strong>に、高い分を＋・低い分を−で表すと <span class="math">＋8, −3, ＋5, −6, ＋1</span>（cm）。この5人の<strong>平均身長</strong>は何cmですか。</div>
+  <div class="note-draw">★まず自分のやり方で解こう。解けたら「もっとラクな・速いやり方はなかった？」も考えてから解説へ。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">平均の裏ワザ（基準法）：<strong>「基準＋（差の平均）」＝全体の平均</strong>。大きい数より、基準からの差（小さい数）で平均してから基準を足す方が速くて正確。</div>
+    <div class="step"><span>差の合計</span><span class="math">8−3＋5−6＋1＝5</span>。</div>
+    <div class="step"><span>差の平均</span><span class="math">5÷5＝＋1</span>（基準より平均1cm高い）。</div>
+    <div class="step"><span>平均身長</span><span class="math">150＋1＝151cm</span>。</div>
+    <div class="step"><span>検算</span>実際の身長158,147,155,144,151の合計755、755÷5＝151。同じ。</div>
+    <div class="bx bx-link">基準法（仮平均）はデータの活用や正負の利用で頻出。これは「正負の数」では最高レベルの応用（L3）。さらに難しいL4は、このあとの方程式の利用・規則性・グラフで出てくる。</div>
+    <div class="bx bx-warn"><span class="red">差の合計5をそのまま平均にしない</span>（÷5して＋1）。<span class="red">基準150を足し忘れない</span>。</div>
+    <div class="ans-final"><span>こたえ</span>151cm</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="q17"><div class="grade"><span class="gq-label">問17</span>○✕ → <button class="o" onclick="g(this,'q17','o')">○</button><button class="x" onclick="g(this,'q17','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい考え方と答えをノートに3回書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P1 正負の数 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">正負の数は、計算だけじゃなく <strong>累乗の符号・絶対値・大小・正負の表</strong> で差がつく。今日の「かっこの中だけ2乗される」「絶対値＝0からのきょり」「不等号は向きをそろえる」「基準＋差の平均」は、特訓選抜の大問1・2で必ず効く土台だよ。まちがえた問題はノートに3回書いて、誤答キューに写そう。よくがんばったね🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m01';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！正負の数 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問1: 問1 (−3)² 問2 −3² 問3 (−2)³ 問4 −2³","en":"9"},"q02":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問2: 問1 (−3)² 問2 −3² 問3 (−2)³ 問4 −2³","en":"−9"},"q03":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問3: 問1 (−3)² 問2 −3² 問3 (−2)³ 問4 −2³","en":"−8"},"q04":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問4: 問1 (−3)² 問2 −3² 問3 (−2)³ 問4 −2³","en":"−8"},"q05":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問5: 問5 −2²＋(−3)² 問6 (−4)²÷(−8)−3×(−2) 問7 − 5 4 ＋ 7 10 − 1 5","en":"5"},"q06":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問6: 問5 −2²＋(−3)² 問6 (−4)²÷(−8)−3×(−2) 問7 − 5 4 ＋ 7 10 − 1 5","en":"4"},"q07":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問7★5月の弱点: 問5 −2²＋(−3)² 問6 (−4)²÷(−8)−3×(−2) 問7 − 5 4 ＋ 7 10 − 1 5","en":"− 3 4"},"q08":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問8: 問8 (−36)×( 5 9 − 3 4 ) 問9 7×(−15) ＋ 7×(−85)","en":"7"},"q09":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問9: 問8 (−36)×( 5 9 − 3 4 ) 問9 7×(−15) ＋ 7×(−85)","en":"−700"},"q10":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問10★5月の弱点: 次のア〜カの数のうち、 絶対値が3番目に小さい数 はどれですか。記号で答えよう。 ア −3.1 イ ＋5 ウ −2 エ − 9 5 オ − 9 2 カ 0.5","en":"ウ（−2）"},"q11":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問11: 絶対値が4より小さい整数 について 問11 全部で何個ありますか。 問12 その和はいくつですか。","en":"7個"},"q12":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問12: 絶対値が4より小さい整数 について 問11 全部で何個ありますか。 問12 その和はいくつですか。","en":"0"},"q13":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問13: 問13 次の数を 小さい順 にならべよう。 −0.8 ＋ 3 4 − 5 6 ＋0.5 −1 問14 「＋1, ＋4, ＋5 の大小を不等号で表すと ＋5＞＋1＜＋4 」。これは正しいですか。正しくなければ直そう。","en":"−1＜− 5 6 ＜−0.8＜＋0.5＜＋ 3 4"},"q14":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問14★5月の弱点: 問13 次の数を 小さい順 にならべよう。 −0.8 ＋ 3 4 − 5 6 ＋0.5 −1 問14 「＋1, ＋4, ＋5 の大小を不等号で表すと ＋5＞＋1＜＋4 」。これは正しいですか。正しくなければ直そう。","en":"正しくない。＋1＜＋4＜＋5"},"q15":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問15: 下の表は、計算テスト 第1回〜第5回 の点数について、それぞれ 「前回より何点高かったか（前回との差）」 を正負の数で表したものです。第1回は前回がないので空らん（／）。 第3回の点数は70点 でした。 回 第1回 第2回 第3回 第4回 第5回 前回との差(点) ／ ＋4 −12 ＋8 −2 読み方の例：第2回は第1回より 4点高い （＋4）。第3回は第2回より 12点低い （−12）。第3回が70点と分かっているので、これを手がかりに各回の点数を求めよう。 問15 点数がもっとも高かったのは第何回ですか。 問16 この5回の平均点は何点ですか。","en":"第2回（82点）"},"q16":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問16: 下の表は、計算テスト 第1回〜第5回 の点数について、それぞれ 「前回より何点高かったか（前回との差）」 を正負の数で表したものです。第1回は前回がないので空らん（／）。 第3回の点数は70点 でした。 回 第1回 第2回 第3回 第4回 第5回 前回との差(点) ／ ＋4 −12 ＋8 −2 読み方の例：第2回は第1回より 4点高い （＋4）。第3回は第2回より 12点低い （−12）。第3回が70点と分かっているので、これを手がかりに各回の点数を求めよう。 問15 点数がもっとも高かったのは第何回ですか。 問16 この5回の平均点は何点ですか。","en":"76.8点"},"q17":{"jp":"正負の数 L2-L3（特訓選抜レベル）｜累乗の符号・絶対値・大小・正負の表 / 問17: 5人の身長を、 150cmを基準 に、高い分を＋・低い分を−で表すと ＋8, −3, ＋5, −6, ＋1 （cm）。この5人の 平均身長 は何cmですか。","en":"151cm"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P8c 図形・角度集中（折り返し・平行線・外角）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 角度の3つの道具（迷ったらこれを思い出す）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月特訓選抜 大問2（折り返し・角度）へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.tool-hint{margin:8px 0;border:1px dashed #c9b8d6;border-radius:8px;background:#faf7fc;padding:6px 10px;font-size:12.5px}
+.tool-hint summary{cursor:pointer;font-weight:700;color:#7a5a95}
+.tool-hint div{margin-top:6px;color:#4a3a56;line-height:1.8}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜角の道具を思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .layer{margin:7px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:7px 11px}
+.ans-box .layer > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.layer.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.layer.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.layer.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.layer.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.layer.q3{border-left-color:#5fa89a;background:#eef7f5}
+.layer.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.layer.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.layer.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P8c</span><span class="pg-badge">数学：平面図形（角度）</span><span class="pg-badge">★折り返し・平行線・外角 L3-L4（9月大問2直撃）</span></div>
+  <h1>図形・角度集中｜折り返しの角・平行線（同位角/錯角）・三角形の外角</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に「あほでもわかる」徹底解説つき</p>
+  <p class="pg-cheer">9月の特訓選抜 <strong>大問2（折り返し・角度）</strong>を直撃する4問だけ。今日の合言葉は3つ。①<strong>折り返しが出たら、まず「折ると重なる角＝等しい角」に印</strong>をつける。②<strong>平行線が出たら、同位角・錯角を探す</strong>。③<strong>三角形の外角は、離れた2つの内角の足し算</strong>。図に分かった角を全部書きこめば、必ず解ける。あせらず1問ずつ。</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 折り返し</b> → 折ると<b>形も角もぴったり重なる</b>。だから<b>折り目をはさんで角は等しい</b>。まず等しい角に同じ印をつける。</li>
+    <li><b>② 平行線</b> → 1本の直線が2本の平行線を横切ると、<b>同位角は等しい・錯角は等しい</b>（同旁内角＝同じ側の内角どうしは足して180°）。</li>
+    <li><b>③ 三角形の角</b> → <b>3つの内角の和は180°</b>。さらに<b>外角＝それと離れた2つの内角の和</b>。</li>
+  </ol>
+</div>
+
+<!-- ===== 問1 折り返しの角度 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">折り返しの角度（紙テープを折る）L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead">問1</span>下の図のように、はばが一定の細長い紙テープを、まっすぐな折り目で1回折り返しました。折り目と下の辺がつくる角が68°のとき、折り返して重なってできた三角形のてっぺんの角 x の大きさを求めなさい。
+    <svg class="fig" width="300" height="140" viewBox="0 0 300 140">
+      <!-- 上の辺・下の辺(平行) -->
+      <line x1="20" y1="38" x2="280" y2="38" stroke="#888" stroke-width="1.5"/>
+      <line x1="20" y1="108" x2="280" y2="108" stroke="#888" stroke-width="1.5"/>
+      <!-- 折り返してできた三角形（底辺は下の辺上、てっぺんが上） -->
+      <polygon points="105,108 215,108 160,38" fill="#fdf2e3" stroke="#d9883a" stroke-width="2"/>
+      <!-- 底の左右の角(=折り返しで等しい 68°) -->
+      <text x="112" y="103" font-size="12" fill="#b3611c" font-weight="bold">68°</text>
+      <text x="186" y="103" font-size="12" fill="#b3611c" font-weight="bold">68°</text>
+      <!-- てっぺんの角 x -->
+      <text x="152" y="56" font-size="14" fill="#9b3b1c" font-weight="bold">x</text>
+      <text x="26" y="31" font-size="11" fill="#666">上の辺</text>
+      <text x="26" y="123" font-size="11" fill="#666">下の辺</text>
+    </svg>
+  </div>
+  <div class="note-draw">図に、分かっている長さと角を書きこもう。どう分けるか・どう引くかは自分で考えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 前半のポイント</div><div class="layer q1"><span>①何を聞かれてる?</span>紙テープをパタンと1回折ったら、重なった部分が三角形になった。その三角形の<strong>てっぺんの角 x（とがっているところの角）</strong>は何度？という問題だよ。</div>
+    <div class="layer q1"><span>②わかってること</span>・折り目と下の辺がつくる角が68°　・紙テープだから上の辺と下の辺は平行　・求めるのは三角形のてっぺんの角 x。</div>
+    <div class="layer q1"><span>③図でイメージ</span>紙を折ると、折る前と折ったあとがパタンとぴったり重なる。だから折り目をはさんで、左側の角と右側の角は鏡みたいに同じ大きさになる。図の三角形の下の2つの角は、どちらも68°になっているんだ。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ④作戦＋たとえ話〜⑦検算＋コツ</div><div class="layer q1"><span>④作戦＋たとえ話</span>折り紙を半分に折ると、左の羽と右の羽がぴったり重なるよね。あれと同じで「折ると左右の角は等しい」。だから三角形の底の角が68°と68°と分かる。あとは三角形の3つの角を足すと180°という決まりで、残ったてっぺんの角を出すだけ。</div>
+    <div class="layer q1"><span>⑤1ステップずつ</span>
+      ・底の左の角＝<span class="math">68°</span>（与えられた角）<br>
+      ・底の右の角＝<span class="math">68°</span>（折り返しで等しいから、左と同じ）<br>
+      ・三角形の角を全部足すと180°だから　<span class="math">x＝180−68−68</span><br>
+      ・<span class="math">180−68−68＝180−136＝44</span>　→　x＝44°</div>
+    <div class="bx bx-warn"><span class="red">x＝68°としない</span>。68°は下の2つの角で、x はてっぺんの角。場所がちがう。<br>折り返しで「角が等しい」を見落とさない。これが最大のミス。「下の右の角も68°」と気づけるかが勝負。折り目の左右に同じ印を必ずつけよう。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2の角度は「折り返し」が主役。折ったら、まず重なる角に同じ印→そこからは三角形の内角和180°や平行線で必ず解ける。</div>
+    <div class="layer q1"><span>⑦検算＋コツ</span>三角形の3つの角を足すと <span class="math">68＋68＋44＝180</span>。ちゃんと180°になったから合っている。<strong>コツ：折り返しが出たら、まず「折ると等しくなる角」に印をつける</strong>。それから三角形を探す。</div>
+    <div class="ans-final"><span>こたえ</span>x＝44°</div>
+      <div class="tec-link">型：<b>折り返し角型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「折ると角は等しい＋三角形の内角和180°」をノートに図つきで書こう</div></div>
+</div>
+
+<!-- ===== 問2 平行線と角 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">平行線と角（錯角で分けて求める）L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead">問2</span>下の図で、直線 <span class="math">l</span> と直線 <span class="math">m</span> は平行です。l と m の間に折れ点 P があり、図のように P の上側で50°、下側で65°になっています。折れ点 P の角 x の大きさを求めなさい。
+    <svg class="fig" width="300" height="170" viewBox="0 0 300 170">
+      <!-- 平行線 l(上) と m(下) -->
+      <line x1="20" y1="40" x2="280" y2="40" stroke="#2f5a8a" stroke-width="2"/>
+      <line x1="20" y1="130" x2="280" y2="130" stroke="#2f5a8a" stroke-width="2"/>
+      <text x="262" y="34" font-size="13" fill="#2f5a8a" font-style="italic" font-weight="bold">l</text>
+      <text x="262" y="124" font-size="13" fill="#2f5a8a" font-style="italic" font-weight="bold">m</text>
+      <!-- 折れ線 A(上の線上)→P(中)→B(下の線上) -->
+      <!-- A=(95,40), P=(170,85), B=(95,130) -->
+      <line x1="95" y1="40" x2="170" y2="85" stroke="#9b3b1c" stroke-width="2"/>
+      <line x1="170" y1="85" x2="95" y2="130" stroke="#9b3b1c" stroke-width="2"/>
+      <circle cx="170" cy="85" r="3.5" fill="#9b3b1c"/><text x="178" y="83" font-size="12" fill="#9b3b1c" font-weight="bold">P</text>
+      <circle cx="95" cy="40" r="3" fill="#2f5a8a"/><text x="80" y="36" font-size="11" fill="#2f5a8a">A</text>
+      <circle cx="95" cy="130" r="3" fill="#2f5a8a"/><text x="80" y="142" font-size="11" fill="#2f5a8a">B</text>
+      <!-- 上の角 50°(直線lとPAのあいだ、A付近) -->
+      <text x="100" y="56" font-size="12" fill="#b3611c" font-weight="bold">50°</text>
+      <!-- 下の角 65°(直線mとPBのあいだ、B付近) -->
+      <text x="100" y="120" font-size="12" fill="#b3611c" font-weight="bold">65°</text>
+      <!-- 折れ点の角 x -->
+      <text x="150" y="89" font-size="14" fill="#9b3b1c" font-weight="bold">x</text>
+    </svg>
+  </div>
+  <div class="note-draw">図に、分かっている長さと角を書きこもう。どう分けるか・どう引くかは自分で考えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 前半のポイント</div><div class="layer q2"><span>①何を聞かれてる?</span>平行な2本の線の間で、線がカクッと1回折れている。その<strong>折れたところ（P）の角 x</strong>は何度？という問題だよ。</div>
+    <div class="layer q2"><span>②わかってること</span>・l と m は平行　・P の上のすき間の角が50°　・P の下のすき間の角が65°　・求めるのは折れ点の角 x。</div>
+    <div class="layer q2"><span>③図でイメージ</span>折れ点 P を通る横線（l・m と平行な補助線）を1本ひいてみよう。すると、大きな角 x が、補助線によって上半分と下半分の2つの角にパカッと分かれる。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ④作戦＋たとえ話〜⑦検算＋コツ</div><div class="layer q2"><span>④作戦＋たとえ話</span>平行線を「階段の手すり」だと思ってね。手すりに対してななめの棒があると、上の手すりとつくる角と、下の手すりとつくる角がとびこえて等しくなる（これが錯角）。補助線も手すりと平行だから、50°と65°がそっくりそのまま P に引っこしてくる。それを足せば x。</div>
+    <div class="layer q2"><span>⑤1ステップずつ</span>
+      ・P に l・m と平行な補助線をひく。<br>
+      ・x の上半分＝上の50°と錯角だから <span class="math">50°</span>。<br>
+      ・x の下半分＝下の65°と錯角だから <span class="math">65°</span>。<br>
+      ・x＝上半分＋下半分＝<span class="math">50＋65＝115</span>　→　x＝115°</div>
+    <div class="bx bx-warn"><span class="red">50°と65°を引き算しない</span>。補助線で x が2つに分かれて足し算になる形。<br>錯角と同位角をまぜない。錯角は「平行線を横切る線の、ナナメ向かい（Zの形）」の角どうしで等しい。同位角は「同じ向き（Fの形）」の角どうしで等しい。今回は補助線をはさんでZの形＝錯角。<br>補助線をひかずに当てずっぽうにしない。補助線1本で必ず2つの錯角に分けられる。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2では「平行線＋折れ線（補助線でとく型）」が定番。平行線が出て角が求まらなかったら、折れ点に平行な補助線。これでほぼ解ける。</div>
+    <div class="layer q2"><span>⑦検算＋コツ</span>x を上下に分けた角がそれぞれ50°・65°。足して115°、x もちゃんと90°より大きい鈍角になっていて図と合う。<strong>コツ：平行線で詰まったら「折れ点に平行な補助線」をまず引く</strong>。</div>
+    <div class="ans-final"><span>こたえ</span>x＝115°</div>
+      <div class="tec-link">型：<b>複合図形型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「折れ点に平行な補助線→錯角を2つ→足す」をノートに図つきで書こう</div></div>
+</div>
+
+<!-- ===== 問3 三角形の外角・内角 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">三角形の外角（外角＝離れた2内角の和）L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead">問3</span>下の図の三角形で、2つの内角がそれぞれ35°と80°です。残りの頂点のところで、辺をのばしてできる外角 x の大きさを求めなさい。
+    <svg class="fig" width="300" height="160" viewBox="0 0 300 160">
+      <!-- 三角形 A(左上,35°), B(左下,80°), C(右下,内角65°) -->
+      <!-- A=(60,30), B=(60,120), C=(210,120) -->
+      <polygon points="60,30 60,120 210,120" fill="#eef7f5" stroke="#2f6a5c" stroke-width="2"/>
+      <!-- 辺 BC をのばす（C より右へ）→ 外角 x -->
+      <line x1="210" y1="120" x2="280" y2="120" stroke="#9b3b1c" stroke-width="2" stroke-dasharray="5 4"/>
+      <!-- 頂点ラベル -->
+      <circle cx="60" cy="30" r="3" fill="#2f6a5c"/><text x="44" y="28" font-size="11" fill="#2f6a5c">A</text>
+      <circle cx="60" cy="120" r="3" fill="#2f6a5c"/><text x="44" y="134" font-size="11" fill="#2f6a5c">B</text>
+      <circle cx="210" cy="120" r="3" fill="#2f6a5c"/><text x="208" y="136" font-size="11" fill="#2f6a5c">C</text>
+      <!-- 内角 35°(A) -->
+      <text x="66" y="50" font-size="12" fill="#b3611c" font-weight="bold">35°</text>
+      <!-- 内角 80°(B) -->
+      <text x="66" y="112" font-size="12" fill="#b3611c" font-weight="bold">80°</text>
+      <!-- 外角 x (C の右側,辺の延長と斜辺CAのあいだ) -->
+      <text x="222" y="112" font-size="14" fill="#9b3b1c" font-weight="bold">x</text>
+    </svg>
+  </div>
+  <details class="tool-hint"><summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+<div>三角形の外角＝それととなり合わない2つの内角の和。三角形の内角の和＝180°。</div></details>
+  <div class="note-draw">図に、分かっている長さと角を書きこもう。どう分けるか・どう引くかは自分で考えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai"><ul>
+      <li><b>三角形の内角の和＝180°</b>（3つの角を足すといつも180°）</li>
+      <li><b>外角＝それと離れた2つの内角の和</b>（となりの内角は使わない）</li>
+      <li><b>外角＋となりの内角＝180°</b>（一直線だから）。だから外角＝180−となりの内角、でも出せる。</li>
+    </ul></div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 前半のポイント</div><div class="layer q3"><span>①何を聞かれてる?</span>三角形の角を1つ、辺をスーッとのばすと外側に角ができる。これが<strong>外角</strong>。その外角 x が何度かを聞いているよ。</div>
+    <div class="layer q3"><span>②わかってること</span>・三角形の2つの内角が35°と80°　・x はそのどちらでもない、残りの頂点 C の外角　・求めるのは x。</div>
+    <div class="layer q3"><span>③図でイメージ</span>x のある頂点 C から見て、反対側にある（離れている）2つの角が35°と80°。外角 x は、この離れた2つの角がそのまま引っ越して合体したものだとイメージしよう。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ④作戦＋たとえ話〜⑦検算＋コツ</div><div class="layer q3"><span>④作戦＋たとえ話</span>「外角＝離れた2つの内角の足し算」。これは魔法みたいだけど理由がある。三角形の3つの角は足すと180°。外角ととなりの内角も一直線で足すと180°。同じ180°から「となりの内角」を引くから、残りの2つ（離れた2角）が外角になるんだ。だからx＝35＋80。</div>
+    <div class="layer q3"><span>⑤1ステップずつ</span>
+      ・x から離れた2つの内角＝<span class="math">35°</span>と<span class="math">80°</span>。<br>
+      ・外角＝離れた2内角の和だから　<span class="math">x＝35＋80</span><br>
+      ・<span class="math">35＋80＝115</span>　→　x＝115°</div>
+    <div class="bx bx-warn"><span class="red">となりの内角（C の内角）を足してしまわない</span>。使うのは「離れた2つ」だけ。<br>外角を足し忘れて内角和だけで止まらない。「内角の和180°」で C の内角(180−35−80＝65°)を出してから、外角＝180−65＝115、と遠回りでも出せるけど、外角＝35＋80＝115と一発で出すほうが速くてミスが少ない。<br>x＝65°としない（65°は C の内角。x はその外側の外角）。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2では「折り返し・平行線」で角を移したあと、最後に三角形の外角や内角和で仕上げる場面が多い。外角の足し算を一発で使えると、計算が短くなりミスも減る。</div>
+    <div class="layer q3"><span>⑦検算＋コツ</span>C の内角は180−35−80＝65°。外角ととなりの内角は一直線だから<span class="math">115＋65＝180</span>でちょうど一直線。合っている。<strong>コツ：外角を見たら「離れた2つの内角を足す」とまず考える</strong>。</div>
+    <div class="ans-final"><span>こたえ</span>x＝115°</div>
+      <div class="tec-link">型：<b>複合図形型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「外角＝離れた2内角の和」をノートに図つきで書こう</div></div>
+</div>
+
+<!-- ===== 問4 折り返し＋平行線の複合(発展) ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★折り返し＋平行線の複合（大問2発展）L3-L4</span><span class="unit-time">目安 9分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead">問4</span>はばが一定の細長い紙テープ（上の辺と下の辺は平行）を、まっすぐな折り目で1回折り返しました。折り目と下の辺がつくる角が58°のとき、折り返してはね上がった辺が<strong>上の辺</strong>とつくる角 x（鋭角のほう）の大きさを求めなさい。
+    <svg class="fig" width="320" height="150" viewBox="0 0 320 150">
+      <!-- 上の辺・下の辺(平行) -->
+      <line x1="20" y1="40" x2="300" y2="40" stroke="#888" stroke-width="1.5"/>
+      <line x1="20" y1="115" x2="300" y2="115" stroke="#888" stroke-width="1.5"/>
+      <text x="24" y="33" font-size="11" fill="#666">上の辺</text>
+      <text x="24" y="130" font-size="11" fill="#666">下の辺</text>
+      <!-- 折り目: 下辺上の点 O=(150,115) から左上へ角58°(=下辺となす) -->
+      <!-- 折り目を引く方向: 上向き左。長さ90 → 終点(150-90cos58,115-90sin58)=(150-47.7,115-76.3)=(102,39) -->
+      <line x1="150" y1="115" x2="102" y2="39" stroke="#5f4a8a" stroke-width="2"/>
+      <circle cx="150" cy="115" r="3" fill="#5f4a8a"/><text x="150" y="129" font-size="11" fill="#5f4a8a">O</text>
+      <!-- 折り目と下辺のなす角 58° (O付近,折り目の左) -->
+      <text x="108" y="108" font-size="12" fill="#5f4a8a" font-weight="bold">58°</text>
+      <!-- 折り返してはね上がった辺: 下辺右向き(O→右)を折り目に関して反射 → 方向角116° -->
+      <!-- O=(150,115), 方向116°(画面yは下向きなので上向き=マイナス): 終点= O + 90*(cos116, -sin116) -->
+      <!-- cos116=-0.438, sin116=0.899 → (150-39.4, 115-80.9)=(110.6,34.1) ほぼ上辺の上。少し短く描く -->
+      <!-- 折り返した辺が上辺と交わる点を Q とする -->
+      <line x1="150" y1="115" x2="112" y2="38" stroke="#d9883a" stroke-width="2.5"/>
+      <text x="124" y="70" font-size="11" fill="#b3611c">折り返した辺</text>
+      <!-- 折り返した辺が上辺とつくる鋭角 x (上辺との交点 Q≈(112,40)付近,右下側) -->
+      <text x="118" y="54" font-size="14" fill="#9b3b1c" font-weight="bold">x</text>
+    </svg>
+  </div>
+  <div class="note-draw">図に、分かっている長さと角を書きこもう。どう分けるか・どう引くかは自分で考えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 前半のポイント</div><div class="layer q4"><span>①何を聞かれてる?</span>紙テープをパタンと折ったら、もとは下にあった辺が斜めにはね上がった。その<strong>はね上がった辺が、上の辺とぶつかってつくる角 x（とがったほう）</strong>は何度？という問題だよ。</div>
+    <div class="layer q4"><span>②わかってること</span>・折り目と下の辺がつくる角が58°　・上の辺と下の辺は平行　・求めるのは、折り返した辺と上の辺がつくる鋭角 x（90°より小さいほう）。</div>
+    <div class="layer q4"><span>③図でイメージ</span>下の辺は、折り目をさかいにパタンと折り目の反対側へ跳ね返る。鏡に当たった光がはね返るのと同じで、折り目をはさんで同じ角（58°）の向きに跳ね返る。だから「下の辺」と「折り返した辺」は、折り目の両側に58°ずつ開く。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ④作戦＋たとえ話〜⑦検算＋コツ</div><div class="layer q4"><span>④作戦＋たとえ話</span>2段階で考える。<br>(あ) 折り返し＝鏡のはね返り。折り目と下辺が58°なら、はね返った辺も折り目と58°。だから折り返した辺は、下の辺から測って 58°＋58°＝116°の向きにはね上がる。<br>(い) ここで上の辺と下の辺は平行。平行な線は同じかたむきだから、折り返した辺が「下の辺」とつくる角と「上の辺」とつくる角は、平行線の関係（同位角・錯角）でつながる。残りの鋭角を出す。</div>
+    <div class="layer q4"><span>⑤1ステップずつ</span>
+      ・折り目と下の辺＝<span class="math">58°</span>。<br>
+      ・折り返し（鏡のはね返り）で、折り目の反対側にも<span class="math">58°</span>。<br>
+      ・折り返した辺が下の辺とつくる角＝<span class="math">58＋58＝116°</span>（鈍角のほう）。<br>
+      ・上の辺と下の辺は平行。一直線（辺）が平行線とつくる角は、鋭角と鈍角を足すと180°（同じ側の内角＝同旁内角）。だから上の辺とつくる鋭角は <span class="math">180−116</span>。<br>
+      ・<span class="math">180−116＝64</span>　→　x＝64°</div>
+    <div class="bx bx-warn"><span class="red">折り返しで「角が等しい（58°がもう1つできる）」を忘れない</span>。これを落とすと116°が出せない。<br>116°のまま答えにしない。聞かれているのは鋭角（とがったほう）。鈍角116°のとなりにできる鋭角は180−116＝64°。<br>平行を使い忘れない。上の辺と下の辺が平行だからこそ、下でできた角を上にうつせる。<br>x＝58°としない（58°は折り目との角。x は折り返した辺と上の辺との角で別もの）。</div>
+    <div class="bx bx-link">これが9月特訓選抜 大問2の本命の形。「折り返しで等しい角→平行線で角をうつす→鋭角/鈍角を180°で調整」。折り返し＋平行線が出たら、この3手順を思い出せば、数値が変わっても同じやり方で解ける。</div>
+    <div class="layer q4"><span>⑦検算＋コツ</span>折り返した辺が下の辺と116°、上の辺と64°。平行線をはさむ同じ側の角どうしで <span class="math">116＋64＝180</span>。ちゃんと一直線分の180°になっているから合っている。<strong>コツ：折り返しが出たら①まず等しい角に印②平行線で角をうつす③鋭角か鈍角かを最後に確認</strong>。</div>
+    <div class="ans-final"><span>こたえ</span>x＝64°</div>
+      <div class="tec-link">型：<b>折り返し角型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「①折り返しで等しい角→②平行線でうつす→③180°で鋭角/鈍角を調整」をノートに図つきで書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8c 図形・角度集中 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">角度おつかれさま！今日のいちばんの収穫は<strong>「折り返しが出たら、まず重なる角＝等しい角に印をつける」</strong>。そこから①三角形の内角和180°②平行線の同位角・錯角③外角＝離れた2内角の和、の3つの道具でつながっていく。とくに問4の「折り返し＋平行線」は9月の大問2そのもの。まちがえた問題は、図に分かった角を全部書きこんでノートに解き直そう。少しずつでいい、きみは確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m08c';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！図形・角度集中 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01":{"jp":"図形・角度集中｜折り返しの角・平行線（同位角/錯角）・三角形の外角 / 問1: 問1 下の図のように、はばが一定の細長い紙テープを、まっすぐな折り目で1回折り返しました。折り目と下の辺がつくる角が68°のとき、折り返して重なってできた三角形のてっぺんの角 x の大きさを求めなさい。 68° 68° x 上の辺 下の辺","en":"x＝44°"},"q02":{"jp":"図形・角度集中｜折り返しの角・平行線（同位角/錯角）・三角形の外角 / 問2: 問2 下の図で、直線 l と直線 m は平行です。l と m の間に折れ点 P があり、図のように P の上側で50°、下側で65°になっています。折れ点 P の角 x の大きさを求めなさい。 l m P A B 50° 65° x","en":"x＝115°"},"q03":{"jp":"図形・角度集中｜折り返しの角・平行線（同位角/錯角）・三角形の外角 / 問3: 問3 下の図の三角形で、2つの内角がそれぞれ35°と80°です。残りの頂点のところで、辺をのばしてできる外角 x の大きさを求めなさい。 A B C 35° 80° x","en":"x＝115°"},"q04":{"jp":"図形・角度集中｜折り返しの角・平行線（同位角/錯角）・三角形の外角 / 問4★: 問4 はばが一定の細長い紙テープ（上の辺と下の辺は平行）を、まっすぐな折り目で1回折り返しました。折り目と下の辺がつくる角が58°のとき、折り返してはね上がった辺が 上の辺 とつくる角 x（鋭角のほう）の大きさを求めなさい。 上の辺 下の辺 O 58° 折り返した辺 x","en":"x＝64°"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P12d 50分通し④｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ 落とし穴";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ 作戦・つながり";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.timer-note{background:#fdeef0;border:2px solid #e3b3bb;border-radius:10px;padding:12px 16px;margin:12px 0;font-size:13px;color:#8a3a48;font-weight:700}
+.timer-note::before{content:"⏱ 本番モード";display:block;font-size:13px;font-weight:900;color:#a23a4c;margin-bottom:4px}
+.audit-stop{background:#fff0f0;border:2px solid #b94a48;border-radius:10px;padding:13px 16px;margin:12px 0;color:#7b2525;font-weight:900}.audit-stop small{display:block;font-size:12px;font-weight:700;margin-top:4px}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:12px 16px;margin:14px 0}
+.cardbox::before{content:"⏱ 通しの作戦（本番のつもりで）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:6px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13px;line-height:1.9;color:#33433a}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.qtable{border-collapse:collapse;margin:8px 0;font-size:13px}
+.qtable th,.qtable td{border:1px solid #c9cfc6;padding:4px 10px;text-align:center}
+.qtable th{background:#eef1ec;font-weight:800;color:#46524a}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e3e2d9;border-radius:8px;padding:8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:16px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.pi{font-family:'Times New Roman','Times',serif;font-weight:700;font-style:italic;font-size:1.08em}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:0.9em}
+.frac .n{border-bottom:1.6px solid currentColor;padding:0 4px 1px}
+.frac .d{padding:1px 4px 0}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:38px;height:38px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:17px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.mt .mt-leg{font-size:10.5px;font-weight:700;color:#a08; color:#9b7a86;margin-top:6px;display:block}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .ans-box{display:none!important}.write3{display:none!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="lite-rated" data-audited-units="20" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P12d</span><span class="pg-badge">数学：総合（実戦④）</span><span class="pg-badge">50分・20採点単位／自作配点100点</span></div>
+  <h1>特訓選抜形式 50分通し④｜大問1〜6</h1>
+  <p>夏・特訓対策　50分（大問1〜6・20採点単位／自作配点100点）　対象: 中1　全問に解説つき</p>
+  <p class="pg-cheer">2026年公式範囲と2023年観測形式を基にした独立の自作フォームです。公式問題・公式配点ではありません。</p>
+</div>
+
+<div class="audit-stop">状態：lite判定済み（L7-lite-v1.0・単独評定・±1許容／2026-07-18）・学習使用可
+  <small>※精密3評定は未実施。</small>
+</div>
+
+<div class="timer-note">
+  独立監査完了後は、タイマーを50分にセットしてスタート。途中で答えを見ない。50分で止めて、そのあと○✕で自己採点する。<br>
+  配分の目安：大問1・2で17分／大問3で13分／大問4・5・6で16分／見直し4分。
+</div>
+
+<!-- ===== 大問1 計算（問1〜問4） ===== -->
+<div class="unit-banner"><span class="unit-num">大問1</span><span class="unit-name">小問集合</span><span class="unit-time">各5点・計20点</span></div>
+<div class="q calc" data-id="1">
+  <div class="qbody">次の計算をしなさい。問3・問4は方程式を解きなさい。<br>
+    <span class="lead">問1</span><span class="math">−5＋(−3)²×2</span>
+    <span class="lead">問2</span><span class="math">a＝−2, b＝3</span> のとき <span class="math">3a²−2b</span> の値　<br>
+    <span class="lead">問3</span><span class="math">0.5x＋0.4＝0.2x＋1.6</span>
+    <span class="lead">問4</span><span class="math"><span class="frac"><span class="n">2x−1</span><span class="d">3</span></span>＝<span class="frac"><span class="n">x＋1</span><span class="d">2</span></span></span></div>
+  <div class="note-draw">本番と同じように解こう。途中式をノートに残し、最後に検算する。時間を計ること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問1</span>累乗が先：(−3)²＝9。9×2＝18。−5＋18＝<span class="math">13</span>。</div>
+    <div class="step"><span>問2</span>3a²＝3×(−2)²＝3×4＝12。2b＝6。12−6＝<span class="math">6</span>。</div>
+    <div class="step"><span>問3</span>両辺×10：5x＋4＝2x＋16 → 3x＝12 → <span class="math">x＝4</span>。検算 0.5×4＋0.4＝2.4＝0.2×4＋1.6○。</div>
+    <div class="step"><span>問4</span>たすきに払う：2(2x−1)＝3(x＋1) → 4x−2＝3x＋3 → <span class="math">x＝5</span>。検算 <span class="frac"><span class="n">9</span><span class="d">3</span></span>＝3＝<span class="frac"><span class="n">6</span><span class="d">2</span></span>○。</div>
+    <div class="bx bx-warn">問1 <span class="red">(−3)²は＋9</span>（−3を2回かける）。問2 a²はまずaを2乗してから×3。問4 分子のかたまりは必ず( )をつける。</div>
+    <div class="ans-final"><span>こたえ</span>問1 13／問2 6／問3 x＝4／問4 x＝5</div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span><button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span><button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span><button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span><button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+</div>
+
+<!-- ===== 大問2 平面図形（問5〜問7） ===== -->
+<div class="unit-banner"><span class="unit-num">大問2</span><span class="unit-name">小問集合</span><span class="unit-time">各5点・計20点</span></div>
+<div class="q calc" data-id="2">
+  <div class="qbody">
+    <span class="lead">問5</span>点Oから出る2本の半直線OA、OBがつくる角は88°です。半直線OAが半直線OBに重なるように紙を折るとき、折り目を半直線OCとします。∠AOC＝x とするとき、xを求めなさい。<br>
+    <span class="lead">問6(1)</span>下の図のL字形（たて14cm・横10cmの長方形から、右上のかど 横4cm・たて6cm を切りとった形）の面積を求めなさい。<br>
+    <span class="lead">問6(2)</span>このL字形の周の長さを求めなさい。
+    <svg class="fig" width="250" height="220" viewBox="0 0 250 220" xmlns="http://www.w3.org/2000/svg">
+      <polygon points="40,30 40,200 161,200 161,103 112,103 112,30" fill="#eaf4ee" stroke="#2f6a44" stroke-width="2"/>
+      <text x="64" y="22" font-size="12" fill="#46524a">6cm</text>
+      <text x="115" y="44" font-size="9" fill="#a23a4c">切りとり</text>
+      <text x="122" y="82" font-size="10" fill="#a23a4c" transform="rotate(-90 122,82)">6cm</text>
+      <text x="126" y="99" font-size="10" fill="#a23a4c">4cm</text>
+      <text x="6" y="120" font-size="12" fill="#46524a" transform="rotate(-90 16,120)">14cm</text>
+      <text x="88" y="218" font-size="12" fill="#46524a">10cm</text>
+      <text x="167" y="156" font-size="11" fill="#46524a" transform="rotate(-90 173,156)">8cm</text>
+    </svg>
+    <span class="lead">問7</span>1辺8cmの正方形の中に、向かい合う2つの頂点をそれぞれ中心とする半径8cmのおうぎ形（四分円）を2つかいて重なった部分（葉の形）を作りました。色のついた葉の形の面積を求めなさい（円周率は<span class="pi">π</span>）。
+    <svg class="fig" width="170" height="170" viewBox="0 0 170 170" xmlns="http://www.w3.org/2000/svg">
+      <rect x="20" y="20" width="130" height="130" fill="#fff" stroke="#5b6b80" stroke-width="2"/>
+      <path d="M20,150 A130,130 0 0,1 150,20 A130,130 0 0,1 20,150 Z" fill="#dbeae0" stroke="#2f6a44" stroke-width="1.5"/>
+      <text x="63" y="92" font-size="13" fill="#2f6a44" font-weight="bold">葉</text>
+      <text x="60" y="167" font-size="11" fill="#46524a">8cm</text>
+    </svg>
+  </div>
+  <div class="note-draw">本番と同じように解こう。途中式をノートに残し、最後に検算する。時間を計ること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問5</span>折り目OCは、重なるOAとOBのちょうど中間にくる。したがって x＝88÷2＝<span class="math">44°</span>。</div>
+    <div class="step"><span>問6(1)</span>大きい長方形＝14×10＝140。切りとった小長方形＝4×6＝24（横4cm・たて6cm）。L字＝140−24＝<span class="math">116 cm²</span>。</div>
+    <div class="step"><span>問6(2)</span>切り取った横4cm・たて6cmは、外側から消えた長さと内側に増えた長さが同じ。したがって周は元の長方形と同じで、2×(14＋10)＝<span class="math">48cm</span>。辺を順に足してもよい。</div>
+    <div class="step"><span>問7</span>四分円1つ＝(<span class="pi">π</span>×8²)÷4＝16<span class="pi">π</span>。2つで32<span class="pi">π</span>。正方形＝8×8＝64。葉＝四分円2つ−正方形＝<span class="math">32<span class="pi">π</span>−64 cm²</span>。</div>
+    <div class="bx bx-warn">問5 折り目は、重ねる2本の半直線がつくる角を二等分する。問7 中心は<span class="red">向かい合う2頂点</span>。葉の形は「四分円2つを足して正方形1つ分を引く」。<span class="pi">π</span>と数は混ぜない。</div>
+    <div class="ans-final"><span>こたえ</span>問5 44°／問6(1) 116 cm²／問6(2) 48cm／問7 32<span class="pi">π</span>−64 cm²</div>
+  </div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5</span><button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q06"><div class="grade"><span class="gq-label">問6(1)</span><button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q19"><div class="grade"><span class="gq-label">問6(2)</span><button class="o" onclick="g(this,'q19','o')">○</button><button class="x" onclick="g(this,'q19','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 周を辺ごとに一周して検算する</div></div>
+  <div class="gq" data-gid="q07"><div class="grade"><span class="gq-label">問7</span><button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら「四分円2つ−正方形」を誤答キューへ</div></div>
+</div>
+
+<!-- ===== 大問3 方程式の利用（問8〜問11） ===== -->
+<div class="unit-banner"><span class="unit-num">大問3</span><span class="unit-name">文章と条件の問題</span><span class="unit-time">各5点・計25点</span></div>
+<div class="q calc" data-id="3">
+  <div class="qbody">
+    <span class="lead">問8</span>ある店では菓子は1個80円で、パンの値引き後の単価はどの客にも同じです。客Xはパン5個と菓子3個を買い、会計全体に100円引き券を1回使って620円払いました。客Yはパンと菓子を合わせて18個買い、同じ100円引き券を1回使って1500円払いました。客Yが買ったパンは何個ですか。<br>
+    <span class="lead">問9</span>同じ道を往復します。行きは分速60mで進みました。帰りは、はじめの部分を分速30m、その後を分速50mで進み、分速30mで進んだ道のりは分速50mで進んだ道のりより600m長くなりました。往復の移動時間は56分でした。片道の道のりを求めなさい。<br>
+    <span class="lead">問10</span>長いすに生徒を5人ずつ座らせると4人が座れず、6人ずつ座らせると長いすがちょうど3脚あまりました（あまった3脚には0人）。長いすの数と生徒の人数を求めなさい。<br>
+    <span class="lead">問11(1)</span>ある品物に、原価の3割の利益を見込んで定価をつけたら2600円になりました。原価はいくらですか。<br>
+    <span class="lead">問11(2)</span>この品物を定価の20%引きで売ると、利益は原価の何%ですか。</div>
+  <div class="note-draw">本番と同じように解こう。途中式をノートに残し、最後に検算する。時間を計ること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問8</span>パンの値引き後の単価をp円とする。客X：5p＋80×3−100＝620 → 5p＝480 → p＝96。客Yのパンをa個、菓子を(18−a)個とすると 96a＋80(18−a)−100＝1500 → 16a＝160 → a＝<span class="math">10</span>。検算 パン10・菓子8：96×10＋80×8−100＝1500○。</div>
+    <div class="step"><span>問9</span>片道を d mとする。帰りの分速30mの道のりA、分速50mの道のりBはA＝B＋600、A＋B＝d。よってA＝(d＋600)/2、B＝(d−600)/2。<span class="frac"><span class="n">d</span><span class="d">60</span></span>＋<span class="frac"><span class="n">A</span><span class="d">30</span></span>＋<span class="frac"><span class="n">B</span><span class="d">50</span></span>＝56。両辺を300倍して 5d＋5(d＋600)＋3(d−600)＝16800、整理すると 13d＝15600 → d＝<span class="math">1200</span>。検算 行き20分＋帰り(30分＋6分)＝56分○。</div>
+    <div class="step"><span>問10</span>長いす x 脚。生徒は5x＋4（4人あふれる）＝6(x−3)（3脚分すわらない）。5x＋4＝6x−18 → x＝22。生徒＝5×22＋4＝114。<span class="math">長いす22脚・生徒114人</span>。検算 6×(22−3)＝6×19＝114○。</div>
+    <div class="step"><span>問11(1)</span>原価を x。定価＝x×1.3＝2600 → x＝2600÷1.3＝2000。<span class="math">原価2000円</span>。検算 2000×1.3＝2600○。</div>
+    <div class="step"><span>問11(2)</span>売価は2600×0.8＝2080円。利益は2080−2000＝80円。80÷2000×100＝<span class="math">4%</span>。</div>
+    <div class="bx bx-warn">問8 100円引き券は会計1回につき1回だけ引く（客ごとに1回）。問9 帰りの2区間の道のりの和が片道dになる。問10 6人ずつで3脚あまる＝座る人数は6×(x−3)。問11 <span class="red">2600−3割＝1820 としない</span>（割るのは1.3）。</div>
+    <div class="ans-final"><span>こたえ</span>問8 パン10個／問9 片道1200m／問10 長いす22脚・生徒114人／問11(1) 原価2000円／問11(2) 4%</div>
+  </div>
+  <div class="gq" data-gid="q08"><div class="grade"><span class="gq-label">問8</span><button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら型カードで解き直し＋誤答キュー</div></div>
+  <div class="gq" data-gid="q09"><div class="grade"><span class="gq-label">問9</span><button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら「時間＝道のり÷速さ」を誤答キューへ</div></div>
+  <div class="gq" data-gid="q10"><div class="grade"><span class="gq-label">問10</span><button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら「2通りで表す」を誤答キューへ</div></div>
+  <div class="gq" data-gid="q11"><div class="grade"><span class="gq-label">問11(1)</span><button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら「定価＝原価×1.3」を誤答キューへ</div></div>
+  <div class="gq" data-gid="q20"><div class="grade"><span class="gq-label">問11(2)</span><button class="o" onclick="g(this,'q20','o')">○</button><button class="x" onclick="g(this,'q20','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 売価→利益額→利益率の順で検算する</div></div>
+</div>
+
+<!-- ===== 大問4 規則性（問12〜問14） ===== -->
+<div class="unit-banner"><span class="unit-num">大問4</span><span class="unit-name">条件のある問題</span><span class="unit-time">各5点・計15点</span></div>
+<div class="q calc" data-id="4">
+  <div class="qbody">
+    <span class="lead">問12</span>1辺が n cm の正方形を、1cm四方の白タイルでしきつめ、上・左・右の3つの辺にあるタイルだけを黒タイルに取りかえます。黒タイルは n=2 のとき4枚、n=4 のとき10枚です。n=6 のとき、黒タイルは何枚ですか。<br>
+    <span class="lead">問13</span>正方形の枠を横一列に n 個つなぎ、となり合う枠は縦棒1本を共有します。各枠に斜め棒を1本入れ、さらに左から3番目、6番目、9番目、…の枠には斜め棒をもう1本入れます。n は3の倍数で、棒は全部で53本でした。枠は何個ですか。<br>
+    <span class="lead">問14</span>1辺に n 枚、全体で n×n 枚の正方形タイルがあります。上・左・右の3辺上のタイルを黒くし、さらに左下から右上へ並ぶ対角線上のタイルも黒くします。対角線の両端2枚はすでに3辺上の黒タイルにふくまれ、それ以外の重なりはありません。白タイルが64枚のとき、n を求めなさい。</div>
+  <div class="note-draw">本番と同じように解こう。途中式をノートに残し、最後に検算する。時間を計ること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問12</span>黒は n が1増えるごとに3枚増え、n=2で4枚。式は3n−2。n=6を入れて3×6−2＝<span class="math">16</span>枚。確かめ n=2→4、n=4→10○。</div>
+    <div class="step"><span>問13</span>基本の棒は 上n＋下n＋縦(n＋1)＋斜めn＝4n＋1本。3番目ごとに斜めがもう1本増えるので n/3本追加。4n＋1＋n/3＝53 → 13n＝156 → n＝<span class="math">12</span>個。</div>
+    <div class="step"><span>問14</span>3辺の黒は3n−2枚、対角線で新しく増える黒は両端をのぞく n−2枚、合わせて黒は4n−4枚。白＝n²−(4n−4)＝(n−2)²＝64 → n−2＝8 → n＝<span class="math">10</span>。</div>
+    <div class="bx bx-warn">問12 式3n−2は、まず n=2→4枚・n=4→10枚に合うか確かめる。問13 縦棒は n＋1本（両端がある）。3番目ごとの追加斜め n/3を忘れない。問14 対角線の両端は3辺と<span class="red">二重に数えない</span>。白は(n−2)²と一気に出せる。</div>
+    <div class="ans-final"><span>こたえ</span>問12 16枚／問13 12個／問14 n＝10</div>
+  </div>
+  <div class="gq" data-gid="q12"><div class="grade"><span class="gq-label">問12</span><button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら誤答キューへ＋3回書き</div></div>
+  <div class="gq" data-gid="q13"><div class="grade"><span class="gq-label">問13</span><button class="o" onclick="g(this,'q13','o')">○</button><button class="x" onclick="g(this,'q13','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら「棒の数え方とn/3の追加」を誤答キューへ</div></div>
+  <div class="gq" data-gid="q14"><div class="grade"><span class="gq-label">問14</span><button class="o" onclick="g(this,'q14','o')">○</button><button class="x" onclick="g(this,'q14','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら「白＝(n−2)²」を誤答キューへ</div></div>
+</div>
+
+<!-- ===== 大問5 グラフ・水そう（問15〜問16） ===== -->
+<div class="unit-banner"><span class="unit-num">大問5</span><span class="unit-name">資料と条件の問題</span><span class="unit-time">各5点・計10点</span></div>
+<div class="q calc" data-id="5">
+    <div class="qbody">
+    <span class="lead">問15</span>空の段付きの水そうに、毎分一定の割合で水を入れます。底から5cmまでは幅18cm・奥行き10cmの部分に水が入り、5cmから11cmまでは幅8cm・奥行き10cmの部分だけに水が入ります。水を入れ始めて3分後に水位が5cmになりました。水位が11cmになるのは、水を入れ始めてから何分何秒後ですか。<br>
+    <span class="lead">問16</span>空のL字型の水そうに一定の割合で水を入れます。底から6cmまでは幅20cm・奥行き10cmの部分に水が入り、6cmから12cmまでは幅8cm・奥行き10cmの部分だけに水が入ります。水そうの深さは12cmで、水を入れ始めて5分後に水位が6cmになりました。満水になるのは、水を入れ始めてから何分後ですか。</div>
+  <div class="note-draw">本番と同じように解こう。途中式をノートに残し、最後に検算する。時間を計ること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問15</span>下段(0〜5cm)は底面積18×10＝180cm²。3分で5cm入ったので水量180×5＝900cm³、毎分300cm³。上段(5〜11cm)は底面積8×10＝80cm²、水量80×6＝480cm³。480÷300＝1.6分＝1分36秒。合計3分＋1分36秒＝<span class="math">4分36秒後</span>。</div>
+    <div class="step"><span>問16</span>下段(0〜6cm)は底面積20×10＝200cm²。5分で6cm入ったので水量200×6＝1200cm³、毎分240cm³。上段(6〜12cm)は底面積8×10＝80cm²、水量80×6＝480cm³。480÷240＝2分。5分＋2分＝<span class="math">7分後</span>。</div>
+    <div class="bx bx-warn">問15・問16とも、<span class="red">段差より上では底面積が変わる</span>（幅が18や20から8になる）。段ごとに底面積を分けて水量を出す。時間は「入れ始めから」で答える。</div>
+    <div class="ans-final"><span>こたえ</span>問15 4分36秒後／問16 7分後</div>
+  </div>
+  <div class="gq" data-gid="q15"><div class="grade"><span class="gq-label">問15</span><button class="o" onclick="g(this,'q15','o')">○</button><button class="x" onclick="g(this,'q15','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら「段ごとに底面積を分ける」を誤答キューへ</div></div>
+  <div class="gq" data-gid="q16"><div class="grade"><span class="gq-label">問16</span><button class="o" onclick="g(this,'q16','o')">○</button><button class="x" onclick="g(this,'q16','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら「毎分の量→残り体積÷毎分」を誤答キューへ</div></div>
+</div>
+
+<!-- ===== 大問6 速さ（問17〜問18） ===== -->
+<div class="unit-banner"><span class="unit-num">大問6</span><span class="unit-name">文章と条件の問題</span><span class="unit-time">各5点・計10点</span></div>
+<div class="q calc" data-id="6">
+  <div class="qbody">
+    <span class="lead">問17</span>A駅とB駅は30kmはなれています。バスPは9時00分にA駅を出発しました。バスQは9時10分にB駅を時速40kmで出発してPと向かい合って進み、9時25分に出会いました。Pは出会った直後に3分間停車し、その後は出会う前の 3/4 の速さでB駅まで進みました。PがB駅に着く時刻を求めなさい。<br>
+    <span class="lead">問18</span>A駅とB駅は24kmはなれています。バスPは9時00分にA駅を、バスQは9時06分にB駅を出発し、2台は同じ速さで走って9時18分にすれ違いました。ある人が自転車でA駅を出発したところ、9時10分にバスPに追い越され、その12分後にバスQとすれ違いました。自転車がA駅を出発した時刻を求めなさい。</div>
+  <div class="note-draw">本番と同じように解こう。途中式をノートに残し、最後に検算する。時間を計ること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>問17</span>Qは9:10から時速40kmで15分走り、40×<span class="frac"><span class="n">15</span><span class="d">60</span></span>＝10km。出会いはBから10km・Aから20km。Pは9:00から25分で20kmなので時速48km。出会い後は3分停車(9:28)、その後48×<span class="frac"><span class="n">3</span><span class="d">4</span></span>＝時速36kmで残り10km。10÷36時間＝16分40秒。9:28＋16分40秒＝<span class="math">9時44分40秒</span>。</div>
+    <div class="step"><span>問18</span>まず速さ。Pは18分、Qは12分でA-B24kmをうめるので v×<span class="frac"><span class="n">18</span><span class="d">60</span></span>＋v×<span class="frac"><span class="n">12</span><span class="d">60</span></span>＝24 → v＝48km/h。9:10のPはAから8km。9:22のQはBから48×<span class="frac"><span class="n">16</span><span class="d">60</span></span>＝12.8km＝Aから11.2km。自転車は8→11.2kmの3.2kmを12分で進むので時速16km。8km進むのは30分、9:10の30分前で<span class="math">8時40分</span>。</div>
+    <div class="bx bx-warn">問17 <span class="red">停車の3分を足し</span>、出会い後の速さを 3/4 にする。問18 Qの位置はB駅からの距離。自転車はA駅から進むので24−12.8でA駅からの距離へ直す。最後は出発時刻で答える。</div>
+    <div class="ans-final"><span>こたえ</span>問17 9時44分40秒／問18 8時40分</div>
+  </div>
+  <div class="gq" data-gid="q17"><div class="grade"><span class="gq-label">問17</span><button class="o" onclick="g(this,'q17','o')">○</button><button class="x" onclick="g(this,'q17','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら「出会い位置→速さ→停車と3/4」を誤答キューへ</div></div>
+  <div class="gq" data-gid="q18"><div class="grade"><span class="gq-label">問18</span><button class="o" onclick="g(this,'q18','o')">○</button><button class="x" onclick="g(this,'q18','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら線分図と式を誤答キューへ</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 監査完了後に使用（特訓P12d 50分通し④）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">独立監査完了後、この50分フォームを未見で解き、×が残る型だけを誤答キューで仕上げます。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m12d';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='20採点単位を完了';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問1: 次の計算をしなさい。問3・問4は方程式を解きなさい。 問1 −5＋(−3)²×2 問2 a＝−2, b＝3 のとき 3a²−2b の値 問3 0.5x＋0.4＝0.2x＋1.6 問4 2x−1 3 ＝ x＋1 2","en":"13"},"q02":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問2: 次の計算をしなさい。問3・問4は方程式を解きなさい。 問1 −5＋(−3)²×2 問2 a＝−2, b＝3 のとき 3a²−2b の値 問3 0.5x＋0.4＝0.2x＋1.6 問4 2x−1 3 ＝ x＋1 2","en":"6"},"q03":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問3: 次の計算をしなさい。問3・問4は方程式を解きなさい。 問1 −5＋(−3)²×2 問2 a＝−2, b＝3 のとき 3a²−2b の値 問3 0.5x＋0.4＝0.2x＋1.6 問4 2x−1 3 ＝ x＋1 2","en":"x＝4"},"q04":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問4: 次の計算をしなさい。問3・問4は方程式を解きなさい。 問1 −5＋(−3)²×2 問2 a＝−2, b＝3 のとき 3a²−2b の値 問3 0.5x＋0.4＝0.2x＋1.6 問4 2x−1 3 ＝ x＋1 2","en":"x＝5"},"q05":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問5: 問5 長方形の紙テープを下の図のように1回折り返したとき、折り目と辺がつくる角が68°でした。重なってできる角 x を求めなさい。 68° x 紙テープ 問6 下の図のL字形（たて14cm・横10cmの長方形から、右上のかど 横4cm・たて6cm を切りとった形）の面積を求めなさい。 10cm 切りとり 4×6 14cm 10cm 8cm 問7 1辺8cmの正方形の中に、となり合う2つの頂点を中心とする半径8cmのおうぎ形（四分円）を2つかいて重なった部分（葉の形）を作りました。色のついた葉の形の面積を求めなさい（円周率は π ）。 葉 8cm","en":"44°"},"q06":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問6: 問5 長方形の紙テープを下の図のように1回折り返したとき、折り目と辺がつくる角が68°でした。重なってできる角 x を求めなさい。 68° x 紙テープ 問6 下の図のL字形（たて14cm・横10cmの長方形から、右上のかど 横4cm・たて6cm を切りとった形）の面積を求めなさい。 10cm 切りとり 4×6 14cm 10cm 8cm 問7 1辺8cmの正方形の中に、となり合う2つの頂点を中心とする半径8cmのおうぎ形（四分円）を2つかいて重なった部分（葉の形）を作りました。色のついた葉の形の面積を求めなさい（円周率は π ）。 葉 8cm","en":"116 cm²"},"q07":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問7★L3: 問5 長方形の紙テープを下の図のように1回折り返したとき、折り目と辺がつくる角が68°でした。重なってできる角 x を求めなさい。 68° x 紙テープ 問6 下の図のL字形（たて14cm・横10cmの長方形から、右上のかど 横4cm・たて6cm を切りとった形）の面積を求めなさい。 10cm 切りとり 4×6 14cm 10cm 8cm 問7 1辺8cmの正方形の中に、となり合う2つの頂点を中心とする半径8cmのおうぎ形（四分円）を2つかいて重なった部分（葉の形）を作りました。色のついた葉の形の面積を求めなさい（円周率は π ）。 葉 8cm","en":"32 π −64 cm²"},"q08":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問8: 問8 1個90円のりんごと1個60円のみかんを合わせて12個買ったら、代金は870円でした。りんごを何個買いましたか。 問9 ある道のりを、行きは分速60m、帰りは分速40mで往復したら、合計50分かかりました。片道の道のりは何mですか。 問10 長いすに生徒を5人ずつ座らせると4人が座れず、6人ずつ座らせると長いすがちょうど3脚あまりました（あまった3脚には0人）。長いすの数と生徒の人数を求めなさい。 問11 ある品物に、原価の3割の利益を見込んで定価をつけたら2600円になりました。原価はいくらですか。","en":"りんご5個"},"q09":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問9★L3: 問8 1個90円のりんごと1個60円のみかんを合わせて12個買ったら、代金は870円でした。りんごを何個買いましたか。 問9 ある道のりを、行きは分速60m、帰りは分速40mで往復したら、合計50分かかりました。片道の道のりは何mですか。 問10 長いすに生徒を5人ずつ座らせると4人が座れず、6人ずつ座らせると長いすがちょうど3脚あまりました（あまった3脚には0人）。長いすの数と生徒の人数を求めなさい。 問11 ある品物に、原価の3割の利益を見込んで定価をつけたら2600円になりました。原価はいくらですか。","en":"片道1200m"},"q10":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問10★L4: 問8 1個90円のりんごと1個60円のみかんを合わせて12個買ったら、代金は870円でした。りんごを何個買いましたか。 問9 ある道のりを、行きは分速60m、帰りは分速40mで往復したら、合計50分かかりました。片道の道のりは何mですか。 問10 長いすに生徒を5人ずつ座らせると4人が座れず、6人ずつ座らせると長いすがちょうど3脚あまりました（あまった3脚には0人）。長いすの数と生徒の人数を求めなさい。 問11 ある品物に、原価の3割の利益を見込んで定価をつけたら2600円になりました。原価はいくらですか。","en":"長いす22脚・生徒114人"},"q11":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問11: 問8 1個90円のりんごと1個60円のみかんを合わせて12個買ったら、代金は870円でした。りんごを何個買いましたか。 問9 ある道のりを、行きは分速60m、帰りは分速40mで往復したら、合計50分かかりました。片道の道のりは何mですか。 問10 長いすに生徒を5人ずつ座らせると4人が座れず、6人ずつ座らせると長いすがちょうど3脚あまりました（あまった3脚には0人）。長いすの数と生徒の人数を求めなさい。 問11 ある品物に、原価の3割の利益を見込んで定価をつけたら2600円になりました。原価はいくらですか。","en":"原価2000円"},"q12":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問12: 1辺が n cm の正方形を、1cm四方の白タイルでしきつめ、そのうち上・左・右の3つの辺にあるタイルだけを黒タイルに取りかえます。黒タイルは n=2 のとき4枚、n=4 のとき10枚です。 問12 n=6 のとき、黒タイルは何枚ですか。 問13 黒タイルの枚数を n の式で表しなさい。 問14 n=16 のとき、白タイルは何枚ですか。","en":"16枚"},"q13":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問13★L3: 1辺が n cm の正方形を、1cm四方の白タイルでしきつめ、そのうち上・左・右の3つの辺にあるタイルだけを黒タイルに取りかえます。黒タイルは n=2 のとき4枚、n=4 のとき10枚です。 問12 n=6 のとき、黒タイルは何枚ですか。 問13 黒タイルの枚数を n の式で表しなさい。 問14 n=16 のとき、白タイルは何枚ですか。","en":"3n−2"},"q14":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問14★L4: 1辺が n cm の正方形を、1cm四方の白タイルでしきつめ、そのうち上・左・右の3つの辺にあるタイルだけを黒タイルに取りかえます。黒タイルは n=2 のとき4枚、n=4 のとき10枚です。 問12 n=6 のとき、黒タイルは何枚ですか。 問13 黒タイルの枚数を n の式で表しなさい。 問14 n=16 のとき、白タイルは何枚ですか。","en":"210枚"},"q15":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問15: L字型の水そうに一定の割合で水を入れます。底から6cmまでは幅20cm・奥行き10cmの部分に水が入り、6cmから12cmまでは幅8cm・奥行き10cmの部分だけに水が入ります。水そうの深さは12cmで、5分後に水位6cmになりました。 問15 1分間に入る水の量は何cm³ですか。 問16 満水になるのは、水を入れ始めてから何分後ですか。","en":"240cm³/分"},"q16":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問16 v3-L4候補・独立監査待ち: L字型の水そうに一定の割合で水を入れます。底から6cmまでは幅20cm・奥行き10cmの部分に水が入り、6cmから12cmまでは幅8cm・奥行き10cmの部分だけに水が入ります。水そうの深さは12cmで、5分後に水位6cmになりました。 問15 1分間に入る水の量は何cm³ですか。 問16 満水になるのは、水を入れ始めてから何分後ですか。","en":"7分後"},"q17":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問17★L3: A駅とB駅は24kmはなれています。バスPは9時00分にA駅を出発し、バスQは9時06分にB駅を出発します。2台は同じ速さで走り、9時18分にすれ違いました。 問17 バスP・Qの速さは時速何kmですか。 問18 ある人が自転車でA駅を出発したところ、9時10分にバスPに追い越され、その12分後にバスQとすれ違いました。自転車がA駅を出発した時刻を求めなさい。","en":"時速48km"},"q18":{"jp":"過去問通し④ 本番モード｜9月特訓選抜・大問1〜6まるごと（100点） / 問18★L4: A駅とB駅は24kmはなれています。バスPは9時00分にA駅を出発し、バスQは9時06分にB駅を出発します。2台は同じ速さで走り、9時18分にすれ違いました。 問17 バスP・Qの速さは時速何kmですか。 問18 ある人が自転車でA駅を出発したところ、9時10分にバスPに追い越され、その12分後にバスQとすれ違いました。自転車がA駅を出発した時刻を求めなさい。","en":"8時40分"}}, DYN='revmq_dyn';
+MAP.q19={jp:'特訓P12d 50分通し④ / 問6(2): たて14cm・横10cmの長方形から右上の横4cm・たて6cmを切り取ったL字形の周の長さ',en:'48cm'};
+MAP.q20={jp:'特訓P12d 50分通し④ / 問11(2): 原価2000円、定価2600円の品物を定価の20%引きで売ると利益は原価の何%か',en:'4%'};
+MAP.q05={jp:'特訓P12d 50分通し④ / 問5: ∠AOB=88°。OAがOBに重なるように折った折り目OCについて、∠AOCを求める',en:'44°'};
+MAP.q06={jp:'特訓P12d 50分通し④ / 問6(1): 14cm×10cmの長方形から4cm×6cmを切り取ったL字形の面積',en:'116cm²'};
+MAP.q07={jp:'特訓P12d 50分通し④ / 問7: 正方形の向かい合う2頂点を中心とする2つの四分円の重なり',en:'32π−64cm²'};
+MAP.q08={jp:'特訓P12d 50分通し④ / 問8: 菓子1個80円・パン単価一定。客Xはパン5個菓子3個を100円引き券で620円、客Yは計18個を同券で1500円。客Yのパンの個数',en:'パン10個'};
+MAP.q09={jp:'特訓P12d 50分通し④ / 問9: 同じ道を往復。行き分速60m、帰りは分速30mと分速50m（30mの道のりが50mより600m長い）、往復56分。片道の道のり',en:'片道1200m'};
+MAP.q10={jp:'特訓P12d 50分通し④ / 問10: 長いすに生徒を5人ずつ座らせると4人が座れず、6人ずつ座らせると長いすがちょうど3脚あまる（あまった3脚は0人）。長いすの数と生徒の人数',en:'長いす22脚・生徒114人'};
+MAP.q11={jp:'特訓P12d 50分通し④ / 問11(1): ある品物に原価の3割の利益を見込んで定価をつけたら2600円。原価はいくら',en:'原価2000円'};
+MAP.q12={jp:'特訓P12d 50分通し④ / 問12: 1辺nの正方形の上・左・右3辺だけ黒タイル。n=2で4枚,n=4で10枚。n=6の黒タイル枚数',en:'16枚'};
+MAP.q13={jp:'特訓P12d 50分通し④ / 問13: 正方形枠を横一列にn個、縦棒共有、各枠斜め1本、3番目ごとに斜めもう1本。棒53本のときの枠の個数',en:'12個'};
+MAP.q14={jp:'特訓P12d 50分通し④ / 問14: n×n正方形タイルの上左右3辺と左下→右上の対角線を黒。白64枚のときのn',en:'n=10'};
+MAP.q15={jp:'特訓P12d 50分通し④ / 問15: 空の段付き水そう。0〜5cm幅18×奥10、5〜11cm幅8×奥10。3分後水位5cm。水位11cmになる時刻',en:'4分36秒後'};
+MAP.q16={jp:'特訓P12d 50分通し④ / 問16: 空のL字水そう。0〜6cm幅20×奥10、6〜12cm幅8×奥10、深さ12cm。5分後水位6cm。満水の時刻',en:'7分後'};
+MAP.q17={jp:'特訓P12d 50分通し④ / 問17: A-B30km。P9:00発、Q9:10発時速40kmで9:25出会い。P出会い後3分停車し3/4速でB着く時刻',en:'9時44分40秒'};
+MAP.q18={jp:'特訓P12d 50分通し④ / 問18: A-B24km。P9:00・Q9:06発同速で9:18すれ違い。自転車9:10にP追越し12分後Qとすれ違い。自転車の出発時刻',en:'8時40分'};
+Object.keys(MAP).forEach(function(k){MAP[k].jp=MAP[k].jp.replace(/★L[1-7]/g,'').replace(/ v3-L4候補・独立監査待ち/g,'');});
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

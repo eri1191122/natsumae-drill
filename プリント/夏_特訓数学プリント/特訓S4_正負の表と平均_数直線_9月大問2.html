@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓S4 正負の表と平均・数直線｜9月 大問2(1) 直撃</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"📝 今日のやること（この4つだけ）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-say{background:#eef6fb;border-left:4px solid #5b8fbf}
+.bx-say::before{content:"🗣 いいかえ｜問題文を自分の言葉に直すと";display:block;font-size:12px;font-weight:800;color:#2f5a8a;margin-bottom:4px}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ ★よくある間違い（きみが実際にやったやつ）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-check{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-check::before{content:"✅ 検算｜答えが出たら必ずここまでやる";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月・特訓選抜 本番へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-win{background:#eafaf1;border-left:4px solid #7fae8a}
+.bx-win::before{content:"🌸 克服チェック";display:block;font-size:12px;font-weight:800;color:#2f6b45;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.subq{margin:8px 0 0 4px;font-size:16px;font-weight:800;color:#31415f;line-height:2.2}
+.subq .no{display:inline-block;width:22px;color:#7a8798}
+.fill{display:inline-block;min-width:84px;border-bottom:2.5px solid #7aa7d9;text-align:center;font-weight:900;color:#2f5a8a;padding:0 6px}
+.choice{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 4px}
+.choice span{display:inline-flex;align-items:center;justify-content:center;min-width:74px;background:#fff;border:2px solid #c8d4e6;border-radius:10px;padding:8px 12px;font-size:19px;font-weight:800;color:#31415f}
+.tbl-wrap{overflow-x:auto;margin:10px 0}
+.tbl{border-collapse:collapse;width:100%;min-width:420px;background:#fff;font-size:15px}
+.tbl th,.tbl td{border:1px solid #c8d4e6;padding:8px 6px;text-align:center;font-weight:800;color:#31415f;white-space:nowrap}
+.tbl th{background:#e8edf7;font-size:13px;color:#31415f}
+.tbl th.rh{background:#f2f5fa;text-align:right;padding-right:10px;font-size:12.5px}
+.tbl td.blank{background:#f7fbff;color:#7aa7d9}
+.tbl td.hi{background:#fff4dd}
+.wex{background:#eef6fb;border:2px solid #a8c8e4;border-left:7px solid #5b8fbf;border-radius:8px;padding:12px 14px;margin:10px 0}
+.wex::before{content:"👀 例：やり方をぜんぶ見せるよ（読んだらノートに写してから次へ）";display:block;font-size:12px;font-weight:900;color:#2f5a8a;margin-bottom:6px}
+.wex .wl{margin:5px 0;font-size:14px;line-height:1.95;color:#25415f}
+.wex .wl b{color:#c0392b}
+.hole{background:#fdf7ee;border:2px solid #eccf9a;border-left:7px solid #e0a85c;border-radius:8px;padding:12px 14px;margin:10px 0}
+.hole::before{content:"🧩 穴あき：表の一部だけうめてある。残りは自分でうめてから答えを出そう";display:block;font-size:12px;font-weight:900;color:#8a5a17;margin-bottom:6px}
+.hole .wl{margin:5px 0;font-size:13.5px;line-height:1.9;color:#5a4520}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.step.q5{border-left-color:#d98aa7;background:#fdf2f6}
+.step.q5 > span:first-child{background:#f7dce8;border-color:#eebccf;color:#9a3f63}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.nline{display:block;margin:10px auto;background:#fff;border:1px solid #d9e1ea;border-radius:8px;width:100%;max-width:820px;height:auto}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:.95em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tool-hint{margin:8px 0;border:1px dashed #c9b8d6;border-radius:8px;background:#faf7fc;padding:6px 10px;font-size:12.5px}
+.tool-hint summary{cursor:pointer;font-weight:700;color:#7a5a95}
+.tool-hint div{margin-top:6px;color:#4a3a56;line-height:1.8}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓S4</span><span class="pg-badge">数学：正負の表と平均・数直線</span><span class="pg-badge">L1-L4</span></div>
+  <h1>特訓S4 正負の表と平均・数直線 ― 9月 大問2(1) 直撃</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問8）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">きょうの8問は、ぜんぶ<strong>きみが実際に落としたところ</strong>から作った。6月の特訓では、7日間の平均を <strong>137 のところ 127</strong> と書いた。2枚の和の最大の差を <strong>23 のところ 10</strong> と書いた。数直線で <span class="frac"><span class="n">9</span><span class="d">5</span></span> の位置を選びそこねた。ぜんぶ「あと一手」だった問題。今日それを一手ぶん、完全につぶす。9月の大問2(1)は<strong>正負の表と平均</strong>。ここが取れれば、それだけで大きい🌸</p>
+</div>
+
+<details class="tool-hint">
+  <summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+  <div class="cardbox">
+    <ol>
+      <li><b>① 表は「差」しか書いていない</b>。実際の値は <b>基準 ＋ 差</b> で作る</li>
+      <li><b>② 平均 ＝ 合計 ÷ 個数</b>。ぎゃくに <b>合計 ＝ 平均 × 個数</b></li>
+      <li><b>③ 出た答えは必ず検算</b>（実際の値にもどして、もう一度たしかめる）</li>
+      <li>各問おわりに <b>○✕</b> をつける</li>
+    </ol>
+  </div>
+</details>
+
+<!-- ===== 大問1 診断 ===== -->
+<div class="unit-banner"><span class="unit-num">大問1</span><span class="unit-name">前にやった問題。今日はどう？｜数直線・0からのきょり　L2</span><span class="unit-time">目安 3分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問1</span>次の5つの数のうち、<strong>0に2番目に近い数</strong>はどれですか。</div>
+  <div class="choice">
+    <span>−1.6</span>
+    <span><span class="frac"><span class="n">9</span><span class="d">5</span></span></span>
+    <span><span class="frac"><span class="n">7</span><span class="d">4</span></span></span>
+    <span>−2.1</span>
+    <span><span class="frac"><span class="n">11</span><span class="d">4</span></span></span>
+  </div>
+  <div class="note-draw">まず5つの数を、ノートの数直線の上に書き出してみよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">「0に近い」＝ <strong>0からのきょりが小さい</strong>ということ。きょりに ＋も−も関係ない。プラスかマイナスかを見るのではなく、符号を外した大きさ（＝絶対値）だけで比べる。</div>
+    <div class="step q1"><span>①</span>まず全部小数に直してそろえる。<span class="frac"><span class="n">9</span><span class="d">5</span></span> ＝ 9÷5 ＝ 1.8　／　<span class="frac"><span class="n">7</span><span class="d">4</span></span> ＝ 7÷4 ＝ 1.75　／　<span class="frac"><span class="n">11</span><span class="d">4</span></span> ＝ 11÷4 ＝ 2.75</div>
+    <div class="step q1"><span>②</span>0からのきょり（符号を外す）を並べる。<br>−1.6 → 1.6　／　1.8 → 1.8　／　1.75 → 1.75　／　−2.1 → 2.1　／　2.75 → 2.75</div>
+    <div class="step q1"><span>③</span>小さい順にならべる：<span class="math">1.6 → 1.75 → 1.8 → 2.1 → 2.75</span><br>1番近い＝ −1.6（きょり1.6）。2番目に近い＝きょり1.75 → <span class="frac"><span class="n">7</span><span class="d">4</span></span></div>
+    <svg class="nline" viewBox="0 0 960 170" width="100%" preserveAspectRatio="xMidYMid meet">
+      <line x1="40" y1="100" x2="920" y2="100" stroke="#31415f" stroke-width="2"/>
+      <line x1="60" y1="92" x2="60" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="200" y1="92" x2="200" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="340" y1="92" x2="340" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="480" y1="86" x2="480" y2="114" stroke="#31415f" stroke-width="2.5"/>
+      <line x1="620" y1="92" x2="620" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="760" y1="92" x2="760" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="900" y1="92" x2="900" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <text x="60" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">−3</text>
+      <text x="200" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">−2</text>
+      <text x="340" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">−1</text>
+      <text x="480" y="128" font-size="15" font-weight="900" fill="#31415f" text-anchor="middle">0</text>
+      <text x="620" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">1</text>
+      <text x="760" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">2</text>
+      <text x="900" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">3</text>
+      <line x1="186" y1="58" x2="186" y2="94" stroke="#9fb8d9" stroke-width="1.4"/>
+      <text x="186" y="50" font-size="15" font-weight="800" fill="#3f6f9f" text-anchor="middle">−2.1</text>
+      <circle cx="186" cy="100" r="5" fill="#3f6f9f"/>
+      <line x1="256" y1="58" x2="256" y2="94" stroke="#c0392b" stroke-width="1.4"/>
+      <text x="256" y="50" font-size="15" font-weight="800" fill="#c0392b" text-anchor="middle">−1.6</text>
+      <circle cx="256" cy="100" r="5.5" fill="#c0392b"/>
+      <line x1="670" y1="58" x2="725" y2="94" stroke="#2f6b45" stroke-width="1.4"/>
+      <text x="670" y="30" font-size="15" font-weight="800" fill="#2f6b45" text-anchor="middle">7</text>
+      <line x1="657" y1="35" x2="683" y2="35" stroke="#2f6b45" stroke-width="1.6"/>
+      <text x="670" y="53" font-size="15" font-weight="800" fill="#2f6b45" text-anchor="middle">4</text>
+      <circle cx="725" cy="100" r="5.5" fill="#2f6b45"/>
+      <line x1="790" y1="58" x2="732" y2="94" stroke="#8a5a19" stroke-width="1.4"/>
+      <text x="790" y="30" font-size="15" font-weight="800" fill="#8a5a19" text-anchor="middle">9</text>
+      <line x1="777" y1="35" x2="803" y2="35" stroke="#8a5a19" stroke-width="1.6"/>
+      <text x="790" y="53" font-size="15" font-weight="800" fill="#8a5a19" text-anchor="middle">5</text>
+      <circle cx="732" cy="100" r="5" fill="#8a5a19"/>
+      <line x1="865" y1="58" x2="865" y2="94" stroke="#5f4b7a" stroke-width="1.4"/>
+      <text x="865" y="30" font-size="15" font-weight="800" fill="#5f4b7a" text-anchor="middle">11</text>
+      <line x1="848" y1="35" x2="882" y2="35" stroke="#5f4b7a" stroke-width="1.6"/>
+      <text x="865" y="53" font-size="15" font-weight="800" fill="#5f4b7a" text-anchor="middle">4</text>
+      <circle cx="865" cy="100" r="5" fill="#5f4b7a"/>
+      <text x="40" y="158" font-size="13" font-weight="700" fill="#2f6b45">0からのきょりが小さいほど、0に近い。きょりの小さい順 → 1.6 → 1.75 → 1.8 → 2.1 → 2.75</text>
+    </svg>
+    <div class="bx bx-warn">「0に近い」を<span class="red">マイナスだから遠い</span>と思いこまない。−1.6 は 0 から 1.6 しか離れていない＝かなり近い。符号を外したきょりで比べるのがルール。<br>もうひとつ。<span class="frac"><span class="n">7</span><span class="d">4</span></span> と <span class="frac"><span class="n">9</span><span class="d">5</span></span> を見た目で決めない。分母がちがう分数は、小数に直してからくらべる。1.75 と 1.8 は0.05しか差がない。目分量では絶対に当たらない。</div>
+    <div class="bx bx-check">出した順番を、数直線の上で目で確かめる。0の右にも左にも同じきょりで手をのばす感じ。−1.6 が 0 にいちばん近く、そのすぐ次に <span class="frac"><span class="n">7</span><span class="d">4</span></span> がいる。図と答えが一致していれば正解。</div>
+    <div class="bx bx-win">この問題、夏の前に一度✕がついた問題とまったく同じ数字。今日○がついたら、それは<strong>克服！</strong> 数直線と絶対値は、もうきみの弱点じゃない。堂々と次に進んでいい🌸</div>
+    <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">7</span><span class="d">4</span></span>（＝1.75）</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c8" target="_blank">マル秘テクニック集 第8章</a></div>
+  </div>
+  <div class="gq" data-gid="m21_1"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'m21_1','o')">○</button><button class="x" onclick="g(this,'m21_1','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、5つの数を数直線に書き直して、0からのきょりを全部書こう</div></div>
+</div>
+
+<!-- ===== 大問2 平均の基礎 ===== -->
+<div class="unit-banner"><span class="unit-num">大問2</span><span class="unit-name">平均と合計｜いったり来たりできるようにする　L1-L2</span><span class="unit-time">目安 6分</span></div>
+
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問2</span>4回のテストの点は、78点、85点、91点、66点でした。平均は何点ですか。</div>
+  <div class="note-draw">まず自分で計算しよう。式をとちゅうまでノートに書いてから答えること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">「平均」＝ <strong>全部を集めて、同じ数ずつに分け直したときの1つぶん</strong>。だから 平均 ＝ 合計 ÷ 個数。テストが4回なら、4でわる。</div>
+    <div class="step q1"><span>①</span>合計を出す：<span class="math">78 ＋ 85 ＋ 91 ＋ 66 ＝ 320</span></div>
+    <div class="step q1"><span>②</span>個数でわる：<span class="math">320 ÷ 4 ＝ 80</span> → 平均 80点</div>
+    <div class="bx bx-warn"><span class="red">個数をまちがえる</span>のが最多ミス。テストは4回なのに、うっかり3でわったり5でわったりする。「いくつ足したか」を指で数えてから、その数でわる。<br>もうひとつ。合計の足し算をとちゅうで暗算しない。78+85 は 163。ここを 153 とすると、あとの全部がくずれる。</div>
+    <div class="bx bx-check">平均は<strong>いちばん小さい点と、いちばん大きい点の間</strong>に必ず入る。ここでは 66 と 91 の間。答えの 80 はちゃんとその間にある○　もし 80 が 91 より大きかったり 66 より小さかったら、その時点で計算ミス確定。</div>
+    <div class="ans-final"><span>こたえ</span>80点</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m21_2"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'m21_2','o')">○</button><button class="x" onclick="g(this,'m21_2','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、合計 → 個数 → わり算 の3行をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問3</span>5人の小テストの平均が72点でした。</div>
+  <div class="subq"><span class="no">①</span>5人の合計は <span class="fill">　　</span> 点</div>
+  <div class="subq"><span class="no">②</span>そのうち4人の合計が280点のとき、残り1人は <span class="fill">　　</span> 点</div>
+  <div class="note-draw">まず自分で考えよう。式をノートに書いてから計算すること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">問2は「合計 → 平均」の向き。今回は<strong>ぎゃく向き</strong>。「平均 → 合計」。<br>平均 ＝ 合計 ÷ 個数　だったのだから、両方に個数をかけて 合計 ＝ 平均 × 個数。平均は「1人ぶん」だから、人数ぶん集めれば合計にもどると考えれば、公式を忘れても作れる。</div>
+    <div class="step q1"><span>①</span>1人ぶんが72点。それが5人ぶん集まっている。<span class="math">72 × 5 ＝ 360</span> → 合計 360点</div>
+    <div class="step q1"><span>②</span>全体360点から、わかっている4人ぶん280点をひく。<span class="math">360 − 280 ＝ 80</span> → 残り1人は80点</div>
+    <div class="bx bx-warn"><span class="red">×と÷をぎゃくにする</span>のが最大の落とし穴。「合計 ＝ 72 ÷ 5」としたら 14.4点。5人いるのに合計が1人ぶんより小さいのはおかしい。合計は平均より大きくなるはずと先に思っておけば、ぜったいに間違えない。<br>また②で 280 ÷ 4 ＝ 70 を答えにしない。それは「4人の平均」であって、聞かれている「残り1人」ではない。何を聞かれているかを答えの横にもう一度書く。</div>
+    <div class="bx bx-check">出した5人の点で平均を作り直す。4人の合計280 ＋ 残り80 ＝ 360。<span class="math">360 ÷ 5 ＝ 72</span>。もとの平均72点にもどった○</div>
+    <div class="bx bx-link">9月の大問2は「平均が◯点と分かっている → 合計を作る → 1人ぶんを求める」という逆算がよく出る。<strong>合計 ＝ 平均 × 個数</strong>は、正負の表の問題の中でもそのまま使う道具。</div>
+    <div class="ans-final"><span>こたえ</span>① 360点　② 80点</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m21_3"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'m21_3','o')">○</button><button class="x" onclick="g(this,'m21_3','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「合計 ＝ 平均 × 個数」をノートに3回書こう</div></div>
+</div>
+
+<!-- ===== 大問3 基準法 ===== -->
+<div class="unit-banner"><span class="unit-num">大問3</span><span class="unit-name">基準（きじゅん）を使った平均｜正負の数の出番　L3</span><span class="unit-time">目安 8分</span></div>
+
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問4【例】</span>5人の小テストの点を、<strong>80点を基準にした差</strong>で表しました。5人の平均点は何点ですか。</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th class="rh">　</th><th>Aさん</th><th>Bさん</th><th>Cさん</th><th>Dさん</th><th>Eさん</th></tr>
+      <tr><th class="rh">基準80点との差（点）</th><td>＋6</td><td>−2</td><td>＋5</td><td>−7</td><td>＋3</td></tr>
+    </table>
+  </div>
+  <div class="wex">
+    <div class="wl">表にあるのは<b>点数そのものではなく「80点からのズレ」</b>。＋6 は「80より6点高い＝86点」、−2 は「80より2点低い＝78点」という意味。</div>
+    <div class="wl">やり方は2つある。まず<b>まっすぐな方法</b>：全員の点にもどしてから平均を出す。<br>86、78、85、73、83 → 合計 <span class="math">86＋78＋85＋73＋83 ＝ 405</span> → <span class="math">405 ÷ 5 ＝ 81</span> → <b>81点</b>。</div>
+    <div class="wl">次が<b>速い方法（基準法）</b>。差だけで計算してしまう。<br>差の合計：<span class="math">(＋6) ＋ (−2) ＋ (＋5) ＋ (−7) ＋ (＋3) ＝ 5</span>（＋のかたまり 6+5+3＝14、−のかたまり 2+7＝9、14−9＝5）</div>
+    <div class="wl">差の平均：<span class="math">5 ÷ 5 ＝ 1</span>。つまり<b>「みんな平均して基準より1点高い」</b>ということ。</div>
+    <div class="wl"><b>最後に基準をたす</b>：<span class="math">80 ＋ 1 ＝ 81</span> → <b>81点</b>。まっすぐな方法と同じ答えになった。</div>
+    <div class="wl"><b>★ここが命</b>。差の平均 1 で止めたら答えは <b>1点</b>。そんな小テストは存在しない。<b>差の平均を出したら、最後に必ず基準をたす</b>。6月に 137 が 127 になったのは、この一手が抜けたから。</div>
+    <div class="wl">検算：81点は、いちばん低い73点といちばん高い86点の間。○</div>
+  </div>
+  <div class="note-draw">読んだら、同じ式をノートに写そう。写しながら、どの順番で計算しているかを声に出して。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">表が言っているのは <strong>「実際の点 ＝ 基準 ＋ 差」</strong> のひとことだけ。だから 平均 ＝ 基準 ＋ （差の平均） になる。数字が大きいテストの点をそのまま足すより、小さい差だけ足すほうがずっとラクで、ミスも減る。だから入試はこの形で出す。</div>
+    <div class="step q2"><span>①</span>差の合計：＋のかたまり <span class="math">6＋5＋3＝14</span>、−のかたまり <span class="math">2＋7＝9</span> → <span class="math">14 − 9 ＝ 5</span></div>
+    <div class="step q2"><span>②</span>差の平均：<span class="math">5 ÷ 5 ＝ 1</span></div>
+    <div class="step q2"><span>③</span>最後に基準をたす：<span class="math">80 ＋ 1 ＝ 81</span> → 平均 81点</div>
+    <div class="bx bx-warn"><span class="red">差の平均（1）を答えにしてしまう</span>。これがきみの6月のミスそのもの。差の平均だけを書いて、最後の「＋基準」を書かずに答えを出してしまった。これが6月の 137 → 127。<br>直しかた：差の平均を書く行の、すぐ右に「＋80」と先に書いてしまう。式を書く順番でミスを消す。<br>もうひとつ。正の数と負の数をごちゃまぜに順番に足さない。＋だけ先に集める、−だけ先に集める、最後に引く。この2段構えで符号ミスが消える。</div>
+    <div class="bx bx-check">答えが出たら、<strong>実際の点にもどして足し直す</strong>。86＋78＋85＋73＋83 ＝ 405、<span class="math">405 ÷ 5 ＝ 81</span>。○　この検算に30秒かけるだけで、大問1つぶんが守れる。</div>
+    <div class="ans-final"><span>こたえ</span>81点</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m21_4"><div class="grade"><span class="gq-label">問4【例】</span>写せた？ → <button class="o" onclick="g(this,'m21_4','o')">○</button><button class="x" onclick="g(this,'m21_4','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①差の合計 ②差の平均 ③＋基準 の3行をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="E">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問5</span>4人の点は、次のとおりです。</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th class="rh">　</th><th>Aさん</th><th>Bさん</th><th>Cさん</th><th>Dさん</th></tr>
+      <tr><th class="rh">点数（点）</th><td>72</td><td>68</td><td>75</td><td>65</td></tr>
+    </table>
+  </div>
+  <div class="subq"><span class="no">①</span>基準を <strong>70点</strong> として、基準法で平均を求めなさい。</div>
+  <div class="subq"><span class="no">②</span>基準を <strong>60点</strong> に変えて、もう一度基準法で平均を求めなさい。</div>
+  <div class="subq"><span class="no">③</span>基準を変えても答えが同じになるのは<strong>なぜ</strong>ですか。ことばで説明しなさい。</div>
+  <div class="note-draw">まず自分で考えて、ノートに書いてから答え合わせをしよう。③は自分のことばで文を書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">聞かれているのは「計算」ではなく <strong>「基準ってそもそも何なの？」</strong> という中身。基準はこっちが勝手に決めていい、ただの出発点。実際の点は1点も変わっていない。点が変わっていないのだから、平均が変わるはずがない。ここに気づけば③は書ける。</div>
+    <div class="step q3"><span>①</span>基準70との差：72→＋2、68→−2、75→＋5、65→−5<br>差の合計 <span class="math">2 − 2 ＋ 5 − 5 ＝ 0</span> → 差の平均 <span class="math">0 ÷ 4 ＝ 0</span> → 70 ＋ 0 ＝ 70点</div>
+    <div class="step q3"><span>②</span>基準60との差：72→＋12、68→＋8、75→＋15、65→＋5<br>差の合計 <span class="math">12 ＋ 8 ＋ 15 ＋ 5 ＝ 40</span> → 差の平均 <span class="math">40 ÷ 4 ＝ 10</span> → 60 ＋ 10 ＝ 70点</div>
+    <div class="step q3"><span>③</span>基準を70から60へ10さげると、4人の差は全員そろって10ふえる。<br>なぜ？　基準が 70 → 60 に下がる＝測る出発点が10だけ手前にずれた、ということ。だれの点も動いていないのに出発点だけ10手前になったのだから、全員の「差」が10ずつ大きく見える。（ものさしの0を10cmずらせば、どの長さも10cm増えて読める）<br>だから差の平均も、ぴったり10ふえる（0 → 10）。<br>最後にたす基準のほうは 10へっている（70 → 60）。<br>ふえた10と、へった10がちょうど打ち消し合うので、平均は変わらない。<br>もっと本質を言えば、4人の実際の点は1点も動いていない。基準はただの「どこから測るか」の目印。ものさしの0の位置を変えても、ものの長さは変わらないのと同じこと。</div>
+    <div class="step q3"><span>コツ</span>だから本番では、差が小さくなる基準を自分で選ぶのが得。②のように基準を低くすると差が＋12、＋15…と大きくなって計算がめんどうになる。データのまん中あたりを基準にするのが正解。</div>
+    <div class="bx bx-warn"><span class="red">「基準を変えたら平均も変わる」と思いこむ</span>のが一番あぶない。ここを勘ちがいすると、本番で自分の答えを信じられなくなって時間を溶かす。<br>もうひとつ。①で 差の合計が0だから平均も0としてしまう。差の平均が0＝「基準がちょうど平均だった」という意味。最後に基準をたすのは同じ。0点のテストではない。</div>
+    <div class="bx bx-check">まっすぐ計算して確かめる。<span class="math">72 ＋ 68 ＋ 75 ＋ 65 ＝ 280</span>、<span class="math">280 ÷ 4 ＝ 70</span>。<strong>①も②も70点。一致○</strong></div>
+    <div class="ans-final"><span>こたえ</span>① 70点　② 70点　③ 実際の点は変わっていないから。基準を10下げると差が全員10ふえ、差の平均も10ふえるが、最後にたす基準が10へるので打ち消し合う（＝ものさしの0の位置を変えても長さは変わらない）</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m21_5"><div class="grade"><span class="gq-label">問5</span>○✕ → <button class="o" onclick="g(this,'m21_5','o')">○</button><button class="x" onclick="g(this,'m21_5','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、③の説明を自分のことばでノートに1回書こう</div></div>
+</div>
+
+<!-- ===== 大問4 本丸 ===== -->
+<div class="unit-banner"><span class="unit-num">大問4 ★</span><span class="unit-name">正負の表と平均・最大最小・絶対値｜9月 大問2(1) 直撃　L3-L4</span><span class="unit-time">目安 13分</span></div>
+
+<div class="q calc" data-id="F">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問6 ★【穴あき】</span>きみの5回のテストの点を、<strong>80点を基準にした差</strong>で表しました。</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th class="rh">　</th><th>第1回</th><th>第2回</th><th>第3回</th><th>第4回</th><th>第5回</th></tr>
+      <tr><th class="rh">基準80点との差（点）</th><td>＋7</td><td>−4</td><td>0</td><td>＋12</td><td>−5</td></tr>
+      <tr><th class="rh">実際の点（点）</th><td>87</td><td class="blank">　　　</td><td>80</td><td class="blank">　　　</td><td class="blank">　　　</td></tr>
+    </table>
+  </div>
+  <div class="hole">
+    <div class="wl">「実際の点」の行は、<b>3つだけうめてある</b>。あいているマスは自分でうめよう。うまったら、下の2問に答える。</div>
+  </div>
+  <div class="subq"><span class="no">(1)</span>いちばん点が高いのは第 <span class="fill">　　</span> 回で、<span class="fill">　　</span> 点</div>
+  <div class="subq"><span class="no">(2)</span>5回の平均点は <span class="fill">　　</span> 点</div>
+  <div class="note-draw">まず表のあいているマスを全部うめよう。式は必ずノートに書いてから答えを書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">これが<strong>9月の大問2(1) そのもの</strong>。表が言っているのは「実際の点 ＝ 80 ＋ 差」のひとことだけ。(1)は差がいちばん大きい回を選んで、80をたすだけ。(2)は差の平均を出して、最後に80をたすだけ。</div>
+    <div class="step q5"><span>表</span>あいていたマスをうめると：第1回 87（80＋7）、第2回 76（80−4）、第3回 80（80＋0）、第4回 92（80＋12）、第5回 75（80−5）</div>
+    <div class="step q5"><span>(1)</span>差がいちばん大きいのは ＋12。だから 第4回。点は <span class="math">80 ＋ 12 ＝ 92</span> → 92点</div>
+    <div class="step q5"><span>(2)-①</span>差の合計：＋のかたまり <span class="math">7 ＋ 0 ＋ 12 ＝ 19</span>、−のかたまり <span class="math">4 ＋ 5 ＝ 9</span> → <span class="math">19 − 9 ＝ 10</span></div>
+    <div class="step q5"><span>(2)-②</span>差の平均：<span class="math">10 ÷ 5 ＝ 2</span></div>
+    <div class="step q5"><span>(2)-③</span>最後に基準をたす：<span class="math">80 ＋ 2 ＝ 82</span> → 平均 82点</div>
+    <div class="bx bx-warn"><span class="red">(2)の答えを「2点」と書いてしまう</span>。これが6月の 137 → 127 と同じ型のミス。差の平均を出したら、最後に基準をたすのを忘れるな。2点の平均のテストなんてこの世にない。出した数が「テストの点として自然か」を、答えを書く直前に1秒だけ見る。<br>次に (1)で「＋12」とだけ答える。聞かれているのは「第何回で、何点か」。差ではなく実際の点（92点）を答える。<br>そして 0 の回を「無い」ことにして4でわる。第3回は0点ではなく、ちょうど基準どおりの80点。回数はしっかり5回。この「0を数え忘れる」は、平均問題で本当によく出る罠。</div>
+    <div class="bx bx-check">実際の点で足し直す。<span class="math">87 ＋ 76 ＋ 80 ＋ 92 ＋ 75 ＝ 410</span>、<span class="math">410 ÷ 5 ＝ 82</span>。82点で一致○<br>さらに、82点は最低75点と最高92点の間。○　ここまでやって初めて「解けた」と言っていい。</div>
+    <div class="bx bx-link">9月の大問2(1)は、まさにこの形（第2回は87点・全体の平均は82.6点というデータだった）。<strong>差の合計 → 差の平均 → ＋基準</strong>の3行を、目をつぶっても書けるまで体に入れておけば、本番はこの大問がまるごと取れる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 第4回・92点　(2) 82点</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m21_6"><div class="grade"><span class="gq-label">問6 ★</span>○✕ → <button class="o" onclick="g(this,'m21_6','o')">○</button><button class="x" onclick="g(this,'m21_6','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、表を全部うめ直して、①差の合計 ②差の平均 ③＋基準 を書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="G">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問7 ★</span>ある週の最高気温を、<strong>20℃を基準にした差</strong>で表しました。</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th class="rh">曜日</th><th>月</th><th>火</th><th>水</th><th>木</th><th>金</th><th>土</th><th>日</th></tr>
+      <tr><th class="rh">基準20℃との差（℃）</th><td>＋3</td><td>−5</td><td>＋8</td><td>−2</td><td>＋6</td><td>−7</td><td>＋1</td></tr>
+    </table>
+  </div>
+  <div class="subq"><span class="no">(1)</span>いちばん高い日といちばん低い日の気温の <strong>差</strong> は <span class="fill">　　</span> ℃</div>
+  <div class="subq"><span class="no">(2)</span>実際の気温にもどして、(1)の答えが正しいか確かめなさい。</div>
+  <div class="note-draw">まず自分で考えてみよう。答えを書く前に、問題文の最後の1語をもう一度読むこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">「差」＝ <strong>大きいほうから小さいほうを引いた数</strong>。ひらいている幅のこと。ひとつの値ではなく、2つの値のあいだの距離を聞かれている。</div>
+    <div class="step q4"><span>①</span>表の中でいちばん大きい差は ＋8（水）。いちばん小さい差は −7（土）。</div>
+    <div class="step q4"><span>②</span>差を求める：<span class="math">(＋8) − (−7) ＝ 8 ＋ 7 ＝ 15</span> → 15℃<br>マイナスを引くと、たし算になる。ここが正負の数の一番の山場。</div>
+    <div class="step q4"><span>(2)</span>実際の気温にもどす：水は <span class="math">20 ＋ 8 ＝ 28℃</span>、土は <span class="math">20 − 7 ＝ 13℃</span>。<br>差は <span class="math">28 − 13 ＝ 15℃</span>。①と一致○　基準の20はどちらにも入っているので、引き算で消える。だから差を聞かれたときは、基準をたさなくていい。</div>
+    <div class="step q4"><span>大事</span>問6と問7で基準の扱いが逆になっているのに注目。「平均・実際の値」を聞かれたら基準をたす。「差」だけを聞かれたら基準はいらない（引き算で消えるから）。この使い分けができれば、この単元はもう怖くない。</div>
+    <div class="bx bx-warn"><span class="red">最大と最小の「差」を聞かれているのに、最大の値（28℃）を答えてしまう</span>。6月の特訓で 正答23 のところ 10 と書いたのが、まさにこの型。問題文の最後の1語（差、和、合計、平均）を丸でかこんでから解く。<br>もうひとつ、これが本命。8 − 7 ＝ 1 としてしまう。引くのは 「−7」であって「7」ではない。<span class="math">8 − (−7)</span> の かっこを必ず書く。書けば マイナス×マイナスでプラスが目に見えて、8＋7 になる。<br>数直線で見ると一発：−7 と ＋8 は、0をまたいで 7 と 8 だけ離れている。合わせて15。</div>
+    <div class="bx bx-check">数直線を書いて、−7 から ＋8 までマス目を数える。−7 → 0 で 7マス、0 → ＋8 で 8マス。合わせて 15マス。○　実際の気温（13℃と28℃）でも 15℃。<strong>3つの方法で同じ答え</strong>になったから、これは絶対に正しい。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 15℃　(2) 最高28℃（水）・最低13℃（土）、28 − 13 ＝ 15℃ で一致</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m21_7"><div class="grade"><span class="gq-label">問7 ★</span>○✕ → <button class="o" onclick="g(this,'m21_7','o')">○</button><button class="x" onclick="g(this,'m21_7','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、8 − (−7) をかっこつきでノートに3回書こう</div></div>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問8 ★</span>次の整数をすべて書きなさい。</div>
+  <div class="subq"><span class="no">(1)</span><strong>絶対値が3以下</strong>の整数</div>
+  <div class="subq"><span class="no">(2)</span><strong>−2以上4未満</strong>の整数</div>
+  <div class="note-draw">まず数直線をノートにかいて、あてはまる数に丸をつけてから書き出そう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say"><strong>絶対値 ＝ 0からのきょり</strong>。ただそれだけ。むずかしい記号に見えるけど、数直線の上で、0からどれだけ離れているかを測っているだけ。<br>「絶対値が3以下」＝ 0から3までしか離れていない数。0の右にも左にも3ずつ手をのばした、その範囲の中の整数。</div>
+    <svg class="nline" viewBox="0 0 960 150" width="100%" preserveAspectRatio="xMidYMid meet">
+      <text x="40" y="22" font-size="14" font-weight="800" fill="#2f6b45">絶対値が3以下 ＝ 0からのきょりが3以下（右にも左にも3まで）</text>
+      <rect x="240" y="76" width="480" height="28" fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5" rx="6"/>
+      <line x1="40" y1="90" x2="920" y2="90" stroke="#31415f" stroke-width="2"/>
+      <line x1="480" y1="45" x2="716" y2="45" stroke="#2f6b45" stroke-width="1.6"/>
+      <polygon points="720,45 710,40 710,50" fill="#2f6b45"/>
+      <line x1="480" y1="45" x2="244" y2="45" stroke="#2f6b45" stroke-width="1.6"/>
+      <polygon points="240,45 250,40 250,50" fill="#2f6b45"/>
+      <line x1="480" y1="38" x2="480" y2="52" stroke="#2f6b45" stroke-width="1.6"/>
+      <text x="600" y="36" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">きょり 3</text>
+      <text x="360" y="36" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">きょり 3</text>
+      <line x1="80" y1="83" x2="80" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="160" y1="83" x2="160" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="240" y1="83" x2="240" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="320" y1="83" x2="320" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="400" y1="83" x2="400" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="480" y1="78" x2="480" y2="102" stroke="#31415f" stroke-width="2.5"/>
+      <line x1="560" y1="83" x2="560" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="640" y1="83" x2="640" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="720" y1="83" x2="720" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="800" y1="83" x2="800" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="880" y1="83" x2="880" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <circle cx="240" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="320" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="400" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="480" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="560" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="640" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="720" cy="90" r="6" fill="#2f6b45"/>
+      <text x="80" y="120" font-size="14" font-weight="700" fill="#8a97a8" text-anchor="middle">−5</text>
+      <text x="160" y="120" font-size="14" font-weight="700" fill="#8a97a8" text-anchor="middle">−4</text>
+      <text x="240" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">−3</text>
+      <text x="320" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">−2</text>
+      <text x="400" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">−1</text>
+      <text x="480" y="120" font-size="15" font-weight="900" fill="#2f6b45" text-anchor="middle">0</text>
+      <text x="560" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">1</text>
+      <text x="640" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">2</text>
+      <text x="720" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">3</text>
+      <text x="800" y="120" font-size="14" font-weight="700" fill="#8a97a8" text-anchor="middle">4</text>
+      <text x="880" y="120" font-size="14" font-weight="700" fill="#8a97a8" text-anchor="middle">5</text>
+      <text x="40" y="142" font-size="13" font-weight="700" fill="#4c5b70">緑の●が答え。0 も「きょり0」だから、ちゃんと入る（7個）</text>
+    </svg>
+    <div class="step q5"><span>(1)</span>0からのきょりが3以下 → −3、−2、−1、0、1、2、3（7個）<br>0を必ず入れる。0は「0からのきょりが0」だから、3以下の仲間。</div>
+    <div class="step q5"><span>(2)-以上</span>「−2以上」＝ −2をふくむ。「以上」「以下」はその数じたいを入れる。</div>
+    <div class="step q5"><span>(2)-未満</span>「4未満」＝ 4より小さい。4はふくまない。「未満」だけが仲間はずれ（入れない）。</div>
+    <div class="step q5"><span>(2)</span>だから −2 から始めて、4の一歩手前の3まで。−2、−1、0、1、2、3（6個）</div>
+    <div class="bx bx-warn"><span class="red">(1)で 0 を書き忘れる</span>。これが最多。「絶対値が3以下」に0が入るのは、0のきょりが0だから。数直線に●を打てば、0の●が真ん中で光って見える。<br>(1)でマイナス側を書き忘れるのも多い。絶対値は符号を外したきょりだから、0の左右に同じだけ広がる。1、2、3 だけ書いて終わったら半分しか取れない。<br>「未満」を「以下」と読みちがえて 4 を入れる。未満＝まだ達していない＝その数は入らない。この1問で入試の1点が動く。問題文の「以上・以下・未満」に丸をつけてから解く。</div>
+    <div class="bx bx-check">書き出した数を、1個ずつ元の条件に入れ直す。<br>(1) −3 → きょり3。3以下○。3 → きょり3。○。4 → きょり4。3をこえるので×（入れなくて正解）。<br>(2) −2 → 「−2以上」なので○。3 → 「4未満」なので○。4 → 「4未満」なので×（入れなくて正解）。<br>個数も数える。(1)は7個、(2)は6個。数え忘れがないか最後に指で数える。</div>
+    <div class="bx bx-link">絶対値と数直線は、9月の大問1でほぼ確実に出る。絶対値＝0からのきょりと、<strong>以上・以下・未満の3語</strong>。この2つだけで確実に取れる。落とすのはもったいなさすぎる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) −3、−2、−1、0、1、2、3（7個）　(2) −2、−1、0、1、2、3（6個）</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c8" target="_blank">マル秘テクニック集 第8章</a></div>
+  </div>
+  <div class="gq" data-gid="m21_8"><div class="grade"><span class="gq-label">問8 ★</span>○✕ → <button class="o" onclick="g(this,'m21_8','o')">○</button><button class="x" onclick="g(this,'m21_8','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、数直線をかいて●を打ち直し、以上・以下・未満の意味を1行ずつ書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓S4 正負の表と平均・数直線 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">8問おつかれさま。9月の大問2は、きみの得点源になる🌸
+<details class="tool-hint"><summary>📌 今日のまとめ（ぜんぶ解いてから開こう）</summary>
+<div>今日いちばん覚えてほしいのは、たった2行。<strong>「平均・実際の値を聞かれたら、最後に基準をたす」「差を聞かれたら、基準はいらない」</strong>。6月に落とした 137 も、23 も、原因はこの1行だった。もう知っている。あとは本番で、答えを書く直前に1秒だけ「これ、テストの点として自然？」と見るだけ。</div></details></div>
+
+</div>
+
+<script>
+var KEY='tokkun_m21';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+var RMQ_KIND='正負の表と平均';
+
+/* ===== 数学キュー送りフック（×→revmq_dyn／○→po++）=====
+   受け皿＝復習数学_まちがえ復習キュー.html の mergeDyn(revmq_dyn) が読む。 */
+var RMQ_DYN='revmq_dyn';
+function rmqClean(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function rmqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function sendToRevMQ(btn,id,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    if(String(KEY).indexOf('revmq')===0)return;              /* 受け皿自身では動かさない */
+    var q=btn&&btn.closest?btn.closest('.q'):null; if(!q)return;
+    var leadEl=q.querySelector('.lead'); if(!leadEl)return;
+    var label=rmqClean(leadEl);
+    if(/【例】/.test(label))return;                            /* 例題は復習に送らない */
+    var qtxt=leadEl.parentNode?rmqClean(leadEl.parentNode):'';
+    if(label&&qtxt.indexOf(label)===0)qtxt=qtxt.slice(label.length).trim();
+    var ans=rmqClean(q.querySelector('.ans-final'));
+    if(!qtxt||!ans)return;
+    var src=KEY+'_'+id;
+    var arr;try{arr=JSON.parse(localStorage.getItem(RMQ_DYN));}catch(e){arr=null;}
+    if(!Array.isArray(arr))arr=[];
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=rmqToday();}
+    else{arr.push({src:src,jp:qtxt,en:ans,kind:RMQ_KIND,badge:'suchoku',day:rmqToday(),po:0,px:1});}
+    try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}
+  }catch(e){}
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);try{sendToRevMQ(btn,id,v);}catch(e){}
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！正負の表と平均・数直線 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

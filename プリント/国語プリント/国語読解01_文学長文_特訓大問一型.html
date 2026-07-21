@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 国語 読解プリント01（文学的文章 長文＋設問8・特訓 大問一型）＝完全オリジナル本文「風の通り道」(自作・約900字)。約30分。KEY=tokkun_jr01（jr=読解）。
+ ・本文は完全オリジナル（著作権フリー・実在作品の引用なし）。主人公ユウの心情が「ためらい・距離 → 歩み寄り・安心」へA→B変化。抽象語＝躊躇/葛藤/気配 を本文に織り込み、設問1・2で回収。
+ ・○✕で測れる問（語彙1・2/指示語3/抜き出し4/接続語5/内容一致8）＝○✕＋ミス分類C/K/A（tokkun_k_chishiki01のm()機構を踏襲。保存=KEY+'_'+gid+'_m'）。
+ ・心情記述6・理由記述7＝○✕でなく模範比較＋核心要素チェック（内容/文末/字数）＋ズレ診断（tokkun_jk01の記述ルーブリック機構を踏襲）。
+ ・data-gid は q01〜q08連番。t/g/m/localStorage/印刷/もどる/onload復元を両参照ファイルから踏襲。固有名詞は仮名のみ（実在児童名・塾名・校名なし）。
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>国語 読解01｜文学的文章 長文｜特訓 大問一型｜約30分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.85}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+.howto{background:#fffefb;border:1px solid #e3e2d9;border-left:5px solid #91bdb7;border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:13.5px;color:#3a4a63}
+.howto b{color:#2f6b62}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:15px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-body{padding:16px 20px}
+/* 本文 */
+.passage{background:#fffdf7;border:1px solid #e6e0cf;border-radius:8px;padding:16px 18px;font-size:15.5px;line-height:2.05;color:#2c3540}
+.passage .ttl{font-size:18px;font-weight:900;color:#3a4a63;text-align:center;margin-bottom:4px}
+.passage .by{font-size:11.5px;color:#9aa0a6;text-align:center;margin-bottom:12px}
+.passage p{margin:0 0 10px;text-indent:1em}
+.passage p:last-of-type{margin-bottom:0}
+.passage .ul{text-decoration:underline;text-decoration-color:#c0392b;text-decoration-thickness:2px}
+.passage .ln{color:#b08; font-weight:800; font-size:12px; font-style:normal}
+.psrc{font-size:11.5px;color:#9aa0a6;margin-top:8px;text-align:right}
+/* 設問 */
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:14px 0}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.qtype{display:inline-block;font-size:11px;font-weight:800;color:#5f4b7a;background:#efe7f7;border:1px solid #d6c7ea;border-radius:10px;padding:2px 9px;margin-left:6px}
+.qword{font-size:16px;font-weight:800;color:#31415f}
+.qhint{font-size:13px;color:#5f4b7a;margin-top:4px}
+.qhint b{color:#7a3f86}
+.choices{margin:8px 0 2px;font-size:14px;color:#33414f}
+.choices div{margin:3px 0;padding:4px 8px;border:1px solid #e6e6dc;border-radius:6px;background:#fff}
+.write-area{margin:10px 0 4px;background:#fff;border:1px dashed #c7cdbf;border-radius:8px;padding:10px 12px}
+.write-area .wl{display:block;border-bottom:1px solid #d7dccd;height:30px}
+.write-area .cap{font-size:11.5px;color:#8a93a0;margin-bottom:4px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:13px}
+.ans-box.open{display:block}
+.ans-main{font-size:17px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-read{font-size:13px;color:#405060;margin-bottom:4px}
+.checklist{font-size:13px;color:#3a5a45;margin:6px 0}
+.checklist .ci{display:block;margin:2px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#8a5a19}
+.bx-warn::before{content:"⚠️ よくあるズレ・注意";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.gq{margin-top:10px}
+.grade{font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+/* ミス分類C/K/A（○✕問用） */
+.miss{display:none;margin-top:8px;align-items:center;gap:6px;flex-wrap:wrap;font-size:12px;color:#7a6a55}
+.miss.show{display:flex}
+.miss .ml{font-size:12px;font-weight:700;color:#7a6a55}
+.miss .m{min-width:30px;height:30px;border-radius:8px;border:1.5px solid #e0d6c4;background:#fff;font-size:13px;font-weight:800;cursor:pointer;color:#9a8a70;padding:0 8px}
+.miss .m.sel{background:#caa86a;color:#fff;border-color:#caa86a}
+.miss .mhint{font-size:11px;color:#9a8a70;flex-basis:100%;margin-top:2px}
+/* ズレ診断（記述問用） */
+.missw{display:none;margin-top:8px;background:#f6f3ee;border:1px dashed #cdbfa6;border-radius:8px;padding:8px 12px;font-size:12.5px;color:#6b5a3e}
+.missw.show{display:block}
+.missw .ml{font-weight:800;margin-right:6px}
+.missw button{font-size:12px;border:1px solid #cdbfa6;background:#fff;color:#6b5a3e;border-radius:14px;padding:3px 10px;margin:3px 4px 0 0;cursor:pointer}
+.missw button.sel{background:#b89b6a;color:#fff;border-color:#b89b6a}
+.missw .redo{display:block;margin-top:6px;color:#8a5a19;font-size:12.5px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.miss,.missw{display:none}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .write-area .wl{height:26px}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec,.passage,.q{break-inside:avoid;page-break-inside:avoid}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">国語 読解01</span><span class="pg-badge">文学的文章 長文</span><span class="pg-badge">特訓 大問一型</span><span class="pg-badge">全8問</span></div>
+  <h1>国語 読解プリント01｜文学的文章を読んで、根拠で答える</h1>
+  <p>目安 約30分　対象: 中1　＝本文を読む→設問を解く→「答えを見る」で自己採点→記述はズレを直す。すべて本文に根拠があります。</p>
+  <p class="pg-sub">🌸 きみは「読む力」が強み。あとは<b>根拠の示し方</b>と<b>記述の型</b>。本文のどの一文が手がかりかを毎回さがそう。</p>
+</div>
+
+<div class="howto">
+  <b>使い方</b>　① まず本文を最後まで読む（線の部分に注目）　② 設問を上から解く（記述はノートか枠に書く）　③ 「答えを見る」で答え合わせ　④ ○✕問は ✕なら <b>C/K/A</b> を選ぶ／記述問は模範とくらべ <b>核心要素チェック</b>→ズレた所（内容・文末・字数）を直す<br>
+  <span style="font-size:12.5px">C＝うっかり・読み落とし／K＝言葉や型を知らなかった／A＝知ってたが本文に当てはめられなかった</span>
+</div>
+
+<!-- ===== 本文（常時表示） ===== -->
+<div class="unit-banner">
+  <span class="unit-num">大問一 文学的文章</span>
+  <span class="unit-name">本文を読もう（解く前に必ず読む）</span>
+  <span class="unit-time">約900字</span>
+</div>
+<div class="sec">
+  <div class="sec-body">
+    <div class="passage">
+      <div class="ttl">風の通り道</div>
+      <div class="by">— 学習用オリジナル作品 —</div>
+      <p>新しい学校に来て、二週間がたっても、ユウはまだ教室のすみが落ち着いた。みんなはとっくに名前で呼び合っているのに、ユウだけがその輪の外にいるような<span class="ul">気配</span>を、いつも背中に感じていた。</p>
+      <p>転校してきた日、ユウは「仲良くなりたい」と思っていた。でも、休み時間のたびに、声をかけようか、やめようか、心の中で同じことをくり返した。立ち上がりかけては、また座る。その<span class="ul">躊躇</span>が、もう何度目になるのか、自分でも数えられなかった。</p>
+      <p>そんなある日の放課後、当番だったユウが教室の窓をしめていると、うしろから声がした。</p>
+      <p>「その窓、かたいでしょ。コツがあるんだ」</p>
+      <p>ふり返ると、同じ班のミナだった。ミナは窓のさんを軽く持ち上げ、すっと横へすべらせた。さっきまでびくともしなかった窓が、うそのようにすべる。風が、教室にすうっと通り抜けた。夕方の光の中で、カーテンがゆっくりとふくらんだ。</p>
+      <p>「すごい」と、ユウは思わず笑った。久しぶりに、自分から出た笑いだった。</p>
+      <p>「ユウって、いつも一人でがんばってるよね」とミナが言った。「話しかけていいのか、迷ってたんだ。じゃまかなって」</p>
+      <p>その言葉に、ユウははっとした。<span class="ul">迷っていたのは、自分だけではなかったのだ。</span>声をかけられないでいたのは、ミナも同じだった。ユウの中でずっと続いていた<span class="ul">葛藤</span>が、急に軽くなった気がした。</p>
+      <p>「あのさ」と、ユウは思いきって口を開いた。「明日、いっしょに帰らない？」</p>
+      <p>ミナはぱっと顔を上げて、「うん、帰ろ」と笑った。</p>
+      <p>二人で昇降口を出ると、夕方の風がほおをなでた。<span class="ul">あの窓を通った風と、同じにおいがした。</span>背中に感じていた重さは、もうどこにもなかった。明日が、少しだけ楽しみになっていた。</p>
+      <div class="psrc">※本文は学習用のオリジナル（実在作品の引用なし・著作権フリー）</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== 設問 ===== -->
+<div class="unit-banner">
+  <span class="unit-num">設問</span>
+  <span class="unit-name">問1〜問8（すべて本文に根拠あり）</span>
+  <span class="unit-time">8問</span>
+</div>
+<div class="sec">
+  <div class="sec-body">
+
+    <!-- 問1 語彙① -->
+    <div class="q">
+      <div><span class="qnum-e">問1</span><span class="qtype">語彙①（○✕＋C/K/A）</span></div>
+      <div class="qword">本文中の <b>「躊躇（ちゅうちょ）」</b> の意味として最も適切なものを、次から一つ選びなさい。</div>
+
+      <div class="choices">
+        <div>ア　はげしく怒ること</div>
+        <div>イ　どうしようか迷って、ぐずぐずすること</div>
+        <div>ウ　深く感動して心を動かされること</div>
+        <div>エ　あきらめて投げ出すこと</div>
+      </div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">イ</div>
+        <div class="ans-read">躊躇＝あれこれ迷って、なかなか実行できないこと。「ためらい」と同じ。</div>
+        <div class="bx-warn">直前の「声をかけようか、やめようか」「立ち上がりかけては、また座る」が手がかり。エ（あきらめ）と混同しやすいが、躊躇は「まだ迷っている」状態。</div>
+      </div>
+      <div class="gq" data-gid="q01">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div>
+        <div class="miss" data-mid="q01"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q01','C')">C</button><button class="m" onclick="m(this,'q01','K')">K</button><button class="m" onclick="m(this,'q01','A')">A</button><span class="mhint">C=うっかり・読み落とし／K=語の意味を知らなかった／A=知ってたが本文に当てはめられなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問2 語彙② -->
+    <div class="q">
+      <div><span class="qnum-e">問2</span><span class="qtype">語彙②（○✕＋C/K/A）</span></div>
+      <div class="qword">本文中の <b>「葛藤（かっとう）」</b> の意味として最も適切なものを、次から一つ選びなさい。</div>
+
+      <div class="choices">
+        <div>ア　二つの気持ちがぶつかり合って、心の中で悩むこと</div>
+        <div>イ　体がつかれてだるくなること</div>
+        <div>ウ　まわりの人と言い争いをすること</div>
+        <div>エ　うれしくてたまらない気持ち</div>
+      </div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ア</div>
+        <div class="ans-read">葛藤＝心の中で相反する気持ちがぶつかり、思い悩むこと。</div>
+        <div class="bx-warn">ウ（人との言い争い）は外側の対立。葛藤は<span class="red">自分の心の中</span>での対立。「声をかけたい／でもこわい」という内側の悩みを指す。</div>
+      </div>
+      <div class="gq" data-gid="q02">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div>
+        <div class="miss" data-mid="q02"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q02','C')">C</button><button class="m" onclick="m(this,'q02','K')">K</button><button class="m" onclick="m(this,'q02','A')">A</button><span class="mhint">C=うっかり・読み落とし／K=語の意味を知らなかった／A=知ってたが本文に当てはめられなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問3 指示語 -->
+    <div class="q">
+      <div><span class="qnum-e">問3</span><span class="qtype">指示語（○✕）</span></div>
+      <div class="qword">──「<b>その言葉</b>に、ユウははっとした」とあるが、「その言葉」が指す内容を、本文中から <b>そのまま一文で</b> 抜き出しなさい。</div>
+
+      <div class="write-area"><div class="cap">ここに書こう（本文の言葉のまま）</div><span class="wl"></span><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">話しかけていいのか、迷ってたんだ。</div>
+        <div class="ans-read">「その言葉」＝直前のミナのせりふを指す。（「じゃまかなって」まで含めても可）</div>
+        <div class="bx-warn">「ユウって、いつも一人でがんばってるよね」を選ぶと×。ユウが「はっとした」のは、ミナも<span class="red">迷っていた</span>と分かったから。指す内容は直前の一文。</div>
+      </div>
+      <div class="gq" data-gid="q03">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div>
+        <div class="miss" data-mid="q03"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q03','C')">C</button><button class="m" onclick="m(this,'q03','K')">K</button><button class="m" onclick="m(this,'q03','A')">A</button><span class="mhint">C=うっかり・抜き出しミス／K=指示語の探し方を知らない／A=方法は分かるが当てられなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問4 抜き出し -->
+    <div class="q">
+      <div><span class="qnum-e">問4</span><span class="qtype">抜き出し（○✕）</span></div>
+      <div class="qword">ユウとミナが打ち解けるきっかけとなった、<b>教室に風が通る情景</b>が表れた一文を、本文中から抜き出し、<b>はじめの五字</b>を書きなさい。</div>
+
+      <div class="write-area"><div class="cap">ここに書こう（はじめの5字）</div><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">風が、教室</div>
+        <div class="ans-read">抜き出す一文＝「風が、教室にすうっと通り抜けた。」（はじめの五字は「風が、教室」）</div>
+        <div class="bx-warn">「夕方の風がほおをなでた」は最後の場面の風で、打ち解けるきっかけの<span class="red">教室の</span>場面ではない。問いの「教室に風が通る情景」に合うのは窓を開けた直後の一文。</div>
+      </div>
+      <div class="gq" data-gid="q04">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div>
+        <div class="miss" data-mid="q04"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q04','C')">C</button><button class="m" onclick="m(this,'q04','K')">K</button><button class="m" onclick="m(this,'q04','A')">A</button><span class="mhint">C=うっかり・数えまちがい／K=情景描写の見分けを知らない／A=分かるが選べなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問5 接続語 -->
+    <div class="q">
+      <div><span class="qnum-e">問5</span><span class="qtype">空欄補充・接続語（○✕＋C/K/A）</span></div>
+      <div class="qword">次の文の <b>（　）</b> に入る最も適切な接続語を、あとから一つ選びなさい。<br><span style="font-size:14.5px">「ユウは仲良くなりたいと思っていた。（　）、なかなか自分から声をかけられなかった。」</span></div>
+
+      <div class="choices">
+        <div>ア　だから</div>
+        <div>イ　しかし</div>
+        <div>ウ　つまり</div>
+        <div>エ　たとえば</div>
+      </div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">イ（しかし）</div>
+        <div class="ans-read">前「仲良くなりたい」⇔後「声をかけられない」＝反対の内容をつなぐ＝逆接。</div>
+        <div class="bx-warn">ア「だから」は順当な結果のときに使う（願う→だから声をかけた、なら○）。ここは願いと反対の結果なので<span class="red">逆接「しかし」</span>。</div>
+      </div>
+      <div class="gq" data-gid="q05">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div>
+        <div class="miss" data-mid="q05"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q05','C')">C</button><button class="m" onclick="m(this,'q05','K')">K</button><button class="m" onclick="m(this,'q05','A')">A</button><span class="mhint">C=うっかり／K=接続語の種類を知らない／A=知ってたが前後関係を読み取れなかった</span></div>
+      </div>
+    </div>
+
+    <!-- 問6 心情記述 -->
+    <div class="q">
+      <div><span class="qnum-e">問6</span><span class="qtype">心情記述（模範比較＋核心要素チェック）</span></div>
+      <div class="qword">──「<b>急に軽くなった気がした</b>」とあるが、このときのユウの気持ちを <b>三十字以内</b> で書きなさい。</div>
+
+      <div class="write-area"><div class="cap">ここに書こう（30字以内）</div><span class="wl"></span><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">（模範）迷っていたのは自分だけではないと分かり、ほっとした気持ち。</div>
+        <div class="checklist">
+          <span class="ci">□ 核心：迷っていたのは自分だけではない（ミナも同じだった）と分かった</span>
+          <span class="ci">□ 核心：安心した・ほっとした・うれしい（前向きな心情）</span>
+          <span class="ci">□ 文末：「〜気持ち。」になっている</span>
+          <span class="ci">□ 字数：30字以内</span>
+        </div>
+        <div class="bx-warn">「うれしい気持ち。」だけだと弱い（=内容ズレ）。<span class="red">なぜ軽くなったか（自分だけじゃなかった）</span>を必ず入れる。本文「迷っていたのは、自分だけではなかったのだ」が直接の根拠。</div>
+      </div>
+      <div class="gq" data-gid="q06">
+        <div class="grade">型どおり書けた？ <button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div>
+        <div class="missw"><span class="ml">どこがズレた？</span><button onclick="mw(this,'q06','内容')">内容</button><button onclick="mw(this,'q06','文末')">文末</button><button onclick="mw(this,'q06','字数')">字数</button><span class="redo">→ 模範とくらべて、ズレた所を直して書き直そう</span></div>
+      </div>
+    </div>
+
+    <!-- 問7 理由記述 -->
+    <div class="q">
+      <div><span class="qnum-e">問7</span><span class="qtype">理由記述（模範比較＋核心要素チェック）</span></div>
+      <div class="qword">ユウが <b>「明日、いっしょに帰らない？」と思いきって声をかけた</b> のはなぜですか。理由を <b>三十五字以内</b> で書きなさい。</div>
+
+      <div class="write-area"><div class="cap">ここに書こう（35字以内）</div><span class="wl"></span><span class="wl"></span></div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">（模範）ミナも声をかけられず迷っていたと知り、心の葛藤が軽くなったから。</div>
+        <div class="checklist">
+          <span class="ci">□ 核心：ミナも（自分と同じように）迷っていたと分かった</span>
+          <span class="ci">□ 核心：そのため葛藤・ためらいが消えた／軽くなった・勇気が出た</span>
+          <span class="ci">□ 文末：「〜から。」または「〜ため。」</span>
+          <span class="ci">□ 字数：35字以内</span>
+        </div>
+        <div class="bx-warn">「仲良くなりたかったから。」だけでは×（最初からそう思っていた＝声をかけた理由になっていない）。<span class="red">直前で気持ちが変わった</span>こと（ミナも同じと分かり迷いが消えた）が理由。文末は必ず「〜から。」で結ぶ。</div>
+      </div>
+      <div class="gq" data-gid="q07">
+        <div class="grade">型どおり書けた？ <button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div>
+        <div class="missw"><span class="ml">どこがズレた？</span><button onclick="mw(this,'q07','内容')">内容</button><button onclick="mw(this,'q07','文末')">文末</button><button onclick="mw(this,'q07','字数')">字数</button><span class="redo">→ 模範とくらべて、ズレた所を直して書き直そう</span></div>
+      </div>
+    </div>
+
+    <!-- 問8 内容一致 -->
+    <div class="q">
+      <div><span class="qnum-e">問8</span><span class="qtype">内容一致（○✕＋C/K/A）</span></div>
+      <div class="qword">本文の内容に <b>合っているもの</b> を、次から一つ選びなさい。</div>
+
+      <div class="choices">
+        <div>ア　ユウは転校してすぐにクラスの輪に入り、みんなと名前で呼び合っていた。</div>
+        <div>イ　ミナは、じゃまかと思って自分からはユウに話しかけられずにいた。</div>
+        <div>ウ　ユウは窓を開けるのが得意で、ミナにコツを教えてあげた。</div>
+        <div>エ　ユウは結局ミナと打ち解けられず、一人で帰っていった。</div>
+      </div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">イ</div>
+        <div class="ans-read">本文「話しかけていいのか、迷ってたんだ。じゃまかなって」と一致。</div>
+        <div class="bx-warn">ア＝×（二週間たっても輪の外にいた）。ウ＝×（窓のコツを教えたのはミナ、得意なのはユウではない）。エ＝×（「いっしょに帰ろ」と打ち解けた）。<span class="red">本文の事実</span>と一つずつ照合する。</div>
+      </div>
+      <div class="gq" data-gid="q08">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div>
+        <div class="miss" data-mid="q08"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q08','C')">C</button><button class="m" onclick="m(this,'q08','K')">K</button><button class="m" onclick="m(this,'q08','A')">A</button><span class="mhint">C=うっかり・読み落とし／K=照合のやり方を知らない／A=分かるが選びきれなかった</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">読解は「なんとなく」ではなく「本文のこの一文」で答える。きみは読む力が強いから、根拠さがしと記述の型さえつかめば、特訓の大問一は必ず武器になる。よくがんばったね。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_jr01';   /* 国語 読解プリント01（文学的文章 特訓大問一型）。jr=読解 */
+
+function t(b){
+  if(!b.dataset.label)b.dataset.label=b.textContent;
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':b.dataset.label;
+}
+/* ○✕ */
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var miss=box.querySelector('.miss');      /* ○✕問用 C/K/A */
+  var missw=box.querySelector('.missw');    /* 記述問用 ズレ診断 */
+  if(v==='x'){
+    if(miss)miss.classList.add('show');
+    if(missw)missw.classList.add('show');
+  }else{
+    if(miss)miss.classList.remove('show');
+    if(missw)missw.classList.remove('show');
+    localStorage.removeItem(KEY+'_'+id+'_m');
+    box.querySelectorAll('.miss button, .missw button').forEach(function(e){e.classList.remove('sel');});
+  }
+}
+/* ○✕問のミス分類 C/K/A */
+function m(btn,id,v){
+  var miss=btn.closest('.miss');
+  miss.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id+'_m',v);
+}
+/* 記述問のズレ診断 内容/文末/字数 */
+function mw(btn,id,v){
+  var miss=btn.closest('.missw');
+  miss.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id+'_m',v);
+}
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var miss=box.querySelector('.miss');
+        var missw=box.querySelector('.missw');
+        if(miss)miss.classList.add('show');
+        if(missw)missw.classList.add('show');
+        var mv=localStorage.getItem(KEY+'_'+id+'_m');
+        if(mv){
+          var mb=box.querySelector('.miss button[onclick*="\''+mv+'\'"], .missw button[onclick*="\''+mv+'\'"]');
+          if(mb)mb.classList.add('sel');
+        }
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){ document.getElementById('doneBtn').textContent='✓ 完了ずみ'; }
+};
+</script>
+</body>
+</html>

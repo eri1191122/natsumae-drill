@@ -1,0 +1,24 @@
+{
+  "id": "./",
+  "name": "中1 夏前ドリル",
+  "short_name": "夏前ドリル",
+  "description": "中学1年の数学と英語を、1日約30分で進める夏前ドリル",
+  "lang": "ja",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f7f8f5",
+  "theme_color": "#3f6f9f",
+  "icons": [
+    {
+      "src": "icon-180.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

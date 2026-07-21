@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓TEC マル秘テクニック集 ― 計算が楽になる技・見直しの型・50分の使い方</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13.5px;color:#3f6f4a;font-weight:700}
+
+/* ★ 冒頭の注意（解く前に開かない） */
+.stop{background:#fdf2f4;border:3px solid #d08a86;border-radius:10px;padding:16px 18px;margin:14px 0}
+.stop::before{content:"⛔ 使い方のルール（ここだけは守って）";display:block;font-size:14px;font-weight:900;color:#9b514d;margin-bottom:8px}
+.stop ul{margin:4px 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#5a3a38}
+.stop b{color:#9b514d}
+
+.howto{background:#eaf4ee;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.howto::before{content:"🌸 このページの読み方";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.howto ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.howto ol b{color:#2f6a44}
+
+/* 目次 */
+.toc{background:#fff;border:1px solid #dfe3da;border-radius:10px;padding:12px 16px;margin:14px 0}
+.toc::before{content:"📚 もくじ（10章）";display:block;font-size:13px;font-weight:900;color:#54605a;margin-bottom:6px}
+.toc a{display:inline-block;font-size:13px;font-weight:700;color:#3f6f9f;text-decoration:none;background:#f2f6fa;border:1px solid #cdd9e6;border-radius:16px;padding:3px 11px;margin:3px 4px 3px 0}
+.toc a:hover{background:#e4edf5}
+
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:30px 0 0;scroll-margin-top:60px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+
+/* 技カード（1つ1枠） */
+.tec{background:#fffefb;border:1px solid #e3e2d9;border-left:6px solid #7aa7d9;border-radius:8px;padding:12px 15px;margin:12px 0}
+.tec.hot{border-left-color:#d08a86;background:#fffbfb}
+.tec-h{font-size:16px;font-weight:900;color:#31415f;margin-bottom:7px;line-height:1.5}
+.tec-no{display:inline-block;font-size:11px;font-weight:900;color:#2f5a8a;background:#e6f0fb;border:1px solid #bcd3ee;border-radius:9px;padding:2px 9px;margin-right:7px;vertical-align:middle}
+.tec.hot .tec-no{color:#9a3f63;background:#f7dce8;border-color:#eebccf}
+.tec-row{display:flex;gap:8px;align-items:flex-start;margin:5px 0;font-size:13.5px;line-height:1.95}
+.lb{flex:0 0 auto;display:inline-block;min-width:66px;text-align:center;font-size:11px;font-weight:900;border-radius:9px;padding:2px 6px;margin-top:4px;white-space:nowrap}
+.lb-when{background:#eef1f2;border:1px solid #d6dcd5;color:#54605a}
+.lb-how{background:#fbe9cf;border:1px solid #eccf9a;color:#8a5a17}
+.lb-why{background:#dcefea;border:1px solid #aed8cf;color:#2f6a5c}
+.lb-ex{background:#ece2f7;border:1px solid #cfbce8;color:#5f4a8a}
+.tec-row .tx{flex:1 1 auto}
+.tec-row .tx b{color:#c0392b}
+.tec-row .tx .blu{color:#2f5a8a;font-weight:800}
+.tec-row .tx .grn{color:#2f6b45;font-weight:800}
+.big{display:block;background:#f5f8fb;border:1px dashed #aebfd6;border-radius:6px;padding:6px 10px;margin:5px 0 2px;font-size:15px;font-weight:800;color:#31415f;line-height:2.1}
+
+/* 👀 トリガー行 ／ ★9月に使うバッジ ／ 第0章（手が止まる操作） */
+.trg{background:#fff6e6;border:1px dashed #e2b464;border-radius:6px;padding:5px 10px;margin:7px 0 2px;font-size:13px;font-weight:800;color:#7c5514;line-height:1.8}
+.trg b{color:#c0392b}
+.trg .arw{color:#2f6b45;font-weight:900}
+.q9{display:inline-block;font-size:10.5px;font-weight:900;color:#8a3a1f;background:#ffe6c9;border:1px solid #eab97e;border-radius:9px;padding:2px 8px;margin-left:6px;vertical-align:middle;white-space:nowrap}
+.q9n{display:inline-block;font-size:10.5px;font-weight:900;color:#2f5a8a;background:#e6f0fb;border:1px solid #bcd3ee;border-radius:9px;padding:2px 7px;margin-left:3px;vertical-align:middle;white-space:nowrap}
+.tec.op{border-left-color:#e07b39;background:#fffaf4}
+.tec.op .tec-no{color:#8a4a17;background:#ffe6cf;border-color:#efc79b}
+.lb-stop{background:#fde5e2;border:1px solid #e3aca7;color:#9b514d}
+.lb-do{background:#e3eefa;border:1px solid #b8d0ea;color:#2f5a8a}
+.lb-trap{background:#fdf0d8;border:1px solid #e5c88e;color:#8a5a17}
+.legend{background:#fff;border:1px solid #dfe3da;border-radius:10px;padding:11px 15px;margin:12px 0;font-size:13px;line-height:2.0;color:#54605a}
+.legend b{color:#31415f}
+.legend::before{content:"🔎 カードの見かた";display:block;font-size:12px;font-weight:900;color:#54605a;margin-bottom:4px}
+
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ ここを間違えると全部くずれる";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ 覚えるのは1つだけ";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月の本番へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx b{color:#c0392b}
+
+.fig{display:block;margin:12px auto;background:#fff;border:1px solid #dfe3da;border-radius:8px;width:100%;max-width:560px;height:auto}
+
+/* 型の早見表・時間配分表 */
+.ttab{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px;background:#fff}
+.ttab th{background:#eef1f5;color:#31415f;font-weight:900;border:1px solid #d6dde5;padding:7px 9px;text-align:left;font-size:12.5px}
+.ttab td{border:1px solid #e2e6ea;padding:7px 9px;line-height:1.8;vertical-align:top}
+.ttab td b{color:#c0392b}
+.ttab tr:nth-child(even) td{background:#fafbfc}
+.ttab .kw{color:#2f5a8a;font-weight:800}
+
+/* 章末チェック（印刷用・localStorage不要） */
+.nextchk{display:flex;align-items:center;gap:9px;background:#fdf2f6;border:2px dashed #e5aec2;border-radius:8px;padding:10px 14px;margin:12px 0 4px;font-size:13.5px;font-weight:800;color:#9a3f63;cursor:pointer}
+.nextchk input{width:20px;height:20px;accent-color:#d98aa7;flex:0 0 auto}
+
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:.95em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.red{color:#9b514d;font-weight:800}
+.blu{color:#2f5a8a;font-weight:800}
+.endcheer{text-align:center;font-size:13.5px;color:#4c5b70;margin-top:22px;background:#fff;border:1px solid #dfe3da;border-radius:10px;padding:16px 18px;line-height:2.0}
+.endcheer b{color:#2f6b45}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.toc{display:none}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .tec{break-inside:avoid;page-break-inside:avoid}
+  .fig{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="reference" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓TEC</span><span class="pg-badge">数学：道具箱</span><span class="pg-badge">計算・単位・割合・図形・規則性・見直し・時間配分</span></div>
+  <h1>特訓TEC マル秘テクニック集 ― 計算が楽になる技・見直しの型・50分の使い方</h1>
+  <p>これは問題プリントじゃない。<strong>技のカタログ（道具箱）</strong>だよ。全10章</p>
+  <p class="pg-cheer">これは<strong>答えの出し方</strong>を教えるページじゃない。<strong>同じ答えに、もっと速く・もっとラクにたどりつく道</strong>を集めたページだよ。まず自分で解く。そのあとここを開いて「次はこの手が使えそう」を1つだけ持ち帰ろう🌸</p>
+</div>
+
+<div class="stop">
+  <ul>
+    <li><b>解く前に開かない。解いたあとに開く。</b>これが道具箱のルール。</li>
+    <li>先に技を見てしまうと、<b>「自分で考える練習」がまるごとムダになる</b>。初見で自力で解く。解けなかったら解説を読む。そのあとにここへ来る。</li>
+    <li>でも <b>「計算が楽になる技」は、9月の50分という時間勝負に直結する</b>。速く正確に解けること、それ自体が点になる。だから <b>解いたあとに必ず寄る</b>こと。</li>
+    <li>1回で全部覚えようとしないで。<b>1章につき、持ち帰るのは1つでいい。</b></li>
+  </ul>
+</div>
+
+<div class="howto">
+  <ol>
+    <li><b>① 自分で解く</b>（初見で。ヒントなしで。ここが一番のばす時間）</li>
+    <li><b>② 答え合わせ・解説を読む</b></li>
+    <li><b>③ このページを開く</b> → 「さっきの問題で使えた技」を1つ探す</li>
+    <li><b>④ 章末の □ にチェック</b>を入れる（次の1問で使うと決める）</li>
+    <li><b>⑤ 次にやる問題で、その技を1回だけ使ってみる</b>。使えたら、それはもう自分の技🌸</li>
+  </ol>
+</div>
+
+<div class="toc">
+  <a href="#c0">第0章 手が止まる5つの操作</a>
+  <a href="#c1">第1章 計算がラクになる技</a>
+  <a href="#c2">第2章 単位のはしご</a>
+  <a href="#c3">第3章 割合の技</a>
+  <a href="#c4">第4章 文章題を式にする技</a>
+  <a href="#c5">第5章 図形の技</a>
+  <a href="#c6">第6章 規則性の技</a>
+  <a href="#c7">第7章 グラフ・水そうの技</a>
+  <a href="#c8">第8章 ★見直しの型</a>
+  <a href="#c9">第9章 50分の使い方</a>
+</div>
+
+<div class="legend">
+  <div>👀 <b>こう書いてあったら使う</b>：その技を<b>呼び出す合図</b>。技は「やり方」だけ覚えても本番で思い出せない。<b>「この言葉を見たら、この技」</b>とセットにして覚える。まず 👀 の行だけ読めばいい。</div>
+  <div><span class="q9">★9月に使う</span><span class="q9n">大問◯</span>… <b>9月の本番に出る技</b>。となりの数字が「どの大問で使うか」。<b>このバッジのない技は、余裕ができてからでいい。</b></div>
+</div>
+
+
+<!-- ===================== 第0章 ===================== -->
+<div class="unit-banner" id="c0"><span class="unit-num">第0章</span><span class="unit-name">手が止まる5つの操作</span><span class="unit-time">操作5つ</span></div>
+
+<div class="bx bx-warn">きみが本番で手を止めるのは、<b>「意味がわからないから」じゃない</b>。式のここまでは合っているのに、<b>この5つの操作でだけ、やり方が飛ぶ</b>。<br>だからここは<b>理屈の話をしない</b>。<b>「そうなったら、こう手を動かす」</b>だけを書く。<span class="red">この5つが自動でできれば、それだけで点が動く。</span></div>
+
+<div class="tec op">
+  <div class="tec-h"><span class="tec-no">操作1</span>−x が出た瞬間</div>
+  <div class="tec-row"><span class="lb lb-stop">止まる</span><span class="tx">計算していったら <span class="math">−x ＝ 11</span> の形になった。「x はわかったけど、マイナスが…」で手が止まる。</span></div>
+  <div class="tec-row"><span class="lb lb-do">手を動かす</span><span class="tx"><b>両辺を −1 でわる</b>＝<b>符号をぜんぶひっくり返す</b>。それだけ。<span class="big">−x ＝ 11　→　x ＝ <span class="red">−11</span></span></span></div>
+  <div class="tec-row"><span class="lb lb-trap">落とし穴</span><span class="tx"><b>左だけひっくり返して、右をそのままにする</b>（x ＝ 11 と書く）。<span class="grn">左を変えたら、右も変える。両方セット。</span></span></div>
+</div>
+
+<div class="tec op">
+  <div class="tec-h"><span class="tec-no">操作2</span>分数を消すとき、分母のない項への掛け忘れ</div>
+  <div class="tec-row"><span class="lb lb-stop">止まる</span><span class="tx">分数の入った方程式。両辺に同じ数をかけて分母を消すところ。<b>ここがいちばん多く点を落としている。</b></span></div>
+  <div class="tec-row"><span class="lb lb-do">手を動かす</span><span class="tx"><b>かける数を、式の項ぜんぶの上に書いてから</b>計算する。
+    <span class="big"><span class="frac"><span class="n">x</span><span class="d">50</span></span> ＋ <span class="frac"><span class="n">x</span><span class="d">75</span></span> ＝ 25　… 両辺に <span class="blu">150</span><br>左 → 3x ＋ 2x　　右 → <span class="red">25 にも 150 をかける</span> ＝ 3750</span></span></div>
+  <div class="tec-row"><span class="lb lb-trap">落とし穴</span><span class="tx"><b>分母がない項こそ、掛け忘れる。</b>右の 25 をそのまま残してしまう。<span class="grn">「分数じゃない数にも、必ずかける」</span>。ここが最頻ミス。</span></div>
+</div>
+
+<div class="tec op">
+  <div class="tec-h"><span class="tec-no">操作3</span>単位換算を、式の中でやろうとした瞬間</div>
+  <div class="tec-row"><span class="lb lb-stop">止まる</span><span class="tx">問題文に「分」と「時間」、「m」と「km」が混ざっている。式を書きながら直そうとして、÷60 をどこにかけるかで止まる。</span></div>
+  <div class="tec-row"><span class="lb lb-do">手を動かす</span><span class="tx"><b>式に入れる前に、先に単位をそろえてしまう。</b>問題文の横にメモ。<span class="big">「12分」→ <span class="frac"><span class="n">12</span><span class="d">60</span></span> 時間　　「1.2km」→ 1200m<br><span class="blu">そろえてから、はじめて式を書く。</span></span></span></div>
+  <div class="tec-row"><span class="lb lb-trap">落とし穴</span><span class="tx"><b>式の中で換算しようとすると、必ず事故る。</b>先に問題文の横で直す。<span class="grn">式を書く手を、いったん止める2秒。</span></span></div>
+</div>
+
+<div class="tec op">
+  <div class="tec-h"><span class="tec-no">操作4</span>割合の「もと」がすり替わる瞬間</div>
+  <div class="tec-row"><span class="lb lb-stop">止まる</span><span class="tx">「<b>残りの</b> <span class="frac"><span class="n">2</span><span class="d">3</span></span>」「<b>そのうちの</b> 40%」が出てきたとき。何にかけるのかがぼやける。</span></div>
+  <div class="tec-row"><span class="lb lb-do">手を動かす</span><span class="tx"><b>もとが変わったら、その場で横に書く。</b><span class="big"><span class="red">「残り」は、もとの全体ではない</span><br>→ 横に「<span class="blu">今のもと ＝ 残り</span>」と書いてから、かける</span></span></div>
+  <div class="tec-row"><span class="lb lb-trap">落とし穴</span><span class="tx"><b>全体 × <span class="frac"><span class="n">2</span><span class="d">3</span></span> と書いてしまう。</b>正しくは <b>残り × <span class="frac"><span class="n">2</span><span class="d">3</span></span></b>。<span class="grn">「今のもとは何か」を書かずに進むと、必ずすり替わる。</span></span></div>
+</div>
+
+<div class="tec op">
+  <div class="tec-h"><span class="tec-no">操作5</span>過不足の符号の向き</div>
+  <div class="tec-row"><span class="lb lb-stop">止まる</span><span class="tx">「あまる」「たりない」が出てきて、＋ と − のどっちか迷う。とくに<b>人の話</b>のとき。</span></div>
+  <div class="tec-row"><span class="lb lb-do">手を動かす</span><span class="tx"><b>あまる ＝ ＋　／　たりない ＝ −</b>。そして<b>ヒトの過不足は、必ずイス（席）の過不足に言いかえてから式にする</b>。
+    <span class="big">「10人がすわれない」　<span class="grn">→</span>　「<span class="blu">イスが10人分たりない</span>」　<span class="grn">→</span>　<span class="red">−10</span></span></span></div>
+  <div class="tec-row"><span class="lb lb-trap">落とし穴</span><span class="tx">人の話のまま式にすると<b>符号が逆になる</b>（「10人すわれない」を ＋10 と書く）。<span class="grn">イスの話に直してから、＋ か − を決める。</span></span></div>
+</div>
+
+<div class="bx bx-key">この5つは<b>「わかる／わからない」の話じゃない</b>。<b>手の動かし方</b>の話。だから<span class="grn">練習すれば、必ずできるようになる</span>。<br>この先の技（第1章〜）は、<b>この5つが止まらずにできる人</b>のための道具だよ🌸</div>
+
+<label class="nextchk"><input type="checkbox"><span>この5つのうち、今いちばんあやしい1つに □ をつける（次の1問で意識する）</span></label>
+
+
+<!-- ===================== 第1章 ===================== -->
+<div class="unit-banner" id="c1"><span class="unit-num">第1章</span><span class="unit-name">計算がラクになる技</span><span class="unit-time">技6つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技1</span>くくる（分配法則の逆）<span class="q9">★9月に使う</span><span class="q9n">大問2</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>同じ数（とくに 3.14）が 2回以上かけられていたら</b> <span class="arw">→</span> 前に出してくくる</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">同じ数が2回以上かけられているとき。とくに <b>3.14</b> が2回出てきたら、まよわずこれ。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">同じ数を<span class="blu">前に出して</span>、残りをかっこでまとめる。<span class="big">3.14×12 ＋ 3.14×8 ＝ 3.14×(12＋8) ＝ 3.14×20 ＝ 62.8</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">3.14 のかけ算を <span class="grn">2回 → 1回</span>にへらせる。3.14 のかけ算は時間もかかるしミスも出る。<b>回数をへらすことが、そのまま得点になる。</b></span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">3.14×7 ＋ 3.14×3 ＝ 3.14×(7＋3) ＝ 3.14×10 ＝ <span class="grn">31.4</span>　／　3.14×15 − 3.14×5 ＝ 3.14×(15−5) ＝ 3.14×10 ＝ <span class="grn">31.4</span>（引き算でもできる）</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技2</span>%（パーセント）を分数に読みかえる<span class="q9">★9月に使う</span><span class="q9n">大問3</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>25%・50%・75%・20%・12.5% と書いてあったら</b> <span class="arw">→</span> その場で分数に読みかえる</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">小数のかけ算がめんどうなとき。とくに <span class="blu">25%・50%・75%・20%・12.5%</span> を見たら分数にする。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">
+    25% ＝ <span class="frac"><span class="n">1</span><span class="d">4</span></span>　　50% ＝ <span class="frac"><span class="n">1</span><span class="d">2</span></span>　　75% ＝ <span class="frac"><span class="n">3</span><span class="d">4</span></span>　　20% ＝ <span class="frac"><span class="n">1</span><span class="d">5</span></span>　　12.5% ＝ <span class="frac"><span class="n">1</span><span class="d">8</span></span>
+  </span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">分数は<span class="grn">約分ができる</span>。小数のかけ算は約分ができない。だから分数のほうがミスが出にくいし、速い。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">840 の 25% → 840×0.25 の筆算はしない。840 × <span class="frac"><span class="n">1</span><span class="d">4</span></span> ＝ <span class="grn">210</span>。頭の中で終わる。</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技3</span>×1.25 は「＋4分の1」、×0.75 は「−4分の1」</div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「1.25倍」「0.75倍」「25%増し」「25%引き」</b> <span class="arw">→</span> 4分の1をたす（ひく）だけ。筆算しない</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「25%増し」「25%引き」「1.25倍」「0.75倍」が出てきたとき。<b>筆算を書きはじめる前に</b>これを思い出す。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">
+    <span class="big">×1.25 ＝ もとの数 ＋ もとの数の <span class="frac"><span class="n">1</span><span class="d">4</span></span>　　×0.75 ＝ もとの数 − もとの数の <span class="frac"><span class="n">1</span><span class="d">4</span></span></span>
+  </span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">1.25 ＝ 1 ＋ <span class="frac"><span class="n">1</span><span class="d">4</span></span> だから。<span class="grn">4でわる</span>のは筆算しなくてもできる（2でわって、もう1回2でわる）。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">600×1.25 → 600 の <span class="frac"><span class="n">1</span><span class="d">4</span></span> は 150。600 ＋ 150 ＝ <span class="grn">750</span>。　600×0.75 → 600 − 150 ＝ <span class="grn">450</span>。<b>筆算ゼロ。</b></span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技4</span>÷分数 は ×逆数（ひっくり返してかける）<span class="q9">★9月に使う</span><span class="q9n">大問1・3</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>式に ÷ と分数がならんでいたら</b> <span class="arw">→</span> その場で「× 逆数」に書きかえる</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">分数のわり算。式に ÷ と分数が同時にあったら、<b>すぐに × に直す</b>。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">
+    <span class="big">a ÷ <span class="frac"><span class="n">3</span><span class="d">5</span></span> ＝ a × <span class="frac"><span class="n">5</span><span class="d">3</span></span></span>
+    ひっくり返すのは <b>÷ のうしろだけ</b>。前の数はそのまま。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">「<span class="frac"><span class="n">3</span><span class="d">5</span></span> でわる」＝「<span class="frac"><span class="n">3</span><span class="d">5</span></span> が何個分か聞いている」。<span class="frac"><span class="n">3</span><span class="d">5</span></span> は 1 より小さいから、答えは<span class="grn">もとより大きくなる</span>。大きくするには <span class="frac"><span class="n">5</span><span class="d">3</span></span>（1より大きい数）をかければいい。<b>だからひっくり返す。</b></span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx"><span class="frac"><span class="n">4</span><span class="d">9</span></span> ÷ <span class="frac"><span class="n">2</span><span class="d">3</span></span> ＝ <span class="frac"><span class="n">4</span><span class="d">9</span></span> × <span class="frac"><span class="n">3</span><span class="d">2</span></span> → <span class="blu">かける前に約分</span>（4と2、3と9）→ <span class="frac"><span class="n">2</span><span class="d">3</span></span> × <span class="frac"><span class="n">1</span><span class="d">1</span></span> ＝ <span class="grn"><span class="frac"><span class="n">2</span><span class="d">3</span></span></span>。<b>かけてから約分すると数が大きくなってミスる。先に約分。</b></span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技5</span>10のかたまりを作る</div>
+  <div class="trg">👀 こう書いてあったら使う：<b>かけ算の中に 25 と 4、または 125 と 8 がいたら</b> <span class="arw">→</span> そこだけ先にかける</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">かけ算が3つ以上ならんでいるとき。<b>かけ算は順番を入れかえてよい</b>（わり算はダメ）。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">この2つを覚えておくだけ。<span class="big">25 × 4 ＝ 100　　125 × 8 ＝ 1000</span>この組を見つけたら、<span class="blu">先にそこだけ計算する</span>。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">0 がならぶ数は、あとのかけ算が一瞬で終わる。<span class="grn">100 や 1000 は「0をつけるだけ」</span>だから筆算がいらない。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">25 × 17 × 4 → 順番を入れかえて (25×4) × 17 ＝ 100 × 17 ＝ <span class="grn">1700</span>。　125 × 6 × 8 → (125×8) × 6 ＝ 1000 × 6 ＝ <span class="grn">6000</span>。</span></div>
+</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">技6 ★</span>−3<sup>2</sup> と (−3)<sup>2</sup> の見分け方<span class="q9">★9月に使う</span><span class="q9n">大問1</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>マイナスと「右上の小さい数字」が同じ式にいたら</b> <span class="arw">→</span> かっこの位置を指でなぞる</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx"><b>累乗（右上の小さい数字）とマイナスが同じ式にいるとき、毎回</b>。9月の大問1はここで点が動く。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">見るのはたった1つ。<b>マイナスが2乗の「中」にいるか、「外」にいるか。</b>
+    <span class="big">(−3)<sup>2</sup> … マイナスは <span class="blu">かっこの中</span> → いっしょに2乗される → <span class="grn">＋9</span><br>−3<sup>2</sup> 　… マイナスは <span class="red">かっこの外</span> → 2乗のあとからかける → <span class="red">−9</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">かっこは「<span class="grn">ここまでが2乗の中身だよ</span>」という囲い。数字が同じでも、囲いの位置で符号がひっくり返る。<b>指でかっこをなぞる1秒</b>で、この事故は消える。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">−2<sup>4</sup> ＝ −(2×2×2×2) ＝ <span class="red">−16</span>　／　(−2)<sup>4</sup> ＝ (−2)×(−2)×(−2)×(−2) ＝ <span class="grn">＋16</span>。<span class="blu">符号だけ先に決める裏ワザ</span>：かけ算・わり算では、マイナスの個数が<b>偶数ならプラス、奇数ならマイナス</b>。</span></div>
+</div>
+
+<div class="bx bx-warn">6月の特訓で <span class="red">−612</span> という答えが出たことがある。原因はここ、たった1か所。<b>−3<sup>2</sup> を (−3)<sup>2</sup> と読んでしまう</b>と、そのあとの項の符号が全部ひっくり返って、答えが大きくズレる。<b>計算力の問題じゃない。「かっこを見る」だけの問題。</b>だからここは、必ず取れる。</div>
+
+<label class="nextchk"><input type="checkbox"><span>この章の技、次の1問で使ってみる（1つだけ選んで □ にチェック）</span></label>
+
+
+<!-- ===================== 第2章 ===================== -->
+<div class="unit-banner" id="c2"><span class="unit-num">第2章</span><span class="unit-name">単位のはしご</span><span class="unit-time">技3つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技7</span>長さは×100／面積は×10000／体積は×1000000（m⇄cm）<span class="q9">★9月に使う</span><span class="q9n">大問2・5</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>m と cm、m<sup>2</sup> と cm<sup>2</sup>、m<sup>3</sup> と cm<sup>3</sup> が混ざっていたら</b> <span class="arw">→</span> 次元の回数だけ 100 をかける</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">m と cm、m<sup>2</sup> と cm<sup>2</sup>、m<sup>3</sup> と cm<sup>3</sup> を行き来するとき。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx"><b>「右上の小さい数字＝100をかける回数」と丸暗記しない。</b>そうじゃなくて、<span class="big"><span class="blu">1辺の倍率</span>を、<span class="grn">その次元の回数だけ</span>かける</span>面積は「たて×よこ」＝長さを<b>2回</b>かける形 → 倍率も<b>2回</b>。体積は「たて×よこ×高さ」＝<b>3回</b> → 倍率も<b>3回</b>。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">覚えるのは <span class="grn">1m ＝ 100cm</span> だけでいい。10000 も 1000000 も、その場で<b>作り出せる</b>。丸暗記した数字は忘れるけど、作り方は忘れない。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">1m<sup>2</sup> ＝ 100×100 ＝ <span class="grn">10000cm<sup>2</sup></span>　／　1m<sup>3</sup> ＝ 100×100×100 ＝ <span class="grn">1000000cm<sup>3</sup></span>　／　1cm ＝ 10mm だから 1cm<sup>2</sup> ＝ 10×10 ＝ <span class="grn">100mm<sup>2</sup></span>。</span></div>
+</div>
+
+<svg class="fig" viewBox="0 0 560 370" width="100%" preserveAspectRatio="xMidYMid meet">
+  <!-- 長さ -->
+  <rect x="14" y="16" width="532" height="88" rx="8" fill="#f4f8fd" stroke="#7aa7d9" stroke-width="2"/>
+  <line x1="34" y1="60" x2="126" y2="60" stroke="#2f5a8a" stroke-width="3"/>
+  <line x1="34" y1="52" x2="34" y2="68" stroke="#2f5a8a" stroke-width="3"/>
+  <line x1="126" y1="52" x2="126" y2="68" stroke="#2f5a8a" stroke-width="3"/>
+  <text x="68" y="46" font-size="12" font-weight="800" fill="#2f5a8a">1m</text>
+  <text x="48" y="84" font-size="11" font-weight="700" fill="#2f5a8a">100cm</text>
+  <text x="150" y="52" font-size="15" font-weight="900" fill="#31415f">長さ　1m ＝ 100cm</text>
+  <text x="150" y="80" font-size="13" font-weight="700" fill="#2f5a8a">100を 1回 かける → ×100</text>
+  <!-- 面積 -->
+  <rect x="14" y="114" width="532" height="88" rx="8" fill="#fdf7ee" stroke="#e0a85c" stroke-width="2"/>
+  <rect x="44" y="126" width="64" height="64" fill="#fff8e2" stroke="#8a5a17" stroke-width="2"/>
+  <line x1="60" y1="126" x2="60" y2="190" stroke="#d9b46d" stroke-width="1"/>
+  <line x1="76" y1="126" x2="76" y2="190" stroke="#d9b46d" stroke-width="1"/>
+  <line x1="92" y1="126" x2="92" y2="190" stroke="#d9b46d" stroke-width="1"/>
+  <line x1="44" y1="142" x2="108" y2="142" stroke="#d9b46d" stroke-width="1"/>
+  <line x1="44" y1="158" x2="108" y2="158" stroke="#d9b46d" stroke-width="1"/>
+  <line x1="44" y1="174" x2="108" y2="174" stroke="#d9b46d" stroke-width="1"/>
+  <rect x="44" y="126" width="16" height="16" fill="#ffe9a3" stroke="#8a5a17" stroke-width="1.5"/>
+  <text x="150" y="150" font-size="15" font-weight="900" fill="#31415f">面積　1m<tspan font-size="10" dy="-6">2</tspan><tspan dy="6"> ＝ 10000cm</tspan><tspan font-size="10" dy="-6">2</tspan></text>
+  <text x="150" y="178" font-size="13" font-weight="700" fill="#8a5a17">100を 2回 → 100×100 ＝ 10000倍</text>
+  <!-- 体積 -->
+  <rect x="14" y="212" width="532" height="88" rx="8" fill="#eef7f5" stroke="#5fa89a" stroke-width="2"/>
+  <polygon points="40,232 58,216 114,216 96,232" fill="#dcefea" stroke="#2f6a5c" stroke-width="2"/>
+  <polygon points="96,232 114,216 114,272 96,288" fill="#c9e5de" stroke="#2f6a5c" stroke-width="2"/>
+  <rect x="40" y="232" width="56" height="56" fill="#eef7f5" stroke="#2f6a5c" stroke-width="2"/>
+  <text x="150" y="248" font-size="15" font-weight="900" fill="#31415f">体積　1m<tspan font-size="10" dy="-6">3</tspan><tspan dy="6"> ＝ 1000000cm</tspan><tspan font-size="10" dy="-6">3</tspan></text>
+  <text x="150" y="276" font-size="12" font-weight="700" fill="#2f6a5c">100を 3回 → 100×100×100 ＝ 1000000倍</text>
+  <!-- まとめ -->
+  <rect x="14" y="310" width="532" height="46" rx="8" fill="#eafaf1" stroke="#9bcfae" stroke-width="2"/>
+  <text x="30" y="340" font-size="14" font-weight="900" fill="#2f6b45">覚えるのは「1m＝100cm」だけ。あとは次元の回数だけかける。</text>
+</svg>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技8</span>速さは「60」で行き来する<span class="q9">★9月に使う</span><span class="q9n">大問6(1)</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「時速」「分速」「秒速」が同じ問題に混ざっていたら</b> <span class="arw">→</span> 60 で1段ずつ上り下りする</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">時速・分速・秒速がまざっているとき。<b>問題文と答えの単位がちがったら、必ずここ。</b></span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx"><span class="big">時速 →（÷60）→ 分速 →（÷60）→ 秒速<br>秒速 →（×60）→ 分速 →（×60）→ 時速</span>秒 と 時 は<b>遠い</b>。とばさずに、<span class="blu">分速を通り道</span>にして2段で進む。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">×か÷かで迷わなくなる。<b>小さい単位（秒）ほど、進む道のりは小さくなる</b>。これは当たり前のこと。「秒速のほうが数が大きくなった」と思ったら、その時点でまちがい。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">時速54km → 分速？　まず 54km ＝ 54000m。54000 ÷ 60 ＝ <span class="grn">分速900m</span>。さらに 900 ÷ 60 ＝ <span class="grn">秒速15m</span>。<b>数がだんだん小さくなっている＝向きが合っている。</b></span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技9</span>かさ（水の量）の3点セット<span class="q9">★9月に使う</span><span class="q9n">大問5</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「L」と「cm<sup>3</sup>」が同じ問題にいたら</b> <span class="arw">→</span> 1L ＝ 1000cm<sup>3</sup> で、先にどちらかにそろえる</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">水そう・容器・「何L入るか」の問題。<b>第7章の水そうグラフでも必ず使う。</b></span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx"><span class="big">1L ＝ 1000cm<sup>3</sup> ＝ 1000mL　　1mL ＝ 1cm<sup>3</sup></span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">忘れても作り出せる。<span class="grn">1辺10cm の立方体が ちょうど 1L</span>。10×10×10 ＝ 1000cm<sup>3</sup>。<b>箱の絵を思いうかべれば、丸暗記はいらない。</b></span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">2.5L は何 cm<sup>3</sup>？ → 2.5 × 1000 ＝ <span class="grn">2500cm<sup>3</sup></span>。　1800cm<sup>3</sup> は何 L？ → 1800 ÷ 1000 ＝ <span class="grn">1.8L</span>。</span></div>
+</div>
+
+<label class="nextchk"><input type="checkbox"><span>この章の技、次の1問で使ってみる（1つだけ選んで □ にチェック）</span></label>
+
+
+<!-- ===================== 第3章 ===================== -->
+<div class="unit-banner" id="c3"><span class="unit-num">第3章</span><span class="unit-name">割合の技</span><span class="unit-time">技5つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技10</span>「の」＝ かける<span class="q9">★9月に使う</span><span class="q9n">大問3</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「〜の◯%」「〜の◯割」</b> <span class="arw">→</span> 「の」を、そのまま <b>×</b> に書きかえる</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">割合の文章題。<b>式が立てられなくて止まったとき、まずこれ。</b></span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">問題文の <b>「の」</b> を、そのまま <b>×</b> に書きかえる。<span class="big">「120人 <span class="red">の</span> 35%」　→　120 <span class="red">×</span> 0.35</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">日本語の文が、そのまま式になる。<span class="grn">考えなくていい。書きかえるだけ。</span>止まる時間がゼロになる。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">「本 <span class="red">の</span> ページ数 <span class="red">の</span> 40% を読んだ」→ ページ数 × 0.4。　「代金 <span class="red">の</span> 2割引き」→ 代金 × (1−0.2)。</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技11</span>もとにする量は「〜の」の前にある<span class="q9">★9月に使う</span><span class="q9n">大問3</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>1つの問題に、割合が2つ以上出てきたら</b> <span class="arw">→</span> 「〜の」の直前の言葉に線を引く（＝もと）</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「何をもとにした割合なのか」がわからなくなったとき。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">文の中の <b>「〜の」の直前の言葉に、鉛筆で線を引く</b>。それが<span class="blu">もとにする量（＝1にあたる量）</span>。<span class="big">「クラス全体<u>の</u> 60%」　→ もとにする量は <span class="blu">クラス全体</span></span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">割合の問題で間違える原因の大半は、計算じゃなくて<b>「どっちをもとにしたか取りちがえた」</b>こと。線を引けば取りちがえない。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">「男子は<u>クラス全体の</u>55%」ともとが全体。「女子は<u>男子の</u>80%」ともとが男子。<b>同じ問題の中でもとが変わることがある</b>。線を引くのはそのため。</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技12</span>逆算は ÷ でもどす<span class="q9">★9月に使う</span><span class="q9n">大問3</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「〜の◯%が △ でした。もとは何？」と聞かれたら</b> <span class="arw">→</span> □ × 割合 ＝ △ を作って、÷ でもどす</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「〜の 60% が 18人でした。全体は何人？」のように、<b>もとにする量を聞かれたとき</b>。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">まず<b>わかる形の式に書く</b>。わからないところは □ でいい。<span class="big">□ × 0.6 ＝ 18　→　□ ＝ 18 ÷ 0.6 ＝ <span class="grn">30</span></span>× で進んだ道は、<b>÷ でもどる</b>。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">「わり算かかけ算か」で悩まなくなる。<span class="grn">先に かけ算の式を作ってから、逆にたどる</span>だけ。悩む時間がなくなる。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">「定価の 8割が 2400円。定価は？」→ □ × 0.8 ＝ 2400 → □ ＝ 2400 ÷ 0.8 ＝ <span class="grn">3000円</span>。<b>たしかめ</b>：3000 × 0.8 ＝ 2400 ○</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技13</span>利益の3行（原価・定価・売値）<span class="q9">★9月に使う</span><span class="q9n">大問3</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「原価」「定価」「仕入れ」「◯割の利益」「◯割引き」</b> <span class="arw">→</span> 考える前に、まず3行をノートに書く</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「原価」「定価」「割引」「利益」という言葉が出たら、<b>考える前にこの3行をノートに書く</b>。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx"><span class="big">定価 ＝ 原価 × (1 ＋ 利益の割合)<br>売値 ＝ 定価 × (1 − 割引の割合)<br>利益 ＝ 売値 − 原価</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">利益の問題は、<b>この3行にあてはめるだけ</b>で式が完成する。「どっちにかけるんだっけ」と悩む時間がゼロになる。<span class="grn">3行を丸ごと書いてから、数を入れる</span>。順番が大事。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">原価800円、3割の利益を見こむ → 定価 ＝ 800 × (1＋0.3) ＝ <span class="grn">1040円</span>。それを2割引で売る → 売値 ＝ 1040 × (1−0.2) ＝ <span class="grn">832円</span>。利益 ＝ 832 − 800 ＝ <span class="grn">32円</span>。</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技14</span>「残りの〜」は 全体を 1（または □）とおく<span class="q9">★9月に使う</span><span class="q9n">大問3</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「残りの」という言葉が出てきたら</b> <span class="arw">→</span> 全体を 1 とおく（第0章 操作4とセット）</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「1日目に全体の <span class="frac"><span class="n">1</span><span class="d">3</span></span>、2日目に<b>残りの</b> <span class="frac"><span class="n">1</span><span class="d">2</span></span>」のように、<b>「残りの」</b>が出たとき。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">全体を <b>1</b> とおく。「残り」は全体ではなく、<span class="red">1 から引いたあとの数</span>。<span class="big">1日目：1 × <span class="frac"><span class="n">1</span><span class="d">3</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">3</span></span>　残りは 1 − <span class="frac"><span class="n">1</span><span class="d">3</span></span> ＝ <span class="frac"><span class="n">2</span><span class="d">3</span></span><br>2日目：<span class="frac"><span class="n">2</span><span class="d">3</span></span> × <span class="frac"><span class="n">1</span><span class="d">2</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">3</span></span>（全体の <span class="frac"><span class="n">1</span><span class="d">3</span></span>）</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx"><b>「残りの半分」は「全体の半分」じゃない</b>。ここを取りちがえるのが最大の落とし穴。全体を 1 とおいて、<span class="grn">残りをその都度もとめ直す</span>と、絶対にズレない。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">上の例で、2日終わったあとの残りは 1 − <span class="frac"><span class="n">1</span><span class="d">3</span></span> − <span class="frac"><span class="n">1</span><span class="d">3</span></span> ＝ <span class="grn"><span class="frac"><span class="n">1</span><span class="d">3</span></span></span>。全体が90ページなら 90 × <span class="frac"><span class="n">1</span><span class="d">3</span></span> ＝ <span class="grn">30ページ</span>。</span></div>
+</div>
+
+<label class="nextchk"><input type="checkbox"><span>この章の技、次の1問で使ってみる（1つだけ選んで □ にチェック）</span></label>
+
+
+<!-- ===================== 第4章 ===================== -->
+<div class="unit-banner" id="c4"><span class="unit-num">第4章</span><span class="unit-name">文章題を式にする技（方程式の利用）</span><span class="unit-time">技3つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技15</span>4つの型を、キーワード1行で見分ける<span class="q9">★9月に使う</span><span class="q9n">大問3</span></div>
+  <div class="trg">👀 こうなったら使う：<b>文章題を読みおわった直後、いつでも</b> <span class="arw">→</span> キーワードに丸をつけて、まず「型」だけ決める</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">文章題を読みおわった<b>直後</b>。まず「これは何の型か」だけを決める。<b>解き方はここでは考えない。</b></span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">下の表のキーワードを、問題文の中から<b>1つ見つけて丸をつける</b>。それで型が決まる。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">型が決まれば、<span class="grn">やることの見当がつく</span>。文章題で止まるのは「何から手をつけるか」がわからないから。型を先に決めれば、その迷いが消える。</span></div>
+</div>
+
+<table class="ttab">
+  <tr><th style="width:24%">型</th><th style="width:38%">見分けるキーワード（1行）</th><th>何をxにする？</th></tr>
+  <tr><td><b>① 個数・代金</b></td><td><span class="kw">「1個◯円」「あわせて」「合計」「全部で」</span></td><td>聞かれているもの</td></tr>
+  <tr><td><b>② 過不足</b></td><td><span class="kw">「あまる」「たりない」「配ると」</span></td><td><b>人数</b>（★下の技17）</td></tr>
+  <tr><td><b>③ 速さ</b></td><td><span class="kw">「分速」「時速」「追いつく」「出会う」「往復」</span></td><td>聞かれているもの</td></tr>
+  <tr><td><b>④ 割合・利益</b></td><td><span class="kw">「%」「割」「原価」「定価」「引き」「増し」</span></td><td>もとにする量</td></tr>
+</table>
+
+<div class="bx bx-link">型の<b>見分けの練習</b>は、道場プリント（P13・P14）でやる。このページは<b>カタログ</b>なので、見分けかたのキーワードだけ置いておく。<b>解き方は自分で作る。</b>そこがいちばん力になるところだから。</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技16</span>何を x にするか — 基本は「聞かれているもの」<span class="q9">★9月に使う</span><span class="q9n">大問3</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「〜を求めなさい」の一文を読んだら</b> <span class="arw">→</span> そこに書いてあるものを、そのまま x にする</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">式を立てはじめる、いちばん最初の1秒。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx"><b>問題文の最後の一文</b>（「〜を求めなさい」）を読む。そこに書いてあるものを x にする。<span class="big">「りんごは何個ですか」　→　りんごの数を <span class="blu">x 個</span> とする</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">x が答えそのものになるから、<b>最後に計算し直す手間がない</b>。「x は求まったけど、聞かれているのは別のもの」という事故（＝第8章のミス）も起きない。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">ただし<b>例外が1つ</b>ある。<span class="red">過不足の問題だけは「人数」を x にする</span>（次の技17）。</span></div>
+</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">技17 ★</span>過不足の心臓 ―「2通りで表して ＝ で結ぶ」<span class="q9">★9月に使う</span><span class="q9n">大問3</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「配ると◯あまる」「配ると◯たりない」</b> <span class="arw">→</span> 人数を x、総数を2通りで書く（符号は第0章 操作5）</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「配ると◯個あまる」「配ると◯個たりない」が出たとき。<b>この型はこれ1本で解ける。</b></span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx"><b>人数を x とおく</b>。すると <span class="blu">おかしの総数</span>が <b>2通りの式で表せる</b>。総数はどっちで数えても同じ数なので、<b>＝ で結ぶ</b>。
+    <span class="big">（1人3個ずつ配ると5個あまる）→ 総数 ＝ 3x ＋ 5<br>（1人4個ずつ配ると2個たりない）→ 総数 ＝ 4x − 2<br>同じ総数だから　<span class="red">3x ＋ 5 ＝ 4x − 2</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">総数を x にすると式が1本しか作れず、行きづまる。<b>人数を x にすると、総数が2通りに書ける</b>。方程式は「同じものを2通りで表して＝で結ぶ」ことで生まれる。<span class="grn">これが方程式そのものの正体。</span></span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx"><b>あまる＝＋、たりない＝−</b>。ここだけ気をつける。「たりない」のに ＋ にすると、答えの人数がマイナスになって「あれ？」となる。<span class="grn">マイナスの人数が出たら符号を疑う</span>。</span></div>
+</div>
+
+<div class="unit-banner" id="c4b" style="margin-top:22px"><span class="unit-num">型の名前</span><span class="unit-name">共通語彙表 ― この15個の言葉だけを使う</span><span class="unit-time">15語</span></div>
+
+<div class="bx bx-key">プリントによって「過不足型」と言ったり「個数過不足」と言ったりすると、<b>頭の中でつながらない</b>。<br><b>下の15個の言葉だけを使う。</b>型あて道場（P13・P14）も、通しセットも、9月の本番も、<span class="grn">ぜんぶこの言葉で呼ぶ</span>。名前が1つになると、<b>「あ、これ知ってる型だ」が本番で出てくる。</b></div>
+
+<table class="ttab">
+  <tr><th style="width:34%">型の名前（この言葉で統一）</th><th>👀 この言葉が出てきたら、この型</th></tr>
+  <tr><td><b>① 個数・代金型</b></td><td><span class="kw">「1個◯円」「あわせて」「合計」「全部で」</span>が出てきたら</td></tr>
+  <tr><td><b>② 過不足型</b></td><td><span class="kw">「あまる」「たりない」「ちょうど」</span>が出てきたら</td></tr>
+  <tr><td><b>③ 速さ・往復型</b></td><td><span class="kw">「行きは」「帰りは」「往復」「平均の速さ」</span>が出てきたら</td></tr>
+  <tr><td><b>④ 出会い型</b></td><td><span class="kw">「向かい合って」「反対から」「出会う」</span>が出てきたら（2人が<b>近づく</b>）</td></tr>
+  <tr><td><b>⑤ 追いつき型</b></td><td><span class="kw">「あとから出発」「追いかける」「追いつく」</span>が出てきたら（2人が<b>同じ向き</b>）</td></tr>
+  <tr><td><b>⑥ 割合・利益型</b></td><td><span class="kw">「%」「割」「原価」「定価」「◯割引き」「◯%増し」</span>が出てきたら</td></tr>
+  <tr><td><b>⑦ 濃度型</b></td><td><span class="kw">「食塩水」「濃さ」「混ぜる」「水を加える」</span>が出てきたら</td></tr>
+  <tr><td><b>⑧ 整数・比例配分型</b></td><td><span class="kw">「2けたの整数」「十の位」「◯対◯に分ける」</span>が出てきたら</td></tr>
+  <tr><td><b>⑨ 規則性（n式）型</b></td><td><span class="kw">「1番目、2番目…」「n番目」「ならべていく」</span>が出てきたら</td></tr>
+  <tr><td><b>⑩ 数え方（重複処理）型</b></td><td><span class="kw">「1辺に◯個」「まわりに何個」「何組できる」</span>が出てきたら（<b>ダブりを疑う</b>）</td></tr>
+  <tr><td><b>⑪ 正負の表・平均型</b></td><td><span class="kw">「基準との差」「＋−で表した表」「平均」</span>が出てきたら</td></tr>
+  <tr><td><b>⑫ 水そう・グラフ型</b></td><td><span class="kw">「毎分◯cm<sup>3</sup> 入れる」「グラフが折れている」</span>が出てきたら</td></tr>
+  <tr><td><b>⑬ 複合図形型</b></td><td><span class="kw">「色のついた部分の面積」「かげをつけた部分」</span>が出てきたら</td></tr>
+  <tr><td><b>⑭ 折り返し角型</b></td><td><span class="kw">「折り返した」「折り曲げた」「重ねた」</span>が出てきたら</td></tr>
+  <tr><td><b>⑮ 単位換算型</b></td><td><span class="kw">問題文の単位と、答えの単位がちがう</span>とき（第0章 操作3）</td></tr>
+</table>
+
+<label class="nextchk"><input type="checkbox"><span>この章の技、次の1問で使ってみる（1つだけ選んで □ にチェック）</span></label>
+
+
+<!-- ===================== 第5章 ===================== -->
+<div class="unit-banner" id="c5"><span class="unit-num">第5章</span><span class="unit-name">図形の技</span><span class="unit-time">技5つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技18</span>折り返したら、同じ角・同じ長さが移る<span class="q9">★9月に使う</span><span class="q9n">大問2</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「折り返した」「折り曲げた」「重ねた」</b> <span class="arw">→</span> 図に ●（同じ角）と ■（同じ長さ）を書きこむ</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「紙を折り返した」「テープを折った」という問題。<b>折り返し角の問題は、これだけで解ける。</b></span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">折り目でパタンと重なった部分は、<b>もとの形とまったく同じ</b>。<span class="big">折り返す前の角 ＝ 折り返したあとの角<br>折り返す前の辺 ＝ 折り返したあとの辺</span>図に<b>●（同じ角）と ■（同じ長さ）を書きこむ</b>。それだけで、わかる数がふえていく。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">折り返しは<b>「ひっくり返しただけ」で、形は変わっていない</b>から。大きさも角度も変わらない。<span class="grn">「同じ」を図に書きこむ</span>と、わからなかった角が芋づる式に出てくる。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">折り目のところに ● を2つ書く（左と右）。すると「● ＋ ● ＋ 残りの角 ＝ 180°」のような式が作れる。<b>図に書きこまないと、絶対に見えない。</b></span></div>
+</div>
+
+<svg class="fig" viewBox="0 0 520 250" width="100%" preserveAspectRatio="xMidYMid meet">
+  <text x="228" y="24" font-size="12" font-weight="800" fill="#8a5a19">折り目</text>
+  <line x1="260" y1="32" x2="260" y2="212" stroke="#d9b46d" stroke-width="3" stroke-dasharray="7 5"/>
+  <polygon points="80,190 260,190 150,70" fill="#eef6fb" stroke="#2f5a8a" stroke-width="2.5"/>
+  <polygon points="440,190 260,190 370,70" fill="#fdf2f4" stroke="#9b514d" stroke-width="2.5"/>
+  <path d="M 236 190 A 24 24 0 0 0 246 172" fill="none" stroke="#2f5a8a" stroke-width="2.5"/>
+  <path d="M 284 190 A 24 24 0 0 1 274 172" fill="none" stroke="#9b514d" stroke-width="2.5"/>
+  <circle cx="238" cy="176" r="4" fill="#2f5a8a"/>
+  <circle cx="282" cy="176" r="4" fill="#9b514d"/>
+  <line x1="112" y1="126" x2="122" y2="132" stroke="#2f5a8a" stroke-width="3"/>
+  <line x1="408" y1="126" x2="398" y2="132" stroke="#9b514d" stroke-width="3"/>
+  <text x="104" y="176" font-size="12" font-weight="800" fill="#2f5a8a">もとの形</text>
+  <text x="300" y="176" font-size="12" font-weight="800" fill="#9b514d">折り返した形</text>
+  <path d="M 150 52 Q 260 14 370 52" fill="none" stroke="#6aa97a" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <polygon points="370,52 358,44 362,58" fill="#6aa97a"/>
+  <rect x="40" y="216" width="440" height="30" rx="7" fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5"/>
+  <text x="56" y="236" font-size="14" font-weight="900" fill="#2f6b45">折り返すと、角も長さも そのまま うつる（● ＝ ●）</text>
+</svg>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技19</span>複合図形は「大きい形 − 小さい形」<span class="q9">★9月に使う</span><span class="q9n">大問2</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「色のついた部分の面積」「かげをつけた部分」</b> <span class="arw">→</span> まず「これをふくむ大きい形」を1つ思いうかべる</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">へこんだ形・穴のあいた形・くっついた形の面積を聞かれたとき。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">まず<b>「この形をふくむ、いちばん大きい四角（か円）」</b>を1つ思いうかべる。<span class="big">求める面積 ＝ 大きい形の面積 − いらない部分の面積</span>足すより<b>引くほうが速いことが多い</b>。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">分けて足すと、<span class="red">辺の長さを自分で計算しないといけない</span>ことが多い（引き算が増える＝ミスが増える）。大きい形から引くなら、<span class="grn">問題文に書いてある数をそのまま使える</span>ことが多い。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx"><b>等積変形</b>も同じ考え。動かしても面積が変わらない部分は、<span class="blu">きれいな四角になるように動かしてよい</span>。「動かしたら長方形になった」なら、もうそれで計算できる。</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技20</span>半円4つ ＝ 円2つ<span class="q9">★9月に使う</span><span class="q9n">大問2</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>正方形の中に、半円や四分円がならんでいたら（花びら型）</b> <span class="arw">→</span> まとめて「円」にしてから計算する</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">正方形の中に半円がならんだ図（花びら型・葉っぱ型）。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">半円は<b>2つで円1つ</b>。だから<span class="big">半円4つ ＝ 円2つ　　花びら型 ＝ 半円の合計 − 正方形</span>ひとつひとつ計算しない。<b>まとめて円にしてから、はみ出た分を引く。</b></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">半円の面積を4回計算すると、3.14 のかけ算が4回。まとめれば<span class="grn">1回で済む</span>。ミスの回数が <span class="grn">4分の1</span> になる。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">半径5cm の半円4つ → 円2つ分 ＝ 5×5×3.14×2 ＝ 25×2×3.14 ＝ 50×3.14 ＝ <span class="grn">157cm<sup>2</sup></span>。（<b>3.14 は最後にまとめてかけている</b>。技22と同じ。）</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技21</span>おうぎ形 ＝ 円 × (中心角 ÷ 360)<span class="q9">★9月に使う</span><span class="q9n">大問2</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「中心角◯°」やピザ1切れの形が出てきたら</b> <span class="arw">→</span> 円の式 × <span class="frac"><span class="n">中心角</span><span class="d">360</span></span>（新しい公式はいらない）</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">おうぎ形（ピザの1切れの形）の面積・弧の長さ。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx"><span class="big">おうぎ形の面積 ＝ 半径×半径×3.14 × <span class="frac"><span class="n">中心角</span><span class="d">360</span></span><br>弧の長さ 　　　＝ 半径×2×3.14 × <span class="frac"><span class="n">中心角</span><span class="d">360</span></span></span>公式は<b>2つとも「円の式 × 中心角の分数」</b>。同じ形。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">おうぎ形は<b>円を切り取ったもの</b>。360°のうち何度分かを分数で表すだけ。<span class="grn">新しい公式を覚える必要はない。円の公式に分数をかけるだけ。</span></span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">中心角90° は <span class="frac"><span class="n">90</span><span class="d">360</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">4</span></span>（円の4分の1）。中心角120° は <span class="frac"><span class="n">120</span><span class="d">360</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">3</span></span>。<b>先に約分すると一気にラクになる。</b></span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技22</span>3.14 は最後にまとめてかける<span class="q9">★9月に使う</span><span class="q9n">大問2</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>3.14 が式に2回以上出てきたら</b> <span class="arw">→</span> 3.14 を最後まで書かない。ほかを全部計算してから1回だけかける</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">円・おうぎ形が2つ以上出てくる問題ぜんぶ。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx"><b>3.14 を書かずに、いったん置いておく</b>。ほかの数を全部先に計算して、最後に1回だけかける。<span class="big">6×6×3.14 − 4×4×3.14 ＝ (36 − 16) × 3.14 ＝ 20 × 3.14 ＝ 62.8</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">第1章の<b>技1（くくる）</b>とまったく同じ技。3.14 のかけ算は<span class="red">筆算が長くてミスが出やすいし、時間もかかる</span>。<span class="grn">2回 → 1回</span>にへらせば、時間もミスも半分。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">先に 6×6×3.14 ＝ 113.04、4×4×3.14 ＝ 50.24 と計算して引くと、<b>小数の筆算が3回</b>。まとめれば <b>1回</b>。50分のテストで、この差は大きい。</span></div>
+</div>
+
+<label class="nextchk"><input type="checkbox"><span>この章の技、次の1問で使ってみる（1つだけ選んで □ にチェック）</span></label>
+
+
+<!-- ===================== 第6章 ===================== -->
+<div class="unit-banner" id="c6"><span class="unit-num">第6章</span><span class="unit-name">規則性の技</span><span class="unit-time">技3つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技23</span>差分表（さぶんひょう）を作る<span class="q9">★9月に使う</span><span class="q9n">大問4</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「1番目、2番目、3番目…」とならんでいたら</b> <span class="arw">→</span> 何もしないでまず、となりとの差を下に書く</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「1番目、2番目、3番目…」とならぶ問題。<b>数を見てもわからないときは、まず表を書く。</b></span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">数をよこにならべて、<b>となりとの差を下に書く</b>。差が全部同じなら、n の式はこれ。<span class="big">n の式 ＝ 差 × n ＋ （最初の数 − 差）</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">差が一定＝<span class="grn">「1つ進むたびに、同じ数だけふえる」</span>ということ。だから「差 × n」が骨組み。あとは1番目がぴったり合うように、ずれた分をたす（引く）だけ。<b>公式を覚えなくても、その場で作れる。</b></span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">5, 8, 11, 14, … 差はぜんぶ <b>3</b>。最初の数は 5。<br>式 ＝ 3 × n ＋ (5 − 3) ＝ <span class="grn">3n ＋ 2</span>。<b>たしかめ</b>：n＝1 → 3＋2＝5 ○　n＝4 → 12＋2＝14 ○</span></div>
+</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">技24 ★</span>ダブりは「引く」か「割る」か<span class="q9">★9月に使う</span><span class="q9n">大問4</span></div>
+  <div class="trg">👀 こうなったら使う：<b>「4×n にしたのに、答えが合わない」と思った瞬間</b> <span class="arw">→</span> 「何を2回数えたか」を口に出す</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「4×n にしたら、答えが合わない」とき。<b>きみが今いちばん点を落としているのがここ。だから、ここが一番のびる。</b></span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx"><b>まず「何を2回数えたか」を口に出す。</b>それで、引くか割るかが決まる。
+    <span class="big"><span class="red">角</span>を2回数えている　　　→　<b>引く</b>（4n − 4）<br><span class="blu">同じ組</span>を2回ずつ数えている →　<b>割る</b>（÷ 2）</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">ダブっているのが <b>「決まった個数」</b>（角の4個など）なら、その個数を<span class="grn">引く</span>。ダブっているのが <b>「全部が2回ずつ」</b>なら、全体を<span class="grn">2で割る</span>。<b>「一部だけダブり → 引く」「全部ダブり → 割る」</b>と覚える。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">下の図で確認して。<b>迷ったら n＝3 くらいの小さい数で、実際に数えてみる</b>。式と数が合うか確かめれば、引くか割るかは自分で決められる。</span></div>
+</div>
+
+<svg class="fig" viewBox="0 0 560 336" width="100%" preserveAspectRatio="xMidYMid meet">
+  <!-- 引く：角を2回数える -->
+  <rect x="14" y="24" width="532" height="124" rx="8" fill="#fdf2f4" stroke="#d08a86" stroke-width="2"/>
+  <circle cx="40" cy="40" r="8" fill="#c0392b" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="68" cy="40" r="8" fill="#fff" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="96" cy="40" r="8" fill="#fff" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="124" cy="40" r="8" fill="#c0392b" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="40" cy="68" r="8" fill="#fff" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="124" cy="68" r="8" fill="#fff" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="40" cy="96" r="8" fill="#fff" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="124" cy="96" r="8" fill="#fff" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="40" cy="124" r="8" fill="#c0392b" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="68" cy="124" r="8" fill="#fff" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="96" cy="124" r="8" fill="#fff" stroke="#9b514d" stroke-width="2"/>
+  <circle cx="124" cy="124" r="8" fill="#c0392b" stroke="#9b514d" stroke-width="2"/>
+  <text x="150" y="52" font-size="14" font-weight="800" fill="#31415f">1辺に n個ずつ ならべる</text>
+  <text x="150" y="78" font-size="14" font-weight="800" fill="#31415f">4辺ぶん 数えると 4 × n</text>
+  <text x="150" y="104" font-size="14" font-weight="800" fill="#9b514d">でも 赤い角の4個を 2回 数えている</text>
+  <text x="150" y="134" font-size="17" font-weight="900" fill="#c0392b">→ 引く：4n − 4</text>
+  <!-- 割る：同じ組を2回数える -->
+  <rect x="14" y="160" width="532" height="124" rx="8" fill="#f4f8fd" stroke="#7aa7d9" stroke-width="2"/>
+  <line x1="48" y1="190" x2="110" y2="190" stroke="#7aa7d9" stroke-width="2"/>
+  <line x1="48" y1="252" x2="110" y2="252" stroke="#7aa7d9" stroke-width="2"/>
+  <line x1="48" y1="190" x2="48" y2="252" stroke="#7aa7d9" stroke-width="2"/>
+  <line x1="110" y1="190" x2="110" y2="252" stroke="#7aa7d9" stroke-width="2"/>
+  <line x1="48" y1="190" x2="110" y2="252" stroke="#7aa7d9" stroke-width="2"/>
+  <line x1="110" y1="190" x2="48" y2="252" stroke="#7aa7d9" stroke-width="2"/>
+  <circle cx="48" cy="190" r="12" fill="#e6f0fb" stroke="#2f5a8a" stroke-width="2"/>
+  <circle cx="110" cy="190" r="12" fill="#e6f0fb" stroke="#2f5a8a" stroke-width="2"/>
+  <circle cx="48" cy="252" r="12" fill="#e6f0fb" stroke="#2f5a8a" stroke-width="2"/>
+  <circle cx="110" cy="252" r="12" fill="#e6f0fb" stroke="#2f5a8a" stroke-width="2"/>
+  <text x="150" y="188" font-size="14" font-weight="800" fill="#31415f">4人が おたがいに 手をつなぐ</text>
+  <text x="150" y="214" font-size="14" font-weight="800" fill="#31415f">1人あたり 3人と → 4 × 3 ＝ 12</text>
+  <text x="150" y="240" font-size="14" font-weight="800" fill="#2f5a8a">でも 同じ組を 2回ずつ 数えている</text>
+  <text x="150" y="270" font-size="17" font-weight="900" fill="#2f5a8a">→ 割る：12 ÷ 2 ＝ 6組</text>
+  <!-- まとめ -->
+  <rect x="14" y="292" width="532" height="36" rx="8" fill="#eafaf1" stroke="#9bcfae" stroke-width="2"/>
+  <text x="30" y="316" font-size="14" font-weight="900" fill="#2f6b45">一部だけダブり → 引く　　全部が2回ずつダブり → 割る</text>
+</svg>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技25</span>逆算は「式を作ってから n について解く」<span class="q9">★9月に使う</span><span class="q9n">大問4</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「◯個になるのは何番目ですか」</b> <span class="arw">→</span> 数えあげない。先に n の式を作って、方程式として解く</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「◯個になるのは何番目ですか」のように、<b>番号を聞かれたとき</b>。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">数えあげて探そうとしない。<b>先に n の式を作る（技23）</b>。そのあと、その式 ＝ 聞かれた数、として<b>方程式として解く</b>。<span class="big">3n ＋ 2 ＝ 47　→　3n ＝ 45　→　n ＝ <span class="grn">15</span>（15番目）</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">1番目から順に数えていくと、時間がいくらあっても足りない。<span class="grn">式さえ作れば、方程式1本で一発</span>。規則性は「式を作るゲーム」だと思っていい。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx"><b>たしかめ</b>を必ずする。n＝15 を式にもどして 3×15＋2 ＝ 47 ○。<b>もどして合えば正解。合わなければ式がまちがっている。</b></span></div>
+</div>
+
+<label class="nextchk"><input type="checkbox"><span>この章の技、次の1問で使ってみる（1つだけ選んで □ にチェック）</span></label>
+
+
+<!-- ===================== 第7章 ===================== -->
+<div class="unit-banner" id="c7"><span class="unit-num">第7章</span><span class="unit-name">グラフ・水そうの技</span><span class="unit-time">技2つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技26</span>折れ線の傾きが変わった ＝ 入れ物の断面積が変わった<span class="q9">★9月に使う</span><span class="q9n">大問5</span></div>
+  <div class="trg">👀 こうなったら使う：<b>グラフが「くの字」に折れているのを見た瞬間</b> <span class="arw">→</span> 折れた点に印をつける（そこで入れ物の形が変わった）</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">水そうに水を入れるグラフ。<b>グラフが「くの字」に折れているのを見た瞬間。</b></span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">グラフの<b>折れた点に印をつける</b>。そこで<span class="blu">入れ物の形が変わった</span>と読む。<span class="big">グラフが急になった　→ 水面が速く上がる → <b>せまい</b>（断面積が小さい）<br>グラフがゆるくなった → 水面がゆっくり上がる → <b>広い</b>（断面積が大きい）</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">同じ量の水を入れても、<b>せまい入れ物なら水面はグンと上がる</b>。コップと洗面器を思いうかべればわかる。<span class="grn">グラフの形が、そのまま入れ物の形を教えてくれている。</span></span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">「何分後にじゃまな板の高さをこえたか」は、<b>折れた点の時間</b>。グラフに印をつけるだけで答えが見つかることが多い。<b>まず印。計算はそのあと。</b></span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技27</span>1分あたりの量 ＝ 体積 ÷ 時間<span class="q9">★9月に使う</span><span class="q9n">大問5</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「毎分何cm<sup>3</sup> の水を入れているか」</b> <span class="arw">→</span> グラフから、目もりがぴったりの点を<b>1つだけ</b>選んで、わり算</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「毎分何cm<sup>3</sup> の水を入れているか」を求めるとき。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">グラフの中から<b>いちばん読みやすい点を1つだけ選ぶ</b>（目もりがぴったりの点）。その点の<span class="blu">体積</span>と<span class="blu">時間</span>を読んで、わり算する。<span class="big">1分あたりの量 ＝ そこまでに入った体積 ÷ かかった時間</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">水を入れる速さは<b>ずっと同じ</b>ことが多い。だから<span class="grn">どこか1点だけ読めば、全部わかる</span>。全部読もうとしなくていい。<b>読みやすい1点を選ぶ</b>のが技。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">「4分で 3600cm<sup>3</sup> 入った」と読めたら、3600 ÷ 4 ＝ <span class="grn">毎分900cm<sup>3</sup></span>。<b>単位を必ず書く</b>（第8章）。「900」だけでは、点がもらえないことがある。</span></div>
+</div>
+
+<label class="nextchk"><input type="checkbox"><span>この章の技、次の1問で使ってみる（1つだけ選んで □ にチェック）</span></label>
+
+
+<!-- ===================== 第8章 ===================== -->
+<div class="unit-banner" id="c8"><span class="unit-num">第8章 ★</span><span class="unit-name">見直しの型 ― 90点はここで決まる</span><span class="unit-time">技4つ</span></div>
+
+<div class="bx bx-warn">この章は<b>「わからなかった問題」の話じゃない</b>。<b>わかっていたのに落とした問題</b>の話。<br>実際にあったこと：<b>23 と書くところを 10 と書いた</b>／<b>137 と書くところを 127 と書いた</b>／<b>「差」を聞かれているのに「最大値」を答えた</b>。<br>この3つは、<span class="red">解き方はぜんぶ合っていた</span>。<b>見直しの型を持っていれば、ぜんぶ取れていた点</b>。ここが、いちばん取り返せる場所。</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">技28 ★</span>答えを問題文にもどす（検算）<span class="q9">★9月に使う</span><span class="q9n">大問1〜6</span></div>
+  <div class="trg">👀 こうなったら使う：<b>答えを1つ書きおえたら、毎回（10秒）</b> <span class="arw">→</span> その答えを、もとの式に入れ直して合うか見る</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">答えを書いたあと、<b>10秒</b>。方程式・割合・規則性は必ず。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">出た答えを、<b>もとの問題文の式に入れ直す</b>。<span class="big">x ＝ 5 が出た → 元の式に 5 を入れて、左と右が同じ数になるか見る</span>ならなければ、<b>その場で気づける</b>。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx"><b>もう一度解き直す必要はない</b>（時間がない）。もどすだけなら<span class="grn">10秒</span>。しかも、もどして合えば <span class="grn">100% 正解</span>。これ以上たしかな見直しはない。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">わり算の検算は <b>答え × わる数</b>。割合の検算は <b>もとの量 × 割合</b>。規則性の検算は <b>n を式にもどす</b>。<b>どれも「かけ算1回」で終わる。</b></span></div>
+</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">技29 ★</span>単位を必ず書く<span class="q9">★9月に使う</span><span class="q9n">大問1〜6</span></div>
+  <div class="trg">👀 こうなったら使う：<b>答えを書くとき、毎回</b> <span class="arw">→</span> 数だけ書いて次に行かない。問題文と同じ単位をとなりに書く</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">答えを書くとき、<b>毎回</b>。数だけ書いて次に行かない。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">答えのとなりに、<b>問題文と同じ単位</b>を書く。<span class="big">cm<sup>3</sup> ／ 毎分◯cm<sup>3</sup> ／ km ／ 時速◯km ／ 個 ／ 人 ／ 円 ／ 度</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">単位を書こうとすると、<b>「あれ、これ cm<sup>2</sup> じゃなくて cm<sup>3</sup> だ」</b>と<span class="grn">その場で気づく</span>。単位を書くこと自体が見直しになる。しかも<b>単位がないと減点されることがある</b>。<b>書くだけで点が守れる。</b></span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">「時速4800m」で止めたら不正解（聞かれているのは km）。<b>問題文の単位に、答えの単位を合わせる。</b>これは第2章（単位のはしご）とセット。</span></div>
+</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">技30 ★</span>符号だけ、最後にもう一度見る<span class="q9">★9月に使う</span><span class="q9n">大問1</span></div>
+  <div class="trg">👀 こうなったら使う：<b>マイナスが1つでも出てきた計算問題（大問1は全部）</b> <span class="arw">→</span> 数は見ない。<b>符号だけ</b>を5秒見る</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">マイナスが1つでも出てきた計算問題。<b>大問1は全部これ。</b></span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">数を見直すのではなく、<b>符号だけを見る</b>。<span class="big">① 累乗のマイナスは 中？ 外？（技6）<br>② かっこの前のマイナスは、中の<b>ぜんぶ</b>に配ったか？<br>③ マイナスの個数は 偶数？ 奇数？</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">計算全体を見直すと時間がかかる。<b>符号だけなら 5秒</b>。しかも<span class="red">きみの失点で、符号が原因のものは いちばん多い</span>。<span class="grn">一番よく落とすところを、一番速く見直す。</span>これがいちばん得。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">かっこの前のマイナスは、<b>中の1つ目だけじゃなく、全部にかかる</b>。−(a − b) ＝ −a ＋ b。<span class="red">2つ目の符号を変え忘れる</span>のが最多ミス。</span></div>
+</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">技31 ★</span>「何を聞かれたか」に線を引く<span class="q9">★9月に使う</span><span class="q9n">大問1〜6</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「差」「合計」「2番目に大きい」「何倍」「残り」「何番目」</b> <span class="arw">→</span> 線を引く。<b>もう1手いる合図</b></div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">問題文を読んだ<b>直後</b>。解きはじめる前に、<b>2秒だけ使う</b>。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">問題文の最後の一文に、<b>鉛筆で線を引く</b>。とくにこの言葉。<span class="big"><span class="red">差</span>・<span class="red">合計</span>・<span class="red">2番目に大きい</span>・<span class="red">何倍</span>・<span class="red">残り</span>・<span class="red">何番目</span></span>これらは<b>「もう1手」必要</b>という合図。答えを出しても、まだ終わりじゃない。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx"><b>「差」を聞かれているのに、最大値を答えた</b>。これは実際に起きたミス。<span class="red">解き方は合っていたのに、0点</span>になる。いちばん<span class="grn">くやしくて、いちばん簡単に防げる</span>失点。線を引く2秒で防げる。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">「最大値と最小値の<u>差</u>を求めなさい」→ 最大値を出しただけでは終わっていない。<b>引き算がもう1回必要</b>。<span class="blu">答えを書く直前に、線を引いた場所をもう一度読む。</span></span></div>
+</div>
+
+<div class="bx bx-key">見直しは <b>「解き直し」じゃない</b>。<b>4つの型を、順番にあてる</b>だけ。ぜんぶで <b>3分</b>で終わる。<br>① 答えを問題文にもどす　② 単位を書く　③ 符号だけ見る　④ 何を聞かれたか読み直す</div>
+
+<label class="nextchk"><input type="checkbox"><span>この章の技、次の1問で使ってみる（1つだけ選んで □ にチェック）</span></label>
+
+
+<!-- ===================== 第9章 ===================== -->
+<div class="unit-banner" id="c9"><span class="unit-num">第9章</span><span class="unit-name">50分の使い方（時間配分）</span><span class="unit-time">技3つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技32</span>時間配分を、先に決めておく</div>
+  <div class="trg">👀 こうなったら使う：<b>テストが始まる前、席についたとき</b> <span class="arw">→</span> 下の配分を頭に入れてから始める（始まってからでは遅い）</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">テストが始まる<b>前</b>。始まってから考えるのでは遅い。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">この配分を、頭に入れてから席につく。</span></div>
+</div>
+
+<table class="ttab">
+  <tr><th style="width:34%">やること</th><th style="width:18%">時間</th><th>ねらい</th></tr>
+  <tr><td><b>大問1・2</b>（計算）</td><td><b>15分</b></td><td>ここは<span class="kw">確実に取る</span>。速さより正確さ。符号を1回見る。</td></tr>
+  <tr><td><b>大問3</b></td><td><b>12分</b></td><td>型を見分けて（技15）、式を立てる。</td></tr>
+  <tr><td><b>大問4・5</b></td><td><b>15分</b></td><td>図に書きこむ（技18）。手が止まったら印をつけて次へ。</td></tr>
+  <tr><td><b>大問6(1)</b></td><td><b>5分</b></td><td>(1)は取りにいく。<span class="kw">(2)は最初から捨てる</span>。</td></tr>
+  <tr><td><b>見直し</b></td><td><b>3分</b></td><td>第8章の4つの型を順番にあてる。<span class="kw">ここを絶対に残す</span>。</td></tr>
+</table>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">技33 ★</span>大問6(2)は、捨ててよい</div>
+  <div class="trg">👀 こうなったら使う：<b>テストが始まる前に、あらかじめ</b> <span class="arw">→</span> 「6(2)は解かない」と決めておく。その場で悩まない</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">テストが始まる前に、<b>あらかじめそう決めておく</b>。その場で悩まない。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx"><b>大問6(2)は、最初から解かないと決める。</b><span class="big">その5分を「大問1〜5の見直し」に使う</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx"><b>これはサボりじゃない。戦略。</b>6(2)に5分かけて解けない可能性が高い問題より、<span class="grn">すでに解いた30問の見直しに5分</span>のほうが、確実に点がふえる。<br>そして何より、<b>「捨てると決めておく」と、本番で焦らない</b>。焦りは、解ける問題まで落とさせる。<span class="grn">心を守るための作戦</span>でもある。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">もし大問1〜5が早く終わって、<b>見直しまで終わって時間が余った</b>ら、そのときだけ6(2)を見にいく。<b>おまけ</b>として。それでいい。</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">技34</span>1問に5分以上かけない</div>
+  <div class="trg">👀 こうなったら使う：<b>「この問題、わからない…」と思った、その瞬間</b> <span class="arw">→</span> 問題番号に △ をつけて、次へ行く</div>
+  <div class="tec-row"><span class="lb lb-when">使う場面</span><span class="tx">「この問題、わからない…」と思った、その瞬間。</span></div>
+  <div class="tec-row"><span class="lb lb-how">技</span><span class="tx">迷ったら、<b>問題番号に大きく印（△）をつけて、次へ行く</b>。<span class="big">わからない → △ をつける → <b>次へ</b> → 全部終わったら戻ってくる</span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">1問に10分かけて落とすと、<b>その先にあった「解けたはずの問題」も落とす</b>。ダメージが2倍になる。<br>それに、<span class="grn">いったん離れて戻ってくると、なぜか見えるようになる</span>ことが本当に多い。<b>離れるのは、あきらめじゃない。作戦。</b></span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">△をつけた問題は、<b>白紙にしない</b>。式だけでも書いておく。<span class="blu">途中式に部分点がつくことがある</span>。書けるところまで書いて、△をつけて、次へ。</span></div>
+</div>
+
+<label class="nextchk"><input type="checkbox"><span>この章の技、次の1問で使ってみる（1つだけ選んで □ にチェック）</span></label>
+
+
+<div class="endcheer">
+  34個の技、ぜんぶ覚えなくていい。<b>覚えるのは、今日の1つだけ</b>。<br>
+  順番はこれ。まず <b>第0章の5つの操作</b>（ここで止まらないことが先）。次に <b><span class="q9">★9月に使う</span> のついた技</b>。バッジのない技は、余裕ができてからでいい。<br>
+  技は「読んで覚えるもの」じゃなくて、<b>「1回使って、体で覚えるもの」</b>。だから <b>解いたあとに開く</b>。<b>👀 の行</b>を読んで「あ、さっきの問題これだ」と思ったら、それが持ち帰る1つ。<br>
+  ここに書いてある技は、ぜんぶ <b>きみが実際に落とした場所</b>から作った。つまり、<b>ここに書いてあることは、ぜんぶ「これから取れるようになる点」</b>ということ。<br>
+  速く、正確に。9月の50分は、ここで決まる🌸
+</div>
+
+</div>
+</body>
+</html>

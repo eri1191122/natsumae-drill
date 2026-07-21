@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓S3 数え方の重複処理と規則性 ― 9月 大問4 直撃｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 今日の型｜ダブりの しまつ の しかた";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.cardbox .two{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
+.cardbox .two div{flex:1 1 240px;border-radius:8px;padding:10px 12px;font-size:13px;font-weight:800;line-height:1.9}
+.cardbox .two .wari{background:#eef6fb;border:2px solid #a8c8e4;color:#2f5a8a}
+.cardbox .two .hiku{background:#fff3ee;border:2px solid #e8b39f;color:#a4512e}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月 大問4 へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ いいかえ｜ひとことで言うと";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-chk{background:#eef6fb;border-left:4px solid #5b8fbf}
+.bx-chk::before{content:"✅ 検算｜合っているか自分で確かめる";display:block;font-size:12px;font-weight:800;color:#2f5a8a;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.subq{margin:8px 0 0 4px;font-size:17px;font-weight:800;color:#31415f;line-height:2.2}
+.subq .no{display:inline-block;width:22px;color:#7a8798}
+.fill{display:inline-block;min-width:70px;border-bottom:2.5px solid #7aa7d9;text-align:center;font-weight:900;color:#2f5a8a;padding:0 6px}
+.qtable{border-collapse:collapse;margin:10px 0;font-size:15px}
+.qtable th,.qtable td{border:1px solid #c9cfc6;padding:6px 16px;text-align:center;font-weight:800}
+.qtable th{background:#eef1ec;color:#46524a;font-size:13px}
+.qtable td{background:#fff;color:#31415f;letter-spacing:.08em}
+.wex{background:#eef6fb;border:2px solid #a8c8e4;border-left:7px solid #5b8fbf;border-radius:8px;padding:12px 14px;margin:10px 0}
+.wex::before{content:"👀 例｜やり方を ぜんぶ 見せる（読むだけにしないで、手を動かして）";display:block;font-size:12px;font-weight:900;color:#2f5a8a;margin-bottom:6px}
+.wex .wl{margin:5px 0;font-size:14px;line-height:1.95;color:#25415f}
+.wex .wl b{color:#c0392b}
+.half{background:#fdf7ee;border:2px solid #eccf9a;border-left:7px solid #e0a85c;border-radius:8px;padding:12px 14px;margin:10px 0}
+.half::before{content:"🧩 穴あき｜とちゅうまで書いてある。□ をうめて 完成させよう";display:block;font-size:12px;font-weight:900;color:#8a5a17;margin-bottom:6px}
+.half .hl{margin:6px 0;font-size:14.5px;line-height:2.1;color:#5a4520;font-weight:700}
+.work{background:#fff3ee;border:2px dashed #e8b39f;border-radius:8px;padding:11px 14px;margin:10px 0;font-size:13.5px;color:#a4512e;font-weight:800;line-height:1.95}
+.work::before{content:"✂️ 手を動かす｜赤ペンで 線を引いて 消してみよう";display:block;font-size:12px;font-weight:900;color:#a4512e;margin-bottom:5px}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px;width:100%;max-width:600px;height:auto}
+.figcap{text-align:center;font-size:11.5px;color:#6a7280;margin:-4px 0 8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.step.q5{border-left-color:#d98aa7;background:#fdf2f6}
+.step.q5 > span:first-child{background:#f7dce8;border-color:#eebccf;color:#9a3f63}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.wline{border-bottom:2px solid #d9b46d;height:28px;margin-top:6px}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:.95em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tool-hint{margin:8px 0;border:1px dashed #c9b8d6;border-radius:8px;background:#faf7fc;padding:6px 10px;font-size:12.5px}
+.tool-hint summary{cursor:pointer;font-weight:700;color:#7a5a95}
+.tool-hint div{margin-top:6px;color:#4a3a56;line-height:1.8}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓S3</span><span class="pg-badge">数学：数え方と規則性</span><span class="pg-badge">★9月 大問4 直撃 L2-L4</span></div>
+  <h1>特訓S3 数え方の重複処理と規則性 ― 9月 大問4 直撃</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問9 ＋ 付録）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">今日あつかうのは、たった1つのこと。<strong>「同じものを 2回 数えてしまったとき、どう しまつ するか」</strong>。ぜんぜん別に見える2つの問題が、今日1本につながるよ。そしてその考え方が、<strong>9月の特訓選抜 大問4 そのもの</strong>🌸</p>
+</div>
+
+<!-- ===== 診断 ===== -->
+<div class="unit-banner"><span class="unit-num">診断</span><span class="unit-name">前にやった問題。今日はどう？</span><span class="unit-time">目安 3分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問1</span>A・B・C・D・E の 5人 から、係を <strong>2人</strong> えらびます。えらび方は 何通り ありますか。</div>
+  <div class="note-draw">まず、思いつく組を ノートに 全部 書き出してみよう。数えられるだけ書いてOK。答えが出なくても、ここで手が止まっても、まったく問題ないよ。<strong>この問題は「今の位置を知る」ためだけの1問</strong>。ここが今日のスタート地点。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">「2人えらぶ」は、<strong>順番を気にしない</strong>。A と B をえらぶのも、B と A をえらぶのも、できあがる係は同じ2人組。だから「1人目5通り × 2人目4通り ＝ 20」だと、同じ組を 2回ずつ 数えている。</div>
+    <div class="step q1"><span>①</span>順番つきで数える：1人目は5通り、2人目は残り4通り → <span class="math">5 × 4 ＝ 20</span></div>
+    <div class="step q1"><span>②</span>AB と BA は 同じ組。20個 は 同じ組を 2回ずつ 数えた数 → <span class="math">20 ÷ 2 ＝ 10</span></div>
+    <div class="step q1"><span>③</span>ぜんぶ書き出すと：AB, AC, AD, AE, BC, BD, BE, CD, CE, DE → たしかに 10通り</div>
+    <div class="bx bx-warn"><span class="red">「5 × 4 ＝ 20通り」で止めない</span>。前のきみは ここで止まった。でもそれは まちがい じゃなくて、途中まで正解。20 は「順番つき」の正しい数。あと1手、÷2 をするだけ。<strong>なぜ ÷2 なのかは、次の 問2 で 手を動かして 見つける</strong>。</div>
+    <div class="bx bx-chk">書き出した10個を 数え直す。A から始まる組が4つ、B から始まる（Aを使わない）組が3つ、C から2つ、D から1つ → 4＋3＋2＋1＝10。○ 合っている。</div>
+    <div class="ans-final"><span>こたえ</span>10通り</div>
+      <div class="tec-link">型：<b>数え方（重複処理）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m20_1"><div class="grade"><span class="gq-label">問1 診断</span>○✕ → <button class="o" onclick="g(this,'m20_1','o')">○</button><button class="x" onclick="g(this,'m20_1','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 ✕でも まったく気にしなくていい。今日はこの1問を つぶすための30分。問2 で 手を動かせば 必ず分かる</div></div>
+</div>
+
+<details class="tool-hint">
+  <summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+  <div class="cardbox">
+    <ol>
+      <li><b>① まず 全部 書き出す（または 全部 数える）</b>　── 頭の中でやらない。紙に出す</li>
+      <li><b>② 「同じものを 2回 数えていないか」 をさがす</b>　── ここが 今日の心臓</li>
+      <li><b>③ ダブりの しまつ をする</b>　── ↓の 2パターンのどちらか</li>
+      <li><b>④ 図・表 で 検算する</b>　── 小さい数（n＝2, 3）で 試して 合うか見る</li>
+    </ol>
+    <div class="two">
+      <div class="wari">🔵 <b>ぜんぶ が 2回ずつ ダブっている</b><br>→ <b>÷2</b>（割る）</div>
+      <div class="hiku">🔴 <b>一部（角など）だけ が ダブっている</b><br>→ <b>その分 を 引く</b></div>
+    </div>
+  </div>
+</details>
+
+<!-- ===== 大問1 基礎 ===== -->
+<div class="unit-banner"><span class="unit-num">大問1</span><span class="unit-name">なぜ ÷2 なのか｜12個 全部 書き出して 消す　L1-L2</span><span class="unit-time">目安 7分</span></div>
+
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問2【例】</span>A・B・C・D の <strong>4人</strong> から <strong>2人</strong> えらぶ。えらび方は 何通り？</div>
+  <div class="wex">
+    <div class="wl"><b>ステップ1：まず「順番つき」で 全部 書き出す。</b>1人目に 4通り、2人目は 残り 3通り。だから <span class="math">4 × 3 ＝ 12</span>個。逃げずに 12個 ぜんぶ 書く。</div>
+    <table class="qtable">
+      <tr><th>1人目 ＼ 2人目</th><th colspan="3">自分いがいの 3人</th></tr>
+      <tr><th>A</th><td>AB</td><td>AC</td><td>AD</td></tr>
+      <tr><th>B</th><td>BA</td><td>BC</td><td>BD</td></tr>
+      <tr><th>C</th><td>CA</td><td>CB</td><td>CD</td></tr>
+      <tr><th>D</th><td>DA</td><td>DB</td><td>DC</td></tr>
+    </table>
+    <div class="wl">これで <b>AB, AC, AD, BA, BC, BD, CA, CB, CD, DA, DB, DC の 12個</b>。</div>
+    <div class="work">
+      上の表に <b>赤ペン</b> で 線を引こう。<br>
+      <b>AB ─ BA</b> を 線で むすぶ。「これ、同じ2人組だよね？」と 口に出す。→ <b>あとの方（BA）を ✕ で 消す</b>。<br>
+      同じように <b>AC ─ CA</b>、<b>AD ─ DA</b>、<b>BC ─ CB</b>、<b>BD ─ DB</b>、<b>CD ─ DC</b>。<br>
+      <b>消した数は 何個？　残った数は 何個？</b>　数えてから 下の図を見よう。
+    </div>
+    <svg class="fig" viewBox="0 0 600 360" preserveAspectRatio="xMidYMid meet">
+      <text x="16" y="28" font-size="14" font-weight="700" fill="#31415f">4人（A・B・C・D）から2人えらぶ　書き出すと 12個</text>
+      <text x="96" y="46" font-size="11" fill="#7a8798">2人目 →</text>
+      <text x="16" y="90" font-size="11" fill="#7a8798">1人目</text>
+      <text x="16" y="106" font-size="11" fill="#7a8798">↓</text>
+      <!-- 列見出し -->
+      <text x="122" y="64" font-size="15" font-weight="800" fill="#46524a" text-anchor="middle">A</text>
+      <text x="186" y="64" font-size="15" font-weight="800" fill="#46524a" text-anchor="middle">B</text>
+      <text x="250" y="64" font-size="15" font-weight="800" fill="#46524a" text-anchor="middle">C</text>
+      <text x="314" y="64" font-size="15" font-weight="800" fill="#46524a" text-anchor="middle">D</text>
+      <!-- 行見出し -->
+      <text x="74" y="100" font-size="15" font-weight="800" fill="#46524a" text-anchor="middle">A</text>
+      <text x="74" y="148" font-size="15" font-weight="800" fill="#46524a" text-anchor="middle">B</text>
+      <text x="74" y="196" font-size="15" font-weight="800" fill="#46524a" text-anchor="middle">C</text>
+      <text x="74" y="244" font-size="15" font-weight="800" fill="#46524a" text-anchor="middle">D</text>
+      <!-- 対角（自分と自分） -->
+      <g fill="#e9ebe8" stroke="#c9cfc6" stroke-width="1.5">
+        <rect x="90" y="70" width="64" height="48"/><rect x="154" y="118" width="64" height="48"/>
+        <rect x="218" y="166" width="64" height="48"/><rect x="282" y="214" width="64" height="48"/>
+      </g>
+      <!-- のこす（上三角） -->
+      <g fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5">
+        <rect x="154" y="70" width="64" height="48"/><rect x="218" y="70" width="64" height="48"/><rect x="282" y="70" width="64" height="48"/>
+        <rect x="218" y="118" width="64" height="48"/><rect x="282" y="118" width="64" height="48"/>
+        <rect x="282" y="166" width="64" height="48"/>
+      </g>
+      <!-- 消す（下三角＝ダブり） -->
+      <g fill="#fdecea" stroke="#e0a9a3" stroke-width="1.5">
+        <rect x="90" y="118" width="64" height="48"/>
+        <rect x="90" y="166" width="64" height="48"/><rect x="154" y="166" width="64" height="48"/>
+        <rect x="90" y="214" width="64" height="48"/><rect x="154" y="214" width="64" height="48"/><rect x="218" y="214" width="64" height="48"/>
+      </g>
+      <!-- 同じ組どうしを結ぶ赤い点線 -->
+      <g stroke="#c0392b" stroke-width="1.5" stroke-dasharray="4 3" opacity=".55">
+        <line x1="186" y1="94" x2="122" y2="142"/>
+        <line x1="250" y1="94" x2="122" y2="190"/>
+        <line x1="314" y1="94" x2="122" y2="238"/>
+        <line x1="250" y1="142" x2="186" y2="190"/>
+        <line x1="314" y1="142" x2="186" y2="238"/>
+        <line x1="314" y1="190" x2="250" y2="238"/>
+      </g>
+      <!-- 取り消し線（ダブりを消す） -->
+      <g stroke="#c0392b" stroke-width="3" stroke-linecap="round">
+        <line x1="98" y1="158" x2="146" y2="126"/>
+        <line x1="98" y1="206" x2="146" y2="174"/><line x1="162" y1="206" x2="210" y2="174"/>
+        <line x1="98" y1="254" x2="146" y2="222"/><line x1="162" y1="254" x2="210" y2="222"/><line x1="226" y1="254" x2="274" y2="222"/>
+      </g>
+      <!-- セル文字 -->
+      <g font-size="16" font-weight="800" text-anchor="middle">
+        <text x="122" y="100" fill="#a9b0a8">×</text>
+        <text x="186" y="100" fill="#2f6b45">AB</text><text x="250" y="100" fill="#2f6b45">AC</text><text x="314" y="100" fill="#2f6b45">AD</text>
+        <text x="122" y="148" fill="#b5504a">BA</text><text x="186" y="148" fill="#a9b0a8">×</text>
+        <text x="250" y="148" fill="#2f6b45">BC</text><text x="314" y="148" fill="#2f6b45">BD</text>
+        <text x="122" y="196" fill="#b5504a">CA</text><text x="186" y="196" fill="#b5504a">CB</text>
+        <text x="250" y="196" fill="#a9b0a8">×</text><text x="314" y="196" fill="#2f6b45">CD</text>
+        <text x="122" y="244" fill="#b5504a">DA</text><text x="186" y="244" fill="#b5504a">DB</text><text x="250" y="244" fill="#b5504a">DC</text>
+        <text x="314" y="244" fill="#a9b0a8">×</text>
+      </g>
+      <!-- 凡例 -->
+      <rect x="370" y="80" width="16" height="16" fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5"/>
+      <text x="394" y="94" font-size="13" font-weight="700" fill="#2f6b45">のこす（6個）</text>
+      <rect x="370" y="108" width="16" height="16" fill="#fdecea" stroke="#e0a9a3" stroke-width="1.5"/>
+      <text x="394" y="122" font-size="13" font-weight="700" fill="#b5504a">消す＝ダブり（6個）</text>
+      <rect x="370" y="136" width="16" height="16" fill="#e9ebe8" stroke="#c9cfc6" stroke-width="1.5"/>
+      <text x="394" y="150" font-size="13" font-weight="700" fill="#7a8798">自分と自分はムリ</text>
+      <text x="370" y="188" font-size="14" font-weight="800" fill="#c0392b">AB と BA は 同じ組</text>
+      <text x="370" y="212" font-size="14" font-weight="800" fill="#c0392b">だから 赤 は 全部 消す</text>
+      <text x="370" y="240" font-size="12" fill="#6a7280">赤い点線＝同じ組どうし</text>
+      <!-- 結論バナー -->
+      <rect x="90" y="282" width="420" height="58" rx="8" fill="#eafaf1" stroke="#9bcfae" stroke-width="2"/>
+      <text x="106" y="308" font-size="17" font-weight="800" fill="#2f6b45">12個 ÷ 2 ＝ 6通り</text>
+      <text x="106" y="330" font-size="13" font-weight="700" fill="#2f6b45">この「2」＝ 同じ組を 2回ずつ 数えていた、の 2</text>
+    </svg>
+    <div class="figcap">緑＝のこる本物の組（6個）　赤＝ダブり（6個）　灰＝自分と自分（えらべない）</div>
+    <div class="wl"><b>ステップ2：ダブりを 消す。</b>消したのは <b>6個</b>。残ったのは <b>6個</b>。ちょうど <b>半分</b>。</div>
+    <div class="wl"><b>ステップ3：だから ÷2。</b>書き出した 12個 は、本物の組を <b>2回ずつ</b> 数えた数。だから 本物は その <span class="frac"><span class="n">1</span><span class="d">2</span></span>。<span class="math">12 ÷ 2 ＝ 6</span> → <b>6通り</b>。</div>
+    <div class="wl">★ここだけは 絶対に つかんで。<b>「÷2 の 2」は 何の 2？　→ 「同じ組を 2回ずつ 数えていた」の 2。</b>魔法の2じゃない。<b>数えた回数</b>の2。</div>
+  </div>
+  <div class="write3" style="display:block">📝 じぶんの言葉で 書こう。<strong>AB と BA は 同じ選び方？ ちがう？ その理由を 1行で。</strong>（ここを言葉にできたら、今日は もう勝ち）
+    <div class="wline"></div>
+  </div>
+  <div class="note-draw">上の 12個の表を ノートに 写して、じぶんの手で 6本の線を引いて 6個 消してみよう。<strong>読むだけでは 身につかない。手で消したときに 分かる。</strong></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key"><strong>「えらぶ」に 順番は ない。</strong>だから 順番つきで 数えた数（12）は、必ず 2倍に ふくらんでいる。ふくらんだ分を もとに もどすのが ÷2。</div>
+    <div class="step q1"><span>①数える</span>順番つき：1人目4通り × 2人目3通り ＝ <span class="math">12</span>個</div>
+    <div class="step q1"><span>②ダブりを見る</span>AB と BA、AC と CA、AD と DA、BC と CB、BD と DB、CD と DC → 6組が それぞれ 2回ずつ</div>
+    <div class="step q1"><span>③しまつ</span>ぜんぶが 2回ずつ ダブっている → <span class="math">12 ÷ 2 ＝ 6</span> → 6通り</div>
+    <div class="bx bx-warn"><span class="red">「4 × 3 ＝ 12通り」で答えない</span>。それは 順番つき（＝ならべ方）の数。前のきみは 5人の問題で「5 × 4 ＝ 20通り」と書いた。惜しい。あと ÷2 の 一手だった。<br>逆に、いきなり 「÷2」だけ 覚えるのも 危険。次の 大問2 で 見るとおり、÷ではなく − を使う場面 がある。だから 「何回 ダブったか」を毎回 数える。</div>
+    <div class="bx bx-chk">残った6個を 直接 書き出す：<strong>AB, AC, AD, BC, BD, CD</strong> → たしかに 6個。図と 一致 ○</div>
+    <div class="ans-final"><span>こたえ</span>6通り（12 ÷ 2 ＝ 6）</div>
+      <div class="tec-link">型：<b>数え方（重複処理）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m20_2"><div class="grade"><span class="gq-label">問2【例】</span>手で 消せた？ → <button class="o" onclick="g(this,'m20_2','o')">○</button><button class="x" onclick="g(this,'m20_2','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 12個の表を ノートに 写して、6本の線で 6個 消す。「÷2 の 2 は □□□□ の 2」を 声に出す</div></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問3【例】</span>4人 が、たがいに 1回ずつ 握手（あくしゅ）します。握手は 全部で 何回？　→ そのあと、<strong>5人 のときは 何回？</strong></div>
+  <div class="wex">
+    <div class="wl"><b>1人ずつ 数えてみる。</b>A は B・C・D と 握手 → <b>3回</b>。B も 3回。C も 3回。D も 3回。合計 <span class="math">4 × 3 ＝ 12</span>。</div>
+    <div class="wl"><b>でも、12回 も 握手してない。</b>なぜ？ ── <b>A と B の 握手を、A も 1回 と数え、B も 1回 と数えた</b>から。<b>1回の握手を、2人が それぞれ 数えている</b>。</div>
+    <div class="wl">だから <b>÷2</b>。<span class="math">12 ÷ 2 ＝ 6</span> → <b>握手は 6回</b>。（問2 の「4人から2人えらぶ ＝ 6通り」と <b>同じ数</b>！ 握手 1回 ＝ 2人の組 1つ、だから当然。）</div>
+    <div class="wl">★<b>÷2 の 2 は、「2人が 数えた」の 2。</b>問2 の「2回ずつ 数えた」の 2 と 中身は 同じ。</div>
+    <div class="wl">では ── <b>5人 が たがいに 1回ずつ 握手すると 何回？</b> 上と 同じ手順で、ノートに 書いてみよう。</div>
+  </div>
+  <div class="note-draw">「1人が 何人と 握手するか」→「人数ぶん かける」→「ダブりを しまつ する」。この3手を そのまま 5人 でやってみよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key"><strong>握手 1回 ＝ 2人の組 1つ。</strong>だから「握手の回数」と「2人のえらび方」は まったく同じ数。ちがう問題に見えて、じつは 同じ問題。</div>
+    <div class="step q2"><span>4人</span>1人あたり 3回 × 4人 ＝ 12。1回を 2人が 数えている → <span class="math">12 ÷ 2 ＝ 6</span> → 6回</div>
+    <div class="step q2"><span>5人</span>1人あたり 4回 × 5人 ＝ 20。同じく 2人が 数えている → <span class="math">20 ÷ 2 ＝ 10</span> → 10回</div>
+    <div class="step q2"><span>★気づき</span>5人の握手 ＝ 10回。これ、問1（5人から2人えらぶ）の こたえ 10通り と 同じ。同じ話を していたんだ。</div>
+    <div class="bx bx-warn"><span class="red">「4×3＝12回 握手した」としない</span>。それは 「手を出した回数」であって、握手の回数ではない。握手は 2人で 1回。<br>「5×4＝20回」も同じミス。20 は 手を出した回数。2人で 1回 だから ÷2。</div>
+    <div class="bx bx-chk">4人（A・B・C・D）の握手を 全部 書き出す：AB, AC, AD, BC, BD, CD → <strong>6回</strong>。数え上げと一致 ○</div>
+    <div class="ans-final"><span>こたえ</span>4人 → 6回　／　5人 → 10回（問1 と同じ数！）</div>
+      <div class="tec-link">型：<b>数え方（重複処理）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m20_3"><div class="grade"><span class="gq-label">問3【例】</span>○✕ → <button class="o" onclick="g(this,'m20_3','o')">○</button><button class="x" onclick="g(this,'m20_3','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 「握手 1回 ＝ 2人の組 1つ」を ノートに書く。だから ÷2</div></div>
+</div>
+
+<!-- ===== 大問2 応用 ===== -->
+<div class="unit-banner"><span class="unit-num">大問2</span><span class="unit-name">「割る」と「引く」を 見分ける　L2-L3</span><span class="unit-time">目安 9分</span></div>
+
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問4</span>A・B・C の 3人 について 答えなさい。</div>
+  <div class="subq"><span class="no">①</span>3人 を 1列 に <strong>ならべる</strong> ならべ方は <span class="fill">　　</span> 通り</div>
+  <div class="subq"><span class="no">②</span>3人 から 2人 を <strong>えらぶ</strong> えらび方は <span class="fill">　　</span> 通り</div>
+  <div class="note-draw">①も ②も、まず 全部 書き出してみよう。書き出したあとで、「ダブりは あるか？」を 自分に 問う。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key"><strong>「ならべる」は 順番が ある。「えらぶ」は 順番が ない。</strong>ABC と ACB は ちがう ならび（前から見て 別物）。でも AB と BA は 同じ 2人組。<br>だから ならべるは ÷しない。えらぶは ÷2。ここが 分かれ道。</div>
+    <div class="step q2"><span>①ならべる</span>全部 書く：ABC, ACB, BAC, BCA, CAB, CBA → 6通り。<span class="math">3 × 2 × 1 ＝ 6</span>。ダブりは 1つも ない（どれも ならび方がちがう）→ ÷しない</div>
+    <div class="step q2"><span>②えらぶ</span>順番つきで書く：AB, BA, AC, CA, BC, CB ＝ 6個。でも AB＝BA、AC＝CA、BC＝CB → 2回ずつ ダブっている → <span class="math">6 ÷ 2 ＝ 3</span> → 3通り（AB, AC, BC）</div>
+    <div class="step q2"><span>★対比</span>同じ「3人」でも、ならべる＝6、えらぶ＝3。ちょうど <span class="frac"><span class="n">1</span><span class="d">2</span></span>。ちがいは たった1つ、順番を 気にするか どうか。</div>
+    <div class="bx bx-warn"><span class="red">「えらぶ」なのに ÷ を忘れる</span>のが 最多ミス（問1でやったやつ）。<br>でも 逆に「ならべる」なのに ÷2 してしまうのも 危ない。<strong>問題文の 動詞を 丸で かこめ</strong>。「ならべる／並べ方／順番に」＝÷しない。「えらぶ／組／2人組／握手」＝÷2。</div>
+    <div class="bx bx-chk">②の答え3通りを 書き出す：AB, AC, BC → 3個 ○。①の6通りは 全部 別のならび ○</div>
+    <div class="ans-final"><span>こたえ</span>① 6通り　② 3通り</div>
+      <div class="tec-link">型：<b>数え方（重複処理）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m20_4"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'m20_4','o')">○</button><button class="x" onclick="g(this,'m20_4','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 「ならべる＝順番あり＝÷しない」「えらぶ＝順番なし＝÷2」を ノートに 2行で 書く</div></div>
+</div>
+
+<div class="q calc" data-id="E">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問5</span>6人 の 中から、そうじ当番を <strong>2人</strong> えらびます。えらび方は 何通り？</div>
+  <div class="half">
+    <div class="hl">① まず <b>順番つき</b> で 数える。1人目は 6通り、2人目は 残り <span class="fill">　　</span> 通り。</div>
+    <div class="hl">　→ <span class="math">6 × <span class="fill">　　</span> ＝ <span class="fill">　　</span></span> 個</div>
+    <div class="hl">② ダブりを さがす。AB と BA は <b>同じ2人組</b>。つまり <b>ぜんぶ</b> が <span class="fill">　　</span> 回ずつ ダブっている。</div>
+    <div class="hl">③ しまつ する。ぜんぶが ダブり → <b>割る</b>。<span class="math">　　　 ÷ <span class="fill">　　</span> ＝ <span class="fill">　　</span></span></div>
+    <div class="hl">④ こたえ ＝ <span class="fill">　　</span> 通り</div>
+  </div>
+  <div class="note-draw">□ を うめて 完成させよう。うめ終わったら、「なぜ ここで 割るのか」を 声に出して 言ってみて。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">人数が 増えても やることは 1ミリも 変わらない。<strong>順番つきで 数える → ぜんぶ 2回ずつ ダブり → ÷2</strong>。この3手だけ。</div>
+    <div class="step q3"><span>①</span>1人目 6通り、2人目 5通り → <span class="math">6 × 5 ＝ 30</span> 個（順番つき）</div>
+    <div class="step q3"><span>②</span>AB と BA は 同じ組 → ぜんぶ 2回ずつ ダブっている</div>
+    <div class="step q3"><span>③</span><span class="math">30 ÷ 2 ＝ 15</span> → 15通り</div>
+    <div class="bx bx-warn"><span class="red">「6 × 5 ＝ 30通り」と答えない</span>。問1・問2 と 同じミス。30 は 順番つきの数。<br>「6 × 5 × 4 …」と かけ続けない。えらぶのは 2人だけ。かけるのは 2つ だけ。</div>
+    <div class="bx bx-chk">A を ふくむ 組は AB, AC, AD, AE, AF の 5個。B から始まる（A なし）は 4個、C から 3個、D から 2個、E から 1個 → 5＋4＋3＋2＋1 ＝ <strong>15</strong> ○ ぴったり合う</div>
+    <div class="ans-final"><span>こたえ</span>15通り（6 × 5 ＝ 30、30 ÷ 2 ＝ 15）</div>
+      <div class="tec-link">型：<b>数え方（重複処理）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m20_5"><div class="grade"><span class="gq-label">問5 穴あき</span>○✕ → <button class="o" onclick="g(this,'m20_5','o')">○</button><button class="x" onclick="g(this,'m20_5','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 「6×5＝30（順番つき）→ ÷2 → 15」を ノートに 3行で 書く</div></div>
+</div>
+
+<div class="q calc" data-id="F">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問6 ★</span>下の ① と ② は、どちらも <strong>「同じものを 2回 数えてしまった」</strong> 問題です。ダブりを <strong>「÷（割る）」で しまつ するか</strong>、<strong>「−（引く）」で しまつ するか</strong>、答えなさい。<strong>そう考えた 理由</strong> も 書くこと。さらに 正しい 答え も 出しなさい。</div>
+  <div class="subq"><span class="no">①</span>5人 から 2人 えらぶ。<span class="math">5 × 4 ＝ 20</span> と 数えた。 → ÷ か − か：<span class="fill">　　</span>　正しい答え：<span class="fill">　　</span> 通り</div>
+  <div class="subq"><span class="no">②</span>正方形の 各辺に 石を <strong>7個ずつ</strong> ならべた。<span class="math">7 × 4 ＝ 28</span> と 数えた。 → ÷ か − か：<span class="fill">　　</span>　正しい答え：<span class="fill">　　</span> 個</div>
+  <div class="note-draw">①も ②も、まず 自分で 判断してみよう。理由も ことばで 書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">★<strong>今日いちばん大事な 見分け方</strong>★<br>「ぜんぶ が 2回ずつ ダブっている」なら ÷2。（ならした分を もとに もどす）<br>「一部 だけ が ダブっている」なら、その分 を 引く。（角だけ、など）<br>ダブりの 「数」 ではなく、ダブりの 「ひろがり方」 を 見る。</div>
+    <div class="step q3"><span>①</span>20個 の 数え方は、どの組も もれなく 2回ずつ 出てくる（AB と BA が 両方ある）。ぜんぶ が ダブり → ÷2。<span class="math">20 ÷ 2 ＝ 10</span> → 10通り</div>
+    <div class="step q4"><span>②</span>正方形を 実際に かくと、石は 24個 しかない。28 との 差は 4。この 4 は 角の石 4個。角の石は、となり合う 2つの辺 で 1回ずつ ＝ 2回 数えられている。<br>でも ダブっているのは 角の 4個 だけ。辺の まん中の 石は 1回しか 数えていない。ぜんぶ が ダブっているわけでは ない → ÷ ではなく −。<span class="math">28 − 4 ＝ 24</span> → 24個</div>
+    <div class="step q4"><span>★核心</span>もし ②で ÷2 したら <span class="math">28 ÷ 2 ＝ 14</span>。ぜんぜん 合わない。数えれば 24個 だから。÷ は「ぜんぶ ダブり」のときの 道具。②では 使えない。</div>
+    <div class="bx bx-warn"><span class="red">÷2 を 覚えたてで、なんでも ÷2 したくなる</span>のが この時期いちばん危ない。<br>②で 28 ÷ 2 ＝ 14 は 大まちがい。逆に ①で 20 − 2 ＝ 18 も 大まちがい。<br>手順は いつも 同じ：まず 数える → どこが 何回 ダブったか 見る → ぜんぶなら ÷、一部なら −。</div>
+    <div class="bx bx-chk">②を 手で 数える：上の辺 7個、下の辺 7個 → 14個。左の辺は 角をのぞくと 5個、右の辺も 5個 → 10個。合計 <strong>14 ＋ 10 ＝ 24個</strong> ○ 28 − 4 ＝ 24 と 一致</div>
+    <div class="ans-final"><span>こたえ</span>① ÷（割る）→ 10通り　／　② −（引く）→ 24個</div>
+      <div class="tec-link">型：<b>数え方（重複処理）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m20_6"><div class="grade"><span class="gq-label">問6 ★対比</span>○✕ → <button class="o" onclick="g(this,'m20_6','o')">○</button><button class="x" onclick="g(this,'m20_6','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 「ぜんぶ ダブり → ÷」「一部 だけ ダブり → −」を ノートの 目立つところに 書く</div></div>
+</div>
+
+<!-- ===== 大問3 発展 ===== -->
+<div class="unit-banner"><span class="unit-num">大問3 ★</span><span class="unit-name">9月 大問4 直撃｜石ならべ と n の式　L3-L4</span><span class="unit-time">目安 9分</span></div>
+
+<div class="q calc" data-id="G">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問7【例】</span>正方形の まわり に 石を ならべます。<strong>1辺 に 6個ずつ</strong> のとき、石は 全部で 何個？　また <strong>1辺 に n個ずつ</strong> のとき、石は 全部で 何個？（n の式で）</div>
+  <div class="wex">
+    <svg class="fig" viewBox="0 0 600 340" preserveAspectRatio="xMidYMid meet">
+      <text x="16" y="28" font-size="14" font-weight="700" fill="#31415f">正方形の まわり に 石（1辺に 6個ずつ）</text>
+      <!-- 上の辺の数え番号 -->
+      <g font-size="11" fill="#8a5a19" font-weight="700" text-anchor="middle">
+        <text x="70" y="44">1</text><text x="110" y="44">2</text><text x="150" y="44">3</text>
+        <text x="190" y="44">4</text><text x="230" y="44">5</text><text x="270" y="44">6</text>
+      </g>
+      <!-- 辺のガイド線 -->
+      <rect x="70" y="60" width="200" height="200" fill="none" stroke="#dfe3da" stroke-width="2"/>
+      <!-- 辺の石（角以外・16個） -->
+      <g fill="#9fb3c8" stroke="#6d829a" stroke-width="1.5">
+        <circle cx="110" cy="60" r="11"/><circle cx="150" cy="60" r="11"/><circle cx="190" cy="60" r="11"/><circle cx="230" cy="60" r="11"/>
+        <circle cx="110" cy="260" r="11"/><circle cx="150" cy="260" r="11"/><circle cx="190" cy="260" r="11"/><circle cx="230" cy="260" r="11"/>
+        <circle cx="70" cy="100" r="11"/><circle cx="70" cy="140" r="11"/><circle cx="70" cy="180" r="11"/><circle cx="70" cy="220" r="11"/>
+        <circle cx="270" cy="100" r="11"/><circle cx="270" cy="140" r="11"/><circle cx="270" cy="180" r="11"/><circle cx="270" cy="220" r="11"/>
+      </g>
+      <!-- 角の石（4個・オレンジ） -->
+      <g fill="#e8a33d" stroke="#b97a1e" stroke-width="2">
+        <circle cx="70" cy="60" r="13"/><circle cx="270" cy="60" r="13"/>
+        <circle cx="70" cy="260" r="13"/><circle cx="270" cy="260" r="13"/>
+      </g>
+      <!-- 凡例 -->
+      <circle cx="48" cy="292" r="8" fill="#e8a33d" stroke="#b97a1e" stroke-width="2"/>
+      <text x="62" y="297" font-size="12" font-weight="700" fill="#8a5a19">＝ 角の石（4個・2回 数えてしまう）</text>
+      <!-- 右パネル -->
+      <text x="320" y="80" font-size="14" font-weight="800" fill="#31415f">1辺 6個 × 4辺 ＝ 24個</text>
+      <text x="320" y="106" font-size="14" font-weight="800" fill="#c0392b">でも 数えると 本当は 20個</text>
+      <text x="320" y="132" font-size="14" font-weight="800" fill="#c0392b">4個 多い！ その4個 ＝ 角</text>
+      <text x="320" y="160" font-size="13" fill="#4c5b70">角の石は「上の辺」でも「左の辺」でも</text>
+      <text x="320" y="180" font-size="13" fill="#4c5b70">数えている ＝ 2回 数えている</text>
+      <text x="320" y="200" font-size="13" fill="#4c5b70">角は 4個 だから ダブりは 4個</text>
+      <rect x="320" y="216" width="260" height="64" rx="8" fill="#eafaf1" stroke="#9bcfae" stroke-width="2"/>
+      <text x="334" y="244" font-size="17" font-weight="800" fill="#2f6b45">4 × 6 − 4 ＝ 20個</text>
+      <text x="334" y="268" font-size="13" font-weight="700" fill="#2f6b45">1辺 n個 なら 4n − 4</text>
+    </svg>
+    <div class="figcap">オレンジ＝角の石（4個）　青＝辺のとちゅうの石（16個）　合計 20個</div>
+    <div class="wl"><b>ステップ1：まず ふつうに 数えてみる。</b>1辺に 6個。辺は 4本。だから <span class="math">6 × 4 ＝ 24</span>個 … と 言いたくなる。</div>
+    <div class="wl"><b>ステップ2：本当に 数える。</b>図の 石を 1個ずつ 数えると <b>20個</b>。<b>4個 多く 数えていた</b>。</div>
+    <div class="wl"><b>ステップ3：多かった 4個 の 正体。</b>図の <b>オレンジ＝角の石</b>。角の石は、<b>「上の辺の 6個」にも 入っていて、「左の辺の 6個」にも 入っている</b>。つまり <b>2回 数えられている</b>。角は 4個。だから <b>4個 多い</b>。</div>
+    <div class="wl"><b>ステップ4：しまつ する。</b>ダブっているのは <b>角の 4個 だけ</b>（辺のとちゅうの石は 1回しか 数えていない）。だから <b>÷ ではなく、多かった 4個 を 引く</b>。<span class="math">24 − 4 ＝ 20</span> → <b>20個</b>。</div>
+    <div class="wl"><b>ステップ5：n の 式 に する。</b>1辺 n個 なら、4辺 ぶんで <span class="math">n × 4 ＝ 4n</span>。角の 4個 が ダブっているから 引く → <b>4n − 4</b>。</div>
+    <div class="wl">★<b>「−4 の 4」は 何の 4？　→ 角の石の 個数 の 4。</b>魔法の4 じゃない。<b>ダブった 石の 数</b>。<br>問2 の「÷2 の 2 ＝ 数えた回数」と 同じで、<b>数字には 必ず 意味がある</b>。</div>
+    <div class="wl"><b>検算：</b>n＝6 を 4n − 4 に 入れる → 4×6 − 4 ＝ 24 − 4 ＝ <b>20</b> ○ 図と 一致。n＝2 なら 4×2 − 4 ＝ 4 → 石4個（正方形の角だけ）○ 合ってる。</div>
+  </div>
+  <div class="note-draw">図を ノートに 写して、角の石 4個 だけ 赤で ぬろう。そのあと「4 × 6 − 4 ＝ 20」を 書いて、なぜ −4 なのか 声に出して 言う。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key"><strong>「1辺 n個 × 4辺 ＝ 4n」は、角の石を 2回ずつ 数えている。</strong>ダブっているのは 角の 4個 だけ。だから 4n − 4。<br>これで きみは 「なぜ −4 なのか」を 説明できる ようになった。丸暗記じゃない。</div>
+    <div class="step q4"><span>①数える</span>1辺 6個 × 4辺 ＝ <span class="math">24</span>（角を 2回ずつ 数えてしまった数）</div>
+    <div class="step q4"><span>②ダブり</span>角は 4個。角は となり合う 2辺 の 両方で 数えられている → 4個 だけ が ダブり</div>
+    <div class="step q4"><span>③しまつ</span>一部（角）だけ の ダブり → 引く。<span class="math">24 − 4 ＝ 20</span> → 20個</div>
+    <div class="step q4"><span>④n の式</span>1辺 n個 → <span class="math">4 × n − 4 ＝ 4n − 4</span></div>
+    <div class="bx bx-warn"><span class="red">「4n（＝1辺 × 4辺）」で 答えない</span>。それだと 角を 2回 数えたまま。前のきみは ここで つまずいて、−4 の 意味が 分からなかった。もう分かる。−4 は 角の石 4個 の こと。<br>4n ÷ 2 としない。ダブっているのは 角だけ。ぜんぶじゃない。÷ は 使えない（問6でやったとおり）。<br>n＝2 で 検算するクセを。4×2−4＝4。正方形の角だけの4個。合う。</div>
+    <div class="bx bx-chk">辺ごとに 重ならないように 数え直す：上の辺 6個、下の辺 6個 → 12個。左の辺は 角をのぞいて 4個、右も 4個 → 8個。12 ＋ 8 ＝ 20 ○ 4n − 4 と 一致</div>
+    <div class="bx bx-link">これが <strong>9月 特訓選抜 大問4 そのもの</strong>。図を 数える → n の式 に する → 大きい n を 代入 or 逆算。今日 −4 の 意味が 分かった時点で、大問4 の 半分は もう 取れている。</div>
+    <div class="ans-final"><span>こたえ</span>1辺6個 → 20個　／　1辺n個 → 4n − 4（個）</div>
+      <div class="tec-link">型：<b>数え方（重複処理）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m20_7"><div class="grade"><span class="gq-label">問7【例】★</span>「−4 の 4」を 言えた？ → <button class="o" onclick="g(this,'m20_7','o')">○</button><button class="x" onclick="g(this,'m20_7','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 図を写して 角の4個を 赤でぬる。「−4 の 4 ＝ 角の石の数」と ノートに書く</div></div>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問8</span>こんどは <strong>三角形</strong> の まわり に 石を ならべます。<strong>1辺 に n個ずつ</strong> のとき、石は 全部で 何個？（n の式で）　また <strong>1辺 に 5個ずつ</strong> なら 何個？</div>
+  <svg class="fig" viewBox="0 0 600 300" preserveAspectRatio="xMidYMid meet">
+    <text x="16" y="28" font-size="14" font-weight="700" fill="#31415f">三角形の まわり に 石（1辺に 5個ずつ）</text>
+    <polygon points="180,60 70,240 290,240" fill="none" stroke="#dfe3da" stroke-width="2"/>
+    <g fill="#9fb3c8" stroke="#6d829a" stroke-width="1.5">
+      <circle cx="152" cy="105" r="11"/><circle cx="125" cy="150" r="11"/><circle cx="97" cy="195" r="11"/>
+      <circle cx="208" cy="105" r="11"/><circle cx="235" cy="150" r="11"/><circle cx="263" cy="195" r="11"/>
+      <circle cx="125" cy="240" r="11"/><circle cx="180" cy="240" r="11"/><circle cx="235" cy="240" r="11"/>
+    </g>
+    <g fill="#e8a33d" stroke="#b97a1e" stroke-width="2">
+      <circle cx="180" cy="60" r="13"/><circle cx="70" cy="240" r="13"/><circle cx="290" cy="240" r="13"/>
+    </g>
+    <circle cx="48" cy="276" r="8" fill="#e8a33d" stroke="#b97a1e" stroke-width="2"/>
+    <text x="62" y="281" font-size="12" font-weight="700" fill="#8a5a19">＝ 角の石</text>
+    <text x="330" y="90" font-size="14" font-weight="800" fill="#31415f">1辺 に 5個 ずつ</text>
+    <text x="330" y="118" font-size="14" font-weight="800" fill="#31415f">角の石（オレンジ）は 何個？</text>
+    <text x="330" y="146" font-size="14" font-weight="800" fill="#c0392b">石は 全部で 何個？</text>
+  </svg>
+  <div class="figcap">オレンジ＝角の石　青＝辺のとちゅうの石</div>
+  <div class="half">
+    <div class="hl">① まず ふつうに 数える。1辺 n個 × <span class="fill">　　</span> 辺 ＝ <span class="fill">　　</span></div>
+    <div class="hl">② ダブりを さがす。<b>角の石</b> は、となり合う <span class="fill">　　</span> つの辺 で 数えられている。角は 全部で <span class="fill">　　</span> 個。</div>
+    <div class="hl">③ しまつ する。ダブっているのは <b>角だけ</b> → 割るのではなく <b>引く</b>。式は <span class="math">3n − <span class="fill">　　</span></span></div>
+    <div class="hl">④ 1辺 5個 なら：<span class="math">3 × 5 − <span class="fill">　　</span> ＝ <span class="fill">　　</span></span> 個</div>
+    <div class="hl">⑤ 検算。図の 石を 数えると <span class="fill">　　</span> 個。④と 合う？</div>
+  </div>
+  <div class="note-draw">□ を うめよう。うめ終わったら、問7 と 見くらべて、<strong>「引く数」は 何で 決まるのか</strong> を 自分の言葉で ノートに 書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">★<strong>大発見</strong>★　正方形は 4n − 4、三角形は 3n − 3。<br>「かける数」＝ 辺の数。「引く数」＝ 角の数。そして 正方形も 三角形も、辺の数 と 角の数 は 同じ。<br>だから 形が 変わっても やることは 1つも 変わらない。五角形なら 5n − 5。</div>
+    <div class="step q5"><span>①数える</span>1辺 n個 × 3辺 ＝ <span class="math">3n</span></div>
+    <div class="step q5"><span>②ダブり</span>角の石は となり合う 2つの辺 で 数えられている（2回ずつ）。角は 3個</div>
+    <div class="step q5"><span>③しまつ</span>角だけ の ダブり → 引く。<span class="math">3n − 3</span></div>
+    <div class="step q5"><span>④代入</span>n＝5：<span class="math">3 × 5 − 3 ＝ 15 − 3 ＝ 12</span> → 12個</div>
+    <div class="step q5"><span>⑤検算</span>図を 数える：角3個 ＋ 辺のとちゅう 9個 ＝ 12個 ○ ぴったり</div>
+    <div class="bx bx-warn"><span class="red">正方形の 4n − 4 を そのまま 使わない</span>。三角形は 辺が3本、角が3個。数字は 図から 読む。<br>「3n − 4」としない（引く数だけ 正方形のクセで 残るミス）。引く数＝角の数。三角形の角は 3個。<br>n＝2 で 検算：3×2 − 3 ＝ 3。三角形の 角だけの 3個。合う ○</div>
+    <div class="bx bx-chk">辺ごとに 重ねずに 数える：下の辺 5個。左の辺は 角をのぞいて 3個。右の辺も 角をのぞいて（上の角は 数えて）… 数え方が むずかしいなら、角3個 ＋ 辺のとちゅう（1辺 3個 × 3辺 ＝ 9個）＝ 12個 が いちばん安全。</div>
+    <div class="bx bx-link"><strong>9月 大問4 は この 3n − 3 の形</strong>。「黒タイル ＝ 3n − 3」「全体 ＝ n の2乗」「白 ＝ 全体 − 黒」と つながっていく。今日 −3 の 意味を つかんだきみは、もう そこに 手が届いている。</div>
+    <div class="ans-final"><span>こたえ</span>1辺n個 → 3n − 3（個）　／　1辺5個 → 12個</div>
+      <div class="tec-link">型：<b>数え方（重複処理）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m20_8"><div class="grade"><span class="gq-label">問8 穴あき★</span>○✕ → <button class="o" onclick="g(this,'m20_8','o')">○</button><button class="x" onclick="g(this,'m20_8','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 「かける数＝辺の数／引く数＝角の数」を ノートに 大きく 書く</div></div>
+</div>
+
+<div class="q calc" data-id="I">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問9 ★逆算</span>こんどは <strong>逆</strong>。石の 個数 から、1辺の 個数 を 求めます。</div>
+  <div class="subq"><span class="no">①</span><strong>正方形</strong> の まわりに 石を ならべたら、石は 全部で <strong>40個</strong> でした。1辺 は <span class="fill">　　</span> 個</div>
+  <div class="subq"><span class="no">②</span><strong>三角形</strong> の まわりに 石を ならべたら、石は 全部で <strong>42個</strong> でした。1辺 は <span class="fill">　　</span> 個</div>
+  <div class="note-draw">まず 自分で 式を 作ってみよう。作れたら、そこから n を 求めよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key"><strong>「1辺 → 全部」は 代入。「全部 → 1辺」は 方程式（逆算）。</strong>式が 作れていれば、逆向きも 同じ式を 使うだけ。新しく 覚えることは 何もない。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ①立式〜②立式</div><div class="step q5"><span>①立式</span>1辺を n個 とおく。正方形だから 全部の石は <span class="math">4n − 4</span>。これが 40個 → <span class="math">4n − 4 ＝ 40</span></div>
+    <div class="step q5"><span>①解く</span>両辺に ＋4 → <span class="math">4n ＝ 44</span>。両辺 ÷4 → <span class="math">n ＝ 11</span> → 1辺 11個</div>
+    <div class="step q5"><span>①検算</span>4 × 11 − 4 ＝ 44 − 4 ＝ 40 ○ ぴったり 40個</div>
+    <div class="step q5"><span>②立式</span>三角形だから <span class="math">3n − 3 ＝ 42</span></div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ②解く〜コツ</div><div class="step q5"><span>②解く</span>両辺に ＋3 → <span class="math">3n ＝ 45</span>。両辺 ÷3 → <span class="math">n ＝ 15</span> → 1辺 15個</div>
+    <div class="step q5"><span>②検算</span>3 × 15 − 3 ＝ 45 − 3 ＝ 42 ○ ぴったり 42個</div>
+    <div class="bx bx-warn"><span class="red">①で いきなり 40 ÷ 4 ＝ 10 としない</span>。それは −4 を 忘れた 答え。10 で 確かめると 4×10−4＝36。40 に ならない。先に ＋4 して から ÷4。<br>②で 42 ÷ 3 ＝ 14 としない。同じミス。3×14−3＝39。合わない。必ず 式を 立ててから 解く。<br>検算を とばさない。逆算は 検算が 1秒で できる。やらない手は ない。</div>
+    <div class="step q3"><span>コツ</span><span class="math">4n − 4</span> は <span class="math">4(n − 1)</span> と くくれる。<span class="math">4(n − 1) ＝ 40</span> → <span class="math">n − 1 ＝ 10</span> → n ＝ 11 と 暗算で 出る。三角形も <span class="math">3(n − 1) ＝ 42</span> → <span class="math">n − 1 ＝ 14</span> → n ＝ 15。<br>しかも <span class="math">4(n − 1)</span> には 意味が ある。「角を のぞいた 1辺 (n−1)個 が、4本ぶん」。式が 図の ことばに なっている。</div>
+    <div class="bx bx-chk">①n＝11 → 4×11−4＝40 ○　②n＝15 → 3×15−3＝42 ○　どちらも 問題文の 数と 一致</div>
+    <div class="bx bx-link">9月 大問4 の 最後の (3) が まさに この形。「◯個 に なるのは 1辺 何個 のとき？」＝ <strong>式 ＝ ◯ の 方程式を 解く</strong>。ここまで 来られたら、大問4 は 取れる。</div>
+    <div class="ans-final"><span>こたえ</span>① 11個　② 15個</div>
+      <div class="tec-link">型：<b>数え方（重複処理）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m20_9"><div class="grade"><span class="gq-label">問9 ★逆算</span>○✕ → <button class="o" onclick="g(this,'m20_9','o')">○</button><button class="x" onclick="g(this,'m20_9','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 「4n − 4 ＝ 40」を 書いて、＋4 → ÷4 の順で 解く。最後に 代入して 検算</div></div>
+</div>
+
+<!-- ===== 付録 ===== -->
+<div class="unit-banner"><span class="unit-num">付録</span><span class="unit-name">カードで 2けたの 偶数　L3</span><span class="unit-time">目安 2分</span></div>
+
+<div class="q calc" data-id="J">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問10 付録</span><strong>0, 1, 2, 3, 4</strong> の 5枚の カードから 2枚 を えらんで ならべ、2けたの 整数 を つくります。<strong>偶数</strong> は 何個 できますか。</div>
+  <div class="note-draw">まず 自分で 考えてみよう。数が 少ないので、書き出しても いい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">これは <strong>「ならべる」問題</strong>（12 と 21 は ちがう数）。だから ÷2 は しない。<br>かわりに しばり が 2つ：①一の位 は 0・2・4 のどれか（偶数だから）。②十の位 に 0 は 置けない（0□ は 2けたに ならない）。<br>しばりの きつい ところ から 先に 決める ── これが 場合の数の 鉄則。</div>
+    <div class="step q3"><span>どっちがきつい？</span>「使える数が 少ないほう」が きつい。<br>一の位に 使えるのは 0・2・4 の 3枚だけ。十の位に 使えるのは 1・2・3・4 の 4枚。<br>3枚 ＜ 4枚 だから、一の位から 先に 決める。</div>
+    <div class="step q2"><span>一の位＝0</span>十の位は 1・2・3・4 の 4通り（0 は もう使った）→ 10, 20, 30, 40</div>
+    <div class="step q2"><span>一の位＝2</span>十の位は 0 が ダメ、2 は 使用ずみ → 1・3・4 の 3通り → 12, 32, 42</div>
+    <div class="step q2"><span>一の位＝4</span>十の位は 0 が ダメ、4 は 使用ずみ → 1・2・3 の 3通り → 14, 24, 34</div>
+    <div class="step q2"><span>合計</span><span class="math">4 ＋ 3 ＋ 3 ＝ 10</span> → 10個</div>
+    <div class="bx bx-warn"><span class="red">「一の位 3通り × 十の位 4通り ＝ 12個」と 一気に かけない</span>。一の位が 0 のときだけ、十の位の 通り数が ちがう（0 は もう使われていないから 4通り 使える）。場合分け して 足す。<br>十の位に 0 を 置いてしまうのも 定番ミス。02 は 2けたの数 じゃない。<br>ここで ÷2 しない。ならべる問題には ダブりが ない（問4でやったとおり）。</div>
+    <div class="bx bx-chk">全部 書き出す：10, 20, 30, 40, 12, 32, 42, 14, 24, 34 → 数えると <strong>10個</strong> ○ 場合分けの合計と 一致</div>
+    <div class="ans-final"><span>こたえ</span>10個</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="m20_10"><div class="grade"><span class="gq-label">問10 付録</span>○✕ → <button class="o" onclick="g(this,'m20_10','o')">○</button><button class="x" onclick="g(this,'m20_10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 「一の位が 0 のとき」「2 のとき」「4 のとき」で 場合分けして 足す。ノートに 3行で</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓S3 数え方の重複処理と規則性 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">おつかれさま。今日 きみが 手に入れたのは、たった 2行。<br><strong>「÷2 の 2」＝ 同じ組を 2回ずつ 数えていた、の 2。</strong>　<strong>「−4 の 4」＝ 2回 数えてしまった 角の石の、4。</strong><br>この2つは 別々の 公式じゃなくて、<strong>「ダブりを どう しまつ するか」という 1つの 話</strong>。ぜんぶ ダブっていたら 割る。角だけ ダブっていたら 引く。それだけ。<br>ずっと 分からなかった 2問が、今日 手を動かしたことで つながった。これは 暗記じゃなく <strong>理解</strong>。理解は 忘れない。9月の 大問4 で、きみは この式を 自分で 作れる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m20';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+var RMQ_KIND='数え方と規則性';
+
+/* ===== 数学キュー送りフック（×→revmq_dyn／○→po++）2026-07-12 =====
+   受け皿=復習数学_まちがえ復習キュー.html の mergeDyn(revmq_dyn) が読む。 */
+var RMQ_DYN='revmq_dyn';
+function rmqClean(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function rmqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function sendToRevMQ(btn,id,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    if(String(KEY).indexOf('revmq')===0)return;              /* 受け皿自身では動かさない */
+    var q=btn&&btn.closest?btn.closest('.q'):null; if(!q)return;
+    var leadEl=q.querySelector('.lead'); if(!leadEl)return;
+    var label=rmqClean(leadEl);
+    if(/【例】/.test(label))return;                            /* 例題は復習に送らない */
+    var qtxt=leadEl.parentNode?rmqClean(leadEl.parentNode):'';
+    if(label&&qtxt.indexOf(label)===0)qtxt=qtxt.slice(label.length).trim();
+    var ans=rmqClean(q.querySelector('.ans-final'));
+    if(!qtxt||!ans)return;
+    var src=KEY+'_'+id;
+    var arr;try{arr=JSON.parse(localStorage.getItem(RMQ_DYN));}catch(e){arr=null;}
+    if(!Array.isArray(arr))arr=[];
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=rmqToday();}
+    else{arr.push({src:src,jp:qtxt,en:ans,kind:RMQ_KIND,badge:'suchoku',day:rmqToday(),po:0,px:1});}
+    try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}
+  }catch(e){}
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);try{sendToRevMQ(btn,id,v);}catch(e){}
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！数え方の重複処理と規則性 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>復習・英語（間違えただけ）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f8f7;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:760px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#eaf2ee;color:#23402f;padding:20px 20px;border:1px solid #cadfd1;border-radius:10px;margin-bottom:14px}
+.pg-hd h1{font-size:20px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#46604f}
+.pg-badge{display:inline-block;background:#d8ecdd;color:#2f6a44;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #bbe0c4;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.progress{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:12px 16px;margin:0 0 16px;font-size:15px;font-weight:800;color:#2f6a44;text-align:center}
+.progress .left{color:#9b514d}
+.allclear{display:none;text-align:center;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;padding:18px;border-radius:14px;margin-bottom:16px}
+.allclear.show{display:block}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:10px;padding:14px 16px;margin:14px 0}
+.q.lv1{background:#f1f9f4;border-color:#9bcfae}
+.q.grad{display:none}
+.q .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 9px;border-radius:12px}
+.badge.tango{background:#e6f0fb;color:#2f5a8a;border:1px solid #bcd3ee}
+.badge.jukugo{background:#fbe9cf;color:#8a5a17;border:1px solid #eccf9a}
+.badge.eisaku{background:#ece2f7;color:#5f4a8a;border:1px solid #cfbce8}
+.date{font-size:11.5px;color:#8a7d6a;font-weight:700;background:#fbf6ec;border:1px solid #ecdcc0;border-radius:10px;padding:2px 9px}
+.cnt{font-size:11px;color:#3f7a4a;font-weight:800;margin-left:auto}
+.jp{font-size:19px;font-weight:800;color:#31415f;margin:6px 0 4px;line-height:1.7}
+.kind{font-size:12px;color:#7a8794;font-weight:700}
+.ans-btn{margin-top:10px;background:#657789;color:#fff;border:none;border-radius:20px;padding:9px 18px;font-size:13.5px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:8px}
+.ans-box.open{display:block}
+.en{font-size:20px;font-weight:900;color:#2f6b45;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:10px 14px;margin-bottom:10px;font-family:'Courier New','Hiragino Kaku Gothic ProN',sans-serif}
+.sentence-mode{margin:10px 0 2px;padding:10px 12px;background:#f6f0fb;border:1px solid #d3c2e5;border-radius:9px;color:#5f4a8a;font-size:12.5px;font-weight:800}
+.sentence-input{display:block;width:100%;min-height:74px;margin-top:8px;padding:10px 12px;border:2px solid #bfa8d8;border-radius:8px;background:#fff;font:18px/1.7 'Courier New','Hiragino Kaku Gothic ProN',sans-serif;color:#31415f;resize:vertical}
+.kaisetsu{font-size:13.5px;line-height:1.95;color:#33433a}
+.kaisetsu .chunk{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 5px;border-radius:3px;font-weight:800;color:#2f5a8a}
+.kaisetsu .lab{display:inline-block;font-size:11px;font-weight:800;color:#2f6a44;background:#dcefea;border:1px solid #aed8cf;border-radius:8px;padding:1px 8px;margin-right:6px}
+.kaisetsu p{margin:7px 0}
+.red{color:#9b514d;font-weight:800}
+.draft{display:inline-block;font-size:11px;font-weight:800;color:#8a5a19;background:#fff7e8;border:1px solid #e6cf9a;border-radius:8px;padding:2px 8px;margin-bottom:6px}
+.grade{margin-top:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.grade .lbl{font-size:13px;color:#607086;font-weight:700}
+.o,.x{width:48px;height:48px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:22px;font-weight:700;cursor:pointer;color:#8a8794}
+.o:active,.x:active{transform:scale(.94)}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.grad-note{text-align:center;color:#3f7a4a;font-weight:900;font-size:15px;padding:6px}
+.reset{display:block;margin:30px auto 0;background:#fff;border:1px solid #e0d8d6;color:#a08a86;font-size:12px;font-weight:700;padding:7px 14px;border-radius:18px;cursor:pointer}
+.reset:hover{background:#fdf6f4}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:18px;line-height:1.9}
+.back-foot{display:block;text-align:center;min-height:48px;line-height:48px;max-width:420px;margin:26px auto 0;background:#6aa97a;color:#fff;font-size:16px;font-weight:800;border-radius:26px;text-decoration:none}
+.back-foot:active{background:#5c9a6c}
+.totop{position:fixed;left:14px;bottom:14px;width:48px;height:48px;border-radius:50%;border:none;background:rgba(101,119,137,.85);color:#fff;font-size:22px;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.2);display:none;z-index:30;cursor:pointer}
+.totop.show{display:block}
+.qa-warn{background:#fff7e8;border:1px solid #e6cf9a;color:#8a5a19;font-size:11.5px;padding:6px 10px;border-radius:8px;margin-bottom:8px;line-height:1.7}
+@media print{.totop{display:none!important}}
+.viewseg{display:flex;gap:0;background:#eef2f7;border:1px solid #cdd9e6;border-radius:24px;padding:4px;margin:0 0 14px}
+.seg{flex:1;min-height:44px;border:none;background:transparent;font-size:14px;font-weight:800;color:#4a5b6e;border-radius:20px;cursor:pointer}
+.seg.on{background:#6f93c2;color:#fff;box-shadow:0 1px 4px rgba(47,90,138,.3)}
+.seg:active{transform:scale(.98)}
+.dict-note{font-size:12.5px;color:#5a6b7e;background:#f4f7fb;border:1px solid #d6e2ee;border-radius:8px;padding:8px 12px;margin-bottom:10px;line-height:1.7}
+.dict-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:#fffefb;border:1px solid #e3e2d9;border-radius:10px;padding:10px 14px;margin:8px 0}
+.dict-row.grad{background:#f3f6f2}
+.dict-main{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.dict-jp{font-size:14px;font-weight:700;color:#31415f}
+.dict-stat{display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.cnt-x{color:#9b514d;font-weight:900;font-size:14px}
+.cnt-o{color:#2f6a44;font-weight:800;font-size:13px}
+.dict-grad{font-size:11px;font-weight:800;color:#3f6f9f;background:#eaf2fb;border:1px solid #bcd3ee;border-radius:10px;padding:2px 8px}
+.dict-now{font-size:11px;font-weight:800;color:#8a5a17;background:#fbf6ec;border:1px solid #ecdcc0;border-radius:10px;padding:2px 8px}
+.redo{background:#657789;color:#fff;border:none;border-radius:16px;padding:6px 12px;font-size:12px;font-weight:700;cursor:pointer}
+.redo:active{transform:scale(.96)}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">復習キュー</span><span class="pg-badge">英語：間違え直し</span></div>
+  <h1>復習・英語（間違えただけ）</h1>
+  <p>単語・熟語は頭の中で言ってから答え合わせ。<strong>英作文は答えを見る前に、英文を最後まで全文書く</strong>。大文字・語順・つづり・文末記号まで合っていたら○。○2回で卒業、✕は0からやり直し。</p>
+</div>
+
+<div class="allclear" id="allclear">🌸 全部卒業！おめでとう 🌸</div>
+<div class="progress" id="progress">残り <span class="left" id="remain">0</span> 問／卒業 <span id="grad">0</span> 問</div>
+
+<div class="viewseg">
+  <button class="seg on" id="segReview" onclick="setView('review')">📝 復習</button>
+  <button class="seg" id="segDict" onclick="setView('dict')">📖 辞書（間違えた回数順）</button>
+  <button class="seg" id="segLog" onclick="setView('log')">🗓️ 記録</button>
+</div>
+
+<div id="list"></div>
+
+<script>
+/* 安全網：本体scriptが構文エラー（カンマ抜け等）で止まってもこれは動く */
+window.addEventListener('load',function(){setTimeout(function(){
+  var L=document.getElementById('list');
+  if(typeof QS==='undefined'||!L||!L.innerHTML){
+    if(L)L.innerHTML='<div class="q" style="border-color:#d08a86"><p class="red">データの読みこみに失敗しました。</p><p>さいきん単語を足したなら、<b>カンマ「,」のつけ忘れ</b>か<b>かっこの閉じわすれ</b>が原因のことが多いです。直前に足した行を見直してください。（保護者の方へ）</p></div>';
+  }
+},400);});
+</script>
+
+<details style="margin:24px auto 0;max-width:420px">
+  <summary style="cursor:pointer;text-align:center;color:#a08a86;font-size:12px;font-weight:700;list-style:none">⚙ もっと（ぜんぶリセットなど）</summary>
+  <button class="reset" onclick="resetAll()">↺ 卒業もふくめて ぜんぶ最初から出す</button>
+</details>
+
+<div class="endcheer">
+  英語は「ちょっとずつ何回も」がいちばん強い。今日できなくても、明日もう一回出てくるから大丈夫。<br>
+  つづり（スペル）は声に出して「かたまり」で覚えると忘れにくいよ🌸
+</div>
+
+<a class="back-foot" href="../../夏休みダッシュボード.html#today">✓ 終わった → 次のおすすめへ</a>
+
+</div>
+
+<button id="toTop" class="totop" aria-label="上へ" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+// ===== 収録17問（自己完結・隔離試作とは無関係の軽量キュー） =====
+// ★day は必ず「M/D」形式（例 6/18）で記入する。「初日／2日目」等の相対表記は禁止（忘却曲線の起算日が不明になるため）。実日付が不明なら、出題日または採点日を入れる。
+// id1-11=6/17（夏前ドリル復習01-03の採点分析分・実解答日は記録なしのため分析日に統一）／id12-17=6/18。
+// ╔══ 単語を1問ふやすとき（保護者の方へ）══╗
+// ① 足すのは必ず配列のいちばん下（];の直前）。途中に入れない（卒業記録がずれる）
+// ② 下のひな型をコピーして書きかえる。badge は tango(単語)/jukugo(熟語)/eisaku(英作文)
+// ③ id は書かなくてOK（自動でつく）／day は「6/21」の形／前の行のおしりに「,」を必ず
+// ── コピー用ひな型（このまま QS の ]; の直前に貼る）──
+// ,{kind:'単語', badge:'tango', jp:'日本語', en:'english', day:'6/21',
+//   k:'<p><span class="lab">かたまり</span>ここに解説。<span class="red">よくある間違い</span></p>'}
+// ╚════════════════════════════════╝
+var QS=[
+ {id:1, kind:'熟語', badge:'jukugo', jp:'～を聞く', en:'listen to', day:'6/17',
+  k:'<p><span class="lab">かたち</span>「listen（聞く）＋ to」で1セット。<span class="red">to を落とすと×</span>。英語では「○○を聞く」の「を」が <span class="chunk">to</span> になるよ。</p><p>例：I listen to music.（わたしは音楽を聞く）／× I listen music.</p>'},
+
+ {id:2, kind:'英作文', badge:'eisaku', jp:'私は中学生です。', en:'I am a junior high school student.', day:'6/17',
+  k:'<p><span class="lab">語順</span>主語 <span class="chunk">I</span> → be動詞 <span class="chunk">am</span> → なに <span class="chunk">a junior high school student</span>。</p><p><span class="red">a を忘れない</span>：「1人の生徒」だから数えられる名詞には a がつく。<span class="red">最後はピリオド「.」</span>を必ず。</p><p>junior high school（中学校）＝3語でひとかたまり。そのうしろに student（生徒）。</p>'},
+
+ {id:3, kind:'単語', badge:'tango', jp:'朝', en:'morning', day:'6/17',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">mor + ning</span>。「モー・ニング」と区切って覚える。</p><p><span class="red">mourning（喪に服す）と書かない</span>：u は入らない。朝は m-o-r-n-i-n-g。</p><p>in the morning（朝に）でよく使うよ。</p>'},
+
+ {id:4, kind:'単語', badge:'tango', jp:'朝食', en:'breakfast', day:'6/17',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">break + fast</span>＝「break（やぶる）＋ fast（断食）」＝夜の絶食をやぶる食事＝朝ごはん。</p><p><span class="red">brekfast と書かない</span>：a を落としがち。break（ブレイク）がそのまま入っている、と覚える。</p>'},
+
+ {id:5, kind:'単語', badge:'tango', jp:'家族', en:'family', day:'6/17',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">fam + i + ly</span>。「ファ・ミ・リー」の3つ。</p><p><span class="red">familly と l を2つ書かない</span>：l は1つだけ。fam-i-ly。</p>'},
+
+ {id:6, kind:'熟語', badge:'jukugo', jp:'～出身だ・～から来る', en:'come from', day:'6/17',
+  k:'<p><span class="lab">かたち</span>「come（来る）＋ from（～から）」。<span class="red">from を落とすと×</span>。「～から」が <span class="chunk">from</span>。</p><p>例：I come from Tokyo.（わたしは東京出身です）。出身を言うときの定番。</p>'},
+
+ {id:7, kind:'熟語', badge:'jukugo', jp:'目が覚める', en:'wake up', day:'6/17',
+  k:'<p><span class="lab">かたち</span>「wake（覚める）＋ up」で1セット。<span class="red">up を落とすと×</span>。</p><p><span class="red">wake up（目が覚める）↔ get up（起き上がる）</span>の対比に注意。目が開くのが wake up、ベッドから出るのが get up。</p>'},
+
+ {id:8, kind:'英作文', badge:'eisaku', jp:'あなたはサッカーファンですか。', en:'Are you a soccer fan?', day:'6/17',
+  k:'<p><span class="lab">かたち</span>be動詞の疑問文。ふつうの文 <span class="chunk">You are a soccer fan.</span> の <span class="red">are を主語の前に出す</span> → <span class="chunk">Are you a soccer fan?</span></p><p><span class="lab">手順</span>①You are ～ を作る ②are を文のいちばん前へ ③最後は <span class="red">「?」</span>（クエスチョンマーク）。</p><p>サッカーファン＝<span class="chunk">a soccer fan</span>（数えられる1人なので <span class="red">a</span> を忘れない）。<span class="red">Do you ～? にしない</span>＝be動詞の文なので are を使う。</p>'},
+
+ {id:9, kind:'単語', badge:'tango', jp:'人々', en:'people', day:'6/17',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">peo + ple</span>。「ピー・プル」。これ自体が「たくさんの人」を表すので、ふだん s はつけない。</p><p><span class="red">pole（棒）と書かない</span>：people は o の前に e が入る。p-e-o-p-l-e。</p>'},
+
+ {id:10, kind:'単語', badge:'tango', jp:'国', en:'country', day:'6/17',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">coun + try</span>。「カン・トリー」。</p><p><span class="red">cuntry と書かない</span>：o を落とさない。coun（カウン）＋ try（トライ）。</p>'},
+
+ {id:11, kind:'熟語', badge:'jukugo', jp:'（電源を）消す', en:'turn off', day:'6/17',
+  k:'<p><span class="lab">かたち</span>「turn（まわす）＋ off（切る）」。<span class="red">off を落とすと×</span>。</p><p><span class="red">turn on（つける）↔ turn off（消す）</span>の対比に注意。on が「つく」、off が「切れる」。テレビ・電気のスイッチをイメージ。</p>'},
+
+ {id:12, kind:'単語', badge:'tango', jp:'図書館', en:'library', day:'6/18',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">li + bra + ry</span>。「ライ・ブラ・リー」と3つに区切る。</p><p><span class="red">r が2つ</span>入るのがポイント＝「libr-ar-y」。<span class="red">libary と書かない</span>（r を1つにする間違いが多い）。本をたくさん借りる場所、とセットで覚える。</p>'},
+
+ {id:13, kind:'単語', badge:'tango', jp:'病院', en:'hospital', day:'6/18',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">hos + pi + tal</span>。「ホス・ピ・タル」。</p><p>さいごは <span class="chunk">tal</span>（-tle ではない）。<span class="red">hospitle・hospitol と書かない</span>。まん中は <span class="chunk">pi</span>、さいごは <span class="chunk">tal</span>。</p>'},
+
+ {id:14, kind:'単語', badge:'tango', jp:'質問', en:'question', day:'6/18',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">ques + tion</span>。「クエス・チョン」。</p><p><span class="red">q のあとは必ず u</span>（<span class="chunk">qu</span> でいつもセット）。さいごは <span class="chunk">tion</span>。<span class="red">qestion（u を落とす）・queston（i を落とす）と書かない</span>。</p>'},
+
+ {id:15, kind:'熟語', badge:'jukugo', jp:'（服などを）着る・身につける', en:'put on', day:'6/18',
+  k:'<p><span class="lab">かたち</span>「put（置く）＋ on（体の上に）」＝服を体の上に置く＝<span class="red">着る</span>。<span class="red">on を落とすと×</span>。</p><p>反対は <span class="chunk">take off</span>（脱ぐ）。例：Put on your jacket.（上着を着て）</p>'},
+
+ {id:16, kind:'熟語', badge:'jukugo', jp:'（服などを）脱ぐ／（飛行機が）とびたつ', en:'take off', day:'6/18',
+  k:'<p><span class="lab">かたち</span>「take（取る）＋ off（はなす）」＝着ているものを取り去る＝<span class="red">脱ぐ</span>。<span class="red">off を落とすと×</span>。</p><p>反対は <span class="chunk">put on</span>（着る）。飛行機なら「とびたつ（離陸する）」の意味にもなる。例：Take off your shoes.（くつを脱いで）</p>'},
+
+ {id:17, kind:'熟語', badge:'jukugo', jp:'～をさがす', en:'look for', day:'6/18',
+  k:'<p><span class="lab">かたち</span>「look（見る）＋ for（～を求めて）」＝<span class="red">さがす</span>。<span class="red">for を落とすと×</span>。</p><p><span class="red">look at（～を見る）と区別</span>：「さがす」は <span class="chunk">for</span>、「（じっと）見る」は <span class="chunk">at</span>。例：I look for my key.（かぎをさがす）</p>'},
+
+ {id:18, kind:'単語', badge:'tango', jp:'答え・答える', en:'answer', day:'6/19',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">ans + wer</span>。「アン・サー」。</p><p><span class="red">w を忘れない</span>：a-n-s-w-e-r。発音しないけど w はちゃんと書く。<span class="red">anser と書かない</span>。question（質問）↔ answer（答え）でセット。</p>'},
+
+ {id:19, kind:'単語', badge:'tango', jp:'100・百', en:'hundred', day:'6/19',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">hun + dred</span>。「ハン・ドレッド」。</p><p><span class="red">a を入れない</span>：h-u-n-d-r-e-d。<span class="red">hundread と書かない</span>。dred（ドレッド）のかたまりで覚える。</p>'},
+
+ {id:20, kind:'単語', badge:'tango', jp:'（時間の）分', en:'minute', day:'6/19',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">min + ute</span>。「ミニッツ」。</p><p>さいごは <span class="chunk">ute</span>（u-t-e）。<span class="red">minit と書かない・さいごの e を落とさない</span>。five minutes（5分）のように使う。</p>'},
+
+ {id:21, kind:'単語', badge:'tango', jp:'（時間の）時・1時間', en:'hour', day:'6/19',
+  k:'<p><span class="lab">よみ</span><span class="red">h を発音しない</span>：「アワー」。our（わたしたちの）と同じ音。</p><p>つづりは h-o-u-r。<span class="red">h を落として our と書かない</span>。書くときは h からはじまる、と覚える。</p>'},
+
+ {id:22, kind:'単語', badge:'tango', jp:'～時（ちょうど）', en:"o'clock", day:'6/19',
+  k:'<p><span class="lab">かたち</span><span class="chunk">o&#39;clock</span>。o のあとに<span class="red">アポストロフィ（&#39;）</span>、そして clock。</p><p>もとは of the clock。<span class="red">oclock とアポストロフィを落とさない</span>。例：three o&#39;clock（3時ちょうど）。</p>'},
+
+ {id:23, kind:'単語', badge:'tango', jp:'木曜日', en:'Thursday', day:'6/19',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">Thurs + day</span>。「サーズ・デイ」。</p><p>あたまは <span class="chunk">Thu</span>（t-h-u）。<span class="red">Thirsday と書かない</span>。曜日は<span class="red">大文字ではじめる</span>。Tuesday（火）と混同しないように。</p>'},
+
+ {id:24, kind:'単語', badge:'tango', jp:'天気・天候', en:'weather', day:'6/20',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">wea + ther</span>。「ウェ・ザー」。</p><p><span class="red">ea のつづりに注意</span>：w-e-a-t-h-e-r。<span class="red">wether・wheather と書かない</span>。whether（～かどうか）と音は同じでも意味がちがう。</p>'},
+
+ {id:25, kind:'単語', badge:'tango', jp:'休日・祝日', en:'holiday', day:'6/20',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">holi + day</span>。「ホリ・デイ」。</p><p>もとは holy（神聖な）＋ day だけど、つづりは <span class="chunk">holi</span>（i になる）。<span class="red">holyday と書かない</span>。day（日）が入っている。</p>'},
+
+ {id:26, kind:'単語', badge:'tango', jp:'お気に入りの・大好きな', en:'favorite', day:'6/20',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">fa + vo + rite</span>。「フェイバ・リット」。</p><p><span class="red">o を落とさない</span>：f-a-v-o-r-i-t-e。<span class="red">favarite・favrite と書かない</span>。favor（好み）＋ ite。</p>'},
+
+ {id:27, kind:'単語', badge:'tango', jp:'大切な・重要な', en:'important', day:'6/20',
+  k:'<p><span class="lab">かたまり</span><span class="chunk">im + por + tant</span>。「イン・ポー・タント」。</p><p>あたまは <span class="chunk">im</span>（m）。<span class="red">inportant と n で書かない</span>。さいごは <span class="chunk">tant</span>（t-a-n-t）。</p>'},
+
+ {id:28, kind:'熟語', badge:'jukugo', jp:'（電源を）つける', en:'turn on', day:'6/17',
+  k:'<p><span class="lab">かたち</span>「turn（まわす）＋ on（つく）」。<span class="red">on を落とすと×</span>。</p><p><span class="red">turn on（つける）↔ turn off（消す）</span>の対比。on が「つく」、off が「切れる」。例：Turn on the TV.（テレビをつけて）</p>'},
+
+ {id:29, kind:'熟語', badge:'jukugo', jp:'～を待つ', en:'wait for', day:'6/19',
+  k:'<p><span class="lab">かたち</span>「wait（待つ）＋ for」。<span class="red">for を落とすと×</span>。「～を」が <span class="chunk">for</span> になる。</p><p>例：I wait for the bus.（バスを待つ）。<span class="red">wait the bus にしない</span>。</p>'},
+
+ {id:30, kind:'熟語', badge:'jukugo', jp:'～について話す', en:'talk about', day:'6/19',
+  k:'<p><span class="lab">かたち</span>「talk（話す）＋ about（～について）」。<span class="red">about を落とすと×</span>。</p><p>例：talk about the movie（その映画について話す）。「～について」が <span class="chunk">about</span>。</p>'},
+
+ {id:31, kind:'熟語', badge:'jukugo', jp:'～を思いつく・思い出す', en:'think of', day:'6/19',
+  k:'<p><span class="lab">かたち</span>「think（思う）＋ of」。<span class="red">of を落とすと×</span>。「～を」が <span class="chunk">of</span>。</p><p>例：I can&#39;t think of his name.（彼の名前が思い出せない）。think about（じっくり考える）と近いが of は「ふと思いつく」。</p>'},
+
+ {id:32, kind:'熟語', badge:'jukugo', jp:'（乗り物に）乗る', en:'get on', day:'6/20',
+  k:'<p><span class="lab">かたち</span>「get（動く）＋ on（上に）」＝乗り物に乗る。<span class="red">on を落とすと×</span>。</p><p><span class="red">get on（乗る）↔ get off（降りる）</span>の対比。バス・電車に乗るのが get on。例：get on the bus（バスに乗る）</p>'},
+
+ {id:33, kind:'熟語', badge:'jukugo', jp:'～に到着する', en:'arrive at', day:'6/20',
+  k:'<p><span class="lab">かたち</span>「arrive（着く）＋ at（地点）」。<span class="red">at を落とすと×</span>。</p><p><span class="red">せまい場所は at、広い場所（都市・国）は arrive in</span>。例：arrive at the station（駅に着く）／ arrive in Tokyo（東京に着く）。</p>'}
+];
+// ===== 英語プリントの×を受け取る器（revq_dyn → QSへmerge）=====
+var DYN_KEY='revq_dyn';      // 送り手(英語プリント)が書く配列 [{kind,badge,jp,en,day,k,src}]
+var DYN_MAP='revq_dynmap';   // {正規化en: 確定id} 永続マップ（idの安定化）
+var DYN_SEQ='revq_dynseq';   // 発番カウンタ（単調増加。idを使い回さない）
+function esc(s){return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function normEn(s){return String(s==null?'':s).toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function dynUnitKey(q){var sentence=(q&&(q.unit==='sentence'||q.kind==='英作文'||q.badge==='eisaku'||/[.!?]\s*$/.test(String(q.en||''))));return sentence?('sentence|'+normEn(q.jp)+'|'+normEn(q.en)):('item|'+normEn(q&&q.en));}
+function mergeDyn(){
+  var added=0;
+  var arr;try{arr=JSON.parse(localStorage.getItem(DYN_KEY));}catch(e){arr=null;}
+  if(!Array.isArray(arr)||!arr.length)return added;
+  var seen={},idByKey={};QS.forEach(function(q){if(q.en){var nk=dynUnitKey(q),legacy=normEn(q.en);seen[nk]=true;idByKey[nk]=q.id;seen[legacy]=true;idByKey[legacy]=q.id;}});
+  var map;try{map=JSON.parse(localStorage.getItem(DYN_MAP));}catch(e){map=null;}
+  if(!map||typeof map!=='object')map={};
+  var maxStatic=0;QS.forEach(function(q){if(typeof q.id==='number'&&q.id>maxStatic)maxStatic=q.id;});
+  var seq=+localStorage.getItem(DYN_SEQ)||0;
+  if(seq<maxStatic)seq=maxStatic;
+  Object.keys(map).forEach(function(k){if(map[k]>seq)seq=map[k];});
+  var mapChanged=false;
+  // ★プリント○同期：プリントで2回連続正解(po>=2)なら受け皿でも卒業(mastered)にする
+  function syncPrintMastered(id,d){
+    if(!d||typeof d.po!=='number')return; // 旧データ(po未定義)は何もしない
+    if(d.po<2)return;
+    var st=load(id);
+    if(st.mastered)return; // 既にmastered＝何もしない（ユーザー操作を壊さない）
+    st.mastered=true;
+    if(st.cnt<GRADUATE)st.cnt=GRADUATE;
+    save(id,st);
+  }
+  arr.forEach(function(d){
+    if(!d||typeof d!=='object')return;
+    var key=dynUnitKey(d),legacy=normEn(d.en);
+    if(!key)return;
+    if(seen[key]){syncPrintMastered(idByKey[key],d);return;} // 既存(静的/既merge済)もpo同期だけ行う
+    seen[key]=true;
+    var id=map[key];if(typeof id!=='number'&&typeof map[legacy]==='number')id=map[legacy];
+    if(typeof id!=='number'){id=++seq;}if(map[key]!==id){map[key]=id;mapChanged=true;}
+    idByKey[key]=id;
+    var sentence=(d.kind==='英作文'||d.badge==='eisaku'||/[.!?]\s*$/.test(String(d.en||'')));
+    QS.push({id:id,kind:(sentence?'英作文':(d.kind||'単語')),badge:(sentence?'eisaku':(d.badge||'tango')),unit:(sentence?'sentence':'item'),jp:(d.jp||''),en:d.en,day:(d.day||today()),k:(d.k||'<p>（この問題の解説はまだないよ。答えと見くらべて覚えてね🌸）</p>'),src:(d.src||'dyn')});
+    added++;
+    syncPrintMastered(id,d);
+  });
+  // ★MAP/SEQ保存失敗を検知：失敗すると次回id再発番→全リセットになる。1回だけ警告（_dynWarnでguard）
+  var dynOK=true;
+  if(mapChanged&&!safeSet(DYN_MAP,JSON.stringify(map)))dynOK=false;
+  if(seq>(+localStorage.getItem(DYN_SEQ)||0)&&!safeSet(DYN_SEQ,String(seq)))dynOK=false;
+  if(!dynOK&&!window._dynWarn){window._dynWarn=1;alert('復習データの保存に失敗したみたい。ブラウザの容量やシークレットモードを確認してね🌸（このままだと記録がリセットされることがあるよ）');}
+  return added;
+}
+// id未記入の問題に自動採番（既存idは尊重＝既存の保存データを壊さない）
+(function(){var m=0;QS.forEach(function(q){if(typeof q.id==='number'&&q.id>m)m=q.id;});QS.forEach(function(q){if(typeof q.id!=='number')q.id=++m;});})();
+
+var PRE='revq_'; // localStorageキー: revq_1 .. revq_17
+var BOARD='tokkun_reve_queue'; // 記録ボード連携キー
+var GRADUATE=2; // 2回○で卒業
+var DAILY_CAP=20; // learning(通常の未卒業)の1画面あたり表示上限。due(定着チェック)は全件優先で別枠
+var DUE_DAYS=7;
+var SUBJECT='英語'; // ← 3ファイルでここだけ差し替え（英語/数学/国語）
+function histKeys(){var ks=[PRE+'hist',BOARD];QS.forEach(function(q){ks.push(PRE+q.id+'_log');});return ks;} // 卒業データrevq_<id>は含めない
+function fmtD(ms){var d=new Date(ms);var w=['日','月','火','水','木','金','土'][d.getDay()];return (d.getMonth()+1)+'/'+d.getDate()+'('+w+')';}
+function copyText(txt){if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(txt).then(function(){alert('コピーしたよ！先生（AI）にはりつけてね🌸');},function(){window.prompt('コピーして先生にわたしてね',txt);});}else{window.prompt('コピーして先生にわたしてね',txt);}}
+
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function nowMs(){return Date.now();}
+function dayNum(ms){var d=new Date(ms);return Math.floor(new Date(d.getFullYear(),d.getMonth(),d.getDate()).getTime()/86400000);}
+function epoch(){var k=PRE+'__epoch';var v=+localStorage.getItem(k);if(!v){v=nowMs();safeSet(k,String(v));}return v;}
+function clampSt(st){st.cnt=Math.max(0,Math.min(99,(+st.cnt||0)));st.gradTs=(+st.gradTs>0)?+st.gradTs:0;st.mastered=(st.mastered===true);st.lastX=(typeof st.lastX==='string')?st.lastX:'';st.lastO=(typeof st.lastO==='string')?st.lastO:'';if(st.mastered)st.cnt=Math.max(st.cnt,GRADUATE);if(st.cnt<GRADUATE&&st.gradTs)st.gradTs=0;if(st.gradTs>Date.now())st.gradTs=Date.now();if(st.cnt>=GRADUATE && !(st.gradTs>0) && !st.mastered)st.gradTs=Date.now();return st;}
+function stateOf(st){if(st.mastered)return'mastered';if(st.cnt>=GRADUATE){var e=dayNum(nowMs())-dayNum(st.gradTs);return (st.gradTs>0&&e>=0&&e>=DUE_DAYS)?'due':'graduated';}return'learning';}
+function safeSet(k,v){try{localStorage.setItem(k,v);return true;}catch(e){return false;}}
+function safeRemove(k){try{localStorage.removeItem(k);}catch(e){}}
+function load(id){var o;try{o=JSON.parse(localStorage.getItem(PRE+id));}catch(e){o=null;}if(!o||typeof o!=='object')o={cnt:0,lastX:''};if(typeof o.gradTs!=='number'){o.gradTs=(o.cnt>=GRADUATE)?epoch():0;}if(typeof o.mastered!=='boolean')o.mastered=false;return clampSt(o);}
+function save(id,st){if(!safeSet(PRE+id,JSON.stringify(st))&&!window._svWarn){window._svWarn=1;alert('きろくが保存できなかったみたい。シークレットモードだと保存できないことがあるよ。ふつうのモードで開いてね🌸');}}
+
+// 記録ボード連携：全体の○総数・✕総数を集計して書き出す
+function writeBoard(){
+  var o=0,x=0;
+  QS.forEach(function(q){
+    try{var b=JSON.parse(localStorage.getItem(PRE+q.id+'_log'))||{o:0,x:0};o+=(+b.o||0);x+=(+b.x||0);}catch(e){}
+  });
+  safeSet(BOARD, JSON.stringify({o:o,x:x}));
+}
+function bumpLog(id,key){var b;try{b=JSON.parse(localStorage.getItem(PRE+id+'_log'))||{o:0,x:0};}catch(e){b={o:0,x:0};}b[key]=(b[key]||0)+1;safeSet(PRE+id+'_log',JSON.stringify(b));pushHist(id,key);writeBoard();}
+function pushHist(id,key){var h;try{h=JSON.parse(localStorage.getItem(PRE+'hist'))||[];}catch(e){h=[];}h.push({t:nowMs(),id:id,r:key});if(h.length>400)h=h.slice(h.length-400);safeSet(PRE+'hist',JSON.stringify(h));}
+
+// 1枚のカードDOMを作る（due/learning共通）
+function buildCard(q,st,isDue){
+  var el=document.createElement('div');el.className='q'+(isDue?'':(st.cnt>=1?' lv1':' lv0'));el.id='q'+q.id;
+  var sentence=(q.unit==='sentence'||q.kind==='英作文'||q.badge==='eisaku');
+  var dateStr=isDue?('🔁 1週間ぶりの定着チェック'):('間違えた日：'+esc(q.day)+(st.lastX?'（再×'+esc(st.lastX)+'）':''));
+  el.innerHTML=
+    '<div class="top">'+
+      '<span class="badge '+q.badge+'">'+esc(q.kind)+'</span>'+
+      (isDue?'<span class="badge jukugo">🔁 定着チェック</span>':'')+
+      '<span class="date">'+dateStr+'</span>'+
+      (isDue?'<span class="cnt">ラスト1問！</span>':'<span class="cnt">○ '+st.cnt+' / '+GRADUATE+(st.cnt===1?'　1回め○'+(st.lastO?':'+esc(st.lastO):'済'):'')+'</span>')+
+    '</div>'+
+    '<div class="jp">'+esc(q.jp)+'</div>'+
+    (sentence?'<div class="sentence-mode">① 日本語から英文を全文書く　② 答えを開く　③ 大文字・語順・つづり・記号を確認<textarea class="sentence-input" aria-label="英作文の答え" placeholder="ここに英文を最後まで書こう" autocapitalize="sentences" spellcheck="false"></textarea></div>':'')+
+    '<button class="ans-btn" onclick="toggle('+q.id+',this)">'+(sentence?'全文書いてから答えを見る':'答えを見る')+'</button>'+
+    '<div class="ans-box" id="a'+q.id+'">'+
+      '<div class="en">'+esc(q.en)+'</div>'+
+      '<div class="kaisetsu">'+q.k+'</div>'+
+      '<div class="grade"><span class="lbl">'+(sentence?'大文字・語順・つづり・記号まで合ってた？':'合ってた？')+'</span>'+
+        '<button class="o" onclick="mark('+q.id+',1)">○</button>'+
+        '<button class="x" onclick="mark('+q.id+',0)">✕</button>'+
+      '</div>'+
+    '</div>';
+  return el;
+}
+function render(){
+  var list=document.getElementById('list');list.innerHTML='';
+  var grad=0;
+  var dues=[],learns=[]; // 未卒業を due/learning に仕分け（データは全件保持・表示だけ制限）
+  QS.forEach(function(q){
+    var st=load(q.id);var ph=stateOf(st);
+    if(ph==='mastered'||ph==='graduated'){grad++;return;} // 卒業した問題は出さない（dueは復活）
+    if(ph==='due')dues.push({q:q,st:st});
+    else learns.push({q:q,st:st}); // learning
+  });
+  // remain は全件（隠した分も「残り」に数える＝卒業判定・進捗は全件で動く）
+  var remain=dues.length+learns.length;
+  // learning の表示優先順位：lastX（最後に×した日 M/D）が新しい順、なければ既存順（安定ソート）
+  function lastXKey(s){ // 'M/D' を比較可能な数値へ。空は最小。年跨ぎは想定しない（M*100+D）
+    var m=/^(\d{1,2})\/(\d{1,2})$/.exec(s.st.lastX||'');
+    return m?(+m[1]*100+ +m[2]):-1;
+  }
+  learns.forEach(function(s,i){s._i=i;}); // 既存順の保持用
+  learns.sort(function(a,b){var d=lastXKey(b)-lastXKey(a);return d!==0?d:(a._i-b._i);});
+  // ① due は全件優先表示（7日経過の復活を逃さない）
+  dues.forEach(function(s){list.appendChild(buildCard(s.q,s.st,true));});
+  // ② learning は最大 DAILY_CAP 問。超過分は出さずメッセージ
+  var shown=[],sentenceN=0;
+  learns.forEach(function(s){
+    if(shown.length>=DAILY_CAP)return;
+    var isSentence=(s.q.unit==='sentence'||s.q.kind==='英作文'||s.q.badge==='eisaku');
+    if(isSentence&&sentenceN>=3)return;
+    shown.push(s);if(isSentence)sentenceN++;
+  });
+  shown.forEach(function(s){list.appendChild(buildCard(s.q,s.st,false));});
+  var over=learns.length-shown.length;
+  if(over>0){
+    var note=document.createElement('div');note.className='endcheer';note.style.marginTop='14px';
+    note.textContent='のこり '+over+'問は、また順番に出すね🌸（今日はここまででOK）';
+    list.appendChild(note);
+  }
+  document.getElementById('remain').textContent=remain;
+  document.getElementById('grad').textContent=grad;
+  var ac=document.getElementById('allclear');
+  if(remain===0){ac.classList.add('show');document.getElementById('progress').style.display='none';}
+  else{ac.classList.remove('show');document.getElementById('progress').style.display='';}
+}
+
+function toggle(id,b){
+  var a=document.getElementById('a'+id);var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':'答えを見る';
+}
+
+function mark(id,ok){
+  var st=load(id);var wasDue=(stateOf(st)==='due');
+  if(ok)bumpLog(id,'o');else bumpLog(id,'x');
+  if(wasDue){
+    if(ok){st.mastered=true;save(id,st);var e1=document.getElementById('q'+id);if(e1){e1.classList.add('grad');e1.innerHTML='<div class="grad-note">🌸 定着！1週間あけても覚えてた。もう完ぺき。</div>';}window._gradAnim=true;setTimeout(function(){render();window._gradAnim=false;},900);return;}
+    else{st.cnt=0;st.lastX=today();st.gradTs=0;save(id,st);render();return;}
+  }
+  if(ok){st.cnt=st.cnt+1;if(st.cnt===1)st.lastO=today();}else{st.cnt=0;st.lastX=today();}
+  save(id,st);
+  if(ok&&st.cnt>=GRADUATE){st.gradTs=nowMs();save(id,st);var e2=document.getElementById('q'+id);if(e2){e2.classList.add('grad');e2.innerHTML='<div class="grad-note">🎉 卒業！7日後にもう一度だけ出るよ。そこで○なら完ぺき！</div>';}window._gradAnim=true;setTimeout(function(){render();window._gradAnim=false;},900);}
+  else{render();}
+}
+
+function resetAll(){
+  if(!confirm('全部の○✕をリセットして、もう一度'+QS.length+'問全部出すよ。いい？'))return;
+  QS.forEach(function(q){safeRemove(PRE+q.id);safeRemove(PRE+q.id+'_log');});
+  safeSet(BOARD,JSON.stringify({o:0,x:0}));
+  render();
+}
+
+function resetHist(){
+  if(!confirm('これまでの「○✕の足あと」と「記録タブ」を消して、ここから本番スタートするよ。\n\n★卒業した問題（できるようになった分）はそのまま残るよ。\nいい？'))return;
+  histKeys().forEach(function(k){safeRemove(k);});
+  safeSet(BOARD,JSON.stringify({o:0,x:0}));
+  if(typeof VIEW!=='undefined'&&VIEW==='log')renderLog();
+  alert('足あとをリセットしたよ。今日から本番スタート🌸');
+}
+
+function selfCheck(){
+  var OK=['tango','jukugo','eisaku'],w=[],ids={};
+  QS.forEach(function(q,i){
+    var t=q.jp?('「'+String(q.jp).replace(/<[^>]+>/g,'').slice(0,12)+'」'):'';
+    var p='QS['+i+']'+t;
+    if(OK.indexOf(q.badge)<0)w.push(p+': badge「'+q.badge+'」はCSS未定義（無装飾になる）');
+    if(!q.jp||!q.en||!q.k)w.push(p+': jp/en/k のどれかが空');
+    if(!q.day)w.push(p+': day（間違えた日）が空');
+    if(ids[q.id])w.push(p+': id重複('+q.id+')');ids[q.id]=1;
+  });
+  if(w.length){
+    console.warn('【復習キュー点検】'+w.length+'件:\n'+w.join('\n'));
+    if(location.search.indexOf('check=1')>=0){
+      var d=document.createElement('div');d.className='qa-warn';
+      d.textContent='⚠ 追加データに'+w.length+'件の注意（くわしくはConsole）。保護者向け。';
+      var wrap=document.querySelector('.wrap'),ac=document.getElementById('allclear');
+      if(wrap&&ac)wrap.insertBefore(d,ac);
+    }
+  }
+}
+var VIEW='review';
+function getLog(id){var v=localStorage.getItem(PRE+id+'_log');if(!v)return{o:0,x:0};try{var p=JSON.parse(v);return{o:+p.o||0,x:+p.x||0};}catch(e){return{o:0,x:0};}}
+function errScore(id){var l=getLog(id);if(l.x===0)return -1;return l.x + l.x/(l.o+l.x);}
+function setView(v){
+  VIEW=v;
+  var sr=document.getElementById('segReview'),sd=document.getElementById('segDict'),sl=document.getElementById('segLog');
+  if(sr)sr.classList.toggle('on',v==='review');
+  if(sd)sd.classList.toggle('on',v==='dict');
+  if(sl)sl.classList.toggle('on',v==='log');
+  var pg=document.getElementById('progress'),ac=document.getElementById('allclear');
+  if(v==='review'){ if(pg)pg.style.display=''; render(); }
+  else if(v==='log'){ if(pg)pg.style.display='none'; if(ac)ac.classList.remove('show'); renderLog(); }
+  else { if(pg)pg.style.display='none'; if(ac)ac.classList.remove('show'); renderDict(); }
+}
+function renderDict(){
+  var list=document.getElementById('list');if(!list)return;list.innerHTML='';
+  var rows=QS.map(function(q){var st=load(q.id),lg=getLog(q.id);return{q:q,st:st,lg:lg,grad:(st.cnt>=GRADUATE),ph:stateOf(st)};})
+    .sort(function(a,b){return errScore(b.q.id)-errScore(a.q.id);});
+  var done=rows.filter(function(r){return r.grad;}).length;
+  var html='<div class="dict-note">間違えた回数が多い順に 並べたよ。🎓は「もう卒業（できるようになった）」しるし。今できるのは <b>'+done+'個</b>🌸　「もう一度」でいつでも 復習にもどせるよ。あやまって ✕した問題は「🗑 消す」でリストから消せるよ。</div>';
+  rows.forEach(function(r){
+    var jp=esc(String(r.q.jp).replace(/<[^>]+>/g,'').slice(0,40));
+    // learning または due の問題だけ「🗑 消す」（mastered/graduatedには出さない）
+    var canDel=(r.ph==='learning'||r.ph==='due');
+    html+='<div class="dict-row'+(r.grad?' grad':'')+'">'+
+      '<div class="dict-main"><span class="badge '+r.q.badge+'">'+esc(r.q.kind)+'</span><span class="dict-jp">'+jp+'</span></div>'+
+      '<div class="dict-stat"><span class="cnt-x">✕'+r.lg.x+'</span><span class="cnt-o">○'+r.lg.o+'</span>'+
+      (r.grad?'<span class="dict-grad">🎓できた</span><button class="redo" onclick="redo('+r.q.id+')">もう一度</button>':'<span class="dict-now">練習中</span>')+
+      (canDel?'<button class="redo" style="background:#c08a86" onclick="delItem('+r.q.id+')">🗑 消す</button>':'')+
+      '</div></div>';
+  });
+  list.innerHTML=html;
+}
+// 誤×の取り消し：ユーザー操作時のみ。SRS状態と記録を消す。dyn由来なら受け皿の動的データからも消す（id解放）
+function delItem(id){
+  if(!confirm('この問題を復習リストから消すよ。いい？'))return;
+  // 1) SRS状態・記録を削除（静的33問はこれだけ＝learningリセット。次回また出る）
+  safeRemove(PRE+id);
+  safeRemove(PRE+id+'_log');
+  // 2) dyn由来か判定：revq_dyn に同じ en があれば dyn。dynなら dyn配列・MAP・メモリQS から消してidを解放
+  var q=qById(id);
+  var key=q&&q.en?normEn(q.en):'';
+  if(key){
+    var arr;try{arr=JSON.parse(localStorage.getItem(DYN_KEY));}catch(e){arr=null;}
+    var isDyn=Array.isArray(arr)&&arr.some(function(d){return d&&d.en&&normEn(d.en)===key;});
+    if(isDyn){
+      // revq_dyn 配列から該当 en を削除
+      var arr2=arr.filter(function(d){return !(d&&d.en&&normEn(d.en)===key);});
+      safeSet(DYN_KEY,JSON.stringify(arr2));
+      // DYN_MAP から該当 en キーを削除（id解放）
+      var map;try{map=JSON.parse(localStorage.getItem(DYN_MAP));}catch(e){map=null;}
+      if(map&&typeof map==='object'&&Object.prototype.hasOwnProperty.call(map,key)){
+        delete map[key];safeSet(DYN_MAP,JSON.stringify(map));
+      }
+      // メモリ上の QS からも取り除く（再mergeで戻らないように。静的33問はここを通らず残る）
+      for(var i=QS.length-1;i>=0;i--){if(QS[i].id===id){QS.splice(i,1);break;}}
+    }
+  }
+  renderDict();
+}
+function redo(id){var st=load(id);st.cnt=GRADUATE-1;st.gradTs=0;st.mastered=false;save(id,st);renderDict();}
+function qById(id){for(var i=0;i<QS.length;i++){if(QS[i].id===id)return QS[i];}return null;}
+function fmtDT(ms){var d=new Date(ms);var w=['日','月','火','水','木','金','土'][d.getDay()];return (d.getMonth()+1)+'/'+d.getDate()+'('+w+') '+('0'+d.getHours()).slice(-2)+':'+('0'+d.getMinutes()).slice(-2);}
+function renderLog(){
+  var list=document.getElementById('list');if(!list)return;
+  var h;try{h=JSON.parse(localStorage.getItem(PRE+'hist'))||[];}catch(e){h=[];}
+  var ctrl='<div style="display:flex;gap:8px;flex-wrap:wrap;margin:0 0 10px">'+
+    '<button class="redo" onclick="copyLog(true)">📋 ✕だけコピー</button>'+
+    '<button class="redo" onclick="copyLog(false)">📋 ぜんぶコピー</button>'+
+    '<button class="reset" style="margin:0" onclick="resetHist()">🗑️ 記録を消して本番スタート</button>'+
+    '</div>';
+  if(!h.length){list.innerHTML='<div class="dict-note">まだ記録がないよ。「復習」で○✕をつけると、ここに日づけと時刻がたまっていくよ🌸</div>'+ctrl;return;}
+  var map={},order=[];
+  h.forEach(function(e){var d=new Date(e.t);var ymd=d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();var key=(d.getMonth()+1)+'/'+d.getDate();if(!map[ymd]){map[ymd]={ymd:ymd,key:key,o:0,x:0,xs:[]};order.push(ymd);}map[ymd][e.r==='o'?'o':'x']++;if(e.r==='x')map[ymd].xs.push(e);});
+  order.sort(function(a,b){return b-a;});
+  var html='<div class="dict-note">✕（まちがえた問題）を 日づけごとに まとめたよ。スクショ1枚で先生（AI）に わたせるよ🌸　○は数だけ表示。</div>'+ctrl;
+  html+='<div class="dict-row" style="background:#eef2f7;border-color:#cdd9e6"><div class="dict-main"><b>📸 きみ／'+SUBJECT+' まちがえ記録</b></div></div>';
+  order.forEach(function(ymd){var d=map[ymd];var tot=d.o+d.x;var rate=tot?Math.round(d.o/tot*100):0;
+    html+='<div class="dict-row" style="background:#fbf6ec;border-color:#ecdcc0"><div class="dict-main"><b style="font-size:15px">'+d.key+'</b></div><div class="dict-stat"><span class="cnt-x">✕'+d.x+'</span><span class="cnt-o">○'+d.o+'</span><span class="dict-grad">正答'+rate+'%</span></div></div>';
+    if(!d.xs.length){html+='<div style="margin:2px 0 12px;color:#2f6a44;font-weight:700;font-size:13px">　🌸 この日はぜんぶ○！</div>';return;}
+    d.xs.slice().reverse().forEach(function(e){var q=qById(e.id);var jp=q?String(q.jp).replace(/<[^>]+>/g,'').slice(0,30):('#'+e.id);html+='<div class="dict-row"><div class="dict-main"><span class="cnt-x" style="font-size:13px">✕</span><span class="date">'+fmtDT(e.t)+'</span><span class="dict-jp">'+jp+'</span></div></div>';});
+    html+='<div style="height:8px"></div>';});
+  list.innerHTML=html;
+}
+function copyLog(onlyX){
+  var h;try{h=JSON.parse(localStorage.getItem(PRE+'hist'))||[];}catch(e){h=[];}
+  var o=0,x=0;h.forEach(function(e){if(e.r==='o')o++;else x++;});
+  var range=h.length?(fmtD(h[0].t)+' 〜 '+fmtD(h[h.length-1].t)):'';
+  if(onlyX){
+    var agg={};h.forEach(function(e){if(e.r!=='x')return;if(!agg[e.id])agg[e.id]={n:0,days:[]};agg[e.id].n++;agg[e.id].days.push(fmtD(e.t));});
+    var ids=Object.keys(agg).sort(function(a,b){return agg[b].n-agg[a].n;});
+    var L=['=== きみ '+SUBJECT+' まちがえ記録（×だけ・回数順）==='];
+    L.push('教科='+SUBJECT+' / 期間='+range+' / 通算 ○'+o+' ✕'+x);
+    L.push('※テスト入力の可能性あり。本番開始日より前は弱点に反映しないこと');
+    L.push('--- まちがえた問題（×が多い順）---');
+    ids.forEach(function(id){var q=qById(+id);var jp=q?String(q.jp).replace(/<[^>]+>/g,''):'(不明)';var en=q&&q.en?String(q.en).replace(/<[^>]+>/g,''):'';var kind=q&&q.kind?q.kind:'';L.push('['+PRE+'#'+id+'] '+kind+' | '+jp+(en?' → 答え:'+en:'')+' | ✕'+agg[id].n+'回 ('+agg[id].days.join(',')+')');});
+    if(!ids.length)L.push('（まちがえはまだないよ🌸）');
+    L.push('=== END ('+PRE+') ===');copyText(L.join('\n'));
+  }else{
+    var L2=['=== きみ '+SUBJECT+' 復習記録（全件・時系列）==='];
+    L2.push('教科='+SUBJECT+' / 期間='+range+' / 通算 ○'+o+' ✕'+x);
+    h.forEach(function(e){var q=qById(e.id);var jp=q?String(q.jp).replace(/<[^>]+>/g,'').slice(0,30):'(不明)';L2.push(PRE+'#'+e.id+' | '+fmtDT(e.t)+' | '+jp+' | '+(e.r==='o'?'○':'✕'));});
+    L2.push('=== END ('+PRE+') ===');copyText(L2.join('\n'));
+  }
+}
+function migrate(){if(localStorage.getItem(PRE+'migr1'))return;var now=nowMs();QS.forEach(function(q){var raw=localStorage.getItem(PRE+q.id);if(!raw)return;var st;try{st=JSON.parse(raw);}catch(e){return;}if(!st||typeof st!=='object')return;var ch=false;if(st.cnt>=GRADUATE&&typeof st.gradTs!=='number'){st.gradTs=epoch();ch=true;}if(typeof st.mastered!=='boolean'){st.mastered=false;ch=true;}if(ch)save(q.id,st);});safeSet(PRE+'migr1','1');}
+window.onload=function(){
+  try{mergeDyn();}catch(e){}
+  try{migrate();}catch(e){}
+  try{selfCheck();}catch(e){}
+  render();
+  writeBoard();
+  window.addEventListener('scroll',function(){var b=document.getElementById('toTop');if(!b)return;if(window.scrollY>500)b.classList.add('show');else b.classList.remove('show');},{passive:true});
+};
+// ページに戻るたび（bfcache復帰・タブ再表示）に revq_dyn を取り込み直して再描画
+function refreshFromDyn(){
+  if(window._gradAnim)return; // 卒業演出中は再描画しない（演出を壊さない）
+  var added=0;
+  try{added=mergeDyn();}catch(e){added=0;}
+  if(!(added>0))return; // 増分0なら再描画しない（スクロール位置・解説展開・押下途中状態を保持）
+  try{
+    if(typeof VIEW==='undefined'||VIEW==='review'){render();}
+    else if(VIEW==='dict'){renderDict();}
+    else if(VIEW==='log'){renderLog();}
+  }catch(e){}
+}
+window.addEventListener('pageshow', function(){ refreshFromDyn(); });
+document.addEventListener('visibilitychange', function(){ if(document.visibilityState==='visible'){ refreshFromDyn(); } });
+</script>
+<script>
+/* 2026-07-12 もどる先の自動判定。
+   既定＝夏休みダッシュボード（このプリントは夏休みDBが出す教材）。
+   夏前ダッシュボードから開いたときだけ夏前へ戻す。失敗しても既定(夏休み)のままなので壊れない。 */
+(function(){try{
+  if(document.referrer && document.referrer.indexOf('index_iPad')>=0){
+    var as=document.querySelectorAll('a.back,a.back-foot');
+    for(var i=0;i<as.length;i++){ as[i].setAttribute('href','../../index_iPad_学習ダッシュボード.html'); }
+  }
+}catch(e){}})();
+</script>
+</body>
+</html>

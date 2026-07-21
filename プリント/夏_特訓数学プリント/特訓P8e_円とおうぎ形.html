@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P8e 円とおうぎ形｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 円・おうぎ形の型カード（毎回これにそって解く）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い（先に読んでおこう）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月特訓選抜 大問2へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-easy{background:#eef4fb;border-left:4px solid #7aa7d9}
+.bx-easy::before{content:"🌱 まず、やさしく言いかえると";display:block;font-size:12px;font-weight:800;color:#2f5a8a;margin-bottom:4px}
+.bx-img{background:#fbf3f7;border-left:4px solid #d39ab8}
+.bx-img::before{content:"🖼️ 図でイメージしよう";display:block;font-size:12px;font-weight:800;color:#9b4f72;margin-bottom:4px}
+.bx-plan{background:#f3f7ee;border-left:4px solid #9bbf6a}
+.bx-plan::before{content:"🎯 作戦（ピザ・ケーキでたとえると）";display:block;font-size:12px;font-weight:800;color:#5a7a2f;margin-bottom:4px}
+.bx-check{background:#eef7f6;border-left:4px solid #5fa89a}
+.bx-check::before{content:"✅ 検算＋次に見抜くコツ";display:block;font-size:12px;font-weight:800;color:#2f6a5c;margin-bottom:4px}
+.know{background:#fbfaf2;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-size:13px;color:#6a5a32}
+.know::before{content:"📦 分かっていること / これから求めること";display:block;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜まず思い出そう（暗記じゃなく、意味で）";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.pi{font-family:'Times New Roman','Times',serif;font-weight:700;font-style:italic;font-size:1.08em}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 1px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P8e</span><span class="pg-badge">数学：平面図形</span><span class="pg-badge">★円・おうぎ形 L2-L4（9月大問2直撃）</span></div>
+  <h1>円とおうぎ形｜まわり・面積・弧・中心角を「4問・じっくり」で固める（<span class="pi">π</span>）</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に「あほでもわかる」徹底解説つき</p>
+  <p class="pg-cheer">9月の特訓選抜 大問2は<strong>円とおうぎ形が主役</strong>。今日はそこを直撃する4問だよ。コツはたった3つ。①<strong>半径と直径をぜったい取りちがえない</strong>（直径は半径の2倍）②<strong>おうぎ形は「円の一部」＝(中心角/360)をかける</strong>③<strong><span class="pi">π</span>は最後まで文字のまま</strong>。1問ずつ、図に分かる数を書きこんでゆっくり進もう。きみはぜったいできる🌸</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 半径はいくつ？</b>（直径が書いてあったら÷2して半径に直す。ここが全ての出発点）</li>
+    <li><b>② 何を聞かれてる？</b>「長さ（まわり・弧）」か「面積」かをはっきりさせる</li>
+    <li><b>③ 長さなら 2×半径×<span class="pi">π</span>系／面積なら 半径×半径×<span class="pi">π</span>系</b></li>
+    <li><b>④ おうぎ形なら (中心角/360) をかける</b>（円ぜんぶの何分の一か）</li>
+    <li><b>⑤ <span class="pi">π</span>は文字のまま・最後に検算</b>（<span class="pi">π</span>の項と数の項は混ぜない）</li>
+  </ol>
+</div>
+
+<!-- ===== 問1 円の周と面積 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">円の周の長さと面積（半径から）L2-L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead">問1</span>半径7cmの円があります。この円の(1)周の長さ、(2)面積を、それぞれ求めなさい（円周率は<span class="pi">π</span>）。
+    <svg class="fig" width="200" height="180" viewBox="0 0 200 180">
+      <circle cx="100" cy="90" r="70" fill="#f4f8fd" stroke="#2f5a8a" stroke-width="2"/>
+      <circle cx="100" cy="90" r="3" fill="#2f5a8a"/>
+      <line x1="100" y1="90" x2="170" y2="90" stroke="#2f5a8a" stroke-width="2"/>
+      <text x="124" y="84" font-size="13" fill="#2f5a8a" font-weight="bold">7cm</text>
+      <text x="116" y="104" font-size="11" fill="#888">半径</text>
+    </svg>
+  </div>
+  <div class="note-draw">図に、分かっている長さと角を書きこもう。どう分けるか・どう引くかは自分で考えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-easy">「周の長さ」＝円のまわりをぐるっと1周した長さ（ひもで囲んだときのひもの長さ）。「面積」＝円の中がどれだけ広いか（色をぬる部分の広さ）。<strong>長さと広さは別もの</strong>だから、使う式もちがう。ここをまず分けて考えよう。</div>
+    <div class="know">分かっていること：半径＝7cm。<br>求めること：(1) 周の長さ（まわりの長さ）　(2) 面積（中の広さ）。</div>
+    <div class="bx bx-img">図のまん中の点から、ふちまでの線が半径7cm。半径を反対側までのばすと直径＝14cm。まわりをはかるのが(1)、中身の広さが(2)、と頭の中で色分けしよう。</div>
+    <div class="bx bx-plan">ピザでたとえると：ピザのふちのこげた所をぐるっとたどった長さが「周（まわり）」、チーズがのっている面ぜんたいが「面積」。だから(1)はまわり用の式、(2)は中身用の式を使うんだ。</div>
+    <div class="osarai"><ul>
+      <li><b>円の周の長さ＝直径×<span class="pi">π</span>＝2×半径×<span class="pi">π</span></b>（まわりは「長さ」なので半径は1回だけ）</li>
+      <li><b>円の面積＝半径×半径×<span class="pi">π</span></b>（中の広さなので半径を2回かける）</li>
+      <li>なぜ<span class="pi">π</span>？　どんな大きさの円でも「まわり÷直径」がいつも同じ数になる。その決まった数を<span class="pi">π</span>（パイ）と名づけただけ。だから暗記より「まわりは直径の<span class="pi">π</span>倍」と意味で覚えよう。</li>
+    </ul></div>
+    <div class="step q1"><span>①半径の確認</span>半径は7cm（最初から半径が書いてあるのでそのまま使える）。</div>
+    <div class="step q1"><span>②(1)周の長さ「なぜ2×半径か」</span>まわりは「長さ」。直径×<span class="pi">π</span>＝(2×半径)×<span class="pi">π</span>。<span class="math">2×7×<span class="pi">π</span>＝14<span class="pi">π</span></span>。周＝14<span class="pi">π</span> cm。</div>
+    <div class="step q1"><span>③(2)面積「なぜ半径を2回か」</span>面積は「広さ」。たて方向にも横方向にも広がるから半径を2回かける。半径×半径×<span class="pi">π</span>＝<span class="math">7×7×<span class="pi">π</span>＝49<span class="pi">π</span></span>。面積＝49<span class="pi">π</span> cm²。</div>
+    <div class="bx bx-warn"><span class="red">周の長さに「半径×半径」を使わない</span>（半径を2回かけるのは面積だけ。長さは2×半径×<span class="pi">π</span>）。面積を「2×半径」でやらない（広さなので半径×半径）。<span class="pi">π</span>を3.14にしない（問題が「<span class="pi">π</span>で答えよ」と言っているので文字のまま）。単位を忘れない（長さは cm、面積は cm²）。</div>
+    <div class="bx bx-check">検算：もし半径が2倍(14cm)なら周も2倍(28<span class="pi">π</span>)になるはず → 長さは半径に比例。面積はどうかというと半径2倍で面積は4倍(196<span class="pi">π</span>) → 広さは半径の2乗で増える。この「長さは比例・面積は2乗」の感覚があると、答えが大きすぎ・小さすぎにすぐ気づける。<br><strong>見抜くコツ</strong>：聞かれたのが「長さ系（周・弧）」か「広さ系（面積）」かを最初に丸で囲む。これだけでミスが激減する。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2は、この「周＝2×半径×<span class="pi">π</span>・面積＝半径×半径×<span class="pi">π</span>」が全ての土台。ここがあやふやだと、おうぎ形も複合図形もくずれる。今日いちばんに固めよう。</div>
+    <div class="ans-final"><span>こたえ</span>(1)周＝14<span class="pi">π</span> cm／(2)面積＝49<span class="pi">π</span> cm²</div>
+      <div class="tec-link">型：<b>複合図形型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1)周</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「周＝2×半径×π」をノートに図つきで書こう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2)面積</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「面積＝半径×半径×π」をノートに図つきで書こう</div></div>
+</div>
+
+<!-- ===== 問2 おうぎ形 弧と面積 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">★おうぎ形の弧の長さと面積（半径・中心角）L3</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead">問2</span>半径9cm、中心角120°のおうぎ形があります。このおうぎ形の(1)弧の長さ、(2)面積を、それぞれ求めなさい（円周率は<span class="pi">π</span>）。
+    <svg class="fig" width="200" height="190" viewBox="0 0 200 190">
+      <!-- center (60,150), radius 110px, 120deg from 0deg(east) to 120deg(up-left) -->
+      <path d="M60,150 L170,150 A110,110 0 0 0 5,55 Z" fill="#eef7f5" stroke="#2f6a5c" stroke-width="2"/>
+      <line x1="60" y1="150" x2="170" y2="150" stroke="#2f6a5c" stroke-width="2"/>
+      <line x1="60" y1="150" x2="5" y2="55" stroke="#2f6a5c" stroke-width="2"/>
+      <circle cx="60" cy="150" r="3" fill="#2f6a5c"/>
+      <text x="100" y="166" font-size="13" fill="#333" font-weight="bold">9cm</text>
+      <text x="72" y="132" font-size="12" fill="#b3611c" font-weight="bold">120°</text>
+      <path d="M92,150 A32,32 0 0 0 76,122" fill="none" stroke="#b3611c" stroke-width="1.3"/>
+    </svg>
+  </div>
+  <div class="note-draw">図に、分かっている長さと角を書きこもう。どう分けるか・どう引くかは自分で考えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-easy">おうぎ形＝<strong>円を切り取った一切れ</strong>。だから「円ぜんぶの何分の一か」が分かれば、あとは円の答えにその分だけかければいい。今回は中心角120°。円1周は360°。120°は360°のうちの一部なので、<span class="frac"><span class="n">120</span><span class="d">360</span></span>＝<span class="frac"><span class="n">1</span><span class="d">3</span></span>。つまりこの一切れは円ぜんぶの3分の1。</div>
+    <div class="know">分かっていること：半径＝9cm、中心角＝120°。<br>求めること：(1) 弧の長さ（丸いふちの長さ）　(2) 面積（一切れの広さ）。</div>
+    <div class="bx bx-img">図の中心の点から2本の直線（どちらも9cm）と、それを結ぶ丸いカーブ（弧）でできた一切れ。直線の間の角が120°。これは円を3等分したうちの1つぶんの形だよ。</div>
+    <div class="bx bx-plan">ケーキでたとえると：まるいホールケーキを3等分した一切れがこのおうぎ形。一切れの「丸いふち（チョコがかかってる外側）」の長さが弧、「上から見た一切れの広さ」が面積。ホールぜんぶ（円）の答えを出して、3分の1にすればいい。これがおうぎ形の正体。</div>
+    <div class="osarai"><ul>
+      <li><b>中心角/360 ＝ 円ぜんぶの何分の一か</b>。だから <span class="frac"><span class="n">120</span><span class="d">360</span></span>＝<span class="frac"><span class="n">1</span><span class="d">3</span></span>（円の3分の1）。これがおうぎ形の心臓部。</li>
+      <li><b>おうぎ形の弧＝円周×(中心角/360)＝2×半径×<span class="pi">π</span>×(中心角/360)</b></li>
+      <li><b>おうぎ形の面積＝円の面積×(中心角/360)＝半径×半径×<span class="pi">π</span>×(中心角/360)</b></li>
+    </ul></div>
+    <div class="step q2"><span>①「何分の一か」を出す</span>中心角120°は円1周360°のうち <span class="math"><span class="frac"><span class="n">120</span><span class="d">360</span></span>＝<span class="frac"><span class="n">1</span><span class="d">3</span></span></span>。この一切れは円の3分の1。約分しておくと計算がうんとラク。</div>
+    <div class="step q2"><span>②(1)弧「なぜ円周×<span class="frac"><span class="n">1</span><span class="d">3</span></span>か」</span>まず円ぜんぶのまわり（円周）＝2×9×<span class="pi">π</span>＝18<span class="pi">π</span>。弧はそのうちの3分の1だから <span class="math">18<span class="pi">π</span>×<span class="frac"><span class="n">1</span><span class="d">3</span></span>＝6<span class="pi">π</span></span>。弧＝6<span class="pi">π</span> cm。</div>
+    <div class="step q2"><span>③(2)面積「なぜ円の面積×<span class="frac"><span class="n">1</span><span class="d">3</span></span>か」</span>まず円ぜんぶの面積＝9×9×<span class="pi">π</span>＝81<span class="pi">π</span>。一切れはその3分の1だから <span class="math">81<span class="pi">π</span>×<span class="frac"><span class="n">1</span><span class="d">3</span></span>＝27<span class="pi">π</span></span>。面積＝27<span class="pi">π</span> cm²。</div>
+    <div class="bx bx-warn"><span class="red">(中心角/360)をかけ忘れない</span>（おうぎ形は円ぜんぶじゃなく一切れ。これを忘れると円の答えになってしまう＝いちばん多いミス）。弧に「半径×半径」を使わない（弧は長さ。長さは2×半径×<span class="pi">π</span>系。半径2回は面積だけ）。<span class="pi">π</span>と数を混ぜない（6<span class="pi">π</span> や 27<span class="pi">π</span> のまま。<span class="pi">π</span>を3.14にして1つの数にしない）。<span class="frac"><span class="n">120</span><span class="d">360</span></span>を約分せずに進むと計算が重くなる（先に1/3にしておこう）。</div>
+    <div class="bx bx-check">検算：弧6<span class="pi">π</span>は、円周18<span class="pi">π</span>のちょうど1/3になっている（18<span class="pi">π</span>÷3＝6<span class="pi">π</span>）→OK。面積27<span class="pi">π</span>も81<span class="pi">π</span>の1/3（81<span class="pi">π</span>÷3＝27<span class="pi">π</span>）→OK。「もとの円の答えを出してから、何分の一かをかける」と検算もしやすい。<br><strong>見抜くコツ</strong>：おうぎ形を見たら、まず中心角を見て「これは円の何分の一か（中心角/360を約分）」を一番先に書く。あとは円の式にかけるだけ。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2の本丸。「おうぎ形＝円×(中心角/360)」がスッと出れば、次の問3（中心角を逆算）や複合図形にそのまま進める。弧は長さ系・面積は広さ系、と分けて覚えよう。</div>
+    <div class="ans-final"><span>こたえ</span>(1)弧＝6<span class="pi">π</span> cm／(2)面積＝27<span class="pi">π</span> cm²</div>
+      <div class="tec-link">型：<b>複合図形型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1)弧★</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「弧＝2×半径×π×(中心角/360)」をノートに書こう</div></div>
+  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2)面積★</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「面積＝半径×半径×π×(中心角/360)」をノートに書こう</div></div>
+</div>
+
+<!-- ===== 問3 中心角を逆に求める ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★おうぎ形の中心角を逆に求める L3-L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead">問3</span>半径6cmのおうぎ形があり、弧の長さは4<span class="pi">π</span> cmでした。このおうぎ形の(1)中心角、(2)面積を、それぞれ求めなさい（円周率は<span class="pi">π</span>）。
+    <svg class="fig" width="200" height="190" viewBox="0 0 200 190">
+      <!-- center(70,150) radius 110px, 120deg -->
+      <path d="M70,150 L180,150 A110,110 0 0 0 15,55 Z" fill="#fdf2e3" stroke="#d9883a" stroke-width="2"/>
+      <line x1="70" y1="150" x2="180" y2="150" stroke="#d9883a" stroke-width="2"/>
+      <line x1="70" y1="150" x2="15" y2="55" stroke="#d9883a" stroke-width="2"/>
+      <circle cx="70" cy="150" r="3" fill="#b3611c"/>
+      <text x="110" y="166" font-size="13" fill="#333" font-weight="bold">6cm</text>
+      <text x="82" y="134" font-size="13" fill="#9b3b1c" font-weight="bold">?°</text>
+      <!-- arc label along curve -->
+      <text x="118" y="74" font-size="12" fill="#b3611c" font-weight="bold">弧 4π cm</text>
+    </svg>
+  </div>
+  <div class="note-draw">図に、分かっている長さと角を書きこもう。どう分けるか・どう引くかは自分で考えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-easy">これまでは「中心角→弧」だった。今回は逆で「弧→中心角」。むずかしそうに見えるけど、考え方は同じ。<strong>「この弧は、円ぜんぶのまわりの何分の一か？」</strong>が分かれば、その分が中心角の割合になる。たとえば弧が円周の3分の1なら、中心角も360°の3分の1（＝120°）。</div>
+    <div class="know">分かっていること：半径＝6cm、弧の長さ＝4<span class="pi">π</span> cm。<br>求めること：(1) 中心角（角度）　(2) 面積。</div>
+    <div class="bx bx-img">図の一切れの丸いふち（弧）が4<span class="pi">π</span> cm。中心の角（?°）はまだ分からない。でも「円ぜんぶのまわり」と「この弧」をくらべれば、一切れが円の何分の一かが見えてくる。</div>
+    <div class="bx bx-plan">ケーキでたとえると：ホールケーキ1周のふちの長さ（円周）が分かっていて、一切れのふち（弧）の長さも分かっている。すると「一切れはホールの何分の一の太さか」がわかる。その割合がそのまま中心角の割合（360°の何分の一か）になる。弧の割合＝角の割合、これがカギ。</div>
+    <div class="osarai"><ul>
+      <li><b>円ぜんぶのまわり（円周）＝2×半径×<span class="pi">π</span></b></li>
+      <li><b>弧が円周の何分の一か＝中心角が360°の何分の一か</b>（弧の割合＝角の割合）</li>
+      <li><b>中心角＝360×(弧÷円周)</b>。面積はその割合を円の面積にかける。</li>
+    </ul></div>
+    <div class="step q3"><span>①円ぜんぶのまわりを出す</span>円周＝2×6×<span class="pi">π</span>＝12<span class="pi">π</span>（cm）。これが「まわりぜんぶ」。</div>
+    <div class="step q3"><span>②弧は円周の何分の一か</span>弧4<span class="pi">π</span>は円周12<span class="pi">π</span>のうち <span class="math">4<span class="pi">π</span>÷12<span class="pi">π</span>＝<span class="frac"><span class="n">4</span><span class="d">12</span></span>＝<span class="frac"><span class="n">1</span><span class="d">3</span></span></span>。この一切れは円の3分の1（<span class="pi">π</span>どうしは割ると消えるので、数だけで考えてよい）。</div>
+    <div class="step q3"><span>③(1)中心角「なぜ360×<span class="frac"><span class="n">1</span><span class="d">3</span></span>か」</span>弧が円周の1/3なら、中心角も360°の1/3。<span class="math">360×<span class="frac"><span class="n">1</span><span class="d">3</span></span>＝120</span>。中心角＝120°。</div>
+    <div class="step q3"><span>④(2)面積</span>面積も同じ1/3。円の面積＝6×6×<span class="pi">π</span>＝36<span class="pi">π</span>。その1/3で <span class="math">36<span class="pi">π</span>×<span class="frac"><span class="n">1</span><span class="d">3</span></span>＝12<span class="pi">π</span></span>。面積＝12<span class="pi">π</span> cm²。</div>
+    <div class="bx bx-warn"><span class="red">弧と半径をくらべない</span>（くらべるのは「弧と円周（まわりぜんぶ）」。半径とくらべても割合は出ない）。4<span class="pi">π</span>÷12<span class="pi">π</span>の<span class="pi">π</span>を消し忘れない（同じ<span class="pi">π</span>で割るから消えて4/12＝<span class="frac"><span class="n">1</span><span class="d">3</span></span>）。面積を出すのに弧4<span class="pi">π</span>を直接使わない（面積は「割合(<span class="frac"><span class="n">1</span><span class="d">3</span></span>)×円の面積」。弧の数をそのまま面積に持ちこまない）。</div>
+    <div class="bx bx-check">検算：中心角120°・半径6で、いつもの向きに弧を出すと 2×6×<span class="pi">π</span>×(<span class="frac"><span class="n">120</span><span class="d">360</span></span>)＝12<span class="pi">π</span>×<span class="frac"><span class="n">1</span><span class="d">3</span></span>＝4<span class="pi">π</span> → 問題の弧と一致！　だから中心角120°で正しい。逆算したら、必ず「ふつうの向き」で計算し直して元に戻るか確かめるのが最強の検算。<br>見抜くコツ：弧や面積から中心角を聞かれたら、まず「円ぜんぶ（円周や円の面積）」を出して、与えられた値が「その何分の一か」を求める。割合が出れば、角も面積もその割合で一発。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2では「弧の長さから中心角」「面積から半径」など逆向きの問いがよく出る。<strong>『割合（何分の一か）を先に出す』</strong>という一手で、順向きも逆向きも同じやり方で解けるようになる。</div>
+    <div class="ans-final"><span>こたえ</span>(1)中心角＝120°／(2)面積＝12<span class="pi">π</span> cm²</div>
+      <div class="tec-link">型：<b>複合図形型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1)中心角★</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「弧の割合＝角の割合（中心角＝360×弧÷円周）」をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2)面積</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「面積＝割合×円の面積」をノートに書こう</div></div>
+</div>
+
+<!-- ===== 問4 円と正方形 影の面積 ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★円と正方形の組合せ（影の面積）L3-L4</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead">問4</span>1辺10cmの正方形の中に、4つの辺すべてにぴったりつく円（内接する円）をかきました。色をぬった部分（正方形の中で、円の外側のすき間）の面積を求めなさい（円周率は<span class="pi">π</span>）。
+    <svg class="fig" width="180" height="180" viewBox="0 0 180 180">
+      <!-- square 30..150 (120px = 10cm), inscribed circle r=60px center(90,90) -->
+      <rect x="30" y="30" width="120" height="120" fill="#fbf3f7" stroke="#9b4f72" stroke-width="2"/>
+      <circle cx="90" cy="90" r="60" fill="#fff" stroke="#9b4f72" stroke-width="2"/>
+      <!-- corner shading hints (the gaps) -->
+      <path d="M30,30 L90,30 A60,60 0 0 0 30,90 Z" fill="#f0d8e4" opacity="0.7"/>
+      <path d="M150,30 L150,90 A60,60 0 0 0 90,30 Z" fill="#f0d8e4" opacity="0.7"/>
+      <path d="M150,150 L90,150 A60,60 0 0 0 150,90 Z" fill="#f0d8e4" opacity="0.7"/>
+      <path d="M30,150 L30,90 A60,60 0 0 0 90,150 Z" fill="#f0d8e4" opacity="0.7"/>
+      <circle cx="90" cy="90" r="2.5" fill="#9b4f72"/>
+      <line x1="90" y1="90" x2="150" y2="90" stroke="#9b4f72" stroke-width="1.6" stroke-dasharray="4 3"/>
+      <text x="155" y="100" font-size="11" fill="#9b4f72">半径</text>
+      <text x="74" y="172" font-size="12" fill="#333" font-weight="bold">10cm</text>
+    </svg>
+  </div>
+  <div class="note-draw">図に、分かっている長さと角を書きこもう。どう分けるか・どう引くかは自分で考えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-easy">色をぬった所＝正方形の中で「円が入りきらずに残ったすき間（四すみ）」。これを直接はかるのは大変。でも<strong>「正方形ぜんぶ」から「円のぶん」を引けば、残り＝すき間</strong>になる。引き算でラクに出すのがコツ。</div>
+    <div class="know">分かっていること：正方形の1辺＝10cm、円は4つの辺すべてにぴったりついている（内接）。<br>求めること：色をぬったすき間（正方形−円）の面積。</div>
+    <div class="bx bx-img">正方形の中にいちばん大きく入る円をかくと、円は左右の辺・上下の辺にぴったりさわる。だから円の直径＝正方形の1辺＝10cm。すると半径はその半分の5cm。四すみの白っぽい部分が色をぬるすき間だよ。</div>
+    <div class="bx bx-plan">ピザの箱でたとえると：四角い箱（正方形）の中にまんまる1枚のピザ（円）が入っている。箱の底のうち、ピザがのっていない四すみのすき間が「色をぬる部分」。箱の底ぜんぶ−ピザ＝すき間。だから先に箱とピザの面積を別々に出して、引けばいい。</div>
+    <div class="osarai"><ul>
+      <li><b>正方形の面積＝1辺×1辺</b></li>
+      <li><b>円の面積＝半径×半径×<span class="pi">π</span></b></li>
+      <li><b>すき間（影）＝正方形−円</b>（大きい形から、くりぬいた形を引く）</li>
+      <li>内接する円は<b>直径＝正方形の1辺</b>。だから半径は1辺の半分。</li>
+    </ul></div>
+    <div class="step q4"><span>①円の半径「なぜ5cmか」</span>円は4つの辺にぴったりつく＝直径が正方形の1辺と同じ＝10cm。半径はその半分の5cm。（1辺をそのまま半径にしないこと！）</div>
+    <div class="step q4"><span>②正方形の面積</span>1辺×1辺＝<span class="math">10×10＝100</span>（cm²）。</div>
+    <div class="step q4"><span>③円の面積</span>半径×半径×<span class="pi">π</span>＝<span class="math">5×5×<span class="pi">π</span>＝25<span class="pi">π</span></span>（cm²）。</div>
+    <div class="step q4"><span>④すき間＝正方形−円</span><span class="math">100−25<span class="pi">π</span></span>。<span class="pi">π</span>の項と数の項はまとめられないので、100−25<span class="pi">π</span> cm²のままが答え。</div>
+    <div class="bx bx-warn"><span class="red">半径を10cmにしない</span>（10cmは1辺＝円の直径。半径はその半分の5cm。ここが最大のワナ）。100−25<span class="pi">π</span>を1つの数にしない（<span class="pi">π</span>つきと数は混ぜられない。100−25<span class="pi">π</span>のまま書く。「75<span class="pi">π</span>」などにしない）。引く向きを逆にしない（すき間は「正方形−円」。円−正方形ではマイナスになっておかしい）。<span class="pi">π</span>を3.14にしない。</div>
+    <div class="bx bx-check">検算：円(25<span class="pi">π</span>≒78.5)は正方形(100)より小さい → 引き算の答えはプラスになるはず。100−25<span class="pi">π</span>≒100−78.5＝21.5でプラス → OK（向きが正しい）。もし答えがマイナスや、正方形より大きくなったら、半径か引く向きをまちがえている合図。<br>見抜くコツ：「すき間・かげ・残り」と聞かれたら、ほぼ「全体の形−くりぬいた形」。まず大きい形と、くりぬく形を別々に出してから引く。直接はかろうとしないこと。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2の「影の面積」直撃。<strong>「すき間＝外側の形−内側の形」</strong>という引き算の発想は、円と正方形だけでなく、おうぎ形−三角形・正方形−おうぎ形など、複合図形すべての土台になる。</div>
+    <div class="ans-final"><span>こたえ</span>100−25<span class="pi">π</span> cm²</div>
+      <div class="tec-link">型：<b>複合図形型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4★</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「すき間＝正方形−円（直径＝1辺、半径は半分）」をノートに図つきで書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8e 円とおうぎ形 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">円とおうぎ形おつかれさま！今日のいちばんの収穫は<strong>「おうぎ形＝円の一切れ＝円×(中心角/360)」</strong>と<strong>「すき間＝外の形−中の形」</strong>の2つ。円もおうぎ形も影も、全部この考え方でつながっている。まちがえた問題は、図に「半径」「中心角」「何分の一か」を全部書きこんでノートに解き直そう。とくに<strong>半径と直径の取りちがえ</strong>と<strong>(中心角/360)のかけ忘れ</strong>に気をつければ、9月の大問2でぐっと差がつくよ。少しずつでいい、きみは確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m08e';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！円とおうぎ形 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01a":{"jp":"円とおうぎ形｜まわり・面積・弧・中心角を「4問・じっくり」で固める（ π ） / 問1(1)周: 問1 半径7cmの円があります。この円の(1)周の長さ、(2)面積を、それぞれ求めなさい（円周率は π ）。 7cm 半径","en":"周＝14 π cm／"},"q01b":{"jp":"円とおうぎ形｜まわり・面積・弧・中心角を「4問・じっくり」で固める（ π ） / 問1(2)面積: 問1 半径7cmの円があります。この円の(1)周の長さ、(2)面積を、それぞれ求めなさい（円周率は π ）。 7cm 半径","en":"面積＝49 π cm²"},"q02a":{"jp":"円とおうぎ形｜まわり・面積・弧・中心角を「4問・じっくり」で固める（ π ） / 問2(1)弧★: 問2 半径9cm、中心角120°のおうぎ形があります。このおうぎ形の(1)弧の長さ、(2)面積を、それぞれ求めなさい（円周率は π ）。 9cm 120°","en":"弧＝6 π cm／"},"q02b":{"jp":"円とおうぎ形｜まわり・面積・弧・中心角を「4問・じっくり」で固める（ π ） / 問2(2)面積★: 問2 半径9cm、中心角120°のおうぎ形があります。このおうぎ形の(1)弧の長さ、(2)面積を、それぞれ求めなさい（円周率は π ）。 9cm 120°","en":"面積＝27 π cm²"},"q03a":{"jp":"円とおうぎ形｜まわり・面積・弧・中心角を「4問・じっくり」で固める（ π ） / 問3(1)中心角★: 問3 半径6cmのおうぎ形があり、弧の長さは4 π cmでした。このおうぎ形の(1)中心角、(2)面積を、それぞれ求めなさい（円周率は π ）。 6cm ?° 弧 4π cm","en":"中心角＝120°／"},"q03b":{"jp":"円とおうぎ形｜まわり・面積・弧・中心角を「4問・じっくり」で固める（ π ） / 問3(2)面積: 問3 半径6cmのおうぎ形があり、弧の長さは4 π cmでした。このおうぎ形の(1)中心角、(2)面積を、それぞれ求めなさい（円周率は π ）。 6cm ?° 弧 4π cm","en":"面積＝12 π cm²"},"q04":{"jp":"円とおうぎ形｜まわり・面積・弧・中心角を「4問・じっくり」で固める（ π ） / 問4★: 問4 1辺10cmの正方形の中に、4つの辺すべてにぴったりつく円（内接する円）をかきました。色をぬった部分（正方形の中で、円の外側のすき間）の面積を求めなさい（円周率は π ）。 半径 10cm","en":"100−25 π cm²"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

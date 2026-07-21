@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>さいしょの設定（おとな・1回だけ）</title>
+<style>
+  body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;background:#f7f8f5;color:#222;line-height:1.9;padding:18px 14px 70px;font-size:18px;}
+  .wrap{max-width:680px;margin:0 auto;}
+  a.back{display:inline-block;color:#3f6f9f;font-size:14px;text-decoration:none;margin-bottom:8px;}
+  h1{font-size:24px;text-align:center;margin-bottom:4px;}
+  .lead{text-align:center;color:#4c5b70;font-size:15px;margin-bottom:16px;}
+  .big{font-size:18px;font-weight:900;text-align:center;background:#fff;border:2px dashed #c8d4e6;border-radius:12px;padding:12px;margin-bottom:18px;color:#25324a;}
+  .step{border-radius:14px;padding:16px 18px;margin-bottom:16px;border:2px solid;background:#fff;}
+  .s1{border-color:#9fb8d9;background:#eef3fb;}
+  .s2{border-color:#e0b572;background:#fdf3e7;}
+  .s3{border-color:#8fbf98;background:#eaf6ee;}
+  .s4{border-color:#d7b3ae;background:#fbeeec;}
+  .help{border-color:#cbd1c6;background:#fff;}
+  .num{display:inline-block;background:#3f6f9f;color:#fff;font-weight:900;border-radius:50%;width:30px;height:30px;line-height:30px;text-align:center;font-size:16px;margin-right:8px;}
+  .s2 .num{background:#cf9a3a;} .s3 .num{background:#56875b;} .s4 .num{background:#bb6a5f;}
+  .ttl{font-size:20px;font-weight:900;margin-bottom:6px;}
+  .s1 .ttl{color:#2f5786;} .s2 .ttl{color:#8a5a19;} .s3 .ttl{color:#2f6b45;} .s4 .ttl{color:#8a3b32;}
+  .tag{display:inline-block;background:#fff;border:1px solid currentColor;border-radius:14px;padding:2px 10px;font-size:13px;font-weight:800;margin-left:6px;}
+  ol{margin:8px 0 0 0;padding-left:0;list-style:none;counter-reset:s;}
+  ol li{counter-increment:s;position:relative;padding:7px 0 7px 40px;font-size:17px;}
+  ol li::before{content:counter(s);position:absolute;left:0;top:6px;width:28px;height:28px;border-radius:50%;background:#7d8a96;color:#fff;font-weight:900;text-align:center;line-height:28px;font-size:14px;}
+  .url{font-size:17px;font-weight:900;color:#244;background:#fff;border:2px solid #9fb8d9;border-radius:10px;padding:12px;margin:10px 0;word-break:break-all;text-align:center;}
+  .copybtn{display:block;width:100%;font-size:17px;font-weight:900;color:#fff;background:#3f6f9f;border:none;border-radius:12px;padding:13px;cursor:pointer;}
+  b{color:#1c3d5a;}
+  .why{font-size:14px;color:#4c5b70;margin-top:8px;background:#fff;border:1px solid #e2e7df;border-radius:10px;padding:9px 12px;}
+  .help p{font-size:16px;margin:8px 0;}
+  .ng{color:#a33;font-weight:900;}
+  .ok{color:#2f6b45;font-weight:900;}
+</style>
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="index_iPad_学習ダッシュボード.html">← カレンダーへもどる</a>
+<h1>⚙️ さいしょの設定</h1>
+<div class="lead">おとなが <b>1回だけ</b> やればOK。上から順に押すだけ。</div>
+
+<div class="big">この設定をすると → 子はネットに行けず、ドリルだけ使える状態になります</div>
+
+<!-- STEP1 -->
+<div class="step s1">
+  <div class="ttl"><span class="num">1</span>正しいアドレスを開く<span class="tag">ネットあり</span></div>
+  <p>Safari（青いコンパス）を開いて、このアドレスを入れます。<b>後ろの「/」まで全部</b>が大事。</p>
+  <div class="url" id="u">https://eri1191122.github.io/natsumae-drill/</div>
+  <button class="copybtn" onclick="cp()">📋 アドレスをコピー</button>
+  <div class="why">⚠️ <span class="ng">eri1191122.github.io だけ</span>だと <b>404（開けない）</b>になります。<span class="ok">/natsumae-drill/ まで</span>入れてください。</div>
+</div>
+
+<!-- STEP2 -->
+<div class="step s3">
+  <div class="ttl"><span class="num">2</span>お気に入りに登録する<span class="tag">毎日タップする入口</span></div>
+  <ol>
+    <li>ドリルが開いたら、<b>共有ボタン</b>（iPadは右上の □に↑）を押す</li>
+    <li><b>「お気に入りに追加」</b>を押す → そのまま「追加」</li>
+    <li>もし前に作った<b>古いブックマーク（短いアドレスの方）</b>があれば削除する</li>
+  </ol>
+  <div class="why">→ 次からは Safari → お気に入り → これをタップ。<b>404になりません。</b><br>※「ホーム画面に追加」は出れば押してもOK。出なくても<b>お気に入りで十分</b>です。</div>
+</div>
+
+<!-- STEP3 -->
+<div class="step s2">
+  <div class="ttl"><span class="num">3</span>子がネットに行けないようにロック<span class="tag">これが本命</span></div>
+  <ol>
+    <li><b>設定</b>アプリ → <b>スクリーンタイム</b></li>
+    <li><b>「スクリーンタイム・パスコードを使用」</b>で4桁を決める<br>（⚠️ <b>ロック解除番号とは違う番号</b>にして、子に教えない）</li>
+    <li><b>「コンテンツとプライバシーの制限」</b>を<b>オン</b></li>
+    <li>その中の <b>「コンテンツ制限」→「Webコンテンツ」</b></li>
+    <li><b>「許可されたWebサイトのみ」</b>を選ぶ</li>
+    <li><b>「Webサイトを追加」</b>に <b>eri1191122.github.io</b> を入れる<br>（最初から入っているApple等の行は左スワイプで削除OK）</li>
+  </ol>
+  <div class="why">→ これで <b>WiFiが繋がっていても、ドリル以外のサイトは全部ブロック</b>。<br>パスコードが要るので<b>子は外せません</b>。<b>機内モードは不要</b>です。</div>
+</div>
+
+<!-- STEP4 -->
+<div class="step s4">
+  <div class="ttl"><span class="num">4</span>結果の受け取り方を知っておく<span class="tag">数日に1回</span></div>
+  <ol>
+    <li>カレンダー上の <b>「📋記録ボード」</b>を開く（○✕は自動で集まっています）</li>
+    <li><b>「📲結果を送る」</b>を押す → <b>AirDrop</b>で親のiPhone/Macへ送る（ネット不要）</li>
+    <li>AirDropが無ければ <b>「📁保存してUSBへ」</b> → USBに保存 → PCでダブルクリック</li>
+  </ol>
+  <div class="why">→ 毎日の確認だけなら、記録ボードを<b>画面で見るだけ</b>でもOK。送るのは記録を残したい時だけ。</div>
+</div>
+
+<!-- HELP -->
+<div class="step help">
+  <div class="ttl" style="color:#5a5258;font-size:18px">❓ こまったら</div>
+  <p>・<b>404</b>になる → アドレスの後ろ <b>/natsumae-drill/</b> が抜けています。STEP1のコピーを使う。</p>
+  <p>・サイト内の「もどる」で開けない / 前の画面が古い → <b>設定 → Safari → 詳細 → Webサイトデータ</b> で <b>github.io</b> を削除 → もう一度開く（最新版になります）。</p>
+  <p>・「ホーム画面に追加」が出ない → <b>プライベートブラウズ</b>を切る。出なくても<b>お気に入りでOK</b>。</p>
+  <p>・子のドリルまでブロックされた → STEP3-6で <b>eri1191122.github.io</b> がリストに入っているか確認。</p>
+</div>
+
+</div>
+<script>
+function cp(){
+  var t='https://eri1191122.github.io/natsumae-drill/';
+  function ok(){var b=document.querySelector('.copybtn');b.textContent='✅ コピーしました';setTimeout(function(){b.textContent='📋 アドレスをコピー';},1600);}
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t).then(ok).catch(fallback);}
+  else fallback();
+  function fallback(){
+    var r=document.createRange();r.selectNodeContents(document.getElementById('u'));
+    var s=window.getSelection();s.removeAllRanges();s.addRange(r);
+    try{document.execCommand('copy');ok();}catch(e){alert('上のアドレスを長押しでコピーしてください');}
+    s.removeAllRanges();
+  }
+}
+</script>
+</body>
+</html>

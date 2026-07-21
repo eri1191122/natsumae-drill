@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 英語 基礎深化 U7 命令文（30分）★金型v2。「1ルール説明→その場で確認問題」の交互構造。図(SVG)4枚。please の位置（カンマ）を問題化。事前ヒント無し(.qnum-eは番号のみ)。確認8＋ミックス4＋連動2＝14問。KEY=tokkun_eg_imp。もどる=夏休みダッシュボード。-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>英語きそ U7 命令文（30分）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8f0ea;color:#22402e;padding:24px 22px;border:1px solid #c3ddc8;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#41614c}
+.pg-badge{display:inline-block;background:#d7ebdb;color:#2f5a3e;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #bcdcc2;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#395c44;margin-top:8px}
+.goal{background:#fff;border:1px solid #dbe6de;border-left:6px solid #7fae8a;border-radius:10px;padding:14px 18px;margin-bottom:6px}
+.goal h2{font-size:14px;font-weight:900;color:#2f5a3e;margin-bottom:8px}
+.goal ul{margin:0 0 0 1.15em;font-size:13.5px;color:#33453a;line-height:1.95}
+.goal li{margin:3px 0}.goal b{color:#2f6b45}
+.step{display:flex;align-items:center;gap:10px;background:#2f5a3e;color:#fff;padding:11px 18px;border-radius:8px 8px 0 0;margin-top:24px}
+.step .n{font-size:13px;font-weight:900;background:rgba(255,255,255,.2);padding:3px 10px;border-radius:12px}
+.step .t{font-size:15px;font-weight:900}
+.step .time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto}
+.step + .body{background:#fff;border:1px solid #dbe6de;border-top:none;border-radius:0 0 8px 8px;padding:16px 20px;margin-bottom:6px}
+.lesson{font-size:14px;line-height:1.98;color:#33453a}
+.lesson p{margin:8px 0}.lesson b{color:#2f5a3e}
+.lesson table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px}
+.lesson th,.lesson td{border:1px solid #d6e3da;padding:6px 9px;text-align:left}
+.lesson th{background:#eaf3ec;color:#2f5a3e}
+.lesson .ok{color:#2f6b45;font-weight:800}.lesson .ng{color:#9b514d;font-weight:800}
+.fig{background:#fcfdfc;border:1px solid #d6e3da;border-radius:10px;padding:12px 10px;margin:12px 0}
+.fig .cap{font-size:12px;font-weight:800;color:#5a8a6a;text-align:center;margin-bottom:6px}
+.fig svg{width:100%;height:auto;display:block}
+.why{background:#eef5f0;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px;color:#33513f}
+.why::before{content:"💡 なぜ？";display:block;font-size:12px;font-weight:800;color:#2f6b45;margin-bottom:3px}
+.ex{background:#f7faf8;border:1px dashed #bcdcc2;border-radius:8px;padding:9px 13px;margin:8px 0;font-size:13.5px;color:#3a4d42}
+.ex::before{content:"✏️ れい";display:block;font-size:12px;font-weight:800;color:#5a8a6a;margin-bottom:3px}
+.more{background:#eef2f8;border-left:5px solid #9fb8d9;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px;color:#33425a}
+.more::before{content:"➕ もう一歩（本番でねらわれる）";display:block;font-size:12px;font-weight:800;color:#31527a;margin-bottom:3px}
+.key{background:#fffaf0;border-left:5px solid #e0b552;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13.5px;color:#7a5a1e}
+.key b{color:#8a5a19}
+.warn{background:#fdeeec;border-left:5px solid #d98a86;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px;color:#8a3a36}
+.warn::before{content:"⚠️ ここをまちがえる（先に知っておこう）";display:block;font-size:12px;font-weight:800;margin-bottom:4px}
+.warn .ng{color:#b5403a;font-weight:800}.warn .ok{color:#2f6b45;font-weight:800}
+.chk{display:flex;align-items:center;gap:8px;background:#f1f7f3;border:1px dashed #a8c9b2;border-radius:8px;padding:9px 14px;margin:16px 0 4px;font-size:13px;font-weight:800;color:#3f7a4a}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:12px 0}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.ew-jp{font-size:18px;font-weight:900;color:#2f4536;background:#fff;border:2px solid #c3ddc8;border-left:6px solid #7fae8a;border-radius:8px;padding:11px 15px;margin-bottom:8px}
+.ew-jp .src{display:block;margin-top:6px;font-size:16px;font-weight:800;color:#3f6f9f;background:#f3f7fb;border:1px solid #cdd9e6;border-radius:6px;padding:6px 10px;letter-spacing:.3px}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+.ans-btn{margin-top:2px;background:#5a8a6a;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#487257}
+.ans-box{display:none;margin-top:10px}
+.ans-box.open{display:block}
+.rw-why{background:#f4faf6;border:1px solid #cfe6d6;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.95;color:#33513f}
+.rw-why b{color:#2f6b45}
+.rw-why ol{margin:2px 0 0 1.25em}
+.rw-why li{margin:5px 0}
+.rw-why .ng{color:#b5403a;font-weight:800}.rw-why .ok{color:#2f6b45;font-weight:800}
+.rw-why .miss{display:block;margin-top:8px;background:#fdeeec;border-left:4px solid #d98a86;border-radius:6px;padding:7px 11px;font-size:13px;color:#8a3a36}
+.rw-why .miss b{color:#8a3a36}
+.rw-why table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}
+.rw-why th,.rw-why td{border:1px solid #cfe6d6;padding:5px 8px;text-align:left}
+.rw-why th{background:#eaf3ec;color:#2f6b45}
+.ans-final{margin-top:10px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+.footnav{text-align:center;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.footnav{display:none}
+  .ans-box{display:block!important}.write3{display:block!important}
+  .step,.body,.q,.fig{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body data-eng="1">
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">英語きそ U7</span><span class="pg-badge">命令文</span><span class="pg-badge">30分</span></div>
+  <h1>主語を消して、動詞の原形で始める</h1>
+  <p><b>ルールを1つ読む → すぐその場で書いて確かめる</b>。この2つをくり返して進むよ。読みっぱなしにしないのがコツ。</p>
+  <p class="pg-sub">ルール4つ（各2問）→ ミックス4問 → 連動2問 → まとめ表。ぜんぶで14問。</p>
+</div>
+
+<div class="goal">
+  <h2>🎯 このプリントが終わったら、できるようになること</h2>
+  <ul>
+    <li>日本語を見たしゅんかんに <b>動詞の原形 / Be / Don't / Let's</b> のどれで始めるかが決まる。</li>
+    <li><b>please をうしろに置くときのカンマ</b>を、落とさずに書ける。</li>
+    <li>ふつうの文を命令文に書きかえるとき、<b>主語を消して -s もつけない</b>と自分で判断できる。</li>
+  </ul>
+</div>
+
+<!-- ===== ルール1 ===== -->
+<div class="step"><span class="n">ルール1</span><span class="t">主語を消して、動詞の原形から始める</span><span class="time">6分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>「〜しなさい・〜して」と<b>目の前の相手に言う文</b>が命令文。ふつうの文 You open the door.（あなたはドアを開ける）から、<b>主語 You を消す</b>と Open the door.（ドアを開けなさい）になる。</p>
+  <p>では、<b>なぜ主語を書かないの？</b>　命令文は「いま目の前にいるあなた」に向かって言う文。<b>だれに言っているかは、言わなくても分かりきっている</b>。分かりきっていることは、英語では言わない。だから You が消える。</p>
+
+  <div class="fig">
+    <div class="cap">図1　You を消す → 動詞の原形が文のあたまに来る</div>
+    <svg viewBox="0 0 600 190" role="img" aria-label="ふつうの文から命令文への変化の図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <text x="8" y="20" font-size="11" font-weight="800" fill="#5a6b50">ふつうの文</text>
+      <rect x="8" y="28" width="96" height="42" rx="8" fill="#eef2ec" stroke="#c9d3c6" stroke-width="2"/>
+      <text x="56" y="55" text-anchor="middle" font-size="16" font-weight="800" fill="#4c5b70">You</text>
+      <line x1="16" y1="66" x2="96" y2="32" stroke="#b5403a" stroke-width="3"/>
+      <rect x="112" y="28" width="104" height="42" rx="8" fill="#fff4e3" stroke="#e0b552" stroke-width="2"/>
+      <text x="164" y="55" text-anchor="middle" font-size="16" font-weight="800" fill="#7a5a1e">open</text>
+      <rect x="224" y="28" width="150" height="42" rx="8" fill="#eef2ec" stroke="#c9d3c6" stroke-width="2"/>
+      <text x="299" y="55" text-anchor="middle" font-size="16" font-weight="800" fill="#4c5b70">the door .</text>
+      <text x="390" y="42" font-size="12" font-weight="800" fill="#b5403a">主語 You を消す</text>
+      <text x="390" y="60" font-size="11" fill="#5a6b50">目の前の相手に言うので、</text>
+      <text x="390" y="76" font-size="11" fill="#5a6b50">言わなくても分かるから</text>
+
+      <line x1="164" y1="76" x2="164" y2="102" stroke="#7fae8a" stroke-width="3"/>
+      <polygon points="164,112 157,99 171,99" fill="#7fae8a"/>
+
+      <text x="8" y="130" font-size="11" font-weight="800" fill="#5a6b50">命令文</text>
+      <rect x="8" y="138" width="118" height="42" rx="8" fill="#7fae8a"/>
+      <text x="67" y="165" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">Open</text>
+      <rect x="134" y="138" width="150" height="42" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="209" y="165" text-anchor="middle" font-size="16" font-weight="800" fill="#2f5a3e">the door .</text>
+      <text x="300" y="152" font-size="12" font-weight="800" fill="#2f6b45">★ 動詞は原形。形を変えない</text>
+      <text x="300" y="172" font-size="12" font-weight="800" fill="#b5403a">✕ Opens the door.　✕ You open the door.</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>ふつうの文</th><th>命令文</th><th>ここが変わった</th></tr>
+    <tr><td>You open the window.</td><td><span class="ok">Open</span> the window.</td><td>You が消える／open が文のあたまへ（大文字）</td></tr>
+    <tr><td>You wash your hands.</td><td><span class="ok">Wash</span> your hands.</td><td>うしろ（your hands）は動かさない</td></tr>
+    <tr><td>You come here.</td><td><span class="ok">Come</span> here.</td><td>動詞は<b>原形のまま</b></td></tr>
+  </table>
+
+  <div class="why"><b>「原形」って何？</b>　辞書に載っているそのままの形のこと（open / wash / come / practice）。命令文の動詞は<b>いつでも原形</b>。<b>-s も -ing も -ed もつかない</b>。<span class="ng">✕ Opens</span>／<span class="ng">✕ Opening</span>／<span class="ng">✕ Opened</span></div>
+  <div class="key"><b>合言葉</b>：「命令文は<b>主語ゼロ、動詞は原形</b>」。文のあたまに来た動詞は<b>大文字</b>で書く。</div>
+  <div class="warn"><span class="ng">✕ You open the door.</span>　これは「あなたはドアを開ける」という<b>ただの説明の文</b>で、命令になっていない。<b>You を残したら命令文ではない。</b><br><span class="ng">✕ Opens the door.</span>　-s は「主語が he / she のとき」につく印。<b>命令文には主語が無いのだから、-s をつける理由がない。</b></div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="IM-1"><div class="qnum-e">問題1</div>
+    <div class="ew-jp">夕食の前に、そのテーブルをきれいにしなさい。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>だれに言っている文？</b>　「〜しなさい」と<b>目の前の相手</b>に言っている。だから命令文 → <b>主語は書かない</b>。文は<b>動詞から</b>スタートする。</li>
+        <li><b>動詞は？</b>　「きれいにする」＝ <b>clean</b>。命令文の動詞は<b>原形</b>のまま使う。文のあたまなので<b>大文字 C</b>。<span class="ng">✕ Cleans the table 〜</span>（-s は主語が he / she のときの印。主語が無いのだからつかない）</li>
+        <li><b>「そのテーブル」の「その」は何？</b>　いつも家で使っている、<b>言った人も聞いた人も、どのテーブルか分かっている1つ</b>。分かっている1つには <b>the</b> をつける → <b>the table</b>。<span class="ng">✕ Clean table before dinner.</span>（裸で置けない）</li>
+        <li><b>★つづり：t-a-b-l-e。</b>　<b>l</b> が <b>e</b> より<b>前</b>。最後は <b>e</b> で終わる。<span class="ng">✕ tabel</span>　<span class="ng">✕ teble</span>。「テイブ<b>ル</b>」と口で言いながら書く。（6月のテストで落とした語）</li>
+        <li><b>「夕食の前に」は？</b>　<b>before dinner</b>。before は「〜より前に」。dinner は<b>食事の名前</b>なので、そのまま置く。</li>
+        <li><b>語順：「何をする」→「いつ」。</b>　英語は<b>やることを先に</b>言い、<b>時はうしろ</b>に回す → Clean the table → before dinner。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ You clean the table before dinner.</span>（You が残っている＝命令になっていない）／<span class="ng">✕ Cleans the table before dinner.</span>（-s）／<span class="ng">✕ Clean table before dinner.</span>（the 落ち）／<span class="ng">✕ Clean the tabel before dinner.</span>（つづり）</span>
+    </div><div class="ans-final"><span>こたえ</span>Clean the table before dinner.</div></div>
+    <div class="gq" data-gid="IM-1"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-1','o')">○</button><button class="x" onclick="g(this,'IM-1','x')">✕</button></div><div class="write3">📝 3回　Clean the table before dinner.</div></div>
+  </div>
+
+  <div class="q writing" data-id="IM-2"><div class="qnum-e">問題2</div>
+    <div class="ew-jp">教科書を開いて、このお話を読みなさい。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>命令が2つ入っている。</b>　「開きなさい」と「読みなさい」。どちらも目の前の相手への命令 → <b>主語なし・動詞の原形</b>で始める。</li>
+        <li><b>1つめの動詞。</b>　「開く」＝ <b>open</b>。文のあたまなので<b>大文字 O</b>。<span class="ng">✕ Opens your textbook</span></li>
+        <li><b>「教科書」に何をつける？</b>　日本語には出てこないが、英語は「<b>だれの</b>教科書か」をはっきりさせる言葉。ここは相手の教科書なので <b>your textbook</b>。<span class="ng">✕ Open textbook</span></li>
+        <li><b>★2つの命令をつなぐのは and。</b>　「開いて、読みなさい」＝ 命令が2つならんでいる。英語では <b>and</b> でつなぐ。<span class="ng">✕ Open your textbook, read this story.</span>（カンマだけではつながらない）</li>
+        <li><b>★ここが本丸：and のうしろの動詞も原形。</b>　1つめが原形なら、2つめも<b>同じ原形</b>でそろえる → <b>read</b>。<span class="ng">✕ and reads this story</span>　<span class="ng">✕ and reading this story</span>　<span class="ng">✕ and you read this story</span></li>
+        <li><b>そして read は小文字。</b>　大文字にするのは<b>文のあたまの1語だけ</b>。read は文のとちゅうなので<b>小文字 r</b>。<span class="ng">✕ and Read this story</span></li>
+        <li><b>「このお話」は？</b>　<b>this story</b>。this は「いま目の前にあるこれ」。読む相手のすぐそこにあるお話だから this。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Open your textbook and reads this story.</span>（2つめに -s）／<span class="ng">✕ Opens your textbook 〜</span>／<span class="ng">✕ Open your textbook and Read this story.</span>（とちゅうを大文字にした）／<span class="ng">✕ You open your textbook and read this story.</span>（命令になっていない）</span>
+    </div><div class="ans-final"><span>こたえ</span>Open your textbook and read this story.</div></div>
+    <div class="gq" data-gid="IM-2"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-2','o')">○</button><button class="x" onclick="g(this,'IM-2','x')">✕</button></div><div class="write3">📝 3回　Open your textbook and read this story.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ルール2 ===== -->
+<div class="step"><span class="n">ルール2</span><span class="t">be動詞の命令文は Be から始める</span><span class="time">7分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>「静かにしなさい」を英語にしよう。「静か」は <b>quiet</b>。では <b>Quiet.</b> でいいの？　<b>だめ</b>。<b>quiet だけでは文にならない</b>。</p>
+  <p><b>なぜ？</b>　quiet は「静かな」という<b>ようすを表す形容詞</b>であって、<b>動詞ではない</b>から。英語の文には<b>動詞が必ず1つ</b>要る。そこで「〜の状態でありなさい」の役をする動詞、つまり <b>be動詞</b> を持ってくる。命令文だから、その原形 <b>Be</b> で始める。</p>
+
+  <div class="fig">
+    <div class="cap">図2　quiet は形容詞。動詞がないから Be が要る</div>
+    <svg viewBox="0 0 600 186" role="img" aria-label="be動詞の命令文の作り方の図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <rect x="8" y="16" width="140" height="46" rx="10" fill="#fff4e3" stroke="#e0b552" stroke-width="2"/>
+      <text x="78" y="38" text-anchor="middle" font-size="16" font-weight="800" fill="#7a5a1e">quiet</text>
+      <text x="78" y="55" text-anchor="middle" font-size="11" fill="#7a5a1e">形容詞（ようす）</text>
+      <text x="160" y="34" font-size="12" font-weight="800" fill="#b5403a">これは動詞ではない</text>
+      <text x="160" y="54" font-size="12" fill="#8a3a36">だから quiet だけでは文にならない</text>
+
+      <rect x="8" y="74" width="338" height="34" rx="8" fill="#fdeeec" stroke="#d98a86" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="20" y="96" font-size="13" font-weight="800" fill="#b5403a">✕ Quiet.　✕ Are quiet.　✕ You be quiet.</text>
+
+      <line x1="60" y1="112" x2="60" y2="132" stroke="#7fae8a" stroke-width="3"/>
+      <polygon points="60,142 53,129 67,129" fill="#7fae8a"/>
+      <text x="76" y="132" font-size="12" font-weight="800" fill="#2f6b45">be動詞の原形 Be を足す</text>
+
+      <rect x="8" y="146" width="80" height="36" rx="8" fill="#7fae8a"/>
+      <text x="48" y="171" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">Be</text>
+      <rect x="96" y="146" width="110" height="36" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="151" y="171" text-anchor="middle" font-size="16" font-weight="800" fill="#2f5a3e">quiet .</text>
+      <text x="216" y="170" font-size="13" font-weight="800" fill="#2f6b45">○ これで「静かにしなさい」</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>ふつうの文</th><th>命令文</th><th>うしろに来る言葉</th></tr>
+    <tr><td>You are quiet.</td><td><span class="ok">Be</span> quiet.</td><td>quiet（形容詞）</td></tr>
+    <tr><td>You are kind.</td><td><span class="ok">Be</span> kind.</td><td>kind（形容詞）</td></tr>
+    <tr><td>You are careful.</td><td><span class="ok">Be</span> careful.</td><td>careful（形容詞）</td></tr>
+  </table>
+
+  <div class="why"><b>なぜ are ではなく be なの？</b>　are は「<b>主語が you のとき専用の形</b>」。命令文は<b>その主語 you を消した</b>のだから、主語つきの形 are はもう使えない。だから、どの主語にも属さないもとの形＝<b>原形 be</b> を使う。<span class="ng">✕ Are quiet.</span>　<span class="ng">✕ Is quiet.</span></div>
+  <div class="key"><b>見わけ方</b>：うしろに来るのが <b>quiet / kind / careful / late</b> のような「<b>ようすを表す言葉</b>」なら、動詞が無い → <b>Be</b> が要る。うしろが open / read / wash のような「<b>動作</b>」なら Be は要らない。</div>
+  <div class="warn"><span class="ng">✕ Quiet.</span>（動詞が無い）<br><span class="ng">✕ Are quiet.</span>（are は you 専用の形。命令文は原形）<br><span class="ng">✕ You be quiet.</span>（You は消す）<br><span class="ng">✕ Be wash the dishes.</span>（wash は動作の動詞。Be を足してはいけない。<b>動詞は1つの文に1つ</b>）</div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="IM-3"><div class="qnum-e">問題3</div>
+    <div class="ew-jp">図書館では静かにしなさい。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>「静かに」を英語で？</b>　<b>quiet</b>。ところが quiet は「静かな」という<b>ようすを表す形容詞</b>で、<b>動詞ではない</b>。<span class="ng">✕ Quiet in the library.</span> は<b>動詞がゼロ</b>なので、文として成り立たない。</li>
+        <li><b>★だから動詞を1つ足す。</b>　「〜の状態でありなさい」の役ができるのは <b>be動詞</b>。命令文なので<b>原形 Be</b>。文のあたまなので<b>大文字 B</b> → <b>Be quiet</b>。</li>
+        <li><b>なぜ are ではないの？</b>　ふつうの文なら You <b>are</b> quiet. だが、are は「<b>主語が you のとき専用の形</b>」。命令文はその you を消したのだから、are は使えない。主語に合わせて変えていない<b>もとの形＝原形 be</b> を使う。<span class="ng">✕ Are quiet in the library.</span></li>
+        <li><b>「図書館で」は？</b>　建物の<b>中</b>にいるので <b>in</b>（in は「箱の中に入っている」イメージ）→ <b>in the library</b>。</li>
+        <li><b>なぜ the library？</b>　言った人も聞いた人も「<b>あの図書館（学校の図書館）</b>」と分かっている1つを指しているから <b>the</b>。<span class="ng">✕ Be quiet in library.</span>（裸では置けない）</li>
+        <li><b>つづり：l-i-b-r-a-r-y。</b>　<b>r が2つ</b>入る。<span class="ng">✕ libary</span>（1つめの r 落ち）。「ライ<b>ブラ</b>リー」と<b>r を口で言いながら</b>書く。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Quiet in the library.</span>（動詞が無い）／<span class="ng">✕ Are quiet in the library.</span>／<span class="ng">✕ You be quiet in the library.</span>（You が残っている）／<span class="ng">✕ Be quiet in library.</span>（the 落ち）／<span class="ng">✕ Be quiet in the libary.</span>（つづり）</span>
+    </div><div class="ans-final"><span>こたえ</span>Be quiet in the library.</div></div>
+    <div class="gq" data-gid="IM-3"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-3','o')">○</button><button class="x" onclick="g(this,'IM-3','x')">✕</button></div><div class="write3">📝 3回　Be quiet in the library.</div></div>
+  </div>
+
+  <div class="q writing" data-id="IM-4"><div class="qnum-e">問題4</div>
+    <div class="ew-jp">あなたのおじさんに親切にしなさい。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>「親切な」は？</b>　<b>kind</b>。これも<b>形容詞</b>（ようすを表す言葉）であって、動詞ではない。<span class="ng">✕ Kind to your uncle.</span> では動詞がゼロで文にならない。</li>
+        <li><b>だから Be で始める。</b>　命令文の be動詞は<b>原形 Be</b>、文のあたまなので<b>大文字 B</b> → <b>Be kind</b>。<span class="ng">✕ Are kind to your uncle.</span></li>
+        <li><b>★「〜に親切にする」の「に」は何？</b>　<b>be kind to ＋ 人</b>。前置詞は <b>to</b>。to は「<b>気持ちが相手のほうへ向かっていく</b>」イメージ。だから「だれに向けての親切か」を to で示す。<span class="ng">✕ Be kind your uncle.</span>（to 落ち＝「おじさんを親切する」という意味不明の文になる）</li>
+        <li><b>to のかわりに for や with はダメ？</b>　ダメ。<b>be kind to</b> はこの形でひとかたまり。<span class="ng">✕ be kind for</span>　<span class="ng">✕ be kind with</span></li>
+        <li><b>「あなたのおじさん」は？</b>　<b>your uncle</b>。日本語には「あなたの」が入っているので、そのまま your。</li>
+        <li><b>★Be が要るかどうかの見わけ方。</b>　もし「おじさんを<b>手伝い</b>なさい」なら <b>Help your uncle.</b> となり、<b>Be は要らない</b>。help は「〜<b>する</b>」と訳せる<b>動作の動詞</b>だから、それだけで文になる。いっぽう kind は「〜<b>な</b>」と訳せる<b>ようす</b>の言葉なので、動詞がゼロ → Be を足す。<b>「〜な」なら Be、「〜する」なら Be なし。</b></li>
+        <li><b>★つづり：u-n-c-l-e。</b>　<b>c</b> のあとに <b>l</b>、最後は <b>e</b>。<span class="ng">✕ uncel</span>　<span class="ng">✕ unkle</span>。（6月のテストで落とした語）おば＝<b>aunt</b> とセットで覚える。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Kind to your uncle.</span>（Be 落ち）／<span class="ng">✕ Are kind to your uncle.</span>／<span class="ng">✕ Be kind your uncle.</span>（<b>to 落ち</b>）／<span class="ng">✕ Be kind to your uncel.</span>（つづり）／<span class="ng">✕ You be kind to your uncle.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>Be kind to your uncle.</div></div>
+    <div class="gq" data-gid="IM-4"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-4','o')">○</button><button class="x" onclick="g(this,'IM-4','x')">✕</button></div><div class="write3">📝 3回　Be kind to your uncle.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ルール3 ===== -->
+<div class="step"><span class="n">ルール3</span><span class="t">否定の命令文は Don't ＋ 動詞の原形</span><span class="time">7分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>「〜してはいけません・〜しないで」と言うときは、<b>動詞の前に Don't を置く</b>だけ。語順はそのまま。<b>Don't のうしろは、いつでも原形</b>。</p>
+  <p>そして<b>ここが特別ルール</b>。be動詞の文でも、否定の命令文は <b>Don't be</b> になる。ふつうの文なら be動詞の否定は「is <b>not</b> / are <b>not</b>」と<b>うしろに not</b> を置くのに、<b>命令文だけは前に Don't</b> が来る。</p>
+
+  <div class="fig">
+    <div class="cap">図3　Don't のうしろは原形。be動詞も Don't be</div>
+    <svg viewBox="0 0 600 168" role="img" aria-label="否定の命令文の作り方の図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <text x="8" y="20" font-size="11" font-weight="800" fill="#5a6b50">① 動作の動詞</text>
+      <rect x="8" y="28" width="92" height="40" rx="8" fill="#d08a86"/>
+      <text x="54" y="54" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">Don't</text>
+      <text x="106" y="55" font-size="18" font-weight="800" fill="#5a6b50">+</text>
+      <rect x="126" y="28" width="112" height="40" rx="8" fill="#fff4e3" stroke="#e0b552" stroke-width="2"/>
+      <text x="182" y="54" text-anchor="middle" font-size="14" font-weight="800" fill="#7a5a1e">run（原形）</text>
+      <text x="250" y="54" font-size="14" font-weight="800" fill="#2f6b45">→ Don't run here.</text>
+      <text x="390" y="24" font-size="12" font-weight="800" fill="#b5403a">✕ Don't runs</text>
+      <text x="390" y="42" font-size="12" font-weight="800" fill="#b5403a">✕ Don't running</text>
+      <text x="390" y="60" font-size="12" font-weight="800" fill="#b5403a">✕ Don't you run</text>
+
+      <text x="8" y="98" font-size="11" font-weight="800" fill="#5a6b50">② be動詞</text>
+      <rect x="8" y="106" width="92" height="40" rx="8" fill="#d08a86"/>
+      <text x="54" y="132" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">Don't</text>
+      <text x="106" y="133" font-size="18" font-weight="800" fill="#5a6b50">+</text>
+      <rect x="126" y="106" width="112" height="40" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="182" y="132" text-anchor="middle" font-size="14" font-weight="800" fill="#2f5a3e">be（原形）</text>
+      <text x="250" y="132" font-size="14" font-weight="800" fill="#2f6b45">→ Don't be late.</text>
+      <text x="390" y="112" font-size="12" font-weight="800" fill="#b5403a">★be動詞なのに Don't</text>
+      <text x="390" y="132" font-size="12" font-weight="800" fill="#b5403a">✕ Be not late.</text>
+      <text x="390" y="150" font-size="12" font-weight="800" fill="#b5403a">✕ Not be late.</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>言いたいこと</th><th>形</th><th>れい</th></tr>
+    <tr><td>〜しないで（動作）</td><td>Don't ＋ 原形</td><td><span class="ok">Don't run</span> here.</td></tr>
+    <tr><td>〜であってはいけない（ようす）</td><td>Don't be ＋ 形容詞</td><td><span class="ok">Don't be</span> late.</td></tr>
+    <tr><td>ていねいに止める</td><td>Please don't 〜</td><td><span class="ok">Please don't</span> open the window.</td></tr>
+  </table>
+
+  <div class="why"><b>なぜ「Be not」ではダメなの？</b>　英語の命令文には「<b>Don't ＋ 原形</b>」という<b>1つの形しかない</b>。be動詞もこのとき<b>原形 be</b> の仲間として Don't のうしろに入る。だから <b>Don't be</b>。「ふつうの文では be動詞のうしろに not」というルールは、<b>主語のある文の話</b>。主語を消した命令文には当てはまらない。</div>
+  <div class="key"><b>Don't は Do not を短くした形。</b>　アポストロフィ「<b>'</b>」を落とさない。<span class="ng">✕ Dont run</span>。急がないときは <b>Do not run here.</b> と書いてもよい（意味は同じ、少し強い）。</div>
+  <div class="warn"><span class="ng">✕ You don't run here.</span>　これは「あなたはここで走らない」という<b>ただの説明の文</b>。命令になっていない。<b>主語は書かない。</b><br><span class="ng">✕ Not run here.</span>　not だけでは否定できない。動作の動詞を否定するには <b>do の助け</b>が要る。<br><span class="ng">✕ Doesn't run here.</span>　命令文に doesn't は使わない（doesn't は主語が he / she のときの形）。</div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="IM-5"><div class="qnum-e">問題5</div>
+    <div class="ew-jp">夜おそくにテレビを見てはいけません。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>どの形の文？</b>　「〜してはいけません」＝ <b>否定の命令文</b>。動詞の前に <b>Don't</b> を置く。文のあたまなので<b>大文字 D</b>、アポストロフィ「<b>'</b>」を忘れない。<span class="ng">✕ Dont watch 〜</span></li>
+        <li><b>動詞は？</b>　「（テレビを）見る」＝ <b>watch</b>。「見る」でも、動いているものをじっと見るのは watch（look は「目を向ける」、see は「目に入る」）。</li>
+        <li><b>★Don't のうしろは必ず原形。</b>　<b>watch</b> のまま。<span class="ng">✕ Don't watches TV</span>　<span class="ng">✕ Don't watching TV</span>　<span class="ng">✕ Don't watched TV</span></li>
+        <li><b>★主語を書きたくなるが、書かない。</b>　<span class="ng">✕ You don't watch TV late at night.</span> は「あなたは夜おそくにテレビを見ません」という<b>ただの説明の文</b>になってしまい、<b>命令にならない</b>。命令文は<b>主語ゼロ</b>。</li>
+        <li><b>「テレビを見る」は？</b>　<b>watch TV</b> でひとかたまり。TV は<b>大文字2つ</b>（television の頭文字）。<span class="ng">✕ watch tv</span></li>
+        <li><b>「夜おそくに」は？</b>　<b>late at night</b>。「夜に」＝ at night に、「おそく」＝ late を<b>前から足す</b>。<span class="ng">✕ late in night</span>　<span class="ng">✕ at late night</span></li>
+        <li><b>語順：「何をする」→「いつ」。</b>　Don't watch TV（やること）→ late at night（いつ）の順。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Don't watches TV late at night.</span>（原形でない）／<span class="ng">✕ You don't watch TV late at night.</span>（命令になっていない）／<span class="ng">✕ Not watch TV late at night.</span>（not だけでは否定できない）／<span class="ng">✕ Dont watch TV late at night.</span>（アポストロフィ落ち）／<span class="ng">✕ Don't watch TV late in night.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>Don't watch TV late at night.　<span style="font-size:13px;color:#3f7a4a">（Do not watch TV late at night. でもOK）</span></div></div>
+    <div class="gq" data-gid="IM-5"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-5','o')">○</button><button class="x" onclick="g(this,'IM-5','x')">✕</button></div><div class="write3">📝 3回　Don't watch TV late at night.</div></div>
+  </div>
+
+  <div class="q writing" data-id="IM-6"><div class="qnum-e">問題6</div>
+    <div class="ew-jp">明日、学校に遅れてはいけません。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>「遅れて」を英語で？</b>　<b>late</b>。これは「おそい・遅れた」という<b>ようすを表す形容詞</b>で、<b>動詞ではない</b>。だから、この文には<b>動詞を1つ足さないといけない</b> → <b>be動詞</b>。</li>
+        <li><b>★ここが最大の関門：be動詞なのに Don't を使う。</b>　「〜であってはいけない」は <b>Don't be ＋ 形容詞</b>。ふつうの文なら「You <b>are not</b> late.」と<b>be動詞のうしろに not</b> を置くのに、<b>命令文だけは前に Don't</b> が来る。<span class="ng">✕ Be not late</span>　<span class="ng">✕ Not be late</span>　<span class="ng">✕ Aren't late</span></li>
+        <li><b>なぜ？</b>　命令文の否定には「<b>Don't ＋ 原形</b>」という<b>形が1つしかない</b>から。be動詞もこのときは<b>原形 be</b> という「ただの動詞」の1つとして、Don't のうしろに入る。だから <b>Don't be late</b>。</li>
+        <li><b>be を落とさない。</b>　<span class="ng">✕ Don't late for school.</span> は動詞がゼロ。Don't は<b>助っ人</b>であって動詞そのものではないので、うしろに動詞 <b>be</b> が要る。</li>
+        <li><b>★「学校に遅れる」の「に」は？</b>　<b>be late for ＋ 場所・予定</b>。前置詞は <b>for</b>。「学校<b>に向かって</b>おそい」というイメージ。<span class="ng">✕ be late to school</span>　（同じ形で be late for school / for the bus / for the party）</li>
+        <li><b>「明日」は？</b>　<b>tomorrow</b>。<b>時を表す言葉は文の終わり</b>に置く → Don't be late for school <b>tomorrow</b>.</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Be not late for school tomorrow.</span>（★be動詞のクセで not をうしろに置いた）／<span class="ng">✕ Don't late for school tomorrow.</span>（be 落ち）／<span class="ng">✕ Don't be late to school tomorrow.</span>（for）／<span class="ng">✕ Don't are late 〜</span>／<span class="ng">✕ You don't be late 〜</span></span>
+    </div><div class="ans-final"><span>こたえ</span>Don't be late for school tomorrow.　<span style="font-size:13px;color:#3f7a4a">（Do not be late for school tomorrow. でもOK）</span></div></div>
+    <div class="gq" data-gid="IM-6"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-6','o')">○</button><button class="x" onclick="g(this,'IM-6','x')">✕</button></div><div class="write3">📝 3回　Don't be late for school tomorrow.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ルール4 ===== -->
+<div class="step"><span class="n">ルール4</span><span class="t">Let's ＋ 原形 と、please の置き場所</span><span class="time">7分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>「（いっしょに）〜しましょう」は <b>Let's ＋ 動詞の原形</b>。Let's は <b>Let us</b>（私たちに〜させて）を短くした形。だから「<b>あなたも私も</b>いっしょに」というさそいの意味になる。アポストロフィ「<b>'</b>」を落とさない。</p>
+  <p>そして<b>please（ていねいの一言）は2か所に置ける</b>。ここが<b>特訓でねらわれる</b>。</p>
+
+  <div class="fig">
+    <div class="cap">図4　please の置き場所は2つ。うしろに置くときは「,」が要る</div>
+    <svg viewBox="0 0 600 176" role="img" aria-label="pleaseの置き場所とカンマの図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <text x="8" y="20" font-size="11" font-weight="800" fill="#5a6b50">① 文のはじめに置く</text>
+      <rect x="8" y="30" width="110" height="40" rx="8" fill="#7f9fd0"/>
+      <text x="63" y="56" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">Please</text>
+      <rect x="126" y="30" width="200" height="40" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="226" y="56" text-anchor="middle" font-size="15" font-weight="800" fill="#2f5a3e">open the door .</text>
+      <text x="338" y="56" font-size="12" font-weight="800" fill="#2f6b45">カンマは要らない</text>
+
+      <text x="8" y="94" font-size="11" font-weight="800" fill="#5a6b50">② 文のさいごに置く</text>
+      <rect x="8" y="100" width="200" height="40" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="108" y="126" text-anchor="middle" font-size="15" font-weight="800" fill="#2f5a3e">Open the door</text>
+      <rect x="216" y="100" width="34" height="40" rx="8" fill="#e0b552"/>
+      <text x="233" y="126" text-anchor="middle" font-size="20" font-weight="800" fill="#fff">,</text>
+      <rect x="258" y="100" width="110" height="40" rx="8" fill="#7f9fd0"/>
+      <text x="313" y="126" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">please .</text>
+      <text x="380" y="116" font-size="12" font-weight="800" fill="#b5403a">★うしろに置くときは</text>
+      <text x="380" y="134" font-size="12" font-weight="800" fill="#b5403a">　カンマ「,」が要る</text>
+
+      <text x="8" y="164" font-size="12" font-weight="800" fill="#b5403a">✕ Open the door please.（カンマ落ち）　✕ Please opens the door.</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>置き場所</th><th>書き方</th><th>カンマ</th></tr>
+    <tr><td>文の<b>はじめ</b></td><td><span class="ok">Please</span> open the door.</td><td>要らない</td></tr>
+    <tr><td>文の<b>さいご</b></td><td>Open the door<span class="ng">,</span> <span class="ok">please</span>.</td><td><b>要る</b>（★落としやすい）</td></tr>
+    <tr><td>ていねいに止める</td><td><span class="ok">Please don't</span> run here.</td><td>要らない</td></tr>
+  </table>
+
+  <div class="why"><b>なぜ、うしろに置くときだけカンマが要るの？</b>　please を<b>あとから付け足している</b>から。「ドアを開けて」……で命令は完成していて、そのあとに「<b>ね、おねがい</b>」と一言そえるイメージ。その「ひと呼吸の区切り」を<b>カンマ「,」</b>で示す。声に出すと、door のあとに<b>一瞬まが空く</b>のが分かる。</div>
+  <div class="key"><b>Let's の返事のしかた</b>　Let's play tennis. — <span class="ok">Yes, let's.</span>（そうしましょう）／<span class="ok">OK.</span>／<span class="ok">Sounds good.</span>（いいね）　※ 断るなら <span class="ok">No, let's not.</span>　<span class="ng">✕ Yes, I do.</span>　<span class="ng">✕ Yes, we are.</span></div>
+  <div class="more"><b>Let's のうしろも必ず原形。</b>　<span class="ng">✕ Let's plays</span>　<span class="ng">✕ Let's playing</span>　<span class="ng">✕ Let's to play</span>。そして<b>アポストロフィを落とさない</b> → <span class="ng">✕ Lets play</span>。lets（アポストロフィなし）は「〜させる」という別の動詞になってしまう。</div>
+  <div class="warn"><span class="ng">✕ Open the door please.</span>（<b>カンマ落ち＝いちばん多い</b>）<br><span class="ng">✕ Please, open the door.</span>（はじめに置くときはカンマを打たない）<br><span class="ng">✕ Please opens the door.</span>（please のうしろも<b>原形</b>）</div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="IM-7"><div class="qnum-e">問題7</div>
+    <div class="ew-jp">2月に中国へ行きましょう。 — はい、そうしましょう。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>どの形の文？</b>　「〜しましょう」＝ 相手をさそう文。<b>自分もいっしょにやる</b>ので <b>Let's</b> を使う。（「〜しなさい」なら相手だけがやる命令文だが、ここは「いっしょに」）</li>
+        <li><b>★Let's のアポストロフィ。</b>　Let's は <b>Let us</b> を短くした形。<b>'</b> を落とすと lets（〜させる）という別の動詞になってしまう。<span class="ng">✕ Lets go 〜</span>　文のあたまなので<b>大文字 L</b>。</li>
+        <li><b>★Let's のうしろは原形。</b>　「行く」＝ <b>go</b> をそのまま。<span class="ng">✕ Let's goes</span>　<span class="ng">✕ Let's going</span>　<span class="ng">✕ Let's to go</span></li>
+        <li><b>「中国へ行く」は？</b>　<b>go to China</b>。go は「行く」だけでは<b>行き先が言えない</b>動詞なので、行き先の前に <b>to</b>（〜へ）が要る。<span class="ng">✕ go China</span></li>
+        <li><b>★大文字とつづり①。</b>　China は<b>国の名前</b> → 文のとちゅうでも<b>いつも大文字 C</b>。つづり <b>C-h-i-n-a</b>。（6月のテストで落とした語）<span class="ng">✕ china</span></li>
+        <li><b>「2月に」は？</b>　<b>in February</b>。<b>月・季節・年 → in</b>（曜日・日づけ → on、時刻 → at）。2月は「月」だから <b>in</b>。<span class="ng">✕ on February</span></li>
+        <li><b>★大文字とつづり②。</b>　February は<b>月の名前</b> → <b>大文字 F</b>。つづり <b>F-e-b-r-u-a-r-y</b>。<span class="ng">✕ Febuary</span>＝<b>1つめの r</b> を落としやすい。「フェ<b>ブル</b>アリー」と<b>r を口で言いながら</b>書く。（6月のテストで落とした語）</li>
+        <li><b>語順：「どこへ」→「いつ」。</b>　go to China（どこへ）→ in February（いつ）。<span class="ng">✕ Let's go in February to China.</span></li>
+        <li><b>★返事のしかた。</b>　Let's 〜 への「はい、そうしましょう」は <b>Yes, let's.</b>（＝ Yes, let us.）。<span class="ng">✕ Yes, I do.</span>　<span class="ng">✕ Yes, we are.</span>　（OK. や Sounds good. でもよい）</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Lets go to China in February.</span>（アポストロフィ落ち）／<span class="ng">✕ Let's go to china in February.</span>（小文字）／<span class="ng">✕ Let's go to China in Febuary.</span>（<b>r</b> 落ち）／<span class="ng">✕ Let's going to China 〜</span>／<span class="ng">✕ Let's go China 〜</span>（to 落ち）／<span class="ng">✕ Yes, I do.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>Let's go to China in February. — Yes, let's.</div></div>
+    <div class="gq" data-gid="IM-7"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-7','o')">○</button><button class="x" onclick="g(this,'IM-7','x')">✕</button></div><div class="write3">📝 3回　Let's go to China in February. — Yes, let's.</div></div>
+  </div>
+
+  <div class="q writing" data-id="IM-8"><div class="qnum-e">問題8</div>
+    <div class="ew-jp">この写真をあなたのおばさんに見せてください。<span class="src">条件：please を文の<b>さいご</b>に置いて書くこと。</span></div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>どの形の文？</b>　「〜してください」＝ ていねいな命令文。<b>主語は書かず、動詞の原形</b>で始める。「見せる」＝ <b>show</b>。文のあたまなので<b>大文字 S</b>。<span class="ng">✕ Shows this picture 〜</span></li>
+        <li><b>★「AをBに見せる」のならべ方。</b>　「もの」を先に置くなら、<b>人の前に to</b> が要る → <b>show this picture to your aunt</b>。to は「<b>おばさんのほうへ向けて</b>」というイメージ。<span class="ng">✕ Show this picture your aunt.</span>（to 落ち）</li>
+        <li><b>「あなたのおばさん」は？</b>　<b>your aunt</b>。つづり <b>a-u-n-t</b>（uncle＝おじ とセット）。<span class="ng">✕ ant</span>（これだと「アリ」）</li>
+        <li><b>★この問題の本丸：please をうしろに置くときのカンマ。</b>　条件で「さいごに置く」と決まっている。<b>please の前にカンマ「,」を打つ</b> → 〜 your aunt<b>,</b> please.　<span class="ng">✕ Show this picture to your aunt please.</span>（<b>カンマ落ち＝いちばん多い</b>）</li>
+        <li><b>なぜカンマが要るの？</b>　「この写真をおばさんに見せて」で<b>命令はもう完成している</b>。そのあとに「<b>ね、おねがい</b>」と<b>あとから付け足している</b>のが please。この「ひと呼吸の区切り」を示す印がカンマ。声に出すと aunt のあとに<b>一瞬まが空く</b>。</li>
+        <li><b>もし文のはじめに置くなら？</b>　<b>Please show this picture to your aunt.</b> となり、<b>カンマは要らない</b>（付け足しではなく、はじめから please つきで言っているから）。<span class="ng">✕ Please, show 〜</span></li>
+        <li><b>ピリオドはどこ？</b>　please のうしろ。カンマとピリオドは別物。<span class="ng">✕ 〜 your aunt, please</span>（ピリオド落ち）</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Show this picture to your aunt please.</span>（<b>カンマ落ち</b>）／<span class="ng">✕ Show this picture your aunt, please.</span>（to 落ち）／<span class="ng">✕ Shows this picture 〜</span>／<span class="ng">✕ Please, show this picture to your aunt.</span>（はじめに置くときはカンマ不要）</span>
+    </div><div class="ans-final"><span>こたえ</span>Show this picture to your aunt, please.　<span style="font-size:13px;color:#3f7a4a">（Show your aunt this picture, please. でもOK）</span></div></div>
+    <div class="gq" data-gid="IM-8"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-8','o')">○</button><button class="x" onclick="g(this,'IM-8','x')">✕</button></div><div class="write3">📝 3回　Show this picture to your aunt, please.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ミックス ===== -->
+<div class="step"><span class="n">ミックス</span><span class="t">どのルールを使うかは、自分で決める（4問）</span><span class="time">6分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>ここからは<b>順番がバラバラ</b>。ふつうの命令・Be・Don't・Let's・please が混ざっている。<b>ヒントは出さない</b>。日本語を読んで、自分でルールを選んで書こう。</p>
+  <div class="key"><b>書く前の3秒チェック</b>：① うしろに来るのは<b>動作</b>？ <b>ようす（形容詞）</b>？ → Be が要るか決まる　② 「しなさい」か「してはいけない」か「しましょう」か　③ ていねいなら please は<b>前か、うしろ（カンマ）か</b></div>
+</div>
+
+  <div class="q writing" data-id="IM-9"><div class="qnum-e">ミックス1</div>
+    <div class="ew-jp">昼食のあとで、お皿を洗いなさい。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>どのルール？</b>　「〜しなさい」＝ ふつうの命令文。うしろに来るのは「洗う」という<b>動作</b>なので、<b>Be は要らない</b>。動詞の原形から始める。<span class="ng">✕ Be wash the dishes.</span>（動詞を2つ置いてしまっている）</li>
+        <li><b>動詞は？</b>　「洗う」＝ <b>wash</b>。文のあたまなので<b>大文字 W</b>。<span class="ng">✕ Washes the dishes 〜</span>（命令文に -s はつかない）</li>
+        <li><b>★「お皿を洗う」は wash the dishes。</b>　食事で使った皿は<b>1枚ではない</b> → 複数形 <b>dishes</b>。しかも「<b>いま使った、あの皿</b>」と分かっている → <b>the</b>。だから <b>the dishes</b> でひとかたまり。</li>
+        <li><b>★dish の複数形は dishes。</b>　<b>sh</b> で終わる名詞は <b>-es</b> をつける（dish → dishes、box → boxes、watch → watches）。<span class="ng">✕ dishs</span></li>
+        <li><b>「昼食のあとで」は？</b>　<b>after lunch</b>。after は「〜のあとで」。lunch は<b>食事の名前</b>なので、そのまま置く。</li>
+        <li><b>語順：「何をする」→「いつ」。</b>　Wash the dishes（やること）→ after lunch（いつ）。<span class="ng">✕ Wash after lunch the dishes.</span></li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Washes the dishes after lunch.</span>（-s）／<span class="ng">✕ Wash the dishs after lunch.</span>（複数形）／<span class="ng">✕ Wash dishes after lunch.</span>（the 落ち）／<span class="ng">✕ Be wash the dishes after lunch.</span>（動作の動詞に Be を足した）／<span class="ng">✕ You wash the dishes after lunch.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>Wash the dishes after lunch.</div></div>
+    <div class="gq" data-gid="IM-9"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-9','o')">○</button><button class="x" onclick="g(this,'IM-9','x')">✕</button></div><div class="write3">📝 3回　Wash the dishes after lunch.</div></div>
+  </div>
+
+  <div class="q writing" data-id="IM-10"><div class="qnum-e">ミックス2</div>
+    <div class="ew-jp">あなたのテストのことを心配してはいけません。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>どのルール？</b>　「〜してはいけません」＝ <b>否定の命令文</b> → <b>Don't</b> を文のあたまに置く。大文字 D、アポストロフィ「<b>'</b>」。</li>
+        <li><b>★ここが罠：Don't be worry と書きたくなる。</b>　「心配」という日本語が「静か」「親切」と同じ<b>ようす</b>に見えるから、Be を足したくなる。<b>でも worry は動詞</b>（＝「心配する」という<b>動作</b>）。動詞なのだから、Be はいらない。<span class="ng">✕ Don't be worry about your test.</span></li>
+        <li><b>見わけ方。</b>　うしろに来る語が <b>quiet / kind / late / careful</b> のような「<b>〜な</b>」と訳せる<b>ようす</b>なら Be が要る。<b>worry / run / watch / open</b> のような「<b>〜する</b>」と訳せる<b>動作</b>なら Be は要らない。「心配<b>する</b>」＝動作。だから Don't worry。</li>
+        <li><b>Don't のうしろは原形。</b>　<b>worry</b> のまま。<span class="ng">✕ Don't worries</span>　<span class="ng">✕ Don't worrying</span></li>
+        <li><b>★「〜のことを心配する」は worry about 〜。</b>　about は「<b>〜について</b>」。何について心配なのかを about でつなぐ。<span class="ng">✕ Don't worry your test.</span>（about 落ち＝「テストを心配させるな」のような別の意味になってしまう）</li>
+        <li><b>「あなたのテスト」は？</b>　<b>your test</b>。日本語に「あなたの」が入っているので、そのまま your。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Don't be worry about your test.</span>（★worry は動詞。Be を足さない）／<span class="ng">✕ Don't worry your test.</span>（about 落ち）／<span class="ng">✕ Don't worries about your test.</span>／<span class="ng">✕ Not worry about your test.</span>／<span class="ng">✕ You don't worry about your test.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>Don't worry about your test.　<span style="font-size:13px;color:#3f7a4a">（Do not worry about your test. でもOK）</span></div></div>
+    <div class="gq" data-gid="IM-10"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-10','o')">○</button><button class="x" onclick="g(this,'IM-10','x')">✕</button></div><div class="write3">📝 3回　Don't worry about your test.</div></div>
+  </div>
+
+  <div class="q writing" data-id="IM-11"><div class="qnum-e">ミックス3</div>
+    <div class="ew-jp">土曜日に、公園でテニスをしましょう。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>どのルール？</b>　「〜しましょう」＝ <b>いっしょにやろう</b>とさそう文 → <b>Let's ＋ 原形</b>。相手だけにやらせる命令文ではない。</li>
+        <li><b>Let's の書き方。</b>　<b>Let us</b> の短縮 → アポストロフィ「<b>'</b>」を必ず打つ。<span class="ng">✕ Lets play tennis</span>。文のあたまなので<b>大文字 L</b>。</li>
+        <li><b>うしろは原形。</b>　「する（プレーする）」＝ <b>play</b> をそのまま。<span class="ng">✕ Let's plays</span>　<span class="ng">✕ Let's playing</span></li>
+        <li><b>★スポーツ名の前には the をつけない。</b>　<b>play tennis</b>（<span class="ng">✕ play the tennis</span>）。でも<b>楽器</b>には the がつく → play <b>the</b> piano。<b>スポーツは裸、楽器は the</b>。この対比は本番でねらわれる。</li>
+        <li><b>「公園で」は？</b>　<b>in the park</b>。囲まれた場所の<b>中</b>にいるので <b>in</b>。そして「いつも行く<b>あの公園</b>」と分かっているので <b>the</b>。<span class="ng">✕ in park</span></li>
+        <li><b>★「土曜日に」は？</b>　<b>on Saturday</b>。<b>曜日・日づけ → on</b>（月・季節 → in、時刻 → at）。<span class="ng">✕ in Saturday</span>　<span class="ng">✕ at Saturday</span></li>
+        <li><b>大文字！</b>　Saturday は<b>曜日の名前</b> → いつも<b>大文字 S</b>。<span class="ng">✕ on saturday</span></li>
+        <li><b>語順：「どこで」→「いつ」。</b>　英語は<b>場所を先、時をあと</b>に置くのが基本 → in the park → on Saturday。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Lets play tennis 〜</span>（アポストロフィ落ち）／<span class="ng">✕ Let's play the tennis 〜</span>（スポーツに the）／<span class="ng">✕ Let's play tennis in park on Saturday.</span>（the 落ち）／<span class="ng">✕ 〜 in Saturday.</span>（曜日は on）／<span class="ng">✕ 〜 on saturday.</span>（小文字）</span>
+    </div><div class="ans-final"><span>こたえ</span>Let's play tennis in the park on Saturday.</div></div>
+    <div class="gq" data-gid="IM-11"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-11','o')">○</button><button class="x" onclick="g(this,'IM-11','x')">✕</button></div><div class="write3">📝 3回　Let's play tennis in the park on Saturday.</div></div>
+  </div>
+
+  <div class="q writing" data-id="IM-12"><div class="qnum-e">ミックス4</div>
+    <div class="ew-jp">このナイフに気をつけてください。<span class="src">条件：Please を文の<b>はじめ</b>に置いて書くこと。</span></div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>どのルール？</b>　「〜してください」＝ ていねいな命令文。条件で <b>Please を文のはじめ</b>に置くと決まっている → <b>Please</b> から書き出す。文のあたまなので<b>大文字 P</b>。</li>
+        <li><b>「気をつける」を英語で？</b>　<b>careful</b>（注意深い）。これは「<b>〜な</b>」と訳せる<b>形容詞</b>で、<b>動詞ではない</b>。<span class="ng">✕ Please careful with this knife.</span> は<b>動詞がゼロ</b>で文にならない。</li>
+        <li><b>★だから be が要る。</b>　「注意深い状態でありなさい」＝ <b>be careful</b>。命令文なので<b>原形 be</b>。<b>Please のうしろでも、動詞は原形のまま</b>。<span class="ng">✕ Please are careful</span>　<span class="ng">✕ Please is careful</span>　<span class="ng">✕ Please you be careful</span></li>
+        <li><b>be は小文字。</b>　大文字にするのは<b>文のあたまの1語（Please）だけ</b>。be は文のとちゅうなので<b>小文字</b>。<span class="ng">✕ Please Be careful 〜</span></li>
+        <li><b>★Please を前に置くときはカンマを打たない。</b>　<span class="ng">✕ Please, be careful with this knife.</span>　（カンマが要るのは、please を<b>文のさいご</b>に付け足すとき → Be careful with this knife<b>,</b> please.）</li>
+        <li><b>★「〜に気をつける」は be careful with 〜。</b>　道具・ものを<b>手に持って扱う</b>ときの注意なので <b>with</b>（「それを使って」のイメージ）。<span class="ng">✕ be careful to this knife</span></li>
+        <li><b>★つづり：k-n-i-f-e。</b>　<b>読まない k</b> を書き忘れない。<span class="ng">✕ nife</span>。（6月のテストで落とした語）「ナイフが2本以上」なら knives（f → v）。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Please careful with this knife.</span>（<b>be 落ち＝動詞ゼロ</b>）／<span class="ng">✕ Please are careful 〜</span>（原形でない）／<span class="ng">✕ Please, be careful 〜</span>（カンマ不要）／<span class="ng">✕ Please be careful with this nife.</span>（<b>k</b> 落ち）／<span class="ng">✕ Please be careful to this knife.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>Please be careful with this knife.</div></div>
+    <div class="gq" data-gid="IM-12"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-12','o')">○</button><button class="x" onclick="g(this,'IM-12','x')">✕</button></div><div class="write3">📝 3回　Please be careful with this knife.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== 連動 ===== -->
+<div class="step"><span class="n">連動</span><span class="t">1か所変えると、何か所つられて変わる？（2問）</span><span class="time">4分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>特訓選抜でよく出るのが「<b>書きかえ</b>」。1語だけ動かしたつもりでも、英語は<b>まわりが連動して変わる</b>。<b>どこが変わって、どこは変わらないのか</b>を指さしで確認しよう。</p>
+</div>
+
+  <div class="q writing" data-id="IM-13"><div class="qnum-e">連動1</div>
+    <div class="ew-jp">つぎの文を命令文に書きかえなさい。<span class="src">You practice the piano every day.</span></div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <p>もとの文は「あなたは毎日ピアノを練習する」という<b>説明の文</b>。これを<b>命令</b>に変える。<b>動くのは文のあたまだけ</b>。</p>
+      <table>
+        <tr><th>どこ</th><th>もとの文</th><th>書きかえ後</th><th>なぜそうなるか</th></tr>
+        <tr><td>①</td><td>You</td><td class="ng">消える</td><td>命令文は目の前の相手に言うので、主語は書かない</td></tr>
+        <tr><td>②</td><td>practice</td><td class="ok">Practice</td><td>文のあたまに来たので<b>大文字</b>。形は<b>原形のまま</b></td></tr>
+        <tr><td>③</td><td>the piano</td><td class="ok">the piano</td><td>変えない</td></tr>
+        <tr><td>④</td><td>every day</td><td class="ok">every day</td><td>変えない</td></tr>
+      </table>
+      <ol>
+        <li><b>★ここが本丸：practices と書いてはいけない。</b>　-s は「<b>主語が he / she / my sister のときだけ</b>」つく印（三単現の -s）。命令文には<b>そもそも主語が無い</b>のだから、<b>-s をつける理由が1つも無い</b>。<span class="ng">✕ Practices the piano every day.</span>　<b>命令文の動詞は、いつでも原形。</b></li>
+        <li><b>くらべてみよう。</b>　My sister <b>practices</b> the piano.（主語が「姉」＝1人 → -s がつく）／<b>Practice</b> the piano.（主語が無い → -s はつかない）。<b>-s は主語が呼んでくる印</b>。</li>
+        <li><b>★つづり：p-r-a-c-t-i-c-e。</b>　<b>c</b> が2つ入り、最後は <b>e</b> で終わる。<span class="ng">✕ practic</span>　<span class="ng">✕ pratice</span>（r のあとの <b>a</b> を落としやすい）</li>
+        <li><b>「ピアノを練習する」は practice the piano。</b>　<b>楽器には the</b> をつける（スポーツにはつけない → play tennis）。<span class="ng">✕ Practice piano every day.</span></li>
+        <li><b>「毎日」は every day。</b>　<b>2語に分けて</b>書く。<span class="ng">✕ everyday</span>（1語だと「毎日の」という形容詞になり、意味が変わる）</li>
+        <li><b>You を消し忘れない。</b>　<span class="ng">✕ You practice the piano every day.</span> のままでは、書きかえたことにならない（ただの説明の文のまま）。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Practices the piano every day.</span>（★<b>-s をつけた＝6月にいちばん落とした形</b>）／<span class="ng">✕ You practice the piano every day.</span>（You が残っている）／<span class="ng">✕ practice the piano every day.</span>（文のあたまが小文字）／<span class="ng">✕ Practice piano every day.</span>（the 落ち）／<span class="ng">✕ Practice the piano everyday.</span></span>
+    </div><div class="ans-final"><span>こたえ</span>Practice the piano every day.</div></div>
+    <div class="gq" data-gid="IM-13"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-13','o')">○</button><button class="x" onclick="g(this,'IM-13','x')">✕</button></div><div class="write3">📝 3回　Practice the piano every day.</div></div>
+  </div>
+
+  <div class="q writing" data-id="IM-14"><div class="qnum-e">連動2</div>
+    <div class="ew-jp">つぎの命令文を、否定の命令文（〜してはいけません）に書きかえなさい。<span class="src">Play soccer in the classroom.</span></div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <p>「教室でサッカーをしなさい」を「教室でサッカーをしてはいけません」に変える。<b>足すのは Don't だけ</b>。でも、そのせいで<b>もう1か所、つられて変わる</b>。</p>
+      <table>
+        <tr><th>どこ</th><th>もとの文</th><th>書きかえ後</th><th>なぜそうなるか</th></tr>
+        <tr><td>①</td><td>（なし）</td><td class="ok">Don't</td><td>否定の命令は Don't を文のあたまに置く</td></tr>
+        <tr><td>②</td><td>Play</td><td class="ng">play</td><td>★文のあたまでなくなったので<b>小文字にもどす</b></td></tr>
+        <tr><td>③</td><td>soccer</td><td class="ok">soccer</td><td>変えない</td></tr>
+        <tr><td>④</td><td>in the classroom</td><td class="ok">in the classroom</td><td>変えない</td></tr>
+      </table>
+      <ol>
+        <li><b>★②がいちばんの落とし穴。</b>　もとの Play が大文字だったのは、<b>文のあたまにいたから</b>だけ。Don't が前に来たしゅんかん、Play は<b>とちゅうの語</b>になる → <b>小文字 play</b> にもどす。<span class="ng">✕ Don't Play soccer in the classroom.</span>　<b>大文字は「文のあたまの1語」だけ</b>。これは6月のテストで落とした型（文頭大文字のミス）と同じ場所。</li>
+        <li><b>動詞は原形のまま。</b>　Don't のうしろは<b>いつでも原形</b> → <b>play</b>。<span class="ng">✕ Don't plays</span>　<span class="ng">✕ Don't playing</span></li>
+        <li><b>★not だけでは否定できない。</b>　<span class="ng">✕ Not play soccer 〜</span>　<span class="ng">✕ Play not soccer 〜</span>。play のような<b>動作の動詞</b>は<b>自分では否定できない</b>ので、<b>do の助け</b>を呼ぶ。命令文ではその do が <b>Don't</b> の形で文のあたまに立つ。</li>
+        <li><b>doesn't は使わない。</b>　<span class="ng">✕ Doesn't play soccer 〜</span>。doesn't は「主語が he / she のとき」の形。<b>命令文には主語が無い</b>のだから、doesn't の出番はない。</li>
+        <li><b>うしろは1文字も変えない。</b>　soccer も in the classroom も<b>そのまま</b>。書きかえで動くのは<b>文のあたま</b>だけ。</li>
+        <li><b>アポストロフィ。</b>　<b>Don't</b>（＝ Do not）。<span class="ng">✕ Dont</span>。Do not play soccer in the classroom. と書いてもよい。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Don't Play soccer in the classroom.</span>（★<b>Play が大文字のまま</b>）／<span class="ng">✕ Not play soccer in the classroom.</span>／<span class="ng">✕ Don't plays soccer 〜</span>／<span class="ng">✕ Doesn't play soccer 〜</span>／<span class="ng">✕ Dont play soccer 〜</span>（アポストロフィ落ち）</span>
+    </div><div class="ans-final"><span>こたえ</span>Don't play soccer in the classroom.　<span style="font-size:13px;color:#3f7a4a">（Do not play soccer in the classroom. でもOK）</span></div></div>
+    <div class="gq" data-gid="IM-14"><div class="grade">書けた？ <button class="o" onclick="g(this,'IM-14','o')">○</button><button class="x" onclick="g(this,'IM-14','x')">✕</button></div><div class="write3">📝 3回　Don't play soccer in the classroom.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== まとめ ===== -->
+<div class="step"><span class="n">まとめ</span><span class="t">この表だけ、目をつぶって言えるように</span><span class="time">3分</span></div>
+<div class="body"><div class="lesson">
+  <table>
+    <tr><th>言いたいこと</th><th>形</th><th>れい</th><th>気をつけること</th></tr>
+    <tr><td>〜しなさい（動作）</td><td><b>動詞の原形</b>で始める</td><td>Come here.</td><td>主語ゼロ。<span class="ng">✕ -s</span> <span class="ng">✕ -ing</span></td></tr>
+    <tr><td>〜でありなさい（ようす）</td><td><b>Be</b> ＋ 形容詞</td><td>Be careful.</td><td><span class="ng">✕ Are careful.</span></td></tr>
+    <tr><td>〜してはいけません（動作）</td><td><b>Don't</b> ＋ 原形</td><td>Don't run.</td><td><span class="ng">✕ Not run.</span></td></tr>
+    <tr><td>〜であってはいけません</td><td><b>Don't be</b> ＋ 形容詞</td><td>Don't be shy.</td><td>★be動詞なのに Don't。<span class="ng">✕ Be not shy.</span></td></tr>
+    <tr><td>（いっしょに）〜しましょう</td><td><b>Let's</b> ＋ 原形</td><td>Let's sing a song.</td><td>アポストロフィ。返事は Yes, let's. / OK.</td></tr>
+    <tr><td>ていねいに</td><td><b>Please</b> ＋ 原形</td><td>Please sit down.</td><td>カンマは<b>要らない</b></td></tr>
+    <tr><td>ていねいに（うしろ）</td><td>〜<b>,</b> please.</td><td>Sit down<b>,</b> please.</td><td>★<b>カンマが要る</b>。落としやすい</td></tr>
+  </table>
+
+  <div class="key"><b>命令文の合言葉</b>　① <b>主語ゼロ</b>　② <b>動詞はいつでも原形</b>（-s も -ing も -ed もつかない）　③ 文のあたまの<b>1語だけ大文字</b></div>
+  <div class="more"><b>命令文のあとに続けて言うとき</b>　「〜しなさい、そうすれば…」＝ 命令文<b>, and</b> 〜／「〜しなさい、さもないと…」＝ 命令文<b>, or</b> 〜。<br>Get up early<b>, and</b> you can see the sunrise.（早く起きなさい、そうすれば日の出が見られる）<br>Hurry up<b>, or</b> you will be late.（急ぎなさい、さもないと遅れるよ）　※ 3級レベル。今は「そういう形がある」と知っておくだけでよい。</div>
+</div></div>
+
+<button class="done" id="doneBtn" onclick="finish()">命令文、ぜんぶ書けた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">命令文は「主語ゼロ・動詞は原形」の2つだけ。Be / Don't / Let's / please の使い分けと、うしろの please のカンマ。ここまで書けたら、つぎは U8 疑問詞へ。</div>
+<div class="footnav"><a class="back back-foot" href="../../夏休みダッシュボード.html#today" style="position:static;display:inline-flex;margin-top:16px">✓ 終わった → 次のおすすめへ</a></div>
+
+</div>
+<script>
+var KEY='tokkun_eg_imp';
+function t(b){if(!b.dataset.label)b.dataset.label=b.textContent;var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');b.textContent=open?'とじる':b.dataset.label;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}var w3=box.querySelector('.write3');if(v==='x'){if(w3)w3.style.display='block';}else{if(w3)w3.style.display='none';}}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！命令文、もう書けるね';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);if(!v)return;var b=box.querySelector('.'+v);if(b)b.classList.add('sel');if(v==='x'){var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}});if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}};
+/* ===== 復習英語キュー送りフック（×/○・英語問題のみ・自己ループ防止） ===== */
+function sendToRevQ(btn,id,result){
+  if(typeof PRE!=='undefined' && PRE==='revq_') return;        // 受け皿自身では動かさない
+  if(typeof KEY==='undefined') return;
+  if(KEY.indexOf('revq')===0) return;
+  var q=btn&&btn.closest?btn.closest('.q'):null; if(!q) return;
+  if(q.classList.contains('calc')) return;                      // 数学除外
+  var engPrint=!!document.querySelector('[data-eng="1"]');
+  var isVocab=q.classList.contains('vocab'), isWriting=q.classList.contains('writing');
+  if(!engPrint && !isVocab && !isWriting) return;               // 混在で英語クラス無し→送らない
+  var kindEl=q.querySelector('.qnum-e'); var kindRaw=kindEl?(kindEl.textContent||''):'';
+  if(/漢字|書き|読み/.test(kindRaw)) return;                    // 暗記カードの漢字除外
+  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.qbody');
+  var enEl=q.querySelector('.ans-final')||q.querySelector('.ans-box .ans-main');
+  if(!jpEl||!enEl) return;
+  var jp=cleanRevQText(jpEl), en=cleanRevQText(enEl);
+  if(!jp||!en) return;
+  if(!/[A-Za-z]/.test(en)) return;                              // 答えに英字なし→英語でない→除外
+  if(result==='o'){bumpRevQPo(en);return;}                      // ○：既存項目の po++ のみ（新規追加しない）
+  var kind='単語',badge='tango';
+  if(isWriting||/英作文/.test(kindRaw)||/[.!?]\s*$/.test(en)){kind='英作文';badge='eisaku';}
+  else if(/熟語/.test(kindRaw)){kind='熟語';badge='jukugo';}
+  pushRevQDyn({jp:jp,en:en,kind:kind,badge:badge,day:revqToday(),src:(KEY+'_'+id)});
+}
+function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[（(][^）)]*でもOK[^）)]*[）)]/g,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function revqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function revqNorm(s){return String(s||'').toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function bumpRevQPo(en){try{var K='revq_dyn';var raw=localStorage.getItem(K);if(raw==null)return;var arr;try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;var key=revqNorm(en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].po=(+arr[i].po||0)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}}catch(e){}}
+function pushRevQDyn(item){try{var K='revq_dyn';var raw=localStorage.getItem(K);var arr;if(raw==null){arr=[];}else{try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;}var key=revqNorm(item.en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;arr[i].po=0;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;item.po=0;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
+</script>
+</body>
+</html>

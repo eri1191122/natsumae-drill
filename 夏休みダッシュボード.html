@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 夏休み 学習ダッシュボード（正本）。各プリントの「もどる」先＝このファイル名。
+ ・夏休みに必ず行う133＝9月対策130（弱点復習2 / 暗記60 / 数学固定38 / 国語11 / 英語19）＋先取り3（英語U11/U12 / 国語古文）。
+ ・9月対策130の直後に先取り3を自動推薦。数学boost11 / extra11は補強層。TEC2冊は削除せず、常設の参考導線として使う。
+ ・完了は各プリントが保存する localStorage[KEY+'_done'] を読んで ✓ を表示（KEY+'_done'同期方式）。
+ ・青基調・professional。ピンク不使用。iPadオフライン・印刷可・単一HTML。
+ ・推薦順＝弱点復習→［英語→数学→英語→暗記→数学→国語］反復。日付では巻き戻さず、完了状態から次を自動推薦。
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>夏休み 学習ダッシュボード</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f8fb;color:#26323f;font-size:15px;line-height:1.7}
+.wrap{max-width:980px;margin:0 auto;padding:18px 14px 80px}
+.hd{background:linear-gradient(120deg,#3f5c86,#5b86b8);color:#fff;border-radius:14px;padding:22px 22px;margin-bottom:14px;box-shadow:0 4px 14px rgba(63,92,134,.25)}
+.hd h1{font-size:23px;font-weight:900;margin-bottom:6px}
+.hd p{font-size:13px;opacity:.95}
+.hd .note{margin-top:8px;font-size:12.5px;background:rgba(255,255,255,.16);border-radius:8px;padding:7px 11px}
+.jump{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.jump a{display:inline-flex;align-items:center;font-size:13px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd8e8;border-radius:18px;padding:8px 14px;min-height:44px;line-height:24px}
+.jump a:hover{background:#eef3fa}
+.jump a.j-rev{color:#b03a3a;border-color:#e6b9b9;background:#fdf2f2}
+.nav{margin:0 0 16px}
+.nav a{display:inline-block;font-size:13px;color:#3f6f9f;text-decoration:none;margin-right:14px}
+.nav a:hover{text-decoration:underline}
+.bar{background:#fff;border:1px solid #dde4ee;border-radius:12px;padding:14px 18px;margin-bottom:18px;display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.bar .big{font-size:30px;font-weight:900;color:#3f5c86}
+.bar .lbl{font-size:13px;color:#5a6b80}
+.bar .track{flex:1;min-width:160px;height:12px;background:#eef2f7;border-radius:8px;overflow:hidden}
+.bar .fill{height:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);width:0}
+.sec{background:#fff;border:1px solid #e1e7f0;border-radius:12px;margin-bottom:20px;overflow:hidden;box-shadow:0 2px 8px rgba(60,80,110,.06)}
+details.sec>summary{list-style:none;cursor:pointer}
+details.sec>summary::-webkit-details-marker{display:none}
+.sec-hd{padding:14px 18px;background:#eef3fa;border-left:6px solid #9fb8d9;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:17px;font-weight:900;color:#2f3b4a}
+.sec-hd .cnt{font-size:12px;font-weight:800;color:#4c5b70;background:#fff;border:1px solid #cdd8e8;border-radius:10px;padding:2px 9px}
+.sec-hd .tw{margin-left:auto;font-size:12px;font-weight:800;color:#6b7a90}
+details.sec>summary .tw::after{content:"▼ ひらく";margin-left:8px;color:#8497ad}
+details.sec[open]>summary .tw::after{content:"▲ とじる"}
+.sec-hd.review{background:#fdf2f2;border-left-color:#d98a8a}
+.sec-hd.review h2{color:#9a3030}
+.sec-hd.amnesia{background:#f0ecf8;border-left-color:#b8a4d6}
+.sec-hd.math{background:#e9f1ee;border-left-color:#91bdb7}
+.sec-hd.eng{background:#eaf1f8;border-left-color:#9fb8d9}
+.sec-body{padding:10px 14px 16px}
+.grp{margin:6px 0 4px}
+.grp-hd{display:flex;align-items:center;gap:9px;flex-wrap:wrap;padding:8px 6px 6px;margin-top:6px;border-top:2px solid #e4ece6}
+.grp:first-child .grp-hd{border-top:none;margin-top:0}
+.grp-hd h3{font-size:14px;font-weight:900;color:#3a5650}
+.grp-hd .gcnt{font-size:11.5px;font-weight:800;color:#4c5b70;background:#eef3ef;border:1px solid #cfe0d8;border-radius:10px;padding:2px 8px}
+.row{display:flex;align-items:center;gap:10px;padding:9px 8px;border-bottom:1px dashed #e6ebf2;flex-wrap:wrap}
+.row:last-child{border-bottom:none}
+.row .day{font-size:12px;font-weight:800;color:#5a6b80;background:#eef2f7;border-radius:8px;padding:3px 8px;min-width:54px;text-align:center}
+.row .ttl{flex:1;min-width:180px;font-size:14px;font-weight:700;color:#31415f}
+.row .ttl small{display:block;font-size:11.5px;color:#8392a5;font-weight:500;margin-top:1px}
+.row a.go{font-size:12.5px;font-weight:800;text-decoration:none;color:#fff;background:#657b97;border-radius:16px;padding:9px 15px;min-height:44px;display:inline-flex;align-items:center}
+.row a.go.s2{background:#9079b0}
+.row a.go.rev{background:#b85c5c}
+.row a.go:hover{background:#4f617a}
+.row a.go.s2:hover{background:#74609a}
+.row a.go.rev:hover{background:#9c4747}
+.row .soon{font-size:12px;color:#aab4c2;background:#f1f4f8;border:1px solid #e2e8f0;border-radius:16px;padding:9px 14px;min-height:44px;display:inline-flex;align-items:center}
+.row .chk{font-size:13px;font-weight:800;min-width:62px;text-align:center}
+.row .chk.done{color:#3f8f5a}
+.row .chk.todo{color:#c2ccd8}
+.legend{font-size:12px;color:#7a8699;margin:2px 4px 10px}
+.tools{display:flex;flex-wrap:wrap;gap:10px;padding:4px 4px 2px}
+.tools a{flex:1;min-width:200px;text-align:center;font-size:13.5px;font-weight:800;text-decoration:none;color:#36506f;background:#eef3fa;border:1px solid #cdd8e8;border-radius:12px;padding:14px 12px;min-height:48px;display:flex;align-items:center;justify-content:center}
+.tools a:hover{background:#e1ebf6}
+.revkit{border:1px solid #d6e0ee;border-radius:12px;padding:12px 12px 10px;margin:2px 4px 12px;background:#f8fbff}
+.revkit-hd{font-size:14px;font-weight:900;color:#36506f;margin:0 2px 4px}
+.revkit-note{font-size:12px;color:#7a8699;margin:0 2px 8px}
+.foot{text-align:center;font-size:12px;color:#8392a5;margin-top:16px}
+/* 「きょうやること」へ戻る動線（各セクション末・最下部） */
+.backtop{display:inline-flex;align-items:center;min-height:44px;margin:10px 4px 2px;font-size:12.5px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd8e8;border-radius:18px;padding:8px 14px}
+.backtop:hover{background:#eef3fa}
+.backtop.center{display:flex;justify-content:center;width:max-content;margin:14px auto 0}
+@media print{.backtop{display:none}}
+/* 🎯 きょうやること（今日の入口カード） */
+.today{background:#fff;border:1px solid #cdd8e8;border-radius:14px;margin-bottom:18px;overflow:hidden;box-shadow:0 3px 12px rgba(63,92,134,.12)}
+.today .t-hd{background:linear-gradient(120deg,#34547f,#4f7cb0);color:#fff;padding:14px 18px}
+.today .t-hd h2{font-size:18px;font-weight:900;margin-bottom:3px}
+.today .t-hd .flow{font-size:12px;opacity:.95}
+.today .t-body{padding:8px 12px 12px}
+.tslot{display:flex;align-items:center;gap:11px;padding:11px 8px;border-bottom:1px dashed #e6ebf2;flex-wrap:wrap}
+.tslot:last-child{border-bottom:none}
+.tslot .ic{font-size:20px;width:30px;text-align:center;flex-shrink:0}
+.tslot .meta{flex:1;min-width:160px}
+.tslot .meta .lab{font-size:13.5px;font-weight:900;color:#2f3b4a}
+.tslot .meta .lab .min{font-size:11.5px;font-weight:700;color:#7a8699;margin-left:6px}
+.tslot .meta .pk{font-size:12.5px;color:#4c5b70;margin-top:2px}
+.tslot .meta .pk b{color:#31415f}
+.tslot a.tgo{font-size:12.5px;font-weight:800;text-decoration:none;color:#fff;background:#3f6f9f;border-radius:16px;padding:10px 18px;min-height:44px;display:inline-flex;align-items:center;flex-shrink:0}
+.tslot a.tgo:hover{background:#345b82}
+.tslot .tdone{font-size:13px;font-weight:800;color:#3f8f5a;min-width:62px;text-align:center;flex-shrink:0}
+.tslot .tnone{font-size:12.5px;color:#7a8699}
+.today .t-foot{font-size:12.5px;color:#4c5b70;background:#eef3fa;padding:10px 16px;text-align:center;font-weight:700}
+.queue-quick{display:flex;gap:8px;flex-wrap:wrap;padding:10px 14px;background:#fff7f2;border-top:1px dashed #e6c9bf}
+.queue-quick b{width:100%;font-size:12px;color:#8a514d}
+.queue-quick a{flex:1;min-width:130px;text-align:center;text-decoration:none;font-size:12.5px;font-weight:900;color:#8a514d;background:#fff;border:1px solid #e2bdb7;border-radius:12px;padding:10px 8px;min-height:44px}
+.row .cond{display:inline-block;font-size:10.5px;font-weight:900;color:#8a5a17;background:#fff4d8;border:1px solid #e4ca8a;border-radius:8px;padding:1px 7px;margin-left:6px}
+@media print{.jump,.nav,.bar .track,.today{display:none}details.sec{display:block}details.sec>summary .tw{display:none}}
+/* ===== 2026-07-12 見やすさ改修（5ロール評価90点以上のみ採用・表示層のみ／既存JS核・KEYは不変） ===== */
+/* A1 今日カードの存在感を上げる */
+.today{border:2px solid #9fb8d9}
+.today .t-hd h2{font-size:21px}
+/* A6 「はじめる」大ボタン1つ＋A5 全部できた表示＋軽めモード */
+.t-cta{padding:14px 14px 6px;border-bottom:1px dashed #e6ebf2}
+.cta-line{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.cta-lab{font-size:14px;font-weight:900;color:#7a5a00;background:#fff5d8;border:1px solid #e6d08a;border-radius:10px;padding:7px 12px}
+a.startbtn{flex:1;min-width:210px;display:inline-flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:#fff;text-decoration:none;background:linear-gradient(120deg,#2f7a52,#3f9f6a);border-radius:14px;padding:16px 22px;min-height:56px;box-shadow:0 3px 10px rgba(47,122,82,.28)}
+a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
+.lightbtn{display:inline-flex;align-items:center;margin-top:10px;font-family:inherit;font-size:12.5px;font-weight:800;color:#4c5b70;background:#eef3fa;border:1px solid #cdd8e8;border-radius:16px;padding:9px 14px;min-height:44px;cursor:pointer}
+.lightbtn:hover{background:#e1ebf6}
+.alldone{font-size:19px;font-weight:900;color:#2f7a52;background:#eaf6ef;border:2px solid #a7d6bb;border-radius:12px;padding:16px 14px;text-align:center}
+/* A4 「いまここ」ハイライト（済んだ枠は静かに、次の1枠だけ目立たせる） */
+.tslot.is-now{background:#fffaec;border-left:5px solid #e8b93f;border-radius:10px}
+.tslot.is-wait{opacity:.72}
+.tslot.is-done{opacity:.6}
+.nowtag{margin-left:8px;font-size:11px;font-weight:900;color:#8a5a00;background:#ffe6a6;border-radius:8px;padding:2px 8px}
+.today.light .tslot[data-slot="3"],.today.light .tslot[data-slot="4"]{display:none}
+/* 2026-07-15 一本道コンベヤー：できた／いまやる／その次だけを見せる */
+.route-status{display:flex;gap:8px;flex-wrap:wrap;padding:12px 14px 2px}
+.route-chip{font-size:12.5px;font-weight:900;border-radius:10px;padding:7px 11px;background:#eef3fa;color:#40536b}
+.route-chip.goal{background:#eaf6ef;color:#27724a;border:1px solid #a7d6bb}
+.route-current{margin:8px 14px 12px;padding:15px;border:2px solid #e8b93f;background:#fffaec;border-radius:13px}
+.route-current .eyebrow{font-size:12px;font-weight:900;color:#8a5a00;margin-bottom:5px}
+.route-current .rtitle{font-size:18px;font-weight:900;color:#26384e;line-height:1.45}
+.route-current .rwhy{font-size:12.5px;color:#56677c;margin-top:5px}
+.route-current .rmeta{display:inline-block;margin-top:7px;font-size:11.5px;font-weight:800;color:#50657c;background:#fff;border-radius:9px;padding:4px 8px}
+.route-seq{display:grid;grid-template-columns:1fr 1fr;gap:9px;padding:4px 14px 14px}
+.route-box{border:1px solid #d9e2ed;border-radius:11px;padding:10px;background:#fafcff;min-height:70px}
+.route-box h3{font-size:12px;color:#64748a;margin-bottom:5px}
+.route-box p{font-size:12.5px;color:#34465c;line-height:1.5}
+.route-box.donebox p{color:#3d7655}
+.queue-detail{margin:0;border-top:1px dashed #e6c9bf;background:#fff7f2}
+.queue-detail summary{cursor:pointer;padding:10px 14px;font-size:12px;font-weight:800;color:#8a514d}
+.queue-detail .queue-quick{border-top:none;padding-top:2px}
+.route-note{font-size:12px;text-align:center;color:#66768b;padding:0 14px 12px}
+@media(max-width:620px){.route-seq{grid-template-columns:1fr}.route-current .rtitle{font-size:16px}}
+/* B16 とじたままでも「つぎにやる1枚」が見える */
+.sec-hd .nxt{width:100%;font-size:12px;font-weight:700;color:#5a6b80;margin-top:3px}
+/* 行ぜんたいをタップできる（リンク1本の行のみ・暗記カードは2本なので対象外） */
+#reviewRows .row,#mathRows .row,#kokugoRows .row,#englishRows .row,#mockRows .row{cursor:pointer}
+#reviewRows .row:active,#mathRows .row:active,#kokugoRows .row:active,#englishRows .row:active,#mockRows .row:active{background:#f3f7fc}
+/* ===== 2026-07-12(2) X21=必修/余力の分割 ＋ 上部3系統を1本に統合 ===== */
+/* 進捗と教科ジャンプを1本のバーに統合 */
+.bar{align-items:center;gap:16px}
+.bar .barL{display:flex;align-items:center;gap:10px;flex-wrap:wrap;flex:1;min-width:230px}
+.bar .track{flex:1 1 100%;min-width:140px}
+.bar .jump{margin:0;gap:6px}
+.bar .jump a{font-size:12.5px;padding:8px 12px}
+/* ④余力コース＝やらなくてもいい枠。静かに、でも開ける */
+.grp.extra{margin-top:14px;padding:2px 8px 6px;background:#fafbfc;border:1px dashed #dbe3ec;border-radius:12px}
+.grp.extra .grp-hd{border-top:none;color:#6b7a90}
+.grp.extra .grp-hd h3{color:#6b7a90;font-weight:800}
+.grp.extra .row .ttl{color:#5f6f84;font-weight:600}
+.grp.extra .gcnt{background:#fff;border-color:#dbe3ec;color:#6b7a90}
+/* まちがえ復習キュー＝「1回で終わり」ではなく毎日の定着チェック */
+.row .chk.daily{color:#b85c5c;font-size:12px}
+/* ツールは折りたたみ＝ふだんの画面から消える */
+#tools .cnt{background:#fff;color:#8392a5;font-weight:700}
+#tools .nav{margin:12px 4px 0;padding-top:10px;border-top:1px dashed #e6ebf2}
+#tools .nav a{display:inline-block;margin:0 14px 6px 0;min-height:44px;line-height:44px}
+@media print{.t-cta,.lightbtn{display:none}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<div class="hd">
+  <h1>🌻 夏休み 学習ダッシュボード</h1>
+  <p>選ばなくて大丈夫。「この問題をはじめる」を押し、終わったらここへ戻るだけ。おすすめが自動で次へ進みます。</p>
+  <div class="note">📅 <b>暗記カードはDay01＝7/18（土）から毎日15分</b>（Day30＝8/16）。旅行で1日とんでも、次のDayから続けよう。<b>復習は一番大切</b>—最初に少しだけでも触ろう。</div>
+  <div class="note">📘 <b>9月対策130枚のあとも終わりではありません。</b> U11現在進行形・U12過去形・国語古文の先取り3枚まで、夏休み中におまかせコースが続きます。数学・国語TECも削除せず、各教科欄からいつでも開けます。</div>
+</div>
+
+<!-- 🚀 おまかせ学習コース（完了状態から次の1枚を自動推薦） -->
+<div class="today" id="today">
+  <div class="t-hd">
+    <h2>🚀 つづきから｜おまかせ学習コース</h2>
+    <div class="flow">できた → いまやる → その次。終わったら戻るだけで、次のおすすめに進みます。</div>
+  </div>
+  <div class="t-cta" id="tCta"></div>
+  <div class="t-body" id="todayBody"></div>
+  <div class="t-foot">今日は2枚（約60分）でおしまいでOK。できる日はそのまま進めてもOK。順番は自動で決まります。🌸</div>
+</div>
+
+<!-- 進捗＋教科ジャンプを1本に統合（旧: ジャンプナビ7本＋ナビ4本＋進捗バーの3系統を1本へ） -->
+<div class="bar">
+  <div class="barL"><span class="big" id="pct">0%</span>
+    <span class="lbl">できたよ　<span id="doneN">0</span> / <span id="allN">0</span> 枚</span>
+    <div class="track"><div class="fill" id="fill"></div></div>
+  </div>
+  <div class="jump">
+    <a class="j-rev" href="#review">🔴 弱点復習</a>
+    <a href="#amn">🗂️ 暗記</a>
+    <a href="#math">📐 数学</a>
+    <a href="#eng">🔤 英語</a>
+    <a href="#kokugo">📖 国語</a>
+    <a href="#mock">🎯 本番</a>
+  </div>
+</div>
+
+<!-- §0 弱点復習（最優先・最上部） -->
+<details class="sec" id="review">
+  <summary>
+    <div class="sec-hd review"><h2>🔴 弱点の復習（いちばん大切・最初に）</h2><span class="cnt" id="cntR">0</span><span class="tw"></span><span class="nxt" id="nxR"></span></div>
+  </summary>
+  <div class="sec-body">
+    <div class="legend">前に間違えたところを思い出してから新しい問題へ。これだけは毎日少しでも触ろう。まちがえキューは「前に×だった問題」だけ集めたページ。</div>
+    <div id="reviewRows"></div>
+    <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
+  </div>
+</details>
+
+<!-- §1 暗記カード（折りたたみ・デフォルト閉） -->
+<details class="sec" id="amn">
+  <summary>
+    <div class="sec-hd amnesia"><h2>① 暗記カード（毎日15分・60枚）</h2><span class="cnt" id="cntA">0</span><span class="tw"></span><span class="nxt" id="nxA"></span></div>
+  </summary>
+  <div class="sec-body">
+    <div class="legend">各Day＝「その1（意味→書く）」と「その2（かくして思い出す）」の2枚。まずその1、あとでその2。長いのでふだんは閉じておいてOK。</div>
+    <div id="amnesiaRows"></div>
+    <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
+  </div>
+</details>
+
+<!-- §2 特訓数学（45枚・6大問グループ） -->
+<details class="sec" id="math">
+  <summary>
+    <div class="sec-hd math"><h2>② 特訓数学（固定必修38枚＋×のときだけ追い撃）</h2><span class="cnt" id="cntM">0</span><span class="tw"></span><span class="nxt" id="nxM"></span></div>
+  </summary>
+  <div class="sec-body">
+    <div class="legend">まず固定必修38枚を1周。「通しで×のとき」の11枚は、該当する大問を落としたときだけ使う。TECは解いた後に見る参考資料。</div>
+    <div id="mathRows"></div>
+    <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
+  </div>
+</details>
+
+<!-- §3 国語 -->
+<details class="sec" id="kokugo">
+  <summary>
+    <div class="sec-hd"><h2>③ 国語プリント（9月特訓必修11枚＋先取り1枚）</h2><span class="cnt" id="cntK">0</span><span class="tw"></span><span class="nxt" id="nxK"></span></div>
+  </summary>
+  <div class="sec-body">
+    <div class="legend">9月対策11枚に加え、古文1枚も夏休み先取り必修として進捗に数えます。古文は塾夏期講習の中1単元です。TECは解いた後に見る常設参考で、完了枚数だけ数えません。</div>
+    <div id="kokugoRows"></div>
+    <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
+  </div>
+</details>
+
+<!-- §4 英語きそ -->
+<details class="sec" id="eng">
+  <summary>
+    <div class="sec-hd eng"><h2>④ 英語（9月特訓必修19枚＋先取り2枚）</h2><span class="cnt" id="cntE">0</span><span class="tw"></span><span class="nxt" id="nxE"></span></div>
+  </summary>
+  <div class="sec-body">
+    <div class="legend">9月対策はU1〜U10と特訓形式9枚。U11〜U12（現在進行形・過去形）は夏休み先取り必修として、9月対策130枚の直後に必ず回します。</div>
+    <div id="englishRows"></div>
+    <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
+  </div>
+</details>
+
+<!-- §Mock 本番判定・50分通し（8枚・特訓選抜そっくり模試。9月対策133枚の分母には数えない／2026-07-18追加） -->
+<details class="sec" id="mock">
+  <summary>
+    <div class="sec-hd"><h2>🎯 本番判定・50分通し（特訓選抜そっくり模試）</h2><span class="cnt" id="cntMock">0</span><span class="tw"></span></div>
+  </summary>
+  <div class="sec-body">
+    <div class="legend">本番と同じ50分・100点。まちがえた問題は、その場で「よくある間違い」を読む。数学2枚・英語3枚・国語3枚＝計8枚（9月対策133枚の分母には数えません）。</div>
+    <div id="mockRows"></div>
+    <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
+  </div>
+</details>
+
+<!-- §5 ツール（問題台帳・そのほかの入口。ふだんの学習では使わない） -->
+<details class="sec" id="tools">
+  <summary>
+    <div class="sec-hd"><h2>⑤ ツール・そのほか</h2><span class="cnt">ふだんは使わない</span><span class="tw"></span></div>
+  </summary>
+  <div class="sec-body">
+    <div class="legend">どの問題があるか探すとき・処方（次に何をやるか）を見るときに使う一覧。</div>
+    <div class="revkit">
+      <div class="revkit-hd">📚 夏前プリント（復習用）</div>
+      <div class="revkit-note">夏前にやったプリントで復習するときはここから。</div>
+      <div class="tools">
+        <a href="index_iPad_学習ダッシュボード.html">🗓️ 夏前カレンダー（夏前キットのダッシュボード）</a>
+        <a href="数学問題インデックス.html">📐 数学 問題インデックス</a>
+        <a href="英語問題インデックス.html">🔤 英語 問題インデックス</a>
+        <a href="国語問題インデックス.html">📖 国語 問題インデックス</a>
+        <a href="数学処方ビュー.html">🩺 数学 処方ビュー</a>
+        <a href="英語まるごと整理ダッシュボード.html">📗 英語まるごと整理ビュー（語彙・熟語の自己テスト）</a>
+      </div>
+    </div>
+    <div class="nav">
+      <a href="記録ボード_毎日プリント集計.html">📋 ○✕の記録ボード（集計・回収）</a>
+      <a href="つかいかた.html">🐵 つかいかた</a>
+      <a href="プリント/暗記カード/暗記60_配信スケジュール.md">配信スケジュール（正本）</a>
+    </div>
+    <details class="queue-detail"><summary>まちがえ復習を教科別に開く（保護者用・ふだんは選ばなくてOK）</summary>
+      <div class="queue-quick"><b>間違いが入っている教科だけ使います</b>
+        <a href="プリント/夏_特訓数学プリント/復習英語_まちがえ復習キュー.html">🔤 英語キュー</a>
+        <a href="プリント/夏_特訓数学プリント/復習数学_まちがえ復習キュー.html">📐 数学キュー</a>
+        <a href="プリント/夏_特訓数学プリント/復習国語_まちがえ復習キュー.html">📖 国語キュー</a>
+      </div>
+    </details>
+    <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
+  </div>
+</details>
+
+<a class="backtop center" href="#today">▲ きょうやることへ戻る</a>
+
+<div class="foot">復習 → 暗記 → 特訓の順で、1日5分からでOK。できた枚数がふえていくのを楽しもう。🌸</div>
+
+</div>
+
+<script>
+/* ===== §0 弱点復習（最優先）。KEYは各プリント実値。 =====
+   daily:true = まちがえ復習キュー。中身が入れかわり続けるので「1回やったら終わり」にならない。
+   （実測: キュー3枚は var KEY を持たず KEY+'_done' を書かない＝永久に✓が付かない）
+   → ①「今できている割合」の分母から外す ②「つぎの1枚」の順送りでキューを飛ばす
+   （飛ばさないと、永久にdoneにならないキューで順送りが止まり、英 単語つづり①・熟語①に一生たどり着けない） */
+var REVIEW = [
+  /* 2026-07-13 割合・割合2・単位換算の3枚は「①小学の土台」として §2の学習順（MATH_GROUPS）へ昇格。
+     ここ（毎日枠）に残すと二重表示になるため削除した。SRS復習キューは学習順とは別レイヤーなので毎日枠のまま維持する。 */
+  {day:"英 単語", title:"復習 英語 単語つづり①", k:"tokkun_reve_word1", f:"プリント/夏_特訓数学プリント/復習英語_単語つづり1.html"},
+  {day:"英 熟語", title:"復習 英語 熟語とbe動詞①", k:"tokkun_reve_phrase1", f:"プリント/夏_特訓数学プリント/復習英語_熟語とbe動詞1.html"},
+  {day:"英 復習", title:"復習 英語 まちがえ復習キュー（夏前プリントで×だった英単語もここに出る）", k:"tokkun_reve_queue", daily:true, f:"プリント/夏_特訓数学プリント/復習英語_まちがえ復習キュー.html"},
+  {day:"数 復習", title:"復習 数学 まちがえ復習キュー（前に×だった問題だけ）", k:"tokkun_revm_queue", daily:true, f:"プリント/夏_特訓数学プリント/復習数学_まちがえ復習キュー.html"},
+  {day:"国 復習", title:"復習 国語 まちがえ復習キュー（部首画数の実×＋評論語・文法の先取り）", k:"tokkun_revj_queue", daily:true, f:"プリント/夏_特訓数学プリント/復習国語_まちがえ復習キュー.html"}
+];
+
+/* ===== §1 暗記カード Day01〜30（その1=tokkun_kaNN / その2=tokkun_kbNN） ===== */
+var AMNESIA = [
+  {day:"Day01", title:"英 ocean/mountain/yacht/eight/bear ＋ 漢字 激流/派手/均質・発揮/推移", rote:"英熟語(get up/look at/be good at)", k1:"tokkun_ka01", f1:"プリント/暗記カード/月_暗記カード.html", k2:"tokkun_kb01", f2:"プリント/暗記カード/月_暗記カード_その2.html"},
+  {day:"Day02", title:"英 white/February/Wednesday/friend/people ＋ 漢字 抽象/具体/矛盾・著しい/促す", rote:"四字熟語(一石二鳥/因果応報/温故知新)", k1:"tokkun_ka02", f1:"プリント/暗記カード/火_暗記カード.html", k2:"tokkun_kb02", f2:"プリント/暗記カード/火_暗記カード_その2.html"},
+  {day:"Day03", title:"英 question/answer/library/restaurant/vegetable ＋ 漢字 価値/評価/構造・装う/幼い", rote:"部首(部/複/馬の画数)", k1:"tokkun_ka03", f1:"プリント/暗記カード/水_暗記カード.html", k2:"tokkun_kb03", f2:"プリント/暗記カード/水_暗記カード_その2.html"},
+  {day:"Day04", title:"英 dictionary/daughter/Tuesday/Saturday/August ＋ 漢字 概念/象徴/普遍・敬う/名残", rote:"英熟語(listen to/get to/go to bed)", k1:"tokkun_ka04", f1:"プリント/暗記カード/木_暗記カード.html", k2:"tokkun_kb04", f2:"プリント/暗記カード/木_暗記カード_その2.html"},
+  {day:"Day05", title:"英 weather/breakfast/hour/night/know ＋ 漢字 対象/根拠/批判・行方/出納", rote:"慣用句(顔が広い/気が置けない/目が高い)", k1:"tokkun_ka05", f1:"プリント/暗記カード/金_暗記カード.html", k2:"tokkun_kb05", f2:"プリント/暗記カード/金_暗記カード_その2.html"}
+];
+/* Day06〜30（DayNN_その1.html / DayNN_その2.html） */
+var ROTE={6:"英熟語",7:"四字熟語",8:"部首画数",9:"英熟語",10:"慣用句",11:"英熟語",12:"四字熟語",13:"部首画数",14:"英熟語",15:"慣用句",16:"英熟語",17:"四字熟語",18:"部首画数",19:"英熟語",20:"慣用句",21:"英熟語",22:"四字熟語",23:"部首画数",24:"英熟語",25:"慣用句",26:"英熟語",27:"四字熟語",28:"部首画数",29:"英熟語",30:"慣用句(直前仕上げ)"};
+for(var d=6; d<=30; d++){
+  var nn=(d<10?'0':'')+d;
+  AMNESIA.push({day:"Day"+nn, title:"英単語5＋漢字5＋特訓ブリッジ", rote:ROTE[d]+"3", k1:"tokkun_ka"+nn, f1:"プリント/暗記カード/Day"+nn+"_その1.html", k2:"tokkun_kb"+nn, f2:"プリント/暗記カード/Day"+nn+"_その2.html"});
+}
+
+/* ===== §2 特訓数学（固定必修38枚＋条件付き追い撃11枚＋参考TEC＋余力11枚）=====
+   2026-07-13 再編②：ユーザー指示「夏休みを起点に、初学者と同じ順＝習った順に並べる。一周後は混ぜて弱点を徹底補強」。
+   ★フェーズ1＝習った順に一周（38枚。1日1枚なら8/24完了、余力日は2枚）。小学の土台 → 正負の数 → 文字と式 → 方程式の解法 → 方程式の利用
+     → 規則性 → 平面図形 → グラフ → 精度。※規則性(S3)は「n式の一般化」を含むため文字式の後に置く（順序矛盾の解消）。
+   ★フェーズ2＝一周後に混ぜる（30〜45分の短縮演習5本 ＋ 弱点再投入プール ＋ 余力）。
+   ★得点目標は自作通しの「自作配点」で管理する。2023年9月実物の公式配点は未採録のため、
+     大問別の公式点数や「ここを取れば何点」とは断定しない。先にL1〜L3の精度を固め、9月数学で厚いL4帯へ進む。
+   正本＝`対策/塾_中1特訓選抜_2026年9月/2026-07-13_9月特訓選抜_数学_習った順カリキュラムと90点設計.md` */
+var MATH_GROUPS = [
+  {g:"① 小学の土台（5枚）— 9月の大問3・大問6型に直接効く", items:[
+    {day:"土台1", title:"割合（三用法・逆算・残り）", k:"tokkun_revm_wari1", f:"プリント/夏_特訓数学プリント/復習算数_割合_三用法と逆算と残り.html"},
+    {day:"土台2", title:"割合②（割合を求める・利益と割引）★6月に落とした型", k:"tokkun_m17", f:"プリント/夏_特訓数学プリント/復習算数_割合2_割合を求める_利益と割引.html"},
+    {day:"土台3", title:"単位換算①（面積・体積・速さ）★くり返し落としている型", k:"tokkun_m16", f:"プリント/夏_特訓数学プリント/特訓P16_単位換算ドリル.html"},
+    {day:"土台4", title:"単位換算②（実戦と検算）★大問2・5・6型に直結。2周やる", k:"tokkun_m23", f:"プリント/夏_特訓数学プリント/特訓P17_単位換算2_実戦と検算.html"},
+    {day:"土台5", title:"速さ（3用法・単位・出会い・追いつき）― 大問3(2)・大問6直撃", k:"tokkun_m19", f:"プリント/夏_特訓数学プリント/特訓S2_速さ_出会いと追いつき_9月大問3と6.html"}
+  ]},
+  {g:"② 正負の数（8枚）", items:[
+    {day:"正1", title:"正負の数（旧L表示は現行v3未監査）", k:"tokkun_m01", f:"プリント/夏_特訓数学プリント/特訓P1_正負の数_L3L4.html"},
+    {day:"正2", title:"正負の数 計算精度ドリル", k:"tokkun_m01b", f:"プリント/夏_特訓数学プリント/特訓P1b_正負の数_計算精度ドリル.html"},
+    {day:"正3", title:"分数と符号の精度 ― 大問1直撃（いちばん多い失点）", k:"tokkun_m18", f:"プリント/夏_特訓数学プリント/特訓S1_分数と符号の精度_9月大問1.html"},
+    {day:"正4", title:"数直線と絶対値・最大と最小の差 ★唯一あいていた穴", k:"tokkun_n01", f:"プリント/夏_特訓数学プリント/特訓N1_数直線と絶対値_最大最小差.html"},
+    {day:"正5", title:"素因数分解と素数（シラバス上「正負の数」に含まれる）", k:"tokkun_m15", f:"プリント/夏_特訓数学プリント/特訓P15_素因数分解と素数.html"},
+    {day:"正6", title:"正負の表と平均・数直線 ― 大問2(1)直撃", k:"tokkun_m21", f:"プリント/夏_特訓数学プリント/特訓S4_正負の表と平均_数直線_9月大問2.html"},
+    {day:"正7", title:"文章を式に③（正負の文章）", boost:true, k:"tokkun_m06", f:"プリント/夏_特訓数学プリント/特訓P6_文章を式に3_正負の文章.html"},
+    {day:"正8", title:"文章を式に③-2（正負の文章）", boost:true, k:"tokkun_m06b", f:"プリント/夏_特訓数学プリント/特訓P6b_文章を式に_正負文章2.html"}
+  ]},
+  {g:"③ 文字と式（3枚）", items:[
+    {day:"文1", title:"文字式 演習", k:"tokkun_m02a", f:"プリント/夏_特訓数学プリント/特訓P2a_文字式_演習.html"},
+    {day:"文2", title:"文字式 計算精度ドリル", k:"tokkun_m02c", f:"プリント/夏_特訓数学プリント/特訓P2c_文字式_計算精度ドリル.html"},
+    {day:"文3", title:"文字式 特訓（立式・式の値）― 大問1(2)型", k:"tokkun_m02b", f:"プリント/夏_特訓数学プリント/特訓P2b_文字式_特訓_立式.html"}
+  ]},
+  {g:"④ 方程式の解法（2枚）", items:[
+    {day:"方1", title:"方程式の解法 演習", k:"tokkun_m03", f:"プリント/夏_特訓数学プリント/特訓P3_方程式の解法_演習.html"},
+    {day:"方2", title:"方程式の解法 ドリル（小数・分数係数）― 大問1(3)(4)直撃", k:"tokkun_m03b", f:"プリント/夏_特訓数学プリント/特訓P3b_方程式の解法_ドリル.html"}
+  ]},
+  {g:"⑤ 方程式の利用（13枚）— 習う順：個数・過不足 → 速さ → 割合・食塩水 → 型判定 → 混合 → 発展", items:[
+    {day:"利1", title:"★文章を式に①（個数・過不足）型カード", k:"tokkun_m04", f:"プリント/夏_特訓数学プリント/特訓P4_文章を式に1_型カード_個数過不足.html"},
+    {day:"利2", title:"★文章を式に①-2（個数・過不足）", boost:true, k:"tokkun_m04b", f:"プリント/夏_特訓数学プリント/特訓P4b_文章を式に_個数過不足2.html"},
+    {day:"利3", title:"★文章を式に①-3（個数・過不足）", boost:true, k:"tokkun_m04c", f:"プリント/夏_特訓数学プリント/特訓P4c_文章を式に_個数過不足3.html"},
+    {day:"利4", title:"★文章を式に⑤（過不足・二段）", k:"tokkun_m04e", f:"プリント/夏_特訓数学プリント/特訓P4e_文章を式に_過不足二段.html"},
+    {day:"利5", title:"★文章を式に②（速さ・割合利益）", k:"tokkun_m05", f:"プリント/夏_特訓数学プリント/特訓P5_文章を式に2_速さ_割合利益.html"},
+    {day:"利6", title:"★文章を式に②-2（速さ）", boost:true, k:"tokkun_m05b", f:"プリント/夏_特訓数学プリント/特訓P5b_文章を式に_速さ2.html"},
+    {day:"利7", title:"★文章を式に②-3（割合・食塩水）", k:"tokkun_m05c", f:"プリント/夏_特訓数学プリント/特訓P5c_文章を式に_割合食塩水.html"},
+    {day:"利8", title:"★文章を式に④（整数・比例配分・利益）", boost:true, k:"tokkun_m04d", f:"プリント/夏_特訓数学プリント/特訓P4d_文章を式に_整数比例配分利益.html"},
+    {day:"利9", title:"型あて道場①（4型を自分で見抜く）", k:"tokkun_m13", f:"プリント/夏_特訓数学プリント/特訓P13_型あて道場1.html"},
+    {day:"利10", title:"方程式の利用 4型混合", boost:true, k:"tokkun_m07", f:"プリント/夏_特訓数学プリント/特訓P7_方程式の利用_4型混合演習.html"},
+    {day:"利11", title:"過去問同型 大問3（個数・速さ・過不足・割合）", k:"tokkun_m07b", f:"プリント/夏_特訓数学プリント/特訓P7b_方程式の利用_過去問同型.html"},
+    {day:"利12", title:"型あて道場②（過不足応用・利益二段・割引率x）", boost:true, k:"tokkun_m14", f:"プリント/夏_特訓数学プリント/特訓P14_型あて道場2.html"},
+    {day:"利13", title:"出会い・追い越し・時刻逆算 ― 大問6型", boost:true, k:"tokkun_m07c", f:"プリント/夏_特訓数学プリント/特訓P7c_方程式の利用_発展L4.html"}
+  ]},
+  {g:"⑥ 規則性（4枚）— n式の一般化は文字式のあとでないと書けない", items:[
+    {day:"規1", title:"数え方の重複処理と規則性 ― 大問4直撃（なぜ÷2？をつぶす）", k:"tokkun_m20", f:"プリント/夏_特訓数学プリント/特訓S3_数え方の重複処理と規則性_9月大問4.html"},
+    {day:"規2", title:"規則性 演習（差→n式）", boost:true, k:"tokkun_m09a", f:"プリント/夏_特訓数学プリント/特訓P9a_規則性_演習.html"},
+    {day:"規3", title:"規則性 n式", k:"tokkun_m09", f:"プリント/夏_特訓数学プリント/特訓P9_規則性_n式.html"},
+    {day:"規4", title:"規則性（タイルn式・逆算）― n=16で211枚の型", k:"tokkun_m09b", f:"プリント/夏_特訓数学プリント/特訓P9b_規則性L4_タイルn式逆算.html"}
+  ]},
+  {g:"⑦ 平面図形（4枚）— 大問2型。折返し角・砂時計・花びらの3型", items:[
+    {day:"図1", title:"図形 演習（面積・円・角度）", boost:true, k:"tokkun_m08a", f:"プリント/夏_特訓数学プリント/特訓P8a_図形_演習.html"},
+    {day:"図2", title:"複合図形・円・折り返し角", k:"tokkun_m08", f:"プリント/夏_特訓数学プリント/特訓P8_複合図形_円_折り返し角.html"},
+    {day:"図3", title:"図形 角度集中（折返し角）", k:"tokkun_m08c", f:"プリント/夏_特訓数学プリント/特訓P8c_図形角度集中.html"},
+    {day:"図4", title:"複合図形（砂時計・折り返し・花びら）― 大問2型", k:"tokkun_m08b", f:"プリント/夏_特訓数学プリント/特訓P8b_複合図形L4_砂時計折り返し花びら.html"}
+  ]},
+  {g:"⑧ グラフ・水そう（3枚）— 大問5", items:[
+    {day:"グ1", title:"★グラフ 演習（読み取り）", k:"tokkun_m10a", f:"プリント/夏_特訓数学プリント/特訓P10a_速さグラフ_水そう_演習.html"},
+    {day:"グ2", title:"★速さグラフ・水そう", k:"tokkun_m10", f:"プリント/夏_特訓数学プリント/特訓P10_速さグラフ_水そう.html"},
+    {day:"グ3", title:"★グラフ水そう（給水量・満水時刻逆算）", k:"tokkun_m10b", f:"プリント/夏_特訓数学プリント/特訓P10b_グラフ水そうL4.html"}
+  ]},
+  {g:"⑨ 答案の精度（1枚）＋ 中間診断（8/1）", items:[
+    {day:"TEC", title:"🔑 マル秘テクニック集（参考資料・進捗に数えない）", reference:true, k:"tokkun_tec", f:"プリント/夏_特訓数学プリント/特訓TEC_マル秘テクニック集_計算が楽になる技.html"},
+    {day:"精1", title:"ケアレス潰し・答案化（見直しの型）", k:"tokkun_m11", f:"プリント/夏_特訓数学プリント/特訓P11_ケアレス潰し_答案化.html"},
+    {day:"8/1", title:"★8月1日 中間診断（計算・方程式4型・正負・図形 100点）", k:"tokkun_m0801", f:"プリント/夏_特訓数学プリント/特訓0801_中間診断.html"}
+  ]},
+  {g:"⑩ 一周おわり → ここから混ぜる（30〜45分の短縮演習5本）", items:[
+    {day:"混1", title:"9月形式・短縮ミックス（8採点単位）― 単元は自分で見抜け", k:"tokkun_m22", f:"プリント/夏_特訓数学プリント/特訓S5_9月形式ミックス_総合.html"},
+    {day:"通1", title:"特訓選抜形式・短縮通し①（12採点単位）", k:"tokkun_m12", f:"プリント/夏_特訓数学プリント/特訓P12_過去問形式_通しセット.html"},
+    {day:"通2", title:"特訓選抜形式・短縮通し②（12採点単位）", k:"tokkun_m12b", f:"プリント/夏_特訓数学プリント/特訓P12b_過去問形式_通しセット2.html"},
+    {day:"通3", title:"特訓選抜形式・短縮通し③（12採点単位）", k:"tokkun_m12c", f:"プリント/夏_特訓数学プリント/特訓P12c_過去問形式_通しセット3.html"},
+    {day:"通4", title:"特訓選抜形式・短縮通し④（18採点単位・45分・自作100点）", k:"tokkun_m12d", f:"プリント/夏_特訓数学プリント/特訓P12d_過去問通し4.html"}
+  ]},
+  {g:"⑪ 弱点の追い撃ち（11枚）— 通しで落ちた単元だけ、ここから選んで撃つ", extra:true, items:[
+    {day:"P8d", title:"図形 複合面積②", k:"tokkun_m08d", f:"プリント/夏_特訓数学プリント/特訓P8d_図形複合面積2.html"},
+    {day:"P8e", title:"円とおうぎ形", k:"tokkun_m08e", f:"プリント/夏_特訓数学プリント/特訓P8e_円とおうぎ形.html"},
+    {day:"P8f", title:"等積変形・面積一定", k:"tokkun_m08f", f:"プリント/夏_特訓数学プリント/特訓P8f_等積変形面積一定.html"},
+    {day:"P8g", title:"図形 総合", k:"tokkun_m08g", f:"プリント/夏_特訓数学プリント/特訓P8g_図形総合.html"},
+    {day:"P9c", title:"規則性 碁石・マッチ②", k:"tokkun_m09c", f:"プリント/夏_特訓数学プリント/特訓P9c_規則性碁石マッチ2.html"},
+    {day:"P9d", title:"規則性 数表・三角数", k:"tokkun_m09d", f:"プリント/夏_特訓数学プリント/特訓P9d_規則性数表三角数.html"},
+    {day:"P9e", title:"規則性 総合", k:"tokkun_m09e", f:"プリント/夏_特訓数学プリント/特訓P9e_規則性総合.html"},
+    {day:"P10c", title:"グラフ水そう②", k:"tokkun_m10c", f:"プリント/夏_特訓数学プリント/特訓P10c_グラフ水そう2.html"},
+    {day:"P10d", title:"速さグラフ・ダイヤ", k:"tokkun_m10d", f:"プリント/夏_特訓数学プリント/特訓P10d_速さグラフダイヤ.html"},
+    {day:"P10e", title:"比例と座標", k:"tokkun_m10e", f:"プリント/夏_特訓数学プリント/特訓P10e_比例と座標.html"},
+    {day:"P10f", title:"グラフ 総合", k:"tokkun_m10f", f:"プリント/夏_特訓数学プリント/特訓P10f_グラフ総合.html"}
+  ]}
+];
+
+/* ===== §3 国語（KEYは各プリント実値＝実行コードの var KEY を厳守。done同期の唯一の真実） ===== */
+var KOKUGO = [
+  /* 2026-07-13 追加。公式範囲「文法（単語・文の組み立て）」のうち「単語（品詞）」が在庫2問しかなく実質未カバーだった＝唯一の穴。 */
+  {day:"国 文法", title:"★単語と品詞（文節→単語／自立語・付属語／品詞10種）＝公式範囲「文法（単語・文の組み立て）」の穴", k:"tokkun_jb02", f:"プリント/国語プリント/国語文法02_単語と品詞.html"},
+  {day:"国 道具", title:"🔑 大問三の道具箱（文の成分・品詞・熟語の構成・四字熟語の見分け方まとめ）※解いたあとに開く", reference:true, k:"tokkun_jtec", f:"プリント/国語プリント/国語TEC_大問三の道具箱_見分け方まとめ.html"},
+  {day:"国01", title:"特訓 大問三型（漢字読み書き8／四字熟語空欄4／文節の働き・修飾6／慣用句3）", k:"tokkun_j01", f:"プリント/国語プリント/国語通常01_特訓大問三型_知識.html"},
+  {day:"国02", title:"記述（読解短文＋記述7・型カード・自己採点＋AI採点対応）", k:"tokkun_jk01", f:"プリント/国語プリント/国語記述01_読解短文と記述_型カード.html"},
+  {day:"国03", title:"知識 総点検①（漢字読み書き10／部首画数4／四字空欄5／対義・類義4／慣用句5／文節の働き6＝全34問・ミス分類C/K/A）", k:"tokkun_j02", f:"プリント/国語プリント/国語通常02_特訓大問三型_知識総点検.html"},
+  {day:"国04", title:"知識 総点検②（語を入れ替えた反復・全34問）", k:"tokkun_j03", f:"プリント/国語プリント/国語通常03_特訓大問三型_知識総点検02.html"},
+  {day:"国05", title:"長文読解①（文学・特訓大問一型＝AI自作の現代小説900字＋8問・iPad自己完結）", k:"tokkun_jr01", f:"プリント/国語プリント/国語読解01_文学長文_特訓大問一型.html"},
+  {day:"国06", title:"長文読解②（芥川龍之介「トロッコ」抜粋1536字＋8問・青空文庫/著作権切れ・iPad自己完結）", k:"tokkun_jr02", f:"プリント/国語プリント/国語読解02_トロッコ_芥川.html"},
+  {day:"国07", title:"評論①（大問二型・v3単独監査＝自作「色の名前と虹」520字＋接続語/抽象語/一文特定/25字記述8問）", k:"tokkun_je01", f:"プリント/国語プリント/国語評論01_説明文_分類と文化_特訓大問二型.html"},
+  {day:"国08", title:"評論②（大問二型・v3単独監査＝自作「自分らしさのありか」650字＋抽象語組合せ/主張特定/理由記述40字8問）", k:"tokkun_je02", f:"プリント/国語プリント/国語評論02_説明文_自分らしさ_特訓大問二型.html"},
+  {day:"国09", title:"知識 総点検③（穴ドメイン集約＝熟語の構成6/類義語4/故事成語の意味4/敬語4/詩歌3＝全21問・大問三型の未カバー知識）", k:"tokkun_j04", f:"プリント/国語プリント/国語通常04_特訓大問三型_知識総点検03.html"},
+  {day:"国10", title:"古文①（先取り＝9月特訓選抜の公式範囲外）＝歴史的仮名遣い8/古典単語の意味6/係り結び3＝全17問・初見ゼロ向け厚解説", ahead:true, k:"tokkun_jko1", f:"プリント/国語プリント/国語古文01_歴史的仮名遣いと古典単語_先取り.html"},
+  {day:"国11", title:"国語 50分自作通し①（29採点単位・自作100点／2023大問形式を参考／v3監査ではL3が不足）", k:"tokkun_jtoshi01", f:"プリント/国語プリント/国語本番通し01_50分100点_特訓型.html"}
+];
+
+/* ===== §4 英語きそ U1〜U12 ===== */
+var ENGLISH = [
+  {day:"U1", title:"be動詞（am/is/are・肯定否定疑問・this/these）", k:"tokkun_eg_be", f:"プリント/英語基礎/U1_be動詞_基礎深化.html"},
+  {day:"U2", title:"一般動詞（be動詞との区別・don't/Do）", k:"tokkun_eg_v", f:"プリント/英語基礎/U2_一般動詞_基礎深化.html"},
+  {day:"U3", title:"三単現の-s（-s/es/ies・doesn't/Does）", k:"tokkun_eg_s", f:"プリント/英語基礎/U3_三単現_基礎深化.html"},
+  {day:"U4", title:"名詞の複数形（-s/es/ies/ves・How many）", k:"tokkun_eg_pl", f:"プリント/英語基礎/U4_名詞の複数形_基礎深化.html"},
+  {day:"U5", title:"代名詞（I-my-me-mine の全体系）", k:"tokkun_eg_pron", f:"プリント/英語基礎/U5_代名詞_基礎深化.html"},
+  {day:"U6", title:"can（〜できる・can't/Can you）", k:"tokkun_eg_can", f:"プリント/英語基礎/U6_can_基礎深化.html"},
+  {day:"U7", title:"命令文・Let's（主語を消す・Don't）", k:"tokkun_eg_imp", f:"プリント/英語基礎/U7_命令文_基礎深化.html"},
+  {day:"U8", title:"疑問詞（what/where/when/how・順8補完）", k:"tokkun_eg_wh", f:"プリント/英語基礎/U8_疑問詞_基礎深化.html"},
+  {day:"U9", title:"形容詞・副詞（2用法・頻度副詞の位置・very）", k:"tokkun_eg_adj", f:"プリント/英語基礎/U9_形容詞副詞_基礎深化.html"},
+  {day:"U10", title:"前置詞（in/on/at 場所と時・listen to）", k:"tokkun_eg_prep", f:"プリント/英語基礎/U10_前置詞_基礎深化.html"},
+  {day:"U11", title:"現在進行形 be＋ing（学校2学期向け・9月特訓範囲外）", ahead:true, k:"tokkun_eg_prog", f:"プリント/英語基礎/U11_現在進行形_基礎深化.html"},
+  {day:"U12", title:"過去形 規則ed/不規則went/was・were（学校2学期向け・9月特訓範囲外）", ahead:true, k:"tokkun_eg_past", f:"プリント/英語基礎/U12_過去形_基礎深化.html"},
+  /* 2026-07-13 配線追加。特訓選抜英語3枚がダッシュボードから未参照＝実質使われない教材になっていた（過不足調査で発覚） */
+  {day:"特英1", title:"★書きかえマスター（be↔一般動詞・肯定↔否定↔疑問）― 特訓 大問6型", k:"tokkun_e_rw6", f:"プリント/特訓選抜英語/01_書きかえマスター_特訓大問6.html"},
+  {day:"特英2", title:"★並べ替えマスター（語順ルール）― 特訓 大問4型", k:"tokkun_e_re4", f:"プリント/特訓選抜英語/02_並べ替えマスター_特訓大問4.html"},
+  {day:"特英3", title:"★長文ひっかけマスター（読解の罠）― 特訓 大問7型", k:"tokkun_e_rd7", f:"プリント/特訓選抜英語/03_長文ひっかけマスター_特訓大問7.html"},
+  /* 2026-07-15 A17ステップ2＝本番形式の演習（これまで0枚だった穴） */
+  {day:"特英4", title:"★大問1マスター（適語補充・頭文字指定）― 3単現practices直撃", k:"tokkun_e_k1", f:"プリント/特訓選抜英語/04_大問1マスター_適語補充.html"},
+  {day:"特英5", title:"★大問2マスター（適語選択ア〜エ）", k:"tokkun_e_k2", f:"プリント/特訓選抜英語/05_大問2マスター_適語選択.html"},
+  {day:"特英6", title:"★大問3マスター（日本文→英文の適語補充）", k:"tokkun_e_k3", f:"プリント/特訓選抜英語/06_大問3マスター_適語補充.html"},
+  {day:"特英7", title:"★大問5マスター（対話補充・日本語なし）― one／a speaker of", k:"tokkun_e_k5", f:"プリント/特訓選抜英語/07_大問5マスター_対話補充.html"},
+  {day:"特英8", title:"★語数指定英作マスター（日本文→指定語数の英文）― 出力穴の直撃訓練", k:"tokkun_e_ws", f:"プリント/特訓選抜英語/08_語数指定英作マスター.html"},
+  {day:"特英9", title:"英語 50分自作通し①（45採点単位・2023大問形式を参考／v3監査では本番より易しめ）", k:"tokkun_e_toshi01", f:"プリント/特訓選抜英語/09_本番通し01_50分.html"}
+];
+
+/* ===== 🎯 本番判定・50分通し（8枚・2026-07-18追加）=====
+   分母133（REVIEW2+AMNESIA60+MATH38+国語12+英語21）には数えない＝常にnoCount=trueで描画（reference:trueバッジは付けず「通4」と同じ見た目にする）。
+   英本番①(tokkun_e_toshi01)＝ENGLISH配列の特英9と同一ファイル・同一KEY。国本番①(tokkun_jtoshi01)＝KOKUGO配列の国11と同一ファイル・同一KEY。
+   どちらも既存側で分母にカウント済みのため、ここで noCount=true で再掲してもダブルカウントにはならない（数学の通4/tokkun_m12dと同型の既存登録）。 */
+var MOCKEXAM = [
+  {day:"数 通5", title:"特訓選抜そっくり本番通し⑤（50分・100点）", k:"tokkun_m12e", f:"プリント/夏_特訓数学プリント/特訓P12e_50分通し5_独立フォーム.html"},
+  {day:"数 通6", title:"特訓選抜そっくり本番通し⑥（50分・100点）", k:"tokkun_m12f", f:"プリント/夏_特訓数学プリント/特訓P12f_50分通し6_独立フォーム.html"},
+  {day:"英 本番①", title:"英語 特訓選抜そっくり本番通し①（50分・100点）", k:"tokkun_e_toshi01", f:"プリント/特訓選抜英語/09_本番通し01_50分.html"},
+  {day:"英 本番②", title:"英語 特訓選抜そっくり本番通し②（50分・100点）", k:"tokkun_e_toshi02", f:"プリント/特訓選抜英語/10_本番通し02_50分.html"},
+  {day:"英 本番③", title:"英語 特訓選抜そっくり本番通し③（50分・100点）", k:"tokkun_e_toshi03", f:"プリント/特訓選抜英語/11_本番通し03_50分.html"},
+  {day:"国 本番①", title:"国語 特訓選抜そっくり本番通し①（50分・100点）", k:"tokkun_jtoshi01", f:"プリント/国語プリント/国語本番通し01_50分100点_特訓型.html"},
+  {day:"国 本番②", title:"国語 特訓選抜そっくり本番通し②（50分・100点）", k:"tokkun_jtoshi02", f:"プリント/国語プリント/国語本番通し02_50分100点_特訓型.html"},
+  {day:"国 本番③", title:"国語 特訓選抜そっくり本番通し③（50分・100点）", k:"tokkun_jtoshi03", f:"プリント/国語プリント/国語本番通し03_50分100点_特訓型.html"}
+];
+
+/* localStorage 読み取りの堅牢化。Safariプライベートモード・容量超過で例外→ページ全体クラッシュを防ぐ。
+   このダッシュボードは完了フラグを「読むだけ」（書き込みは各プリント側）。失敗時は false を返し、
+   一度だけ静かに注意（連打防止フラグ付き）。 */
+var storageWarned=false;
+function done(k){
+  try{
+    return localStorage.getItem(k+'_done')==='1';
+  }catch(e){
+    if(!storageWarned){
+      storageWarned=true;
+      try{ alert('シークレットモードだと、できた記録が保存・表示されないことがあるよ。'); }catch(e2){}
+    }
+    return false;
+  }
+}
+
+var allN=0, doneN=0;
+
+/* noCount=true のときは表示だけして「今できている割合」の分母には入れない（＝余力コース用） */
+function chk(k,f,noCount){
+  if(!f) return '<span class="chk todo">—</span>';
+  if(!noCount) allN++;
+  if(done(k)){ if(!noCount) doneN++; return '<span class="chk done">✓ できた</span>'; }
+  return '<span class="chk todo">まだ</span>';
+}
+function go(f,label,cls){
+  if(!f) return '<span class="soon">準備中</span>';
+  return '<a class="go '+(cls||'')+'" href="'+f+'">'+label+'</a>';
+}
+/* 1行レンダラ（数学・国語・英語・復習で共用） */
+function rowOf(r,label,cls,noCount){
+  return '<div class="row"><span class="day">'+r.day+'</span>'
+    +'<span class="ttl">'+r.title+(r.boost?'<span class="cond">通しで×のとき</span>':(r.reference?'<span class="cond">参考</span>':(r.ahead?'<span class="cond">必修後の先取り</span>':'')))+'</span>'
+    +go(r.f,label,cls)+chk(r.k,r.f,noCount)+'</div>';
+}
+/* 配列のうち f 実在分の done 数 / 全数 を返す */
+function tally(arr){
+  var t=0,n=0;
+  arr.forEach(function(r){ if(r.f){ n++; if(done(r.k)) t++; } });
+  return {done:t,all:n};
+}
+
+/* Day01=2026/7/18(土) から毎日。開始日を変えるならここだけ。 */
+var START=new Date(2026,6,18);
+var WD=['日','月','火','水','木','金','土'];
+function dateOf(i){ var d=new Date(START); d.setDate(d.getDate()+i); return (d.getMonth()+1)+'/'+d.getDate()+'('+WD[d.getDay()]+')'; }
+
+/* D2修正(2026-07-19): 9月対策の総仕上げ切替。8/22以降は新規プリントの自動推薦を止め、
+   まちがえ直し（SRS）＋本番通しの「仕上げモード」へ切り替える。一本道の骨格・分母133・各セクション表示は不変。 */
+var CUTOVER=new Date(2026,7,22); /* 2026/8/22（月は0起点＝7が8月） */
+function afterCutover(){var n=new Date();n.setHours(0,0,0,0);var c=new Date(CUTOVER);c.setHours(0,0,0,0);return n>=c;}
+
+/* §0 弱点復習（キューは「毎日」表示・分母には数えない） */
+var rH='';
+REVIEW.forEach(function(r){
+  rH+='<div class="row"><span class="day">'+r.day+'</span>'
+    +'<span class="ttl">'+r.title+'</span>'
+    +go(r.f,'ひらく','rev')
+    +(r.daily ? '<span class="chk daily">毎日</span>' : chk(r.k,r.f))+'</div>';
+});
+document.getElementById('reviewRows').innerHTML=rH;
+
+/* §1 暗記カード */
+var aH='';
+AMNESIA.forEach(function(r,i){
+  aH+='<div class="row"><span class="day">'+r.day+'<small style="display:block;font-weight:700;color:#7a8699">'+dateOf(i)+'</small></span>'
+    +'<span class="ttl">'+r.title+'<small>ローテ：'+r.rote+'</small></span>'
+    +go(r.f1,'その1',' ')+go(r.f2,'その2','s2')
+    +chk(r.k1,r.f1)+chk(r.k2,r.f2)+'</div>';
+});
+document.getElementById('amnesiaRows').innerHTML=aH;
+
+/* §2 特訓数学：固定必修38枚だけ分母へ。boost/reference/extraは分母外。 */
+var mH='', mAll=0, mDone=0;
+MATH_GROUPS.forEach(function(grp){
+  var core=grp.items.filter(function(r){return !grp.extra&&!r.boost&&!r.reference;});
+  var gt=tally(core); mAll+=gt.all; mDone+=gt.done;
+  mH+='<div class="grp'+(grp.extra?' extra':'')+'"><div class="grp-hd"><h3>'+grp.g+'</h3>'
+    +'<span class="gcnt">'+gt.done+' / '+gt.all+' 枚</span></div>';
+  grp.items.forEach(function(r){ mH+=rowOf(r,'ひらく',' ',grp.extra||r.boost||r.reference); });
+  mH+='</div>';
+});
+document.getElementById('mathRows').innerHTML=mH;
+
+/* §3 国語：9月対策11＋夏休み先取り古文1を分母へ。TECだけ分母外。 */
+var kH='';
+KOKUGO.forEach(function(r){ kH+=rowOf(r,'ひらく',' ',r.reference); });
+document.getElementById('kokugoRows').innerHTML=kH;
+
+/* §4 英語：9月対策19＋夏休み先取りU11/U12を分母へ。 */
+var eH='';
+ENGLISH.forEach(function(r){ eH+=rowOf(r,'ひらく',' ',r.reference); });
+document.getElementById('englishRows').innerHTML=eH;
+
+/* §Mock 本番判定・50分通し：常にnoCount=true（分母133に影響させない） */
+var mockH='';
+MOCKEXAM.forEach(function(r){ mockH+=rowOf(r,'ひらく',' ',true); });
+document.getElementById('mockRows').innerHTML=mockH;
+
+/* 件数・進捗バー（全 f 実在分が分母） */
+document.getElementById('allN').textContent=allN;
+document.getElementById('doneN').textContent=doneN;
+var pct=allN?Math.round(doneN/allN*100):0;
+document.getElementById('pct').textContent=pct+'%';
+document.getElementById('fill').style.width=pct+'%';
+
+/* セクション見出しの「できた数 / 全数」 */
+var tr=tally(REVIEW);
+document.getElementById('cntR').textContent=tr.done+' / '+tr.all+' 枚';
+/* 暗記は f1/f2 を別々に数える */
+var aAll=0,aDone=0;
+AMNESIA.forEach(function(r){
+  if(r.f1){aAll++; if(done(r.k1))aDone++;}
+  if(r.f2){aAll++; if(done(r.k2))aDone++;}
+});
+document.getElementById('cntA').textContent=aDone+' / '+aAll+' 枚';
+document.getElementById('cntM').textContent=mDone+' / '+mAll+' 枚';
+var tk=tally(KOKUGO.filter(function(r){return !r.reference;}));
+document.getElementById('cntK').textContent=tk.done+' / '+tk.all+' 枚';
+var te=tally(ENGLISH.filter(function(r){return !r.reference;}));
+document.getElementById('cntE').textContent=te.done+' / '+te.all+' 枚';
+var tmock=tally(MOCKEXAM);
+document.getElementById('cntMock').textContent=tmock.done+' / '+tmock.all+' 枚';
+
+/* ===== 🚀 一本道のおまかせ学習コース =====
+   順番は「英語→数学→英語→暗記→数学→国語」の反復。
+   日付では巻き戻さず、できる日は完了のたびに次へ進む。 */
+function firstTodo(arr){
+  for(var i=0;i<arr.length;i++){if(arr[i].f&&!done(arr[i].k))return arr[i];}
+  return null;
+}
+function taskOf(r,kind,min,why){
+  return {day:r.day,title:r.title,k:r.k,f:r.f,kind:kind,min:min,why:why};
+}
+var ROUTE_REVIEW=REVIEW.filter(function(r){return !r.daily;}).map(function(r){return taskOf(r,'弱点復習','15分','最初に、前の間違いを取り戻す');});
+var ROUTE_ENGLISH=ENGLISH.filter(function(r){return !r.reference&&!r.ahead;}).map(function(r){
+  return taskOf(r,r.day.indexOf('特英')===0?'英語・本番形式':'英語文法',r.day==='特英9'?'50分':'30分',r.day.indexOf('特英')===0?'文法を本番の形で使えるようにする':'9月に必要な文法を早く固める');
+});
+var ROUTE_MATH=[];
+var ROUTE_FINISH=[];
+var ROUTE_AHEAD=[];
+var ROUTE_BOOST=[];
+var ROUTE_EXTRA=[];
+MATH_GROUPS.forEach(function(g){
+  g.items.forEach(function(r){
+    var mathMin=r.day==='通4'?'45分':(r.day==='8/1'?'50分':'30分');
+    var t=taskOf(r,'数学',mathMin,'計算と立式を1枚ずつ確実にする');
+    if(!g.extra&&!r.boost&&!r.reference)ROUTE_MATH.push(t);
+    else if(r.boost)ROUTE_BOOST.push(t);
+    else if(g.extra)ROUTE_EXTRA.push(t);
+  });
+});
+ENGLISH.filter(function(r){return r.ahead;}).forEach(function(r){ROUTE_AHEAD.push(taskOf(r,'英語・2学期先取り','30分','9月対策130の後も、夏休み中に必ず進む先取り'));});
+var ROUTE_AMNESIA=[];
+AMNESIA.forEach(function(r){
+  ROUTE_AMNESIA.push({day:r.day+' その1',title:r.title,k:r.k1,f:r.f1,kind:'暗記',min:'15分',why:'前回の続きから、書いて思い出す'});
+  ROUTE_AMNESIA.push({day:r.day+' その2',title:r.rote,k:r.k2,f:r.f2,kind:'暗記',min:'15分',why:'かくして思い出し、定着させる'});
+});
+var ROUTE_KOKUGO=KOKUGO.filter(function(r){return !r.reference&&!r.ahead;}).map(function(r){return taskOf(r,'国語',r.day==='国11'?'50分':'30分','知識と読解を本番形式で積み上げる');});
+KOKUGO.filter(function(r){return r.ahead;}).forEach(function(r){ROUTE_AHEAD.push(taskOf(r,'国語・先取り','30分','9月対策130の後も、夏休み中に必ず進む先取り'));});
+/* 先取り3枚は夏休み必修。boost/extraは全件自動投入せず、誤答・余力時だけ教科欄から使う。 */
+ROUTE_FINISH=ROUTE_AHEAD.slice();
+/* 🎯 本番判定8枚＝一本道の第3段（必修130＋先取り3が全部済んでから出す余力枠）。
+   noCountのまま＝分母133には数えない。英本番①/国本番①は既存KEYと同一で二重加算しない（syncActivityのseenで防止）。 */
+var ROUTE_MOCK=MOCKEXAM.map(function(r){return taskOf(r,'本番判定','50分','必修と先取りが終わったら、本番と同じ50分通しで力だめし（やらなくてもOK）');});
+
+/* 6枠で英語2・数学2・暗記1・国語1。空になった教科は自動で飛ばす。 */
+var ROUTE=ROUTE_REVIEW.slice();
+var streams={E:ROUTE_ENGLISH,M:ROUTE_MATH,A:ROUTE_AMNESIA,K:ROUTE_KOKUGO};
+var pos={E:0,M:0,A:0,K:0},pattern=['E','M','E','A','M','K'];
+while(pos.E<streams.E.length||pos.M<streams.M.length||pos.A<streams.A.length||pos.K<streams.K.length){
+  pattern.forEach(function(code){if(pos[code]<streams[code].length)ROUTE.push(streams[code][pos[code]++]);});
+}
+
+function jsonGet(k,fallback){try{var v=JSON.parse(localStorage.getItem(k));return v==null?fallback:v;}catch(e){return fallback;}}
+function dayStamp(ts){var d=new Date(ts||Date.now());return d.getFullYear()+'-'+('0'+(d.getMonth()+1)).slice(-2)+'-'+('0'+d.getDate()).slice(-2);}
+function workedToday(pre){var h=jsonGet(pre+'hist',[]),today=dayStamp();return h.some(function(x){return x&&dayStamp(x.t)===today;});}
+function activeDynCount(c){
+  var arr=jsonGet(c.dyn,[]);if(!Array.isArray(arr)||!arr.length)return 0;
+  var map=jsonGet(c.map,{}),ids=[];Object.keys(map||{}).forEach(function(k){if(ids.indexOf(map[k])<0)ids.push(map[k]);});
+  if(!ids.length)return arr.length;var n=0,now=Math.floor(Date.now()/86400000);
+  ids.forEach(function(id){var st=jsonGet(c.pre+id,{cnt:0,mastered:false,gradTs:0});if(st.mastered)return;if((+st.cnt||0)<2){n++;return;}var grad=Math.floor((+st.gradTs||Date.now())/86400000);if(now-grad>=7)n++;});
+  return n;
+}
+var RECOVERY=[
+  {dyn:'revq_dyn',map:'revq_dynmap',pre:'revq_',kind:'英語の復習',f:'プリント/夏_特訓数学プリント/復習英語_まちがえ復習キュー.html'},
+  {dyn:'revmq_dyn',map:'revmq_dynmap',pre:'revmq_',kind:'数学の復習',f:'プリント/夏_特訓数学プリント/復習数学_まちがえ復習キュー.html'},
+  {dyn:'revjq_dyn',map:'revjq_dynmap',pre:'revjq_',kind:'国語の復習',f:'プリント/夏_特訓数学プリント/復習国語_まちがえ復習キュー.html'}
+];
+function recoveryPick(){
+  for(var i=0;i<RECOVERY.length;i++){var c=RECOVERY[i],n=activeDynCount(c);if(n>0&&!workedToday(c.pre))return {day:'まちがえ直し',title:c.kind+'（'+n+'問）',f:c.f,k:'',kind:'復習',min:'15分',why:'間違えた問題があるので、先に1ブロックだけ回収',recovery:true};}
+  return null;
+}
+function unfinished(arr,start){for(var i=start||0;i<arr.length;i++){if(!done(arr[i].k))return {task:arr[i],index:i};}return null;}
+
+/* 新しく✓になった教材を、戻ってきた時刻で「今日できた」に記録する。 */
+var ACT_KEY='summer_route_activity_v1',SEEN_KEY='summer_route_seen_v1',INIT_KEY='summer_route_seen_init_v1';
+function syncActivity(){
+  var seen=jsonGet(SEEN_KEY,{}),hist=jsonGet(ACT_KEY,[]),initialized=localStorage.getItem(INIT_KEY)==='1';
+  ROUTE.concat(ROUTE_FINISH).concat(ROUTE_MOCK).forEach(function(t){
+    if(!t.k||!done(t.k))return;
+    if(initialized&&!seen[t.k])hist.push({k:t.k,title:t.title,kind:t.kind,min:parseInt(t.min,10)||0,t:Date.now()});
+    seen[t.k]=1;
+  });
+  try{localStorage.setItem(SEEN_KEY,JSON.stringify(seen));localStorage.setItem(ACT_KEY,JSON.stringify(hist.slice(-120)));localStorage.setItem(INIT_KEY,'1');}catch(e){}
+  return hist.filter(function(x){return x&&dayStamp(x.t)===dayStamp();});
+}
+var todayActivity=syncActivity(),recovery=recoveryPick(),cutover=afterCutover();
+var main=cutover?null:unfinished(ROUTE,0),finish=null,mock=null,current=null,currentIndex=-1,coreMode=!cutover;
+if(!main&&!cutover){finish=unfinished(ROUTE_FINISH,0);coreMode=false;}
+if(!main&&!finish){mock=unfinished(ROUTE_MOCK,0);}
+if(recovery)current=recovery;else if(main){current=main.task;currentIndex=main.index;}else if(finish){current=finish.task;currentIndex=finish.index;}else if(mock){current=mock.task;currentIndex=mock.index;}
+var nextPick=null;
+if(recovery){nextPick=main?main.task:(finish?finish.task:(mock?mock.task:null));}
+else if(main){var nn=unfinished(ROUTE,main.index+1);nextPick=nn?nn.task:((unfinished(ROUTE_FINISH,0)||{}).task||(unfinished(ROUTE_MOCK,0)||{}).task||null);}
+else if(finish){var nf=unfinished(ROUTE_FINISH,finish.index+1);nextPick=nf?nf.task:((unfinished(ROUTE_MOCK,0)||{}).task||null);}
+else if(mock){var nm=unfinished(ROUTE_MOCK,mock.index+1);nextPick=nm?nm.task:null;}
+/* いまの1枚が本番判定（余力枠）かどうか。recovery中は本番判定ではない。 */
+var mockNow=!!(current&&current.kind==='本番判定');
+
+/* D1修正(2026-07-19): 暗記カードは15分＝30分プリントの半分。暗記1枚=0.5枚換算にして「2枚≒約60分」の整合を取る。
+   これで暗記2枚（=30分）だけでは今日のぶん未達＝実質ペースが上がり、30分プリント2枚（=60分）で達成になる。 */
+function sheetWeight(x){return x&&x.kind==='暗記'?0.5:1;}
+function fmtSheets(n){return String(Math.round(n*10)/10);}
+var DAILY_GOAL_SHEETS=2;
+var todayMinutes=todayActivity.reduce(function(sum,x){return sum+(+x.min||0);},0);
+var todayUnits=todayActivity.reduce(function(sum,x){return sum+sheetWeight(x);},0);
+var goalHit=todayUnits>=DAILY_GOAL_SHEETS;
+var remainUnits=Math.max(0,DAILY_GOAL_SHEETS-todayUnits);
+var statusH='<div class="route-status"><span class="route-chip">今日 '+fmtSheets(todayUnits)+'枚 / 2枚（約60分）</span>'
+  +'<span class="route-chip'+(goalHit?' goal':'')+'">'+(goalHit?'✓ 今日のぶんはおわり！ここでやめてOK 🌸（つづけてもいい）':'あと'+fmtSheets(remainUnits)+'枚で今日のぶん')+'</span>'
+  +'<span class="route-chip">必修 '+doneN+' / '+allN+'</span></div>';
+var recent=todayActivity.slice(-3).reverse();
+var doneText=recent.length?recent.map(function(x){return '✓ '+x.kind+'　'+x.title;}).join('<br>'):'今日はまだ0こ。最初の1問から始めよう。';
+var nextText=nextPick?'→ '+nextPick.kind+'　'+nextPick.title:'ぜんぶ終わりました。おつかれさま！';
+var bodyH=statusH;
+if(current){
+  var todayNo=todayActivity.length+1;
+  var orderText=current.recovery?(cutover?'仕上げモード｜まちがえ直しを先に':'まちがえ復習を先に')
+    :(mockNow?(cutover?'🏁 仕上げモード｜本番通し '+(currentIndex+1)+' / '+ROUTE_MOCK.length:'🎉必修＋先取り完了！余力があれば｜本番判定 '+(currentIndex+1)+' / '+ROUTE_MOCK.length)
+    :'今日 '+todayNo+'枚目'+(coreMode?'（全体 '+(currentIndex+1)+' / '+ROUTE.length+'）':'（先取り '+(currentIndex+1)+' / '+ROUTE_FINISH.length+'）'));
+  bodyH+='<div class="route-current"><div class="eyebrow">いまやる｜'+orderText+'</div><div class="rtitle">'+current.kind+'　'+current.title+'</div><div class="rwhy">'+current.why+'</div><span class="rmeta">目安 '+current.min+'</span></div>';
+}else bodyH+='<div class="alldone">🎉 '+(cutover?'仕上げの復習も本番通しも、ぜんぶやり切ったね！あとは体調をととのえて本番へ。':'必修も先取りも本番判定も、ぜんぶやり切りました！すごい！')+'</div>';
+bodyH+='<div class="route-seq"><div class="route-box donebox"><h3>できた</h3><p>'+doneText+'</p></div><div class="route-box"><h3>その次</h3><p>'+nextText+'</p></div></div>'
+  +'<div class="route-note">'+(cutover?'🏁 9/12がちかいよ。ここからは新しい問題より、まちがえ直しと本番通しで仕上げよう。今日も2枚（約60分）でOK。🌸':'今日は2枚（約60分）でおしまいでOK。まだできる日は、戻るたびに次が自動で出ます。🌸')+'</div>';
+document.getElementById('todayBody').innerHTML=bodyH;
+document.getElementById('tCta').innerHTML=current
+  ?'<div class="cta-line"><span class="cta-lab">'+(mockNow?(cutover?'仕上げに':'余力があれば'):'選ばなくてOK')+'</span><a class="startbtn" href="'+current.f+'">▶ '+(mockNow?(cutover?'🏁本番通しに挑戦':'🎯本番判定に挑戦'):(todayActivity.length?'つぎの問題をはじめる':'この問題をはじめる'))+'</a></div>'
+  :'<div class="alldone">✓ おすすめコース完了</div>';
+
+/* とじた一覧にも各教科の続きだけ表示する。 */
+function nx(pick){if(!pick)return '✓ ぜんぶ済み';var t=pick.title;if(t.length>26)t=t.slice(0,26)+'…';return 'つぎ：'+pick.day+'　'+t;}
+var reviewNext=firstTodo(REVIEW.filter(function(r){return !r.daily;}));
+var amnesiaNext=firstTodo(ROUTE_AMNESIA),mathNext=firstTodo(ROUTE_MATH),englishNext=firstTodo(ROUTE_ENGLISH),kokugoNext=firstTodo(ROUTE_KOKUGO);
+document.getElementById('nxR').textContent=nx(reviewNext);
+var trN=tally(REVIEW.filter(function(r){return !r.daily;}));
+document.getElementById('cntR').textContent=trN.done+' / '+trN.all+' 枚（＋キュー）';
+document.getElementById('nxA').textContent=nx(amnesiaNext);
+document.getElementById('nxM').textContent=nx(mathNext);
+document.getElementById('nxE').textContent=nx(englishNext);
+document.getElementById('nxK').textContent=nx(kokugoNext);
+
+/* iPadの戻るキャッシュでも、完了後は必ず次の推薦へ更新する。 */
+function routeSignature(){return ROUTE.concat(ROUTE_FINISH).concat(ROUTE_MOCK).map(function(t){return done(t.k)?'1':'0';}).join('');}
+var routeSig=routeSignature();
+window.addEventListener('pageshow',function(e){if(e.persisted&&routeSignature()!==routeSig)location.reload();});
+document.addEventListener('visibilitychange',function(){if(!document.hidden&&routeSignature()!==routeSig)location.reload();});
+window.addEventListener('storage',function(e){if(e&&e.key&&(/_done$/.test(e.key)||/^(revq|revmq|revjq)_/.test(e.key)))location.reload();});
+
+/* 行ぜんたいをタップできるようにする（「ひらく」が1本の行だけ。暗記カードはその1/その2で2本あるため対象外） */
+['reviewRows','mathRows','kokugoRows','englishRows','mockRows'].forEach(function(id){
+  var box=document.getElementById(id);
+  if(!box || !box.addEventListener) return;
+  box.addEventListener('click',function(ev){
+    var t=ev.target;
+    if(!t.closest) return;              /* 古い環境では何もしない＝従来どおりボタンで開く */
+    if(t.closest('a')) return;          /* リンク自体のタップは通常どおり */
+    var row=t.closest('.row');
+    if(!row) return;
+    var a=row.querySelector('a.go');
+    if(a) location.href=a.getAttribute('href');
+  });
+});
+</script>
+</body>
+</html>

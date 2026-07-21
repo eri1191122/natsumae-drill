@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 国語 文法02（単語と品詞）＝塾公式範囲「文法（単語・文の組み立て）」の“単語”側を塞ぐプリント。
+ ・構成：大問一 文節→単語に分ける4／大問二 自立語・付属語4／大問三 品詞10種の識別10／大問四 言い切りの形2 ＝計20問・約30分
+ ・KEY=tokkun_jb02（既存11枚と衝突なし＝Grep実測0件）。もどる=../../夏休みダッシュボード.html。
+ ・★全項目は ✓検証済DB『国語_漢字語彙文法管理_中1特訓頻出.md』§F-1／§F-2（2026-07-13 拡充：自立語・付属語／品詞10種識別表／文節→単語の3手順／ひっかけ4つ）からコピー。プリント側で答えを新しく作っていない。
+ ・出題帯：新出漢字は全て漢検3級以内（kanken.json で機械判定済／最難＝咲4級・飾4級。準2級以上ゼロ）。
+ ・活用の“しかた”（活用形6種・五段/上一段/下一段/カ変/サ変）は中1・2学期のため意図的に除外。ここは「活用するか／しないか」「言い切りの形」まで。
+ ・解答前ヒント禁止：見出し・qhint に解法/着眼/ひっかけ予告を書かない。解説は ans-box（display:none）内のみ。
+ ・機構（t/g/m/finish・localStorage・○✕＋ミス型C/K/A・印刷・onload復元）は通常01(tokkun_j01)を完全踏襲。
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>国語 文法02｜単語と品詞｜約30分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-body{padding:16px 20px}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+.th-amber .sec-hd{background:#fbf2e2;border-left:6px solid #d9b46d}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:14px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#8a5a19}
+.bx-warn::before{content:"⚠️ つまずき注意";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#5f4b7a}
+.bx-link::before{content:"🔗 特訓テストではこう出る";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:12px 0}
+.qword{font-size:19px;font-weight:900;color:#31415f}
+.qword .blank{display:inline-block;min-width:1.6em;border-bottom:2px solid #c0392b;color:#c0392b;text-align:center}
+.qword .ul{text-decoration:underline;text-decoration-color:#3f6f9f;text-decoration-thickness:2px;color:#31415f}
+.qhint{font-size:13px;color:#4c5b70;margin-top:2px}
+.choices{font-size:14px;color:#34465c;margin-top:6px;line-height:2}
+.choices10{font-size:13.5px;color:#34465c;margin-top:6px;line-height:1.95;background:#f6f8fb;border:1px solid #dfe6ef;border-radius:8px;padding:8px 12px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:13px}
+.ans-box.open{display:block}
+.ans-main{font-size:19px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-read{font-size:13px;color:#405060;margin-bottom:4px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.miss{display:none;margin-top:8px;background:#f6f3ee;border:1px dashed #cdbfa6;border-radius:8px;padding:8px 12px;font-size:12.5px;color:#6b5a3e}
+.miss.show{display:block}
+.miss .ml{font-weight:800;margin-right:6px}
+.miss button{font-size:12px;border:1px solid #cdbfa6;background:#fff;color:#6b5a3e;border-radius:14px;padding:3px 10px;margin:3px 4px 0 0;cursor:pointer}
+.miss button.sel{background:#b89b6a;color:#fff;border-color:#b89b6a}
+.redo{display:block;margin-top:6px;color:#8a5a19;font-size:12.5px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.miss{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec{break-inside:avoid;page-break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">国語 文法02</span><span class="pg-badge">単語と品詞</span><span class="pg-badge">全20問</span></div>
+  <h1>国語 文法02｜単語と品詞</h1>
+  <p>目安 約30分　対象: 中1　＝まずノートに自分で答えを書いてから「答えを見る」。○✕をつけ、✕は「なぜ？」を1つ選ぶ。</p>
+  <p class="pg-sub">🌸 9月の特訓選抜の公式範囲に「文法（単語・文の組み立て）」がある。文を <b>文節</b> より細かい <b>単語</b> に分け、10種類の <b>品詞</b> を見分ける練習をしよう。</p>
+</div>
+
+<!-- ===== 大問一 文節→単語に分ける（4問） ===== -->
+<div class="unit-banner">
+  <span class="unit-num">大問一</span>
+  <span class="unit-name">文を 単語 に分ける</span>
+  <span class="unit-time">4問</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-hd"><h2>単語に分ける</h2><span class="badge-grade">公式範囲「単語」</span></div>
+  <div class="sec-body">
+
+    <div class="q" data-id="B1-1">
+      <div class="qnum-e">問題1｜単語の数①</div>
+      <div class="qword">私は 本を 読む。</div>
+      <div class="qhint">この文はいくつの単語からできているか。数を答え、ノートに区切って書こう。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">5単語</div>
+        <div class="ans-read">私（名詞）｜は（助詞）／本（名詞）｜を（助詞）／読む（動詞）　＝3文節・5単語</div>
+        <div class="bx-warn">文節（私は／本を／読む＝3つ）と単語（5つ）は<span class="red">別のもの</span>。文節の中の「は」「を」も1単語として数える。</div>
+      </div>
+      <div class="gq" data-gid="B1-1">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B1-1','o')">○</button><button class="x" onclick="g(this,'B1-1','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B1-1','C')">うっかり</button><button onclick="m(this,'B1-1','K')">やり方不明</button><button onclick="m(this,'B1-1','A')">習ったが使えない</button><span class="redo">→ ①文節に分ける ②先頭の自立語を切る ③残りを付属語に分ける</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B1-2">
+      <div class="qnum-e">問題2｜単語の数②</div>
+      <div class="qword">白い 花が 咲く。</div>
+      <div class="qhint">この文はいくつの単語からできているか。数を答え、ノートに区切って書こう。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">4単語</div>
+        <div class="ans-read">白い（形容詞）／花（名詞）｜が（助詞）／咲く（動詞）　＝3文節・4単語</div>
+        <div class="bx-warn">「白い」は これ1語で形容詞。<span class="red">「白」＋「い」に分けない</span>（言い切りが「い」で1つの語）。</div>
+      </div>
+      <div class="gq" data-gid="B1-2">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B1-2','o')">○</button><button class="x" onclick="g(this,'B1-2','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B1-2','C')">うっかり</button><button onclick="m(this,'B1-2','K')">やり方不明</button><button onclick="m(this,'B1-2','A')">習ったが使えない</button><span class="redo">→ 用言（〜い／〜る）は1語のまま切らない</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B1-3">
+      <div class="qnum-e">問題3｜単語の数③</div>
+      <div class="qword">弟は 学校へ 行った。</div>
+      <div class="qhint">この文はいくつの単語からできているか。数を答え、ノートに区切って書こう。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">6単語</div>
+        <div class="ans-read">弟（名詞）｜は（助詞）／学校（名詞）｜へ（助詞）／行っ（動詞）｜た（助動詞）　＝3文節・6単語</div>
+        <div class="bx-warn">「行った」は <span class="red">行っ（動詞）＋た（助動詞）</span> の2語。過去の「た」は付属語なので独立して数える。</div>
+      </div>
+      <div class="gq" data-gid="B1-3">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B1-3','o')">○</button><button class="x" onclick="g(this,'B1-3','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B1-3','C')">うっかり</button><button onclick="m(this,'B1-3','K')">やり方不明</button><button onclick="m(this,'B1-3','A')">習ったが使えない</button><span class="redo">→ 「た・ない・ます」は助動詞＝別の1語</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B1-4">
+      <div class="qnum-e">問題4｜単語の数④</div>
+      <div class="qword">母が 庭に 花を 植える。</div>
+      <div class="qhint">この文はいくつの単語からできているか。数を答え、ノートに区切って書こう。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">7単語</div>
+        <div class="ans-read">母（名詞）｜が（助詞）／庭（名詞）｜に（助詞）／花（名詞）｜を（助詞）／植える（動詞）　＝4文節・7単語</div>
+        <div class="bx-warn">文節は4つ（＝自立語も4つ）。そこに助詞3つが加わって7単語。<span class="red">文節の数＝自立語の数</span>。</div>
+      </div>
+      <div class="gq" data-gid="B1-4">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B1-4','o')">○</button><button class="x" onclick="g(this,'B1-4','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B1-4','C')">うっかり</button><button onclick="m(this,'B1-4','K')">やり方不明</button><button onclick="m(this,'B1-4','A')">習ったが使えない</button><span class="redo">→ 文節に分けてから、各文節を自立語＋付属語に割ろう</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== 大問二 自立語・付属語（4問） ===== -->
+<div class="unit-banner">
+  <span class="unit-num">大問二</span>
+  <span class="unit-name">自立語 と 付属語</span>
+  <span class="unit-time">4問</span>
+</div>
+<div class="sec th-teal">
+  <div class="sec-hd"><h2>自立語・付属語</h2><span class="badge-grade">公式範囲「文の組み立て」</span></div>
+  <div class="sec-body">
+
+    <div class="q" data-id="B2-1">
+      <div class="qnum-e">問題5｜付属語をぬき出す①</div>
+      <div class="qword">今日は とても 寒い。</div>
+      <div class="qhint">この文の中の <b>付属語</b> をすべてぬき出そう。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">は（1つだけ）</div>
+        <div class="ans-read">今日（名詞・自立語）｜は（助詞・付属語）／とても（副詞・自立語）／寒い（形容詞・自立語）</div>
+        <div class="bx-warn">「とても」は自立語（副詞）。<span class="red">付属語ではない</span>。付属語＝自立語にくっつく「が・を・は・た・ない」など。</div>
+      </div>
+      <div class="gq" data-gid="B2-1">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B2-1','o')">○</button><button class="x" onclick="g(this,'B2-1','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B2-1','C')">うっかり</button><button onclick="m(this,'B2-1','K')">やり方不明</button><button onclick="m(this,'B2-1','A')">習ったが使えない</button><span class="redo">→ 「それだけで意味が分かる？」で自立語か判定しよう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B2-2">
+      <div class="qnum-e">問題6｜付属語をぬき出す②</div>
+      <div class="qword">花が 美しく 咲いた。</div>
+      <div class="qhint">この文の中の <b>付属語</b> をすべてぬき出そう。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">が ・ た（2つ）</div>
+        <div class="ans-read">花（名詞）｜が（助詞）／美しく（形容詞）／咲い（動詞）｜た（助動詞）</div>
+        <div class="bx-warn">付属語は助詞と助動詞の2種類だけ。「が」＝助詞、「た」＝<span class="red">助動詞</span>。「咲いた」の「た」を見落としやすい。</div>
+      </div>
+      <div class="gq" data-gid="B2-2">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B2-2','o')">○</button><button class="x" onclick="g(this,'B2-2','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B2-2','C')">うっかり</button><button onclick="m(this,'B2-2','K')">やり方不明</button><button onclick="m(this,'B2-2','A')">習ったが使えない</button><span class="redo">→ 動詞のうしろの「た・ない・ます」も付属語</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B2-3">
+      <div class="qnum-e">問題7｜自立語の数</div>
+      <div class="qword">兄は 毎朝 走る。</div>
+      <div class="qhint">この文の中の <b>自立語</b> はいくつあるか。数を答えよう。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">3つ（兄・毎朝・走る）</div>
+        <div class="ans-read">兄（名詞）｜は（助詞）／毎朝（名詞）／走る（動詞）　＝文節も3つ</div>
+        <div class="bx-warn">自立語は1文節に必ず1つ。だから <span class="red">自立語の数＝文節の数</span>。数え方の確認に使える。</div>
+      </div>
+      <div class="gq" data-gid="B2-3">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B2-3','o')">○</button><button class="x" onclick="g(this,'B2-3','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B2-3','C')">うっかり</button><button onclick="m(this,'B2-3','K')">やり方不明</button><button onclick="m(this,'B2-3','A')">習ったが使えない</button><span class="redo">→ 「ネ」で文節に切って、その数を数えよう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B2-4">
+      <div class="qnum-e">問題8｜付属語だけの組</div>
+      <div class="qword">次のうち、<span class="ul">付属語だけ</span> でできている組はどれか。</div>
+      <div class="qhint">記号で答えよう。</div>
+      <div class="choices">ア 花・走る　イ が・を　ウ とても・この　エ しかし・はい</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">イ（が・を）</div>
+        <div class="ans-read">が・を＝助詞（付属語）。ア＝名詞・動詞／ウ＝副詞・連体詞／エ＝接続詞・感動詞は、すべて自立語。</div>
+        <div class="bx-warn">付属語は <span class="red">助詞と助動詞の2種類だけ</span>。残り8種（名詞・動詞・形容詞・形容動詞・副詞・連体詞・接続詞・感動詞）は全部自立語。</div>
+      </div>
+      <div class="gq" data-gid="B2-4">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B2-4','o')">○</button><button class="x" onclick="g(this,'B2-4','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B2-4','C')">うっかり</button><button onclick="m(this,'B2-4','K')">やり方不明</button><button onclick="m(this,'B2-4','A')">習ったが使えない</button><span class="redo">→ 「単独で文節を作れるか」で判定しよう</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== 大問三 品詞10種の識別（10問） ===== -->
+<div class="unit-banner">
+  <span class="unit-num">大問三</span>
+  <span class="unit-name">品詞10種を 見分ける</span>
+  <span class="unit-time">10問</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>品詞の識別</h2><span class="badge-grade">特訓 大問三(3)型</span></div>
+  <div class="sec-body">
+
+    <div class="choices10">【問題9〜18 共通の選択肢】　ア 名詞　イ 動詞　ウ 形容詞　エ 形容動詞　オ 副詞　カ 連体詞　キ 接続詞　ク 感動詞　ケ 助動詞　コ 助詞</div>
+
+    <div class="q" data-id="B3-1">
+      <div class="qnum-e">問題9｜品詞①</div>
+      <div class="qword"><span class="ul">大きな</span> 箱を 運ぶ。</div>
+      <div class="qhint">──の品詞を、上の選択肢から記号で。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">カ（連体詞）</div>
+        <div class="ans-read">「大きな」は名詞「箱」だけを修飾し、活用しない＝連体詞。</div>
+        <div class="bx-warn">「大き<span class="red">い</span>箱」なら形容詞（言い切りが「い」）。「大き<span class="red">な</span>」は「な」の形しかないので連体詞。この2つは入れかわりやすい。</div>
+      </div>
+      <div class="gq" data-gid="B3-1">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B3-1','o')">○</button><button class="x" onclick="g(this,'B3-1','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B3-1','C')">うっかり</button><button onclick="m(this,'B3-1','K')">やり方不明</button><button onclick="m(this,'B3-1','A')">習ったが使えない</button><span class="redo">→ 言い切りが「い」か「な」かで分けよう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B3-2">
+      <div class="qnum-e">問題10｜品詞②</div>
+      <div class="qword">今日の 海は <span class="ul">静かだ</span>。</div>
+      <div class="qhint">──の品詞を、上の選択肢から記号で。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">エ（形容動詞）</div>
+        <div class="ans-read">言い切りが「だ」で、ようすを表す＝形容動詞。「静かな海」と「〜な＋名詞」の形にできる。</div>
+        <div class="bx-warn">同じ「〜だ」でも「学生だ」は <span class="red">名詞＋助動詞</span>（×学生な人）。「〜な＋名詞」と言えるかで区別する。</div>
+      </div>
+      <div class="gq" data-gid="B3-2">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B3-2','o')">○</button><button class="x" onclick="g(this,'B3-2','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B3-2','C')">うっかり</button><button onclick="m(this,'B3-2','K')">やり方不明</button><button onclick="m(this,'B3-2','A')">習ったが使えない</button><span class="redo">→ 「〜な＋名詞」に直せるか試そう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B3-3">
+      <div class="qnum-e">問題11｜品詞③</div>
+      <div class="qword">父と <span class="ul">ゆっくり</span> 歩く。</div>
+      <div class="qhint">──の品詞を、上の選択肢から記号で。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">オ（副詞）</div>
+        <div class="ans-read">「ゆっくり」は動詞「歩く」を「どのように」と詳しくする＝副詞。活用しない。</div>
+        <div class="bx-warn">修飾する相手が <span class="red">用言（動詞・形容詞）なら副詞</span>、体言（名詞）なら連体詞。何を修飾しているかで決める。</div>
+      </div>
+      <div class="gq" data-gid="B3-3">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B3-3','o')">○</button><button class="x" onclick="g(this,'B3-3','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B3-3','C')">うっかり</button><button onclick="m(this,'B3-3','K')">やり方不明</button><button onclick="m(this,'B3-3','A')">習ったが使えない</button><span class="redo">→ 矢印を引いて「何を修飾するか」を確かめよう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B3-4">
+      <div class="qnum-e">問題12｜品詞④</div>
+      <div class="qword">雨が やんだ。<span class="ul">しかし</span>、風は 強い。</div>
+      <div class="qhint">──の品詞を、上の選択肢から記号で。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">キ（接続詞）</div>
+        <div class="ans-read">前の文と後の文をつなぐ自立語＝接続詞。単独で接続語になる。</div>
+        <div class="bx-warn">「しかし・だから・そして・また」は接続詞。<span class="red">品詞名は「接続詞」、文の成分名は「接続語」</span>。呼び名を混同しない。</div>
+      </div>
+      <div class="gq" data-gid="B3-4">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B3-4','o')">○</button><button class="x" onclick="g(this,'B3-4','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B3-4','C')">うっかり</button><button onclick="m(this,'B3-4','K')">やり方不明</button><button onclick="m(this,'B3-4','A')">習ったが使えない</button><span class="redo">→ 品詞名（〜詞）と成分名（〜語）を区別しよう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B3-5">
+      <div class="qnum-e">問題13｜品詞⑤</div>
+      <div class="qword"><span class="ul">はい</span>、わかりました。</div>
+      <div class="qhint">──の品詞を、上の選択肢から記号で。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ク（感動詞）</div>
+        <div class="ans-read">応答を表し、単独で独立語になる自立語＝感動詞。</div>
+        <div class="bx-warn">「ああ・はい・いいえ・もしもし・おい」は感動詞。<span class="red">品詞名は「感動詞」、成分名は「独立語」</span>。</div>
+      </div>
+      <div class="gq" data-gid="B3-5">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B3-5','o')">○</button><button class="x" onclick="g(this,'B3-5','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B3-5','C')">うっかり</button><button onclick="m(this,'B3-5','K')">やり方不明</button><button onclick="m(this,'B3-5','A')">習ったが使えない</button><span class="redo">→ 感動・呼びかけ・応答なら感動詞</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B3-6">
+      <div class="qnum-e">問題14｜品詞⑥</div>
+      <div class="qword">本 <span class="ul">を</span> 読む。</div>
+      <div class="qhint">──の品詞を、上の選択肢から記号で。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">コ（助詞）</div>
+        <div class="ans-read">名詞「本」に付いて、動詞「読む」との関係（何を）を示す付属語。活用しない＝助詞。</div>
+        <div class="bx-warn">付属語のうち <span class="red">活用しない</span>のが助詞（が・を・に・は・の・から・ので・ね・か）。</div>
+      </div>
+      <div class="gq" data-gid="B3-6">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B3-6','o')">○</button><button class="x" onclick="g(this,'B3-6','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B3-6','C')">うっかり</button><button onclick="m(this,'B3-6','K')">やり方不明</button><button onclick="m(this,'B3-6','A')">習ったが使えない</button><span class="redo">→ 形が変わる（活用する）かを試そう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B3-7">
+      <div class="qnum-e">問題15｜品詞⑦</div>
+      <div class="qword">先生に ほめ <span class="ul">られる</span>。</div>
+      <div class="qhint">──の品詞を、上の選択肢から記号で。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ケ（助動詞）</div>
+        <div class="ans-read">動詞「ほめる」に付いて「〜される（受身）」の意味を加える付属語。「られ<span class="red">た</span>／られ<span class="red">ない</span>」と形が変わる＝活用する＝助動詞。</div>
+        <div class="bx-warn">付属語のうち <span class="red">活用する</span>のが助動詞（れる・られる・ない・た・ます・う・です）。</div>
+      </div>
+      <div class="gq" data-gid="B3-7">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B3-7','o')">○</button><button class="x" onclick="g(this,'B3-7','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B3-7','C')">うっかり</button><button onclick="m(this,'B3-7','K')">やり方不明</button><button onclick="m(this,'B3-7','A')">習ったが使えない</button><span class="redo">→ 助詞か助動詞かは「活用するか」で決まる</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B3-8">
+      <div class="qnum-e">問題16｜品詞⑧</div>
+      <div class="qword"><span class="ul">三つ</span> の りんごを 買う。</div>
+      <div class="qhint">──の品詞を、上の選択肢から記号で。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ア（名詞）</div>
+        <div class="ans-read">数を表す語も名詞（数詞）。「三つが足りない」のように「が」を付けて主語にできる＝名詞。</div>
+        <div class="bx-warn">数を表す語を <span class="red">副詞</span>と答えやすい。「が・は」を付けて主語にできるなら名詞。</div>
+      </div>
+      <div class="gq" data-gid="B3-8">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B3-8','o')">○</button><button class="x" onclick="g(this,'B3-8','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B3-8','C')">うっかり</button><button onclick="m(this,'B3-8','K')">やり方不明</button><button onclick="m(this,'B3-8','A')">習ったが使えない</button><span class="redo">→ 「が」を付けて主語になるかを試そう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B3-9">
+      <div class="qnum-e">問題17｜品詞⑨</div>
+      <div class="qword">犬が 元気に <span class="ul">走る</span>。</div>
+      <div class="qhint">──の品詞を、上の選択肢から記号で。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">イ（動詞）</div>
+        <div class="ans-read">動作を表し、言い切りが「る」＝ウ段で終わる自立語＝動詞。</div>
+        <div class="bx-warn">動詞の言い切りは <span class="red">必ずウ段</span>（う・く・す・つ・ぬ・ぶ・む・る）。「走る・書く・見る・ある」。</div>
+      </div>
+      <div class="gq" data-gid="B3-9">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B3-9','o')">○</button><button class="x" onclick="g(this,'B3-9','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B3-9','C')">うっかり</button><button onclick="m(this,'B3-9','K')">やり方不明</button><button onclick="m(this,'B3-9','A')">習ったが使えない</button><span class="redo">→ 言い切りがウ段かどうかで見分けよう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B3-10">
+      <div class="qnum-e">問題18｜品詞⑩</div>
+      <div class="qword"><span class="ul">寒い</span> 朝が 続く。</div>
+      <div class="qhint">──の品詞を、上の選択肢から記号で。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">ウ（形容詞）</div>
+        <div class="ans-read">ようすを表し、言い切りが「い」＝形容詞。ここでは名詞「朝」を修飾している。</div>
+        <div class="bx-warn">名詞を修飾していても、言い切りが「い」なら <span class="red">連体詞ではなく形容詞</span>。形が変わる（寒かった・寒くない）＝活用する。</div>
+      </div>
+      <div class="gq" data-gid="B3-10">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B3-10','o')">○</button><button class="x" onclick="g(this,'B3-10','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B3-10','C')">うっかり</button><button onclick="m(this,'B3-10','K')">やり方不明</button><button onclick="m(this,'B3-10','A')">習ったが使えない</button><span class="redo">→ 活用するか（寒かった と言えるか）を試そう</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ===== 大問四 言い切りの形（2問） ===== -->
+<div class="unit-banner">
+  <span class="unit-num">大問四</span>
+  <span class="unit-name">言い切りの形 に直す</span>
+  <span class="unit-time">2問</span>
+</div>
+<div class="sec th-amber">
+  <div class="sec-hd"><h2>用言の言い切り</h2><span class="badge-grade">品詞決定の基準</span></div>
+  <div class="sec-body">
+
+    <div class="q" data-id="B4-1">
+      <div class="qnum-e">問題19｜言い切り①</div>
+      <div class="qword">弟が 公園を <span class="ul">走っ</span> た。</div>
+      <div class="qhint">──を言い切りの形に直し、その品詞名も書こう。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">走る（動詞）</div>
+        <div class="ans-read">「走っ」＋「た」の形になっている。「た」を取り、言い切りに直すと「走る」＝ウ段で終わる＝動詞。</div>
+        <div class="bx-warn">言い切りの形＝「。」で文を終われる形。<span class="red">「走った」のまま答えない</span>（「た」は別の語＝助動詞）。</div>
+      </div>
+      <div class="gq" data-gid="B4-1">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B4-1','o')">○</button><button class="x" onclick="g(this,'B4-1','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B4-1','C')">うっかり</button><button onclick="m(this,'B4-1','K')">やり方不明</button><button onclick="m(this,'B4-1','A')">習ったが使えない</button><span class="redo">→ 付属語を外してから言い切りに直そう</span></div>
+      </div>
+    </div>
+
+    <div class="q" data-id="B4-2">
+      <div class="qnum-e">問題20｜言い切り②</div>
+      <div class="qword">海が <span class="ul">静かに</span> 広がる。</div>
+      <div class="qhint">──を言い切りの形に直し、その品詞名も書こう。</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">静かだ（形容動詞）</div>
+        <div class="ans-read">「静かに」を言い切りに直すと「静かだ」＝言い切りが「だ」＝形容動詞。</div>
+        <div class="bx-warn">「静かに」の形だけ見て <span class="red">副詞</span>と答えやすい。言い切りに直して「〜だ」になれば形容動詞。</div>
+      </div>
+      <div class="gq" data-gid="B4-2">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'B4-2','o')">○</button><button class="x" onclick="g(this,'B4-2','x')">✕</button></div>
+        <div class="miss"><span class="ml">✕のなぜ？</span><button onclick="m(this,'B4-2','C')">うっかり</button><button onclick="m(this,'B4-2','K')">やり方不明</button><button onclick="m(this,'B4-2','A')">習ったが使えない</button><span class="redo">→ 「〜な＋名詞」に直せるかも合わせて確認しよう</span></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">9月の公式範囲「文法（単語・文の組み立て）」はここで練習した形そのもの。✕は「なぜ？」を選んで、解説を読んでから書き直せばOK。よくがんばったね。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_jb02';   /* 国語 文法02（単語と品詞）。出典＝国語_漢字語彙文法管理 §F-1/§F-2（✓検証済） */
+
+function t(b){
+  if(!b.dataset.label)b.dataset.label=b.textContent;
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':b.dataset.label;
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var miss=box.querySelector('.miss');
+  if(v==='x'){ if(miss)miss.classList.add('show'); }
+  else{ if(miss)miss.classList.remove('show'); localStorage.removeItem(KEY+'_'+id+'_m'); box.querySelectorAll('.miss button').forEach(function(e){e.classList.remove('sel');}); }
+}
+
+function m(btn,id,v){
+  var miss=btn.closest('.miss');
+  miss.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id+'_m',v);
+}
+
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var miss=box.querySelector('.miss');
+        if(miss)miss.classList.add('show');
+        var mv=localStorage.getItem(KEY+'_'+id+'_m');
+        if(mv){ var mb=box.querySelector('.miss button[onclick*="\''+mv+'\'"]'); if(mb)mb.classList.add('sel'); }
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
+};
+</script>
+
+<script id="a16-recovery-hook-japanese-v1">
+(function(){
+'use strict';
+var DYN='revjq_dyn';
+function text(el){return el?String(el.textContent||'').replace(/^[\s　]*こたえ[\s　]*/,'').replace(/[\s　]+/g,' ').trim():'';}
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'),id=gq&&gq.dataset?gq.dataset.gid:'',q=btn.closest('.q');if(!id||!q)return;
+    var clone=q.cloneNode(true);clone.querySelectorAll('.ans-box,.gq,.mt,.write3,button,script,style,details').forEach(function(n){n.remove();});
+    var jp=text(clone),ans=text(q.querySelector('.ans-final,.ans-box .ans-main,.ans-main'));if(!jp||!ans)return;
+    var src=KEY+'_'+id,raw=localStorage.getItem(DYN),arr;try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();}else{arr.push({src:src,jp:jp,en:ans,kind:'国語',badge:'machigae',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null;if(!b)return;setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);});
+})();
+</script>
+</body>
+</html>

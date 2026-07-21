@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P10d 速さのグラフ・ダイヤグラム（9月大問6対策）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 速さのグラフ・3つの合言葉（毎回これで読む）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-img{background:#eef4fb;border-left:4px solid #7aa7d9}
+.bx-img::before{content:"🖼️ 頭の中のイメージ";display:block;font-size:12px;font-weight:800;color:#2f5a8a;margin-bottom:4px}
+.bx-tatoe{background:#f4f0ea;border-left:4px solid #c0a98a}
+.bx-tatoe::before{content:"💬 たとえ話で言うと";display:block;font-size:12px;font-weight:800;color:#7a5a32;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 まず、やさしい言いかえ";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.know{background:#eef6f1;border:1px solid #bcdcc7;border-radius:8px;padding:10px 14px;margin:0 0 12px}
+.know::before{content:"📋 わかっていること／求めること";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:6px}
+.know ul{margin:2px 0 2px 1.2em;font-size:13px;line-height:1.85;color:#33433a}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.figrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .layer{font-size:11px;font-weight:800;color:#7a8a72;margin:14px 0 4px;letter-spacing:.04em;border-bottom:1px dashed #d2dccd;padding-bottom:2px}
+.ans-box .layer:first-child{margin-top:0}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tool-hint{margin:8px 0;border:1px dashed #c9b8d6;border-radius:8px;background:#faf7fc;padding:6px 10px;font-size:12.5px}
+.tool-hint summary{cursor:pointer;font-weight:700;color:#7a5a95}
+.tool-hint div{margin-top:6px;color:#4a3a56;line-height:1.8}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="partial-n1" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P10d</span><span class="pg-badge">数学：関数的・速さのグラフ</span><span class="pg-badge">★速さ・ダイヤグラム L3-L4（9月大問6直撃）</span></div>
+  <h1>速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に超ぶ厚い7層解説つき</p>
+  <p class="pg-cheer">9月特訓選抜の<strong>大問6（速さ・ダイヤグラム）</strong>を直撃。速さのグラフは、コツはたった3つ：<strong>①かたむきが急＝速い ②横ばい＝止まっている ③線と線の交点＝同じ場所に同じ時刻にいる（出会い・追いつき）</strong>。グラフは目で読んで、数で確かめよう。きみは図形の読み取りがどんどん伸びてる。今日はそれを「速さ」につなげるだけ。</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① かたむき＝速さ</b>。「のぼり」は進んでいる、急なほど速い。<span class="math">速さ＝道のりの差÷時間の差</span></li>
+    <li><b>② 横ばい（たいら）＝止まっている</b>。道のりが変わらない＝休み・滞在。進んだと読み間ちがえない。</li>
+    <li><b>③ 線と線の交点＝同じ場所に同じ時刻にいる</b>＝出会い・追いつき。横の数字が時刻、たての数字が場所。</li>
+  </ol>
+</div>
+
+<!-- ===== 問1 距離-時間グラフ（行き・休み・帰り） L3 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">距離と時間のグラフ（行き・休み・帰り）から速さを読む L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    下のグラフは、ある人が家を出て公園まで歩いて行き、公園で少し休んでから家に帰るまでの「家からの道のり」と「時間」の関係です。
+    <div class="figrow">
+    <svg class="fig" width="345" height="200" viewBox="0 0 345 200" aria-label="行き・休み・帰りの距離と時間のグラフ">
+      <!-- grid -->
+      <line x1="45" y1="90" x2="300" y2="90" stroke="#eee" stroke-width="1"/>
+      <line x1="102.4" y1="160" x2="102.4" y2="20" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- helper lines: vertical at 18,24,39 ; horizontal at 900 -->
+      <line x1="159.8" y1="160" x2="159.8" y2="20" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="198" y1="160" x2="198" y2="20" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="293.6" y1="160" x2="293.6" y2="20" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="20" x2="198" y2="20" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- axes -->
+      <line x1="45" y1="160" x2="305" y2="160" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="165" x2="45" y2="15" stroke="#555" stroke-width="1.5"/>
+      <!-- graph: (0,0)->(18,900)->(24,900)->(39,0) -->
+      <polyline points="45,160 159.8,20 198,20 293.6,160" fill="none" stroke="#3f6f9f" stroke-width="2.5"/>
+      <circle cx="159.8" cy="20" r="3" fill="#3f6f9f"/><circle cx="198" cy="20" r="3" fill="#3f6f9f"/>
+      <!-- labels -->
+      <text x="50" y="13" font-size="11" fill="#444">道のり(m)</text>
+      <text x="307" y="164" font-size="11" fill="#444">時間(分)</text>
+      <text x="18" y="24" font-size="11" fill="#444">900</text>
+      <text x="155" y="174" font-size="11" fill="#444">18</text>
+      <text x="193" y="174" font-size="11" fill="#444">24</text>
+      <text x="289" y="174" font-size="11" fill="#444">39</text>
+      <text x="40" y="174" font-size="11" fill="#444">0</text>
+    </svg>
+    </div>
+    <span class="lead">問1</span>(1) 行き（家→公園）の速さは分速何mですか。<br>
+    <span class="lead">問1</span>(2) 公園で休んでいた時間は何分間ですか。<br>
+    <span class="lead">問1</span>(3) 帰り（公園→家）の速さは分速何mですか。</div>
+  <div class="note-draw">グラフと図から読み取れることを、ノートに書き出そう。どんな順番で求めるかは自分で組み立てよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 考え方（意味・図・作戦）</div><div class="layer">① まず、やさしい言いかえ</div>
+    <div class="osarai"><ul>
+      <li>このグラフは「家から何メートルはなれているか」を時間ごとに点で打って、線でつないだもの。</li>
+      <li>線が<b>のぼる</b>＝家からどんどん遠くなる＝<b>公園へ向かっている</b>。</li>
+      <li>線が<b>たいら</b>＝家からのきょりが変わらない＝<b>その場にいる（休んでいる）</b>。</li>
+      <li>線が<b>くだる</b>＝家にどんどん近づく＝<b>帰っている</b>。</li>
+    </ul></div>
+    <div class="layer">② わかっていること／求めること</div>
+    <div class="know"><ul>
+      <li>わかっている：公園は家から900mのところ。0分に家を出発。グラフの折れ目は18分・24分・39分。</li>
+      <li>求める：(1)行きの速さ　(2)休んだ時間　(3)帰りの速さ。</li>
+    </ul></div>
+    <div class="layer">③ 図でイメージ</div>
+    <div class="bx bx-img"><strong>かたむき＝速さ</strong>。線が急なほど「同じ時間でたくさん進む」＝速い。たいらな所は「時間がたっても道のりが0mぶんしか変わらない」＝止まっている。</div>
+    <div class="layer">④ 作戦＋たとえ話</div>
+    <div class="bx bx-tatoe">速さは「進んだ道のり ÷ かかった時間」。階段を「3段を6秒で上がった人」と「3段を2秒で上がった人」なら、後の人が速いよね。グラフも同じで、同じ高さ（道のり）をどれだけ短い時間で上がったかでくらべる。区間ごとに、その区間の差どうしで割るのがコツ。</div>
+    <div class="layer">⑤ 1ステップずつ（なぜ付き）</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 実際に解く・たしかめる</div><div class="step q1"><span>(1) 行き</span>0分→18分で 0m→900m進んだ。<span class="math">速さ＝900÷18＝分速50m</span>。<br>なぜ÷18？…900m進むのに18分<em>かかった</em>から。「1分あたり何m進んだか」を出すには、道のりを時間で割る。</div>
+    <div class="step q1"><span>(2) 休み</span>18分→24分は道のりが900mのまま変わらない＝公園にいた（止まっていた）。<span class="math">24−18＝6分間</span>。<br>なぜ引き算？…「いつからいつまで」止まっていたかの<em>長さ</em>を出すから、終わりの時刻ひく始めの時刻。</div>
+    <div class="step q1"><span>(3) 帰り</span>24分→39分で 900m→0mにもどった。時間は<span class="math">39−24＝15分</span>。<span class="math">速さ＝900÷15＝分速60m</span>。<br>なぜ900？…公園(900m)から家(0m)まで、進んだ道のりは900mだから。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 後半のポイント</div><div class="layer">⑥ よくある間違い（先に言うよ）</div>
+    <div class="bx bx-warn"><span class="red">横ばい(たいら)を「進んでいる」と読まない</span>。たいら＝止まっている。<br>帰りの時間を「39分」や「39−18」にしない。帰りはじめは24分だから 39−24＝15分。<br>速さを「900÷39」とまとめて出さない。行き・休み・帰りで速さがちがうので、区間ごとに差どうしで割る。</div>
+    <div class="layer">⑦ 検算＋次に見ぬくコツ</div>
+    <div class="step q1"><span>検算</span>行き：50m/分×18分＝900m○。帰り：60m/分×15分＝900m○。どちらも公園までの900mにぴったり合う。</div>
+    <div class="bx bx-link">9月特訓選抜 大問6（速さ・ダイヤグラム）の土台。「のぼり・たいら・くだり」を区間で分けて読む力は、このあとの問2・問3（2人のグラフ）でそのまま効く。<br><strong>次に見ぬくコツ：グラフを見たら、まず指で「折れ目」に印をつけて、区間に分けてから読む。</strong></div>
+    <div class="ans-final"><span>こたえ</span>(1) 分速50m　(2) 6分間　(3) 分速60m</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1) 行き</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、900÷18 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2) 休み</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、24−18 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q01c"><div class="grade"><span class="gq-label">問1(3) 帰り</span>○✕ → <button class="o" onclick="g(this,'q01c','o')">○</button><button class="x" onclick="g(this,'q01c','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、900÷(39−24) の式をノートに書こう</div></div>
+</div>
+
+<!-- ===== 問2 2人のグラフ（出会い） L3-L4 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">★2人のグラフ（交点＝出会い）を読む L3-L4（9月6(2)同型）</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    家から駅までは1200mはなれた一本道です。兄は午前0分に家を出て駅へ、弟は同じ午前0分に駅を出て家へ、それぞれ一定の速さで歩きました。下のグラフは、2人の「家からの道のり」と「時間」の関係です。
+    <div class="figrow">
+    <svg class="fig" width="345" height="200" viewBox="0 0 345 200" aria-label="2人の道のりと時間のグラフ・交点で出会う">
+      <!-- grid -->
+      <line x1="45" y1="90" x2="300" y2="90" stroke="#eee" stroke-width="1"/>
+      <line x1="147" y1="160" x2="147" y2="20" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="215" y1="160" x2="215" y2="20" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- horizontal to meeting point (720 -> y76) -->
+      <line x1="45" y1="76" x2="147" y2="76" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="20" x2="215" y2="20" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- axes -->
+      <line x1="45" y1="160" x2="305" y2="160" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="165" x2="45" y2="15" stroke="#555" stroke-width="1.5"/>
+      <!-- 兄: (0,0)->(20,1200) -->
+      <polyline points="45,160 215,20" fill="none" stroke="#3f6f9f" stroke-width="2.5"/>
+      <!-- 弟: (0,1200)->(30,0) -->
+      <polyline points="45,20 300,160" fill="none" stroke="#a85a2a" stroke-width="2.5"/>
+      <!-- meeting point (12,720) -->
+      <circle cx="147" cy="76" r="3.5" fill="#2f6a44"/>
+      <!-- labels -->
+      <text x="50" y="13" font-size="11" fill="#444">道のり(m)</text>
+      <text x="307" y="164" font-size="11" fill="#444">時間(分)</text>
+      <text x="18" y="24" font-size="11" fill="#444">1200</text>
+      <text x="143" y="174" font-size="11" fill="#444">12</text>
+      <text x="211" y="174" font-size="11" fill="#444">20</text>
+      <text x="40" y="174" font-size="11" fill="#444">0</text>
+      <text x="218" y="34" font-size="10" fill="#3f6f9f">兄</text>
+      <text x="60" y="34" font-size="10" fill="#a85a2a">弟</text>
+      <text x="152" y="72" font-size="10" fill="#2f6a44">出会い</text>
+    </svg>
+    </div>
+    <span class="lead">問2</span>(1) 兄の速さは分速何mですか。また弟の速さは分速何mですか。<br>
+    <span class="lead">問2</span>(2) 2人が出会うのは午前何分で、それは家から何mの地点ですか。</div>
+  <div class="note-draw">グラフと図から読み取れることを、ノートに書き出そう。どんな順番で求めるかは自分で組み立てよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 考え方（意味・図・作戦）</div><div class="layer">① まず、やさしい言いかえ</div>
+    <div class="osarai"><ul>
+      <li>同じグラフに線が2本。1本は<b>兄</b>（家0mから駅1200mへ＝のぼり）、もう1本は<b>弟</b>（駅1200mから家0mへ＝くだり）。</li>
+      <li>2本が<b>交わる点</b>＝兄と弟が<b>同じ時刻に、同じ場所</b>にいる＝<b>出会った瞬間</b>。</li>
+    </ul></div>
+    <div class="layer">② わかっていること／求めること</div>
+    <div class="know"><ul>
+      <li>わかっている：家〜駅は1200m。兄は0分に家(0m)を出て20分で駅(1200m)着。弟は0分に駅(1200m)を出る。交点は(12分, 720m)。</li>
+      <li>求める：(1)兄と弟の速さ　(2)出会う時刻と、家からの地点。</li>
+    </ul></div>
+    <div class="layer">③ 図でイメージ</div>
+    <div class="bx bx-img"><strong>交点＝同じ場所・同じ時刻</strong>。たて線をおろせば「時刻」、横線をひけば「家からの地点」が読める。2本がバッテンに交わる所が、すれちがう瞬間。</div>
+    <div class="layer">④ 作戦＋たとえ話</div>
+    <div class="bx bx-tatoe">出会いは「向かい合って歩く2人が、1本道のどこかでぶつかる」イメージ。グラフでは、のぼる線（兄）とくだる線（弟）が必ず1回交わる。その交点を読むだけで時刻も場所も出る。計算でゴリ押しせず、まずグラフを読むのが速い。</div>
+    <div class="layer">⑤ 1ステップずつ（なぜ付き）</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 実際に解く・たしかめる</div><div class="step q2"><span>(1) 兄</span>兄は0分→20分で 0m→1200m。<span class="math">速さ＝1200÷20＝分速60m</span>。</div>
+    <div class="step q2"><span>(1) 弟</span>弟は駅(1200m)を0分に出て、グラフでは0分→30分で 1200m→0m。進んだ道のりは1200m。<span class="math">速さ＝1200÷30＝分速40m</span>。<br>なぜ30？…弟の線は30分のところで道のり0m（家）に着いているから。</div>
+    <div class="step q2"><span>(2) 時刻</span>2本の線の交点を読むと、横の数字は<span class="math">12分</span>。これが出会う時刻＝午前12分。</div>
+    <div class="step q2"><span>(2) 地点</span>交点から横にたどると、たての数字は<span class="math">720m</span>。家から720mの地点で出会う。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 後半のポイント</div><div class="layer">⑥ よくある間違い（先に言うよ）</div>
+    <div class="bx bx-warn"><span class="red">交点の「時刻」と「場所」を取りちがえない</span>。横が時刻、たてが場所。<br>弟の速さを「1200÷20」にしない＝それは兄。弟は30分で着くので1200÷30＝40m。<br>交点を「線が一番高い所」と思わない＝交点は2本がぶつかる所。</div>
+    <div class="layer">⑦ 検算＋次に見ぬくコツ</div>
+    <div class="step q2"><span>検算</span>兄：60m/分×12分＝720m（家から720m）○。弟：40m/分×12分＝480m進んだ→駅から480mは家から1200−480＝720m○。2人ともぴったり720m＝同じ場所にいる。</div>
+    <div class="bx bx-link">9月特訓選抜 大問6(2)の核。「2本の線の交点＝出会い」は、追いつき(問3)・往復・電車のすれちがいでも同じ読み方。<br><strong>次に見ぬくコツ：問題に「出会う」「すれちがう」と出たら、まず交点をさがす。</strong></div>
+    <div class="ans-final"><span>こたえ</span>(1) 兄 分速60m／弟 分速40m　(2) 午前12分・家から720mの地点</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1) 速さ</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、兄1200÷20・弟1200÷30 をノートに書こう</div></div>
+  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2) 出会い</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、交点(12分,720m)を図に印して書こう</div></div>
+</div>
+
+<!-- ===== 問3 ダイヤグラム（追いつき） L4 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★ダイヤグラム（複数の動き・追いつき）で時刻と地点 L4 本番級</span><span class="unit-time">目安 9分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    家から図書館までは1500mの一本道です。姉は午前0分に家を出て、一定の速さで歩いて図書館へ向かいました。妹は姉の出発から10分おくれて午前10分に家を出て、自転車で同じ道を図書館へ向かいました。下のグラフ（ダイヤグラム）は2人の動きを表しています。
+    <div class="figrow">
+    <svg class="fig" width="345" height="200" viewBox="0 0 345 200" aria-label="姉と妹のダイヤグラム・追いつき">
+      <!-- grid -->
+      <line x1="45" y1="90" x2="300" y2="90" stroke="#eee" stroke-width="1"/>
+      <line x1="130" y1="160" x2="130" y2="20" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="172.5" y1="160" x2="172.5" y2="20" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="215" y1="160" x2="215" y2="20" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- horizontal to catch point (750 -> y90 already main grid) -->
+      <line x1="45" y1="90" x2="172.5" y2="90" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="20" x2="300" y2="20" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- axes -->
+      <line x1="45" y1="160" x2="305" y2="160" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="165" x2="45" y2="15" stroke="#555" stroke-width="1.5"/>
+      <!-- 姉: (0,0)->(30,1500) -->
+      <polyline points="45,160 300,20" fill="none" stroke="#3f6f9f" stroke-width="2.5"/>
+      <!-- 妹: (10,0)->(20,1500) -->
+      <polyline points="130,160 215,20" fill="none" stroke="#a85a2a" stroke-width="2.5"/>
+      <circle cx="130" cy="160" r="3" fill="#a85a2a"/>
+      <!-- catch point (15,750) -->
+      <circle cx="172.5" cy="90" r="3.5" fill="#2f6a44"/>
+      <!-- labels -->
+      <text x="50" y="13" font-size="11" fill="#444">道のり(m)</text>
+      <text x="307" y="164" font-size="11" fill="#444">時間(分)</text>
+      <text x="18" y="24" font-size="11" fill="#444">1500</text>
+      <text x="20" y="94" font-size="11" fill="#444">750</text>
+      <text x="124" y="174" font-size="11" fill="#444">10</text>
+      <text x="167" y="174" font-size="11" fill="#444">15</text>
+      <text x="211" y="174" font-size="11" fill="#444">20</text>
+      <text x="40" y="174" font-size="11" fill="#444">0</text>
+      <text x="296" y="34" font-size="10" fill="#3f6f9f">姉</text>
+      <text x="217" y="34" font-size="10" fill="#a85a2a">妹</text>
+      <text x="177" y="86" font-size="10" fill="#2f6a44">追いつき</text>
+    </svg>
+    </div>
+    <span class="lead">問3</span>(1) 姉の速さは分速何mですか。また妹の速さは分速何mですか。<br>
+    <span class="lead">問3</span>(2) 妹が姉に追いつくのは午前何分で、それは家から何mの地点ですか。</div>
+  <div class="note-draw">グラフと図から読み取れることを、ノートに書き出そう。どんな順番で求めるかは自分で組み立てよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 考え方（意味・図・作戦）</div><div class="layer">① まず、やさしい言いかえ</div>
+    <div class="osarai"><ul>
+      <li>姉が先に歩いて出発、妹はあとから自転車でおいかける、というお話。</li>
+      <li>妹の線は<b>10分のところからスタート</b>（家にいた間は0mのまま、出発してからのぼり出す）。</li>
+      <li>2本が<b>交わる点</b>＝妹が姉に<b>追いついた瞬間</b>（同じ時刻・同じ場所）。</li>
+    </ul></div>
+    <div class="layer">② わかっていること／求めること</div>
+    <div class="know"><ul>
+      <li>わかっている：家〜図書館は1500m。姉は0分に家を出て30分で図書館着。妹は10分に家を出て20分で図書館着。交点は(15分, 750m)。</li>
+      <li>求める：(1)姉と妹の速さ　(2)追いつく時刻と、家からの地点。</li>
+    </ul></div>
+    <div class="layer">③ 図でイメージ</div>
+    <div class="bx bx-img"><strong>追いつき＝同じ向きに進む2本が交わる所</strong>。妹の線は姉よりあとに出発するのに、かたむきが急（速い）から、途中で姉の線においついて交わる。交点の横が時刻、たてが場所。</div>
+    <div class="layer">④ 作戦＋たとえ話</div>
+    <div class="bx bx-tatoe">追いつきは「先に歩き出した友だちを、あとから走っておいかけて、ならぶ瞬間」。出会い（向かい合う）とちがって、2人は同じ向き。でもグラフの読み方は同じ＝交点をさがすだけ。妹の線が10分始まりなことだけ注意。</div>
+    <div class="layer">⑤ 1ステップずつ（なぜ付き）</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 実際に解く・たしかめる</div><div class="step q3"><span>(1) 姉</span>姉は0分→30分で 0m→1500m。<span class="math">速さ＝1500÷30＝分速50m</span>。</div>
+    <div class="step q3"><span>(1) 妹</span>妹は10分→20分で 0m→1500m。かかった時間は<span class="math">20−10＝10分</span>。<span class="math">速さ＝1500÷10＝分速150m</span>。<br>なぜ20−10？…妹は10分に出発して20分に着いたので、走った時間は10分間。</div>
+    <div class="step q3"><span>(2) 時刻</span>2本の交点を読むと、横の数字は<span class="math">15分</span>＝午前15分に追いつく。</div>
+    <div class="step q3"><span>(2) 地点</span>交点から横にたどると、たての数字は<span class="math">750m</span>。家から750mの地点で追いつく。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 後半のポイント</div><div class="layer">⑥ よくある間違い（先に言うよ）</div>
+    <div class="bx bx-warn"><span class="red">妹の速さを「1500÷20」にしない</span>＝妹は0分出発ではなく10分出発。走った時間は20−10＝10分だから1500÷10。<br>「10分に追いつく」と答えない＝10分は妹の出発時刻。追いつくのは交点の15分。<br>交点の横（時刻）とたて（場所）を取りちがえない。</div>
+    <div class="layer">⑦ 検算＋次に見ぬくコツ</div>
+    <div class="step q3"><span>検算</span>姉：50m/分×15分＝750m（家から750m）○。妹：出発10分→15分の5分間で 150m/分×5分＝750m○。2人とも15分の時点で家から750m＝同じ場所＝追いついた。</div>
+    <div class="bx bx-link">9月特訓選抜 大問6の本番型（ダイヤグラム）。線が3本・4本でも、聞かれたことに関係する2本の交点だけを読めばよい。出発時刻がずれている線は「始まりの位置」に注意。<br><strong>次に見ぬくコツ：おくれて出発する人は、線が途中から始まる。出発時刻を必ず確認。</strong></div>
+    <div class="ans-final"><span>こたえ</span>(1) 姉 分速50m／妹 分速150m　(2) 午前15分・家から750mの地点</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1)★L4 速さ</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、姉1500÷30・妹1500÷(20−10) をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2)★L4 追いつき</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、交点(15分,750m)を図に印して書こう</div></div>
+</div>
+
+<!-- ===== 問4 グラフから式を作り計算 L3-L4 ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★グラフから式を作り、ある距離・時刻を計算 L3-L4</span><span class="unit-time">目安 8分</span></div>
+<details class="tool-hint"><summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+<div>比例は y＝ax（a＝y÷x）</div></details>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    ある人が、家から一本道をまっすぐ一定の速さで進みます。下のグラフは「進んだ道のり」と「時間」の関係です。家から1200mの地点に郵便局があります。
+    <div class="figrow">
+    <svg class="fig" width="345" height="200" viewBox="0 0 345 200" aria-label="一定の速さの道のりと時間のグラフ">
+      <!-- grid -->
+      <line x1="45" y1="97" x2="300" y2="97" stroke="#eee" stroke-width="1"/>
+      <line x1="45" y1="55" x2="300" y2="55" stroke="#eee" stroke-width="1"/>
+      <line x1="159.8" y1="160" x2="159.8" y2="20" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="236.2" y1="160" x2="236.2" y2="20" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- helpers to read points -->
+      <line x1="45" y1="97" x2="159.8" y2="97" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="55" x2="236.2" y2="55" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- axes -->
+      <line x1="45" y1="160" x2="305" y2="160" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="165" x2="45" y2="15" stroke="#555" stroke-width="1.5"/>
+      <!-- graph: (0,0)->(20,1600), mark (9,720) -->
+      <polyline points="45,160 300,20" fill="none" stroke="#3f6f9f" stroke-width="2.5"/>
+      <circle cx="159.8" cy="97" r="3" fill="#3f6f9f"/>
+      <!-- labels -->
+      <text x="50" y="13" font-size="11" fill="#444">道のり(m)</text>
+      <text x="307" y="164" font-size="11" fill="#444">時間(分)</text>
+      <text x="14" y="59" font-size="11" fill="#444">1200</text>
+      <text x="20" y="101" font-size="11" fill="#444">720</text>
+      <text x="155" y="174" font-size="11" fill="#444">9</text>
+      <text x="231" y="174" font-size="11" fill="#444">15</text>
+      <text x="40" y="174" font-size="11" fill="#444">0</text>
+    </svg>
+    </div>
+    <span class="lead">問4</span>(1) 進んだ道のりを y m、時間を x 分として、y を x の式で表しなさい。<br>
+    <span class="lead">問4</span>(2) 郵便局（家から1200m）に着くのは出発してから何分後ですか。<br>
+    <span class="lead">問4</span>(3) 出発から20分後には、家から何mの地点にいますか。</div>
+  <div class="note-draw">グラフと図から読み取れることを、ノートに書き出そう。どんな順番で求めるかは自分で組み立てよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 考え方（意味・図・作戦）</div><div class="layer">① まず、やさしい言いかえ</div>
+    <div class="osarai"><ul>
+      <li>一定の速さ＝ずっと同じペース＝グラフは<b>原点(0,0)を通るまっすぐな線</b>。</li>
+      <li>「式を作る」＝<b>x分たったら何m進むか</b>を、x を使った1つの式で書くこと。</li>
+      <li>式ができれば、グラフに線がない先（20分後など）も<b>計算で</b>わかる。</li>
+    </ul></div>
+    <div class="layer">② わかっていること／求めること</div>
+    <div class="know"><ul>
+      <li>わかっている：原点を通る直線。グラフの読める点は(9分, 720m)。郵便局は家から1200m。</li>
+      <li>求める：(1)y を x の式で　(2)1200mに着く時刻　(3)20分後の道のり。</li>
+    </ul></div>
+    <div class="layer">③ 図でイメージ</div>
+    <div class="bx bx-img"><strong>かたむき＝1分で進む道のり＝速さ</strong>。原点を通るまっすぐな線だから、式は <span class="math">y＝(速さ)×x</span> の形になる。「速さ」がそのまま x にかける数。</div>
+    <div class="layer">④ 作戦＋たとえ話</div>
+    <div class="bx bx-tatoe">式づくりは「1分ぶんの値段がわかれば、何分ぶんでも計算できる」のと同じ。1本80円のジュースなら x 本で 80×x 円。速さも同じで、1分で80m進むなら x 分で 80×x m。まず「1分ぶん（速さ）」を出すのが先。</div>
+    <div class="layer">⑤ 1ステップずつ（なぜ付き）</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 実際に解く・たしかめる</div><div class="step q4"><span>速さ</span>グラフの点(9分,720m)より、1分あたり＝720÷9＝<span class="math">分速80m</span>。<br>なぜ÷9？…9分で720m進んだので、「1分ぶん」にするには時間で割る。</div>
+    <div class="step q4"><span>(1) 式</span>1分で80m進むから、x 分では 80×x m。<span class="math">y＝80x</span>。<br>なぜ原点から？…0分のときは0m（まだ進んでいない）だから、たし算の項はいらない。</div>
+    <div class="step q4"><span>(2) 1200m</span>y＝1200 を式に入れる：1200＝80x → <span class="math">x＝1200÷80＝15分後</span>。</div>
+    <div class="step q4"><span>(3) 20分後</span>x＝20 を式に入れる：<span class="math">y＝80×20＝1600m</span>。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 後半のポイント</div><div class="layer">⑥ よくある間違い（先に言うよ）</div>
+    <div class="bx bx-warn"><span class="red">速さを出さずに点の数字をそのまま使わない</span>＝(9,720)の720は「9分での道のり」。まず1分あたり(80)を出す。<br>式を y＝x や y＝720x にしない＝x にかけるのは速さ80。<br>(2)で「1200×80」としない＝時間を求めるので1200÷80（÷でわる）。</div>
+    <div class="layer">⑦ 検算＋次に見ぬくコツ</div>
+    <div class="step q4"><span>検算</span>(1)の式に x＝9 を入れると 80×9＝720m＝グラフの点と一致○。(2)15分→80×15＝1200m＝郵便局○。(3)グラフの線をのばすと20分で1600m＝計算と合う○。</div>
+    <div class="bx bx-link">9月特訓選抜 大問6では「グラフから式を作って、グラフに線がない時刻・地点を計算で求める」問題が出る。速さを出す→y＝(速さ)x の式→数を入れるの3手順は全問題で同じ。<br><strong>次に見ぬくコツ：原点を通る直線を見たら、まず1点から速さを出して y＝□x を作る。</strong></div>
+    <div class="ans-final"><span>こたえ</span>(1) y＝80x　(2) 15分後　(3) 1600m</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 式</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、720÷9＝80 → y＝80x をノートに書こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 1200m時刻</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、1200÷80 の式をノートに書こう</div></div>
+  <div class="gq" data-gid="q04c"><div class="grade"><span class="gq-label">問4(3) 20分後</span>○✕ → <button class="o" onclick="g(this,'q04c','o')">○</button><button class="x" onclick="g(this,'q04c','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、80×20 の式をノートに書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P10d 速さグラフ・ダイヤグラム 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">速さのグラフ・ダイヤグラムおつかれさま！今日のいちばんの収穫は<strong>「かたむき＝速さ」「横ばい＝止まる」「交点＝同じ場所・同じ時刻」</strong>の3つ。この3つだけで、出会いも追いつきも、式づくりも全部つながっている。まちがえた問題は、読んだ2点の数値と「÷」の式、交点の(時刻,場所)をノートに書き直そう。グラフの読み取り、確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m10d';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！速さグラフ・ダイヤグラム クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01a":{"jp":"速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる / 問1(1) 行き: 下のグラフは、ある人が家を出て公園まで歩いて行き、公園で少し休んでから家に帰るまでの「家からの道のり」と「時間」の関係です。 道のり(m) 時間(分) 900 18 24 39 0 問1 (1) 行き（家→公園）の速さは分速何mですか。 問1 (2) 公園で休んでいた時間は何分間ですか。 問1 (3) 帰り（公園→家）の速さは分速何mですか。","en":"分速50m"},"q01b":{"jp":"速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる / 問1(2) 休み: 下のグラフは、ある人が家を出て公園まで歩いて行き、公園で少し休んでから家に帰るまでの「家からの道のり」と「時間」の関係です。 道のり(m) 時間(分) 900 18 24 39 0 問1 (1) 行き（家→公園）の速さは分速何mですか。 問1 (2) 公園で休んでいた時間は何分間ですか。 問1 (3) 帰り（公園→家）の速さは分速何mですか。","en":"6分間"},"q01c":{"jp":"速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる / 問1(3) 帰り: 下のグラフは、ある人が家を出て公園まで歩いて行き、公園で少し休んでから家に帰るまでの「家からの道のり」と「時間」の関係です。 道のり(m) 時間(分) 900 18 24 39 0 問1 (1) 行き（家→公園）の速さは分速何mですか。 問1 (2) 公園で休んでいた時間は何分間ですか。 問1 (3) 帰り（公園→家）の速さは分速何mですか。","en":"分速60m"},"q02a":{"jp":"速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる / 問2(1) 速さ: 家から駅までは1200mはなれた一本道です。兄は午前0分に家を出て駅へ、弟は同じ午前0分に駅を出て家へ、それぞれ一定の速さで歩きました。下のグラフは、2人の「家からの道のり」と「時間」の関係です。 道のり(m) 時間(分) 1200 12 20 0 兄 弟 出会い 問2 (1) 兄の速さは分速何mですか。また弟の速さは分速何mですか。 問2 (2) 2人が出会うのは午前何分で、それは家から何mの地点ですか。","en":"兄 分速60m／弟 分速40m"},"q02b":{"jp":"速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる / 問2(2) 出会い: 家から駅までは1200mはなれた一本道です。兄は午前0分に家を出て駅へ、弟は同じ午前0分に駅を出て家へ、それぞれ一定の速さで歩きました。下のグラフは、2人の「家からの道のり」と「時間」の関係です。 道のり(m) 時間(分) 1200 12 20 0 兄 弟 出会い 問2 (1) 兄の速さは分速何mですか。また弟の速さは分速何mですか。 問2 (2) 2人が出会うのは午前何分で、それは家から何mの地点ですか。","en":"午前12分・家から720mの地点"},"q03a":{"jp":"速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる / 問3(1)★L4 速さ: 家から図書館までは1500mの一本道です。姉は午前0分に家を出て、一定の速さで歩いて図書館へ向かいました。妹は姉の出発から10分おくれて午前10分に家を出て、自転車で同じ道を図書館へ向かいました。下のグラフ（ダイヤグラム）は2人の動きを表しています。 道のり(m) 時間(分) 1500 750 10 15 20 0 姉 妹 追いつき 問3 (1) 姉の速さは分速何mですか。また妹の速さは分速何mですか。 問3 (2) 妹が姉に追いつくのは午前何分で、それは家から何mの地点ですか。","en":"姉 分速50m／妹 分速150m"},"q03b":{"jp":"速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる / 問3(2)★L4 追いつき: 家から図書館までは1500mの一本道です。姉は午前0分に家を出て、一定の速さで歩いて図書館へ向かいました。妹は姉の出発から10分おくれて午前10分に家を出て、自転車で同じ道を図書館へ向かいました。下のグラフ（ダイヤグラム）は2人の動きを表しています。 道のり(m) 時間(分) 1500 750 10 15 20 0 姉 妹 追いつき 問3 (1) 姉の速さは分速何mですか。また妹の速さは分速何mですか。 問3 (2) 妹が姉に追いつくのは午前何分で、それは家から何mの地点ですか。","en":"午前15分・家から750mの地点"},"q04a":{"jp":"速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる / 問4(1) 式: ある人が、家から一本道をまっすぐ一定の速さで進みます。下のグラフは「進んだ道のり」と「時間」の関係です。家から1200mの地点に郵便局があります。 道のり(m) 時間(分) 1200 720 9 15 0 問4 (1) 進んだ道のりを y m、時間を x 分として、y を x の式で表しなさい。 問4 (2) 郵便局（家から1200m）に着くのは出発してから何分後ですか。 問4 (3) 出発から20分後には、家から何mの地点にいますか。","en":"y＝80x"},"q04b":{"jp":"速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる / 問4(2) 1200m時刻: ある人が、家から一本道をまっすぐ一定の速さで進みます。下のグラフは「進んだ道のり」と「時間」の関係です。家から1200mの地点に郵便局があります。 道のり(m) 時間(分) 1200 720 9 15 0 問4 (1) 進んだ道のりを y m、時間を x 分として、y を x の式で表しなさい。 問4 (2) 郵便局（家から1200m）に着くのは出発してから何分後ですか。 問4 (3) 出発から20分後には、家から何mの地点にいますか。","en":"15分後"},"q04c":{"jp":"速さのグラフ・ダイヤグラム｜「かたむき＝速さ」「交点＝同じ場所・同じ時刻」を読みきる / 問4(3) 20分後: ある人が、家から一本道をまっすぐ一定の速さで進みます。下のグラフは「進んだ道のり」と「時間」の関係です。家から1200mの地点に郵便局があります。 道のり(m) 時間(分) 1200 720 9 15 0 問4 (1) 進んだ道のりを y m、時間を x 分として、y を x の式で表しなさい。 問4 (2) 郵便局（家から1200m）に着くのは出発してから何分後ですか。 問4 (3) 出発から20分後には、家から何mの地点にいますか。","en":"1600m"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

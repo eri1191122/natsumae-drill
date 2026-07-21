@@ -1,0 +1,730 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 英語 基礎深化 U8 疑問詞（30分）★金型v2。「1ルール説明→その場で確認問題」の交互構造。図(SVG)4個。what time/how many/how much/how old/what color を全て問題化（旧版は解説だけで問題化されていなかった穴）。事前ヒント無し(.qnum-eは番号のみ)。確認8＋ミックス4＋連動2＝14問。KEY=tokkun_eg_wh。もどる=夏休みダッシュボード。-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>英語きそ U8 疑問詞（30分）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8f0ea;color:#22402e;padding:24px 22px;border:1px solid #c3ddc8;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#41614c}
+.pg-badge{display:inline-block;background:#d7ebdb;color:#2f5a3e;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #bcdcc2;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#395c44;margin-top:8px}
+.goal{background:#fff;border:1px solid #dbe6de;border-left:6px solid #7fae8a;border-radius:10px;padding:14px 18px;margin-bottom:6px}
+.goal h2{font-size:14px;font-weight:900;color:#2f5a3e;margin-bottom:8px}
+.goal ul{margin:0 0 0 1.15em;font-size:13.5px;color:#33453a;line-height:1.95}
+.goal li{margin:3px 0}.goal b{color:#2f6b45}
+.step{display:flex;align-items:center;gap:10px;background:#2f5a3e;color:#fff;padding:11px 18px;border-radius:8px 8px 0 0;margin-top:24px}
+.step .n{font-size:13px;font-weight:900;background:rgba(255,255,255,.2);padding:3px 10px;border-radius:12px}
+.step .t{font-size:15px;font-weight:900}
+.step .time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto}
+.step + .body{background:#fff;border:1px solid #dbe6de;border-top:none;border-radius:0 0 8px 8px;padding:16px 20px;margin-bottom:6px}
+.lesson{font-size:14px;line-height:1.98;color:#33453a}
+.lesson p{margin:8px 0}.lesson b{color:#2f5a3e}
+.lesson table{width:100%;border-collapse:collapse;margin:10px 0;font-size:13.5px}
+.lesson th,.lesson td{border:1px solid #d6e3da;padding:6px 9px;text-align:left}
+.lesson th{background:#eaf3ec;color:#2f5a3e}
+.lesson .ok{color:#2f6b45;font-weight:800}.lesson .ng{color:#9b514d;font-weight:800}
+.lesson td.c-wh{background:#fff4e3}.lesson td.c-be{background:#e8eefb}.lesson td.c-do{background:#e6f4ea}
+.fig{background:#fcfdfc;border:1px solid #d6e3da;border-radius:10px;padding:12px 10px;margin:12px 0}
+.fig .cap{font-size:12px;font-weight:800;color:#5a8a6a;text-align:center;margin-bottom:6px}
+.fig svg{width:100%;height:auto;display:block}
+.why{background:#eef5f0;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px;color:#33513f}
+.why::before{content:"💡 なぜ？";display:block;font-size:12px;font-weight:800;color:#2f6b45;margin-bottom:3px}
+.ex{background:#f7faf8;border:1px dashed #bcdcc2;border-radius:8px;padding:9px 13px;margin:8px 0;font-size:13.5px;color:#3a4d42}
+.ex::before{content:"✏️ れい";display:block;font-size:12px;font-weight:800;color:#5a8a6a;margin-bottom:3px}
+.more{background:#eef2f8;border-left:5px solid #9fb8d9;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px;color:#33425a}
+.more::before{content:"➕ もう一歩（本番でねらわれる）";display:block;font-size:12px;font-weight:800;color:#31527a;margin-bottom:3px}
+.key{background:#fffaf0;border-left:5px solid #e0b552;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13.5px;color:#7a5a1e}
+.key b{color:#8a5a19}
+.yn{background:#fff5fa;border-left:5px solid #d99ab8;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:13.5px;color:#7d3f5c}
+.yn::before{content:"🙅 Yes / No では答えられない";display:block;font-size:12px;font-weight:800;color:#a24d78;margin-bottom:4px}
+.yn b{color:#a24d78}.yn .ng{color:#b5403a;font-weight:800}.yn .ok{color:#2f6b45;font-weight:800}
+.warn{background:#fdeeec;border-left:5px solid #d98a86;border-radius:8px;padding:10px 14px;margin:8px 0;font-size:13.5px;color:#8a3a36}
+.warn::before{content:"⚠️ ここをまちがえる（先に知っておこう）";display:block;font-size:12px;font-weight:800;margin-bottom:4px}
+.warn .ng{color:#b5403a;font-weight:800}.warn .ok{color:#2f6b45;font-weight:800}
+.chk{display:flex;align-items:center;gap:8px;background:#f1f7f3;border:1px dashed #a8c9b2;border-radius:8px;padding:9px 14px;margin:16px 0 4px;font-size:13px;font-weight:800;color:#3f7a4a}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:12px 0}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.ew-jp{font-size:18px;font-weight:900;color:#2f4536;background:#fff;border:2px solid #c3ddc8;border-left:6px solid #7fae8a;border-radius:8px;padding:11px 15px;margin-bottom:8px}
+.ew-jp .src{display:block;margin-top:6px;font-size:16px;font-weight:800;color:#3f6f9f;background:#f3f7fb;border:1px solid #cdd9e6;border-radius:6px;padding:6px 10px;letter-spacing:.3px}
+.ew-jp .src u{text-decoration:underline;text-decoration-thickness:3px;text-underline-offset:3px;color:#b5403a}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+.ans-btn{margin-top:2px;background:#5a8a6a;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#487257}
+.ans-box{display:none;margin-top:10px}
+.ans-box.open{display:block}
+.rw-why{background:#f4faf6;border:1px solid #cfe6d6;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.95;color:#33513f}
+.rw-why b{color:#2f6b45}
+.rw-why ol{margin:2px 0 0 1.25em}
+.rw-why li{margin:5px 0}
+.rw-why .ng{color:#b5403a;font-weight:800}.rw-why .ok{color:#2f6b45;font-weight:800}
+.rw-why .miss{display:block;margin-top:8px;background:#fdeeec;border-left:4px solid #d98a86;border-radius:6px;padding:7px 11px;font-size:13px;color:#8a3a36}
+.rw-why .miss b{color:#8a3a36}
+.rw-why table{width:100%;border-collapse:collapse;margin:8px 0;font-size:13px}
+.rw-why th,.rw-why td{border:1px solid #cfe6d6;padding:5px 8px;text-align:left}
+.rw-why th{background:#eaf3ec;color:#2f6b45}
+.ans-final{margin-top:10px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+.sum{background:#fff;border:1px solid #dbe6de;border-radius:10px;padding:16px 20px;margin-top:6px}
+.sum h2{font-size:15px;font-weight:900;color:#2f5a3e;margin-bottom:8px}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+.footnav{text-align:center;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.footnav{display:none}
+  .ans-box{display:block!important}.write3{display:block!important}
+  .step,.body,.q,.fig,.sum{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body data-eng="1">
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">英語きそ U8</span><span class="pg-badge">疑問詞</span><span class="pg-badge">30分</span></div>
+  <h1>疑問詞を、ぜんぶ書けるようにする</h1>
+  <p><b>ルールを1つ読む → すぐその場で書いて確かめる</b>。この2つをくり返して進むよ。読みっぱなしにしないのがコツ。</p>
+  <p class="pg-sub">ルール4つ（各2問）→ ミックス4問 → 連動2問 → まとめ表。ぜんぶで14問。</p>
+</div>
+
+<div class="goal">
+  <h2>🎯 このプリントが終わったら、できるようになること</h2>
+  <ul>
+    <li>日本語を読んだしゅんかんに <b>どの疑問詞を使うか</b>が決まる。</li>
+    <li><b>how many / how much / how old / how long</b> と <b>what time / what color</b> を、自分で選んで書ける。</li>
+    <li>ふつうの文の<b>下線部をたずねる疑問文</b>が作れる（<b>-s が消える</b>ところまで直せる）。</li>
+  </ul>
+</div>
+
+<!-- ===== ルール1 ===== -->
+<div class="step"><span class="n">ルール1</span><span class="t">疑問詞は文のあたま。うしろは疑問文の形のまま</span><span class="time">6分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>疑問詞（what / where / when …）は「<b>何を知りたいか</b>」を表すことば。作り方は<b>2ステップだけ</b>。<br>　① まず <b>Yes/No でたずねる疑問文</b>を作る（Do you like 〜? ／ Is this 〜?）<br>　② 知りたいところを<b>疑問詞に取りかえて、文のいちばん前に出す</b>。</p>
+  <p>ここで大事なのは、<b>②のあと、うしろは何もいじらない</b>ということ。疑問文の形（do you 〜 ／ is this 〜）が<b>そのまま残る</b>。</p>
+
+  <div class="fig">
+    <div class="cap">図1　知りたいところを疑問詞に変えて、文のあたまへ持ってくる</div>
+    <svg viewBox="0 0 600 210" role="img" aria-label="Yes/No疑問文から疑問詞疑問文への変形図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <text x="8" y="20" font-size="11" font-weight="800" fill="#5a6b50">① まず Yes/No の疑問文</text>
+      <rect x="8" y="28" width="66" height="42" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="41" y="55" text-anchor="middle" font-size="16" font-weight="800" fill="#2f5a3e">Do</text>
+      <rect x="82" y="28" width="70" height="42" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="117" y="55" text-anchor="middle" font-size="16" font-weight="800" fill="#2f5a3e">you</text>
+      <rect x="160" y="28" width="76" height="42" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="198" y="55" text-anchor="middle" font-size="16" font-weight="800" fill="#2f5a3e">like</text>
+      <rect x="244" y="28" width="118" height="42" rx="8" fill="#fdeeec" stroke="#d98a86" stroke-width="2" stroke-dasharray="5 4"/>
+      <text x="303" y="49" text-anchor="middle" font-size="15" font-weight="800" fill="#b5403a">soccer ?</text>
+      <text x="303" y="65" text-anchor="middle" font-size="10" fill="#b5403a">← ここが知りたい</text>
+
+      <path d="M303 74 C 303 100, 41 96, 41 128" fill="none" stroke="#d08a86" stroke-width="3" stroke-dasharray="6 4"/>
+      <polygon points="41,140 34,126 48,126" fill="#d08a86"/>
+      <text x="330" y="104" font-size="12" font-weight="800" fill="#b5403a">② what に変えて</text>
+      <text x="330" y="122" font-size="12" font-weight="800" fill="#b5403a">　 いちばん前へ</text>
+
+      <text x="8" y="160" font-size="11" font-weight="800" fill="#5a6b50">できあがり</text>
+      <rect x="8" y="146" width="96" height="42" rx="8" fill="#e0b552"/>
+      <text x="56" y="173" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">What</text>
+      <rect x="112" y="146" width="66" height="42" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="145" y="173" text-anchor="middle" font-size="16" font-weight="800" fill="#2f5a3e">do</text>
+      <rect x="186" y="146" width="70" height="42" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="221" y="173" text-anchor="middle" font-size="16" font-weight="800" fill="#2f5a3e">you</text>
+      <rect x="264" y="146" width="98" height="42" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="313" y="173" text-anchor="middle" font-size="16" font-weight="800" fill="#2f5a3e">like ?</text>
+      <text x="374" y="166" font-size="12" font-weight="800" fill="#2f6b45">うしろは疑問文の形のまま。</text>
+      <text x="374" y="184" font-size="12" font-weight="800" fill="#2f6b45">do you を いじらない。</text>
+      <text x="374" y="204" font-size="11" fill="#b5403a">✕ What you like?（do 落ち）</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>タイプ</th><th>ならびかた</th><th>れい</th></tr>
+    <tr><td class="c-be">be動詞の文</td><td>疑問詞 ＋ <b>is / are</b> ＋ 主語 ？</td><td>Where <b>is</b> my bag?</td></tr>
+    <tr><td class="c-do">一般動詞の文</td><td>疑問詞 ＋ <b>do</b> ＋ 主語 ＋ 動詞の原形 ？</td><td>Where <b>do you</b> live?</td></tr>
+    <tr><td class="c-do">主語が1人・1つ（3人称単数）</td><td>疑問詞 ＋ <b>does</b> ＋ 主語 ＋ 動詞の原形 ？</td><td>Where <b>does she</b> live?</td></tr>
+  </table>
+
+  <div class="why"><b>なぜ疑問詞が前に来るの？</b>　英語は「<b>いちばん言いたいことを先に言う</b>」言葉だから。知りたいのは「何を？」「どこで？」。だからそれを文のあたまに置いて、相手に真っ先に伝える。日本語の「あなたは何が好き<u>ですか</u>」は最後まで聞かないと質問だと分からないけれど、英語は1語目で「What（何を知りたい）」と分かる。</div>
+  <div class="yn">疑問詞の質問は「はい／いいえ」で答えられない。<b>中身を答える</b>。<br><span class="ng">✕ What do you like? — Yes, I do.</span>　→　<span class="ok">○ What do you like? — I like soccer.</span><br>逆に言うと、答えが Yes/No になりそうなら、疑問詞の使い方をどこかで間違えている。</div>
+  <div class="warn"><span class="ng">✕ What you like?</span>（一般動詞の文なのに do が無い）<br><span class="ng">✕ What does he likes?</span>（does を出したら動詞は<b>原形</b> like）<br><span class="ng">✕ Do you what like?</span>（疑問詞は<b>いちばん前</b>）<br><span class="ng">✕ what is this?</span>（文のあたまは<b>大文字</b>。終わりは「?」）</div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="WH-1"><div class="qnum-e">問題1</div>
+    <div class="ew-jp">あなたは日曜日に何をしますか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「何を」＝ <b>what</b>。これを文のいちばん前に置く。</li>
+        <li><b>うしろは？</b>　「あなたは（日曜日に）〜しますか」＝ <b>Do you 〜?</b> という一般動詞の疑問文。この形を<b>そのまま</b>うしろにつなぐ → What <b>do you</b> …?</li>
+        <li><b>★この問題の本丸：do が2回出てくる。</b>　同じ do に見えるけれど<b>役目がまったく違う</b>。<br>　・1つめの do ＝ <b>疑問文を作るための助っ人</b>（意味は無い）<br>　・2つめの do ＝ <b>「する」という動詞</b>（意味がある）<br>　どちらも要るので、2つ書く。<span class="ng">✕ What do you on Sunday?</span>（動詞が無い＝「何をあなたは日曜日に？」で文が終わっていない）<span class="ng">✕ What you do on Sunday?</span>（助っ人が無い＝疑問文になっていない）</li>
+        <li><b>2つめの do は原形のまま。</b>　主語は you なので -s はつかない。<span class="ng">✕ What do you does 〜?</span></li>
+        <li><b>「日曜日に」の前置詞は？</b>　<b>曜日には on</b>（on Sunday / on Thursday）。月なら in、時刻なら at。<span class="ng">✕ in Sunday</span>　Sunday は<b>曜日の名前 → 大文字 S</b>。</li>
+        <li><b>置く場所</b>　「いつ」は<b>文の最後</b>。→ What do you do <b>on Sunday</b>?</li>
+        <li><b>答え方</b>　Yes/No では答えない。<span class="ok">I play tennis.</span> のように<b>中身</b>を答える。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ What do you on Sunday?</span>（動詞の do 落ち）／<span class="ng">✕ What you do on Sunday?</span>（助っ人の do 落ち）／<span class="ng">✕ What do you do in Sunday?</span>（曜日は on）／<span class="ng">✕ What do you do on sunday?</span>（小文字）／「?」の書き忘れ</span>
+    </div><div class="ans-final"><span>こたえ</span>What do you do on Sunday?</div></div>
+    <div class="gq" data-gid="WH-1"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-1','o')">○</button><button class="x" onclick="g(this,'WH-1','x')">✕</button></div><div class="write3">📝 3回　What do you do on Sunday?</div></div>
+  </div>
+
+  <div class="q writing" data-id="WH-2"><div class="qnum-e">問題2</div>
+    <div class="ew-jp">あなたのおばの大好きな教科は何ですか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「何ですか」＝ <b>what</b>。文のいちばん前。</li>
+        <li><b>★うしろは be動詞の疑問文。ここで do を出さない。</b>　この文は「おばの大好きな教科 <b>＝</b> 何？」とイコールでつなぐ文。イコールでつなぐ動詞は <b>be動詞</b>。だから助っ人 do は呼ばない。<span class="ng">✕ What does your aunt's favorite subject?</span></li>
+        <li><b>★be動詞は主語が決める。うしろの言葉ではない。</b>　主語は your aunt's favorite subject。長いけれど<b>中心の名詞は subject（教科）＝1つ</b> → <b>is</b>。<span class="ng">✕ What are your aunt's favorite subject?</span></li>
+        <li><b>「おばの」はどう書く？</b>　<b>your aunt's</b>。人のうしろに <b>'s（アポストロフィ＋s）</b> をつけると「〜の」になる。<span class="ng">✕ your aunts favorite subject</span>（' を落とすと「おばたち」に見える）。つづり <b>a-u-n-t</b>（aunt＝おば／uncle＝おじ。セットで覚える）。</li>
+        <li><b>語順は「だれの → どんな → 何」。</b>　your → aunt's → favorite → subject。<span class="ng">✕ your aunt's subject favorite</span></li>
+        <li><b>★つづり：f-a-v-o-r-i-t-e。</b>　<span class="ng">✕ favarite</span>（2つめは <b>o</b>）<span class="ng">✕ favorit</span>（最後の <b>e</b> を落とさない）。（6月のテストで落とした語）</li>
+        <li><b>答え方</b>　Yes/No では答えない。<span class="ok">It is English.</span> のように教科名を答える。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ What does your aunt's favorite subject?</span>（be動詞の文に do）／<span class="ng">✕ What are your aunt's favorite subject?</span>（中心は subject＝1つ）／<span class="ng">✕ What is your aunts favorite subject?</span>（<b>'</b> 落ち）／<span class="ng">✕ What is your aunt's favarite subject?</span>（つづり）</span>
+    </div><div class="ans-final"><span>こたえ</span>What is your aunt's favorite subject?</div></div>
+    <div class="gq" data-gid="WH-2"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-2','o')">○</button><button class="x" onclick="g(this,'WH-2','x')">✕</button></div><div class="write3">📝 3回　What is your aunt's favorite subject?</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ルール2 ===== -->
+<div class="step"><span class="n">ルール2</span><span class="t">疑問詞の使い分け（what / who / where / when / whose / why）</span><span class="time">7分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>疑問詞は「<b>何を知りたいか</b>」で選ぶ。日本語を読んだら、まず<b>知りたい中身の種類</b>を見つけよう。</p>
+
+  <div class="fig">
+    <div class="cap">図2　知りたい中身 → 使う疑問詞は、この6つで決まる</div>
+    <svg viewBox="0 0 600 244" role="img" aria-label="疑問詞の使い分け地図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <rect x="6" y="8" width="118" height="34" rx="8" fill="#fff4e3" stroke="#e0b552" stroke-width="2"/>
+      <text x="65" y="31" text-anchor="middle" font-size="14" font-weight="700" fill="#7a5a1e">もの・こと</text>
+      <line x1="130" y1="25" x2="176" y2="25" stroke="#e0b552" stroke-width="3"/><polygon points="186,25 174,19 174,31" fill="#e0b552"/>
+      <rect x="192" y="6" width="94" height="38" rx="9" fill="#e0b552"/>
+      <text x="239" y="31" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">what</text>
+      <text x="298" y="30" font-size="12.5" fill="#7a5a1e">何　What is this?</text>
+
+      <rect x="6" y="48" width="118" height="34" rx="8" fill="#e8eefb" stroke="#7f9fd0" stroke-width="2"/>
+      <text x="65" y="71" text-anchor="middle" font-size="14" font-weight="700" fill="#31527a">人</text>
+      <line x1="130" y1="65" x2="176" y2="65" stroke="#7f9fd0" stroke-width="3"/><polygon points="186,65 174,59 174,71" fill="#7f9fd0"/>
+      <rect x="192" y="46" width="94" height="38" rx="9" fill="#7f9fd0"/>
+      <text x="239" y="71" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">who</text>
+      <text x="298" y="70" font-size="12.5" fill="#31527a">だれ　Who is he?</text>
+
+      <rect x="6" y="88" width="118" height="34" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="65" y="111" text-anchor="middle" font-size="14" font-weight="700" fill="#2f5a3e">場所</text>
+      <line x1="130" y1="105" x2="176" y2="105" stroke="#7fae8a" stroke-width="3"/><polygon points="186,105 174,99 174,111" fill="#7fae8a"/>
+      <rect x="192" y="86" width="94" height="38" rx="9" fill="#7fae8a"/>
+      <text x="239" y="111" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">where</text>
+      <text x="298" y="110" font-size="12.5" fill="#2f5a3e">どこ　Where is my bag?</text>
+
+      <rect x="6" y="128" width="118" height="34" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="65" y="151" text-anchor="middle" font-size="14" font-weight="700" fill="#2f5a3e">時</text>
+      <line x1="130" y1="145" x2="176" y2="145" stroke="#7fae8a" stroke-width="3"/><polygon points="186,145 174,139 174,151" fill="#7fae8a"/>
+      <rect x="192" y="126" width="94" height="38" rx="9" fill="#7fae8a"/>
+      <text x="239" y="151" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">when</text>
+      <text x="298" y="150" font-size="12.5" fill="#2f5a3e">いつ　When is the party?</text>
+
+      <rect x="6" y="168" width="118" height="34" rx="8" fill="#fff5fa" stroke="#d99ab8" stroke-width="2"/>
+      <text x="65" y="191" text-anchor="middle" font-size="14" font-weight="700" fill="#a24d78">持ち主</text>
+      <line x1="130" y1="185" x2="176" y2="185" stroke="#d99ab8" stroke-width="3"/><polygon points="186,185 174,179 174,191" fill="#d99ab8"/>
+      <rect x="192" y="166" width="94" height="38" rx="9" fill="#d99ab8"/>
+      <text x="239" y="191" text-anchor="middle" font-size="16" font-weight="800" fill="#fff">whose</text>
+      <text x="298" y="184" font-size="12.5" fill="#a24d78">だれの　＋ 名詞 が必ず要る</text>
+      <text x="298" y="200" font-size="12" font-weight="800" fill="#a24d78">Whose bag is this?</text>
+
+      <rect x="6" y="208" width="118" height="34" rx="8" fill="#fdeeec" stroke="#d98a86" stroke-width="2"/>
+      <text x="65" y="231" text-anchor="middle" font-size="14" font-weight="700" fill="#b5403a">理由</text>
+      <line x1="130" y1="225" x2="176" y2="225" stroke="#d98a86" stroke-width="3"/><polygon points="186,225 174,219 174,231" fill="#d98a86"/>
+      <rect x="192" y="206" width="94" height="38" rx="9" fill="#d98a86"/>
+      <text x="239" y="231" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">why</text>
+      <text x="298" y="230" font-size="12.5" font-weight="800" fill="#b5403a">なぜ　→ 答えは Because 〜</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>疑問詞</th><th>知りたい中身</th><th>れい</th><th>答えかた</th></tr>
+    <tr><td class="c-wh">what</td><td>何（もの・こと）</td><td>What is in your bag?</td><td>A knife.</td></tr>
+    <tr><td class="c-wh">who</td><td>だれ（人）</td><td>Who is that man?</td><td>He is my uncle.</td></tr>
+    <tr><td class="c-wh">where</td><td>どこ（場所）</td><td>Where do you live?</td><td>In Tokyo.</td></tr>
+    <tr><td class="c-wh">when</td><td>いつ（時）</td><td>When do you study?</td><td>After dinner.</td></tr>
+    <tr><td class="c-wh"><b>whose ＋ 名詞</b></td><td>だれの（持ち主）</td><td>Whose bag is this?</td><td>It is my aunt's.</td></tr>
+    <tr><td class="c-wh">why</td><td>なぜ（理由）</td><td>Why are you happy?</td><td><b>Because</b> today is my birthday.</td></tr>
+  </table>
+
+  <div class="key"><b>whose だけは「1語で立てない」</b>。すぐうしろに<b>名詞</b>をくっつけて <b>whose ＋ 名詞</b> のかたまりで文頭へ。<span class="ng">✕ Whose is this bag?</span> ではなく <span class="ok">○ Whose bag is this?</span> の形で覚える。</div>
+  <div class="more"><b>who's と whose は音が同じ「フーズ」。</b>　who's ＝ <b>who is</b>（だれですか）。whose ＝ <b>だれの</b>（持ち主）。<span class="ok">Who's that?（あれはだれ？）</span>／<span class="ok">Whose knife is this?（これはだれのナイフ？）</span>　書きとりでねらわれる。</div>
+  <div class="why"><b>why の答えは Because 〜。</b>　理由をきかれたら、理由を言う。Because のうしろは<b>「主語＋動詞」のそろった文</b>が来る。<span class="ng">✕ Because my uncle in China.</span>（動詞が無い）→ <span class="ok">○ Because my uncle lives in China.</span></div>
+  <div class="warn"><span class="ng">✕ Why do you like it? — Yes, I do.</span>（理由をきかれている）<br><span class="ng">✕ Who is your friends?</span>（答えが1人なら is、2人以上なら are）<br><span class="ng">✕ Where you live?</span>（一般動詞の文は do が要る）</div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="WH-3"><div class="qnum-e">問題3</div>
+    <div class="ew-jp">これはだれのナイフですか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「だれの」＝<b>持ち主</b>。持ち主をたずねる疑問詞は <b>whose</b>。</li>
+        <li><b>★whose は1語では立てない。</b>　「だれの…？」と言われたら、聞いている人は「<b>だれの《何》？</b>」と続きを待っている。だから whose のすぐうしろに<b>名詞</b>をくっつける → <b>whose knife</b>（だれのナイフ）。この<b>2語でひとかたまり</b>にして、文のいちばん前へ出す。</li>
+        <li><b>うしろは？</b>　残っているのは「これは〜です」＝ This is 〜. の疑問文 <b>Is this 〜?</b>。whose knife を前に出したので、残りは <b>is this</b> → <b>Whose knife is this?</b></li>
+        <li><b>かたまりを切らない。</b>　<span class="ng">✕ Whose is knife this?</span>　<span class="ng">✕ Whose this is knife?</span>　whose と knife は<b>ぜったいに離れない</b>。</li>
+        <li><b>★who's と whose の取りちがえ。</b>　音はどちらも「フーズ」。but who's ＝ <b>who is</b>（だれですか）、whose ＝ <b>だれの</b>。ここは「だれの<u>ナイフ</u>」と<b>持ち主</b>をきいているので <b>whose</b>。<span class="ng">✕ Who's knife is this?</span></li>
+        <li><b>be動詞は？</b>　主語は this（これ＝1つ）→ <b>is</b>。<span class="ng">✕ Whose knife are this?</span></li>
+        <li><b>★つづり：k-n-i-f-e。</b>　先頭の <b>k</b> は<b>読まないけれど書く</b>。<span class="ng">✕ nife</span>　ここは1本の話なので複数形 knives にはしない。（6月のテストで落とした語）</li>
+        <li><b>答え方</b>　Yes/No では答えない。<span class="ok">It is my uncle's.</span>（私のおじのです）のように<b>持ち主</b>を答える。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Who's knife is this?</span>（who is になってしまう）／<span class="ng">✕ Whose is this knife?</span>（whose＋名詞のかたまりを切った）／<span class="ng">✕ Whose nife is this?</span>（<b>k</b> 落ち）／<span class="ng">✕ Whose knives is this?</span>（1本なのに複数形）／「?」の書き忘れ</span>
+    </div><div class="ans-final"><span>こたえ</span>Whose knife is this?</div></div>
+    <div class="gq" data-gid="WH-3"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-3','o')">○</button><button class="x" onclick="g(this,'WH-3','x')">✕</button></div><div class="write3">📝 3回　Whose knife is this?</div></div>
+  </div>
+
+  <div class="q writing" data-id="WH-4"><div class="qnum-e">問題4</div>
+    <div class="ew-jp">なぜあなたは中国語を勉強するのですか。 — 私のおじが中国に住んでいるからです。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「なぜ」＝<b>理由</b> → <b>why</b>。文のいちばん前。</li>
+        <li><b>うしろは？</b>　「あなたは中国語を勉強しますか」＝ <b>Do you study Chinese?</b>　この疑問文の形を<b>そのまま</b>うしろにつなぐ → <b>Why do you study Chinese?</b></li>
+        <li><b>do のあとは原形。</b>　study のまま。<span class="ng">✕ Why do you studies Chinese?</span></li>
+        <li><b>★why の答えは Yes/No ではない。</b>　理由をきかれているのだから、理由を言う。理由を言うときの合図が <b>Because 〜</b>（〜だからです）。<span class="ng">✕ Why do you study Chinese? — Yes, I do.</span></li>
+        <li><b>★Because のうしろは「文」を置く。</b>　単語をぽんと置くのではなく、<b>主語＋動詞</b>のそろった文をつなぐ。<span class="ng">✕ Because my uncle in China.</span>（動詞が無い）→ <span class="ok">○ Because my uncle lives in China.</span></li>
+        <li><b>★★答えの中の動詞に -s。ここが9月の直撃ポイント。</b>　答えの文は<b>疑問文ではない</b>ので、do / does は出てこない。すると主語 my uncle（<b>1人＝3人称単数</b>）に合わせて、動詞が<b>自分で -s をつける</b> → <b>lives</b>。<span class="ng">✕ Because my uncle live in China.</span>　<span class="ng">✕ Because my uncle does live in China.</span></li>
+        <li><b>「〜に住む」は live ＋ in ＋ 場所。</b>　in China（中国の中に住んでいる）。<span class="ng">✕ lives China</span>（in を落とすと「中国を住む」になる）</li>
+        <li><b>★大文字とつづり。</b>　Chinese（中国語）も China（中国）も<b>いつも大文字</b>。China ＝ <b>C-h-i-n-a</b>。（6月のテストで落とした語）</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Why you study Chinese?</span>（do 落ち）／<span class="ng">✕ Why do you study chinese?</span>（小文字）／<span class="ng">✕ Because my uncle live in China.</span>（<b>-s 落ち</b>）／<span class="ng">✕ Because my uncle lives China.</span>（in 落ち）／<span class="ng">✕ Yes, I do.</span>（理由を答えていない）</span>
+    </div><div class="ans-final"><span>こたえ</span>Why do you study Chinese? — Because my uncle lives in China.</div></div>
+    <div class="gq" data-gid="WH-4"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-4','o')">○</button><button class="x" onclick="g(this,'WH-4','x')">✕</button></div><div class="write3">📝 3回　Why do you study Chinese? — Because my uncle lives in China.</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ルール3 ===== -->
+<div class="step"><span class="n">ルール3</span><span class="t">how の仲間 — how / how many / how much / how old / how long</span><span class="time">7分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>how は1語だと「<b>どうやって（方法）</b>」「<b>どんな（ようす）</b>」。でも how は<b>うしろに1語くっつけると、まったく別の質問に変わる</b>。ここが特訓の大問5で毎回ねらわれるところ。</p>
+
+  <div class="fig">
+    <div class="cap">図3　how ＋ もう1語 ＝ 別の質問になる（5つ）</div>
+    <svg viewBox="0 0 600 232" role="img" aria-label="howの仲間5つの図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <rect x="6" y="6" width="80" height="38" rx="9" fill="#e0b552"/>
+      <text x="46" y="31" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">how</text>
+      <text x="96" y="30" font-size="13" font-weight="800" fill="#7a5a1e">どうやって（方法）</text>
+      <text x="268" y="30" font-size="12" fill="#7a5a1e">How does she go to school? — By bus.</text>
+
+      <line x1="46" y1="48" x2="46" y2="214" stroke="#c9d3c6" stroke-width="2" stroke-dasharray="4 4"/>
+
+      <rect x="60" y="52" width="176" height="36" rx="9" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="148" y="76" text-anchor="middle" font-size="15" font-weight="800" fill="#2f5a3e">how many ＋ 複数形</text>
+      <text x="246" y="70" font-size="12.5" font-weight="800" fill="#2f5a3e">いくつ（数えられる）</text>
+      <text x="246" y="85" font-size="11.5" fill="#b5403a">✕ how many book → ○ how many book<tspan font-weight="800">s</tspan></text>
+
+      <rect x="60" y="94" width="176" height="36" rx="9" fill="#e8eefb" stroke="#7f9fd0" stroke-width="2"/>
+      <text x="148" y="118" text-anchor="middle" font-size="15" font-weight="800" fill="#31527a">how much</text>
+      <text x="246" y="112" font-size="12.5" font-weight="800" fill="#31527a">いくら（値段）・どれだけ（量）</text>
+      <text x="246" y="127" font-size="11.5" fill="#31527a">How much is it? — It is 500 yen.</text>
+
+      <rect x="60" y="136" width="176" height="36" rx="9" fill="#fff5fa" stroke="#d99ab8" stroke-width="2"/>
+      <text x="148" y="160" text-anchor="middle" font-size="15" font-weight="800" fill="#a24d78">how old</text>
+      <text x="246" y="154" font-size="12.5" font-weight="800" fill="#a24d78">何歳（年齢）</text>
+      <text x="246" y="169" font-size="11.5" fill="#a24d78">How old is it? — It is ten years old.</text>
+
+      <rect x="60" y="178" width="176" height="36" rx="9" fill="#fff4e3" stroke="#e0b552" stroke-width="2"/>
+      <text x="148" y="202" text-anchor="middle" font-size="15" font-weight="800" fill="#7a5a1e">how long</text>
+      <text x="246" y="196" font-size="12.5" font-weight="800" fill="#7a5a1e">どのくらい長く（長さ・期間）</text>
+      <text x="246" y="211" font-size="11.5" fill="#7a5a1e">How long is it? — For an hour.</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>形</th><th>意味</th><th>うしろのきまり</th><th>答えかた</th></tr>
+    <tr><td class="c-wh">how</td><td>どうやって／どんな</td><td>そのまま疑問文</td><td>By bike. / Fine.</td></tr>
+    <tr><td class="c-wh"><b>how many ＋ 複数形</b></td><td>いくつ（<b>数</b>）</td><td><b>名詞は必ず -s</b>（books / hours）</td><td>Three. / Two hours.</td></tr>
+    <tr><td class="c-wh">how much</td><td>いくら（<b>値段</b>）・どれだけ（量）</td><td>うしろに名詞は要らない</td><td>It is 500 yen.</td></tr>
+    <tr><td class="c-wh">how old</td><td>何歳（<b>年齢</b>）</td><td>be動詞の疑問文</td><td>He is thirteen years old.</td></tr>
+    <tr><td class="c-wh">how long</td><td>どのくらい長く（<b>長さ・期間</b>）</td><td>そのまま疑問文</td><td>For an hour.</td></tr>
+  </table>
+
+  <div class="why"><b>how many と how much の分かれ道は「数えられるか」。</b>　本・時間・人・ペンは「1つ、2つ…」と<b>数えられる</b> → <b>how many</b>（そして名詞は<b>複数形</b>）。お金・水・音楽は「1つ、2つ」と数えず<b>量</b>であつかう → <b>how much</b>。だから値段は how much。<span class="ng">✕ How many is this table?</span></div>
+  <div class="key"><b>how many のあとの名詞は、ぜったいに複数形。</b>　「いくつ？」ときいた時点で、心の中では「2つ、3つ…」と<b>2つ以上を想定している</b>。だから -s がつく。<span class="ng">✕ How many book 〜</span> → <span class="ok">○ How many book<b>s</b> 〜</span></div>
+  <div class="more"><b>年齢は「old（古い）」できく。</b>　英語は「どれくらい old か」と言う。日本語の「歳」にあたる語をさがさない。<span class="ng">✕ How many years are you?</span> → <span class="ok">○ How old are you?</span>　答えも <span class="ok">I am thirteen (years old).</span> で、be動詞を使う（<span class="ng">✕ I have thirteen years.</span>）。</div>
+  <div class="warn"><span class="ng">✕ How much books do you have?</span>（本は数えられる → how many）<br><span class="ng">✕ How many is this table?</span>（値段は how much）<br><span class="ng">✕ How old do you?</span>（年齢は be動詞 → How old are you?）</div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="WH-5"><div class="qnum-e">問題5</div>
+    <div class="ew-jp">あなたは木曜日に何時間勉強しますか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「何時間」＝<b>時間の“数”</b>。1時間・2時間…と<b>数えられる</b>ので <b>how many</b>。<span class="ng">✕ How much hours 〜</span>（お金や水のような「量」ではない）</li>
+        <li><b>★how many は1語では立てない。</b>　「いくつ？」と言われたら「<b>《何》がいくつ？</b>」と続きを待たれる。だから how many のすぐうしろに<b>数えるもの</b>を置く → <b>how many hours</b>。この<b>3語でひとかたまり</b>にして文のいちばん前へ。</li>
+        <li><b>★★名詞は必ず複数形。ここが最大の落とし穴。</b>　「何時間？」ときいた時点で、答えは「2時間、3時間…」と<b>2つ以上を想定している</b>。だから <b>hour<u>s</u></b>。<span class="ng">✕ How many hour do you study 〜?</span></li>
+        <li><b>うしろは？</b>　「あなたは勉強しますか」＝ <b>Do you study 〜?</b>　この形をそのままつなぐ → How many hours <b>do you study</b> 〜?　動詞は<b>原形</b> study。</li>
+        <li><b>「木曜日に」は？</b>　<b>曜日には on</b> → <b>on Thursday</b>。（月なら in、時刻なら at）。時を表す言葉は<b>文の最後</b>。</li>
+        <li><b>★大文字とつづり。</b>　Thursday は<b>曜日の名前 → 大文字 T</b>。つづり <b>T-h-u-r-s-d-a-y</b>。<b>r</b> と <b>s</b> の<b>両方</b>が入る。<span class="ng">✕ Thusday</span>（r 落ち）<span class="ng">✕ Thurday</span>（s 落ち）。「サー<b>ル</b>ズデイ」と r を口で言いながら書く。（6月のテストで落とした語）</li>
+        <li><b>答え方</b>　Yes/No では答えない。<span class="ok">(For) two hours.</span> のように時間を答える。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ How many hour do you study on Thursday?</span>（<b>-s 落ち＝いちばん多い</b>）／<span class="ng">✕ How much hours 〜</span>（数えられるので how many）／<span class="ng">✕ How many hours you study 〜?</span>（do 落ち）／<span class="ng">✕ on Thusday</span>（<b>r</b> 落ち）／<span class="ng">✕ in Thursday</span>（曜日は on）</span>
+    </div><div class="ans-final"><span>こたえ</span>How many hours do you study on Thursday?</div></div>
+    <div class="gq" data-gid="WH-5"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-5','o')">○</button><button class="x" onclick="g(this,'WH-5','x')">✕</button></div><div class="write3">📝 3回　How many hours do you study on Thursday?</div></div>
+  </div>
+
+  <div class="q writing" data-id="WH-6"><div class="qnum-e">問題6</div>
+    <div class="ew-jp">このテーブルはいくらですか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「いくら」＝<b>値段</b>。値段をきく形は <b>how much</b>。この<b>2語でひとかたまり</b>、文のいちばん前へ。</li>
+        <li><b>★なぜ how many ではないの？</b>　how many は「<b>いくつ？</b>」＝<b>数</b>をきく言葉。ここできいているのは「テーブルが何台あるか」ではなく「<b>いくらのお金がかかるか</b>」。お金は「1つ、2つ」と数えず<b>量</b>としてあつかうので、量をきく <b>how much</b> を使う。<span class="ng">✕ How many is this table?</span>（「テーブルは何台？」になってしまう）</li>
+        <li><b>★how much のうしろに名詞は要らない。</b>　「いくら」だけで意味が完成している。<span class="ng">✕ How much money is this table?</span> とは言わない（how many は名詞が要るのに、how much は要らない。ここが分かれ目）。</li>
+        <li><b>うしろは？</b>　「このテーブルは〜です」＝ This table is 〜. の疑問文 <b>Is this table 〜?</b>　how much を前に出したので、残りは <b>is this table</b> → <b>How much is this table?</b></li>
+        <li><b>be動詞は主語が決める。</b>　主語 this table は<b>1つ</b> → <b>is</b>。<span class="ng">✕ How much are this table?</span></li>
+        <li><b>do は使わない。</b>　これは be動詞（is）の文。<span class="ng">✕ How much does this table?</span></li>
+        <li><b>★つづり：t-a-b-l-e。</b>　<span class="ng">✕ tabel</span>　<span class="ng">✕ teble</span>。「テイブ<b>ル</b>」の <b>l</b> は <b>e</b> より前、最後は <b>e</b> で終わる。（6月のテストで落とした語）</li>
+        <li><b>答え方</b>　Yes/No では答えない。<span class="ok">It is ten thousand yen.</span> のように値段を答える。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ How many is this table?</span>（値段は how much）／<span class="ng">✕ How much money is this table?</span>（名詞をつけない）／<span class="ng">✕ How much are this table?</span>（1つなので is）／<span class="ng">✕ How much does this table?</span>（be動詞の文に do）／<span class="ng">✕ How much is this tabel?</span>（つづり）</span>
+    </div><div class="ans-final"><span>こたえ</span>How much is this table?</div></div>
+    <div class="gq" data-gid="WH-6"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-6','o')">○</button><button class="x" onclick="g(this,'WH-6','x')">✕</button></div><div class="write3">📝 3回　How much is this table?</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ルール4 ===== -->
+<div class="step"><span class="n">ルール4</span><span class="t">what ＋ 名詞 — what time / what color / what subject / what sport</span><span class="time">6分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>how と同じで、<b>what もうしろに名詞をくっつけると、きく中身がしぼれる</b>。what だけだと「何？」とばくぜんとしているが、<b>what ＋ 名詞</b> にすると「<b>何の〈名詞〉？</b>」になる。</p>
+
+  <div class="fig">
+    <div class="cap">図4　what ＋ 名詞 は、2語でひとかたまり。切りはなさない</div>
+    <svg viewBox="0 0 600 196" role="img" aria-label="what＋名詞のかたまり図" font-family="'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+      <rect x="8" y="14" width="200" height="44" rx="10" fill="#e0b552"/>
+      <text x="108" y="42" text-anchor="middle" font-size="17" font-weight="800" fill="#fff">what ＋ 名詞</text>
+      <text x="220" y="32" font-size="12.5" font-weight="800" fill="#7a5a1e">2語で「1つの疑問詞」。</text>
+      <text x="220" y="50" font-size="12.5" font-weight="800" fill="#7a5a1e">この2語を、まとめて文頭へ。</text>
+
+      <rect x="8" y="70" width="128" height="36" rx="8" fill="#fff4e3" stroke="#e0b552" stroke-width="2"/>
+      <text x="72" y="94" text-anchor="middle" font-size="15" font-weight="800" fill="#7a5a1e">what time</text>
+      <text x="146" y="93" font-size="12.5" fill="#7a5a1e">何時　— At seven.</text>
+      <text x="330" y="93" font-size="11.5" fill="#b5403a">✕ What is time 〜</text>
+
+      <rect x="8" y="112" width="128" height="36" rx="8" fill="#fff5fa" stroke="#d99ab8" stroke-width="2"/>
+      <text x="72" y="136" text-anchor="middle" font-size="15" font-weight="800" fill="#a24d78">what color</text>
+      <text x="146" y="135" font-size="12.5" fill="#a24d78">何色　— It is white.</text>
+      <text x="330" y="135" font-size="11.5" fill="#b5403a">✕ What is color 〜</text>
+
+      <rect x="8" y="154" width="128" height="36" rx="8" fill="#e6f4ea" stroke="#7fae8a" stroke-width="2"/>
+      <text x="72" y="178" text-anchor="middle" font-size="14" font-weight="800" fill="#2f5a3e">what subject</text>
+      <text x="146" y="177" font-size="12.5" fill="#2f5a3e">何の教科　what sport（何のスポーツ）</text>
+    </svg>
+  </div>
+
+  <table>
+    <tr><th>形</th><th>意味</th><th>れい</th><th>答えかた</th></tr>
+    <tr><td class="c-wh">what time</td><td>何時</td><td>What time is it now?</td><td>It is seven.</td></tr>
+    <tr><td class="c-wh">what color</td><td>何色</td><td>What color do you like?</td><td>I like white.</td></tr>
+    <tr><td class="c-wh">what subject</td><td>何の教科</td><td>What subject do you study?</td><td>Math.</td></tr>
+    <tr><td class="c-wh">what sport</td><td>何のスポーツ</td><td>What sport does he play?</td><td>He plays soccer.</td></tr>
+  </table>
+
+  <div class="key"><b>what ＋ 名詞 は「2語で1つの疑問詞」。</b>　切りはなして書かない。<span class="ng">✕ What is time do you get up?</span>　<span class="ok">○ What time do you get up?</span></div>
+  <div class="more"><b>時刻の前置詞は at。</b>　答えるときは <b>at seven</b>（7時に）／<b>at eight thirty</b>（8時半に）。時刻＝ at、曜日＝ on、月＝ in。この3つを場面ごとに言えるようにしておく。</div>
+  <div class="warn"><span class="ng">✕ What time does she gets up?</span>（does を出したら動詞は<b>原形</b> get）<br><span class="ng">✕ What color are your bag?</span>（bag は1つ → is）<br><span class="ng">✕ What time do your aunt 〜?</span>（aunt は1人 → does）</div>
+</div>
+
+<div class="chk">✍️ ここまでを、すぐ書いて確かめよう（2問）</div>
+
+  <div class="q writing" data-id="WH-7"><div class="qnum-e">問題7</div>
+    <div class="ew-jp">あなたのおばさんは何時に朝食を食べますか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「何時」＝<b>時刻</b>。what だけだと「何？」になってしまうので、<b>time</b> をくっつける → <b>what time</b>。この<b>2語でひとかたまり</b>、文のいちばん前へ。<span class="ng">✕ What is time your aunt eats breakfast?</span></li>
+        <li><b>うしろは一般動詞の疑問文。</b>　「食べる（eat）」は一般動詞なので、助っ人が要る。</li>
+        <li><b>★do か does か。</b>　主語は your aunt ＝ <b>1人（3人称単数）</b>。あなた（you）でも私（I）でもない<b>他の1人</b>なので、助っ人は <b>does</b>。<span class="ng">✕ What time do your aunt eat breakfast?</span>　your を見て do にしない。<b>決めるのは aunt。</b></li>
+        <li><b>★★does を出したら、動詞は原形。ここが9月の山場。</b>　ふつうの文なら She eat<b>s</b> breakfast.（-s がつく）。でも疑問文では、<b>does がもう「3人称単数だよ」と示している</b>ので、動詞まで -s をつけると<b>二重</b>になる。だから動詞は原形にもどる → <b>eat</b>。<span class="ng">✕ What time does your aunt eats breakfast?</span></li>
+        <li><b>★breakfast に a も the もつけない。</b>　食事の名前（breakfast / lunch / dinner）は<b>裸のまま</b>使う決まり。<span class="ng">✕ eat a breakfast</span>　<span class="ng">✕ eat the breakfast</span></li>
+        <li><b>つづり</b>　aunt ＝ <b>a-u-n-t</b>（おば）。uncle（おじ）とセットで覚える。</li>
+        <li><b>答え方</b>　Yes/No では答えない。<span class="ok">She eats breakfast at seven.</span>　— <b>時刻の前には at</b>。（答えの文は疑問文ではないので、eats に -s がもどる）</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ What time does your aunt eats breakfast?</span>（<b>-s を消し忘れ＝いちばん多い</b>）／<span class="ng">✕ What time do your aunt eat breakfast?</span>（aunt は1人 → does）／<span class="ng">✕ What time your aunt eats breakfast?</span>（助っ人 does 落ち）／<span class="ng">✕ eat a breakfast</span>／<span class="ng">✕ What is time 〜</span></span>
+    </div><div class="ans-final"><span>こたえ</span>What time does your aunt eat breakfast?</div></div>
+    <div class="gq" data-gid="WH-7"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-7','o')">○</button><button class="x" onclick="g(this,'WH-7','x')">✕</button></div><div class="write3">📝 3回　What time does your aunt eat breakfast?</div></div>
+  </div>
+
+  <div class="q writing" data-id="WH-8"><div class="qnum-e">問題8</div>
+    <div class="ew-jp">あなたのおじさんの車は何色ですか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「何色」。what だけでは「何？」になるので、<b>color</b> をくっつける → <b>what color</b>。<b>2語でひとかたまり</b>、文のいちばん前へ。<span class="ng">✕ What is color your uncle's car?</span>（what と color を切りはなさない）</li>
+        <li><b>★うしろは be動詞の疑問文。do は使わない。</b>　この文は「おじさんの車 <b>＝</b> 何色？」と<b>イコールでつなぐ</b>文。イコールの動詞は <b>be動詞</b>。<span class="ng">✕ What color does your uncle's car?</span></li>
+        <li><b>be動詞は主語が決める。</b>　主語 your uncle's car の<b>中心の名詞は car（1台）</b> → <b>is</b>。your につられて are にしない。<span class="ng">✕ What color are your uncle's car?</span></li>
+        <li><b>語順</b>　「〜ですか」の形は Is your uncle's car 〜? だった。what color を前に出したので、残りは <b>is your uncle's car</b> → <b>What color is your uncle's car?</b></li>
+        <li><b>「おじさんの車」はどう書く？</b>　<b>your uncle's car</b>。人のうしろに <b>'s</b> をつけて「〜の」。ならべ方は<b>「持ち主 → 持ち物」</b>の順。<span class="ng">✕ your uncles car</span>（' を落とすと「おじたち」に見える）</li>
+        <li><b>★ここで a はつけない。</b>　car は数えられる名詞だが、<b>your uncle's（だれのか）がもう決まっている</b>ので、「1台だよ」の印である a は要らない。<span class="ng">✕ a your uncle's car</span></li>
+        <li><b>★つづり：u-n-c-l-e。</b>　<span class="ng">✕ uncel</span>　最後は <b>-cle</b>。（6月のテストで落とした語）</li>
+        <li><b>答え方</b>　Yes/No では答えない。<span class="ok">It is white.</span> のように色を答える（car を代名詞 it で受ける）。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ What color are your uncle's car?</span>（car は1台 → is）／<span class="ng">✕ What color does your uncle's car?</span>（be動詞の文に do）／<span class="ng">✕ What is color your uncle's car?</span>（かたまりを切った）／<span class="ng">✕ What color is your uncles car?</span>（<b>'</b> 落ち）／<span class="ng">✕ What color is your uncel's car?</span>（つづり）</span>
+    </div><div class="ans-final"><span>こたえ</span>What color is your uncle's car?</div></div>
+    <div class="gq" data-gid="WH-8"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-8','o')">○</button><button class="x" onclick="g(this,'WH-8','x')">✕</button></div><div class="write3">📝 3回　What color is your uncle's car?</div></div>
+  </div>
+
+</div>
+
+<!-- ===== ミックス ===== -->
+<div class="step"><span class="n">ミックス</span><span class="t">どの疑問詞を使うかは、自分で決める（4問）</span><span class="time">6分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>ここからは<b>順番がバラバラ</b>。be動詞の文と一般動詞の文が混ざっている。<b>ヒントは出さない</b>。日本語を読んで、自分で疑問詞を選んで書こう。</p>
+  <div class="key"><b>書く前の3秒チェック</b>：① 知りたい中身は何？ → 疑問詞を選ぶ　② うしろは <b>be動詞</b>の文？ <b>一般動詞</b>の文？　③ 主語は1人・1つ？ → <b>is / does</b>。does なら<b>動詞は原形</b>。</div>
+</div>
+
+  <div class="q writing" data-id="WH-9"><div class="qnum-e">ミックス1</div>
+    <div class="ew-jp">あなたのお兄さんは何歳ですか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「何歳」＝<b>年齢</b>。年齢をきく形は <b>how old</b>。<b>2語でひとかたまり</b>、文のいちばん前へ。</li>
+        <li><b>★なぜ old（古い）？</b>　英語は年齢を「<b>どれくらい old か</b>」と表す。日本語の「歳」にあたる単語をさがしても見つからない。<b>How old ＝ 何歳</b>と、そのまま丸ごと覚える。<span class="ng">✕ How many years is your brother?</span>（英語では言わない）<span class="ng">✕ How much is your brother?</span>（値段になってしまう）</li>
+        <li><b>★うしろは be動詞の疑問文。</b>　「〜は何歳です<u>か</u>」は「お兄さん <b>＝</b> 13歳」というイコールの文。イコールの動詞は <b>be動詞</b>。<span class="ng">✕ How old does your brother?</span></li>
+        <li><b>★be動詞は主語が決める。your につられない。</b>　主語は your brother ＝ <b>1人</b> → <b>is</b>。<span class="ng">✕ How old are your brother?</span>（文のあたまに your があると are を書きたくなるが、決めるのは brother）</li>
+        <li><b>語順</b>　Is your brother 〜? の「〜」を how old にして前へ → <b>How old is your brother?</b></li>
+        <li><b>形のしあげ</b>　文のあたまの How は<b>大文字</b>、終わりは<b>「?」</b>。</li>
+        <li><b>答え方</b>　Yes/No では答えない。<span class="ok">He is thirteen years old.</span>（＝ He is thirteen. でもよい）。<b>年齢も be動詞</b>で言う。<span class="ng">✕ He has thirteen years.</span>（日本語やほかの言語のクセ。英語では言わない）</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ How old are your brother?</span>（brother は1人 → is）／<span class="ng">✕ How many years is your brother?</span>／<span class="ng">✕ How old does your brother?</span>（be動詞の文に do）／<span class="ng">✕ How old is your brother.</span>（「?」の書き忘れ）</span>
+    </div><div class="ans-final"><span>こたえ</span>How old is your brother?</div></div>
+    <div class="gq" data-gid="WH-9"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-9','o')">○</button><button class="x" onclick="g(this,'WH-9','x')">✕</button></div><div class="write3">📝 3回　How old is your brother?</div></div>
+  </div>
+
+  <div class="q writing" data-id="WH-10"><div class="qnum-e">ミックス2</div>
+    <div class="ew-jp">あなたのおばさんはどこで英語を練習しますか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「どこで」＝<b>場所</b> → <b>where</b>。文のいちばん前。</li>
+        <li><b>うしろは一般動詞の疑問文。</b>　「練習する（practice）」は一般動詞。だから助っ人（do / does）が要る。<span class="ng">✕ Where your aunt practices English?</span>（助っ人が無い）</li>
+        <li><b>★do か does か。</b>　主語 your aunt は<b>1人＝3人称単数</b>（私でもあなたでもない他の1人）→ <b>does</b>。<span class="ng">✕ Where do your aunt practice English?</span></li>
+        <li><b>★★does を出したら、動詞は原形にもどす。この1点が9月の勝負どころ。</b>　ふつうの文なら My aunt <b>practices</b> English.（-es がつく）。でも疑問文では、<b>does がすでに「3人称単数だよ」の役をしている</b>ので、動詞は -es を返して<b>原形 practice</b> にもどる。<span class="ng">✕ Where does your aunt practices English?</span>　<b>-es は does と動詞のどちらか一方にしか出ない。</b></li>
+        <li><b>★つづり：p-r-a-c-t-i-c-e。</b>　<b>c が2つ</b>入り、最後は <b>e</b> で終わる。<span class="ng">✕ practise</span>　<span class="ng">✕ practic</span>。（三単現は practices）</li>
+        <li><b>★English に the はつけない。</b>　楽器は the piano と <b>the</b> が要るが、<b>言語の名前には the をつけない</b>。<span class="ng">✕ practice the English</span>　English は<b>言語の名前 → 大文字 E</b>。</li>
+        <li><b>答え方</b>　Yes/No では答えない。<span class="ok">At school.</span> のように場所を答える。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Where does your aunt practices English?</span>（<b>-es の消し忘れ＝最頻出</b>）／<span class="ng">✕ Where do your aunt practice English?</span>（aunt は1人 → does）／<span class="ng">✕ Where your aunt practices English?</span>（does 落ち）／<span class="ng">✕ practice the English</span>／<span class="ng">✕ practise</span>（つづり）</span>
+    </div><div class="ans-final"><span>こたえ</span>Where does your aunt practice English?</div></div>
+    <div class="gq" data-gid="WH-10"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-10','o')">○</button><button class="x" onclick="g(this,'WH-10','x')">✕</button></div><div class="write3">📝 3回　Where does your aunt practice English?</div></div>
+  </div>
+
+  <div class="q writing" data-id="WH-11"><div class="qnum-e">ミックス3</div>
+    <div class="ew-jp">あなたのおじさんの誕生日はいつですか。 — 2月です。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「いつ」＝<b>時</b> → <b>when</b>。文のいちばん前。</li>
+        <li><b>うしろは be動詞の疑問文。</b>　「誕生日 <b>＝</b> いつ？」とイコールでつなぐ文 → be動詞。<span class="ng">✕ When does your uncle's birthday?</span></li>
+        <li><b>be動詞は主語が決める。</b>　主語 your uncle's birthday の中心は <b>birthday（1つ）</b> → <b>is</b>。<span class="ng">✕ When are your uncle's birthday?</span></li>
+        <li><b>「おじさんの誕生日」は？</b>　<b>your uncle's birthday</b>。'（アポストロフィ）＋s が「〜の」の印。<span class="ng">✕ your uncles birthday</span>（' を落とすと「おじたち」に見える）。uncle つづり <b>u-n-c-l-e</b>。</li>
+        <li><b>★答え方。Yes/No ではなく「時」を答える。</b>　<span class="ng">✕ Yes, it is.</span>　きかれたのは時なので、時を言う → <b>It is in February.</b>　（birthday は人ではないので、代名詞は <b>it</b>。<span class="ng">✕ He is in February.</span>）</li>
+        <li><b>★「2月に」の前置詞は in。</b>　時を表す前置詞は<b>大きさ</b>で決まる：<b>月・季節・年 → in</b>（in February）／<b>曜日・日づけ → on</b>（on Thursday）／<b>時刻 → at</b>（at seven）。2月は「月」だから <b>in</b>。<span class="ng">✕ on February</span>　<span class="ng">✕ at February</span></li>
+        <li><b>★大文字とつづり。</b>　February は<b>月の名前 → 大文字 F</b>。つづり <b>F-e-b-r-u-a-r-y</b>。<span class="ng">✕ Febuary</span>＝<b>1つめの r</b> を落としやすい。「フェ<b>ブル</b>アリー」と <b>r を口で言いながら</b>書く。（6月のテストで落とした語）</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ When is your uncles birthday?</span>（<b>'</b> 落ち）／<span class="ng">✕ It is on February.</span>（月は in）／<span class="ng">✕ It is in Febuary.</span>（<b>r</b> 落ち）／<span class="ng">✕ It is in february.</span>（小文字）／<span class="ng">✕ Yes, it is.</span>（時を答えていない）</span>
+    </div><div class="ans-final"><span>こたえ</span>When is your uncle's birthday? — It is in February.</div></div>
+    <div class="gq" data-gid="WH-11"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-11','o')">○</button><button class="x" onclick="g(this,'WH-11','x')">✕</button></div><div class="write3">📝 3回　When is your uncle's birthday? — It is in February.</div></div>
+  </div>
+
+  <div class="q writing" data-id="WH-12"><div class="qnum-e">ミックス4</div>
+    <div class="ew-jp">だれが毎朝この教室をそうじしますか。</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <ol>
+        <li><b>知りたいのは何？</b>　「だれが」＝<b>人</b> → <b>who</b>。文のいちばん前。</li>
+        <li><b>★★この who は、ただの疑問詞ではない。「文の主語」そのもの。</b>　答えを想像してみよう。「<b>私のおばが</b> そうじします」＝ <b>My aunt</b> cleans it.　この <b>My aunt の場所</b>を who がそっくり占めている。つまり <b>who ＝ 主語</b>。ここが特訓レベルの分かれ目。</li>
+        <li><b>★だから do / does を使わない。</b>　助っ人 do / does は「主語のうしろに動詞が来る形」をひっくり返すために呼ぶもの。でも今回は<b>主語をたずねている</b>ので、語順をひっくり返す必要がない。<b>ふつうの文の主語の場所に who を置くだけ</b>。<span class="ng">✕ Who does clean this classroom every morning?</span>　<span class="ng">✕ Who do you clean this classroom?</span></li>
+        <li><b>★★そのかわり、動詞に -s がつく。</b>　who は「<b>だれか1人</b>」としてあつかう＝3人称単数。do / does がいないので、<b>動詞が自分で -s をつける</b> → <b>cleans</b>。<span class="ng">✕ Who clean this classroom every morning?</span>　<b>「does が無い ＝ -s は動詞にある」</b>とセットで覚える。</li>
+        <li><b>「この教室」は？</b>　<b>this classroom</b>。this（この）がついているので、「1つだよ」の印である a は要らない。<span class="ng">✕ this a classroom</span></li>
+        <li><b>「毎朝」は？</b>　<b>every morning</b>。時を表す言葉は<b>文の最後</b>。<span class="ng">✕ Who cleans every morning this classroom?</span></li>
+        <li><b>答え方</b>　Yes/No では答えない。<span class="ok">My aunt does.</span>（私のおばです）のように<b>人</b>を答える。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ Who clean this classroom every morning?</span>（<b>-s 落ち</b>）／<span class="ng">✕ Who does clean this classroom 〜?</span>（does は要らない）／<span class="ng">✕ Who do you clean 〜?</span>（who がもう主語）／<span class="ng">✕ Who cleans every morning this classroom?</span>（語順）</span>
+    </div><div class="ans-final"><span>こたえ</span>Who cleans this classroom every morning?</div></div>
+    <div class="gq" data-gid="WH-12"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-12','o')">○</button><button class="x" onclick="g(this,'WH-12','x')">✕</button></div><div class="write3">📝 3回　Who cleans this classroom every morning?</div></div>
+  </div>
+
+</div>
+
+<!-- ===== 連動 ===== -->
+<div class="step"><span class="n">連動</span><span class="t">下線部をたずねる疑問文にする（2問）</span><span class="time">4分</span></div>
+<div class="body">
+<div class="lesson">
+  <p>特訓選抜の<b>大問6</b>で実際に出るのがこの形。「ふつうの文の<b>下線部</b>をたずねる疑問文にしなさい」。手順は<b>4ステップ</b>。1つでも飛ばすと×になる。</p>
+  <div class="key"><b>4ステップ</b>：① 下線部が<b>何の情報か</b>を見る（時刻？ 場所？ 長さ？）　② それに合う<b>疑問詞</b>に取りかえる　③ その疑問詞を<b>文のいちばん前</b>へ　④ 残りを<b>疑問文の形</b>にする（<b>does を出したら動詞は原形</b>）</div>
+  <div class="warn">下線部は疑問詞に<b>置きかわって消える</b>。<span class="ng">✕ What time does she go to bed at seven?</span>（下線部が残っている）／<span class="ng">✕ What time does she go to bed at?</span>（at だけ残っている）</div>
+</div>
+
+  <div class="q writing" data-id="WH-13"><div class="qnum-e">連動1</div>
+    <div class="ew-jp">つぎの文の下線部をたずねる疑問文にしなさい。<span class="src">She goes to bed <u>at ten</u>.</span></div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <p>下線部 <b>at ten</b> は「10<b>時</b>に」＝<b>時刻</b>。時刻をたずねる疑問詞は <b>what time</b>。動くのは<b>4か所</b>。</p>
+      <table>
+        <tr><th>手順</th><th>もとの文</th><th>書きかえ後</th><th>なぜそうなるか</th></tr>
+        <tr><td>①</td><td>at ten</td><td class="ok">What time</td><td>時刻をたずねるので what time に取りかえる</td></tr>
+        <tr><td>②</td><td>（文の最後）</td><td class="ok">文のいちばん前</td><td>疑問詞は必ず文頭に出す</td></tr>
+        <tr><td>③</td><td>She</td><td class="ok">does she</td><td>she は3人称単数 → 助っ人は does。主語の前に置く</td></tr>
+        <tr><td>④</td><td>goes</td><td class="ng">go</td><td><b>does を出したら動詞は原形</b>。-es は does に渡す</td></tr>
+      </table>
+      <ol>
+        <li><b>★④がいちばんの落とし穴。</b>　goes の <b>-es</b> は「主語が3人称単数だよ」という印。でも疑問文にすると、その役を <b>does</b> が引き受ける。<b>同じ印を2か所につけない</b>のが英語のルール → 動詞は<b>原形 go</b> にもどる。<span class="ng">✕ What time does she goes to bed?</span></li>
+        <li><b>★下線部は消える。</b>　at ten は what time に<b>置きかわった</b>のだから、もう文の中には残らない。<span class="ng">✕ What time does she go to bed at ten?</span>（両方書いてしまう）<span class="ng">✕ What time does she go to bed at?</span>（at だけ残す）</li>
+        <li><b>go to bed は「ねる」。</b>　この bed に a も the もつけない、決まった言い方。<span class="ng">✕ go to the bed</span></li>
+        <li><b>形のしあげ</b>　文のあたまの What は<b>大文字</b>、終わりは<b>「?」</b>。</li>
+        <li><b>答えは？</b>　この疑問文への答えが、もとの文 She goes to bed at ten.（＝ At ten.）。<b>答えの文では -es がもどる</b>。does がいないから、動詞が自分で印をつける。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ What time does she goes to bed?</span>（<b>-es の消し忘れ＝いちばん多い</b>）／<span class="ng">✕ What time do she go to bed?</span>（she は3人称単数 → does）／<span class="ng">✕ What time she goes to bed?</span>（does 落ち）／<span class="ng">✕ What time does she go to bed at ten?</span>（下線部が残っている）</span>
+    </div><div class="ans-final"><span>こたえ</span>What time does she go to bed?</div></div>
+    <div class="gq" data-gid="WH-13"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-13','o')">○</button><button class="x" onclick="g(this,'WH-13','x')">✕</button></div><div class="write3">📝 3回　What time does she go to bed?</div></div>
+  </div>
+
+  <div class="q writing" data-id="WH-14"><div class="qnum-e">連動2</div>
+    <div class="ew-jp">つぎの文の下線部をたずねる疑問文にしなさい。<span class="src">He practices the piano <u>for an hour</u>.</span></div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box"><div class="rw-why">
+      <p>下線部 <b>for an hour</b> は「1時間<b>のあいだ</b>」＝<b>どのくらい長く</b>やるか＝<b>長さ・期間</b>。長さをたずねる形は <b>how long</b>。動くのは<b>4か所</b>。</p>
+      <table>
+        <tr><th>手順</th><th>もとの文</th><th>書きかえ後</th><th>なぜそうなるか</th></tr>
+        <tr><td>①</td><td>for an hour</td><td class="ok">How long</td><td>長さ・期間をたずねるので how long</td></tr>
+        <tr><td>②</td><td>（文の最後）</td><td class="ok">文のいちばん前</td><td>疑問詞は必ず文頭に出す</td></tr>
+        <tr><td>③</td><td>He</td><td class="ok">does he</td><td>he は3人称単数 → 助っ人は does</td></tr>
+        <tr><td>④</td><td>practices</td><td class="ng">practice</td><td><b>does を出したら動詞は原形</b>。-es は does に渡す</td></tr>
+      </table>
+      <ol>
+        <li><b>★★④が9月にいちばん落とすところ。</b>　practices の <b>-es</b> は「主語が3人称単数だよ」の印。疑問文ではその役を <b>does</b> がやるので、動詞は<b>原形 practice</b> にもどる。<span class="ng">✕ How long does he practices the piano?</span>　<b>-es が出るのは does か動詞のどちらか一方だけ。</b></li>
+        <li><b>★つづり：p-r-a-c-t-i-c-e。</b>　<b>c が2つ</b>、最後は <b>e</b>。三単現は practice<b>s</b>。原形にもどすときは <b>-s を消すだけ</b>で、それ以外の文字は変えない。</li>
+        <li><b>★the piano の the は動かさない。</b>　書きかえるのは<b>下線部だけ</b>。下線が引かれているのは for an hour であって the piano ではない。だから the piano はそのまま残す。<br>　（<b>なぜ the がつくの？</b>　「楽器を演奏する・練習する」ときは <b>play the piano / practice the piano</b> と <b>the</b> をつける決まり。<span class="ng">✕ practice piano</span>）</li>
+        <li><b>★下線部は消える。</b>　for an hour は how long に置きかわったので、文には残らない。<span class="ng">✕ How long does he practice the piano for an hour?</span>　<span class="ng">✕ How long does he practice the piano for?</span></li>
+        <li><b>★how long と how many の分かれ道。</b>　もし下線部が <b>two hours</b>（2時間）のように「<b>数</b>」の形なら How many hours 〜? でもたずねられる。でも今回の下線部は <b>for an hour</b>＝「<b>どのくらいのあいだ</b>」という<b>長さ</b>の言い方。だから <b>How long</b>。</li>
+        <li><b>答えは？</b>　For an hour.（1時間です）。もとの文にもどせば He <b>practices</b> the piano for an hour. と、-es がもどる。</li>
+      </ol>
+      <span class="miss"><b>よくある間違い</b>　<span class="ng">✕ How long does he practices the piano?</span>（<b>-es の消し忘れ＝最頻出</b>）／<span class="ng">✕ How long do he practice the piano?</span>（he は3人称単数 → does）／<span class="ng">✕ How long does he practice piano?</span>（the 落ち）／<span class="ng">✕ How long does he practice the piano for an hour?</span>（下線部が残っている）／<span class="ng">✕ How long he practices the piano?</span>（does 落ち）</span>
+    </div><div class="ans-final"><span>こたえ</span>How long does he practice the piano?</div></div>
+    <div class="gq" data-gid="WH-14"><div class="grade">書けた？ <button class="o" onclick="g(this,'WH-14','o')">○</button><button class="x" onclick="g(this,'WH-14','x')">✕</button></div><div class="write3">📝 3回　How long does he practice the piano?</div></div>
+  </div>
+
+</div>
+
+<!-- ===== まとめ ===== -->
+<div class="step"><span class="n">まとめ</span><span class="t">この表だけ、目をつぶって言えるように</span><span class="time">2分</span></div>
+<div class="body"><div class="lesson">
+  <table>
+    <tr><th>疑問詞</th><th>知りたい中身</th><th>うしろのきまり</th><th>答えかた（Yes/No は使わない）</th></tr>
+    <tr><td class="c-wh">what</td><td>何</td><td>be動詞 or do/does</td><td>It is a knife. / I play tennis.</td></tr>
+    <tr><td class="c-wh">who</td><td>だれ</td><td><b>主語をきくときは do/does を使わず、動詞に -s</b></td><td>My aunt does.</td></tr>
+    <tr><td class="c-wh">where</td><td>どこ（場所）</td><td>be動詞 or do/does</td><td>At school.</td></tr>
+    <tr><td class="c-wh">when</td><td>いつ（時）</td><td>be動詞 or do/does</td><td>It is in February.</td></tr>
+    <tr><td class="c-wh"><b>whose ＋ 名詞</b></td><td>だれの（持ち主）</td><td>2語でひとかたまり</td><td>It is my uncle's.</td></tr>
+    <tr><td class="c-wh">why</td><td>なぜ（理由）</td><td>be動詞 or do/does</td><td><b>Because</b> ＋ 主語 ＋ 動詞 〜.</td></tr>
+  </table>
+
+  <table>
+    <tr><th>how の仲間 / what ＋ 名詞</th><th>意味</th><th>ぜったい落とさない点</th></tr>
+    <tr><td class="c-be">how</td><td>どうやって（方法）</td><td>By bus. / By bike. と答える</td></tr>
+    <tr><td class="c-be"><b>how many ＋ 名詞</b></td><td>いくつ（数）</td><td>名詞は<b>必ず複数形</b>（books / hours）</td></tr>
+    <tr><td class="c-be">how much</td><td>いくら（値段・量）</td><td>うしろに<b>名詞は要らない</b></td></tr>
+    <tr><td class="c-be">how old</td><td>何歳（年齢）</td><td><b>be動詞</b>できく・答える</td></tr>
+    <tr><td class="c-be">how long</td><td>どのくらい長く（長さ）</td><td>For an hour. と答える</td></tr>
+    <tr><td class="c-do"><b>what time</b></td><td>何時</td><td>答えの時刻は <b>at</b> seven</td></tr>
+    <tr><td class="c-do"><b>what color</b></td><td>何色</td><td>2語でひとかたまり（✕ What is color）</td></tr>
+    <tr><td class="c-do">what subject / what sport</td><td>何の教科／何のスポーツ</td><td>what ＋ 名詞 は切りはなさない</td></tr>
+  </table>
+
+  <div class="key"><b>下線部をたずねる4ステップ</b>　① 下線部は何の情報？　② 合う疑問詞に取りかえる　③ 文のいちばん前へ　④ 残りを疑問文に（<b>does を出したら動詞は原形</b>／<b>下線部は消える</b>）</div>
+  <div class="more"><b>-s は does と動詞のどちらか一方にしか出ない。</b>　She practice<b>s</b>. → Does she practice? ／ Where does she practice?　この一本の線が、9月の特訓でいちばん差がつくところ。<b>does を書いたら、動詞の -s を指さして消す。</b></div>
+  <div class="yn">疑問詞の質問は、ぜんぶ Yes/No では答えられない。答えが Yes/No になりそうなら、どこかで疑問詞の使い方をまちがえている。<b>「中身を答える」</b>が合言葉。</div>
+</div></div>
+
+<button class="done" id="doneBtn" onclick="finish()">疑問詞、ぜんぶ書けた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">疑問詞は「何を知りたいか」を先に言うだけ。<b>how many は複数形</b>・<b>what＋名詞は2語でひとかたまり</b>・<b>does を出したら動詞は原形</b>。この3つが体にしみたら、大問6の書きかえはこわくない。</div>
+<div class="footnav"><a class="back back-foot" href="../../夏休みダッシュボード.html#today" style="position:static;display:inline-flex;margin-top:16px">✓ 終わった → 次のおすすめへ</a></div>
+
+</div>
+
+<script>
+var KEY='tokkun_eg_wh';
+function t(b){if(!b.dataset.label)b.dataset.label=b.textContent;var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');b.textContent=open?'とじる':b.dataset.label;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}var w3=box.querySelector('.write3');if(v==='x'){if(w3)w3.style.display='block';}else{if(w3)w3.style.display='none';}}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！疑問詞、ぜんぶ書けたね';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);if(!v)return;var b=box.querySelector('.'+v);if(b)b.classList.add('sel');if(v==='x'){var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}});if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}};
+/* ===== 復習英語キュー送りフック（×/○・英語問題のみ・自己ループ防止） ===== */
+function sendToRevQ(btn,id,result){
+  if(typeof PRE!=='undefined' && PRE==='revq_') return;        // 受け皿自身では動かさない
+  if(typeof KEY==='undefined') return;
+  if(KEY.indexOf('revq')===0) return;
+  var q=btn&&btn.closest?btn.closest('.q'):null; if(!q) return;
+  if(q.classList.contains('calc')) return;                      // 数学除外
+  var engPrint=!!document.querySelector('[data-eng="1"]');
+  var isVocab=q.classList.contains('vocab'), isWriting=q.classList.contains('writing');
+  if(!engPrint && !isVocab && !isWriting) return;               // 混在で英語クラス無し→送らない
+  var kindEl=q.querySelector('.qnum-e'); var kindRaw=kindEl?(kindEl.textContent||''):'';
+  if(/漢字|書き|読み/.test(kindRaw)) return;                    // 暗記カードの漢字除外
+  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.qbody');
+  var enEl=q.querySelector('.ans-final')||q.querySelector('.ans-box .ans-main');
+  if(!jpEl||!enEl) return;
+  var jp=cleanRevQText(jpEl), en=cleanRevQText(enEl);
+  if(!jp||!en) return;
+  if(!/[A-Za-z]/.test(en)) return;                              // 答えに英字なし→英語でない→除外
+  if(result==='o'){bumpRevQPo(en);return;}                      // ○：既存項目の po++ のみ（新規追加しない）
+  var kind='単語',badge='tango';
+  if(isWriting||/英作文/.test(kindRaw)||/[.!?]\s*$/.test(en)){kind='英作文';badge='eisaku';}
+  else if(/熟語/.test(kindRaw)){kind='熟語';badge='jukugo';}
+  pushRevQDyn({jp:jp,en:en,kind:kind,badge:badge,day:revqToday(),src:(KEY+'_'+id)});
+}
+function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[（(][^）)]*でもOK[^）)]*[）)]/g,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function revqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function revqNorm(s){return String(s||'').toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function bumpRevQPo(en){try{var K='revq_dyn';var raw=localStorage.getItem(K);if(raw==null)return;var arr;try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;var key=revqNorm(en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].po=(+arr[i].po||0)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}}catch(e){}}
+function pushRevQDyn(item){try{var K='revq_dyn';var raw=localStorage.getItem(K);var arr;if(raw==null){arr=[];}else{try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;}var key=revqNorm(item.en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;arr[i].po=0;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;item.po=0;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
+</script>
+</body>
+</html>

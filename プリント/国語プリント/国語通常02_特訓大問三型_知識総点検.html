@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 特訓 大問三型・国語知識総合01 ＝ 漢字読み5＋書き5＋部首画数4＋四字熟語5＋対義/類義4＋慣用句5＋文法6（全34問）
+ ・夏前プリントの機械(t/g/localStorage/write3/印刷/もどる/onload復元)を踏襲。
+ ・新機能：各問の○✕の隣にミス分類C/K/Aボタン（✕選択時のみ表示）。KEY+'_'+gid+'_m' で保存（記録ボード集計互換）。
+ ・答えは「答えを見る」で隠す。○✕→✕ならC/K/Aを選び3回書く。KEY=tokkun_j02。
+ ・固有名詞（人名・塾名・校名）は一切入れない。使用漢字範囲は漢検5〜4級帯（構造Lとは別軸）。
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓 大問三型 国語知識総合01｜30分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+.howto{background:#fffefb;border:1px solid #e3e2d9;border-left:5px solid #91bdb7;border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:13.5px;color:#3a4a63}
+.howto b{color:#2f6b62}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-body{padding:16px 20px}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.th-amber .sec-hd{background:#fbf2e2;border-left:6px solid #d9b46d}
+.th-rose .sec-hd{background:#f8e9ec;border-left:6px solid #d6a4b0}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:15px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#8a5a19}
+.bx-warn::before{content:"⚠️ つまずき注意";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6;border-radius:8px;padding:10px 14px;margin:8px 0 0;font-size:13px;color:#5f4b7a}
+.bx-link::before{content:"🔗 特訓テストではこう出る";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:12px 0}
+.qword{font-size:22px;font-weight:900;color:#31415f}
+.qhint{font-size:13px;color:#4c5b70;margin-top:2px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:13px}
+.ans-box.open{display:block}
+.ans-main{font-size:20px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-read{font-size:13px;color:#405060;margin-bottom:4px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.miss{display:none;margin-top:8px;align-items:center;gap:6px;flex-wrap:wrap;font-size:12px;color:#7a6a55}
+.miss.show{display:flex}
+.miss .ml{font-size:12px;font-weight:700;color:#7a6a55}
+.miss .m{min-width:30px;height:30px;border-radius:8px;border:1.5px solid #e0d6c4;background:#fff;font-size:13px;font-weight:800;cursor:pointer;color:#9a8a70;padding:0 8px}
+.miss .m.sel{background:#caa86a;color:#fff;border-color:#caa86a}
+.miss .mhint{font-size:11px;color:#9a8a70;flex-basis:100%;margin-top:2px}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.miss{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec{break-inside:avoid;page-break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓 大問三型</span><span class="pg-badge">国語 知識総合</span><span class="pg-badge">全34問</span></div>
+  <h1>特訓 大問三型 国語知識総合①</h1>
+  <p>目安 約30分　対象: 中1　＝知識系（読み・書き・部首・四字熟語・対義/類義・慣用句・文法）を1枚で通し演習</p>
+  <p class="pg-sub">🌸 知識は覚えれば必ず点になる場所。まず自分で解いて、答え合わせで弱点をあぶり出そう。</p>
+</div>
+
+<div class="howto">
+  <b>使い方</b>　① まず自分で解く（ノートに書く）　② 「答えを見る」で答え合わせ　③ ○か✕をタップ　④ ✕のときは <b>C/K/A</b> を選んでから3回書く<br>
+  <span style="font-size:12.5px">C＝書き損じ・うっかり／K＝知らなかった／A＝知ってたが使えなかった　…　✕が多かった大問が、次にやるべき重点です。</span>
+</div>
+
+<!-- 大問一 漢字の読み（問1-5） -->
+<div class="unit-banner">
+  <span class="unit-num">大問一 漢字の読み</span>
+  <span class="unit-name">漢字を見て、よみをかなで書こう</span>
+  <span class="unit-time">問1〜5</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-hd"><h2>漢字の読み</h2><span class="badge-grade">漢検5〜4級</span></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="qnum-e">問1｜大問一</div>
+      <div class="qword">成長が <span style="color:#3f6f9f">著しい</span>。</div>
+      <div class="qhint">──のよみをかなで（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">いちじるしい</div>
+        <div class="ans-read">意味：はっきりわかるほど目立っている</div>
+        <div class="bx-warn">音読み「ちょ」につられない。訓読みで <span class="red">いちじるし-い</span>。</div>
+      </div>
+      <div class="gq" data-gid="q01">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div>
+        <div class="miss" data-mid="q01"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q01','C')">C</button><button class="m" onclick="m(this,'q01','K')">K</button><button class="m" onclick="m(this,'q01','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　いちじるしい　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問2｜大問一</div>
+      <div class="qword">注意を <span style="color:#3f6f9f">促す</span>。</div>
+      <div class="qhint">──のよみをかなで（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">うながす</div>
+        <div class="ans-read">意味：そうするようにすすめる・はたらきかける</div>
+        <div class="bx-warn">「そく‐す」と音で読まない。訓読みで <span class="red">うなが-す</span>。</div>
+      </div>
+      <div class="gq" data-gid="q02">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div>
+        <div class="miss" data-mid="q02"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q02','C')">C</button><button class="m" onclick="m(this,'q02','K')">K</button><button class="m" onclick="m(this,'q02','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　うながす　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問3｜大問一</div>
+      <div class="qword"><span style="color:#3f6f9f">快い</span> 風がふく。</div>
+      <div class="qhint">──のよみをかなで（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">こころよい</div>
+        <div class="ans-read">意味：気持ちがよい・心地よい</div>
+        <div class="bx-warn">送りがなは <span class="red">い</span>（快‐い）。部首は <span class="red">りっしんべん</span>（心の意味）。</div>
+      </div>
+      <div class="gq" data-gid="q03">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div>
+        <div class="miss" data-mid="q03"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q03','C')">C</button><button class="m" onclick="m(this,'q03','K')">K</button><button class="m" onclick="m(this,'q03','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　こころよい　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問4｜大問一</div>
+      <div class="qword">実力を <span style="color:#3f6f9f">発揮</span> する。</div>
+      <div class="qhint">──のよみをかなで（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">はっき</div>
+        <div class="ans-read">意味：力をじゅうぶんに表し出すこと</div>
+        <div class="bx-warn">「揮」を <span class="red">奮（ふるう）</span> と見まちがえない。「はつき」でなく「はっき」。</div>
+      </div>
+      <div class="gq" data-gid="q04">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div>
+        <div class="miss" data-mid="q04"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q04','C')">C</button><button class="m" onclick="m(this,'q04','K')">K</button><button class="m" onclick="m(this,'q04','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　はっき　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問5｜大問一</div>
+      <div class="qword">気温の <span style="color:#3f6f9f">推移</span> を見る。</div>
+      <div class="qhint">──のよみをかなで（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">すいい</div>
+        <div class="ans-read">意味：時とともに移り変わること</div>
+        <div class="bx-warn">「すい‐い」。読みをくずさない。グラフ・データの説明で頻出。</div>
+      </div>
+      <div class="gq" data-gid="q05">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div>
+        <div class="miss" data-mid="q05"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q05','C')">C</button><button class="m" onclick="m(this,'q05','K')">K</button><button class="m" onclick="m(this,'q05','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　すいい　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 大問二 漢字の書き取り（問6-10） -->
+<div class="unit-banner">
+  <span class="unit-num">大問二 漢字の書き取り</span>
+  <span class="unit-name">よみと意味を見て、漢字を書こう</span>
+  <span class="unit-time">問6〜10</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-hd"><h2>漢字の書き取り</h2><span class="badge-grade">漢検5〜4級</span></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="qnum-e">問6｜大問二</div>
+      <div class="qword">ボートで <span style="color:#3f6f9f">げきりゅう</span> を下る。</div>
+      <div class="qhint">──の部分を漢字で（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">激流</div>
+        <div class="ans-read">よみ：げきりゅう（激しい水の流れ）</div>
+        <div class="bx-warn">「激」は <span class="red">さんずい</span>。<span class="red">劇</span>（演劇）と書きまちがえない。</div>
+      </div>
+      <div class="gq" data-gid="q06">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button></div>
+        <div class="miss" data-mid="q06"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q06','C')">C</button><button class="m" onclick="m(this,'q06','K')">K</button><button class="m" onclick="m(this,'q06','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　激流　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問7｜大問二</div>
+      <div class="qword"><span style="color:#3f6f9f">はで</span> なスカーフを巻く。</div>
+      <div class="qhint">──の部分を漢字で（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">派手</div>
+        <div class="ans-read">よみ：はで（はなやかで目立つ）</div>
+        <div class="bx-warn">「派」は <span class="red">さんずい</span>。「は‐で」と読む特別な熟語。</div>
+      </div>
+      <div class="gq" data-gid="q07">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button></div>
+        <div class="miss" data-mid="q07"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q07','C')">C</button><button class="m" onclick="m(this,'q07','K')">K</button><button class="m" onclick="m(this,'q07','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　派手　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問8｜大問二</div>
+      <div class="qword">全体が <span style="color:#3f6f9f">きんしつ</span> な製品。</div>
+      <div class="qhint">──の部分を漢字で（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">均質</div>
+        <div class="ans-read">よみ：きんしつ（全体が同じ性質）</div>
+        <div class="bx-warn">「均」は <span class="red">つちへん</span>。意味＝ばらつきがなく同じ。評論で出る語。</div>
+      </div>
+      <div class="gq" data-gid="q08">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button></div>
+        <div class="miss" data-mid="q08"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q08','C')">C</button><button class="m" onclick="m(this,'q08','K')">K</button><button class="m" onclick="m(this,'q08','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　均質　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問9｜大問二</div>
+      <div class="qword">調査の <span style="color:#3f6f9f">たいしょう</span> を決める。</div>
+      <div class="qhint">──の部分を漢字で（働きかける相手の意味）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">対象</div>
+        <div class="ans-read">よみ：たいしょう（はたらきかける相手・目標になるもの）</div>
+        <div class="bx-warn">同音に注意！　<span class="red">対照</span>＝照らし合わせ／<span class="red">対称</span>＝つり合い。意味でえらぶ。</div>
+      </div>
+      <div class="gq" data-gid="q09">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button></div>
+        <div class="miss" data-mid="q09"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q09','C')">C</button><button class="m" onclick="m(this,'q09','K')">K</button><button class="m" onclick="m(this,'q09','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　対象　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問10｜大問二</div>
+      <div class="qword">運賃を <span style="color:#3f6f9f">せいさん</span> する。</div>
+      <div class="qhint">──の部分を漢字で（細かく計算し直す意味）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">精算</div>
+        <div class="ans-read">よみ：せいさん（細かく計算し直すこと）</div>
+        <div class="bx-warn">同音に注意！　<span class="red">清算</span>＝貸し借りの整理。お金を「細かく計算」なら精算。</div>
+      </div>
+      <div class="gq" data-gid="q10">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button></div>
+        <div class="miss" data-mid="q10"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q10','C')">C</button><button class="m" onclick="m(this,'q10','K')">K</button><button class="m" onclick="m(this,'q10','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　精算　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 大問三 部首・画数（問11-14） -->
+<div class="unit-banner">
+  <span class="unit-num">大問三 部首・画数</span>
+  <span class="unit-name">部首名と総画数を答えよう（最重点）</span>
+  <span class="unit-time">問11〜14</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>部首・画数</h2><span class="badge-grade">漢検5〜4級</span></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="qnum-e">問11｜大問三</div>
+      <div class="qword">「四」の 部首名 と 画数</div>
+      <div class="qhint">部首の名前と、総画数を答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">囗（くにがまえ）／ 5画</div>
+        <div class="ans-read">外がわの口を囲む形が部首</div>
+        <div class="bx-warn">中の <span class="red">儿</span> を部首と思わない。囲む「囗」が部首。</div>
+      </div>
+      <div class="gq" data-gid="q11">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button></div>
+        <div class="miss" data-mid="q11"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q11','C')">C</button><button class="m" onclick="m(this,'q11','K')">K</button><button class="m" onclick="m(this,'q11','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　囗（くにがまえ）・5画　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問12｜大問三</div>
+      <div class="qword">「複」の 部首名 と 画数</div>
+      <div class="qhint">部首の名前と、総画数を答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">衤（ころもへん）／ 14画</div>
+        <div class="ans-read">左がわのへんが部首（衣＝ころも の意味）</div>
+        <div class="bx-warn"><span class="red">礻（しめすへん）</span> ではない。点が2つ＝ころもへん。</div>
+      </div>
+      <div class="gq" data-gid="q12">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button></div>
+        <div class="miss" data-mid="q12"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q12','C')">C</button><button class="m" onclick="m(this,'q12','K')">K</button><button class="m" onclick="m(this,'q12','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　衤（ころもへん）・14画　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問13｜大問三</div>
+      <div class="qword">「原」の 部首名 と 画数</div>
+      <div class="qhint">部首の名前と、総画数を答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">厂（がんだれ）／ 10画</div>
+        <div class="ans-read">上から左にたれる形が部首</div>
+        <div class="bx-warn">中の <span class="red">白・小</span> を部首と思わない。たれる「厂」が部首。</div>
+      </div>
+      <div class="gq" data-gid="q13">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q13','o')">○</button><button class="x" onclick="g(this,'q13','x')">✕</button></div>
+        <div class="miss" data-mid="q13"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q13','C')">C</button><button class="m" onclick="m(this,'q13','K')">K</button><button class="m" onclick="m(this,'q13','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　厂（がんだれ）・10画　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問14｜大問三</div>
+      <div class="qword">「費」の 部首名 と 画数</div>
+      <div class="qhint">部首の名前と、総画数を答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">貝（かい）／ 12画</div>
+        <div class="ans-read">下がわの貝が部首（お金に関する意味）</div>
+        <div class="bx-warn">上の <span class="red">弗</span> を部首と思わない。画数は 弗5＋貝7＝12画。</div>
+      </div>
+      <div class="gq" data-gid="q14">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q14','o')">○</button><button class="x" onclick="g(this,'q14','x')">✕</button></div>
+        <div class="miss" data-mid="q14"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q14','C')">C</button><button class="m" onclick="m(this,'q14','K')">K</button><button class="m" onclick="m(this,'q14','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　貝（かい）・12画　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 大問四 四字熟語 空欄（問15-19） -->
+<div class="unit-banner">
+  <span class="unit-num">大問四 四字熟語</span>
+  <span class="unit-name">□に入る漢字を書き、意味も言おう</span>
+  <span class="unit-time">問15〜19</span>
+</div>
+<div class="sec th-amber">
+  <div class="sec-hd"><h2>四字熟語</h2><span class="badge-grade">漢検5〜4級</span></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="qnum-e">問15｜大問四</div>
+      <div class="qword">因果応 <span style="color:#3f6f9f">□</span></div>
+      <div class="qhint">□に入る漢字を書こう（意味も考える）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">報（因果応報）</div>
+        <div class="ans-read">意味：行いに応じた報いがくること</div>
+        <div class="bx-warn">「応」は <span class="red">おう</span>。「報」を <span class="red">法</span> と書かない。</div>
+      </div>
+      <div class="gq" data-gid="q15">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q15','o')">○</button><button class="x" onclick="g(this,'q15','x')">✕</button></div>
+        <div class="miss" data-mid="q15"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q15','C')">C</button><button class="m" onclick="m(this,'q15','K')">K</button><button class="m" onclick="m(this,'q15','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　因果応報　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問16｜大問四</div>
+      <div class="qword">温 <span style="color:#3f6f9f">□</span> 知新</div>
+      <div class="qhint">□に入る漢字を書こう（意味も考える）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">故（温故知新）</div>
+        <div class="ans-read">意味：古いことを学んで新しい知識を得ること</div>
+        <div class="bx-warn">「故」を <span class="red">古</span> と書かない。音は同じでも字がちがう。</div>
+      </div>
+      <div class="gq" data-gid="q16">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q16','o')">○</button><button class="x" onclick="g(this,'q16','x')">✕</button></div>
+        <div class="miss" data-mid="q16"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q16','C')">C</button><button class="m" onclick="m(this,'q16','K')">K</button><button class="m" onclick="m(this,'q16','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　温故知新　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問17｜大問四</div>
+      <div class="qword">一 <span style="color:#3f6f9f">□</span> 二鳥</div>
+      <div class="qhint">□に入る漢字を書こう（意味も考える）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">石（一石二鳥）</div>
+        <div class="ans-read">意味：一つの行為で二つの利益を得ること</div>
+        <div class="bx-warn">石1つで鳥2羽。「<span class="red">石</span>」。数字につられて他の字を入れない。</div>
+      </div>
+      <div class="gq" data-gid="q17">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q17','o')">○</button><button class="x" onclick="g(this,'q17','x')">✕</button></div>
+        <div class="miss" data-mid="q17"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q17','C')">C</button><button class="m" onclick="m(this,'q17','K')">K</button><button class="m" onclick="m(this,'q17','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　一石二鳥　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問18｜大問四</div>
+      <div class="qword">五里霧 <span style="color:#3f6f9f">□</span></div>
+      <div class="qhint">□に入る漢字を書こう（意味も考える）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">中（五里霧中）</div>
+        <div class="ans-read">意味：見通しや方針がまったく立たないこと</div>
+        <div class="bx-warn">「霧」を <span class="red">夢</span> と書かない。きりの中で道に迷うイメージ。</div>
+      </div>
+      <div class="gq" data-gid="q18">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q18','o')">○</button><button class="x" onclick="g(this,'q18','x')">✕</button></div>
+        <div class="miss" data-mid="q18"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q18','C')">C</button><button class="m" onclick="m(this,'q18','K')">K</button><button class="m" onclick="m(this,'q18','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　五里霧中　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問19｜大問四</div>
+      <div class="qword">半信半 <span style="color:#3f6f9f">□</span></div>
+      <div class="qhint">□に入る漢字を書こう（意味も考える）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">疑（半信半疑）</div>
+        <div class="ans-read">意味：半ば信じ、半ば疑うこと</div>
+        <div class="bx-warn">信 ⇔ <span class="red">疑</span>。反対の意味の字が入る。</div>
+      </div>
+      <div class="gq" data-gid="q19">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q19','o')">○</button><button class="x" onclick="g(this,'q19','x')">✕</button></div>
+        <div class="miss" data-mid="q19"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q19','C')">C</button><button class="m" onclick="m(this,'q19','K')">K</button><button class="m" onclick="m(this,'q19','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　半信半疑　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 大問五 対義語・類義語（問20-23） -->
+<div class="unit-banner">
+  <span class="unit-num">大問五 対義語・類義語</span>
+  <span class="unit-name">反対の語・近い意味の語を書こう</span>
+  <span class="unit-time">問20〜23</span>
+</div>
+<div class="sec th-teal">
+  <div class="sec-hd"><h2>対義語・類義語</h2><span class="badge-grade">漢検5〜4級</span></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="qnum-e">問20｜大問五</div>
+      <div class="qword">抽象 ⇔ <span style="color:#3f6f9f">□</span></div>
+      <div class="qhint">対義語（反対の意味）を漢字で</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">具体</div>
+        <div class="ans-read">抽象＝ぼんやり全体／具体＝はっきり実物・例</div>
+        <div class="bx-warn">評論の頻出ペア。「<span class="red">具体</span>」。具現・具象と混ぜない。</div>
+      </div>
+      <div class="gq" data-gid="q20">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q20','o')">○</button><button class="x" onclick="g(this,'q20','x')">✕</button></div>
+        <div class="miss" data-mid="q20"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q20','C')">C</button><button class="m" onclick="m(this,'q20','K')">K</button><button class="m" onclick="m(this,'q20','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　具体　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問21｜大問五</div>
+      <div class="qword">拡大 ⇔ <span style="color:#3f6f9f">□</span></div>
+      <div class="qhint">対義語（反対の意味）を漢字で</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">縮小</div>
+        <div class="ans-read">拡大＝大きく広げる／縮小＝小さくちぢめる</div>
+        <div class="bx-warn">「縮」は <span class="red">いとへん</span>。2字とも反対になっている（拡⇔縮・大⇔小）。</div>
+      </div>
+      <div class="gq" data-gid="q21">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q21','o')">○</button><button class="x" onclick="g(this,'q21','x')">✕</button></div>
+        <div class="miss" data-mid="q21"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q21','C')">C</button><button class="m" onclick="m(this,'q21','K')">K</button><button class="m" onclick="m(this,'q21','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　縮小　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問22｜大問五</div>
+      <div class="qword">主観 ⇔ <span style="color:#3f6f9f">□</span></div>
+      <div class="qhint">対義語（反対の意味）を漢字で</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">客観</div>
+        <div class="ans-read">主観＝自分の見方／客観＝だれが見ても同じ立場</div>
+        <div class="bx-warn">主 ⇔ <span class="red">客</span>（観はそのまま）。評論で最頻出のペア。</div>
+      </div>
+      <div class="gq" data-gid="q22">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q22','o')">○</button><button class="x" onclick="g(this,'q22','x')">✕</button></div>
+        <div class="miss" data-mid="q22"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q22','C')">C</button><button class="m" onclick="m(this,'q22','K')">K</button><button class="m" onclick="m(this,'q22','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　客観　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問23｜大問五</div>
+      <div class="qword">進歩 ≒ <span style="color:#3f6f9f">□</span></div>
+      <div class="qhint">類義語（意味が近い語）を漢字で</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">向上</div>
+        <div class="ans-read">どちらも「よい方へ進む」という近い意味</div>
+        <div class="bx-warn">これは ≒（類義語）。反対語ではない。「<span class="red">向上</span>」。</div>
+      </div>
+      <div class="gq" data-gid="q23">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q23','o')">○</button><button class="x" onclick="g(this,'q23','x')">✕</button></div>
+        <div class="miss" data-mid="q23"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q23','C')">C</button><button class="m" onclick="m(this,'q23','K')">K</button><button class="m" onclick="m(this,'q23','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　向上　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 大問六 慣用句・ことわざ（問24-28） -->
+<div class="unit-banner">
+  <span class="unit-num">大問六 慣用句・ことわざ</span>
+  <span class="unit-name">意味を答えよう（誤用に注意）</span>
+  <span class="unit-time">問24〜28</span>
+</div>
+<div class="sec th-rose">
+  <div class="sec-hd"><h2>慣用句・ことわざ</h2><span class="badge-grade">中1標準</span></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="qnum-e">問24｜大問六</div>
+      <div class="qword">顔が広い</div>
+      <div class="qhint">意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">知り合いが多い</div>
+        <div class="ans-read">いろいろな人とつきあいがあること</div>
+        <div class="bx-warn">よくある誤り → <span class="red">×態度が大きい</span> ではない。</div>
+      </div>
+      <div class="gq" data-gid="q24">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q24','o')">○</button><button class="x" onclick="g(this,'q24','x')">✕</button></div>
+        <div class="miss" data-mid="q24"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q24','C')">C</button><button class="m" onclick="m(this,'q24','K')">K</button><button class="m" onclick="m(this,'q24','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　顔が広い＝知り合いが多い　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問25｜大問六</div>
+      <div class="qword">手を焼く</div>
+      <div class="qhint">意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">扱いに困る・てこずる</div>
+        <div class="ans-read">うまく処理できなくて苦労すること</div>
+        <div class="bx-warn">よくある誤り → <span class="red">×やけどをする</span> という意味ではない。</div>
+      </div>
+      <div class="gq" data-gid="q25">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q25','o')">○</button><button class="x" onclick="g(this,'q25','x')">✕</button></div>
+        <div class="miss" data-mid="q25"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q25','C')">C</button><button class="m" onclick="m(this,'q25','K')">K</button><button class="m" onclick="m(this,'q25','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　手を焼く＝扱いに困る　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問26｜大問六</div>
+      <div class="qword">気が置けない</div>
+      <div class="qhint">意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">遠慮がいらず打ち解けられる</div>
+        <div class="ans-read">気をつかわず、気楽につきあえること</div>
+        <div class="bx-warn">最頻誤用！ → <span class="red">×油断ならない</span> ではない。むしろ良い意味。</div>
+      </div>
+      <div class="gq" data-gid="q26">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q26','o')">○</button><button class="x" onclick="g(this,'q26','x')">✕</button></div>
+        <div class="miss" data-mid="q26"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q26','C')">C</button><button class="m" onclick="m(this,'q26','K')">K</button><button class="m" onclick="m(this,'q26','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　気が置けない＝遠慮がいらない　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問27｜大問六</div>
+      <div class="qword">猿も木から落ちる</div>
+      <div class="qhint">意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">名人でも失敗することがある</div>
+        <div class="ans-read">じょうずな人でもときには失敗する</div>
+        <div class="bx-warn">似た意味 → 「弘法も筆の誤り」「かっぱの川流れ」も同じ仲間。</div>
+      </div>
+      <div class="gq" data-gid="q27">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q27','o')">○</button><button class="x" onclick="g(this,'q27','x')">✕</button></div>
+        <div class="miss" data-mid="q27"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q27','C')">C</button><button class="m" onclick="m(this,'q27','K')">K</button><button class="m" onclick="m(this,'q27','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　猿も木から落ちる＝名人でも失敗する　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問28｜大問六</div>
+      <div class="qword">立つ鳥跡を濁さず</div>
+      <div class="qhint">意味を答えよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">立ち去る者は去り際をきれいにすべき</div>
+        <div class="ans-read">後始末をきちんとして、きれいに去るべきだ</div>
+        <div class="bx-warn">「跡を濁さず」＝あとをよごさない。引きぎわのマナーの教え。</div>
+      </div>
+      <div class="gq" data-gid="q28">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q28','o')">○</button><button class="x" onclick="g(this,'q28','x')">✕</button></div>
+        <div class="miss" data-mid="q28"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q28','C')">C</button><button class="m" onclick="m(this,'q28','K')">K</button><button class="m" onclick="m(this,'q28','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　立つ鳥跡を濁さず＝去り際をきれいに　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- 大問七 文法 文節の働き（問29-34） -->
+<div class="unit-banner">
+  <span class="unit-num">大問七 文法 文節の働き</span>
+  <span class="unit-name">主・述・修飾・接続・独立で見分けよう（確定弱点・本番直撃）</span>
+  <span class="unit-time">問29〜34</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>文法 文節の働き</h2><span class="badge-grade">中1 文の成分</span></div>
+  <div class="sec-body">
+
+    <div class="q">
+      <div class="qnum-e">問29｜大問七</div>
+      <div class="qword">「赤い 花が さく。」の「赤い」の働きは？</div>
+      <div class="qhint">文節の働きを答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">連体修飾語</div>
+        <div class="ans-read">体言（名詞）の「花」をくわしくしている</div>
+        <div class="bx-warn">体言（名詞）を修飾＝<span class="red">連体</span>修飾。用言を修飾なら連用修飾。</div>
+      </div>
+      <div class="gq" data-gid="q29">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q29','o')">○</button><button class="x" onclick="g(this,'q29','x')">✕</button></div>
+        <div class="miss" data-mid="q29"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q29','C')">C</button><button class="m" onclick="m(this,'q29','K')">K</button><button class="m" onclick="m(this,'q29','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　連体修飾語　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問30｜大問七</div>
+      <div class="qword">「公園で 子どもが 元気に 遊ぶ。」の 主語 と 述語は？</div>
+      <div class="qhint">主語と述語をそれぞれ答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">主語「子どもが」／述語「遊ぶ」</div>
+        <div class="ans-read">「だれが」＝子どもが、「どうする」＝遊ぶ</div>
+        <div class="bx-warn">「公園で」「元気に」は修飾語。主語は「<span class="red">が・は</span>」がつく文節を探す。</div>
+      </div>
+      <div class="gq" data-gid="q30">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q30','o')">○</button><button class="x" onclick="g(this,'q30','x')">✕</button></div>
+        <div class="miss" data-mid="q30"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q30','C')">C</button><button class="m" onclick="m(this,'q30','K')">K</button><button class="m" onclick="m(this,'q30','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　主語＝子どもが／述語＝遊ぶ　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問31｜大問七</div>
+      <div class="qword">「とても 大きな 犬が ほえる。」の「とても」はどの文節を修飾する？</div>
+      <div class="qhint">かかる文節を答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">「大きな」</div>
+        <div class="ans-read">「とても」は程度を表し、「大きな」をくわしくする</div>
+        <div class="bx-warn"><span class="red">×犬が・×ほえる</span> ではない。「とても大きな」とつなげて読むと自然。</div>
+      </div>
+      <div class="gq" data-gid="q31">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q31','o')">○</button><button class="x" onclick="g(this,'q31','x')">✕</button></div>
+        <div class="miss" data-mid="q31"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q31','C')">C</button><button class="m" onclick="m(this,'q31','K')">K</button><button class="m" onclick="m(this,'q31','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　「大きな」を修飾　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問32｜大問七</div>
+      <div class="qword">「寒いので、上着を着る。」の「寒いので」の文の成分は？</div>
+      <div class="qhint">文の成分を答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">接続語</div>
+        <div class="ans-read">前と後ろを理由でつないでいる</div>
+        <div class="bx-warn">〜<span class="red">ので・から・が・のに</span> で終わる文節＝接続語。理由・条件をつなぐ。</div>
+      </div>
+      <div class="gq" data-gid="q32">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q32','o')">○</button><button class="x" onclick="g(this,'q32','x')">✕</button></div>
+        <div class="miss" data-mid="q32"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q32','C')">C</button><button class="m" onclick="m(this,'q32','K')">K</button><button class="m" onclick="m(this,'q32','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　接続語　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問33｜大問七</div>
+      <div class="qword">「もしもし、田中さんですか。」の「もしもし」の文の成分は？</div>
+      <div class="qhint">文の成分を答えよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">独立語</div>
+        <div class="ans-read">呼びかけ。他の文節と直接の係り受けがない</div>
+        <div class="bx-warn">呼びかけ・感動・応答・提示＝<span class="red">独立語</span>。文の最初に多い。</div>
+      </div>
+      <div class="gq" data-gid="q33">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q33','o')">○</button><button class="x" onclick="g(this,'q33','x')">✕</button></div>
+        <div class="miss" data-mid="q33"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q33','C')">C</button><button class="m" onclick="m(this,'q33','K')">K</button><button class="m" onclick="m(this,'q33','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　独立語　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <div class="q">
+      <div class="qnum-e">問34｜大問七（総仕上げ）</div>
+      <div class="qword">──の働きをそれぞれ答えよ：<br>① 「<span style="color:#3f6f9f">とても</span> 速い」　② 「<span style="color:#3f6f9f">いや</span>、ちがう」　③ 「<span style="color:#3f6f9f">寒いのに</span> 出かける」</div>
+      <div class="qhint">主・述・修飾・接続・独立の5分類で判定しよう</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">① とても＝修飾語（連用）　② いや＝独立語　③ 寒いのに＝接続語</div>
+        <div class="ans-read">① 速い（用言）をくわしく＝連用修飾／② 応答の語＝独立語／③ 〜のに で逆につなぐ＝接続語</div>
+        <div class="bx-link">これが本番 大問三(3)の実際の形。<span class="red">主・述・修飾・接続・独立</span>の5つを思い出してから判定する。</div>
+      </div>
+      <div class="gq" data-gid="q34">
+        <div class="grade">できた？ <button class="o" onclick="g(this,'q34','o')">○</button><button class="x" onclick="g(this,'q34','x')">✕</button></div>
+        <div class="miss" data-mid="q34"><span class="ml">ミスの型→</span><button class="m" onclick="m(this,'q34','C')">C</button><button class="m" onclick="m(this,'q34','K')">K</button><button class="m" onclick="m(this,'q34','A')">A</button><span class="mhint">C=書き損じ・うっかり／K=知らなかった／A=知ってたが使えなかった</span></div>
+        <div class="write3">📝 まちがえたら3回書こう　①修飾語 ②独立語 ③接続語　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日やりきった！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">知識は積めばそのまま点になる場所。✕が多かった大問が、次にやれば一番のびる場所だよ。よくがんばったね。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_j02';   /* 特訓 大問三型・国語 知識総点検（通常02）。記録ボード/ダッシュボード規約=tokkun_jNN */
+
+function t(b){
+  if(!b.dataset.label)b.dataset.label=b.textContent;
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':b.dataset.label;
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);
+  var w3=box.querySelector('.write3');
+  var miss=box.querySelector('.miss');
+  if(v==='x'){
+    if(w3)w3.style.display='block';
+    if(miss)miss.classList.add('show');
+  }else{
+    if(w3)w3.style.display='none';
+    if(miss)miss.classList.remove('show');
+  }
+}
+
+function m(btn,id,v){
+  var box=btn.closest('.miss');
+  box.querySelectorAll('.m').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id+'_m',v);
+}
+
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var w3=box.querySelector('.write3');
+        if(w3)w3.style.display='block';
+        var miss=box.querySelector('.miss');
+        if(miss)miss.classList.add('show');
+      }
+    }
+    var mv=localStorage.getItem(KEY+'_'+id+'_m');
+    if(mv){
+      var miss=box.querySelector('.miss');
+      if(miss){
+        var mb=miss.querySelector('.m[onclick*="\'"+mv+"\'"]');
+        if(!mb){
+          miss.querySelectorAll('.m').forEach(function(e){
+            if(e.textContent===mv)mb=e;
+          });
+        }
+        if(mb)mb.classList.add('sel');
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
+};
+</script>
+
+<script id="a16-recovery-hook-japanese-v1">
+(function(){
+'use strict';
+var DYN='revjq_dyn';
+function text(el){return el?String(el.textContent||'').replace(/^[\s　]*こたえ[\s　]*/,'').replace(/[\s　]+/g,' ').trim():'';}
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'),id=gq&&gq.dataset?gq.dataset.gid:'',q=btn.closest('.q');if(!id||!q)return;
+    var clone=q.cloneNode(true);clone.querySelectorAll('.ans-box,.gq,.mt,.write3,button,script,style,details').forEach(function(n){n.remove();});
+    var jp=text(clone),ans=text(q.querySelector('.ans-final,.ans-box .ans-main,.ans-main'));if(!jp||!ans)return;
+    var src=KEY+'_'+id,raw=localStorage.getItem(DYN),arr;try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();}else{arr.push({src:src,jp:jp,en:ans,kind:'国語',badge:'machigae',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null;if(!b)return;setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);});
+})();
+</script>
+</body>
+</html>

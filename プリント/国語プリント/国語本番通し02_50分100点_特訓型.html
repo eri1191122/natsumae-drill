@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>国語 本番通し02｜50分・100点｜学習使用可</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Mincho ProN','Yu Mincho','Meiryo',serif;background:#f5f7f4;color:#263238;font-size:15px;line-height:1.9}
+.wrap{max-width:920px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:20;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font:800 14px sans-serif;color:#345f8a;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px #0002}
+.status{background:#8d2c2c;color:#fff;border-radius:9px;padding:12px 16px;margin-bottom:12px;font:900 15px sans-serif;letter-spacing:.03em}
+.status small{display:block;font-size:12px;font-weight:700;margin-top:3px}
+.pg-hd{background:#eef0e8;color:#2b3a2e;padding:22px;border:1px solid #d6ddc9;border-radius:10px;margin-bottom:16px;font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif}
+.pg-hd h1{font-size:22px;margin:5px 0}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.badge{display:inline-block;background:#dde6cf;color:#3a5030;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c7d3b3;border-radius:18px;margin-right:6px}
+.time{display:inline-block;background:#2f3b4a;color:#fff;font-size:12px;font-weight:800;padding:4px 12px;border-radius:14px;margin-top:8px}
+.daimon{display:flex;align-items:center;gap:12px;background:#2b3a2e;color:#fff;padding:12px 18px;border-radius:8px 8px 0 0;margin-top:26px;font-family:sans-serif}
+.dnum{font-weight:900} .dname{font-size:13px} .dpt{font-size:11px;margin-left:auto;white-space:nowrap}
+.passbox{background:#fffdf6;border:1px solid #e3ddc7;padding:18px 20px;margin-bottom:18px}
+.passbox h2{font-size:18px;text-align:center;margin-bottom:12px}
+.passage p{margin:0 0 11px;text-indent:1em} .mark{text-decoration-thickness:2px;text-underline-offset:3px}
+.psrc{font:11px sans-serif;color:#7d7a70;text-align:right;margin-top:10px}
+.sec{background:#fff;border:1px solid #dfe5dc;margin-bottom:18px} .sec-body{padding:10px 16px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 15px;margin:11px 0;break-inside:avoid}
+.qnum{display:inline-block;font:800 12px sans-serif;color:#42536d;background:#eef2ec;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+.qword{font-weight:800;color:#2d3c58} .choices{margin-top:6px;padding:8px 10px;background:#f6f7f4;border-radius:6px}
+.lines{border:1px dashed #bfcab8;border-radius:7px;min-height:54px;margin-top:8px;padding:8px;color:#969e91}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:0;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 15px;margin-top:8px;font-size:13px}
+.ans-box.open{display:block} .ans-main{font-size:16px;font-weight:900;color:#315f3e} .rule{margin-top:4px;font-weight:700}
+.bx{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:7px;padding:8px 11px;margin-top:6px;color:#79521d}
+.gq{margin-top:9px} .grade{font:13px sans-serif;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:38px;height:38px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:17px;font-weight:700;cursor:pointer;color:#777}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a} .grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.pt-badge{font-size:11px;font-weight:800;color:#7a5512;background:#fbf2e2;border:1px solid #e6d2a6;border-radius:10px;padding:2px 8px}
+.miss{display:none;margin-top:7px;font:12px sans-serif;color:#7a5512;align-items:center;gap:6px;flex-wrap:wrap} .miss.show{display:flex}
+.miss .m{border:1px solid #e6c98d;background:#fff;border-radius:14px;padding:3px 10px;font-size:12px;font-weight:800;color:#7a5512} .miss .m.sel{background:#d9b46d;color:#fff}
+.mhint{font-size:11px;color:#917e58}
+.review{background:#fff;border:1px solid #d8dfd5;border-radius:9px;padding:13px 16px;margin-top:16px} .review h2{font:900 15px sans-serif;margin-bottom:4px} #reviewQueue{font:13px sans-serif;color:#7b3d39}
+.done{display:block;width:100%;background:linear-gradient(90deg,#679c75,#d4ad37);color:#fff;font-size:17px;font-weight:900;border:0;padding:15px;border-radius:30px;margin-top:18px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:12px;min-height:18px;font-weight:800}
+@media print{body{background:#fff;font-size:12px}.back,.done,.ans-btn,.grade,.miss,.review{display:none!important}.ans-box{display:none!important}.q,.passbox{break-inside:avoid}}
+</style>
+</head>
+<body><div class="wrap">
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+<div class="status">状態: lite判定済み（L7-lite-v1.0・単独評定・±1許容／2026-07-18）・学習使用可<small>※精密3評定は未実施。</small></div>
+<header class="pg-hd">
+  <div><span class="badge">国語 本番通し02</span><span class="badge">全27問</span><span class="badge">大問一〜三</span></div>
+  <h1>国語 本番通し02｜50分・100点</h1>
+  <p>大問一40点・大問二32点・大問三28点。答えを見ずに50分で通し、終了後に自己採点してください。</p>
+  <span class="time">50分・100点</span>
+</header>
+
+<div style="background:#fffdf6;border:1px solid #e3ddc7;border-radius:8px;padding:11px 15px;margin-bottom:14px;font-size:13px;color:#5a4a2a;font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif">
+  <b>時間配分（目安）</b>：大問一（文学）=20分／大問二（説明）=16分／大問三（漢字・知識）=9分／見直し=5分（合計50分）。<br>
+  <b>見切りルール</b>：記述で3分つまったら、いったん飛ばして<b>大問三（漢字・知識）を先に確実に取り</b>、時間が残ったら戻ろう。知識を落とすのがいちばんもったいない。<br>
+  <b>採点の約束</b>：記述は自信がなければ○にせず<b>△＝先生（AI）採点へ</b>。自分で○をつけすぎないのがコツ。
+</div>
+
+<div class="daimon">
+  <span class="dnum">大問一　文学的文章</span>
+  <span class="dname">文章を読んで答えなさい</span>
+  <span class="dpt">40点・問1〜9</span>
+</div>
+<section class="passbox">
+  <h2>雨あがりの貸出カード</h2>
+  <div class="passage"><p>夏休みの午後、凛は町の図書室で返却本を棚へ戻す手伝いをしていた。分類番号を確かめ、本の背を一直線にそろえる。空いた場所を見ると、<u class="mark">歯が一本抜けたよう</u>で落ち着かない。返却台の本が減るたびに棚の穴が埋まっていくのが、凛には小さな達成のように思えた。</p>
+<p>閉館間際、雨の中から一人の老人が入ってきた。差し出した本は返却期限を三日過ぎ、青い表紙の隅には大きな水染みがあった。「遅くなって、すみません」。老人は何度も頭を下げた。凛は修理の手間を思い、貸出カードを受け取る<u class="mark">声が少し固くなった</u>。期限も本も、借りた人が守るものだと思ったからだ。</p>
+<p>カードの古い欄には、同じ名字が鉛筆で何度も書かれていた。老人は、入院中の孫にこの物語を一章ずつ読んでいたのだと話した。最後の章を読み終えた昨夜、孫は退院した。「今日だけは、<u class="mark">あの子</u>と一緒に返しに来る約束だったんです。でも途中で雨が強くなって、先に家へ帰しました」。</p>
+<p>凛が本を開くと、ページは一枚もぬれていなかった。本は薄い布で丁寧に包まれている。ぬれていたのは表紙の角だけで、老人の肩と袖の方がずっと濃い色になっていた。老人は雨の中で、本を自分の上着の内側に抱えてきたのだ。</p>
+<p>「弁償します」と老人は言った。凛は修理用の紙を取り出したが、<u class="mark">さっきまでの固い声はもう出なかった</u>。「表紙だけなら直せます。よかったら、ここを押さえてください」。二人でしわを伸ばすと、水染みは消えなかったものの、破れはきれいに閉じた。</p>
+<p>老人を見送った後、凛は本を元の棚に戻した。そこにあった穴は、もう単なる欠けには見えなかった。誰かが読み終え、約束を果たして戻ってくるのを待つ場所だったのだ。窓の外では雲が切れ、水たまりに夕方の光が細く伸びていた。</p>
+<p>凛は貸出カードの新しい欄に返却の日付を記し、鉛筆を置いた。決まりは本を守るためにある。けれど、本を守ろうとした人の事情まで見えなくするためにあるのではない。カードの三日分の空白は、さっきより少し違う意味を持って見えた。</p></div>
+  <div class="psrc">学習用オリジナル作品（実在作品からの引用なし）</div>
+</section><section class="sec"><div class="sec-body">
+  <article class="q" data-qno="1">
+    <div class="qnum">問1｜表現の意味（4点）</div>
+    <div class="qword">『声が少し固くなった』が表す凛の態度として最も適切なものを選びなさい。</div>
+    <div class="choices">ア 老人を心配し親しげに話した<br>イ 期限と本を守らなかったことを責める気持ちが表れた<br>ウ 雨音で聞こえないため大声を出した<br>エ 仕事が終わる喜びを隠した</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：イ</div>
+      <div class="rule">採点：イのみ正答。</div>
+      <div class="bx">直後に『期限も本も、借りた人が守るもの』という判断が示される。</div>
+    </div>
+    <div class="gq" data-gid="q01" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q01">ミスの型→<button class="m" onclick="m(this,'q01','C')">C</button><button class="m" onclick="m(this,'q01','K')">K</button><button class="m" onclick="m(this,'q01','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="2">
+    <div class="qnum">問2｜比喩の言い換え（4点）</div>
+    <div class="qword">冒頭の『歯が一本抜けたよう』という比喩が表す棚の様子を選びなさい。</div>
+    <div class="choices">ア 本が乱雑に積まれている<br>イ 棚が古く壊れている<br>ウ 本が一冊なく、そこだけ空いて不ぞろいである<br>エ 白い本だけが並んでいる</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：ウ</div>
+      <div class="rule">採点：ウのみ正答。</div>
+      <div class="bx">返却されていない一冊分だけ、棚に空所がある様子。</div>
+    </div>
+    <div class="gq" data-gid="q02" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q02">ミスの型→<button class="m" onclick="m(this,'q02','C')">C</button><button class="m" onclick="m(this,'q02','K')">K</button><button class="m" onclick="m(this,'q02','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="3">
+    <div class="qnum">問3｜指示内容（4点）</div>
+    <div class="qword">直前に老人が「入院中の孫」の話をしていることから、「あの子」が孫だと分かるのはなぜか。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：直前に入院中の孫の話をしていたから。</div>
+      <div class="rule">採点：「直前に孫の話をしていた」という内容を含める。</div>
+      <div class="bx">指示語だけを抜くのでなく、直前の話題と「あの子」を結び付ける。</div>
+    </div>
+    <div class="gq" data-gid="q03" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q03">ミスの型→<button class="m" onclick="m(this,'q03','C')">C</button><button class="m" onclick="m(this,'q03','K')">K</button><button class="m" onclick="m(this,'q03','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="4">
+    <div class="qnum">問4｜局所内容（4点）</div>
+    <div class="qword">貸出カードに同じ名字が何度もあることから分かる内容として最も適切なものを選びなさい。</div>
+    <div class="choices">ア 同じ家族がその本を繰り返し借りていた<br>イ 図書室が日付を書き間違えた<br>ウ 老人が何冊も同時に返した<br>エ 孫が図書室で働いていた</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：ア</div>
+      <div class="rule">採点：アのみ正答。</div>
+      <div class="bx">同じ名字の記録と、孫へ読み聞かせた説明を対応させる。</div>
+    </div>
+    <div class="gq" data-gid="q04" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q04">ミスの型→<button class="m" onclick="m(this,'q04','C')">C</button><button class="m" onclick="m(this,'q04','K')">K</button><button class="m" onclick="m(this,'q04','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="5">
+    <div class="qnum">問5｜行動の説明（4点）</div>
+    <div class="qword">本のページがぬれず、老人の肩と袖が濃い色になっていたのはなぜか。二つの事実を結び付けて答えなさい。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：老人が本を布で包み、上着の内側に抱えて雨から守ったから ／ 老人が本を上着の内側に抱えて守ったから</div>
+      <div class="rule">採点：『上着の内側に抱えた』と『本を雨から守った』を含める。</div>
+      <div class="bx">本を自分より優先して雨から守ったため、ページではなく老人がぬれた。</div>
+    </div>
+    <div class="gq" data-gid="q05" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q05">ミスの型→<button class="m" onclick="m(this,'q05','C')">C</button><button class="m" onclick="m(this,'q05','K')">K</button><button class="m" onclick="m(this,'q05','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="6">
+    <div class="qnum">問6｜心情の理由（5点）</div>
+    <div class="qword">【手掛かり】老人は孫に読んでいた本を自分がぬれても雨から守った。事情を知った直後、凛は一緒に直そうと声を掛けた。固い声を出さなくなった理由として最も適切なものを選びなさい。</div>
+    <div class="choices">ア 閉館時刻を過ぎたので急いだから<br>イ 本の水染みが完全に消えたから<br>ウ 老人が高価な本を寄付したから<br>エ 老人が本を大切に守った事情を知り、規則違反だけでは見られなくなったから</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：エ</div>
+      <div class="rule">採点：エのみ正答。</div>
+      <div class="bx">本を守った行動を知った直後、凛は一緒に修理しようと声を掛ける。</div>
+    </div>
+    <div class="gq" data-gid="q06" data-pt="5">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q06','o')">○</button><button class="x" onclick="g(this,'q06','x')">✕</button><span class="pt-badge">5点</span></div>
+      <div class="miss" data-mid="q06">ミスの型→<button class="m" onclick="m(this,'q06','C')">C</button><button class="m" onclick="m(this,'q06','K')">K</button><button class="m" onclick="m(this,'q06','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="7">
+    <div class="qnum">問7｜理由記述（5点）</div>
+    <div class="qword">【手掛かり】老人は孫に物語を読み聞かせ、本を雨から守って運んだ。その事情を知ると凛の声は柔らかくなった。なぜか。45字以内、文末を「から。」として書きなさい。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：老人が孫に物語を読み、本を雨から守って運んだ事情を知ったから。 ／ 老人が孫に本を読み聞かせ、本を雨から守って運んだ事情を知ったから。 ／ 孫に物語を読み聞かせ、本を雨から守った事情を知ったから。</div>
+      <div class="rule">採点：45字以内・『から。』で終える。『孫に物語を読んだ事情』と『本を雨から守ったこと』の二要素で満点。『読み聞かせた』『雨にぬれないよう上着の内側に抱えた』など主要な同義表現を認める。</div>
+      <div class="bx">孫に物語を読んでいた事情と、自分がぬれても本を雨から守った行動を知り、凛の見方が変わった。</div>
+    </div>
+    <div class="gq" data-gid="q07" data-pt="5">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q07','o')">○</button><button class="x" onclick="g(this,'q07','x')">✕</button><span class="pt-badge">5点</span></div>
+      <div class="miss" data-mid="q07">ミスの型→<button class="m" onclick="m(this,'q07','内容')">内容</button><button class="m" onclick="m(this,'q07','文末')">文末</button><button class="m" onclick="m(this,'q07','字数')">字数</button><span class="mhint">内容=書くべき要素のもれ／文末=「から。」など文末条件のちがい／字数=字数オーバー・不足</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="8">
+    <div class="qnum">問8｜心情変化（5点）</div>
+    <div class="qword">老人に対する凛の見方は、第2段落と第5段落でどう変化したか。最も適切なものを選びなさい。</div>
+    <div class="choices">ア 親切な人から危険な人へ<br>イ 決まりを守らない人という見方から、事情を理解し共に本を直す相手へ<br>ウ 弱い人から競争相手へ<br>エ 知らない人から親族へ</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：イ</div>
+      <div class="rule">採点：イのみ正答。</div>
+      <div class="bx">固い声で応対した場面と、一緒に修理する場面を結ぶ。</div>
+    </div>
+    <div class="gq" data-gid="q08" data-pt="5">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q08','o')">○</button><button class="x" onclick="g(this,'q08','x')">✕</button><span class="pt-badge">5点</span></div>
+      <div class="miss" data-mid="q08">ミスの型→<button class="m" onclick="m(this,'q08','C')">C</button><button class="m" onclick="m(this,'q08','K')">K</button><button class="m" onclick="m(this,'q08','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="9">
+    <div class="qnum">問9｜象徴と主題（5点）</div>
+    <div class="qword">棚の『穴』の見え方が初めと後で変わることが示す内容として最も適切なものを選びなさい。</div>
+    <div class="choices">ア 本は棚を飾るためだけにある<br>イ 空所はすぐ別の本で埋めるべきだ<br>ウ 返却の遅れという欠けが、人と本の約束を待つ場所として見直された<br>エ 図書室では貸出をやめるべきだ</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：ウ</div>
+      <div class="rule">採点：ウのみ正答。</div>
+      <div class="bx">単なる不ぞろいだった空所が、誰かの帰りを待つ場所へ意味を変える。</div>
+    </div>
+    <div class="gq" data-gid="q09" data-pt="5">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q09','o')">○</button><button class="x" onclick="g(this,'q09','x')">✕</button><span class="pt-badge">5点</span></div>
+      <div class="miss" data-mid="q09">ミスの型→<button class="m" onclick="m(this,'q09','C')">C</button><button class="m" onclick="m(this,'q09','K')">K</button><button class="m" onclick="m(this,'q09','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article></div></section>
+<div class="daimon">
+  <span class="dnum">大問二　説明的文章</span>
+  <span class="dname">文章を読んで答えなさい</span>
+  <span class="dpt">32点・問10〜17</span>
+</div>
+<section class="passbox">
+  <h2>行列を動かす小さな合図</h2>
+  <div class="passage"><p>規則と聞くと、私たちは自由な行動を止める命令を思い浮かべがちだ。線の内側に立つ、順番を守る、決められた入口から入る。どれも「してはいけないこと」を増やすように見える。しかし、よい規則の働きは、人を縛ることだけではない。</p>
+<p>駅の売店の前に、足の形をした小さな印が等間隔で並んでいるとしよう。初めて来た人も、その印を見ればどこから並ぶか分かる。係の人が一人ずつ注意しなくても、列は自然にできる。<u class="mark">この印</u>は、詳しい説明をしなくても次の行動を共有させる合図である。</p>
+<p>合図が役立つのは、人々が互いの動きを何度も確かめなくてよくなるからだ。並ぶ位置が共通していれば、「割り込まれるかもしれない」「自分の場所はここでよいか」と考え続けずに済む。規則は選択を減らす一方で、不要な迷いも減らし、本当に必要な判断へ注意を向けやすくする。</p>
+<p>ただし、印の上に立つことだけを目的にすると問題が起こる。車いすを使う人が通るときや、危険を避けて列を動かす必要があるときまで、印から一歩も動かないのでは、合図の目的を失っている。<u class="mark">形を守ることと、目的を守ることは同じではない</u>。</p>
+<p>よい規則とは、全員の動きを一つに固定する命令ではなく、互いに予想し合える出発点である。出発点が共有されるからこそ、事情が変わったときには相談して動かすこともできる。規則が支えるのは、動かない秩序ではなく、必要に応じて動ける協力なのである。</p></div>
+  <div class="psrc">学習用オリジナル文章（実在作品からの引用なし）</div>
+</section><section class="sec"><div class="sec-body">
+  <article class="q" data-qno="10">
+    <div class="qnum">問10｜問題提起（4点）</div>
+    <div class="qword">第1段落で筆者が見直そうとしている、規則についての一般的な見方を選びなさい。</div>
+    <div class="choices">ア 規則は自由を止める命令である<br>イ 規則は必ず図で示される<br>ウ 規則は駅だけに必要である<br>エ 規則は相談を増やす</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：ア</div>
+      <div class="rule">採点：アのみ正答。</div>
+      <div class="bx">冒頭で『自由な行動を止める命令』という見方を取り上げ、後で修正する。</div>
+    </div>
+    <div class="gq" data-gid="q10" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q10','o')">○</button><button class="x" onclick="g(this,'q10','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q10">ミスの型→<button class="m" onclick="m(this,'q10','C')">C</button><button class="m" onclick="m(this,'q10','K')">K</button><button class="m" onclick="m(this,'q10','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="11">
+    <div class="qnum">問11｜指示内容（4点）</div>
+    <div class="qword">売店前の足形をした小さな印は、次に並ぶ人に何を分からせるためのものか。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：立つ位置 ／ 並ぶ位置</div>
+      <div class="rule">採点：「立つ位置」または「並ぶ位置」と同じ内容を含める。</div>
+      <div class="bx">印そのものを抜くのでなく、次の人の行動を助ける働きへ言い換える。</div>
+    </div>
+    <div class="gq" data-gid="q11" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q11','o')">○</button><button class="x" onclick="g(this,'q11','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q11">ミスの型→<button class="m" onclick="m(this,'q11','C')">C</button><button class="m" onclick="m(this,'q11','K')">K</button><button class="m" onclick="m(this,'q11','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="12">
+    <div class="qnum">問12｜対比表現（4点）</div>
+    <div class="qword">『形を守ることと、目的を守ることは同じではない』の意味として最も適切なものを選びなさい。</div>
+    <div class="choices">ア 印はどんな場合も無視すべきだ<br>イ 目的は人によって毎回変えるべきだ<br>ウ 形を守れば目的も必ず達成される<br>エ 印の位置を守るだけでなく、安全や通行という目的に応じる必要がある</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：エ</div>
+      <div class="rule">採点：エのみ正答。</div>
+      <div class="bx">例外時に印から動かないことが、かえって合図の目的を失わせる。</div>
+    </div>
+    <div class="gq" data-gid="q12" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q12','o')">○</button><button class="x" onclick="g(this,'q12','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q12">ミスの型→<button class="m" onclick="m(this,'q12','C')">C</button><button class="m" onclick="m(this,'q12','K')">K</button><button class="m" onclick="m(this,'q12','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="13">
+    <div class="qnum">問13｜主張箇所（4点）</div>
+    <div class="qword">筆者の結論が端的に示される第5段落の一文を抜き出し、初めの7字を書きなさい。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：よい規則とは、</div>
+      <div class="rule">採点：読点を含め『よい規則とは、』のみ正答。</div>
+      <div class="bx">『よい規則とは』で始まる定義文が結論の核。</div>
+    </div>
+    <div class="gq" data-gid="q13" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q13','o')">○</button><button class="x" onclick="g(this,'q13','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q13">ミスの型→<button class="m" onclick="m(this,'q13','C')">C</button><button class="m" onclick="m(this,'q13','K')">K</button><button class="m" onclick="m(this,'q13','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="14">
+    <div class="qnum">問14｜具体例の一般化（4点）</div>
+    <div class="qword">足形の印が、係員の注意なしでも列を作りやすくするのはなぜか。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：並ぶ位置という次の行動を、初めての人にも共有させるから ／ どこから並ぶかを人々に共有させるから</div>
+      <div class="rule">採点：『並ぶ位置・行動』と『共有』を含める。</div>
+      <div class="bx">印が共通の予想を作り、互いの動きを確認する負担を減らす。</div>
+    </div>
+    <div class="gq" data-gid="q14" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q14','o')">○</button><button class="x" onclick="g(this,'q14','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q14">ミスの型→<button class="m" onclick="m(this,'q14','C')">C</button><button class="m" onclick="m(this,'q14','K')">K</button><button class="m" onclick="m(this,'q14','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="15">
+    <div class="qnum">問15｜利点と限界（4点）</div>
+    <div class="qword">第3・第4段落の関係として最も適切なものを選びなさい。</div>
+    <div class="choices">ア 第3段落の主張を第4段落が全面否定する<br>イ 第3段落で規則の利点を示し、第4段落で形だけ守る限界を示す<br>ウ 両段落とも印のデザインだけを説明する<br>エ 第3段落は原因、第4段落は同じ原因の繰り返しである</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：イ</div>
+      <div class="rule">採点：イのみ正答。</div>
+      <div class="bx">迷いを減らす利点の後に、事情が変わった場合の限界を置く。</div>
+    </div>
+    <div class="gq" data-gid="q15" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q15','o')">○</button><button class="x" onclick="g(this,'q15','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q15">ミスの型→<button class="m" onclick="m(this,'q15','C')">C</button><button class="m" onclick="m(this,'q15','K')">K</button><button class="m" onclick="m(this,'q15','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="16">
+    <div class="qnum">問16｜限定を含む内容一致（4点）</div>
+    <div class="qword">【手掛かり】足形は次に並ぶ人の予想を助ける。一方、事情が変われば相談して位置を動かせる。この二事実をともに表すものを選びなさい。</div>
+    <div class="choices">ア 規則は例外なく同じ動きを強制するほどよい<br>イ 共通の出発点があれば相談は不要になる<br>ウ 規則は予想を共有させ、事情が変われば相談して動かせる<br>エ 印のない場所では協力は不可能である</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：ウ</div>
+      <div class="rule">採点：ウのみ正答。</div>
+      <div class="bx">形を固定するのではなく、共通の出発点から必要に応じて動く。</div>
+    </div>
+    <div class="gq" data-gid="q16" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q16','o')">○</button><button class="x" onclick="g(this,'q16','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q16">ミスの型→<button class="m" onclick="m(this,'q16','C')">C</button><button class="m" onclick="m(this,'q16','K')">K</button><button class="m" onclick="m(this,'q16','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="17">
+    <div class="qnum">問17｜要旨（4点）</div>
+    <div class="qword">第1段落と第5段落を踏まえ、規則についての筆者の主張を選びなさい。</div>
+    <div class="choices">ア 規則は自由を奪うため廃止すべきだ<br>イ 規則は人の判断をすべて不要にする<br>ウ 規則の形を変えることは許されない<br>エ 規則は人を縛るだけでなく、協力して動くための共通の出発点になる</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：エ</div>
+      <div class="rule">採点：エのみ正答。</div>
+      <div class="bx">冒頭の一般的な見方を、結論の『出発点』という見方が更新する。</div>
+    </div>
+    <div class="gq" data-gid="q17" data-pt="4">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q17','o')">○</button><button class="x" onclick="g(this,'q17','x')">✕</button><span class="pt-badge">4点</span></div>
+      <div class="miss" data-mid="q17">ミスの型→<button class="m" onclick="m(this,'q17','C')">C</button><button class="m" onclick="m(this,'q17','K')">K</button><button class="m" onclick="m(this,'q17','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article></div></section>
+<div class="daimon">
+  <span class="dnum">大問三　漢字・語句・文法</span>
+  <span class="dname">各問いに答えなさい</span>
+  <span class="dpt">28点・問18〜27</span>
+</div><section class="sec"><div class="sec-body">
+  <article class="q" data-qno="18">
+    <div class="qnum">問18｜漢字の読み（3点）</div>
+    <div class="qword">『柔軟に対応する』の『柔軟』の読みをひらがなで書きなさい。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：じゅうなん</div>
+      <div class="rule">採点：『じゅうなん』のみ正答。</div>
+      <div class="bx">「柔軟」は「じゅうなん」。しなやかで融通がきくこと。「柔」を「にゅう」と読んで「にゅうなん」としない。</div>
+    </div>
+    <div class="gq" data-gid="q18" data-pt="3">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q18','o')">○</button><button class="x" onclick="g(this,'q18','x')">✕</button><span class="pt-badge">3点</span></div>
+      <div class="miss" data-mid="q18">ミスの型→<button class="m" onclick="m(this,'q18','C')">C</button><button class="m" onclick="m(this,'q18','K')">K</button><button class="m" onclick="m(this,'q18','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="19">
+    <div class="qnum">問19｜漢字の読み（3点）</div>
+    <div class="qword">『規模を広げる』の『規模』の読みをひらがなで書きなさい。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：きぼ</div>
+      <div class="rule">採点：『きぼ』のみ正答。</div>
+      <div class="bx">「規模」は「きぼ」で、物事の大きさや広がりのこと。「模」を「も」と読んで「きも」としない。</div>
+    </div>
+    <div class="gq" data-gid="q19" data-pt="3">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q19','o')">○</button><button class="x" onclick="g(this,'q19','x')">✕</button><span class="pt-badge">3点</span></div>
+      <div class="miss" data-mid="q19">ミスの型→<button class="m" onclick="m(this,'q19','C')">C</button><button class="m" onclick="m(this,'q19','K')">K</button><button class="m" onclick="m(this,'q19','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="20">
+    <div class="qnum">問20｜漢字の書き（3点）</div>
+    <div class="qword">『案をけんとうする』の『けんとう』を漢字二字で書きなさい。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：検討</div>
+      <div class="rule">採点：『検討』のみ正答。</div>
+      <div class="bx">「検討」はよく調べて考えること。「検」（きへん）を「険」「験」と書き誤らない。</div>
+    </div>
+    <div class="gq" data-gid="q20" data-pt="3">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q20','o')">○</button><button class="x" onclick="g(this,'q20','x')">✕</button><span class="pt-badge">3点</span></div>
+      <div class="miss" data-mid="q20">ミスの型→<button class="m" onclick="m(this,'q20','C')">C</button><button class="m" onclick="m(this,'q20','K')">K</button><button class="m" onclick="m(this,'q20','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="21">
+    <div class="qnum">問21｜漢字の書き（3点）</div>
+    <div class="qword">『せつびを整える』の『せつび』を漢字二字で書きなさい。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：設備</div>
+      <div class="rule">採点：『設備』のみ正答。</div>
+      <div class="bx">「設備」は建物や機械などの備え。「設」（ごんべん）を「説」と書き誤らない。</div>
+    </div>
+    <div class="gq" data-gid="q21" data-pt="3">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q21','o')">○</button><button class="x" onclick="g(this,'q21','x')">✕</button><span class="pt-badge">3点</span></div>
+      <div class="miss" data-mid="q21">ミスの型→<button class="m" onclick="m(this,'q21','C')">C</button><button class="m" onclick="m(this,'q21','K')">K</button><button class="m" onclick="m(this,'q21','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="22">
+    <div class="qnum">問22｜四字熟語（3点）</div>
+    <div class="qword">『試行錯□』の□に入る漢字一字を書きなさい。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：誤</div>
+      <div class="rule">採点：『誤』のみ正答。</div>
+      <div class="bx">何度も試して失敗を重ね、正しい方法に近づくこと。「試行錯誤」の「誤」を「語」としない。</div>
+    </div>
+    <div class="gq" data-gid="q22" data-pt="3">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q22','o')">○</button><button class="x" onclick="g(this,'q22','x')">✕</button><span class="pt-badge">3点</span></div>
+      <div class="miss" data-mid="q22">ミスの型→<button class="m" onclick="m(this,'q22','C')">C</button><button class="m" onclick="m(this,'q22','K')">K</button><button class="m" onclick="m(this,'q22','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="23">
+    <div class="qnum">問23｜対義語（3点）</div>
+    <div class="qword">『賛成』の対義語を漢字二字で書きなさい。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：反対</div>
+      <div class="rule">採点：『反対』のみ正答。</div>
+      <div class="bx">「賛成」（よいと認める）の反対は「反対」。「不賛成」ではなく二字の対義語で答える。</div>
+    </div>
+    <div class="gq" data-gid="q23" data-pt="3">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q23','o')">○</button><button class="x" onclick="g(this,'q23','x')">✕</button><span class="pt-badge">3点</span></div>
+      <div class="miss" data-mid="q23">ミスの型→<button class="m" onclick="m(this,'q23','C')">C</button><button class="m" onclick="m(this,'q23','K')">K</button><button class="m" onclick="m(this,'q23','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="24">
+    <div class="qnum">問24｜四字熟語（3点）</div>
+    <div class="qword">『以心伝□』の□に入る漢字一字を書きなさい。</div>
+    
+    <div class="lines">解答欄</div>
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：心</div>
+      <div class="rule">採点：『心』のみ正答。</div>
+      <div class="bx">言葉にしなくても心が通じ合うこと。「以心伝心」は前後が同じ「心」。「伝身」としない。</div>
+    </div>
+    <div class="gq" data-gid="q24" data-pt="3">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q24','o')">○</button><button class="x" onclick="g(this,'q24','x')">✕</button><span class="pt-badge">3点</span></div>
+      <div class="miss" data-mid="q24">ミスの型→<button class="m" onclick="m(this,'q24','C')">C</button><button class="m" onclick="m(this,'q24','K')">K</button><button class="m" onclick="m(this,'q24','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="25">
+    <div class="qnum">問25｜熟語の構成（3点）</div>
+    <div class="qword">『読書』の構成を選びなさい。</div>
+    <div class="choices">ア 似た意味の字<br>イ 反対の意味の字<br>ウ 上が下を修飾<br>エ 下の字が上の字の目的・対象</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：エ</div>
+      <div class="rule">採点：エのみ正答。</div>
+      <div class="bx">「書（を）読む」と、下の字が上の動作の対象になる組み立て。「何を」の形か確かめる（修飾ウと区別）。</div>
+    </div>
+    <div class="gq" data-gid="q25" data-pt="3">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q25','o')">○</button><button class="x" onclick="g(this,'q25','x')">✕</button><span class="pt-badge">3点</span></div>
+      <div class="miss" data-mid="q25">ミスの型→<button class="m" onclick="m(this,'q25','C')">C</button><button class="m" onclick="m(this,'q25','K')">K</button><button class="m" onclick="m(this,'q25','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="26">
+    <div class="qnum">問26｜文の成分（2点）</div>
+    <div class="qword">『弟は静かに本を読んだ。』の『静かに』の文の成分を選びなさい。</div>
+    <div class="choices">ア 主語<br>イ 述語<br>ウ 修飾語<br>エ 接続語<br>オ 独立語</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：ウ</div>
+      <div class="rule">採点：ウのみ正答。</div>
+      <div class="bx">「静かに」は後の「読んだ」のようすを詳しくする修飾語。述語（イ）と取り違えない。</div>
+    </div>
+    <div class="gq" data-gid="q26" data-pt="2">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q26','o')">○</button><button class="x" onclick="g(this,'q26','x')">✕</button><span class="pt-badge">2点</span></div>
+      <div class="miss" data-mid="q26">ミスの型→<button class="m" onclick="m(this,'q26','C')">C</button><button class="m" onclick="m(this,'q26','K')">K</button><button class="m" onclick="m(this,'q26','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article>
+  <article class="q" data-qno="27">
+    <div class="qnum">問27｜文の成分（2点）</div>
+    <div class="qword">『雨だが、試合は行う。』の『雨だが』の文の成分を選びなさい。</div>
+    <div class="choices">ア 主語<br>イ 述語<br>ウ 修飾語<br>エ 接続語<br>オ 独立語</div>
+    
+    <button class="ans-btn" onclick="t(this)">答え・採点基準を見る</button>
+    <div class="ans-box">
+      <div class="ans-main">正答：エ</div>
+      <div class="rule">採点：エのみ正答。</div>
+      <div class="bx">「雨だが」は後の文へ逆につなぐ接続語。「が」が前後をつなぐ目印。主語（ア）ではない。</div>
+    </div>
+    <div class="gq" data-gid="q27" data-pt="2">
+      <div class="grade">できた？<button class="o" onclick="g(this,'q27','o')">○</button><button class="x" onclick="g(this,'q27','x')">✕</button><span class="pt-badge">2点</span></div>
+      <div class="miss" data-mid="q27">ミスの型→<button class="m" onclick="m(this,'q27','C')">C</button><button class="m" onclick="m(this,'q27','K')">K</button><button class="m" onclick="m(this,'q27','A')">A</button><span class="mhint">C=うっかり／K=知識不足／A=根拠・適用のずれ</span></div>
+    </div>
+  </article></div></section>
+<section class="review"><h2>復習キュー</h2><div id="reviewQueue">未登録</div></section>
+<button class="done" id="doneBtn" onclick="finish()">今日できた！（得点を出す）</button>
+<div class="fin" id="fin"></div>
+</div>
+<script>
+var KEY='tokkun_jtoshi02';
+function t(b){if(!b.dataset.label)b.dataset.label=b.textContent;var a=b.parentNode.querySelector('.ans-box');var o=a.classList.toggle('open');b.textContent=o?'とじる':b.dataset.label;}
+function g(btn,id,v){var box=btn.closest('.gq');if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var miss=box.querySelector('.miss');if(miss)miss.classList.remove('show');refreshReview();return;}box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);var miss=box.querySelector('.miss');if(miss)miss.classList.toggle('show',v==='x');refreshReview();}
+function m(btn,id,v){var box=btn.closest('.miss');box.querySelectorAll('.m').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id+'_m',v);refreshReview();}
+function refreshReview(){var ids=[];document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(localStorage.getItem(KEY+'_'+id)==='x')ids.push('問'+parseInt(id.slice(1),10));});document.getElementById('reviewQueue').textContent=ids.length?ids.join('・'):'未登録';}
+function finish(){localStorage.setItem(KEY+'_done','1');var score=0;document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;var pt=parseInt(box.dataset.pt||'0',10);if(localStorage.getItem(KEY+'_'+id)==='o')score+=pt;});document.getElementById('fin').innerHTML='今日の得点：'+score+' / 100点（○の配点合計）';document.getElementById('doneBtn').textContent='✓ 完了ずみ';refreshReview();}
+window.onload=function(){document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;var v=localStorage.getItem(KEY+'_'+id);if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');if(v==='x'){var miss=box.querySelector('.miss');if(miss)miss.classList.add('show');}}var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv)box.querySelectorAll('.m').forEach(function(e){if(e.getAttribute('onclick').indexOf("'"+mv+"'")>-1)e.classList.add('sel');});});if(localStorage.getItem(KEY+'_done')==='1')document.getElementById('doneBtn').textContent='✓ 完了ずみ';refreshReview();};
+</script>
+</body></html>

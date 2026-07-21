@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P8b 複合図形L4（砂時計・折り返し・花びら・おうぎ形）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月特訓選抜 大問2へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜公式を思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.pi{font-family:'Times New Roman','Times',serif;font-weight:700;font-style:italic;font-size:1.08em}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 1px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P8b</span><span class="pg-badge">数学：平面図形</span><span class="pg-badge">★複合図形 L3-L4（9月大問2直撃）</span></div>
+  <h1>複合図形L4｜砂時計型（面積一定）・折り返し角・花びら（<span class="pi">π</span>）・おうぎ形</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">9月の特訓選抜 大問2（複合図形・折り返し・円）を直撃する4問。とくに<strong>問1の「砂時計型（面積一定）」はきみの確定弱点</strong>なので、いちばんていねいに解説したよ。コツは①砂時計は<strong>「底辺が同じ・高さが同じなら面積も同じ」</strong>②折り返しは<strong>「折ると角は等しい」</strong>③円は<strong><span class="pi">π</span>を文字のまま</strong>。図に分かる数を書きこんで解こう。</p>
+</div>
+
+<!-- ===== 問1 砂時計型・面積一定 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">★砂時計型（面積が変わらない）L3 ＝確定弱点</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead">問1</span>下の図のように、たて9cm、横14cmの長方形の中に点Pをとり、Pと4つの頂点を結びました。色をぬった上と下の2つの三角形の面積の和を求めなさい。
+    <svg class="fig" width="300" height="170" viewBox="0 0 300 170">
+      <rect x="50" y="35" width="210" height="100" fill="#fff" stroke="#2f5a8a" stroke-width="2"/>
+      <circle cx="155" cy="82" r="4" fill="#9b514d"/><text x="164" y="80" font-size="12" fill="#9b514d">P</text>
+      <polygon points="50,35 260,35 155,82" fill="#eaf2fb" stroke="#3f6f9f" stroke-width="1.5" opacity="0.75"/>
+      <polygon points="50,135 260,135 155,82" fill="#fdf2e3" stroke="#d9883a" stroke-width="1.5" opacity="0.75"/>
+      <line x1="50" y1="35" x2="155" y2="82" stroke="#b7a3d6" stroke-width="1"/>
+      <line x1="260" y1="35" x2="155" y2="82" stroke="#b7a3d6" stroke-width="1"/>
+      <line x1="50" y1="135" x2="155" y2="82" stroke="#b7a3d6" stroke-width="1"/>
+      <line x1="260" y1="135" x2="155" y2="82" stroke="#b7a3d6" stroke-width="1"/>
+      <text x="138" y="28" font-size="11" fill="#2f5a8a">14cm</text>
+      <text x="18" y="88" font-size="11" fill="#2f5a8a">9cm</text>
+      <line x1="42" y1="35" x2="42" y2="135" stroke="#777" stroke-width="1" stroke-dasharray="3 3"/>
+    </svg>
+  </div>
+  <div class="note-draw">上の三角形と下の三角形は、どちらも底辺が14cm。2つの高さを別々に出さなくても、高さの和は長方形のたて9cmになる。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">本番の砂時計型は、点Pの場所に惑わされないこと。上の三角形の高さを a cm、下の三角形の高さを b cm とすると、a＋b＝長方形のたて9cm。底辺はどちらも14cmなので、面積の和を一気に出せる。</div>
+    <div class="step q1"><span>①高さの和</span>上の三角形の高さ＋下の三角形の高さ＝長方形のたて＝9cm。</div>
+    <div class="step q1"><span>②面積の和</span>上＋下＝14×a÷2＋14×b÷2＝14×(a＋b)÷2。</div>
+    <div class="step q1"><span>③計算</span>a＋b＝9なので、14×9÷2＝<span class="math">63</span>。よって色をぬった2つの三角形の面積の和は63cm²。</div>
+    <div class="bx bx-warn"><span class="red">点Pの位置を測ろうとしない</span>。本番では点の位置が中途半端でも、必要なのは高さの和だけ。<span class="red">上と下を別々に無理やり求めない</span>。足すなら、最初から高さも足してよい。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2の砂時計型に近い処理。<strong>底辺共通＋高さの和＝長方形の高さ</strong>で、影2つの和を一撃で出す。</div>
+    <div class="ans-final"><span>こたえ</span>63cm²</div>
+      <div class="tec-link">型：<b>複合図形型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1★</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「底辺が同じ・高さが同じ→面積も同じ」をノートに図つきで書こう</div></div>
+</div>
+
+<!-- ===== 問2 折り返し・角度 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">折り返しの角度（紙テープ）L3 応用</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead">問2</span>下の図のように、長方形の細長い紙テープを1回折り返しました。折り目と下の辺がつくる角が58°のとき、折り返してできる重なりの角 x の大きさを求めなさい。
+    <svg class="fig" width="280" height="120" viewBox="0 0 280 120">
+      <line x1="20" y1="35" x2="260" y2="35" stroke="#888" stroke-width="1.5"/>
+      <line x1="20" y1="85" x2="260" y2="85" stroke="#888" stroke-width="1.5"/>
+      <polygon points="115,85 175,35 235,85" fill="#fdf2e3" stroke="#d9883a" stroke-width="2"/>
+      <line x1="115" y1="85" x2="175" y2="35" stroke="#d9883a" stroke-width="2"/>
+      <text x="122" y="80" font-size="12" fill="#b3611c">58°</text>
+      <text x="200" y="80" font-size="12" fill="#b3611c">58°</text>
+      <text x="170" y="52" font-size="13" fill="#9b3b1c" font-weight="bold">x</text>
+      <text x="28" y="28" font-size="11" fill="#666">上の辺</text>
+      <text x="28" y="100" font-size="11" fill="#666">下の辺</text>
+    </svg>
+  </div>
+  <div class="note-draw">「折り返すと角は等しい」「上下の辺は平行」を図に書きこもう。重なってできる三角形の角に注目。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">折り返しのコツ：折ると、折る前と後で形も角もぴったり重なる＝重なる角は等しい。さらに紙テープの上の辺と下の辺は平行。この2つを使うと、折り目のところに小さな三角形ができる。</div>
+    <div class="step q2"><span>①折り返しで等しい</span>折り目が下の辺と58°。折り返すと反対側にも同じ角ができる（折り返しで角が等しい）。だから三角形の左下の角58°、右下の角も58°。</div>
+    <div class="step q2"><span>②三角形の内角の和</span>三角形の3つの角を足すと180°。底の2角が58°と58°だから、頂点の角 x は <span class="math">x＝180−58−58＝64</span>。x＝64°。</div>
+    <div class="bx bx-warn"><span class="red">x＝58° としない</span>。58°は底の2つの角で、x はてっぺんの角。残り＝180−58−58。<span class="red">折り返しで「角が等しい」を見落とす</span>のが最大のミス。折り目の左右に同じ角ができる、と必ず図に書こう。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2の角度問題は「折り返し＋平行線（錯角・同位角）」が定番。<strong>折ると等しい・平行なら錯角が等しい</strong>の2本柱で必ず解ける。</div>
+    <div class="ans-final"><span>こたえ</span>x＝64°</div>
+      <div class="tec-link">型：<b>折り返し角型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「折ると等しい＋平行線」をノートに図つきで書こう</div></div>
+</div>
+
+<!-- ===== 問3 花びら・円の組合せ ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★花びら型（半円4つ−正方形）L3 応用</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead">問3</span>1辺8cmの正方形があります。図のように、正方形の4つの辺をそれぞれ直径として、内側に半円を4つかきました。中央にできる「花びら」の部分（色をぬった部分）の面積を求めなさい（円周率は<span class="pi">π</span>）。
+    <svg class="fig" width="180" height="180" viewBox="0 0 180 180">
+      <defs>
+        <clipPath id="sq"><rect x="30" y="30" width="120" height="120"/></clipPath>
+      </defs>
+      <!-- 4 petals via overlap fill -->
+      <g clip-path="url(#sq)">
+        <!-- top semicircle (diameter = top side), bulging down -->
+        <path d="M30,30 A60,60 0 0 0 150,30 Z" fill="#f0e7fa" opacity="0.55"/>
+        <!-- bottom semicircle bulging up -->
+        <path d="M30,150 A60,60 0 0 1 150,150 Z" fill="#f0e7fa" opacity="0.55"/>
+        <!-- left semicircle bulging right -->
+        <path d="M30,30 A60,60 0 0 1 30,150 Z" fill="#f0e7fa" opacity="0.55"/>
+        <!-- right semicircle bulging left -->
+        <path d="M150,30 A60,60 0 0 0 150,150 Z" fill="#f0e7fa" opacity="0.55"/>
+      </g>
+      <rect x="30" y="30" width="120" height="120" fill="none" stroke="#a98ed0" stroke-width="2"/>
+      <path d="M30,30 A60,60 0 0 0 150,30" fill="none" stroke="#7b5ea7" stroke-width="1.3"/>
+      <path d="M30,150 A60,60 0 0 1 150,150" fill="none" stroke="#7b5ea7" stroke-width="1.3"/>
+      <path d="M30,30 A60,60 0 0 1 30,150" fill="none" stroke="#7b5ea7" stroke-width="1.3"/>
+      <path d="M150,30 A60,60 0 0 0 150,150" fill="none" stroke="#7b5ea7" stroke-width="1.3"/>
+      <text x="78" y="170" font-size="12" fill="#333">8cm</text>
+    </svg>
+  </div>
+  <div class="note-draw"><span class="pi">π</span>は最後まで文字で残そう。半円1つの半径は何cmか、図に書きこもう（辺の半分）。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai"><ul>
+      <li><b>円の面積＝半径×半径×<span class="pi">π</span></b>　<b>半円＝円÷2</b></li>
+      <li>「正方形の中に半円4つ→中央の花びら」は <b>半円4つの面積の合計−正方形</b> で出る。</li>
+    </ul></div>
+    <div class="step q3"><span>①半円の半径</span>半円の直径は正方形の1辺＝8cm。だから半径は半分の<strong>4cm</strong>。</div>
+    <div class="step q3"><span>②半円4つの合計</span>半円1つ＝(4×4×<span class="pi">π</span>)÷2＝8<span class="pi">π</span>。4つで <span class="math">8<span class="pi">π</span>×4＝32<span class="pi">π</span></span>。</div>
+    <div class="step q3"><span>③なぜ引くの？</span>半円4つを正方形の中にかくと、花びらの部分は2つの半円がちょうど重なってできる。半円4つの合計には、正方形のすき間が1回ずつ、花びらが2回ずつ数えられている。半円4つの合計から正方形を1回引くと、ちょうど花びら（重なった分）だけが残る。</div>
+    <div class="step q3"><span>④式</span>花びら＝半円4つ−正方形＝<span class="math">32<span class="pi">π</span>−8×8＝32<span class="pi">π</span>−64</span>。32<span class="pi">π</span>−64 cm²。</div>
+    <div class="bx bx-warn"><span class="red">半径を8cmにしない</span>（8cmは直径。半径はその半分の4cm）。<span class="pi">π</span>の項と数の項を混ぜない（32<span class="pi">π</span>−64 のまま。32<span class="pi">π</span>−64＝… と1つの数にしない）。<span class="pi">π</span>を勝手に3.14にしない。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2の「花びら型（<span class="pi">π</span>）」直撃。<strong>半径が変わっても「曲線でかこまれた図形＝大きい形−まわりのすき間」</strong>の考え方は同じ。重なりは「全部足して正方形を1回引く」と覚えよう。</div>
+    <div class="ans-final"><span>こたえ</span>32<span class="pi">π</span>−64 cm²</div>
+      <div class="tec-link">型：<b>複合図形型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3★</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「半円4つ−正方形」をノートに図つきで書こう</div></div>
+</div>
+
+<!-- ===== 問4 おうぎ形 ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★おうぎ形（弧の長さ・面積）L3-L4</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead">問4</span>半径6cm、中心角120°のおうぎ形があります。このおうぎ形の(1)弧の長さ、(2)面積をそれぞれ求めなさい（円周率は<span class="pi">π</span>）。
+    <svg class="fig" width="190" height="170" viewBox="0 0 190 170">
+      <!-- sector: center at (50,120), radius 90px, 120deg opening up-right -->
+      <path d="M50,120 L140,120 A90,90 0 0 0 5,42 Z" fill="#eef7f5" stroke="#2f6a5c" stroke-width="2"/>
+      <line x1="50" y1="120" x2="140" y2="120" stroke="#2f6a5c" stroke-width="2"/>
+      <circle cx="50" cy="120" r="2.5" fill="#2f6a5c"/>
+      <text x="88" y="135" font-size="12" fill="#333">6cm</text>
+      <text x="60" y="108" font-size="12" fill="#b3611c">120°</text>
+      <path d="M78,120 A28,28 0 0 0 64,96" fill="none" stroke="#b3611c" stroke-width="1.2"/>
+    </svg>
+  </div>
+  <div class="note-draw">おうぎ形は「円の一部」。円全体の (中心角/360) だけ、と考える。<span class="pi">π</span>は文字のまま。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai"><ul>
+      <li><b>おうぎ形の弧＝円周×(中心角/360)＝2×半径×<span class="pi">π</span>×(中心角/360)</b></li>
+      <li><b>おうぎ形の面積＝円の面積×(中心角/360)＝半径×半径×<span class="pi">π</span>×(中心角/360)</b></li>
+      <li>120°は円1周(360°)の <b><span class="frac"><span class="n">120</span><span class="d">360</span></span>＝<span class="frac"><span class="n">1</span><span class="d">3</span></span></b>。だから円の3分の1。</li>
+    </ul></div>
+    <div class="step q4"><span>(1)弧</span>円周＝2×6×<span class="pi">π</span>＝12<span class="pi">π</span>。その120/360（＝<span class="frac"><span class="n">1</span><span class="d">3</span></span>）だから <span class="math">12<span class="pi">π</span>×<span class="frac"><span class="n">1</span><span class="d">3</span></span>＝4<span class="pi">π</span></span>。弧＝4<span class="pi">π</span> cm。</div>
+    <div class="step q4"><span>(2)面積</span>円の面積＝6×6×<span class="pi">π</span>＝36<span class="pi">π</span>。その120/360（＝<span class="frac"><span class="n">1</span><span class="d">3</span></span>）だから <span class="math">36<span class="pi">π</span>×<span class="frac"><span class="n">1</span><span class="d">3</span></span>＝12<span class="pi">π</span></span>。面積＝12<span class="pi">π</span> cm²。</div>
+    <div class="bx bx-warn"><span class="red">弧の長さに半径×半径を使わない</span>（弧は「長さ」だから円周＝2×半径×<span class="pi">π</span>を使う。面積だけ半径×半径）。<span class="red">中心角を/360するのを忘れない</span>（円全体ではなく一部だから）。<span class="frac"><span class="n">120</span><span class="d">360</span></span>は約分して1/3にすると計算がラク。</div>
+    <div class="bx bx-link">9月特訓選抜 大問2では「おうぎ形＋三角形」「おうぎ形−おうぎ形」の複合も出る。まず<strong>おうぎ形ひとつを「円の(中心角/360)」で出せる</strong>ことが土台。弧は2×半径×<span class="pi">π</span>系、面積は半径×半径×<span class="pi">π</span>系、と分けて覚えよう。</div>
+    <div class="ans-final"><span>こたえ</span>(1)弧＝4<span class="pi">π</span> cm／(2)面積＝12<span class="pi">π</span> cm²</div>
+      <div class="tec-link">型：<b>複合図形型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c5" target="_blank">マル秘テクニック集 第5章</a></div>
+  </div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1)弧</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「弧＝2×半径×π×(中心角/360)」をノートに書こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2)面積</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「面積＝半径×半径×π×(中心角/360)」をノートに書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P8b 複合図形L4 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">図形おつかれさま！今日のいちばんの収穫は<strong>問1の「砂時計型＝底辺が同じ・高さが同じなら面積も同じ」</strong>。点が動いても面積は変わらない、これに気づけたら9月の大問2で大きい。あとは②折り返しは「折ると角が等しい」③花びらは「半円を全部足して正方形を1回引く」④おうぎ形は「円の(中心角/360)」。まちがえた問題は、図に分かる長さ・角を全部書きこんでノートに解き直そう。少しずつでいい、きみは確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m08b';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！複合図形L4 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01":{"jp":"複合図形L4｜砂時計型（面積一定）・折り返し角・花びら（ π ）・おうぎ形 / 問1★: 問1 下の図のように、たて9cm、横14cmの長方形の中に点Pをとり、Pと4つの頂点を結びました。色をぬった上と下の2つの三角形の面積の和を求めなさい。 P 14cm 9cm","en":"63cm²"},"q02":{"jp":"複合図形L4｜砂時計型（面積一定）・折り返し角・花びら（ π ）・おうぎ形 / 問2: 問2 下の図のように、長方形の細長い紙テープを1回折り返しました。折り目と下の辺がつくる角が58°のとき、折り返してできる重なりの角 x の大きさを求めなさい。 58° 58° x 上の辺 下の辺","en":"x＝64°"},"q03":{"jp":"複合図形L4｜砂時計型（面積一定）・折り返し角・花びら（ π ）・おうぎ形 / 問3★: 問3 1辺8cmの正方形があります。図のように、正方形の4つの辺をそれぞれ直径として、内側に半円を4つかきました。中央にできる「花びら」の部分（色をぬった部分）の面積を求めなさい（円周率は π ）。 8cm","en":"32 π −64 cm²"},"q04a":{"jp":"複合図形L4｜砂時計型（面積一定）・折り返し角・花びら（ π ）・おうぎ形 / 問4(1)弧: 問4 半径6cm、中心角120°のおうぎ形があります。このおうぎ形の(1)弧の長さ、(2)面積をそれぞれ求めなさい（円周率は π ）。 6cm 120°","en":"弧＝4 π cm／"},"q04b":{"jp":"複合図形L4｜砂時計型（面積一定）・折り返し角・花びら（ π ）・おうぎ形 / 問4(2)面積: 問4 半径6cm、中心角120°のおうぎ形があります。このおうぎ形の(1)弧の長さ、(2)面積をそれぞれ求めなさい（円周率は π ）。 6cm 120°","en":"面積＝12 π cm²"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

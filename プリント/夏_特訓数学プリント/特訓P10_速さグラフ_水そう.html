@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P10 速さのグラフ・水そう｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・テストへのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜グラフの読み方";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:0.9em}
+.frac .n{border-bottom:1.6px solid currentColor;padding:0 4px 1px}
+.frac .d{padding:1px 4px 0}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="partial-n1" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P10</span><span class="pg-badge">数学：関数的・グラフ</span><span class="pg-badge">速さのグラフ・水そう L3-L4</span></div>
+  <h1>グラフ｜速さの動き（行き・休み・帰り）と 水そうの水位</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問5・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">特訓選抜 大問5、テストで空欄だった「グラフ」を直撃。コツは<strong>①グラフの“かたむき”＝速さ（増える割合）②横ばい＝止まっている③折れたところ＝変化したところ</strong>。読み取りは「2つの点の縦の差÷横の差」で割合が出る。グラフは目で読んで、数で確かめよう。</p>
+</div>
+
+<!-- ===== 大問A 距離-時間グラフ（問1〜問3） ===== -->
+<div class="unit-banner"><span class="unit-num">問1〜3</span><span class="unit-name">速さのグラフ（行き・休み・帰り）L3</span><span class="unit-time">目安 10分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    下のグラフは、ゆいさんが家を出て、公園まで歩いて行き、公園で休んでから家に帰るまでの「家からの道のり」と「時間」の関係です。
+    <svg class="fig" width="345" height="210" viewBox="0 0 345 210">
+      <!-- grid -->
+      <line x1="45" y1="20" x2="285" y2="20" stroke="#eee" stroke-width="1"/>
+      <line x1="114" y1="20" x2="114" y2="170" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="199" y1="20" x2="199" y2="170" stroke="#eee" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- axes -->
+      <line x1="45" y1="170" x2="290" y2="170" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="175" x2="45" y2="15" stroke="#555" stroke-width="1.5"/>
+      <!-- graph line -->
+      <polyline points="45,170 114,20 199,20 285,170" fill="none" stroke="#3f6f9f" stroke-width="2.5"/>
+      <circle cx="114" cy="20" r="3" fill="#3f6f9f"/><circle cx="199" cy="20" r="3" fill="#3f6f9f"/>
+      <!-- labels -->
+      <text x="50" y="13" font-size="11" fill="#444">道のり(m)</text>
+      <text x="292" y="174" font-size="11" fill="#444">時間(分)</text>
+      <text x="18" y="24" font-size="11" fill="#444">800</text>
+      <text x="108" y="184" font-size="11" fill="#444">8</text>
+      <text x="193" y="184" font-size="11" fill="#444">18</text>
+      <text x="279" y="184" font-size="11" fill="#444">28</text>
+      <text x="40" y="184" font-size="11" fill="#444">0</text>
+    </svg>
+    <span class="lead">問1</span>家から公園まで行くときの速さは分速何mですか。<br>
+    <span class="lead">問2</span>公園で休んでいた時間は何分間ですか。<br>
+    <span class="lead">問3</span>公園から家に帰るときの速さは分速何mですか。</div>
+  <div class="note-draw">グラフの「のぼり」「横ばい」「くだり」がそれぞれ何を表すか、2点の数値を読んでノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai"><ul>
+      <li><b>のぼり</b>＝進んでいる（道のりが増える）。<b>かたむきが急＝速い</b>。</li>
+      <li><b>横ばい</b>＝止まっている（道のりが変わらない）。</li>
+      <li><b>くだり</b>＝家へ近づく（帰り）。<b>速さ＝道のり÷時間＝縦の差÷横の差</b>。</li>
+    </ul></div>
+    <div class="step q1"><span>問1 行き</span>0分→8分で 0m→800m。速さ＝800÷8＝<span class="math">分速100m</span>。</div>
+    <div class="step q2"><span>問2 休み</span>8分→18分はグラフが横ばい（800mのまま）＝止まっている。<span class="math">18−8＝10分間</span>。</div>
+    <div class="step q3"><span>問3 帰り</span>18分→28分で 800m→0m（10分で800m）。速さ＝800÷10＝<span class="math">分速80m</span>。</div>
+    <div class="bx bx-warn">問3 <span class="red">帰りの時間は「28−18＝10分」</span>（0分からでない）。横ばいの区間を「進んでいる」と読み違えない。</div>
+    <div class="bx bx-link">テストで空欄だった「速さのグラフ」と特訓 大問5・6の土台。かたむき＝速さ、横ばい＝停止 を読めることが鍵。</div>
+    <div class="ans-final"><span>こたえ</span>問1 分速100m／問2 10分間／問3 分速80m</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、2点の数値と式をノートに書こう</div></div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、横ばい区間をノートに書こう</div></div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、帰りの2点と式をノートに書こう</div></div>
+</div>
+
+<!-- ===== 大問B 水そう・比例（問4） ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">水そうに一定の割合で水を入れる L3</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    直方体の水そうに、一定の割合で水を入れます。下のグラフは「水を入れ始めてからの時間」と「水の深さ」の関係です。
+    <svg class="fig" width="315" height="200" viewBox="0 0 315 200">
+      <line x1="45" y1="160" x2="260" y2="160" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="165" x2="45" y2="20" stroke="#555" stroke-width="1.5"/>
+      <line x1="112" y1="160" x2="112" y2="117" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="117" x2="112" y2="117" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <polyline points="45,160 245,30" fill="none" stroke="#2f6a5c" stroke-width="2.5"/>
+      <circle cx="112" cy="117" r="3" fill="#2f6a5c"/>
+      <text x="50" y="14" font-size="11" fill="#444">深さ(cm)</text>
+      <text x="262" y="164" font-size="11" fill="#444">時間(分)</text>
+      <text x="24" y="121" font-size="11" fill="#444">10</text>
+      <text x="106" y="174" font-size="11" fill="#444">5</text>
+      <text x="40" y="174" font-size="11" fill="#444">0</text>
+    </svg>
+    <span class="lead">問4</span>この水そうは深さ30cmで満水になります。満水になるのは水を入れ始めてから何分後ですか。</div>
+  <div class="note-draw">グラフから「1分で何cm増えるか」を読んでから、満水30cmまでの時間を考えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">一定の割合で入れる＝深さは時間に<strong>比例</strong>（原点を通る直線）。まず「1分で何cm増えるか（割合）」を求める。</div>
+    <div class="step q1"><span>割合</span>グラフより5分で10cm。1分あたり＝10÷5＝<span class="math">2cm/分</span>。</div>
+    <div class="step q1"><span>満水</span>深さ30cmまで：30÷2＝<span class="math">15分後</span>。検算 2×15＝30cm○。</div>
+    <div class="bx bx-warn"><span class="red">30÷10＝3 や 30−10 などにしない</span>。まず「1分で2cm」を出し、30÷2＝15。</div>
+    <div class="ans-final"><span>こたえ</span>15分後</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、割合と満水の式をノートに書こう</div></div>
+</div>
+
+<!-- ===== 大問C 水そう段付き L4（問5） ===== -->
+<div class="unit-banner"><span class="unit-num">問5</span><span class="unit-name">★水そうの底に台（水位の上がり方が変わる）L4</span><span class="unit-time">目安 6分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    水そうの底に直方体の台が置いてあり、一定の割合で水を入れます。台の高さまでは水位が速く上がり、台をこえるとゆっくり上がります。下のグラフはそのようすです。
+    <svg class="fig" width="315" height="200" viewBox="0 0 315 200">
+      <line x1="45" y1="160" x2="260" y2="160" stroke="#555" stroke-width="1.5"/>
+      <line x1="45" y1="165" x2="45" y2="20" stroke="#555" stroke-width="1.5"/>
+      <line x1="125" y1="160" x2="125" y2="95" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="95" x2="125" y2="95" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="245" y1="160" x2="245" y2="30" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="30" x2="245" y2="30" stroke="#bbb" stroke-width="1" stroke-dasharray="3 3"/>
+      <polyline points="45,160 125,95 245,30" fill="none" stroke="#a85a2a" stroke-width="2.5"/>
+      <circle cx="125" cy="95" r="3" fill="#a85a2a"/>
+      <text x="50" y="14" font-size="11" fill="#444">深さ(cm)</text>
+      <text x="262" y="164" font-size="11" fill="#444">時間(分)</text>
+      <text x="22" y="99" font-size="11" fill="#444">12</text>
+      <text x="22" y="34" font-size="11" fill="#444">24</text>
+      <text x="120" y="174" font-size="11" fill="#444">4</text>
+      <text x="240" y="174" font-size="11" fill="#444">10</text>
+      <text x="40" y="174" font-size="11" fill="#444">0</text>
+    </svg>
+    <span class="lead">問5</span>(1) 最初の4分間で、水位は1分あたり何cm上がりましたか。(2) 4分から10分までは、1分あたり何cm上がりましたか。</div>
+  <div class="note-draw">折れる点（4分・深さ12cm）の前と後で、それぞれ「縦の差÷横の差」を計算しよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">折れ線は「変化が変わった点」で折れる。割合（1分あたり）＝<strong>その区間の「深さの差÷時間の差」</strong>。区間ごとに分けて読む。</div>
+    <div class="step q1"><span>(1) 0〜4分</span>4分で深さ0→12cm。割合＝12÷4＝<span class="math">3cm/分</span>。（台があるぶん底が狭く、速く上がる）</div>
+    <div class="step q2"><span>(2) 4〜10分</span>深さ12→24cm（差12cm）を 10−4＝6分で。割合＝12÷6＝<span class="math">2cm/分</span>。（台をこえて広くなり、ゆっくり）</div>
+    <div class="step q3"><span>確かめ</span>傾きが急→ゆるやかに折れている＝(1)の3cm/分＞(2)の2cm/分。グラフと合う。</div>
+    <div class="bx bx-warn">(2)で <span class="red">時間を10分で割らない</span>（4分からの区間なので 10−4＝6分）。<span class="red">深さも 24−12＝12cm</span>。「区間の差どうし」で割る。</div>
+    <div class="bx bx-link">底に台や仕切りがある水そうは特訓選抜 大問5の典型。「折れた点＝変化点」「区間ごとに割合」を読めれば満水時刻まで出せる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 3cm/分／(2) 2cm/分</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q05"><div class="grade"><span class="gq-label">問5★L4</span>○✕ → <button class="o" onclick="g(this,'q05','o')">○</button><button class="x" onclick="g(this,'q05','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、区間ごとの「差÷差」をノートに書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P10 グラフ・水そう 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">グラフおつかれさま！①かたむき＝速さ（割合）②横ばい＝止まっている③折れ＝変化した所④割合＝「縦の差÷横の差」。区間ごとに分けて読むのがコツ。必修で空欄だった速さグラフ、特訓大問5の水そうはこれで取れる。まちがえた問題は2点の数値を読み直してノートで計算しよう。次は仕上げ（ケアレス潰し→過去問形式）だ🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m10';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！グラフ・水そう クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01":{"jp":"グラフ｜速さの動き（行き・休み・帰り）と 水そうの水位 / 問1: 下のグラフは、ゆいさんが家を出て、公園まで歩いて行き、公園で休んでから家に帰るまでの「家からの道のり」と「時間」の関係です。 道のり(m) 時間(分) 800 8 18 28 0 問1 家から公園まで行くときの速さは分速何mですか。 問2 公園で休んでいた時間は何分間ですか。 問3 公園から家に帰るときの速さは分速何mですか。","en":"分速100m"},"q02":{"jp":"グラフ｜速さの動き（行き・休み・帰り）と 水そうの水位 / 問2: 下のグラフは、ゆいさんが家を出て、公園まで歩いて行き、公園で休んでから家に帰るまでの「家からの道のり」と「時間」の関係です。 道のり(m) 時間(分) 800 8 18 28 0 問1 家から公園まで行くときの速さは分速何mですか。 問2 公園で休んでいた時間は何分間ですか。 問3 公園から家に帰るときの速さは分速何mですか。","en":"10分間"},"q03":{"jp":"グラフ｜速さの動き（行き・休み・帰り）と 水そうの水位 / 問3: 下のグラフは、ゆいさんが家を出て、公園まで歩いて行き、公園で休んでから家に帰るまでの「家からの道のり」と「時間」の関係です。 道のり(m) 時間(分) 800 8 18 28 0 問1 家から公園まで行くときの速さは分速何mですか。 問2 公園で休んでいた時間は何分間ですか。 問3 公園から家に帰るときの速さは分速何mですか。","en":"分速80m"},"q04":{"jp":"グラフ｜速さの動き（行き・休み・帰り）と 水そうの水位 / 問4: 直方体の水そうに、一定の割合で水を入れます。下のグラフは「水を入れ始めてからの時間」と「水の深さ」の関係です。 深さ(cm) 時間(分) 10 5 0 問4 この水そうは深さ30cmで満水になります。満水になるのは水を入れ始めてから何分後ですか。","en":"15分後"},"q05":{"jp":"グラフ｜速さの動き（行き・休み・帰り）と 水そうの水位 / 問5★L4: 水そうの底に直方体の台が置いてあり、一定の割合で水を入れます。台の高さまでは水位が速く上がり、台をこえるとゆっくり上がります。下のグラフはそのようすです。 深さ(cm) 時間(分) 12 24 4 10 0 問5 (1) 最初の4分間で、水位は1分あたり何cm上がりましたか。(2) 4分から10分までは、1分あたり何cm上がりましたか。","en":"(1) 3cm/分／(2) 2cm/分"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

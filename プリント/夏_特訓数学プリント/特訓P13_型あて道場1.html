@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P13 型あて道場①｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"📝 今日のやり方（型あて道場）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・大問3へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ この問題は何型？";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.zukai{background:#fbfaf5;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Courier New',monospace;font-size:13px;color:#6a5a32;white-space:pre-wrap;line-height:1.7}
+.zukai::before{content:"📐 図（線分図・表）";display:block;font-family:'Hiragino Kaku Gothic ProN',sans-serif;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.svgbox{background:#fbfdff;border:1px dashed #aebfd6;border-radius:8px;padding:10px 12px;margin:8px 0}
+.svgbox::before{content:"📏 線分図（行きと帰り）";display:block;font-size:11px;font-weight:800;color:#3f6f9f;margin-bottom:6px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:.95em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P13</span><span class="pg-badge">数学：方程式の利用</span><span class="pg-badge">型あて道場① L2-L3</span></div>
+  <h1>型あて道場①｜「これは何型？」を自分で見抜く特訓</h1>
+  <p>夏・特訓対策　目安：約30分（第1問〜第6問）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">今日は見出しに型名を出さない。きみが<strong>自分で「これは何型か」を見抜く</strong>のが今日の主役。本番の大問3も、最初に型を当てられるかどうかで決まる。数字はいつも変わるから暗記はきかない。だから「どの言葉でその型と分かるか」を体で覚えよう。最後の問題まで、言葉をよく読もう🌸</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① これは何型？</b> をまず書く（下の4つから選ぶか、自分の言葉で）<br>　⑴ 個数・代金型　⑵ 速さ・往復型　⑶ 過不足型　⑷ 割合・利益型</li>
+    <li><b>② x を置く</b>（「□を x とする」と書く）</li>
+    <li><b>③ 式を作る</b>（＝で結べる2つの言い方を探す）</li>
+    <li><b>④ 解く</b>（移項して x ＝ の形へ）</li>
+    <li><b>⑤ 検算</b>（出た数を文章に戻して合うか確かめる）</li>
+    <li>最後に <b>型が当たったかも ○✕</b> をつける</li>
+  </ol>
+</div>
+
+<!-- ===== 第1問 ===== -->
+<div class="unit-banner"><span class="unit-num">第1問</span><span class="unit-name">L2 標準</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">第1問</span>1個70円のチョコと、1個40円のあめを、合わせて15個買ったら、代金は810円でした。チョコは何個買いましたか。</div>
+  <div class="note-draw">まず<strong>①これは何型？</strong>を書く（⑴個数・代金 ⑵速さ・往復 ⑶過不足 ⑷割合・利益 から選ぶか自分の言葉で）。型を決めたら②x→③式→④解く→⑤検算。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">個数・代金型。「合わせて15個」と合計の個数が決まっているのが見分け方。<strong>片方を x、もう片方は「合計−x」</strong>で表すと文字は1つで済む。</div>
+    <div class="step q1"><span>①x</span>チョコを x 個とする → あめは (15−x) 個。</div>
+    <div class="step q1"><span>③式</span>金額の合計＝810。<span class="math">70x＋40(15−x)＝810</span>。</div>
+    <div class="step q1"><span>④解</span>70x＋600−40x＝810 → 30x＝210 → x＝7。</div>
+    <div class="step q1"><span>⑤検算</span>チョコ7個、あめ(15−7)＝8個。70×7＋40×8＝490＋320＝810○。</div>
+    <div class="bx bx-warn"><span class="red">40(15−x) を 40×15−x としない</span>（x にも40をかける＝600−40x）。最後は<span class="red">チョコを答える</span>（x がそのまま答え）。</div>
+    <div class="ans-final"><span>こたえ</span>チョコ 7個（あめ 8個）</div>
+      <div class="tec-link">型：<b>個数・代金型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="q1"><div class="grade"><span class="gq-label">第1問</span>○✕ → <button class="o" onclick="g(this,'q1','o')">○</button><button class="x" onclick="g(this,'q1','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、やり方①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 第2問 ===== -->
+<div class="unit-banner"><span class="unit-num">第2問</span><span class="unit-name">L3 標準</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">第2問</span>色紙を子どもたちに配ります。1人に4枚ずつ配ると15枚あまり、1人に6枚ずつ配ると5枚たりません。子どもの人数は何人ですか。</div>
+  <div class="note-draw">まず<strong>①これは何型？</strong>を書く（⑴個数・代金 ⑵速さ・往復 ⑶過不足 ⑷割合・利益 から選ぶか自分の言葉で）。型を決めたら②x→③式→④解く→⑤検算。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">過不足型。配り方が2通りで、「あまる」「たりない」の言葉が見分け方。変わらないのは色紙の数。これを2通りで表して＝で結ぶ。<strong>あまる＝＋、たりない＝−</strong>。</div>
+    <div class="step q2"><span>①x</span>子どもの人数を x 人とする。</div>
+    <div class="zukai">4枚ずつ：4x ＋ あまり15  → 色紙＝4x＋15
+6枚ずつ：6x − たりない5  → 色紙＝6x−5</div>
+    <div class="step q2"><span>③式</span>色紙の数を2通りで：4枚ずつ＝<span class="math">4x＋15</span>（あまる＝＋）、6枚ずつ＝<span class="math">6x−5</span>（たりない＝−）。同じ色紙だから <span class="math">4x＋15＝6x−5</span>。</div>
+    <div class="step q2"><span>④解</span>15＋5＝6x−4x → 20＝2x → x＝10。</div>
+    <div class="step q2"><span>⑤検算</span>子ども10人。4枚ずつ：4×10＋15＝55枚。6枚ずつ：6×10−5＝55枚。両方55枚で一致○。</div>
+    <div class="bx bx-warn"><span class="red">「たりない5」を ＋5 にしない</span>（足りない＝引く。6x−5）。あまる＝＋、たりない＝−を取りちがえると符号がずれる。</div>
+    <div class="bx bx-link">「変わらない全体を2通りで表して＝」は大問3(3)の定番。長椅子・部屋割り・お金でもそのまま使える。</div>
+    <div class="ans-final"><span>こたえ</span>子ども 10人</div>
+      <div class="tec-link">型：<b>過不足型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="q2"><div class="grade"><span class="gq-label">第2問</span>○✕ → <button class="o" onclick="g(this,'q2','o')">○</button><button class="x" onclick="g(this,'q2','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、やり方①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 第3問 ===== -->
+<div class="unit-banner"><span class="unit-num">第3問</span><span class="unit-name">L3 標準</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">第3問</span>ある品物に、原価の2割の利益を見込んで定価をつけたところ、定価は1800円になりました。この品物の原価はいくらですか。</div>
+  <div class="note-draw">まず<strong>①これは何型？</strong>を書く（⑴個数・代金 ⑵速さ・往復 ⑶過不足 ⑷割合・利益 から選ぶか自分の言葉で）。型を決めたら②x→③式→④解く→⑤検算。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key"><strong>割合・利益型</strong>。「○割の利益」「定価」の言葉が見分け方。<strong>2割の利益（2割増し）＝×(1＋0.2)＝×1.2</strong>。定価＝原価×1.2。</div>
+    <div class="step q3"><span>①x</span>原価を x 円とする。</div>
+    <div class="zukai">原価        x 円
+ ↓ 2割の利益を見込む（×1.2）
+定価       1.2x 円 ＝ 1800円</div>
+    <div class="step q3"><span>③式</span>定価＝原価×1.2だから <span class="math">1.2x＝1800</span>。</div>
+    <div class="step q3"><span>④解</span>x＝1800÷1.2＝1500。</div>
+    <div class="step q3"><span>⑤検算</span>原価1500円。1500×1.2＝1800円＝定価○。</div>
+    <div class="bx bx-warn"><span class="red">1800−2割＝1440 としない</span>（割るのは1.2。1800÷1.2＝1500）。2割の利益は×1.2であって、定価から2割ひくのではない。</div>
+    <div class="bx bx-link">「×(1＋割合)で割増し」は大問3(4)の利益問題の核。割合は小数か分数で正確に。</div>
+    <div class="ans-final"><span>こたえ</span>原価 1500円</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="q3"><div class="grade"><span class="gq-label">第3問</span>○✕ → <button class="o" onclick="g(this,'q3','o')">○</button><button class="x" onclick="g(this,'q3','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、やり方①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 第4問 ===== -->
+<div class="unit-banner"><span class="unit-num">第4問</span><span class="unit-name">L3 標準</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">第4問</span>家から駅まで、行きは分速50m、帰りは分速75mで往復しました。往復にかかった時間は合わせて25分でした。家から駅までの片道の道のりは何mですか。</div>
+  <div class="note-draw">まず<strong>①これは何型？</strong>を書く（⑴個数・代金 ⑵速さ・往復 ⑶過不足 ⑷割合・利益 から選ぶか自分の言葉で）。型を決めたら②x→③式→④解く→⑤検算。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key"><strong>速さ・往復型</strong>。行きと帰りで速さがちがい、時間の合計が分かっているのが見分け方。等しい関係は「行きの時間＋帰りの時間＝25分」。時間＝道のり÷速さを使う。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ①x〜消す</div><div class="step q4"><span>①x</span>片道の道のりを x m とする（行きも帰りも同じ道）。</div>
+    <div class="svgbox">
+      <svg viewBox="0 0 360 120" width="100%" style="max-width:360px">
+        <line x1="20" y1="40" x2="320" y2="40" stroke="#3f6f9f" stroke-width="2"/>
+        <line x1="20" y1="32" x2="20" y2="48" stroke="#3f6f9f" stroke-width="2"/>
+        <line x1="320" y1="32" x2="320" y2="48" stroke="#3f6f9f" stroke-width="2"/>
+        <text x="14" y="64" font-size="12" fill="#31415f">家</text>
+        <text x="308" y="64" font-size="12" fill="#31415f">駅</text>
+        <text x="150" y="28" font-size="12" fill="#31415f">道のり x m</text>
+        <text x="60" y="92" font-size="11" fill="#8a5a17">行き 分速50m → 時間 x÷50</text>
+        <text x="60" y="110" font-size="11" fill="#2f5a8a">帰り 分速75m → 時間 x÷75</text>
+      </svg>
+    </div>
+    <div class="step q4"><span>③式</span>行きの時間＝x÷50、帰りの時間＝x÷75。合計が25分だから <span class="math"><span class="frac"><span class="n">x</span><span class="d">50</span></span>＋<span class="frac"><span class="n">x</span><span class="d">75</span></span>＝25</span>。</div>
+    <div class="step q4"><span>そろえる</span>分母は 50 と 75。両方でわり切れる数をかければ分母が消える。それが 150（50と75の最小公倍数）。</div>
+    <div class="step q4"><span>消す</span>左の第1項 → <span class="math"><span class="frac"><span class="n">x</span><span class="d">50</span></span> × 150</span>：150 ÷ 50 ＝ 3 なので 3x。左の第2項 → <span class="math"><span class="frac"><span class="n">x</span><span class="d">75</span></span> × 150</span>：150 ÷ 75 ＝ 2 なので 2x。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ 消す〜⑤検算</div><div class="step q4"><span>消す</span>右の 25 にも 150 をかける → <span class="math">25 × 150 ＝ 3750</span>。★分母がない項こそ掛け忘れる。ここが最頻ミス。</div>
+    <div class="step q4"><span>たしかめる</span><span class="math">3x ＋ 2x ＝ 3750</span> → <span class="math">5x ＝ 3750</span> → 両辺を5でわる → <strong>x ＝ 750</strong>。</div>
+    <div class="step q4"><span>⑤検算</span>行き 750÷50＝15分、帰り 750÷75＝10分。15＋10＝25分○。</div>
+    <div class="bx bx-warn"><span class="red">行きと帰りの速さを足して平均にしない</span>（(50＋75)÷2 は使えない）。時間＝道のり÷速さ。割る向きをまちがえないこと。</div>
+    <div class="bx bx-link">「時間の合計＝行き÷速さ＋帰り÷速さ」は大問3(2)で頻出。分数の式は最小公倍数を両辺にかけて整数にすると楽。</div>
+    <div class="ans-final"><span>こたえ</span>片道 750m</div>
+      <div class="tec-link">型：<b>速さ・往復型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="q4"><div class="grade"><span class="gq-label">第4問</span>○✕ → <button class="o" onclick="g(this,'q4','o')">○</button><button class="x" onclick="g(this,'q4','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、やり方①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 第5問 ===== -->
+<div class="unit-banner"><span class="unit-num">第5問</span><span class="unit-name">L3 標準</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="E">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">第5問</span>生徒が長椅子に座ります。1脚に4人ずつ座ると10人がすわれません。1脚に6人ずつ座ると、ちょうど全員が座れます。長椅子は何脚あり、生徒は何人ですか。</div>
+  <div class="note-draw">まず<strong>①これは何型？</strong>を書く（⑴個数・代金 ⑵速さ・往復 ⑶過不足 ⑷割合・利益 から選ぶか自分の言葉で）。型を決めたら②x→③式→④解く→⑤検算。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q1"><span>いいかえ</span>「10人がすわれない」＝ <strong>イスが10人分たりない</strong>、と言いかえる。★ヒトの過不足は、必ずイス（席）の過不足に言いかえてから式にする。そうすれば、いつもの「たりない」型と同じになる。</div>
+    <div class="bx bx-key">過不足型。座らせ方が2通りで、「すわれない（あまる）」がある。「ちょうど全員＝過不足ゼロ」も同じ過不足型。変わらない「生徒の人数」を2通りで表して＝で結ぶ。</div>
+    <div class="step q1"><span>うつす</span>長椅子を x 脚とすると、4人ずつで座れるのは <span class="math">4x</span> 人。すわれない人が10人いるから、生徒は <span class="math">4x ＋ 10</span> 人。</div>
+    <div class="zukai">4人ずつ：4x ＋ すわれない10  → 生徒＝4x＋10
+6人ずつ：6x （ちょうど・あまり無し）→ 生徒＝6x</div>
+    <div class="step q1"><span>うつす</span>6人ずつだと全員ぴったり → 生徒は <span class="math">6x</span> 人。</div>
+    <div class="step q1"><span>消す</span>同じ生徒の数だから <span class="math">4x ＋ 10 ＝ 6x</span>。</div>
+    <div class="step q1"><span>たしかめる</span>解いて x を出す：10＝6x−4x → 10＝2x → 左右を入れかえて <span class="math">2x＝10</span> → x＝10÷2＝<strong>5</strong>。生徒の数が両方の式で一致するか確かめる：4×5＋10＝30人、6×5＝30人で一致○。</div>
+    <div class="bx bx-warn"><span class="red">6人ずつは「ちょうど」だからあまりは無い</span>（6x＋何かにしない。6x のまま）。「すわれない10人」は人があまる＝＋10。</div>
+    <div class="bx bx-link">「ちょうど座れた」も過不足ゼロとして同じ型でいける。大問3(3)の長椅子はこの形が定番。</div>
+    <div class="ans-final"><span>こたえ</span>長椅子 5脚／生徒 30人</div>
+      <div class="tec-link">型：<b>過不足型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="q5"><div class="grade"><span class="gq-label">第5問</span>○✕ → <button class="o" onclick="g(this,'q5','o')">○</button><button class="x" onclick="g(this,'q5','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、やり方①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 第6問 ===== -->
+<div class="unit-banner"><span class="unit-num">第6問</span><span class="unit-name">L3 標準</span><span class="unit-time">目安 5分</span></div>
+<div class="q calc" data-id="F">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">第6問</span>1個90円のプリンを何個かと、1本150円のジュースを2本買ったら、代金は1020円でした。プリンは何個買いましたか。</div>
+  <div class="note-draw">まず<strong>①これは何型？</strong>を書く（⑴個数・代金 ⑵速さ・往復 ⑶過不足 ⑷割合・利益 から選ぶか自分の言葉で）。型を決めたら②x→③式→④解く→⑤検算。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">個数・代金型（ただし合計の個数が無い素直版）。ジュースは2本と決まっているから「合計−x」は使わない。<strong>変わる数（プリン）だけが x</strong>、ジュースは150×2＝300円で固定。</div>
+    <div class="step q2"><span>①x</span>プリンを x 個とする（ジュースは2本で固定）。</div>
+    <div class="zukai">プリン   90×x ＝ 90x 円
+ジュース 150×2 ＝ 300 円（固定）
+合計     90x＋300 ＝ 1020 円</div>
+    <div class="step q2"><span>③式</span>代金の合計＝1020。<span class="math">90x＋150×2＝1020</span> → <span class="math">90x＋300＝1020</span>。</div>
+    <div class="step q2"><span>④解</span>90x＝1020−300＝720 → x＝720÷90＝8。</div>
+    <div class="step q2"><span>⑤検算</span>プリン8個。90×8＋150×2＝720＋300＝1020○。</div>
+    <div class="bx bx-warn"><span class="red">「合計の個数」が与えられているか必ず確認</span>。この問題には「合わせて○個」が無いので、ジュースを「○−x」とは置けない。ジュースは2本固定だから＋300、変わるプリンだけを x にする。</div>
+    <div class="bx bx-link">2種類でも、合計の個数があれば「合計−x」、無ければ固定分は数字のまま。どちらかを見抜くのが大問3(1)の落とし穴。</div>
+    <div class="ans-final"><span>こたえ</span>プリン 8個</div>
+      <div class="tec-link">型：<b>個数・代金型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="q6"><div class="grade"><span class="gq-label">第6問</span>○✕ → <button class="o" onclick="g(this,'q6','o')">○</button><button class="x" onclick="g(this,'q6','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、やり方①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P13 型あて道場① 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">6問おつかれさま！今日は型名を見ずに自分で見抜く特訓だった。当たった型・はずれた型を見直して、「どの言葉でその型と分かるか」をノートに書こう。似た顔をしていても、文に書いてある数がちがえば式も変わる。そこを1問ずつ確かめられたら大きな前進。きみは確実に大問3に届く力をつけている🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m13';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！型あて道場① クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q1":{"jp":"型あて道場①｜「これは何型？」を自分で見抜く特訓 / 第1問: 第1問 1個70円のチョコと、1個40円のあめを、合わせて15個買ったら、代金は810円でした。チョコは何個買いましたか。","en":"チョコ 7個（あめ 8個）"},"q2":{"jp":"型あて道場①｜「これは何型？」を自分で見抜く特訓 / 第2問: 第2問 色紙を子どもたちに配ります。1人に4枚ずつ配ると15枚あまり、1人に6枚ずつ配ると5枚たりません。子どもの人数は何人ですか。","en":"子ども 10人"},"q3":{"jp":"型あて道場①｜「これは何型？」を自分で見抜く特訓 / 第3問: 第3問 ある品物に、原価の2割の利益を見込んで定価をつけたところ、定価は1800円になりました。この品物の原価はいくらですか。","en":"原価 1500円"},"q4":{"jp":"型あて道場①｜「これは何型？」を自分で見抜く特訓 / 第4問: 第4問 家から駅まで、行きは分速50m、帰りは分速75mで往復しました。往復にかかった時間は合わせて25分でした。家から駅までの片道の道のりは何mですか。","en":"片道 750m"},"q5":{"jp":"型あて道場①｜「これは何型？」を自分で見抜く特訓 / 第5問: 第5問 生徒が長椅子に座ります。1脚に4人ずつ座ると10人がすわれません。1脚に6人ずつ座ると、ちょうど全員が座れます。長椅子は何脚あり、生徒は何人ですか。","en":"長椅子 5脚／生徒 30人"},"q6":{"jp":"型あて道場①｜「これは何型？」を自分で見抜く特訓 / 第6問: 第6問 1個90円のプリンを何個かと、1本150円のジュースを2本買ったら、代金は1020円でした。プリンは何個買いましたか。","en":"プリン 8個"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

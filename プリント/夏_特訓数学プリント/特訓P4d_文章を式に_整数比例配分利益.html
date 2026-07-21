@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P4d 文章を式に（整数・比例配分・利益）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 文章→式の型カード（毎回これにそって解く）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.tool-hint{margin:8px 0;border:1px dashed #c9b8d6;border-radius:8px;background:#faf7fc;padding:6px 10px;font-size:12.5px}
+.tool-hint summary{cursor:pointer;font-weight:700;color:#7a5a95}
+.tool-hint div{margin-top:6px;color:#4a3a56;line-height:1.8}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.zukai{background:#fbfaf5;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Courier New',monospace;font-size:13px;color:#6a5a32;white-space:pre-wrap;line-height:1.7}
+.zukai::before{content:"📐 図（線分図・表）";display:block;font-family:'Hiragino Kaku Gothic ProN',sans-serif;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P4d</span><span class="pg-badge">数学：方程式の利用</span><span class="pg-badge">★文章→式 L2-L3（抜け型集約）</span></div>
+  <h1>文章を式にする④｜整数・2けたの数・比例配分・利益の「抜け型」を埋める</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">きみの<strong>いちばんの伸びしろ</strong>＝「文章を式にする」力。全国統一テストで0/25だったのもここ。これまでの特訓に<strong>無かった4つの型</strong>を今日まとめて入れる。<strong>4問だけ</strong>。型カードにそって<strong>途中式をていねいに</strong>。数より「型を体に入れる」が今日の目標。</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 何を求める？</b> → それを <span class="math">x</span> とおく（「□を x とする」と書く）</li>
+    <li><b>② 図か表にする</b>（線分図・表）＝目で見える形に</li>
+    <li><b>③ 等しい関係を式に</b>（＝で結べる2つの言い方を探す）</li>
+    <li><b>④ 解く</b>（移項して x ＝ の形へ）</li>
+    <li><b>⑤ 検算</b>（出た数を文章に戻して合うか確かめる）</li>
+  </ol>
+</div>
+
+<!-- ===== 問1 連続する整数 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">連続する3つの整数（中央を x にする型）L2 標準</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問1</span>連続する3つの整数があります。その3つの和は72です。この3つの整数を求めなさい。</div>
+  <div class="note-draw">まず「何型か」を考えよう。何を x にするかは自分で決めてノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">連続する整数は <strong>真ん中を x</strong> におくのがコツ。前後が <span class="math">x−1</span>・<span class="math">x+1</span> になり、足すと −1 と +1 が消えて式がすっきりする。</div>
+    <div class="step q1"><span>①x</span>真ん中の整数を x とする → 前は (x−1)、後は (x+1)。</div>
+    <div class="zukai">（x−1） ─ （x）─ （x+1）
+   ↑前      ↑真ん中    ↑後
+3つの和 ＝ (x−1) ＋ x ＋ (x+1)</div>
+    <div class="step q1"><span>③式</span>3つの和＝72。<span class="math">(x−1)＋x＋(x+1)＝72</span>。</div>
+    <div class="step q1"><span>④解</span>x−1＋x＋x+1＝72 → 3x＝72 → x＝24。</div>
+    <div class="step q1"><span>⑤検算</span>真ん中24なら 23・24・25。23＋24＋25＝72○。</div>
+    <div class="bx bx-warn"><span class="red">いちばん小さい数を x にしてもよい</span>が、その時は x＋(x+1)＋(x+2)＝72 になる。どこを x にしたか最初に決めて書くこと。真ん中を x にすると計算がいちばんラク。</div>
+    <div class="bx bx-link">「連続する数＝真ん中を x」は特訓選抜 大問3の定番。連続する偶数・奇数（2ずつ増える）も同じ考え方でいける。</div>
+    <div class="ans-final"><span>こたえ</span>23、24、25</div>
+      <div class="tec-link">型：<b>整数・比例配分型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問2 2けたの数 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">★2けたの数（位の数・入れかえ）L3 応用</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問2</span>2けたの整数があります。十の位の数と一の位の数の和は9です。十の位と一の位を入れかえてできる数は、元の数より27大きくなります。元の数を求めなさい。</div>
+  <details class="tool-hint"><summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+<div>2けたの数：十の位が a、一の位が b なら 10a＋b</div></details>
+  <div class="note-draw">まず「何型か」を考えよう。何を x にするかは自分で決めてノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">2けたの数のしくみ：十の位 a・一の位 b の数は 10a＋b。例 36 ＝ 10×3＋6。<strong>位の数をそのままならべて書かない</strong>（×ab、○ 10a＋b）。</div>
+    <div class="step q2"><span>①x</span>十の位を x とする → 和が9だから一の位は (9−x)。</div>
+    <div class="zukai">元の数  ＝ 10×x ＋ (9−x) ＝ 9x＋9
+入れかえ＝ 10×(9−x) ＋ x ＝ 90−9x
+（十の位と一の位が入れかわる）</div>
+    <div class="step q2"><span>③式</span>入れかえ＝元より27大きい。<span class="math">90−9x＝(9x＋9)＋27</span>。</div>
+    <div class="step q2"><span>④解</span>90−9x＝9x＋36 → 90−36＝9x＋9x → 54＝18x → x＝3。</div>
+    <div class="step q2"><span>⑤検算</span>十の位3、一の位(9−3)＝6 → 元は36。入れかえると63。63−36＝27○。位の和3＋6＝9○。</div>
+    <div class="bx bx-warn"><span class="red">「27大きい」のは入れかえた方</span>。元＋27＝入れかえ、と置く。どちらが大きいか文章をよく読む。<span class="red">36 を 3×6 や 3＋6 と書かない</span>＝10×3＋6 が正しい。</div>
+    <div class="bx bx-link">「2けた＝10a＋b」は特訓選抜 大問3で出やすい難所。位の表し方を知っているかどうかだけで差がつく。</div>
+    <div class="ans-final"><span>こたえ</span>元の数 36</div>
+      <div class="tec-link">型：<b>整数・比例配分型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問3 比例配分 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★比で分ける（比例配分）L2-L3 標準</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問3</span>きみと妹の所持金の比は 3:5 です。2人の所持金の合計は4800円です。きみと妹の所持金はそれぞれいくらですか。</div>
+  <div class="note-draw">まず「何型か」を考えよう。何を x にするかは自分で決めてノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">比で分けるコツ：<strong>1つ分（かたまり）を x</strong> におく。3:5 なら 3x と 5x。これなら文字は1つで済み、足すと合計になる。</div>
+    <div class="step q3"><span>①x</span>1かたまりを x 円とする → きみ＝3x 円、妹＝5x 円。</div>
+    <div class="zukai">きみ |■■■|              ＝ 3x
+妹   |■■■■■|          ＝ 5x
+合計 |■■■■■■■■| ＝ 8x ＝ 4800</div>
+    <div class="step q3"><span>③式</span>合計＝4800。<span class="math">3x＋5x＝4800</span>。</div>
+    <div class="step q3"><span>④解</span>8x＝4800 → x＝600。</div>
+    <div class="step q3"><span>⑤検算</span>きみ＝3×600＝1800円、妹＝5×600＝3000円。合計1800＋3000＝4800○。比は1800:3000＝3:5○。</div>
+    <div class="bx bx-warn"><span class="red">x がそのまま答えではない</span>。x は「1かたまり＝600円」で、聞かれたのは 3x と 5x。最後に必ず 3x・5x を計算する。</div>
+    <div class="bx bx-link">「比は1つ分を x」は特訓選抜 大問3の割合・比の問題に直結。a:b でも同じく ax と bx でいける。</div>
+    <div class="ans-final"><span>こたえ</span>きみ 1800円／妹 3000円</div>
+      <div class="tec-link">型：<b>整数・比例配分型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="q03"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'q03','o')">○</button><button class="x" onclick="g(this,'q03','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 問4 利益・原価 ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★原価・定価・利益（割合）L3 応用</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問4</span>ある品物の原価（仕入れねだん）に3割の利益を見こんで定価をつけました。ところが定価から200円引きで売ったので、利益は400円でした。この品物の原価を求めなさい。</div>
+  <div class="note-draw">まず「何型か」を考えよう。何を x にするかは自分で決めてノートに書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">割合のコツ：3割＝0.3。「3割の利益を見こむ」＝原価＋原価×0.3＝原価×1.3。<strong>利益＝売ったねだん−原価</strong>。この2つの言葉を式に直すだけ。</div>
+    <div class="step q4"><span>①x</span>原価を x 円とする。</div>
+    <div class="zukai">原価     ＝ x
+定価     ＝ x×1.3 ＝ 1.3x   （3割の利益を見こむ）
+売りねだん＝ 1.3x − 200      （200円引き）
+利益     ＝ 売りねだん − 原価 ＝ 400</div>
+    <div class="step q4"><span>③式</span>利益＝400。<span class="math">(1.3x−200)−x＝400</span>。</div>
+    <div class="step q4"><span>④解</span>1.3x−200−x＝400 → 0.3x＝600 → x＝2000。</div>
+    <div class="step q4"><span>⑤検算</span>原価2000円 → 定価2000×1.3＝2600円。200円引きで2400円で売った。利益＝2400−2000＝400○。</div>
+    <div class="bx bx-warn"><span class="red">「3割の利益」を ＋3 や ×3 としない</span>＝×1.3（原価の1.3倍）。<span class="red">利益は「売値−原価」</span>で、定価−原価ではない（実際に売ったねだんで考える）。</div>
+    <div class="bx bx-link">原価・定価・利益は9月特訓選抜 大問3(4)の「割合・利益」と同じ根っこ。「○割＝×(1＋0.○)」を体に入れておけば、値引きや消費税の問題も同じ手で解ける。</div>
+    <div class="ans-final"><span>こたえ</span>原価 2000円</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="q04"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'q04','o')">○</button><button class="x" onclick="g(this,'q04','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、型カード①〜⑤をノートに書き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P4d 整数・比例配分・利益 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">4問おつかれさま！今日の収穫は<strong>4つの「型」</strong>＝①連続する数は真ん中を x、②2けたの数は 10a＋b、③比は1つ分を x、④割合は ×1.3。どれも「何を x にするか」を最初に決めるのがカギ。式が作れなかった問題は「①何を x にしたか」「③何と何が＝か」をノートで言葉に書き直そう。きみは確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m04d';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！整数・比例配分・利益 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01":{"jp":"文章を式にする④｜整数・2けたの数・比例配分・利益の「抜け型」を埋める / 問1: 問1 連続する3つの整数があります。その3つの和は72です。この3つの整数を求めなさい。","en":"23、24、25"},"q02":{"jp":"文章を式にする④｜整数・2けたの数・比例配分・利益の「抜け型」を埋める / 問2: 問2 2けたの整数があります。十の位の数と一の位の数の和は9です。十の位と一の位を入れかえてできる数は、元の数より27大きくなります。元の数を求めなさい。","en":"元の数 36"},"q03":{"jp":"文章を式にする④｜整数・2けたの数・比例配分・利益の「抜け型」を埋める / 問3: 問3 きみと妹の所持金の比は 3:5 です。2人の所持金の合計は4800円です。きみと妹の所持金はそれぞれいくらですか。","en":"きみ 1800円／妹 3000円"},"q04":{"jp":"文章を式にする④｜整数・2けたの数・比例配分・利益の「抜け型」を埋める / 問4: 問4 ある品物の原価（仕入れねだん）に3割の利益を見こんで定価をつけました。ところが定価から200円引きで売ったので、利益は400円でした。この品物の原価を求めなさい。","en":"原価 2000円"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

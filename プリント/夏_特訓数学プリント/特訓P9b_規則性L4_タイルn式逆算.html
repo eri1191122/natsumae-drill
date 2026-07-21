@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P9b 規則性L4（タイル→n式→逆算）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🃏 規則性の型（必ずこの順で）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・9月大問4へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.qtable{border-collapse:collapse;margin:8px 0;font-size:13px}
+.qtable th,.qtable td{border:1px solid #c9cfc6;padding:4px 10px;text-align:center}
+.qtable th{background:#eef1ec;font-weight:800;color:#46524a}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.figcap{text-align:center;font-size:11.5px;color:#6a7280;margin:-4px 0 8px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tool-hint{margin:8px 0;border:1px dashed #c9b8d6;border-radius:8px;background:#faf7fc;padding:6px 10px;font-size:12.5px}
+.tool-hint summary{cursor:pointer;font-weight:700;color:#7a5a95}
+.tool-hint div{margin-top:6px;color:#4a3a56;line-height:1.8}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="partial-n1" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P9b</span><span class="pg-badge">数学：規則性</span><span class="pg-badge">★タイル→n式→逆算 L3-L4（9月大問4直撃）</span></div>
+  <h1>規則性②｜タイルの数え方を「nの式」にして、大きい番目を逆算する</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">9月の特訓選抜・大問4はこの流れがそのまま出る：<strong>①図を数える → ②nの式にする → ③大きい番目を逆算する</strong>。きみの<strong>いちばんの伸びしろ</strong>＝規則性。今日は1テーマ「タイル」を①②③で最後まで通して、最後に三角数も1問。式さえ作れれば1000番目でも一瞬だよ。</p>
+</div>
+
+<details class="tool-hint">
+<summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+<div>
+  <ol>
+    <li><b>① 1・2・3番目を表に書く</b>（図を数えて具体を並べる）</li>
+    <li><b>② 差を見る</b>（毎回いくつ増える？＝この数が n の係数）</li>
+    <li><b>③ n式を作る</b>：<b>差×n＋（1番目−差）</b>。図形は「変わる部分×n＋変わらない部分」</li>
+    <li><b>④ 逆算</b>：「○個になるのは何番目？」は <b>n式＝○ の方程式</b>を解く</li>
+    <li><b>⑤ 確かめ</b>：n＝1,2 や出た番目を式に入れて表と合うか</li>
+  </ol>
+</div>
+</details>
+
+<!-- ===== 問1 具体化 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">①具体化：タイルを数えて差を見つける L3</span><span class="unit-time">目安 7分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead">問1</span>白いタイルを正方形に並べ、そのまわりを黒いタイルで1周ぐるりと囲みます。下の図は1番目・2番目・3番目です。<strong>黒いタイルの数</strong>を数えて、1番目・2番目・3番目を表にうめなさい。また、黒タイルは1番進むごとに何個ずつ増えますか。
+    <svg class="fig" width="560" height="190" viewBox="0 0 560 190">
+      <!-- 1番目: 白1x1 + 黒で囲む(3x3外周) -->
+      <g>
+        <!-- 黒8個(外周) -->
+        <g fill="#3a3f4a">
+          <rect x="20" y="40" width="22" height="22"/><rect x="44" y="40" width="22" height="22"/><rect x="68" y="40" width="22" height="22"/>
+          <rect x="20" y="64" width="22" height="22"/><rect x="68" y="64" width="22" height="22"/>
+          <rect x="20" y="88" width="22" height="22"/><rect x="44" y="88" width="22" height="22"/><rect x="68" y="88" width="22" height="22"/>
+        </g>
+        <!-- 白1個 -->
+        <g fill="#ffffff" stroke="#b9c0c9">
+          <rect x="44" y="64" width="22" height="22"/>
+        </g>
+        <text x="22" y="32" font-size="12" fill="#555">1番目</text>
+        <text x="20" y="128" font-size="11" fill="#888">黒8個・白1個</text>
+      </g>
+      <!-- 2番目: 白2x2 + 黒で囲む(4x4外周) -->
+      <g transform="translate(190,0)">
+        <g fill="#3a3f4a">
+          <rect x="20" y="40" width="22" height="22"/><rect x="44" y="40" width="22" height="22"/><rect x="68" y="40" width="22" height="22"/><rect x="92" y="40" width="22" height="22"/>
+          <rect x="20" y="64" width="22" height="22"/><rect x="92" y="64" width="22" height="22"/>
+          <rect x="20" y="88" width="22" height="22"/><rect x="92" y="88" width="22" height="22"/>
+          <rect x="20" y="112" width="22" height="22"/><rect x="44" y="112" width="22" height="22"/><rect x="68" y="112" width="22" height="22"/><rect x="92" y="112" width="22" height="22"/>
+        </g>
+        <g fill="#ffffff" stroke="#b9c0c9">
+          <rect x="44" y="64" width="22" height="22"/><rect x="68" y="64" width="22" height="22"/>
+          <rect x="44" y="88" width="22" height="22"/><rect x="68" y="88" width="22" height="22"/>
+        </g>
+        <text x="22" y="32" font-size="12" fill="#555">2番目</text>
+        <text x="18" y="152" font-size="11" fill="#888">黒12個・白4個</text>
+      </g>
+      <!-- 3番目: 白3x3 + 黒で囲む(5x5外周) -->
+      <g transform="translate(380,0)">
+        <g fill="#3a3f4a">
+          <rect x="20" y="40" width="22" height="22"/><rect x="44" y="40" width="22" height="22"/><rect x="68" y="40" width="22" height="22"/><rect x="92" y="40" width="22" height="22"/><rect x="116" y="40" width="22" height="22"/>
+          <rect x="20" y="64" width="22" height="22"/><rect x="116" y="64" width="22" height="22"/>
+          <rect x="20" y="88" width="22" height="22"/><rect x="116" y="88" width="22" height="22"/>
+          <rect x="20" y="112" width="22" height="22"/><rect x="116" y="112" width="22" height="22"/>
+          <rect x="20" y="136" width="22" height="22"/><rect x="44" y="136" width="22" height="22"/><rect x="68" y="136" width="22" height="22"/><rect x="92" y="136" width="22" height="22"/><rect x="116" y="136" width="22" height="22"/>
+        </g>
+        <g fill="#ffffff" stroke="#b9c0c9">
+          <rect x="44" y="64" width="22" height="22"/><rect x="68" y="64" width="22" height="22"/><rect x="92" y="64" width="22" height="22"/>
+          <rect x="44" y="88" width="22" height="22"/><rect x="68" y="88" width="22" height="22"/><rect x="92" y="88" width="22" height="22"/>
+          <rect x="44" y="112" width="22" height="22"/><rect x="68" y="112" width="22" height="22"/><rect x="92" y="112" width="22" height="22"/>
+        </g>
+        <text x="22" y="32" font-size="12" fill="#555">3番目</text>
+        <text x="14" y="176" font-size="11" fill="#888">黒16個・白9個</text>
+      </g>
+    </svg>
+    <div class="figcap">■＝黒タイル　□＝白タイル（白は n×n の正方形、そのまわりを黒が1周）</div>
+  </div>
+  <div class="note-draw">まず番号と個数を表に書き出そう。そこから何が言えるかは、自分で見つけよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <table class="qtable"><tr><th>番目</th><th>1</th><th>2</th><th>3</th><th>…</th></tr><tr><th>黒タイル(個)</th><td>8</td><td>12</td><td>16</td><td>…</td></tr></table>
+    <div class="step q1"><span>①数える</span>図を数えると 1番目＝8個、2番目＝12個、3番目＝16個。</div>
+    <div class="step q1"><span>②差を見る</span>12−8＝4、16−12＝4。<strong>1番進むごとに4個ずつ増える</strong>（差は4）。</div>
+    <div class="bx bx-key">差は「白の正方形が1辺ずつ大きくなると、囲む黒タイルが<strong>上下左右の4方向に1個ずつ＝4個</strong>増える」から。図と数がぴったり合うのが大事。</div>
+    <div class="bx bx-warn"><span class="red">「黒タイルが何個か」と「何番目か」をごちゃ混ぜにしない</span>。表の上の行が「番目」、下の行が「黒タイルの個数」。役割をはっきり分けて書こう。</div>
+    <div class="ans-final"><span>こたえ</span>1番目 8個／2番目 12個／3番目 16個　差は4（4個ずつ増える）</div>
+      <div class="tec-link">型：<b>規則性（n式）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="q01"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'q01','o')">○</button><button class="x" onclick="g(this,'q01','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、図を見ながら黒タイルを1個ずつ○をつけて数え直そう</div></div>
+</div>
+
+<!-- ===== 問2 n式 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">②一般化：n番目をnの式にする L3-L4</span><span class="unit-time">目安 8分</span></div>
+<details class="tool-hint"><summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+<div>等差の数列は、n番目＝差×n＋（1番目−差）</div></details>
+<div class="q calc" data-id="B">
+  <div class="qbody"><span class="lead">問2</span>問1と同じタイルの並びで、<strong>n番目の黒タイルの数</strong>を n の式で表しなさい。</div>
+  <div class="note-draw">まず番号と個数を表に書き出そう。そこから何が言えるかは、自分で見つけよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">等差の並びの式：<strong>n番目＝（差）×n＋（1番目−差）</strong>。差は「毎回いくつ増えるか」。最後に n＝1 で必ず確かめる。</div>
+    <div class="step q2"><span>③式を作る</span>差は4、1番目は8。式＝4×n＋(8−4)＝<span class="math">4n＋4</span>。</div>
+    <div class="step q2"><span>⑤確かめ</span>n＝1：4×1＋4＝8○、n＝2：4×2＋4＝12○、n＝3：4×3＋4＝16○。表とぴったり合う。</div>
+    <div class="bx bx-warn"><span class="red">差だけ見て「4n」で終わらせない</span>。それだと n＝1 で4個になり、図の8個と合わない。<strong>1番目に合わせる調整（＋4）</strong>が必ず要る。式を作ったら n＝1 で検算するクセを。</div>
+    <div class="bx bx-link">「具体（数えた表）→ 差 → 4n＋4 という n の式」へ翻訳するこの流れが、9月大問4(2)でそのまま問われる。式づくりが規則性の心臓。</div>
+    <div class="ans-final"><span>こたえ</span>n番目＝4n＋4（個）</div>
+      <div class="tec-link">型：<b>規則性（n式）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="q02"><div class="grade"><span class="gq-label">問2★L4</span>○✕ → <button class="o" onclick="g(this,'q02','o')">○</button><button class="x" onclick="g(this,'q02','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「差×n＋（1番目−差）」を表の数で書いて、n＝1で検算しよう</div></div>
+</div>
+
+<!-- ===== 問3 逆算 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">③逆算：大きい番目を方程式で出す L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="C">
+  <div class="qbody"><span class="lead">問3</span>問2の式（n番目＝4n＋4）を使って答えなさい。(1) 30番目の黒タイルは何個ですか。(2) <strong>黒タイルがちょうど100個になるのは何番目ですか。</strong></div>
+  <div class="note-draw">まず番号と個数を表に書き出そう。そこから何が言えるかは、自分で見つけよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">n式ができれば <strong>「番目→個数」は代入</strong>、「個数→何番目」は方程式（逆算）。これが規則性の最後のゴール。</div>
+    <div class="step q3"><span>(1) 代入</span>n＝30 を 4n＋4 へ：<span class="math">4×30＋4＝120＋4＝124</span>。124個。</div>
+    <div class="step q3"><span>(2) 逆算（方程式）</span>黒タイル＝100 だから <span class="math">4n＋4＝100</span>。両辺−4 → 4n＝96 → 両辺÷4 → n＝24。24番目。</div>
+    <div class="step q3"><span>⑤確かめ</span>n＝24 を式へ：4×24＋4＝96＋4＝100○。ちゃんと100個になる。</div>
+    <div class="bx bx-warn"><span class="red">100÷4＝25 と即答しない</span>。それは「＋4」を忘れた答え。逆算は<strong>先に＋4を移項して引いてから割る</strong>（4n＝96 → n＝24）。式を立てて順番に解くのが安全。</div>
+    <div class="bx bx-link">この(2)が9月大問4(3)の「○個になるのは何番目（n＝16型）」とまったく同じ。代入と逆算をセットで出せれば大問4は取れる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 124個／(2) 24番目</div>
+      <div class="tec-link">型：<b>規則性（n式）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1) 代入</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、式に n＝30 を入れる手順をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2) 逆算★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「4n＋4＝100」を立てて、−4してから÷4の順で書こう</div></div>
+</div>
+
+<!-- ===== 問4 本番型：黒白タイル ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">★本番型：黒タイル→白タイル（全体−黒）L4</span><span class="unit-time">目安 8分</span></div>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead">問4</span>1辺が n cm の正方形を、1cm四方の白タイルでしきつめ、そのまわりの3つの辺（上・左・右）だけを黒タイルに取りかえます。下の表のように、黒タイルは n が1増えるごとに3枚ずつ増えます。<br>
+    <table class="qtable"><tr><th>n</th><th>2</th><th>3</th><th>4</th><th>…</th></tr><tr><th>黒タイル</th><td>4</td><td>7</td><td>10</td><td>…</td></tr></table>
+    (1) 黒タイルの枚数を n の式で表しなさい。<br>
+    (2) 1辺が16cmのとき、白タイルは何枚ありますか。
+  </div>
+  <div class="note-draw">まず番号と個数を表に書き出そう。そこから何が言えるかは、自分で見つけよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q4"><span>(1) 黒</span>表を見ると、n=2で4枚、n=3で7枚、n=4で10枚。差は3。式は 3n＋調整。n=2で4になるように、3×2−2＝4。だから黒タイルは <span class="math">3n−2</span> 枚。</div>
+    <div class="step q4"><span>確かめ</span>n=3なら3×3−2＝7、n=4なら3×4−2＝10。表と合う○。</div>
+    <div class="step q4"><span>(2) 全体</span>1辺16cmの正方形なので、タイル全体は <span class="math">16²＝256</span> 枚。</div>
+    <div class="step q4"><span>(2) 黒</span>黒タイルは 3×16−2＝48−2＝<span class="math">46</span> 枚。</div>
+    <div class="step q4"><span>(2) 白</span>白タイル＝全体−黒＝256−46＝<span class="math">210</span> 枚。</div>
+    <div class="bx bx-warn"><span class="red">白タイルを3n−2で答えない</span>。3n−2は黒。聞かれている白は、全体 n² から黒を引く。<span class="red">n=16の全体を16×4などにしない</span>。正方形全体は16×16。</div>
+    <div class="bx bx-link">9月特訓選抜 大問4の本番型。<strong>黒をn式化→全体n²→白=全体−黒</strong>の三段処理ができれば、規則性の後半を拾える。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 3n−2 枚／(2) 白タイル 210枚</div>
+      <div class="tec-link">型：<b>規則性（n式）型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c6" target="_blank">マル秘テクニック集 第6章</a></div>
+  </div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 黒の式</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、表から「差3、n=2で3」をノートに書こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 白★L4</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「白=16²−(3×16−3)」を書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P9b 規則性L4 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">規則性L4おつかれさま！今日のいちばんの収穫は<strong>①数える → ②nの式にする → ③大きい数を代入/逆算する → ④全体から引く</strong>を通せたこと。これが9月大問4の流れそのもの。黒タイルの式で終わらず、白タイルは全体n²から引く。まちがえた問題は表・n式・全体−黒をノートに書き直そう。式が作れれば1000番目でも一瞬。きみは確実に大問4に近づいている🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m09b';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！規則性L4（大問4対策）クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01":{"jp":"規則性②｜タイルの数え方を「nの式」にして、大きい番目を逆算する / 問1: 問1 白いタイルを正方形に並べ、そのまわりを黒いタイルで1周ぐるりと囲みます。下の図は1番目・2番目・3番目です。 黒いタイルの数 を数えて、1番目・2番目・3番目を表にうめなさい。また、黒タイルは1番進むごとに何個ずつ増えますか。 1番目 黒8個・白1個 2番目 黒12個・白4個 3番目 黒16個・白9個 ■＝黒タイル □＝白タイル（白は n×n の正方形、そのまわりを黒が1周）","en":"1番目 8個／2番目 12個／3番目 16個 差は4（4個ずつ増える）"},"q02":{"jp":"規則性②｜タイルの数え方を「nの式」にして、大きい番目を逆算する / 問2★L4: 問2 問1と同じタイルの並びで、 n番目の黒タイルの数 を n の式で表しなさい。","en":"n番目＝4n＋4（個）"},"q03a":{"jp":"規則性②｜タイルの数え方を「nの式」にして、大きい番目を逆算する / 問3(1) 代入: 問3 問2の式（n番目＝4n＋4）を使って答えなさい。(1) 30番目の黒タイルは何個ですか。(2) 黒タイルがちょうど100個になるのは何番目ですか。","en":"124個／"},"q03b":{"jp":"規則性②｜タイルの数え方を「nの式」にして、大きい番目を逆算する / 問3(2) 逆算★L4: 問3 問2の式（n番目＝4n＋4）を使って答えなさい。(1) 30番目の黒タイルは何個ですか。(2) 黒タイルがちょうど100個になるのは何番目ですか。","en":"24番目"},"q04a":{"jp":"規則性②｜タイルの数え方を「nの式」にして、大きい番目を逆算する / 問4(1) 黒の式: 問4 1辺が n cm の正方形を、1cm四方の白タイルでしきつめ、そのまわりの3つの辺（上・左・右）だけを黒タイルに取りかえます。下の表のように、黒タイルは n が1増えるごとに3枚ずつ増えます。 n 2 3 4 … 黒タイル 4 7 10 … (1) 黒タイルの枚数を n の式で表しなさい。 (2) 1辺が16cmのとき、白タイルは何枚ありますか。","en":"3n−2 枚／"},"q04b":{"jp":"規則性②｜タイルの数え方を「nの式」にして、大きい番目を逆算する / 問4(2) 白★L4: 問4 1辺が n cm の正方形を、1cm四方の白タイルでしきつめ、そのまわりの3つの辺（上・左・右）だけを黒タイルに取りかえます。下の表のように、黒タイルは n が1増えるごとに3枚ずつ増えます。 n 2 3 4 … 黒タイル 4 7 10 … (1) 黒タイルの枚数を n の式で表しなさい。 (2) 1辺が16cmのとき、白タイルは何枚ありますか。","en":"白タイル 210枚"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

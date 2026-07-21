@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓N1 数直線と絶対値・最大と最小の差｜9月 大問1・大問2 直撃</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"📝 今日のやること（この5つだけ）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-say{background:#eef6fb;border-left:4px solid #5b8fbf}
+.bx-say::before{content:"🗣 いいかえ｜問題文を自分の言葉に直すと";display:block;font-size:12px;font-weight:800;color:#2f5a8a;margin-bottom:4px}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ ★よくある間違い（きみが実際にやったやつ）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-check{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-check::before{content:"✅ 検算｜答えが出たら必ずここまでやる";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月・特訓選抜 本番へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-win{background:#eafaf1;border-left:4px solid #7fae8a}
+.bx-win::before{content:"🌸 克服チェック";display:block;font-size:12px;font-weight:800;color:#2f6b45;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.subq{margin:8px 0 0 4px;font-size:16px;font-weight:800;color:#31415f;line-height:2.2}
+.subq .no{display:inline-block;width:36px;color:#7a8798}
+.fill{display:inline-block;min-width:84px;border-bottom:2.5px solid #7aa7d9;text-align:center;font-weight:900;color:#2f5a8a;padding:0 6px}
+.fill.lg{min-width:230px}
+.choice{display:flex;flex-wrap:wrap;gap:10px;margin:10px 0 4px}
+.choice span{display:inline-flex;align-items:center;justify-content:center;min-width:74px;background:#fff;border:2px solid #c8d4e6;border-radius:10px;padding:8px 12px;font-size:19px;font-weight:800;color:#31415f}
+.tbl-wrap{overflow-x:auto;margin:10px 0}
+.tbl{border-collapse:collapse;width:100%;min-width:420px;background:#fff;font-size:15px}
+.tbl th,.tbl td{border:1px solid #c8d4e6;padding:8px 6px;text-align:center;font-weight:800;color:#31415f;white-space:nowrap}
+.tbl th{background:#e8edf7;font-size:13px;color:#31415f}
+.tbl th.rh{background:#f2f5fa;text-align:right;padding-right:10px;font-size:12.5px}
+.tbl td.blank{background:#f7fbff;color:#7aa7d9}
+.tbl td.hi{background:#fff4dd}
+.wex{background:#eef6fb;border:2px solid #a8c8e4;border-left:7px solid #5b8fbf;border-radius:8px;padding:12px 14px;margin:10px 0}
+.wex::before{content:"👀 例：やり方をぜんぶ見せるよ（読んだらノートに写してから次へ）";display:block;font-size:12px;font-weight:900;color:#2f5a8a;margin-bottom:6px}
+.wex .wl{margin:5px 0;font-size:14px;line-height:1.95;color:#25415f}
+.wex .wl b{color:#c0392b}
+.hole{background:#fdf7ee;border:2px solid #eccf9a;border-left:7px solid #e0a85c;border-radius:8px;padding:12px 14px;margin:10px 0}
+.hole::before{content:"🧩 穴あき：表の一部だけうめてある。残りは自分でうめてから答えを出そう";display:block;font-size:12px;font-weight:900;color:#8a5a17;margin-bottom:6px}
+.hole .wl{margin:5px 0;font-size:13.5px;line-height:1.9;color:#5a4520}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.step.q5{border-left-color:#d98aa7;background:#fdf2f6}
+.step.q5 > span:first-child{background:#f7dce8;border-color:#eebccf;color:#9a3f63}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.nline{display:block;margin:10px auto;background:#fff;border:1px solid #d9e1ea;border-radius:8px;width:100%;max-width:820px;height:auto}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:.95em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tool-hint{margin:8px 0;border:1px dashed #c9b8d6;border-radius:8px;background:#faf7fc;padding:6px 10px;font-size:12.5px}
+.tool-hint summary{cursor:pointer;font-weight:700;color:#7a5a95}
+.tool-hint div{margin-top:6px;color:#4a3a56;line-height:1.8}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓N1</span><span class="pg-badge">数学：数直線と絶対値・最大と最小の差</span><span class="pg-badge">L1-L4</span></div>
+  <h1>特訓N1 数直線と絶対値・最大と最小の差 ― 9月 大問1・大問2 直撃</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問9）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">この9問は、ぜんぶ<strong>きみが実際に落としたところ</strong>だけで作った。6月の特訓では、数直線で <span class="frac"><span class="n">9</span><span class="d">5</span></span> の位置を選びそこねた。2枚の和の最大の差を <strong>23 のところ 10</strong> と書いた。テストと首都圏オープンでは、<strong>絶対値の範囲に入る整数</strong>を書き出すところで✕がついた。演習では「0に2番目に近い数」を3回落とした。<br>じつは、これ<strong>ぜんぶ「0からのきょり」という同じ1本の線でつながっている</strong>。今日それを1本にまとめる。ここが直れば、9月の大問1と大問2は一気に取れる🌸</p>
+</div>
+
+<details class="tool-hint">
+  <summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+  <div class="cardbox">
+    <ol>
+      <li><b>① 絶対値 ＝ 0からのきょり</b>。＋も−も関係ない。符号を外した大きさ</li>
+      <li><b>② ことばの意味</b>：<b>以上・以下</b>＝その数を<b>ふくむ</b>／<b>未満・より大きい</b>＝その数を<b>ふくまない</b></li>
+      <li>各問おわりに <b>○✕</b> をつける</li>
+    </ol>
+  </div>
+</details>
+
+<!-- ===== 大問1 診断 ===== -->
+<div class="unit-banner"><span class="unit-num">大問1</span><span class="unit-name">前にやった問題。今日はどう？｜0からのきょり　L2</span><span class="unit-time">目安 3分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問1</span>次の5つの数のうち、<strong>0に2番目に近い数</strong>はどれですか。</div>
+  <div class="choice">
+    <span>−1.6</span>
+    <span><span class="frac"><span class="n">9</span><span class="d">5</span></span></span>
+    <span><span class="frac"><span class="n">7</span><span class="d">4</span></span></span>
+    <span>−2.1</span>
+    <span><span class="frac"><span class="n">11</span><span class="d">4</span></span></span>
+  </div>
+  <div class="note-draw">まず5つの数を、ノートの数直線の上に書き出してみよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">「0に近い」＝ <strong>0からのきょりが小さい</strong>ということ。きょりに ＋も−も関係ない。プラスかマイナスかを見るのではなく、符号を外した大きさ（＝絶対値）だけで比べる。</div>
+    <div class="step q1"><span>①</span>まず全部小数にそろえる。<span class="frac"><span class="n">9</span><span class="d">5</span></span> ＝ 9÷5 ＝ 1.8　／　<span class="frac"><span class="n">7</span><span class="d">4</span></span> ＝ 7÷4 ＝ 1.75　／　<span class="frac"><span class="n">11</span><span class="d">4</span></span> ＝ 11÷4 ＝ 2.75</div>
+    <div class="step q1"><span>②</span>0からのきょり（符号を外す）を並べる。<br>−1.6 → 1.6　／　1.8 → 1.8　／　1.75 → 1.75　／　−2.1 → 2.1　／　2.75 → 2.75</div>
+    <div class="step q1"><span>③</span>きょりの小さい順にならべる：<span class="math">1.6 → 1.75 → 1.8 → 2.1 → 2.75</span><br>1番近い＝ −1.6（きょり1.6）。2番目に近い＝きょり1.75 → <span class="frac"><span class="n">7</span><span class="d">4</span></span></div>
+    <svg class="nline" viewBox="0 0 960 170" width="100%" preserveAspectRatio="xMidYMid meet">
+      <line x1="40" y1="100" x2="920" y2="100" stroke="#31415f" stroke-width="2"/>
+      <line x1="60" y1="92" x2="60" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="200" y1="92" x2="200" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="340" y1="92" x2="340" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="480" y1="86" x2="480" y2="114" stroke="#31415f" stroke-width="2.5"/>
+      <line x1="620" y1="92" x2="620" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="760" y1="92" x2="760" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="900" y1="92" x2="900" y2="108" stroke="#8a97a8" stroke-width="1.5"/>
+      <text x="60" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">−3</text>
+      <text x="200" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">−2</text>
+      <text x="340" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">−1</text>
+      <text x="480" y="128" font-size="15" font-weight="900" fill="#31415f" text-anchor="middle">0</text>
+      <text x="620" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">1</text>
+      <text x="760" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">2</text>
+      <text x="900" y="128" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">3</text>
+      <line x1="186" y1="58" x2="186" y2="94" stroke="#9fb8d9" stroke-width="1.4"/>
+      <text x="186" y="50" font-size="15" font-weight="800" fill="#3f6f9f" text-anchor="middle">−2.1</text>
+      <circle cx="186" cy="100" r="5" fill="#3f6f9f"/>
+      <line x1="256" y1="58" x2="256" y2="94" stroke="#c0392b" stroke-width="1.4"/>
+      <text x="256" y="50" font-size="15" font-weight="800" fill="#c0392b" text-anchor="middle">−1.6</text>
+      <circle cx="256" cy="100" r="5.5" fill="#c0392b"/>
+      <line x1="670" y1="58" x2="725" y2="94" stroke="#2f6b45" stroke-width="1.4"/>
+      <text x="670" y="30" font-size="15" font-weight="800" fill="#2f6b45" text-anchor="middle">7</text>
+      <line x1="657" y1="35" x2="683" y2="35" stroke="#2f6b45" stroke-width="1.6"/>
+      <text x="670" y="53" font-size="15" font-weight="800" fill="#2f6b45" text-anchor="middle">4</text>
+      <circle cx="725" cy="100" r="5.5" fill="#2f6b45"/>
+      <line x1="790" y1="58" x2="732" y2="94" stroke="#8a5a19" stroke-width="1.4"/>
+      <text x="790" y="30" font-size="15" font-weight="800" fill="#8a5a19" text-anchor="middle">9</text>
+      <line x1="777" y1="35" x2="803" y2="35" stroke="#8a5a19" stroke-width="1.6"/>
+      <text x="790" y="53" font-size="15" font-weight="800" fill="#8a5a19" text-anchor="middle">5</text>
+      <circle cx="732" cy="100" r="5" fill="#8a5a19"/>
+      <line x1="865" y1="58" x2="865" y2="94" stroke="#5f4b7a" stroke-width="1.4"/>
+      <text x="865" y="30" font-size="15" font-weight="800" fill="#5f4b7a" text-anchor="middle">11</text>
+      <line x1="848" y1="35" x2="882" y2="35" stroke="#5f4b7a" stroke-width="1.6"/>
+      <text x="865" y="53" font-size="15" font-weight="800" fill="#5f4b7a" text-anchor="middle">4</text>
+      <circle cx="865" cy="100" r="5" fill="#5f4b7a"/>
+      <text x="40" y="158" font-size="13" font-weight="700" fill="#2f6b45">0からのきょりが小さい順 → 1.6 → 1.75 → 1.8 → 2.1 → 2.75</text>
+    </svg>
+    <div class="bx bx-warn">「0に近い」を<span class="red">マイナスだから遠い</span>と思いこまない。−1.6 は 0 から 1.6 しか離れていない＝かなり近い。符号を外したきょりで比べるのがルール。<br>もうひとつ。<span class="frac"><span class="n">7</span><span class="d">4</span></span> と <span class="frac"><span class="n">9</span><span class="d">5</span></span> を見た目で決めない。分母がちがう分数は、小数に直してからくらべる。1.75 と 1.8 は0.05しか差がない。目分量では絶対に当たらない。</div>
+    <div class="bx bx-check">出した順番を、数直線の上で目で確かめる。0の右にも左にも同じきょりで手をのばす感じ。−1.6 が 0 にいちばん近く、そのすぐ次に <span class="frac"><span class="n">7</span><span class="d">4</span></span> がいる。図と答えが一致していれば正解。</div>
+    <div class="bx bx-win">この問題、前に✕がついた問題とまったく同じ数字。今日○がついたら、それは<strong>克服！</strong> 「0からのきょり」で比べる、が体に入った証拠。堂々と次に進んでいい🌸</div>
+    <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">7</span><span class="d">4</span></span>（＝1.75）</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="n01_1"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'n01_1','o')">○</button><button class="x" onclick="g(this,'n01_1','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、5つの数を数直線に書き直して、0からのきょりを全部書こう</div></div>
+</div>
+
+<!-- ===== 大問2 絶対値の意味 ===== -->
+<div class="unit-banner"><span class="unit-num">大問2</span><span class="unit-name">絶対値ってなに？｜0からのきょり・数直線に置く　L1-L2</span><span class="unit-time">目安 7分</span></div>
+
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問2【例】</span>次の問いに答えなさい。</div>
+  <div class="subq"><span class="no">(1)</span>−5 の絶対値は <span class="fill">　　</span></div>
+  <div class="subq"><span class="no">(2)</span>3 の絶対値は <span class="fill">　　</span></div>
+  <div class="subq"><span class="no">(3)</span>絶対値が 4 になる数を<strong>すべて</strong>書きなさい　<span class="fill lg">　　</span></div>
+  <div class="wex">
+    <div class="wl"><b>絶対値 ＝ 0からのきょり</b>。これだけ。むずかしそうな名前だけど、やっていることは<b>「0から何メートル離れてる？」と聞いているだけ</b>。</div>
+    <div class="wl">きょりに <b>マイナスは無い</b>。家から学校まで「−5分」ということが無いのと同じ。<b>きょりは必ず 0 か プラス</b>。</div>
+    <div class="wl">(1) −5 は、0 から左に <b>5</b> だけ離れている。だから <b>−5 の絶対値 ＝ 5</b>。記号で書くと <b>|−5| ＝ 5</b>。<b>マイナスを外すだけ</b>と覚えてもいい。</div>
+    <div class="wl">(2) 3 は、0 から右に <b>3</b> だけ離れている。だから <b>|3| ＝ 3</b>。<b>もともとプラスの数は、そのまま</b>。</div>
+    <div class="wl">(3) ここが山。「0からのきょりが 4 の数」を探す。<b>0 の右にも、0 の左にも、きょり 4 の場所がある</b>。<br>右に4進むと <b>＋4</b>。左に4進むと <b>−4</b>。だから答えは <b>＋4 と −4 の 2つ</b>。</div>
+    <div class="wl"><b>★ここが命</b>。(3) で <b>＋4 だけ書いて終わらない</b>。絶対値は 0 を中心に<b>左右に同じだけ広がる</b>。だから「絶対値が◯になる数」は、0 のとき以外は<b>いつも2つ</b>。</div>
+    <div class="wl">検算：|＋4| ＝ 4 ○、|−4| ＝ 4 ○。どちらも 4 になった。合っている。</div>
+  </div>
+  <svg class="nline" viewBox="0 0 960 180" width="100%" preserveAspectRatio="xMidYMid meet">
+    <text x="40" y="22" font-size="14" font-weight="800" fill="#2f6b45">絶対値 ＝ 0からのきょり（＋も−も関係ない）</text>
+    <line x1="40" y1="100" x2="920" y2="100" stroke="#31415f" stroke-width="2"/>
+    <line x1="130" y1="62" x2="470" y2="62" stroke="#c0392b" stroke-width="1.6"/>
+    <polygon points="126,62 136,57 136,67" fill="#c0392b"/>
+    <line x1="480" y1="55" x2="480" y2="69" stroke="#31415f" stroke-width="1.6"/>
+    <text x="305" y="52" font-size="14" font-weight="800" fill="#c0392b" text-anchor="middle">きょり 5</text>
+    <line x1="490" y1="62" x2="686" y2="62" stroke="#2f6b45" stroke-width="1.6"/>
+    <polygon points="690,62 680,57 680,67" fill="#2f6b45"/>
+    <text x="588" y="52" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">きょり 3</text>
+    <line x1="60" y1="93" x2="60" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="130" y1="93" x2="130" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="200" y1="93" x2="200" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="270" y1="93" x2="270" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="340" y1="93" x2="340" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="410" y1="93" x2="410" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="480" y1="86" x2="480" y2="114" stroke="#31415f" stroke-width="2.5"/>
+    <line x1="550" y1="93" x2="550" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="620" y1="93" x2="620" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="690" y1="93" x2="690" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="760" y1="93" x2="760" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="830" y1="93" x2="830" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <line x1="900" y1="93" x2="900" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+    <circle cx="130" cy="100" r="6" fill="#c0392b"/>
+    <circle cx="690" cy="100" r="6" fill="#2f6b45"/>
+    <circle cx="200" cy="100" r="5" fill="#8a5a19"/>
+    <circle cx="760" cy="100" r="5" fill="#8a5a19"/>
+    <text x="60" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">−6</text>
+    <text x="130" y="128" font-size="14" font-weight="900" fill="#c0392b" text-anchor="middle">−5</text>
+    <text x="200" y="128" font-size="14" font-weight="900" fill="#8a5a19" text-anchor="middle">−4</text>
+    <text x="270" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">−3</text>
+    <text x="340" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">−2</text>
+    <text x="410" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">−1</text>
+    <text x="480" y="128" font-size="15" font-weight="900" fill="#31415f" text-anchor="middle">0</text>
+    <text x="550" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">1</text>
+    <text x="620" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">2</text>
+    <text x="690" y="128" font-size="14" font-weight="900" fill="#2f6b45" text-anchor="middle">3</text>
+    <text x="760" y="128" font-size="14" font-weight="900" fill="#8a5a19" text-anchor="middle">4</text>
+    <text x="830" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">5</text>
+    <text x="900" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">6</text>
+    <text x="40" y="162" font-size="13" font-weight="700" fill="#8a5a19">きょり4の場所は 左と右に1つずつ。だから 絶対値が4の数は −4 と ＋4 の2つ</text>
+  </svg>
+  <div class="note-draw">読んだら、同じ数直線をノートに写そう。写しながら「絶対値は0からのきょり」と声に出して。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">聞かれているのは <strong>「その数は、0からどれだけ離れているか」</strong> だけ。数の向き（＋か−か）は捨てて、長さだけを見る。だから答えはいつも 0 か プラスになる。</div>
+    <div class="step q1"><span>(1)</span>−5 は 0 から左へ 5。きょりは 5 → <span class="math">|−5| ＝ 5</span></div>
+    <div class="step q1"><span>(2)</span>3 は 0 から右へ 3。きょりは 3 → <span class="math">|3| ＝ 3</span></div>
+    <div class="step q1"><span>(3)</span>きょり 4 の場所は2か所（0の右に4、0の左に4）→ ＋4 と −4</div>
+    <div class="bx bx-warn"><span class="red">(3) で ＋4 だけを答えてしまう</span>。これが最多。絶対値は 0 を中心に左右へ同じだけ広がる。「すべて書きなさい」と言われたら、左側（マイナス）も必ず探す。<br>もうひとつ。絶対値の答えにマイナスをつけてしまう（|−5| ＝ −5 とする）。きょりにマイナスは無い。「学校まで −5 分」なんて言わない。絶対値の答えが マイナスになったら、その時点でまちがい。</div>
+    <div class="bx bx-check">出した答えを、もう一度絶対値に入れ直す。|＋4| ＝ 4 ○、|−4| ＝ 4 ○。両方 4 になった。<br>そして<strong>答えが 0 以上か</strong>を最後に見る。(1)は5、(2)は3。どちらもプラス○</div>
+    <div class="ans-final"><span>こたえ</span>(1) 5　(2) 3　(3) ＋4 と −4（2つ）</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="n01_2"><div class="grade"><span class="gq-label">問2【例】</span>写せた？ → <button class="o" onclick="g(this,'n01_2','o')">○</button><button class="x" onclick="g(this,'n01_2','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、数直線に 0 をかいて、そこから左右に4ずつ矢印を引き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問3</span>次の5つの数について答えなさい。</div>
+  <div class="choice">
+    <span>−<span class="frac"><span class="n">9</span><span class="d">5</span></span></span>
+    <span>0.5</span>
+    <span>−3</span>
+    <span>2</span>
+    <span>−<span class="frac"><span class="n">1</span><span class="d">2</span></span></span>
+  </div>
+  <div class="subq"><span class="no">(1)</span><strong>小さい順</strong>に並べなさい　<span class="fill lg">　　</span></div>
+  <div class="subq"><span class="no">(2)</span><strong>絶対値がいちばん大きい</strong>数はどれですか　<span class="fill">　　</span></div>
+  <div class="note-draw">まず数直線をノートにかいて、5つの数を置いてみよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">(1)「小さい順」＝ <strong>数直線で左にあるものから順</strong>。数直線は右へ行くほど大きい。マイナスの世界では、0から遠いほうが小さい（−3 は −1 より小さい）。<br>(2)「絶対値がいちばん大きい」＝ 0からいちばん遠い。左右どちらでもいい。(1)とは聞いていることがちがうので注意。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ①〜(1)</div><div class="step q1"><span>①</span>分数を小数に直す。数直線に置くには、小数のほうが位置がすぐ分かる。<br>−<span class="frac"><span class="n">9</span><span class="d">5</span></span> ＝ −(9÷5) ＝ −1.8　／　−<span class="frac"><span class="n">1</span><span class="d">2</span></span> ＝ −(1÷2) ＝ −0.5</div>
+    <div class="step q1"><span>②</span>5つを小数でならべ直す：<span class="math">−1.8　0.5　−3　2　−0.5</span></div>
+    <div class="step q1"><span>③</span>数直線に置く。左にあるほど小さいので、左から読む。<br><span class="math">−3 ＜ −1.8 ＜ −0.5 ＜ 0.5 ＜ 2</span></div>
+    <svg class="nline" viewBox="0 0 960 195" width="100%" preserveAspectRatio="xMidYMid meet">
+      <text x="40" y="22" font-size="14" font-weight="800" fill="#2f5a8a">小さい順 ＝ 数直線で左にあるほど小さい</text>
+      <line x1="40" y1="110" x2="920" y2="110" stroke="#31415f" stroke-width="2"/>
+      <line x1="60" y1="103" x2="60" y2="117" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="200" y1="103" x2="200" y2="117" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="340" y1="103" x2="340" y2="117" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="480" y1="96" x2="480" y2="124" stroke="#31415f" stroke-width="2.5"/>
+      <line x1="620" y1="103" x2="620" y2="117" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="760" y1="103" x2="760" y2="117" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="900" y1="103" x2="900" y2="117" stroke="#8a97a8" stroke-width="1.5"/>
+      <text x="60" y="136" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">−3</text>
+      <text x="200" y="136" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">−2</text>
+      <text x="340" y="136" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">−1</text>
+      <text x="480" y="136" font-size="15" font-weight="900" fill="#31415f" text-anchor="middle">0</text>
+      <text x="620" y="136" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">1</text>
+      <text x="760" y="136" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">2</text>
+      <text x="900" y="136" font-size="14" font-weight="700" fill="#4c5b70" text-anchor="middle">3</text>
+      <line x1="60" y1="68" x2="60" y2="102" stroke="#c0392b" stroke-width="1.4"/>
+      <text x="60" y="60" font-size="15" font-weight="900" fill="#c0392b" text-anchor="middle">−3</text>
+      <circle cx="60" cy="110" r="6" fill="#c0392b"/>
+      <text x="206" y="66" font-size="15" font-weight="800" fill="#8a5a19" text-anchor="middle">−</text>
+      <text x="228" y="52" font-size="15" font-weight="800" fill="#8a5a19" text-anchor="middle">9</text>
+      <line x1="216" y1="57" x2="240" y2="57" stroke="#8a5a19" stroke-width="1.6"/>
+      <text x="228" y="75" font-size="15" font-weight="800" fill="#8a5a19" text-anchor="middle">5</text>
+      <line x1="228" y1="82" x2="228" y2="102" stroke="#8a5a19" stroke-width="1.4"/>
+      <circle cx="228" cy="110" r="5.5" fill="#8a5a19"/>
+      <text x="388" y="66" font-size="15" font-weight="800" fill="#5f4b7a" text-anchor="middle">−</text>
+      <text x="410" y="52" font-size="15" font-weight="800" fill="#5f4b7a" text-anchor="middle">1</text>
+      <line x1="398" y1="57" x2="422" y2="57" stroke="#5f4b7a" stroke-width="1.6"/>
+      <text x="410" y="75" font-size="15" font-weight="800" fill="#5f4b7a" text-anchor="middle">2</text>
+      <line x1="410" y1="82" x2="410" y2="102" stroke="#5f4b7a" stroke-width="1.4"/>
+      <circle cx="410" cy="110" r="5.5" fill="#5f4b7a"/>
+      <line x1="550" y1="68" x2="550" y2="102" stroke="#3f6f9f" stroke-width="1.4"/>
+      <text x="550" y="60" font-size="15" font-weight="800" fill="#3f6f9f" text-anchor="middle">0.5</text>
+      <circle cx="550" cy="110" r="5.5" fill="#3f6f9f"/>
+      <line x1="760" y1="68" x2="760" y2="102" stroke="#2f6b45" stroke-width="1.4"/>
+      <text x="760" y="60" font-size="15" font-weight="800" fill="#2f6b45" text-anchor="middle">2</text>
+      <circle cx="760" cy="110" r="5.5" fill="#2f6b45"/>
+      <text x="40" y="176" font-size="13" font-weight="700" fill="#2f6b45">左にあるほど小さい。−3 ＜ −1.8 ＜ −0.5 ＜ 0.5 ＜ 2</text>
+    </svg>
+    <div class="step q1"><span>(1)</span>小数を、もとの形にもどして答える。<br>−3、−<span class="frac"><span class="n">9</span><span class="d">5</span></span>、−<span class="frac"><span class="n">1</span><span class="d">2</span></span>、0.5、2</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ だいじ〜(2)</div><div class="step q2"><span>だいじ</span>(1)は「左右」できめる。(2)は「0からのきょり」できめる。ものさしが2本あると思って。<br>−3 は、左右で見れば いちばん左（＝いちばん小さい）。きょりで見れば 0から3もはなれている（＝いちばん遠い）。<br>同じ数が、ものさしを変えると「いちばん小さい」と「いちばん大きい」の両方になる。</div>
+    <div class="step q1"><span>(2)</span>0からのきょり（絶対値）を出す：<span class="math">3　1.8　0.5　0.5　2</span><br>いちばん大きいきょりは 3 → その数は −3</div>
+    <div class="bx bx-warn"><span class="red">分数のまま数直線に置こうとする</span>。これが6月の特訓で <span class="frac"><span class="n">9</span><span class="d">5</span></span> の位置を選びそこねた原因。<span class="frac"><span class="n">9</span><span class="d">5</span></span> は見た目では 1 と 2 のどこか分からない。分数を見たら、まずわり算して小数にする。9÷5 ＝ 1.8。ここまで書けば位置は一発。<br>もうひとつ。「マイナスは数が大きいほど小さい」を逆にする。−3 と −1.8 では、−3 のほうが小さい（左にある）。マイナスの世界は、0から遠いほど小さい。<br>そして (2)。「いちばん大きい数（2）」を答えてしまう。聞かれているのは絶対値がいちばん大きい数＝0からいちばん遠い数。−3 は 0 から 3 も離れている。2 より遠い。</div>
+    <div class="bx bx-check">並べた順を小数で読み直す：−3、−1.8、−0.5、0.5、2。となり合う数が必ず「左＜右」になっているかを1組ずつ見る。−3 ＜ −1.8 ○、−1.8 ＜ −0.5 ○、−0.5 ＜ 0.5 ○、0.5 ＜ 2 ○。全部通った。<br>(2)は<strong>きょりを5つ全部書き出してから</strong>いちばん大きいものを選ぶ。頭の中でやらない。</div>
+    <div class="ans-final"><span>こたえ</span>(1) −3、−<span class="frac"><span class="n">9</span><span class="d">5</span></span>、−<span class="frac"><span class="n">1</span><span class="d">2</span></span>、0.5、2　(2) −3（絶対値3）</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="n01_3"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'n01_3','o')">○</button><button class="x" onclick="g(this,'n01_3','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、分数を全部わり算して小数に直し、数直線に置き直そう</div></div>
+</div>
+
+<!-- ===== 大問3 絶対値の大小・範囲 ===== -->
+<div class="unit-banner"><span class="unit-num">大問3 ★</span><span class="unit-name">絶対値の大小・範囲｜9月 大問1 直撃　L2-L3</span><span class="unit-time">目安 10分</span></div>
+
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問4 ★</span>次の問いに答えなさい。</div>
+  <div class="subq"><span class="no">(1)</span>−7 と 5 では、<strong>絶対値が大きい</strong>のはどちらですか　<span class="fill">　　</span></div>
+  <div class="subq"><span class="no">(2)</span>−7 と 5 では、<strong>数として小さい</strong>のはどちらですか　<span class="fill">　　</span></div>
+  <div class="subq"><span class="no">(3)</span>−8、3、−5、6 を<strong>絶対値の大きい順</strong>に並べなさい　<span class="fill lg">　　</span></div>
+  <div class="note-draw">数直線をノートにかいて、それぞれの数を置いてから答えよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">この問題は <strong>「2つのちがう質問」をわざと並べている</strong>。<br>・数として大きい・小さい＝ 数直線の左右で決まる（右が大きい）<br>・絶対値が大きい・小さい＝ 0からのきょりで決まる（符号は無視）<br>この2つはまったく別のものさし。どちらを聞かれているかを、毎回たしかめる。</div>
+    <div class="step q4"><span>(1)</span>0からのきょりを出す：−7 → 7、5 → 5。<span class="math">7 ＞ 5</span> だから 絶対値が大きいのは −7</div>
+    <div class="step q4"><span>(2)</span>数直線の左右で見る：−7 は 0 の左、5 は 0 の右。左にあるほど小さいので 小さいのは −7</div>
+    <svg class="nline" viewBox="0 0 960 175" width="100%" preserveAspectRatio="xMidYMid meet">
+      <text x="40" y="22" font-size="14" font-weight="800" fill="#5f4a8a">数として小さいのは −7。0からのきょりが大きいのも −7。</text>
+      <line x1="40" y1="105" x2="920" y2="105" stroke="#31415f" stroke-width="2"/>
+      <line x1="95" y1="66" x2="470" y2="66" stroke="#c0392b" stroke-width="1.6"/>
+      <polygon points="91,66 101,61 101,71" fill="#c0392b"/>
+      <line x1="480" y1="59" x2="480" y2="73" stroke="#31415f" stroke-width="1.6"/>
+      <text x="285" y="56" font-size="14" font-weight="800" fill="#c0392b" text-anchor="middle">きょり 7</text>
+      <line x1="490" y1="66" x2="751" y2="66" stroke="#2f6b45" stroke-width="1.6"/>
+      <polygon points="755,66 745,61 745,71" fill="#2f6b45"/>
+      <text x="620" y="56" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">きょり 5</text>
+      <line x1="40" y1="98" x2="40" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="95" y1="98" x2="95" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="150" y1="98" x2="150" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="205" y1="98" x2="205" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="260" y1="98" x2="260" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="315" y1="98" x2="315" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="370" y1="98" x2="370" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="425" y1="98" x2="425" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="480" y1="91" x2="480" y2="119" stroke="#31415f" stroke-width="2.5"/>
+      <line x1="535" y1="98" x2="535" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="590" y1="98" x2="590" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="645" y1="98" x2="645" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="700" y1="98" x2="700" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="755" y1="98" x2="755" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="810" y1="98" x2="810" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="865" y1="98" x2="865" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="920" y1="98" x2="920" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <circle cx="95" cy="105" r="6" fill="#c0392b"/>
+      <circle cx="755" cy="105" r="6" fill="#2f6b45"/>
+      <text x="40" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−8</text>
+      <text x="95" y="133" font-size="14" font-weight="900" fill="#c0392b" text-anchor="middle">−7</text>
+      <text x="150" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−6</text>
+      <text x="205" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−5</text>
+      <text x="260" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−4</text>
+      <text x="315" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−3</text>
+      <text x="370" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−2</text>
+      <text x="425" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−1</text>
+      <text x="480" y="133" font-size="15" font-weight="900" fill="#31415f" text-anchor="middle">0</text>
+      <text x="535" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">1</text>
+      <text x="590" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">2</text>
+      <text x="645" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">3</text>
+      <text x="700" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">4</text>
+      <text x="755" y="133" font-size="14" font-weight="900" fill="#2f6b45" text-anchor="middle">5</text>
+      <text x="810" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">6</text>
+      <text x="865" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">7</text>
+      <text x="920" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">8</text>
+      <text x="40" y="162" font-size="13" font-weight="700" fill="#5f4a8a">「左右」で見るのが大小。「0からのきょり」で見るのが絶対値。ものさしが2本ある</text>
+    </svg>
+    <div class="step q4"><span>(3)</span>まずきょりだけ書き出す：−8 → 8、3 → 3、−5 → 5、6 → 6<br>きょりの大きい順：<span class="math">8 ＞ 6 ＞ 5 ＞ 3</span> → もとの数にもどして −8、6、−5、3</div>
+    <div class="bx bx-warn"><span class="red">−7 と 5 では、数としては −7 が小さい。でも 0 からのきょりは −7 のほうが大きい</span>。聞かれているのがどっちかを、毎回たしかめる。ここを混ぜると、正しく計算しても答えが逆になる。<br>直しかた：問題文の「絶対値」という言葉に丸をつける。丸がついていたら符号を消して、きょりだけで勝負。丸がなければ数直線の左右。<br>もうひとつ。(3) で −8 を「いちばん小さいから最後」に置いてしまう。聞かれているのは絶対値の大きい順。−8 のきょりは 8 でいちばん大きい。だから先頭。</div>
+    <div class="bx bx-check">(3) は、並べた順にきょりを書き添えて読み返す。−8(8)、6(6)、−5(5)、3(3)。8 → 6 → 5 → 3 とちゃんと下がっている○　もし上がっている場所があれば、そこがまちがい。<br>(1)(2) は、答えが両方 −7 になってもあわてない。理由がちがうだけで、たまたま同じ数になることはある。</div>
+    <div class="bx bx-link">9月の大問1では「絶対値が大きいのはどちらか」「大小を不等号で表せ」の形で出る。<strong>ものさしが2本ある</strong>と知っているだけで、確実に取れる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) −7　(2) −7　(3) −8、6、−5、3</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="n01_4"><div class="grade"><span class="gq-label">問4 ★</span>○✕ → <button class="o" onclick="g(this,'n01_4','o')">○</button><button class="x" onclick="g(this,'n01_4','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、4つの数のきょりを全部書き出してから並べ直そう</div></div>
+</div>
+
+<div class="q calc" data-id="E">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問5 ★</span>次の整数を<strong>すべて</strong>書き、<strong>個数</strong>も答えなさい。</div>
+  <div class="subq"><span class="no">(1)</span><strong>絶対値が3以下</strong>の整数　<span class="fill lg">　　</span>（<span class="fill">　</span>個）</div>
+  <div class="subq"><span class="no">(2)</span><strong>絶対値が2以上4以下</strong>の整数　<span class="fill lg">　　</span>（<span class="fill">　</span>個）</div>
+  <div class="note-draw">まず数直線をノートにかいて、あてはまる数に●をつけてから書き出そう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">「絶対値が3以下」＝ <strong>0から3までしか離れていない数</strong>。0の右にも左にも3ずつ手をのばした、その範囲の中の整数。<br>「絶対値が2以上4以下」＝ 0から2〜4だけ離れている数。0のすぐ近く（きょり0や1）は入らない。ドーナツみたいに、まん中に穴があく。</div>
+    <svg class="nline" viewBox="0 0 960 150" width="100%" preserveAspectRatio="xMidYMid meet">
+      <text x="40" y="22" font-size="14" font-weight="800" fill="#2f6b45">絶対値が3以下 ＝ 0からのきょりが3以下（右にも左にも3まで）</text>
+      <rect x="240" y="76" width="480" height="28" fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5" rx="6"/>
+      <line x1="40" y1="90" x2="920" y2="90" stroke="#31415f" stroke-width="2"/>
+      <line x1="480" y1="45" x2="716" y2="45" stroke="#2f6b45" stroke-width="1.6"/>
+      <polygon points="720,45 710,40 710,50" fill="#2f6b45"/>
+      <line x1="480" y1="45" x2="244" y2="45" stroke="#2f6b45" stroke-width="1.6"/>
+      <polygon points="240,45 250,40 250,50" fill="#2f6b45"/>
+      <line x1="480" y1="38" x2="480" y2="52" stroke="#2f6b45" stroke-width="1.6"/>
+      <text x="600" y="36" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">きょり 3</text>
+      <text x="360" y="36" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">きょり 3</text>
+      <line x1="80" y1="83" x2="80" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="160" y1="83" x2="160" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="240" y1="83" x2="240" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="320" y1="83" x2="320" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="400" y1="83" x2="400" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="480" y1="78" x2="480" y2="102" stroke="#31415f" stroke-width="2.5"/>
+      <line x1="560" y1="83" x2="560" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="640" y1="83" x2="640" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="720" y1="83" x2="720" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="800" y1="83" x2="800" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="880" y1="83" x2="880" y2="97" stroke="#8a97a8" stroke-width="1.5"/>
+      <circle cx="240" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="320" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="400" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="480" cy="90" r="7" fill="#c0392b"/>
+      <circle cx="560" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="640" cy="90" r="6" fill="#2f6b45"/>
+      <circle cx="720" cy="90" r="6" fill="#2f6b45"/>
+      <text x="80" y="120" font-size="14" font-weight="700" fill="#8a97a8" text-anchor="middle">−5</text>
+      <text x="160" y="120" font-size="14" font-weight="700" fill="#8a97a8" text-anchor="middle">−4</text>
+      <text x="240" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">−3</text>
+      <text x="320" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">−2</text>
+      <text x="400" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">−1</text>
+      <text x="480" y="120" font-size="15" font-weight="900" fill="#c0392b" text-anchor="middle">0</text>
+      <text x="560" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">1</text>
+      <text x="640" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">2</text>
+      <text x="720" y="120" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">3</text>
+      <text x="800" y="120" font-size="14" font-weight="700" fill="#8a97a8" text-anchor="middle">4</text>
+      <text x="880" y="120" font-size="14" font-weight="700" fill="#8a97a8" text-anchor="middle">5</text>
+      <text x="40" y="142" font-size="13" font-weight="700" fill="#c0392b">●が答え。赤い 0 も「きょり0」だから、ちゃんと入る（ぜんぶで7個）</text>
+    </svg>
+    <div class="step q5"><span>(1)-①</span>0からのきょりが 0、1、2、3 の整数を、左右そろえて書き出す。<br>きょり3 → −3、3／きょり2 → −2、2／きょり1 → −1、1／きょり0 → 0</div>
+    <div class="step q5"><span>(1)-②</span>小さい順に並べ直す：−3、−2、−1、0、1、2、3 → 7個<br>0 を必ず入れる。0 は「0からのきょりが 0」だから、3以下の仲間。</div>
+    <div class="step q5"><span>(2)-①</span>きょりが 2、3、4 の整数を、左右そろえて書き出す。<br>きょり4 → −4、4／きょり3 → −3、3／きょり2 → −2、2</div>
+    <div class="step q5"><span>(2)-②</span>小さい順に並べ直す：−4、−3、−2、2、3、4 → 6個<br>今回は 0、1、−1 は入らない。きょりが 2 より小さいから。まん中に穴があくのがこの形の特ちょう。</div>
+    <div class="bx bx-warn"><span class="red">(1)で 0 を書き忘れる</span>。これがいちばん多い。テストでも首都圏オープンでも、ここで✕がついた。0 は 0 からのきょりが 0 だから、ちゃんと入る。0は「プラスでもマイナスでもないから仲間外れ」ではない。きょり0 ＝ りっぱに「3以下」。<br>マイナス側を書き忘れるのも同じくらい多い。1、2、3 だけ書いて終わると、7個のうち3個しか取れない。絶対値は0の左右に同じだけ広がる。<br>ふせぎかた：「きょり0 → きょり1 → きょり2 → きょり3」の順に、左と右をペアで書く。この書き方なら 0 もマイナスも絶対に落ちない。<br>(2)では逆に 0 を入れてしまう。今度は「2以上」なので、きょり0の 0 は入らない。条件を1個ずつ声に出して確かめる。</div>
+    <div class="bx bx-check">書き出した数を、1個ずつ元の条件に入れ直す。<br>(1) 0 → きょり0。3以下○（入る）。3 → きょり3。3以下○。4 → きょり4。3をこえる×（入れなくて正解）。<br>(2) 0 → きょり0。2以上ではない×（入れなくて正解）。−4 → きょり4。2以上4以下○。5 → きょり5。4をこえる×。<br>最後に指で個数を数える。(1)は7個、(2)は6個。数え忘れがないか必ず確認。</div>
+    <div class="bx bx-link">「絶対値が◯以下の整数をすべて」は、9月の大問1でほぼ確実に出る。首都圏オープン4(1)も、必修3(3)も、この形だった。<strong>0を入れる・左右をペアで書く</strong>。この2つだけで、落としていた点がまるごと戻ってくる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) −3、−2、−1、0、1、2、3（7個）　(2) −4、−3、−2、2、3、4（6個）</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="n01_5"><div class="grade"><span class="gq-label">問5 ★</span>○✕ → <button class="o" onclick="g(this,'n01_5','o')">○</button><button class="x" onclick="g(this,'n01_5','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、「きょり0 → 1 → 2 → 3」の順に、左と右をペアで書き直そう（0を忘れずに）</div></div>
+</div>
+
+<div class="q calc" data-id="F">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問6</span>次の整数を<strong>すべて</strong>書き、<strong>個数</strong>も答えなさい。</div>
+  <div class="subq"><span class="no">(1)</span><strong>−2以上4未満</strong>の整数　<span class="fill lg">　　</span>（<span class="fill">　</span>個）</div>
+  <div class="subq"><span class="no">(2)</span><strong>−3より大きく2以下</strong>の整数　<span class="fill lg">　　</span>（<span class="fill">　</span>個）</div>
+  <div class="note-draw">まず自分で書き出してみよう。個数も数えること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">この問題は<strong>計算ではなく、言葉のルール</strong>を聞いている。覚えることはたった2行。<br>「以上」「以下」＝ その数を入れる（＝がついている仲間）<br>「未満」「より大きい」「より小さい」＝ その数を入れない</div>
+    <svg class="nline" viewBox="0 0 960 170" width="100%" preserveAspectRatio="xMidYMid meet">
+      <text x="40" y="22" font-size="14" font-weight="800" fill="#8a5a19">以上・以下 → その数を入れる　　未満・より大きい → その数を入れない</text>
+      <rect x="252" y="88" width="470" height="24" fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5" rx="6"/>
+      <line x1="40" y1="100" x2="930" y2="100" stroke="#31415f" stroke-width="2"/>
+      <line x1="80" y1="93" x2="80" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="170" y1="93" x2="170" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="260" y1="93" x2="260" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="350" y1="93" x2="350" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="440" y1="86" x2="440" y2="114" stroke="#31415f" stroke-width="2.5"/>
+      <line x1="530" y1="93" x2="530" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="620" y1="93" x2="620" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="710" y1="93" x2="710" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="800" y1="93" x2="800" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="890" y1="93" x2="890" y2="107" stroke="#8a97a8" stroke-width="1.5"/>
+      <circle cx="260" cy="100" r="6.5" fill="#2f6b45"/>
+      <circle cx="350" cy="100" r="6" fill="#2f6b45"/>
+      <circle cx="440" cy="100" r="6" fill="#2f6b45"/>
+      <circle cx="530" cy="100" r="6" fill="#2f6b45"/>
+      <circle cx="620" cy="100" r="6" fill="#2f6b45"/>
+      <circle cx="710" cy="100" r="6" fill="#2f6b45"/>
+      <circle cx="800" cy="100" r="6.5" fill="#fff" stroke="#c0392b" stroke-width="2.5"/>
+      <line x1="260" y1="60" x2="260" y2="90" stroke="#2f6b45" stroke-width="1.4"/>
+      <text x="270" y="52" font-size="13" font-weight="800" fill="#2f6b45" text-anchor="middle">−2以上（●入れる）</text>
+      <line x1="800" y1="60" x2="800" y2="90" stroke="#c0392b" stroke-width="1.4"/>
+      <text x="800" y="52" font-size="13" font-weight="800" fill="#c0392b" text-anchor="middle">4未満（○入れない）</text>
+      <text x="80" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">−4</text>
+      <text x="170" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">−3</text>
+      <text x="260" y="128" font-size="14" font-weight="900" fill="#2f6b45" text-anchor="middle">−2</text>
+      <text x="350" y="128" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">−1</text>
+      <text x="440" y="128" font-size="15" font-weight="900" fill="#2f6b45" text-anchor="middle">0</text>
+      <text x="530" y="128" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">1</text>
+      <text x="620" y="128" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">2</text>
+      <text x="710" y="128" font-size="14" font-weight="800" fill="#2f6b45" text-anchor="middle">3</text>
+      <text x="800" y="128" font-size="14" font-weight="900" fill="#c0392b" text-anchor="middle">4</text>
+      <text x="890" y="128" font-size="13" font-weight="700" fill="#8a97a8" text-anchor="middle">5</text>
+      <text x="40" y="158" font-size="13" font-weight="700" fill="#2f6b45">●が答え（6個）。−2 は入れる。4 は入れない。0 も忘れずに数える</text>
+    </svg>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">① 前半のポイント</div><div class="step q3"><span>(1)-以上</span>「−2以上」＝ −2 をふくむ。−2 から出発する。</div>
+    <div class="step q3"><span>(1)-未満</span>「4未満」＝ 4 より小さい。4 はふくまない。だから 4 の一歩手前の 3 まで。</div>
+    <div class="step q3"><span>(1)</span>−2 から 3 まで、整数を全部：−2、−1、0、1、2、3 → 6個</div>
+    <div class="step q3"><span>(2)-より大きい</span>「−3より大きく」＝ −3 はふくまない。−3 の一歩右の −2 から出発。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">② (2)-以下〜コツ</div><div class="step q3"><span>(2)-以下</span>「2以下」＝ 2 をふくむ。2 まで。</div>
+    <div class="step q3"><span>(2)</span>−2 から 2 まで：−2、−1、0、1、2 → 5個</div>
+    <div class="bx bx-warn"><span class="red">「未満」を「以下」と読みちがえて 4 を入れる</span>。未満 ＝ まだ達していない ＝ その数は入らない。この1問で入試の1点が動く。問題文の「以上・以下・未満・より大きい」に丸をつけてから解く。<br>そして問5と同じ罠。0 を数え忘れる。(1)も(2)も、0 はちゃんと範囲の中にいる。マイナスからプラスへ数えるときは、0 をとばしやすい。「−2、−1、0、1、2、3」と、0 を声に出しながら数える。<br>もうひとつ。個数を数えまちがえる。「−2 から 3 まで」を「3 − (−2) ＝ 5個」としてしまう。両はしを入れるので、5 ＋ 1 ＝ 6個。書き出して指で数えるのがいちばん確実。</div>
+    <div class="bx bx-check">書いた数を1個ずつ条件に入れ直す。<br>(1) −2 →「−2以上」○（入る）。3 →「4未満」○。4 →「4未満」×（入れなくて正解）。−3 →「−2以上」×。<br>(2) −3 →「−3より大きく」×（入れなくて正解）。2 →「2以下」○。3 →「2以下」×。<br>両はしの数を必ずチェックする。まん中はまず間違えない。事故はいつも はし で起きる。</div>
+    <div class="step q5"><span>コツ</span>片方だけ入れる範囲は、引き算の答えがそのまま個数。「−2以上4未満」→ <span class="math">4 − (−2) ＝ 6</span>個。<br><strong>両はしとも入れる</strong>なら ＋1。「絶対値が3以下」→ <span class="math">3 − (−3) ＋ 1 ＝ 7</span>個。</div>
+    <div class="ans-final"><span>こたえ</span>(1) −2、−1、0、1、2、3（6個）　(2) −2、−1、0、1、2（5個）</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="n01_6"><div class="grade"><span class="gq-label">問6</span>○✕ → <button class="o" onclick="g(this,'n01_6','o')">○</button><button class="x" onclick="g(this,'n01_6','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、以上・以下・未満・より大きい の4つの意味を1行ずつ書こう</div></div>
+</div>
+
+<!-- ===== 大問4 最大と最小の差 ===== -->
+<div class="unit-banner"><span class="unit-num">大問4 ★</span><span class="unit-name">最大と最小の差・最大公約数｜9月 大問2 直撃　L3-L4</span><span class="unit-time">目安 10分</span></div>
+
+<div class="q calc" data-id="G">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問7 ★【穴あき】</span>5人の身長を、<strong>150cmを基準にした差</strong>で表しました。</div>
+  <div class="tbl-wrap">
+    <table class="tbl">
+      <tr><th class="rh">　</th><th>Aさん</th><th>Bさん</th><th>Cさん</th><th>Dさん</th><th>Eさん</th></tr>
+      <tr><th class="rh">基準150cmとの差（cm）</th><td>＋8</td><td>−3</td><td>＋12</td><td>−7</td><td>＋2</td></tr>
+      <tr><th class="rh">実際の身長（cm）</th><td>158</td><td class="blank">　　　</td><td>162</td><td class="blank">　　　</td><td>152</td></tr>
+    </table>
+  </div>
+  <div class="hole">
+    <div class="wl">「実際の身長」の行は、<b>3つだけうめてある</b>。あいているマス（Bさん・Dさん）は自分でうめよう。うまったら、下の2問に答える。</div>
+    <div class="wl">うめかたの見本（Aさん）：差が ＋8 だから <b>150 ＋ 8 ＝ 158cm</b>。<br>マイナスのときは（Bさん）：差が −3 だから <b>150 ＋ (−3) ＝ 150 − 3 ＝ 　　cm</b>　←ここを自分で。</div>
+  </div>
+  <div class="subq"><span class="no">(1)</span>いちばん身長が高いのは <span class="fill">　　</span> さんで、<span class="fill">　　</span> cm</div>
+  <div class="subq"><span class="no">(2)</span>いちばん高い人といちばん低い人の身長の <strong>差</strong> は <span class="fill">　　</span> cm</div>
+  <div class="note-draw">まず表のあいているマスを全部うめよう。式は必ずノートに書いてから答えを書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">表が言っているのは <strong>「実際の身長 ＝ 150 ＋ 差」</strong> のひとことだけ。<br>(1)は ひとつの値を聞いている（いちばん高い人は何cm？）。<br>(2)は 2つの値のあいだのはばを聞いている（どれだけ ひらいている？）。この2つはまったく別の質問。</div>
+    <div class="step q2"><span>表</span>あいていたマスをうめる：Bさん 147（150 − 3）、Dさん 143（150 − 7）<br>そろえると：A 158、B 147、C 162、D 143、E 152</div>
+    <div class="step q2"><span>(1)</span>差がいちばん大きいのは ＋12（Cさん）。身長は <span class="math">150 ＋ 12 ＝ 162</span> → Cさん・162cm</div>
+    <div class="step q2"><span>(2)-①</span>いちばん高い人＝ C（162cm、差 ＋12）。いちばん低い人＝ D（143cm、差 −7）</div>
+    <div class="step q2"><span>(2)-②</span>差 ＝ 大きいほうから小さいほうを引く。<span class="math">162 − 143 ＝ 19</span> → 19cm</div>
+    <div class="step q2"><span>(2)-③</span>速いやり方：実際の身長にもどさなくても、差の欄だけで計算できる。<br><span class="math">(＋12) − (−7) ＝ 12 ＋ 7 ＝ 19</span> → 19cm。マイナスを引くと、たし算になる。<br>なぜ基準の150をたさなくていいの？　150 はどちらにも入っているから、引き算で消える。<span class="math">(150＋12) − (150−7)</span> の 150 どうしが打ち消し合う。「差」を聞かれたときだけ、基準はいらない。</div>
+    <div class="bx bx-warn"><span class="red">「最大と最小の差」を聞かれているのに、最大の値（162）だけを答えてしまう</span>。これが6月の特訓で 正答 23 のところ 10 と書いたミスの正体。問題文の最後の1語（差・和・合計・平均）を丸でかこんでから解く。<br>次。12 − 7 ＝ 5 としてしまう。引くのは 「−7」であって「7」ではない。<span class="math">12 − (−7)</span> の かっこを必ず書く。書けば マイナスをひく＝たすが目に見えて、12 ＋ 7 ＝ 19 になる。<br>そして。(1)で「＋12」とだけ答える。聞かれているのは「誰が、何cmか」。差ではなく実際の身長（162cm）を答える。(1)は基準をたす。(2)は基準をたさない。この使い分けが命。</div>
+    <div class="bx bx-check">(2)を2通りで確かめる。<br>①実際の身長で：<span class="math">162 − 143 ＝ 19</span>　②差の欄だけで：<span class="math">12 − (−7) ＝ 19</span>。両方19で一致○<br>さらに数直線で：−7 から ＋12 まで、−7 → 0 で 7マス、0 → ＋12 で 12マス。合わせて19マス。3つの方法で同じになったから、これは絶対に正しい。</div>
+    <div class="bx bx-link">9月の大問2は「表を読む → 最大・最小を見つける → 差を出す」がそのまま出る。<strong>差を聞かれたら引き算、値を聞かれたら基準をたす</strong>。この2行で大問がまるごと取れる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) Cさん・162cm　(2) 19cm</div>
+      <div class="tec-link">型：<b>正負の表・平均型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c8" target="_blank">マル秘テクニック集 第8章</a></div>
+  </div>
+  <div class="gq" data-gid="n01_7"><div class="grade"><span class="gq-label">問7 ★</span>○✕ → <button class="o" onclick="g(this,'n01_7','o')">○</button><button class="x" onclick="g(this,'n01_7','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、表を全部うめ直して、12 − (−7) をかっこつきで3回書こう</div></div>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問8 ★</span>次の5枚のカードから <strong>2枚</strong> を選び、その2枚の数の <strong>和</strong> を作ります。</div>
+  <div class="choice">
+    <span>−6</span>
+    <span>−1</span>
+    <span>3</span>
+    <span>5</span>
+    <span>8</span>
+  </div>
+  <div class="subq"><span class="no">(1)</span>和が<strong>いちばん大きく</strong>なるときの和は <span class="fill">　　</span></div>
+  <div class="subq"><span class="no">(2)</span>和が<strong>いちばん小さく</strong>なるときの和は <span class="fill">　　</span></div>
+  <div class="subq"><span class="no">(3)</span>(1)と(2)の <strong>差</strong> は <span class="fill">　　</span></div>
+  <div class="note-draw">まず自分で、思いついたやり方でためしてみよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">「和がいちばん大きい」＝ <strong>大きいカードを2枚えらぶ</strong>。「和がいちばん小さい」＝ 小さいカードを2枚えらぶ。<br>ここで「小さい」は「絶対値が小さい」ではない。数直線でいちばん左にあるカードのこと。マイナスの大きいやつを選ぶ。<br>そして(3)は その2つの和が、どれだけひらいているか。</div>
+    <div class="step q5"><span>①</span>まずカードを小さい順に並べる：<span class="math">−6　−1　3　5　8</span><br>この1行を書くだけで、(1)も(2)も見えてくる。</div>
+    <div class="step q5"><span>(1)</span>いちばん大きい2枚は右はしの2枚：8 と 5。<br><span class="math">8 ＋ 5 ＝ 13</span> → 最大の和 13</div>
+    <div class="step q5"><span>(2)</span>いちばん小さい2枚は左はしの2枚：−6 と −1。<br><span class="math">(−6) ＋ (−1) ＝ −7</span> → 最小の和 −7<br>マイナスどうしのたし算は、マイナスがもっと深くなる。6 ＋ 1 ＝ 7 を計算して、符号は − のまま。</div>
+    <div class="step q5"><span>(3)</span>差 ＝ 大きいほうから小さいほうを引く。<br><span class="math">13 − (−7) ＝ 13 ＋ 7 ＝ 20</span> → 差は 20</div>
+    <svg class="nline" viewBox="0 0 960 175" width="100%" preserveAspectRatio="xMidYMid meet">
+      <text x="40" y="22" font-size="14" font-weight="800" fill="#9a3f63">最小の和 −7 と 最大の和 13 の「はば」が答え</text>
+      <line x1="40" y1="105" x2="920" y2="105" stroke="#31415f" stroke-width="2"/>
+      <line x1="88" y1="64" x2="872" y2="64" stroke="#9a3f63" stroke-width="1.8"/>
+      <polygon points="80,64 92,58 92,70" fill="#9a3f63"/>
+      <polygon points="880,64 868,58 868,70" fill="#9a3f63"/>
+      <text x="480" y="52" font-size="16" font-weight="900" fill="#9a3f63" text-anchor="middle">差 ＝ 20</text>
+      <line x1="40" y1="98" x2="40" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="120" y1="98" x2="120" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="200" y1="98" x2="200" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="280" y1="98" x2="280" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="360" y1="91" x2="360" y2="119" stroke="#31415f" stroke-width="2.5"/>
+      <line x1="440" y1="98" x2="440" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="520" y1="98" x2="520" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="600" y1="98" x2="600" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="680" y1="98" x2="680" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="760" y1="98" x2="760" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="840" y1="98" x2="840" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <line x1="920" y1="98" x2="920" y2="112" stroke="#8a97a8" stroke-width="1.5"/>
+      <circle cx="80" cy="105" r="7" fill="#3f6f9f"/>
+      <circle cx="880" cy="105" r="7" fill="#c0392b"/>
+      <text x="80" y="90" font-size="14" font-weight="900" fill="#3f6f9f" text-anchor="middle">−7</text>
+      <text x="880" y="90" font-size="14" font-weight="900" fill="#c0392b" text-anchor="middle">13</text>
+      <text x="40" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−8</text>
+      <text x="120" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−6</text>
+      <text x="200" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−4</text>
+      <text x="280" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">−2</text>
+      <text x="360" y="133" font-size="15" font-weight="900" fill="#31415f" text-anchor="middle">0</text>
+      <text x="440" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">2</text>
+      <text x="520" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">4</text>
+      <text x="600" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">6</text>
+      <text x="680" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">8</text>
+      <text x="760" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">10</text>
+      <text x="840" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">12</text>
+      <text x="920" y="133" font-size="12" font-weight="700" fill="#8a97a8" text-anchor="middle">14</text>
+      <text x="40" y="162" font-size="13" font-weight="700" fill="#9a3f63">13 − (−7) ＝ 13 ＋ 7 ＝ 20　← マイナスをひくと、たし算になる</text>
+    </svg>
+    <div class="bx bx-warn"><span class="red">「最大と最小の差」を聞かれているのに、最大の和（13）だけを答えてしまう</span>。前に 23 が 10 になったのは、まさにここ。「最大の和」で手が止まって、そこで答えを書いてしまった。(3)は「差」。もう1手ある。<br>次。最小の和を「−6 と 3 で −3」としてしまう。「小さい」＝「絶対値が小さい」ではない。数直線でいちばん左の2枚＝ −6 と −1。マイナスどうしを足せば、もっと左（もっと小さい）へ行く。<br>そして本命。13 − 7 ＝ 6 としてしまう。引くのは 「−7」であって「7」ではない。<span class="math">13 − (−7)</span> とかっこを書く。書けば 13 ＋ 7 ＝ 20 が見える。<br>数直線で見れば一発：−7 と 13 は、0 をまたいで 7 と 13 だけ離れている。合わせて 20。</div>
+    <div class="bx bx-check">数直線を書いて、−7 から 13 までマス目を数える。−7 → 0 で 7マス、0 → 13 で 13マス。合わせて 20マス。式の答えと一致○<br>そして最後にもう一度、問題文を読む。(3)が聞いているのは「差」。答えた数は 20。<strong>13 と書いていないか</strong>を必ず見る。この1秒が、6月に落とした点を守る。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 13　(2) −7　(3) 20</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c8" target="_blank">マル秘テクニック集 第8章</a></div>
+  </div>
+  <div class="gq" data-gid="n01_8"><div class="grade"><span class="gq-label">問8 ★</span>○✕ → <button class="o" onclick="g(this,'n01_8','o')">○</button><button class="x" onclick="g(this,'n01_8','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、カードを小さい順に並べ直して、13 − (−7) をかっこつきで書こう</div></div>
+</div>
+
+<div class="q calc" data-id="I">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問9 ★</span>たて <strong>60cm</strong>、よこ <strong>84cm</strong> の長方形の紙があります。この紙を、<strong>あまりが出ないように</strong>、<strong>できるだけ大きい正方形</strong>に切り分けます。</div>
+  <div class="subq"><span class="no">(1)</span>正方形の1辺の長さは <span class="fill">　　</span> cm</div>
+  <div class="subq"><span class="no">(2)</span>正方形は全部で <span class="fill">　　</span> 枚できる</div>
+  <div class="note-draw">まず自分で考えて、ノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">「あまりが出ないように切る」＝ <strong>たて60cm も よこ84cm も、正方形の1辺で ぴったりわり切れる</strong>ということ。<br>つまり、1辺の長さは 60 の約数でもあり、84 の約数でもある数。<br>そのうちできるだけ大きいものを選ぶ ＝ 60 と 84 の最大公約数。<br>問題文の中に「最大公約数」という言葉はひとつも書いていない。「あまりが出ない」「できるだけ大きい」の2語が、それを意味している。この読みかえができるかどうかが勝負。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ①〜(1)</div><div class="step q3"><span>①</span>2つの数をかけ算の形（素因数分解）にバラす。<br><span class="math">60 ＝ 2 × 2 × 3 × 5</span><br><span class="math">84 ＝ 2 × 2 × 3 × 7</span></div>
+    <div class="step q3"><span>②</span>両方に共通しているものだけを集める。<br>2 が2つ ＝ 共通　／　3 が1つ ＝ 共通　／　5 は60だけ、7 は84だけ → 共通ではない<br>共通なのは <span class="math">2 × 2 × 3 ＝ 12</span> → 最大公約数は 12</div>
+    <div class="step q3"><span>(1)</span>1辺の長さは 12cm</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ (2)-①〜コツ</div><div class="step q3"><span>(2)-①</span>たて方向に何枚ならぶか：<span class="math">60 ÷ 12 ＝ 5</span> → 5枚<br>よこ方向に何枚ならぶか：<span class="math">84 ÷ 12 ＝ 7</span> → 7枚</div>
+    <div class="step q3"><span>(2)-②</span>全部の枚数は たて × よこ。<span class="math">5 × 7 ＝ 35</span> → 35枚</div>
+    <svg class="nline" viewBox="0 0 960 260" width="100%" preserveAspectRatio="xMidYMid meet">
+      <text x="440" y="20" font-size="14" font-weight="800" fill="#31415f" text-anchor="middle">よこ 84cm</text>
+      <text x="290" y="135" font-size="14" font-weight="800" fill="#31415f" text-anchor="end">たて 60cm</text>
+      <rect x="300" y="30" width="280" height="200" fill="#eef6fb" stroke="#31415f" stroke-width="2.5"/>
+      <line x1="340" y1="30" x2="340" y2="230" stroke="#7aa7d9" stroke-width="1.2"/>
+      <line x1="380" y1="30" x2="380" y2="230" stroke="#7aa7d9" stroke-width="1.2"/>
+      <line x1="420" y1="30" x2="420" y2="230" stroke="#7aa7d9" stroke-width="1.2"/>
+      <line x1="460" y1="30" x2="460" y2="230" stroke="#7aa7d9" stroke-width="1.2"/>
+      <line x1="500" y1="30" x2="500" y2="230" stroke="#7aa7d9" stroke-width="1.2"/>
+      <line x1="540" y1="30" x2="540" y2="230" stroke="#7aa7d9" stroke-width="1.2"/>
+      <line x1="300" y1="70" x2="580" y2="70" stroke="#7aa7d9" stroke-width="1.2"/>
+      <line x1="300" y1="110" x2="580" y2="110" stroke="#7aa7d9" stroke-width="1.2"/>
+      <line x1="300" y1="150" x2="580" y2="150" stroke="#7aa7d9" stroke-width="1.2"/>
+      <line x1="300" y1="190" x2="580" y2="190" stroke="#7aa7d9" stroke-width="1.2"/>
+      <rect x="300" y="30" width="40" height="40" fill="#eafaf1" stroke="#2f6b45" stroke-width="2"/>
+      <text x="605" y="70" font-size="15" font-weight="900" fill="#2f6b45">1辺 12cm の正方形</text>
+      <text x="605" y="106" font-size="14" font-weight="800" fill="#31415f">たて　60 ÷ 12 ＝ 5 まい</text>
+      <text x="605" y="138" font-size="14" font-weight="800" fill="#31415f">よこ　84 ÷ 12 ＝ 7 まい</text>
+      <text x="605" y="176" font-size="16" font-weight="900" fill="#9a3f63">5 × 7 ＝ 35 まい</text>
+      <text x="40" y="252" font-size="13" font-weight="700" fill="#2f6b45">「あまりが出ない・できるだけ大きい」＝ 最大公約数。枚数は たて × よこ</text>
+    </svg>
+    <div class="bx bx-warn"><span class="red">1辺の長さ（12cm）を答えて、枚数を出し忘れる</span>。(2)まで聞かれている。問題は2つある。<br>次。最大公約数と最小公倍数を取りちがえる。「切り分ける・分ける・配る」＝ 最大公約数（もとの数より小さくなる）。「しきつめる・そろえる・同時に出発」＝ 最小公倍数（もとの数より大きくなる）。切って小さくするのだから、答えは60より小さいはず。ここで見わけがつく。<br>そして。枚数を「5 ＋ 7 ＝ 12枚」としてしまう。正方形はたてに5列、よこに7列ならぶ。マス目の数だから たし算ではなく、かけ算。<span class="math">5 × 7 ＝ 35</span>。図をかけば一発で分かる。<br>もうひとつ。共通でないもの（5 や 7）まで かけてしまう。最大公約数は両方に共通しているものだけを集める。5 は 60 にしかない。7 は 84 にしかない。片方にしかないものは、使えない。</div>
+    <div class="bx bx-check">出した1辺（12cm）で、本当にわり切れるかを両方たしかめる。<br><span class="math">60 ÷ 12 ＝ 5</span>（あまり0）○　<span class="math">84 ÷ 12 ＝ 7</span>（あまり0）○　両方わり切れた。<br>さらに「これより大きい数では無理」も確かめる。次に大きい共通の約数は 6。12のほうが大きい。もし 15 でためすと <span class="math">84 ÷ 15</span> はわり切れない×　だから 12 で正しい。<br>枚数の検算：面積で確かめる。紙全体は <span class="math">60 × 84 ＝ 5040</span> 平方cm。正方形1枚は <span class="math">12 × 12 ＝ 144</span> 平方cm。<span class="math">5040 ÷ 144 ＝ 35</span>。35枚で一致○</div>
+    <div class="bx bx-link">「あまりが出ないように、できるだけ大きく分ける」は、9月の文章題でそのまま出る形。問題文に「最大公約数」とは書いてない。書いてないものを見つけるのが、この問題のすべて。</div>
+    <div class="step q5"><span>コツ</span>すだれ算（連除法）が速い。60 と 84 を、両方わり切れる数で上から順にわる。<br>2）60　84　→　2）30　42　→　3）15　21　→　のこりは <strong>5 と 7</strong>（共通なし・ここで終わり）。<br>左にならんだ <span class="math">2 × 2 × 3 ＝ 12</span> が最大公約数。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 12cm　(2) 35枚</div>
+      <div class="tec-link">型：<b>整数・比例配分型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="n01_9"><div class="grade"><span class="gq-label">問9 ★</span>○✕ → <button class="o" onclick="g(this,'n01_9','o')">○</button><button class="x" onclick="g(this,'n01_9','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、60 と 84 をかけ算の形にバラし直して、共通なものに丸をつけよう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓N1 数直線と絶対値・最大と最小の差 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">9問おつかれさま。9月の大問1と大問2は、きみの得点源になる🌸
+<details class="tool-hint"><summary>📌 今日のまとめ（ぜんぶ解いてから開こう）</summary>
+<div>今日いちばん覚えてほしいのは、たった3行。<strong>「絶対値 ＝ 0からのきょり。左右にペアで広がる」「絶対値が◯以下の整数には 0 が入る」「差を聞かれたら、最大値ではなく引き算」</strong>。<br>6月に落とした <span class="frac"><span class="n">9</span><span class="d">5</span></span> の位置も、23 が 10 になった あの1問も、絶対値の範囲で消えた点も、原因はこの3行だけだった。<strong>もう知っている</strong>。</div></details></div>
+
+</div>
+
+<script>
+var KEY='tokkun_n01';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+var RMQ_KIND='数直線と絶対値';
+
+/* ===== 数学キュー送りフック（×→revmq_dyn／○→po++）=====
+   受け皿＝復習数学_まちがえ復習キュー.html の mergeDyn(revmq_dyn) が読む。 */
+var RMQ_DYN='revmq_dyn';
+function rmqClean(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function rmqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function sendToRevMQ(btn,id,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    if(String(KEY).indexOf('revmq')===0)return;              /* 受け皿自身では動かさない */
+    var q=btn&&btn.closest?btn.closest('.q'):null; if(!q)return;
+    var leadEl=q.querySelector('.lead'); if(!leadEl)return;
+    var label=rmqClean(leadEl);
+    if(/【例】/.test(label))return;                            /* 例題は復習に送らない */
+    var qtxt=leadEl.parentNode?rmqClean(leadEl.parentNode):'';
+    if(label&&qtxt.indexOf(label)===0)qtxt=qtxt.slice(label.length).trim();
+    var ans=rmqClean(q.querySelector('.ans-final'));
+    if(!qtxt||!ans)return;
+    var src=KEY+'_'+id;
+    var arr;try{arr=JSON.parse(localStorage.getItem(RMQ_DYN));}catch(e){arr=null;}
+    if(!Array.isArray(arr))arr=[];
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=rmqToday();}
+    else{arr.push({src:src,jp:qtxt,en:ans,kind:RMQ_KIND,badge:'suchoku',day:rmqToday(),po:0,px:1});}
+    try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}
+  }catch(e){}
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);try{sendToRevMQ(btn,id,v);}catch(e){}
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！数直線と絶対値・最大と最小の差 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

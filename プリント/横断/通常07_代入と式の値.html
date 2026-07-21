@@ -1,0 +1,807 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>通常07 代入と式の値（負の数の代入・かっこが命）＋過去形be・整数の個数の復習｜30分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+
+/* もどる */
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+
+/* ヘッダー */
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+
+/* セクション */
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-hd .badge-time{font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;background:rgba(255,255,255,.45);border:1px solid rgba(80,96,112,.12);margin-left:auto}
+.sec-body{padding:16px 20px}
+
+/* 色テーマ */
+.th-red .sec-hd{background:#f7e6e4;border-left:6px solid #d8a09a}
+.th-org .sec-hd{background:#f6eadb;border-left:6px solid #d8b27c}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.th-grn .sec-hd{background:#e7f1e8;border-left:6px solid #9abf9d}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+
+/* 単元バナー */
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+
+/* ボックス類 */
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+
+/* 最重要ステップ強調 */
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+
+/* 図を描く欄 */
+.draw{background:#f4f7fb;border:2px dashed #aebfd6;border-radius:8px;padding:14px 16px;margin:10px 0;min-height:120px}
+.draw::before{content:"✏️ ここに図をかこう";display:block;font-size:12px;font-weight:800;color:#3f6f9f;margin-bottom:6px}
+
+/* おさらいカード（ans-box先頭・わすれた人へ） */
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai .ot{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai p{font-size:13.5px;line-height:1.95;color:#5a4520;margin:4px 0}
+.osarai ol,.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.9;color:#5a4520}
+.osarai li{margin:2px 0}
+.osarai .ex{background:#fff;border:1px dashed #e0c98a;border-radius:6px;padding:8px 11px;margin:6px 0;font-size:13.5px;color:#5a4520}
+.osarai .ex::before{content:"✏️ いっしょに1回";display:block;font-size:11px;font-weight:800;color:#8a5a19;margin-bottom:3px}
+.osarai .miss{background:#fdeee6;border-left:4px solid #d8a07a;border-radius:6px;padding:7px 11px;margin:6px 0;font-size:13px;color:#8a4a2a}
+.osarai .miss::before{content:"⚠️ ありがちな勘ちがい";display:block;font-size:11px;font-weight:800;color:#a85a2a;margin-bottom:2px}
+.osarai b{color:#7a4f12}
+
+/* 問題番号（見える番号） */
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:6px}
+
+/* 英作文・書かせる方式（00c最新） */
+.ew-task{font-size:13px;color:#4c5b70;margin-bottom:6px}
+.ew-jp{font-size:22px;font-weight:900;color:#31415f;background:#fffefb;border:2px solid #c8d4e6;border-left:6px solid #9fb8d9;border-radius:8px;padding:12px 16px;margin:4px 0 10px}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+
+/* ぜんぶ知る（00c新動線：ans-boxが開くと自動表示） */
+.deep{margin-top:8px;background:#fbfaff;border:1px solid #e3dcf0;border-radius:8px;padding:12px 14px;font-size:13.5px;line-height:1.95;color:#3a3550}
+.deep p{margin:7px 0}.deep b{color:#4a3a6b}
+.deep .ng{color:#9b514d;font-weight:800}.deep .ok{color:#3f7a4a;font-weight:800}
+.deep-head{font-size:13px;font-weight:800;color:#5f4b7a;margin-bottom:6px}
+
+/* よみとり確認（穴埋め） */
+.fill{background:#fff7e8;border:1px solid #e6c98d;border-radius:8px;padding:10px 12px;margin-top:10px;font-size:13.5px}
+.fill-q{font-weight:700;color:#8a5a19}
+.fill-btn{margin-top:6px;background:#d9b46d;color:#fff;border:none;border-radius:16px;padding:5px 12px;font-size:12px;font-weight:800;cursor:pointer}
+.fill-a{display:none;margin-top:6px;font-weight:800;color:#3f7a4a}.fill-a.open{display:block}
+
+/* 英文の答え（一番下） */
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+
+/* 採点ユニット（小問ごと） */
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+
+/* 英語の1問 */
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:12px 0}
+.q.vocab .qword{font-size:22px;font-weight:900;color:#31415f}
+.q.vocab .qhint{font-size:13px;color:#4c5b70;margin-top:2px}
+
+/* 数学の1問 */
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:18px;font-weight:700;margin:2px 0 4px;color:#31415f}
+.q.calc .qcue{font-size:12px;color:#8a93a0;margin-bottom:6px}
+
+/* 答えボタン・答え枠 */
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .ans-main{font-size:18px;font-weight:900;color:#315f3e;margin-bottom:6px}
+.ans-box .ans-read{font-size:13px;color:#405060;margin-bottom:2px}
+.ans-box .ans-why{font-size:13px;color:#405060;margin:4px 0}
+.ans-box .step{margin:4px 0;font-size:13px}
+.ans-box .step span{display:inline-block;background:#fff;border:1px solid #c9decf;border-radius:4px;padding:1px 8px;margin-right:4px;font-weight:700;color:#3f6f4a;font-size:11px}
+
+/* 自己採点 */
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+
+/* ✕のとき：3回書く */
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+
+/* ミス分類（✕のときだけ） */
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+
+/* 数式・色 */
+.math{font-family:'Courier New',monospace;background:#f2f4f5;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+
+/* できたボタン */
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+
+/* 印刷設定 */
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .deep{display:block}
+  .fill-a{display:block!important}
+  .write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec{break-inside:avoid;page-break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+.frac{display:inline-flex!important;flex-direction:column!important;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.95em;border:none!important;background:none!important;border-radius:0!important;padding:0!important}
+.frac .n{display:block!important;border:none!important;border-bottom:1.6px solid currentColor!important;background:none!important;border-radius:0!important;padding:0 4px 1px!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+.frac .d{display:block!important;border:none!important;background:none!important;border-radius:0!important;padding:1px 4px 0!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<!-- ページヘッダー -->
+<div class="pg-hd">
+  <div><span class="pg-badge">通常07</span><span class="pg-badge">数学：代入と式の値</span><span class="pg-badge">英語：単語/熟語/過去形be</span></div>
+  <h1>数学｜代入と式の値（負の数の代入は「かっこ」が命）　＋　過去形be・整数の個数を復習</h1>
+  <p>7/10(金)　目安：約30分（英語10分＋数学A14分＋数学B〈チャレンジ〉5分）　対象: 中1</p>
+  <p class="pg-cheer">きょうは文字式の次のステップ「文字に数を入れて答えを出す（代入）」だよ。とくに<strong>負の数を入れるとき</strong>がいちばん大事なポイント。コツはたった1つ、「文字を <span class="red">(　)</span> で囲んで入れる」だけ。これさえできれば符号でまよわなくなる。英語は単語10＋熟語3＋英作文1（be動詞の過去形 was/were）、前にやった「整数の個数」も1問。いっしょにいこう！</p>
+</div>
+
+<!-- ============ 英語：単語 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ①</span>
+  <span class="unit-name">単語 10問（基本5＋追加5）（意味 → ノートに英語）</span>
+  <span class="unit-time">目安 5分</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-body">
+
+    <!-- 単語1 -->
+    <div class="q vocab" data-id="W-1">
+      <div class="qnum-e">英①｜単語</div>
+      <div class="qword">少女・女の子</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">girl</div>
+        <div class="ans-read">読み：ガール</div>
+        <div class="ans-why">なぜこの語か：人を表す超基本語。The girl sings well.（その女の子は上手に歌う）。人の話で毎回出る。</div>
+        <div class="bx bx-warn">つづりは <span class="red">g-i-r-l</span>。「ガール」だけど <span class="red">ir</span> の順（gril ✕ → girl ○）。boy（男の子）とセットで覚える。</div>
+      </div>
+      <div class="gq" data-gid="W-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語2 -->
+    <div class="q vocab" data-id="W-2">
+      <div class="qnum-e">英②｜単語</div>
+      <div class="qword">少年・男の子</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">boy</div>
+        <div class="ans-read">読み：ボーイ</div>
+        <div class="ans-why">なぜこの語か：人を表す超基本語。The boy runs fast.（その男の子は速く走る）。girl とペアで使う。</div>
+        <div class="bx bx-warn">つづりは <span class="red">b-o-y</span> の3文字。「ボーイ」の「イ」は <span class="red">y</span> で書く（boi ✕）。toy（おもちゃ）と形が似ているので注意。</div>
+      </div>
+      <div class="gq" data-gid="W-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語3 -->
+    <div class="q vocab" data-id="W-3">
+      <div class="qnum-e">英③｜単語</div>
+      <div class="qword">女性</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">woman</div>
+        <div class="ans-read">読み：ウーマン</div>
+        <div class="ans-why">なぜこの語か：人をさす基本語。The woman is kind.（その女性は親切だ）。man（男性）とペア。</div>
+        <div class="bx bx-warn">つづりは <span class="red">w-o-m-a-n</span>。2人以上（複数）は <span class="red">women</span>（ウィミン）と形が変わる不規則名詞。man（男性）と1文字ちがいなので、wo を落とさない。</div>
+      </div>
+      <div class="gq" data-gid="W-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語4 -->
+    <div class="q vocab" data-id="W-4">
+      <div class="qnum-e">英④｜単語</div>
+      <div class="qword">男性</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">man</div>
+        <div class="ans-read">読み：マン</div>
+        <div class="ans-why">なぜこの語か：人をさす基本語。The man is tall.（その男性は背が高い）。woman とペアで覚える。</div>
+        <div class="bx bx-warn">つづりは <span class="red">m-a-n</span> の3文字。2人以上（複数）は <span class="red">men</span>（メン）に変わる不規則名詞（mans ✕）。woman の後ろにも man が入っている。</div>
+      </div>
+      <div class="gq" data-gid="W-4">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語5 -->
+    <div class="q vocab" data-id="W-5">
+      <div class="qnum-e">英⑤｜単語</div>
+      <div class="qword">祖母・おばあさん</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">grandmother</div>
+        <div class="ans-read">読み：グランドマザー</div>
+        <div class="ans-why">なぜこの語か：家族の話で出る基本語。She visits her grandmother on Sunday.（彼女は日曜に祖母を訪ねる）。</div>
+        <div class="bx bx-warn"><span class="red">grand ＋ mother</span> でできた語。前に習った mother（母）がそのまま入っている。grand のつづり（g-r-a-n-d、d を忘れない）に注意。祖父は grandfather。</div>
+      </div>
+      <div class="gq" data-gid="W-5">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語6（追加：dog） -->
+    <div class="q vocab" data-id="W-6">
+      <div class="qnum-e">英⑥｜単語（追加）</div>
+      <div class="qword">犬</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">dog</div>
+        <div class="ans-read">読み：ドッグ</div>
+        <div class="ans-why">なぜこの語か：身近な動物の超基本語。I have a dog.（犬を飼っている）のように毎日使う。</div>
+        <div class="bx bx-warn">つづりは <span class="red">d-o-g</span> の3文字。「ドッグ」だが g は1つ（dogg ✕）。cat（猫）とペアで覚える。</div>
+      </div>
+      <div class="gq" data-gid="W-6">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-6','o')">○</button><button class="x" onclick="g(this,'W-6','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語7（追加：cat） -->
+    <div class="q vocab" data-id="W-7">
+      <div class="qnum-e">英⑦｜単語（追加）</div>
+      <div class="qword">猫</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">cat</div>
+        <div class="ans-read">読み：キャット</div>
+        <div class="ans-why">なぜこの語か：身近な動物の超基本語。She has two cats.（猫を2匹飼っている）。dog とペアで使う。</div>
+        <div class="bx bx-warn">つづりは <span class="red">c-a-t</span> の3文字。先頭は <span class="red">c</span>（kat ✕）。hat（ぼうし）・bat（バット）と形がにている。</div>
+      </div>
+      <div class="gq" data-gid="W-7">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-7','o')">○</button><button class="x" onclick="g(this,'W-7','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語8（追加：box） -->
+    <div class="q vocab" data-id="W-8">
+      <div class="qnum-e">英⑧｜単語（追加）</div>
+      <div class="qword">箱</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">box</div>
+        <div class="ans-read">読み：ボックス</div>
+        <div class="ans-why">なぜこの語か：身のまわりの基本語。There is a box on the table.（テーブルの上に箱がある）。</div>
+        <div class="bx bx-warn">語尾は <span class="red">x</span> の1文字（bocks ✕）。2つ以上（複数）は <span class="red">boxes</span>（-x で終わる語は es をつける）。</div>
+      </div>
+      <div class="gq" data-gid="W-8">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-8','o')">○</button><button class="x" onclick="g(this,'W-8','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語9（追加：cup） -->
+    <div class="q vocab" data-id="W-9">
+      <div class="qnum-e">英⑨｜単語（追加）</div>
+      <div class="qword">コップ・カップ</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">cup</div>
+        <div class="ans-read">読み：カップ</div>
+        <div class="ans-why">なぜこの語か：食卓の基本語。a cup of tea（カップ1杯のお茶）のように飲み物の話で出る。</div>
+        <div class="bx bx-warn">つづりは <span class="red">c-u-p</span> の3文字。「カップ」だが p は1つ（cupp ✕）。cap（ぼうし）と1文字ちがいなので u と a に注意。</div>
+      </div>
+      <div class="gq" data-gid="W-9">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-9','o')">○</button><button class="x" onclick="g(this,'W-9','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 単語10（追加：table） -->
+    <div class="q vocab" data-id="W-10">
+      <div class="qnum-e">英⑩｜単語（追加）</div>
+      <div class="qword">テーブル・つくえ</div>
+      <div class="qhint">英語で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">table</div>
+        <div class="ans-read">読み：テイブル</div>
+        <div class="ans-why">なぜこの語か：部屋の中の基本語。The cup is on the table.（コップはテーブルの上にある）。</div>
+        <div class="bx bx-warn">語尾は <span class="red">-ble</span>（テイブルの「ブル」は b-l-e）。「テーブル」の音から teburu と書かない。apple の -le と同じ仲間。</div>
+      </div>
+      <div class="gq" data-gid="W-10">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'W-10','o')">○</button><button class="x" onclick="g(this,'W-10','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ 英語：熟語 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ②</span>
+  <span class="unit-name">熟語を3つ（意味 → ノートに英語）</span>
+  <span class="unit-time">目安 2分</span>
+</div>
+<div class="sec th-teal">
+  <div class="sec-body">
+
+    <!-- 熟語1（差替：watch TV→go fishing） -->
+    <div class="q vocab" data-id="P-1">
+      <div class="qnum-e">英⑪｜熟語</div>
+      <div class="qword">つりに行く</div>
+      <div class="qhint">英語（2語の熟語）で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">go fishing</div>
+        <div class="ans-read">読み：ゴウ フィッシング</div>
+        <div class="ans-why">なぜこの語か：休みの日の予定でよく出る決まり文句。I go fishing on Sunday.（日曜につりに行く）。go ＋ -ing の形で覚える。</div>
+        <div class="bx bx-warn">「〜しに行く」は <span class="red">go ＋ 動詞ing</span>（go fishing）。fishing は fish に -ing がついた形。go swimming（泳ぎに行く）も同じ仲間。</div>
+      </div>
+      <div class="gq" data-gid="P-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 熟語2（差替：at home→how about ~?） -->
+    <div class="q vocab" data-id="P-2">
+      <div class="qnum-e">英⑫｜熟語</div>
+      <div class="qword">〜はどうですか</div>
+      <div class="qhint">英語（2語の熟語）で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">how about ～?</div>
+        <div class="ans-read">読み：ハウ アバウト</div>
+        <div class="ans-why">なぜこの語か：相手にすすめたり意見をきくときの決まり文句。How about tea?（お茶はどう？）。会話でとてもよく使う。</div>
+        <div class="bx bx-warn">about の綴りは <span class="red">a-b-o-u-t</span>（abaut ✕）。how about のあとは名詞か動詞ing（How about going?）。文の終わりは <span class="red">?</span> を忘れない。</div>
+      </div>
+      <div class="gq" data-gid="P-2">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+    <!-- 熟語3（差替：at school→do my best） -->
+    <div class="q vocab" data-id="P-3">
+      <div class="qnum-e">英⑬｜熟語</div>
+      <div class="qword">全力をつくす</div>
+      <div class="qhint">英語（3語の熟語）で書いてみよう（ノートに）</div>
+      <button class="ans-btn" onclick="t(this)">答えを見る</button>
+      <div class="ans-box">
+        <div class="ans-main">do my best</div>
+        <div class="ans-read">読み：ドゥー マイ ベスト</div>
+        <div class="ans-why">なぜこの語か：やる気・決意をあらわす決まり文句。I do my best.（全力をつくす）。スピーチや作文でよく使う。</div>
+        <div class="bx bx-warn">best の綴りは <span class="red">b-e-s-t</span>。「自分の」なので my をつける（主語が he なら do his best と変わる）。do my best で「ベストをつくす」とまとめて覚える。</div>
+      </div>
+      <div class="gq" data-gid="P-3">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら3回書いて覚えよう　　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ 英語：英作文 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語 ③</span>
+  <span class="unit-name">英作文1問（いまの文法を確認）</span>
+  <span class="unit-time">目安 3分</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-body">
+
+    <div class="q writing" data-id="EW-1">
+      <div class="qnum-e">英⑭｜英作文</div>
+      <div class="ew-task">📝 この日本語を、英語にして下の線に書こう（文法は自分で考える）</div>
+      <div class="ew-jp">「私は昨日いそがしかったです。」</div>
+      <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="deep-head">📖 文法のせつめい（読んでから下の答えへ。わかる子は読みとばしてOK）</div>
+        <div class="deep">
+          <p><b>be動詞の過去形＝「〜だった」。</b>am・is は過去になると <b>was</b>、are は過去になると <b>were</b> に変わる。「いそがしかった（＝いそがしい状態だった）」のような<b>様子・状態</b>を過去で言うときに使う。<br>
+           例：I was busy.（私はいそがしかった）／They were happy.（彼らは幸せだった）</p>
+          <p><b>主語ごとの形：</b>I／he／she／it →（ am・is の過去）<b>was</b>。you／we／they →（ are の過去）<b>were</b>。「私（I）」は was を使う。</p>
+          <p><b>「昨日」は yesterday：</b>「いつのこと？」を表す言葉は文の<b>うしろ</b>に置く。I was busy <b>yesterday</b>.（私は昨日いそがしかった）。</p>
+          <p><b>なぜ was？</b>主語が I で、過去の状態を言うから。現在なら I am busy.（いそがしい）、過去なら am → was にして I was busy.（いそがしかった）。be動詞を過去の形にするだけ。</p>
+          <p><b>つながり：</b>否定は was／were の後ろに not（I was not busy.）。疑問は was／were を前に出す（Were you busy?）。まずは「am・is→was／are→were」を体に入れよう。</p>
+          <p><b>よくある間違い</b><br>
+           <span class="ng">✕ I am busy yesterday.</span> → <span class="ok">○ I was busy yesterday.</span>（過去なので am→was）<br>
+           <span class="ng">✕ I were busy yesterday.</span> → <span class="ok">○ I was busy yesterday.</span>（I は was。were ではない）<br>
+           <span class="ng">✕ I was busy yesterday（ピリオドなし）</span> → <span class="ok">○ I was busy yesterday.</span>（文末ピリオド）</p>
+          <p><b>ゴール🌸</b>：be動詞を過去（was／were）にして「〜だった」と言える。I は was を使う。</p>
+        </div>
+        <div class="fill">
+          <div class="fill-q">✍ よみとり確認：am・is の過去は（ ① ）／ are の過去は（ ② ）／ 主語が I のときは（ ③ ）を使う</div>
+          <button class="fill-btn" onclick="this.nextElementSibling.classList.toggle('open')">確認の答えを見る</button>
+          <div class="fill-a">① was ／ ② were ／ ③ was</div>
+        </div>
+        <div class="ans-final"><span>こたえ</span>I was busy yesterday.</div>
+      </div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら、正しい文を3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ 数学A：代入と式の値（新規） ============ -->
+<div class="unit-banner">
+  <span class="unit-num">数学A（新しい）</span>
+  <span class="unit-name">代入と式の値（4問）　文字に数を入れて答えを出す　まず自分で計算 → 答え</span>
+  <span class="unit-time">目安 14分</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-body">
+
+    <!-- M-1 正の数の代入 -->
+    <div class="q calc" data-id="M-1">
+      <div class="qnum">数①・②・③｜L2 標準　正の数を代入する（まずは練習）</div>
+      <div class="qbody"><span class="math">x＝4</span> のとき、次の式の値を求めよう。<br>
+        (1) <span class="math">3x＋2</span>　(2) <span class="math">2x−5</span>　(3) <span class="math">x²</span></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="osarai">
+          <div class="ot">⓪ そもそも「代入」って何だっけ？</div>
+          <p><b>意味：</b>式の中の文字（x など）のところに、決められた数を <b>そのまま置きかえる</b>こと。これを <b>代入</b>、出てきた答えを <b>式の値</b>という。</p>
+          <p>x＝4 なら、式に出てくる x をぜんぶ 4 に置きかえるだけ。<br>これからの「式の値」「関数」「方程式の検算」は、ぜんぶこの代入が土台。</p>
+          <div class="ot">① 文字式の読み方を思い出す</div>
+          <ul>
+            <li><b>3x</b> ＝ 3×x（数と文字がくっついていたら「かけ算」）</li>
+            <li><b>x²</b> ＝ x×x（2乗＝同じ数を2回かける）</li>
+            <li><b>−x</b> ＝ −1×x</li>
+          </ul>
+          <div class="ex">x＝4 のとき 3x ＝ 3×4 ＝ 12。x² ＝ 4×4 ＝ 16。<br>「3x」を「34」と書かない。3 と x は <b>かける</b>。</div>
+          <div class="miss">3x を「3と4をならべて34」としない。x² を「x×2＝8」としない（x²＝x×x）。2x と x² は別もの。</div>
+        </div>
+        <div class="step"><span>代入とは</span>「文字のところに数を入れること」を <strong>代入</strong>、出てきた答えを <strong>式の値</strong>という。x を見たら、その場所に <span class="red">4</span> を置きかえるだけ。</div>
+        <div class="step"><span>解説(1)</span><span class="math">3x</span> は <span class="math">3×x</span> のこと。x に4を入れて <span class="math">3×4＋2＝12＋2＝14</span>。文字式の <strong>3x は「3かける4」</strong>と読みかえるのがコツ。</div>
+        <div class="step"><span>解説(2)</span><span class="math">2x−5＝2×4−5＝8−5＝3</span>。先にかけ算（2×4）をしてから、ひき算をする。</div>
+        <div class="step"><span>解説(3)</span><span class="math">x²</span> は <span class="math">x×x</span> のこと。<span class="math">4²＝4×4＝16</span>。2乗は「同じ数を2回かける」。</div>
+        <div class="step"><span>検算</span>(1) 14−2＝12、12÷3＝4＝x。(2) 3＋5＝8、8÷2＝4＝x。(3) 4×4＝16 なので x＝4 でOK。どれも元の x＝4 に戻る。</div>
+        <div class="bx bx-link">「文字に数を入れて答えを出す」代入は、このあとの関数（y＝2x＋1 に x の値を入れて y を出す）・方程式の検算で毎回使う。まずは入れて計算する流れを正の数で固めておこう。</div>
+        <div class="bx bx-warn"><span class="red">3x を「3と4をならべて 34」としない</span>（3x＝3×x なので 3×4＝12）。<span class="red">x² を「x×2＝8」としない</span>（x²＝x×x＝16）。2x（2かけるx）と x²（xを2乗）は別物。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 14　(2) 3　(3) 16</div>
+      </div>
+      <div class="gq" data-gid="M-1a">
+        <div class="grade"><span class="gq-label">数①（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1a','o')">○</button><button class="x" onclick="g(this,'M-1a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-1b">
+        <div class="grade"><span class="gq-label">数②（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1b','o')">○</button><button class="x" onclick="g(this,'M-1b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-1c">
+        <div class="grade"><span class="gq-label">数③（3）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1c','o')">○</button><button class="x" onclick="g(this,'M-1c','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- M-2 負の数の代入（最重要） -->
+    <div class="q calc" data-id="M-2">
+      <div class="qnum">数④・⑤・⑥・⑦｜L2→L3 標準〜応用 ★今日の最重要　負の数を代入する</div>
+      <div class="qbody"><span class="math">x＝−3</span> のとき、次の式の値を求めよう。<br>
+        (1) <span class="math">2x</span>　(2) <span class="math">x²</span>　(3) <span class="math">−x</span>　(4) <span class="math">x²−x</span></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="bx bx-key">負の数を代入するときは、文字を必ず <span class="red">(　)（かっこ）</span> で囲んで置きかえる。<br>
+          x＝−3 なら、x のところに <span class="red">(−3)</span> をそのまま入れる。<br>
+          こうすると「−の符号」と「2乗」がぐちゃぐちゃにならない。<strong>かっこを書くかどうかで、答えがプラスにもマイナスにも変わる</strong>。</div>
+        <div class="step"><span>解説(1)</span><span class="math">2x＝2×x</span>。x に <span class="red">(−3)</span> を入れて <span class="math">2×(−3)＝−6</span>。<span class="red">「2−3」としない</span>。2x は「2かけるx」だから、2と(−3)を<strong>かける</strong>。</div>
+        <div class="step"><span>解説(2)・⭐ここが一番大事</span><span class="math">x²＝x×x</span>。x に (−3) を入れて <span class="math">(−3)²＝(−3)×(−3)</span>。マイナス×マイナス＝プラスなので <strong>＝9</strong>。かっこごと2乗するので、マイナスも一緒に2乗されて消える。</div>
+        <div class="step"><span>⭐ x² と −x² のちがい</span><span class="math">x²＝(−3)²＝9</span>（プラス9）。でも <span class="math">−x²</span> は <span class="math">−(x²)＝−(−3)²＝−9</span>（マイナス9）。<strong>−x² の「−」は2乗のあとにかかる</strong>。<span class="red">x²＝9</span> と <span class="red">−x²＝−9</span> は答えがちがう。今日はここを必ず区別！</div>
+        <div class="step"><span>解説(3)</span><span class="math">−x</span> は <span class="math">−1×x</span> のこと。x に (−3) を入れて <span class="math">−(−3)＝＋3</span>。マイナスのマイナスはプラス。<strong>−x はいつもマイナスとはかぎらない</strong>（x が負なら −x は正になる）。</div>
+        <div class="step"><span>解説(4)</span><span class="math">x²−x</span>＝(2)と(3)で出した値を使う。x²＝(−3)²＝9、−x＝−(−3)＝＋3。だから <span class="math">9＋3＝12</span>。x²−x の「−x」は (3) と同じで ＋3 になることに注意。</div>
+        <div class="step"><span>検算</span>(1) −6÷2＝−3＝x。(2) (−3)×(−3)＝9。(4) もう一度： (−3)²−(−3)＝9−(−3)＝9＋3＝12。合う。</div>
+        <div class="bx bx-link">「負の数を(　)で囲んで代入する」クセは、このあとの式の値・関数・方程式の検算でずっと効いてくる。とくに x² と −x² の区別は、中3の平方根や2次関数まで何度も問われる超重要ポイント。今ここで体に入れておくと、ずっと符号ミスが減る。</div>
+        <div class="bx bx-warn"><span class="red">2x に x＝−3 を入れて「2−3＝−1」としない</span>（2x＝2×(−3)＝−6）。<span class="red">x² を「−9」としない</span>（(−3)²＝(−3)×(−3)＝＋9。かっこをつければマイナスも2乗されてプラスになる）。かっこを書かずに −3² と書くと −9 の意味になってしまう＝これが最大のワナ。<strong>負の数は必ずかっこで囲んで入れる</strong>。</div>
+        <div class="ans-final"><span>こたえ</span>(1) −6　(2) 9　(3) 3　(4) 12</div>
+      </div>
+      <div class="gq" data-gid="M-2a">
+        <div class="grade"><span class="gq-label">数④（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2a','o')">○</button><button class="x" onclick="g(this,'M-2a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-2b">
+        <div class="grade"><span class="gq-label">数⑤（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2b','o')">○</button><button class="x" onclick="g(this,'M-2b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-2c">
+        <div class="grade"><span class="gq-label">数⑥（3）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2c','o')">○</button><button class="x" onclick="g(this,'M-2c','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-2d">
+        <div class="grade"><span class="gq-label">数⑦（4）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2d','o')">○</button><button class="x" onclick="g(this,'M-2d','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- M-3 2文字の代入 -->
+    <div class="q calc" data-id="M-3">
+      <div class="qnum">数⑧・⑨・⑩｜L3 応用　2つの文字に代入する</div>
+      <div class="qbody"><span class="math">a＝2</span>、<span class="math">b＝−5</span> のとき、次の式の値を求めよう。<br>
+        (1) <span class="math">3a−b</span>　(2) <span class="math">ab</span>　(3) <span class="math">a²＋b</span></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="step"><span>解説(1)</span><span class="math">3a−b</span>＝3×a−b。a に (2)、b に (−5) を入れて <span class="math">3×(2)−(−5)＝6＋5＝11</span>。<strong>−b は −(−5)＝＋5</strong>。b がマイナスだから、−b はプラスになる（ここが問2の −x と同じ考え方）。</div>
+        <div class="step"><span>解説(2)</span><span class="math">ab＝a×b</span>。<span class="math">(2)×(−5)＝−10</span>。プラス×マイナス＝マイナス。文字が2つならんでいたら「かけ算」。</div>
+        <div class="step"><span>解説(3)</span><span class="math">a²＋b＝a×a＋b</span>。<span class="math">(2)²＋(−5)＝4＋(−5)＝4−5＝−1</span>。a²＝4 を出してから、b の (−5) をたす。</div>
+        <div class="step"><span>検算</span>(1) 11−6＝5、これが −b の値 → b＝−5。○。(2) −10÷2＝−5＝b。○。(3) −1−(−5)＝−1＋5＝4＝a²。○。</div>
+        <div class="bx bx-link">2文字の代入は、面積・速さ・割合の公式（S＝a×b など）に数を入れて答えを出す場面そのもの。文字が増えても「かっこで囲んで入れる」は同じ。1文字でできたことを2文字に広げる練習。</div>
+        <div class="bx bx-warn">(1)で <span class="red">−b を「−5」のままにしない</span>。b＝−5 だから −b＝−(−5)＝＋5。マイナスの前のマイナスでプラスに変わる。(3)で <span class="red">a²＝(2)²＝4</span>（2×2）であって 2×2乗のような変な計算にしない。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 11　(2) −10　(3) −1</div>
+      </div>
+      <div class="gq" data-gid="M-3a">
+        <div class="grade"><span class="gq-label">数⑧（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3a','o')">○</button><button class="x" onclick="g(this,'M-3a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-3b">
+        <div class="grade"><span class="gq-label">数⑨（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3b','o')">○</button><button class="x" onclick="g(this,'M-3b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-3c">
+        <div class="grade"><span class="gq-label">数⑩（3）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3c','o')">○</button><button class="x" onclick="g(this,'M-3c','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- M-4 累乗・分数 -->
+    <div class="q calc" data-id="M-4">
+      <div class="qnum">数⑪・⑫｜L3 応用　3乗・分数の式に代入する</div>
+      <div class="qbody"><span class="math">x＝−2</span> のとき、次の式の値を求めよう。<br>
+        (1) <span class="math">−x³</span>　(2) <span class="math">(x²−1)/3</span></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="step"><span>解説(1)・x³とは</span><span class="math">x³＝x×x×x</span>（3回かける）。x に (−2) を入れて <span class="math">(−2)³＝(−2)×(−2)×(−2)＝4×(−2)＝−8</span>。マイナスを3回かけるとマイナス。</div>
+        <div class="step"><span>解説(1)・前の−に注意</span>求めるのは <span class="math">−x³</span>＝<span class="math">−(x³)</span>。先に x³＝−8 を出して、その前のマイナスをつける → <span class="math">−(−8)＝＋8</span>。だから <strong>8</strong>。x³ と −x³ のちがいは、問2の x² と −x² と同じ考え方。</div>
+        <div class="step"><span>解説(2)</span>分子の <span class="math">x²−1</span> を先に計算。<span class="math">x²＝(−2)²＝4</span> なので、<span class="math">x²−1＝4−1＝3</span>。これを3でわって <span class="math">3÷3＝1</span>。分数は「分子を先にまとめてから、分母でわる」。</div>
+        <div class="step"><span>検算</span>(1) x³＝(−2)³＝−8、その前のマイナスで＋8。○。(2) (4−1)/3＝<span class="frac"><span class="n">3</span><span class="d">3</span></span>＝1。分子に戻すと 1×3＝3＝x²−1 → x²＝4 → x＝−2。○。</div>
+        <div class="bx bx-link">「2乗はプラス・3乗はマイナス」という符号のルールと、「分数は分子を先にまとめる」流れは、式の計算・関数・方程式でくり返し出る。代入の総仕上げとして、累乗と分数までできれば代入はばっちり。</div>
+        <div class="bx bx-warn">(1)で <span class="red">(−2)³ を ＋8 としない</span>（マイナスを3回かけると −8。<strong>マイナスを偶数回かけ→プラス、奇数回かけ→マイナス</strong>。だから(−2)²は＋、(−2)³は−）。その上で前の「−」をつけて −x³＝−(−8)＝＋8。(2)で <span class="red">分子の x²−1 を計算せずに先にわらない</span>。まず分子をまとめる。</div>
+        <div class="bx bx-link">📦 もっとやりたい人へ：文字式・代入をもっと練習したいときは、特訓数学プリント P2b（文字式・立式）へ進もう。立式の手前から代入までを、もう少しじっくり練習できる。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 8　(2) 1</div>
+      </div>
+      <div class="gq" data-gid="M-4a">
+        <div class="grade"><span class="gq-label">数⑪（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4a','o')">○</button><button class="x" onclick="g(this,'M-4a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-4b">
+        <div class="grade"><span class="gq-label">数⑫（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4b','o')">○</button><button class="x" onclick="g(this,'M-4b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ============ 数学B：今日のチャレンジ（整数の個数・分散復習#7） ============ -->
+<div class="unit-banner">
+  <span class="unit-num">数学B（復習）</span>
+  <span class="unit-name">今日のチャレンジ1問　整数の個数・両端＋1（6/24にやった復習）</span>
+  <span class="unit-time">目安 5分</span>
+</div>
+<div class="sec th-org">
+  <div class="sec-body">
+
+    <!-- R-1 整数の個数（両端+1）★分散復習#7・必修2(1)同型 -->
+    <div class="q calc" data-id="R-1">
+      <div class="qnum">数⑬｜今日のチャレンジ　L2 標準　整数の個数</div>
+      <div class="qbody"><strong>40以上80以下</strong> の <strong>偶数</strong> は何個ありますか。</div>
+      <svg viewBox="0 0 380 110" style="max-width:380px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" role="img" aria-label="数直線：40から80までの偶数の点。両はしを含むのですき間の数に＋1する">
+        <!-- 数直線 -->
+        <line x1="30" y1="55" x2="350" y2="55" stroke="#33485a" stroke-width="2"/>
+        <!-- 偶数の点 40,42,...,80（21点）を等間かくに。x=30→350、間かく=(350-30)/20=16 -->
+        <!-- 中間の点（小さめ・両はし以外の19点） -->
+        <circle cx="46" cy="55" r="3" fill="#33485a"/>
+        <circle cx="62" cy="55" r="3" fill="#33485a"/>
+        <circle cx="78" cy="55" r="3" fill="#33485a"/>
+        <circle cx="94" cy="55" r="3" fill="#33485a"/>
+        <circle cx="110" cy="55" r="3" fill="#33485a"/>
+        <circle cx="126" cy="55" r="3" fill="#33485a"/>
+        <circle cx="142" cy="55" r="3" fill="#33485a"/>
+        <circle cx="158" cy="55" r="3" fill="#33485a"/>
+        <circle cx="174" cy="55" r="3" fill="#33485a"/>
+        <circle cx="190" cy="55" r="3" fill="#33485a"/>
+        <circle cx="206" cy="55" r="3" fill="#33485a"/>
+        <circle cx="222" cy="55" r="3" fill="#33485a"/>
+        <circle cx="238" cy="55" r="3" fill="#33485a"/>
+        <circle cx="254" cy="55" r="3" fill="#33485a"/>
+        <circle cx="270" cy="55" r="3" fill="#33485a"/>
+        <circle cx="286" cy="55" r="3" fill="#33485a"/>
+        <circle cx="302" cy="55" r="3" fill="#33485a"/>
+        <circle cx="318" cy="55" r="3" fill="#33485a"/>
+        <circle cx="334" cy="55" r="3" fill="#33485a"/>
+        <!-- 両はしを強調（40と80） -->
+        <circle cx="30" cy="55" r="5.5" fill="#d8a09a" stroke="#9b514d" stroke-width="2"/>
+        <circle cx="350" cy="55" r="5.5" fill="#d8a09a" stroke="#9b514d" stroke-width="2"/>
+        <text x="30" y="80" font-size="13" fill="#9b514d" text-anchor="middle">40</text>
+        <text x="350" y="80" font-size="13" fill="#9b514d" text-anchor="middle">80</text>
+        <!-- すき間と点の違い：両はしを含む→＋1 の説明 -->
+        <text x="190" y="22" font-size="13" fill="#31415f" text-anchor="middle">すき間20 → 点は両はしも入れて＋1</text>
+        <path d="M30 30 Q60 14 80 28" fill="none" stroke="#9b514d" stroke-width="1.5"/>
+        <path d="M350 30 Q320 14 300 28" fill="none" stroke="#9b514d" stroke-width="1.5"/>
+        <text x="190" y="102" font-size="13" fill="#8a93a0" text-anchor="middle">●＝偶数（2とび）</text>
+      </svg>
+      <div class="draw"></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="ans-why">🔁 これは6/24にやった「整数の個数」のもう一度だよ。忘れたころにやると、本当に身につく。今日はそのチャレンジ1問。</div>
+        <div class="step"><span>ステップ1</span>はんいの中の偶数は、いちばん小さいのが40、いちばん大きいのが80。偶数は2とびなので、数直線で 40,42,44,…,80 と等間かくにならぶ。</div>
+        <div class="step"><span>ステップ2（すき間の数）</span>(終わり−はじめ)÷とびはば＝<span class="math">(80−40)÷2＝40÷2＝20</span>。これは「点と点の<strong>すき間</strong>の数」であって、点の数ではない。</div>
+        <div class="step"><span>ステップ3（＋1する）</span>すき間が20なら、両はしの点（40と80）も入れて <span class="math">20＋1＝21個</span>。<strong>これが「両はしを入れて＋1」</strong>。</div>
+        <div class="step"><span>確かめ</span>小さく確かめる：40,42,44 の3つは、すき間 (44−40)÷2＝2、点は 2＋1＝3個。ちゃんと合う。だから80まででも ＋1 でよい。</div>
+        <div class="bx bx-link">「すき間の数＋1＝点の数」は、中学の数列・規則性の問題でくり返し使う、いちばん大事な数えルール。両はしを含むか含まないかで答えが1ずれるので、数直線で両はしに印をつけて確認するクセをつけよう。塾のテストでもこの整数の個数は定番。</div>
+        <div class="bx bx-warn"><span class="red">(80−40)÷2＝20 で止めて「20個」と答えない</span>。それは<strong>すき間の数</strong>。両はしを含むので必ず＋1して21個。木を植えるときの「間かくの数」と「くいの本数」の関係と同じ（くいは間かくより1本多い）。</div>
+        <div class="ans-final"><span>こたえ</span>21個</div>
+      </div>
+      <div class="gq" data-gid="R-1">
+        <div class="grade"><span class="gq-label">数⑬</span>答えを見て丸つけ → <button class="o" onclick="g(this,'R-1','o')">○</button><button class="x" onclick="g(this,'R-1','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（通常07 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">きょうは文字式の次のステップ「代入と式の値」。いちばんのポイントは <strong>負の数は (　) で囲んで入れる</strong>。これで x²＝9（プラス）と −x²＝−9（マイナス）のちがいもバッチリ。英語は be動詞の過去形（I was busy yesterday.）、そして前にやった「整数の個数（両はし＋1）」も1問。新しいことと、忘れたころの復習を、30分でちゃんと両どりできた。よくがんばったね。あしたも5分からでOK。</div>
+
+</div>
+
+<script>
+var KEY='mix07';
+
+// 答えトグル
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+// 自己採点 ○✕（採点ユニット .gq 単位＝小問ごと）
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}
+  var mt=box.querySelector('.mt');
+  var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{
+    if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}
+    if(w3)w3.style.display='none';
+  }
+}
+
+// ミス分類（.gq の data-gid 単位）
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}
+  var w=btn.parentNode;
+  w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);
+}
+
+// 完了
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+
+// 復元（.gq＝採点ユニット単位）
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var mt=box.querySelector('.mt');
+        if(mt){
+          mt.classList.add('open');
+          var mv=localStorage.getItem(KEY+'_'+id+'_m');
+          if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}
+        }
+        var w3=box.querySelector('.write3');
+        if(w3)w3.style.display='block';
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
+};
+/* ===== 復習英語キュー送りフック（×/○・英語問題のみ・自己ループ防止） ===== */
+function sendToRevQ(btn,id,result){
+  if(typeof PRE!=='undefined' && PRE==='revq_') return;        // 受け皿自身では動かさない
+  if(typeof KEY==='undefined') return;
+  if(KEY.indexOf('revq')===0) return;
+  var q=btn&&btn.closest?btn.closest('.q'):null; if(!q) return;
+  if(q.classList.contains('calc')) return;                      // 数学除外
+  var engPrint=!!document.querySelector('[data-eng="1"]');
+  var isVocab=q.classList.contains('vocab'), isWriting=q.classList.contains('writing');
+  if(!engPrint && !isVocab && !isWriting) return;               // 混在で英語クラス無し→送らない
+  var kindEl=q.querySelector('.qnum-e'); var kindRaw=kindEl?(kindEl.textContent||''):'';
+  if(/漢字|書き|読み/.test(kindRaw)) return;                    // 暗記カードの漢字除外
+  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.qbody');
+  var enEl=q.querySelector('.ans-final')||q.querySelector('.ans-box .ans-main');
+  if(!jpEl||!enEl) return;
+  var jp=cleanRevQText(jpEl), en=cleanRevQText(enEl);
+  if(!jp||!en) return;
+  if(!/[A-Za-z]/.test(en)) return;                              // 答えに英字なし→英語でない→除外
+  if(result==='o'){bumpRevQPo(en);return;}                      // ○：既存項目の po++ のみ（新規追加しない）
+  var kind='単語',badge='tango';
+  if(isWriting||/英作文/.test(kindRaw)||/[.!?]\s*$/.test(en)){kind='英作文';badge='eisaku';}
+  else if(/熟語/.test(kindRaw)){kind='熟語';badge='jukugo';}
+  pushRevQDyn({jp:jp,en:en,kind:kind,badge:badge,day:revqToday(),src:(KEY+'_'+id)});
+}
+function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[（(][^）)]*でもOK[^）)]*[）)]/g,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function revqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function revqNorm(s){return String(s||'').toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function bumpRevQPo(en){try{var K='revq_dyn';var raw=localStorage.getItem(K);if(raw==null)return;var arr;try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;var key=revqNorm(en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].po=(+arr[i].po||0)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}}catch(e){}}
+function pushRevQDyn(item){try{var K='revq_dyn';var raw=localStorage.getItem(K);var arr;if(raw==null){arr=[];}else{try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;}var key=revqNorm(item.en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;arr[i].po=0;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;item.po=0;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
+</script>
+</body>
+</html>

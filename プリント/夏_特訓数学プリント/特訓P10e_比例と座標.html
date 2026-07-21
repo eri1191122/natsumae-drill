@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P10e 比例と座標・グラフ（9月関数領域対策）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"🧭 きょうの3つの合言葉（毎回これを声に出す）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い（先に見ておこう）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-img{background:#eef4fb;border-left:4px solid #8fb4dd}
+.bx-img::before{content:"🖼️ 図でイメージ";display:block;font-size:12px;font-weight:800;color:#3f5f8a;margin-bottom:4px}
+.bx-say{background:#fdf3f7;border-left:4px solid #d7a0bd}
+.bx-say::before{content:"🗣️ やさしい言いかえ";display:block;font-size:12px;font-weight:800;color:#a04f78;margin-bottom:4px}
+.bx-have{background:#f2f6f0;border-left:4px solid #9bbf88}
+.bx-have::before{content:"🔎 わかっていること／求めるもの";display:block;font-size:12px;font-weight:800;color:#56713f;margin-bottom:4px}
+.bx-plan{background:#f5f2ec;border-left:4px solid #c4a86d}
+.bx-plan::before{content:"♟️ 作戦＋たとえ話";display:block;font-size:12px;font-weight:800;color:#8a6a2f;margin-bottom:4px}
+.bx-check{background:#eef7f1;border-left:4px solid #7cbf95}
+.bx-check::before{content:"✅ 検算＋次に見ぬくコツ";display:block;font-size:12px;font-weight:800;color:#2f7a4f;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 12px}
+.osarai::before{content:"📖 わすれた人へ｜座標と比例の超キホン";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#e8edf7;color:#31415f}
+.figrow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:center}
+.fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px}
+.dtbl{border-collapse:collapse;margin:10px auto;font-size:14px}
+.dtbl th,.dtbl td{border:1px solid #c8cfc6;padding:5px 14px;text-align:center;background:#fff}
+.dtbl th{background:#eef2ec;font-weight:800;color:#3f5540}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.mt .mt-note{display:block;margin-top:6px;font-size:11px;font-weight:700;color:#9b514d}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tool-hint{margin:8px 0;border:1px dashed #c9b8d6;border-radius:8px;background:#faf7fc;padding:6px 10px;font-size:12.5px}
+.tool-hint summary{cursor:pointer;font-weight:700;color:#7a5a95}
+.tool-hint div{margin-top:6px;color:#4a3a56;line-height:1.8}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="partial-n1" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P10e</span><span class="pg-badge">数学：比例と座標・グラフ</span><span class="pg-badge">★関数の入口 L2-L4（9月選抜・関数領域）</span></div>
+  <h1>比例と座標・グラフ｜座標を読む → 比例の式 y=ax を作る → 点が通るか見ぬく</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問4・通し番号）　対象: 中1　全問に「あほでもわかる」徹底解説つき</p>
+  <p class="pg-cheer">9月特訓選抜の<strong>関数・グラフ領域（座標・比例 y=ax・グラフと式）</strong>を直撃。むずかしそうに見えるけど、今日おぼえることは<strong>たった3つ</strong>。<strong>①座標は (横, たて) の順 ②比例は原点を通るまっすぐな線 ③a は「たて ÷ 横」で出る</strong>。これだけで4問ぜんぶ解ける。あせらず1問ずつ図を見ながらいこう。</p>
+</div>
+
+<details class="tool-hint">
+<summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+<div>
+  <ol>
+    <li><b>① 座標は (横, たて)</b> ＝ (x, y)。<b>かならず横（x）が先</b>。「右にいくつ、上にいくつ」の順。</li>
+    <li><b>② 比例 y=ax は「原点 (0,0) を通る まっすぐな線」</b>。原点を通らない線は比例ではない。</li>
+    <li><b>③ a（比例定数）＝ たて ÷ 横 ＝ y ÷ x</b>。「x が1ふえると y が a ふえる」割合のこと。</li>
+  </ol>
+</div>
+</details>
+
+<!-- ===== 問1 座標の読み取り L2-L3 ===== -->
+<div class="unit-banner"><span class="unit-num">問1</span><span class="unit-name">座標を読む・点の位置（x軸・y軸）L2-L3</span><span class="unit-time">目安 6分</span></div>
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    下の座標平面に、点A・B・C・Dと、点E・点Fがあります。
+    <div class="figrow">
+    <svg class="fig" width="300" height="300" viewBox="0 0 300 300" aria-label="点A〜Fをのせた座標平面">
+      <!-- grid 1unit=22px, origin at (150,150), range -6..6 -->
+      <!-- vertical grid -->
+      <line x1="18" y1="18" x2="18" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="40" y1="18" x2="40" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="62" y1="18" x2="62" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="84" y1="18" x2="84" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="106" y1="18" x2="106" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="128" y1="18" x2="128" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="172" y1="18" x2="172" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="194" y1="18" x2="194" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="216" y1="18" x2="216" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="238" y1="18" x2="238" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="260" y1="18" x2="260" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="282" y1="18" x2="282" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <!-- horizontal grid -->
+      <line x1="18" y1="18" x2="282" y2="18" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="40" x2="282" y2="40" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="62" x2="282" y2="62" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="84" x2="282" y2="84" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="106" x2="282" y2="106" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="128" x2="282" y2="128" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="172" x2="282" y2="172" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="194" x2="282" y2="194" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="216" x2="282" y2="216" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="238" x2="282" y2="238" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="260" x2="282" y2="260" stroke="#f0f0ec" stroke-width="1"/>
+      <!-- axes -->
+      <line x1="14" y1="150" x2="286" y2="150" stroke="#555" stroke-width="1.6"/>
+      <line x1="150" y1="286" x2="150" y2="14" stroke="#555" stroke-width="1.6"/>
+      <!-- axis arrows -->
+      <polygon points="286,150 279,147 279,153" fill="#555"/>
+      <polygon points="150,14 147,21 153,21" fill="#555"/>
+      <!-- scale ticks numbers -->
+      <text x="170" y="163" font-size="9" fill="#888">1</text>
+      <text x="258" y="163" font-size="9" fill="#888">5</text>
+      <text x="103" y="163" font-size="9" fill="#888">-2</text>
+      <text x="33" y="163" font-size="9" fill="#888">-5</text>
+      <text x="155" y="130" font-size="9" fill="#888">1</text>
+      <text x="155" y="46" font-size="9" fill="#888">5</text>
+      <text x="155" y="200" font-size="9" fill="#888">-2</text>
+      <text x="155" y="262" font-size="9" fill="#888">-5</text>
+      <text x="138" y="145" font-size="10" fill="#666">O</text>
+      <text x="270" y="146" font-size="10" fill="#444">x</text>
+      <text x="156" y="24" font-size="10" fill="#444">y</text>
+      <!-- A(3,2): x=150+3*22=216, y=150-2*22=106 -->
+      <circle cx="216" cy="106" r="4" fill="#2f5a8a"/><text x="221" y="102" font-size="12" font-weight="700" fill="#2f5a8a">A</text>
+      <!-- B(-2,3): x=150-44=106, y=150-66=84 -->
+      <circle cx="106" cy="84" r="4" fill="#8a5a17"/><text x="92" y="80" font-size="12" font-weight="700" fill="#8a5a17">B</text>
+      <!-- C(-3,-2): x=84, y=194 -->
+      <circle cx="84" cy="194" r="4" fill="#2f6a5c"/><text x="70" y="208" font-size="12" font-weight="700" fill="#2f6a5c">C</text>
+      <!-- D(2,-3): x=194, y=216 -->
+      <circle cx="194" cy="216" r="4" fill="#5f4a8a"/><text x="199" y="229" font-size="12" font-weight="700" fill="#5f4a8a">D</text>
+      <!-- E(-4,0) on x-axis: x=62, y=150 -->
+      <circle cx="62" cy="150" r="4" fill="#a85a2a"/><text x="50" y="166" font-size="12" font-weight="700" fill="#a85a2a">E</text>
+      <!-- F(0,-3) on y-axis: x=150, y=216 -->
+      <circle cx="150" cy="216" r="4" fill="#a04f78"/><text x="156" y="222" font-size="12" font-weight="700" fill="#a04f78">F</text>
+      <!-- helper for A -->
+      <line x1="216" y1="150" x2="216" y2="106" stroke="#bcd3ee" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="150" y1="106" x2="216" y2="106" stroke="#bcd3ee" stroke-width="1" stroke-dasharray="3 3"/>
+    </svg>
+    </div>
+    <span class="lead">問1</span>(1) 点A の座標を答えなさい。<br>
+    <span class="lead">問1</span>(2) 点E と 点F は、それぞれ x軸・y軸 のどちらの上にありますか。</div>
+  <div class="note-draw">グラフと図から読み取れることを、ノートに書き出そう。どんな順番で求めるかは自分で組み立てよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai"><ul>
+      <li><b>座標 (x, y)</b> ＝ (横, たて)。横が先・たてが後。「右にいくつ進む・上にいくつ上がる」。</li>
+      <li><b>x軸</b>＝横の線（左右）。<b>y軸</b>＝たての線（上下）。交わる点が<b>原点O＝(0,0)</b>。</li>
+      <li>右がx＋、左がx−。上がy＋、下がy−。</li>
+      <li><b>x軸の上の点はy座標が0</b>（高さ0）。<b>y軸の上の点はx座標が0</b>（横にずれていない）。</li>
+    </ul></div>
+    <div class="bx bx-say">「点Aの座標は？」＝「原点から右に何マス・上に何マス進んだ所にAがあるか」を、横・たての順に数字で言ってね、ということ。</div>
+    <div class="bx bx-have">わかっていること：図に点Aがある。求めるもの：(1) Aの横と高さ（x, y）／(2) E と F が、横の線・たての線どちらの上にあるか。</div>
+    <div class="bx bx-img">原点Oから点Aへ「右に3マス、上に2マス」で着く。EはOから真横（左）に4で高さは0。FはOから真下に3で横ずれは0。横ずれ0＝たての線（y軸）の上、高さ0＝横の線（x軸）の上。</div>
+    <div class="bx bx-plan">作戦：点から「ゆか（x軸）にまっすぐ下ろした足の数字」がx、「かべ（y軸）にまっすぐ寄せた数字」がy。たとえ話＝映画館の席。「列（横）→番号（たて）」の順で言うのと同じ。横が先。</div>
+    <div class="step q1"><span>(1) 横</span>点Aから真下にたどると、x軸の<span class="math">3</span>に着く（原点より右だから ＋3）。→ x＝3。</div>
+    <div class="step q1"><span>(1) たて</span>点Aから真横（左）にたどると、y軸の<span class="math">2</span>に着く（原点より上だから ＋2）。→ y＝2。</div>
+    <div class="step q1"><span>(1) 書く</span>横が先・たてが後なので <span class="math">A(3, 2)</span>。</div>
+    <div class="step q1"><span>(2) 点E</span>Eは横の線（左右の線）の上にちょうどのっていて、上下にずれていない＝高さ0。よって <span class="math">x軸の上</span>（E は (−4, 0)）。</div>
+    <div class="step q1"><span>(2) 点F</span>Fはたての線（上下の線）の上にのっていて、左右にずれていない＝横ずれ0。よって <span class="math">y軸の上</span>（F は (0, −3)）。</div>
+    <div class="bx bx-warn"><span class="red">(横, たて) の順をぜったいに逆にしない</span>。A(3,2) を A(2,3) と書くと別の点になる（B のことになってしまう）。<span class="red">「軸の名前」を取りちがえない</span>：x軸＝横の線、y軸＝たての線。<span class="red">「x軸の上の点」は y=0、「y軸の上の点」は x=0</span>（0 を書きわすれない）。</div>
+    <div class="bx bx-check">検算：A(3,2) を逆に「右に3・上に2」とたどって、図のAに着けば正解○。次に見ぬくコツ＝点が軸の上にぴったりのっていたら、もう片方の座標は必ず0。「x軸の上→y=0／y軸の上→x=0」をセットで覚える。</div>
+    <div class="bx bx-link">9月特訓選抜の関数領域は、まずこの「座標を正しく読む・書く」が土台。ここがズレると比例の式 y=ax も全部ズレる。座標が読めれば、問2・問3のグラフ読み取りがそのまま得点になる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) A(3, 2)　(2) E は x軸の上／F は y軸の上</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q01a"><div class="grade"><span class="gq-label">問1(1) Aの座標</span>○✕ → <button class="o" onclick="g(this,'q01a','o')">○</button><button class="x" onclick="g(this,'q01a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、原点から「右に3・上に2」と矢印つきでノートに書こう</div></div>
+  <div class="gq" data-gid="q01b"><div class="grade"><span class="gq-label">問1(2) E・Fの軸</span>○✕ → <button class="o" onclick="g(this,'q01b','o')">○</button><button class="x" onclick="g(this,'q01b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、E(−4,0) と F(0,−3) の「0の場所」をノートに書こう</div></div>
+</div>
+
+<!-- ===== 問2 比例 y=ax 表とグラフ L3 ===== -->
+<div class="unit-banner"><span class="unit-num">問2</span><span class="unit-name">比例 y=ax（表・グラフから a を求める）L3</span><span class="unit-time">目安 7分</span></div>
+<details class="tool-hint"><summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+<div>比例は y＝ax（a＝y÷x）</div></details>
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    y は x に比例していて、下の表とグラフのような関係です。
+    <table class="dtbl">
+      <tr><th>x</th><td>1</td><td>2</td><td>3</td><td>4</td></tr>
+      <tr><th>y</th><td>3</td><td>6</td><td>9</td><td>12</td></tr>
+    </table>
+    <div class="figrow">
+    <svg class="fig" width="300" height="230" viewBox="0 0 300 230" aria-label="y=3x のグラフ（第1象限）">
+      <!-- first quadrant, x:0..6 step 22 from x=45; y:0..14 step ~14 from bottom y=190 -->
+      <!-- x scale: 1unit=35px from 45. points: x=1->80, x=2->115, x=3->150 -->
+      <!-- y scale: 1unit=12px from 190. y=3->154, y=6->118, y=9->82, y=12->46 -->
+      <!-- grid vertical -->
+      <line x1="80" y1="195" x2="80" y2="20" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="115" y1="195" x2="115" y2="20" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="150" y1="195" x2="150" y2="20" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="185" y1="195" x2="185" y2="20" stroke="#f0f0ec" stroke-width="1"/>
+      <!-- grid horizontal at y=3,6,9,12 -->
+      <line x1="45" y1="154" x2="255" y2="154" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="45" y1="118" x2="255" y2="118" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="45" y1="82" x2="255" y2="82" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="45" y1="46" x2="255" y2="46" stroke="#f0f0ec" stroke-width="1"/>
+      <!-- axes -->
+      <line x1="45" y1="190" x2="262" y2="190" stroke="#555" stroke-width="1.6"/>
+      <line x1="45" y1="195" x2="45" y2="16" stroke="#555" stroke-width="1.6"/>
+      <polygon points="262,190 255,187 255,193" fill="#555"/>
+      <polygon points="45,16 42,23 48,23" fill="#555"/>
+      <!-- line y=3x from (0,0)->(6,18 offscreen); draw to x=5 (y=15 -> y px=190-15*12=10) clip to x=5.8 -->
+      <!-- use (0,0)=(45,190) to (5,15)=(220,10) -->
+      <polyline points="45,190 220,10" fill="none" stroke="#e0a85c" stroke-width="2.6"/>
+      <!-- mark (2,6)=(115,118) -->
+      <circle cx="115" cy="118" r="4" fill="#8a5a17"/>
+      <line x1="115" y1="190" x2="115" y2="118" stroke="#eccf9a" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="118" x2="115" y2="118" stroke="#eccf9a" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- labels -->
+      <text x="33" y="194" font-size="10" fill="#666">O</text>
+      <text x="248" y="186" font-size="10" fill="#444">x</text>
+      <text x="50" y="26" font-size="10" fill="#444">y</text>
+      <text x="76" y="204" font-size="10" fill="#666">1</text>
+      <text x="111" y="204" font-size="10" fill="#666">2</text>
+      <text x="146" y="204" font-size="10" fill="#666">3</text>
+      <text x="181" y="204" font-size="10" fill="#666">4</text>
+      <text x="30" y="158" font-size="10" fill="#666">3</text>
+      <text x="30" y="122" font-size="10" fill="#666">6</text>
+      <text x="30" y="86" font-size="10" fill="#666">9</text>
+      <text x="27" y="50" font-size="10" fill="#666">12</text>
+    </svg>
+    </div>
+    <span class="lead">問2</span>(1) y を x の式で表しなさい（y＝□ の形）。<br>
+    <span class="lead">問2</span>(2) x＝5 のときの y の値を求めなさい。</div>
+  <div class="note-draw">グラフと図から読み取れることを、ノートに書き出そう。どんな順番で求めるかは自分で組み立てよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">「y は x に比例」＝「x が2倍・3倍になると、y もきっちり2倍・3倍になる」関係。式は必ず <span class="math">y＝ax</span> の形（原点を通るまっすぐな線）。a を1つ決めれば式が完成する。</div>
+    <div class="bx bx-have">わかっていること：表（x=2 のとき y=6 など）とグラフ（原点を通る直線）。求めるもの：(1) y=ax の a／(2) x=5 のときの y。</div>
+    <div class="bx bx-img">グラフは原点(0,0)から右上にまっすぐ。点(2,6)を通っている。原点を通る直線＝比例のしるし。a は「x が1ふえると y がいくつふえるか」の段差のこと。</div>
+    <div class="bx bx-plan">作戦：a＝y÷x。表のどの組でも同じ値になる（それが比例の証拠）。たとえ話＝1個3円のあめ。x個でy円なら y=3x。1個あたりの値段3が、まさに a。だから a＝代金÷個数＝y÷x。</div>
+    <div class="bx-key bx">a＝y÷x は丸暗記ではない。y＝ax の両がわを x で割ると a＝y÷x になる。意味は「x 1つあたりの y の増え方」。</div>
+    <div class="step q2"><span>(1) a</span>表より x＝2 のとき y＝6。a＝y÷x＝6÷2＝<span class="math">3</span>。（x＝1で3、x＝3で9…どの組も y÷x＝3 で一致）</div>
+    <div class="step q2"><span>(1) 式</span>a＝3 だから <span class="math">y＝3x</span>。グラフでも点(2,6)を通っていて合う。</div>
+    <div class="step q2"><span>(2) 代入</span>y＝3x の x に5を入れる：y＝3×5＝<span class="math">15</span>。</div>
+    <div class="step q2"><span>検算</span>x＝4 のとき y＝3×4＝12（表と一致○）。x＝5 はそのとなりだから y＝15 で自然。</div>
+    <div class="bx bx-warn"><span class="red">a を x÷y（逆）で計算しない</span>。a＝y÷x（たて÷横）。<span class="red">y＝x＋3 のように「たし算」にしない</span>＝比例はかけ算 y=ax。x=0 のとき y=0 になるのが比例（原点を通る）。たし算の式だと x=0 で y=3 になってしまい、原点を通らない＝比例ではない。<span class="red">(2) で式を作らず勘で答えない</span>。必ず y＝3x に代入する。</div>
+    <div class="bx bx-check">検算：作った式に表の別の x を入れて、表の y と合うか確かめる（x=3→9 ○）。次に見ぬくコツ＝「比例だ」と言われたら反射で y=ax と書き、a＝y÷x を1組で出す。これで関数の前半は全部解ける。</div>
+    <div class="bx bx-link">9月特訓選抜の関数領域の中心。「表・グラフ → y=ax の式を作る」は配点が大きい定番。ここで a＝y÷x の意味をつかんでおくと、問3（点が通るか判定）も同じ式で解ける。</div>
+    <div class="ans-final"><span>こたえ</span>(1) y＝3x　(2) y＝15</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q02a"><div class="grade"><span class="gq-label">問2(1) 式 y=ax</span>○✕ → <button class="o" onclick="g(this,'q02a','o')">○</button><button class="x" onclick="g(this,'q02a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、a＝y÷x＝6÷2＝3 をノートに書こう</div></div>
+  <div class="gq" data-gid="q02b"><div class="grade"><span class="gq-label">問2(2) x=5のy</span>○✕ → <button class="o" onclick="g(this,'q02b','o')">○</button><button class="x" onclick="g(this,'q02b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、y＝3×5＝15 をノートに書こう</div></div>
+</div>
+
+<!-- ===== 問3 グラフから式を作り点を通るか判定 L3-L4 ===== -->
+<div class="unit-banner"><span class="unit-num">問3</span><span class="unit-name">★グラフから比例の式を作り、ある点を通るか判定 L3-L4</span><span class="unit-time">目安 9分</span></div>
+<details class="tool-hint"><summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+<div>比例は y＝ax（a＝y÷x）</div></details>
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    下のグラフは、ある比例 y＝ax を表しています。このグラフは点 (3, −6) を通っています。
+    <div class="figrow">
+    <svg class="fig" width="300" height="300" viewBox="0 0 300 300" aria-label="y=-2x のグラフ（原点を通り右下がり）">
+      <!-- 4-quadrant, 1unit=22px, origin(150,150), x range -6..6, y -6..6 -->
+      <!-- vertical grid -->
+      <line x1="40" y1="18" x2="40" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="62" y1="18" x2="62" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="84" y1="18" x2="84" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="106" y1="18" x2="106" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="128" y1="18" x2="128" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="172" y1="18" x2="172" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="194" y1="18" x2="194" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="216" y1="18" x2="216" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="238" y1="18" x2="238" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="260" y1="18" x2="260" y2="282" stroke="#f0f0ec" stroke-width="1"/>
+      <!-- horizontal grid -->
+      <line x1="18" y1="40" x2="282" y2="40" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="62" x2="282" y2="62" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="84" x2="282" y2="84" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="106" x2="282" y2="106" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="128" x2="282" y2="128" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="172" x2="282" y2="172" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="194" x2="282" y2="194" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="216" x2="282" y2="216" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="238" x2="282" y2="238" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="18" y1="260" x2="282" y2="260" stroke="#f0f0ec" stroke-width="1"/>
+      <!-- axes -->
+      <line x1="14" y1="150" x2="286" y2="150" stroke="#555" stroke-width="1.6"/>
+      <line x1="150" y1="286" x2="150" y2="14" stroke="#555" stroke-width="1.6"/>
+      <polygon points="286,150 279,147 279,153" fill="#555"/>
+      <polygon points="150,14 147,21 153,21" fill="#555"/>
+      <!-- line y=-2x: through (-3,6)=(84,18) and (3,-6)=(216,282) -->
+      <polyline points="84,18 216,282" fill="none" stroke="#5fa89a" stroke-width="2.6"/>
+      <!-- mark (3,-6) -->
+      <circle cx="216" cy="282" r="4" fill="#2f6a5c"/>
+      <line x1="216" y1="150" x2="216" y2="282" stroke="#aed8cf" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="150" y1="282" x2="216" y2="282" stroke="#aed8cf" stroke-width="1" stroke-dasharray="3 3"/>
+      <text x="200" y="296" font-size="10" font-weight="700" fill="#2f6a5c">(3,-6)</text>
+      <!-- labels -->
+      <text x="138" y="145" font-size="10" fill="#666">O</text>
+      <text x="270" y="146" font-size="10" fill="#444">x</text>
+      <text x="156" y="24" font-size="10" fill="#444">y</text>
+      <text x="170" y="163" font-size="9" fill="#888">1</text>
+      <text x="258" y="163" font-size="9" fill="#888">5</text>
+      <text x="82" y="163" font-size="9" fill="#888">-3</text>
+      <text x="155" y="130" font-size="9" fill="#888">1</text>
+      <text x="155" y="92" font-size="9" fill="#888">3</text>
+      <text x="155" y="200" font-size="9" fill="#888">-2</text>
+    </svg>
+    </div>
+    <span class="lead">問3</span>(1) このグラフの式 y＝ax を求めなさい。<br>
+    <span class="lead">問3</span>(2) このグラフは 点P(−4, 8) を通りますか。式を使って確かめなさい。</div>
+  <div class="note-draw">グラフと図から読み取れることを、ノートに書き出そう。どんな順番で求めるかは自分で組み立てよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">「グラフの式を求める」＝「このまっすぐな線を表す y＝ax の a を1つ決める」こと。「点Pを通るか」＝「点Pがこの線の上にちょうどのっているか」。式に入れて確かめれば、目で見なくても判定できる。</div>
+    <div class="bx bx-have">わかっていること：原点を通る直線で、点(3,−6)を通る。求めるもの：(1) y=ax の式／(2) 点P(−4,8)がこの線上か（通る／通らない）。</div>
+    <div class="bx bx-img">線は原点から右下へ下がっている（右に行くほど下がる＝a がマイナス）。点(3,−6)は「右に3・下に6」の所。右下がりの比例は a が負の数になる。</div>
+    <div class="bx bx-plan">作戦：①通る1点で a＝y÷x（マイナスもそのまま割る）→ 式完成。②判定は「点Pの x を式に代入 → 出た y が点Pの y と一致するか」。たとえ話＝合言葉チェック。線の式が合言葉。点Pがその合言葉を満たせば「仲間（線の上）」、外れれば「通らない」。</div>
+    <div class="step q3"><span>(1) a</span>通る点(3,−6)を使う。a＝y÷x＝(−6)÷3＝<span class="math">−2</span>。（右下がりなので a がマイナスで合う）</div>
+    <div class="step q3"><span>(1) 式</span>a＝−2 だから <span class="math">y＝−2x</span>。</div>
+    <div class="step q3"><span>(2) 代入</span>点Pの x＝−4 を式に入れる：y＝−2×(−4)＝<span class="math">8</span>。（マイナス×マイナス＝プラス）</div>
+    <div class="step q3"><span>(2) 判定</span>計算した y＝8 と、点Pの y＝8 が<span class="math">一致</span>。だから点Pは線の上にある＝<span class="math">通る</span>。</div>
+    <div class="step q3"><span>検算</span>もう1点で確認：x＝1 のとき y＝−2、x＝−1 のとき y＝2。原点も(0,0)で y＝−2×0＝0○。すべて線の上。</div>
+    <div class="bx bx-warn"><span class="red">a＝y÷x のとき符号を落とさない</span>：(−6)÷3＝−2（マイナスのまま）。<span class="red">−2×(−4) を −8 にしない</span>＝マイナス×マイナスは＋。だから＋8。<span class="red">「通るか」は見た目で決めず、必ず式に代入して数で確かめる</span>。代入した y と点の y が同じ→通る、ちがう→通らない。</div>
+    <div class="bx bx-check">検算：出した式に「グラフが確かに通る別の点」を入れて成り立つか見る（x=−3→y=6、図の点と一致○）。次に見ぬくコツ＝点が線上かは「x を入れて y が合うか」だけで判定できる。グラフが無くても、式さえあれば通る・通らないが分かる。</div>
+    <div class="bx bx-link">9月特訓選抜の関数領域では「グラフ→式→点の判定」が一連で問われる。a の符号（右上がり＝＋／右下がり＝−）と、代入による点判定は、2年の一次関数 y=ax+b へそのまま続く最重要スキル。</div>
+    <div class="ans-final"><span>こたえ</span>(1) y＝−2x　(2) y＝−2×(−4)＝8 で点Pの y と一致 → 通る</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q03a"><div class="grade"><span class="gq-label">問3(1) 式</span>○✕ → <button class="o" onclick="g(this,'q03a','o')">○</button><button class="x" onclick="g(this,'q03a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、a＝(−6)÷3＝−2 をノートに書こう</div></div>
+  <div class="gq" data-gid="q03b"><div class="grade"><span class="gq-label">問3(2) 点P判定★L4</span>○✕ → <button class="o" onclick="g(this,'q03b','o')">○</button><button class="x" onclick="g(this,'q03b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、y＝−2×(−4)＝8、8＝8 だから通る、をノートに書こう</div></div>
+</div>
+
+<!-- ===== 問4 比例の文章＋グラフ（速さ・量） L3-L4 ===== -->
+<div class="unit-banner"><span class="unit-num">問4</span><span class="unit-name">比例の文章＋グラフ（速さ・進んだ道のり）L3-L4</span><span class="unit-time">目安 8分</span></div>
+<details class="tool-hint"><summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+<div>比例は y＝ax（a＝y÷x）</div></details>
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    一定の速さで歩く人がいます。歩いた時間を x 分、進んだ道のりを y m とすると、y は x に比例します。下のグラフは、その関係を表したものです（グラフは点 (4, 240) を通っています）。
+    <div class="figrow">
+    <svg class="fig" width="320" height="230" viewBox="0 0 320 230" aria-label="道のり=60×時間 のグラフ">
+      <!-- first quadrant. x:0..7 step 30 from 45. x=4->165. y:0..420 step. y per 60 = 24px from y190. 240 -> 190-4*24=94? use 60->166,120->142,180->118,240->94,300->70,360->46,420->22 -->
+      <!-- x scale 1min=30px: 1->75,2->105,3->135,4->165,5->195,6->225,7->255 -->
+      <!-- y scale 60m=24px from 190 -->
+      <line x1="75" y1="195" x2="75" y2="18" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="105" y1="195" x2="105" y2="18" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="135" y1="195" x2="135" y2="18" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="165" y1="195" x2="165" y2="18" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="195" y1="195" x2="195" y2="18" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="225" y1="195" x2="225" y2="18" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="255" y1="195" x2="255" y2="18" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="45" y1="166" x2="285" y2="166" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="45" y1="142" x2="285" y2="142" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="45" y1="118" x2="285" y2="118" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="45" y1="94" x2="285" y2="94" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="45" y1="70" x2="285" y2="70" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="45" y1="46" x2="285" y2="46" stroke="#f0f0ec" stroke-width="1"/>
+      <line x1="45" y1="22" x2="285" y2="22" stroke="#f0f0ec" stroke-width="1"/>
+      <!-- axes -->
+      <line x1="45" y1="190" x2="292" y2="190" stroke="#555" stroke-width="1.6"/>
+      <line x1="45" y1="195" x2="45" y2="14" stroke="#555" stroke-width="1.6"/>
+      <polygon points="292,190 285,187 285,193" fill="#555"/>
+      <polygon points="45,14 42,21 48,21" fill="#555"/>
+      <!-- line y=60x: (0,0)=(45,190) to (6,360)=(225,46) -->
+      <polyline points="45,190 225,46" fill="none" stroke="#3f6f9f" stroke-width="2.6"/>
+      <!-- mark (4,240)=(165,94) -->
+      <circle cx="165" cy="94" r="4" fill="#2f5a8a"/>
+      <line x1="165" y1="190" x2="165" y2="94" stroke="#bcd3ee" stroke-width="1" stroke-dasharray="3 3"/>
+      <line x1="45" y1="94" x2="165" y2="94" stroke="#bcd3ee" stroke-width="1" stroke-dasharray="3 3"/>
+      <!-- labels -->
+      <text x="48" y="13" font-size="11" fill="#444">道のり y(m)</text>
+      <text x="294" y="194" font-size="11" fill="#444">時間 x(分)</text>
+      <text x="33" y="194" font-size="10" fill="#666">O</text>
+      <text x="72" y="204" font-size="10" fill="#666">1</text>
+      <text x="132" y="204" font-size="10" fill="#666">3</text>
+      <text x="162" y="204" font-size="10" fill="#666">4</text>
+      <text x="252" y="204" font-size="10" fill="#666">7</text>
+      <text x="20" y="170" font-size="10" fill="#666">60</text>
+      <text x="14" y="98" font-size="10" fill="#666">240</text>
+      <text x="14" y="50" font-size="10" fill="#666">360</text>
+    </svg>
+    </div>
+    <span class="lead">問4</span>(1) y を x の式で表しなさい（分速何mで歩くかも答えなさい）。<br>
+    <span class="lead">問4</span>(2) この人が 7分間 歩くと、進む道のりは何mですか。</div>
+  <div class="note-draw">グラフと図から読み取れることを、ノートに書き出そう。どんな順番で求めるかは自分で組み立てよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">「一定の速さ」＝ずっと同じペースで歩く＝時間が2倍になれば道のりも2倍。だから道のりは時間に比例し、式は y＝ax。この a が「1分あたり進む道のり＝分速」になる。</div>
+    <div class="bx bx-have">わかっていること：原点を通る直線で、点(4,240)を通る（4分で240m）。求めるもの：(1) y=ax の式と分速／(2) 7分で進む道のり。</div>
+    <div class="bx bx-img">グラフは原点から右上へまっすぐ。4分の所で道のり240m。1分あたりの増え方（傾き）が分速そのもの。</div>
+    <div class="bx bx-plan">作戦：a＝y÷x＝道のり÷時間＝速さ。式ができたら x に7を代入。たとえ話＝1分3円ずつ貯金。x分でy円なら y=3x。比例の a は「1分あたりの量」。ここでは1分あたりの道のり＝分速。</div>
+    <div class="bx bx-key bx">分速を a として y＝ax と書ける理由：道のり＝速さ×時間。速さが一定なら、これは y＝(速さ)×x の形＝まさに比例 y＝ax。a＝速さ＝y÷x。</div>
+    <div class="step q4"><span>(1) a</span>グラフの点(4分, 240m)を使う。a＝y÷x＝240÷4＝<span class="math">60</span>。つまり分速60m。</div>
+    <div class="step q4"><span>(1) 式</span>a＝60 だから <span class="math">y＝60x</span>（分速60mで歩く）。</div>
+    <div class="step q4"><span>(2) 代入</span>7分なので x＝7 を入れる：y＝60×7＝<span class="math">420m</span>。</div>
+    <div class="step q4"><span>検算</span>分速60mなら、4分で60×4＝240m（グラフと一致○）。7分はその先で、6分の所がグラフの上端360mだから、420mはその少し上で自然○。</div>
+    <div class="bx bx-warn"><span class="red">分速を出すとき 4÷240 と逆に割らない</span>＝速さ＝道のり÷時間＝240÷4＝60。<span class="red">(2) で「240＋60」のようにたさない</span>＝必ず y＝60x に7を代入してかけ算する。<span class="red">単位を消さない</span>：a は「m/分（分速）」、y は「m（道のり）」。聞かれた単位で答える。</div>
+    <div class="bx bx-check">検算：作った式 y＝60x に、グラフの別の点(1分→60m, 3分→180m)を入れて合うか確認。次に見ぬくコツ＝文章に「一定の速さ／一定の割合」と出たら比例 y=ax。a＝量÷時間（速さ・毎分の割合）で出し、知りたい時間を代入する。</div>
+    <div class="bx bx-link">9月特訓選抜の関数・速さ領域の土台。「速さ＝道のり÷時間」を a＝y÷x として比例でとらえると、後の一次関数・速さのグラフ（ダイヤグラム）まで一本の考え方でつながる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) y＝60x（分速60m）　(2) 420m</div>
+      <div class="tec-link">型：<b>水そう・グラフ型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c7" target="_blank">マル秘テクニック集 第7章</a></div>
+  </div>
+  <div class="gq" data-gid="q04a"><div class="grade"><span class="gq-label">問4(1) 式・分速</span>○✕ → <button class="o" onclick="g(this,'q04a','o')">○</button><button class="x" onclick="g(this,'q04a','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、a＝240÷4＝60、y＝60x をノートに書こう</div></div>
+  <div class="gq" data-gid="q04b"><div class="grade"><span class="gq-label">問4(2) 7分の道のり</span>○✕ → <button class="o" onclick="g(this,'q04b','o')">○</button><button class="x" onclick="g(this,'q04b','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、y＝60×7＝420 をノートに書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P10e 比例と座標・グラフ 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">4問おつかれさま！今日のいちばんの収穫は<strong>「座標は(横,たて)・比例は原点を通る線・a＝y÷x」</strong>の3つ。座標が読めて、a＝y÷x の意味（x 1つあたりの y の増え方）がつかめれば、式づくりも点の判定も全部つながる。まちがえた問題は、使った2つの数と「÷」「代入」の式をノートに書き直そう。関数の入口、確実に進んでいる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m10e';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！比例と座標・グラフ クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+
+<script id="a16-recovery-hook-math-v1">
+(function(){
+'use strict';
+var MAP={"q01a":{"jp":"比例と座標・グラフ｜座標を読む → 比例の式 y=ax を作る → 点が通るか見ぬく / 問1(1) Aの座標: 下の座標平面に、点A・B・C・Dと、点E・点Fがあります。 1 5 -2 -5 1 5 -2 -5 O x y A B C D E F 問1 (1) 点A の座標を答えなさい。 問1 (2) 点E と 点F は、それぞれ x軸・y軸 のどちらの上にありますか。","en":"A(3, 2)"},"q01b":{"jp":"比例と座標・グラフ｜座標を読む → 比例の式 y=ax を作る → 点が通るか見ぬく / 問1(2) E・Fの軸: 下の座標平面に、点A・B・C・Dと、点E・点Fがあります。 1 5 -2 -5 1 5 -2 -5 O x y A B C D E F 問1 (1) 点A の座標を答えなさい。 問1 (2) 点E と 点F は、それぞれ x軸・y軸 のどちらの上にありますか。","en":"E は x軸の上／F は y軸の上"},"q02a":{"jp":"比例と座標・グラフ｜座標を読む → 比例の式 y=ax を作る → 点が通るか見ぬく / 問2(1) 式 y=ax: y は x に比例していて、下の表とグラフのような関係です。 x 1 2 3 4 y 3 6 9 12 O x y 1 2 3 4 3 6 9 12 問2 (1) y を x の式で表しなさい（y＝□ の形）。 問2 (2) x＝5 のときの y の値を求めなさい。","en":"y＝3x"},"q02b":{"jp":"比例と座標・グラフ｜座標を読む → 比例の式 y=ax を作る → 点が通るか見ぬく / 問2(2) x=5のy: y は x に比例していて、下の表とグラフのような関係です。 x 1 2 3 4 y 3 6 9 12 O x y 1 2 3 4 3 6 9 12 問2 (1) y を x の式で表しなさい（y＝□ の形）。 問2 (2) x＝5 のときの y の値を求めなさい。","en":"y＝15"},"q03a":{"jp":"比例と座標・グラフ｜座標を読む → 比例の式 y=ax を作る → 点が通るか見ぬく / 問3(1) 式: 下のグラフは、ある比例 y＝ax を表しています。このグラフは点 (3, −6) を通っています。 (3,-6) O x y 1 5 -3 1 3 -2 問3 (1) このグラフの式 y＝ax を求めなさい。 問3 (2) このグラフは 点P(−4, 8) を通りますか。式を使って確かめなさい。","en":"y＝−2x"},"q03b":{"jp":"比例と座標・グラフ｜座標を読む → 比例の式 y=ax を作る → 点が通るか見ぬく / 問3(2) 点P判定★L4: 下のグラフは、ある比例 y＝ax を表しています。このグラフは点 (3, −6) を通っています。 (3,-6) O x y 1 5 -3 1 3 -2 問3 (1) このグラフの式 y＝ax を求めなさい。 問3 (2) このグラフは 点P(−4, 8) を通りますか。式を使って確かめなさい。","en":"y＝−2×(−4)＝8 で点Pの y と一致 → 通る"},"q04a":{"jp":"比例と座標・グラフ｜座標を読む → 比例の式 y=ax を作る → 点が通るか見ぬく / 問4(1) 式・分速: 一定の速さで歩く人がいます。歩いた時間を x 分、進んだ道のりを y m とすると、y は x に比例します。下のグラフは、その関係を表したものです（グラフは点 (4, 240) を通っています）。 道のり y(m) 時間 x(分) O 1 3 4 7 60 240 360 問4 (1) y を x の式で表しなさい（分速何mで歩くかも答えなさい）。 問4 (2) この人が 7分間 歩くと、進む道のりは何mですか。","en":"y＝60x（分速60m）"},"q04b":{"jp":"比例と座標・グラフ｜座標を読む → 比例の式 y=ax を作る → 点が通るか見ぬく / 問4(2) 7分の道のり: 一定の速さで歩く人がいます。歩いた時間を x 分、進んだ道のりを y m とすると、y は x に比例します。下のグラフは、その関係を表したものです（グラフは点 (4, 240) を通っています）。 道のり y(m) 時間 x(分) O 1 3 4 7 60 240 360 問4 (1) y を x の式で表しなさい（分速何mで歩くかも答えなさい）。 問4 (2) この人が 7分間 歩くと、進む道のりは何mですか。","en":"420m"}}, DYN='revmq_dyn';
+function today(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function save(btn,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    var gq=btn.closest('.gq'), id=gq&&gq.dataset?gq.dataset.gid:'';
+    var rec=MAP[id]; if(!id||!rec)return;
+    var src=KEY+'_'+id, raw=localStorage.getItem(DYN), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;localStorage.setItem(DYN,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=today();hit.jp=rec.jp;hit.en=rec.en;}
+    else{arr.push({src:src,jp:rec.jp,en:rec.en,kind:'数学',badge:'suchoku',day:today(),po:0,px:1});}
+    localStorage.setItem(DYN,JSON.stringify(arr));
+  }catch(e){}
+}
+document.addEventListener('click',function(ev){
+  var b=ev.target&&ev.target.closest?ev.target.closest('button.o,button.x'):null; if(!b)return;
+  setTimeout(function(){if(!b.classList.contains('sel'))return;save(b,b.classList.contains('x')?'x':'o');},0);
+});
+})();
+</script>
+</body>
+</html>

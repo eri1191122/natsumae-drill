@@ -1,0 +1,557 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中1夏前 英語プリント 問題インデックス台帳</title>
+<style>
+  :root{
+    --bg:#f7f8f5; --ink:#263238; --sub:#4c5b70;
+    --card:#ffffff; --line:#e2e7df;
+    --hd-bg:#e8edf7; --hd-bd:#c8d4e6; --hd-ink:#25324a;
+    --accent:#3f6f9f;
+    /* カテゴリ色（英語8カテゴリ） */
+    --c-tango:#8aa6cf;   --c-tango-s:#e6edf7;  --c-tango-i:#3a5687;
+    --c-jukugo:#91bdb7;  --c-jukugo-s:#e4f1ef; --c-jukugo-i:#33635d;
+    --c-eisaku:#d8a09a;  --c-eisaku-s:#f7e6e4; --c-eisaku-i:#8a4f49;
+    --c-bunpo:#8fae8a;   --c-bunpo-s:#e7f1e6;  --c-bunpo-i:#3d6b3e;
+    --c-kakikae:#d8b27c; --c-kakikae-s:#f6eadb;--c-kakikae-i:#80592a;
+    --c-narabe:#c79bc2;  --c-narabe-s:#f1e6f0; --c-narabe-i:#6e4a6a;
+    --c-chobun:#b08fc0;  --c-chobun-s:#efe6f4; --c-chobun-i:#5e3f72;
+    --c-sogo:#9aa3ad;    --c-sogo-s:#eceff2;   --c-sogo-i:#4a525c;
+    --hole:#f6d3cf;      --hole-bd:#e3a8a2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6; padding:18px 16px 80px; font-size:16px;}
+  .wrap{width:100%; max-width:1180px; margin:0 auto;}
+
+  /* ダッシュボードへ戻る（両ダッシュボード・同階層） */
+  .dashlinks{display:flex; flex-wrap:wrap; gap:9px; margin-bottom:14px;}
+  .dashlink{display:inline-flex; align-items:center; gap:7px; background:#fff; border:1px solid var(--hd-bd);
+    border-radius:24px; padding:10px 16px; font-size:13.5px; font-weight:800; color:var(--hd-ink);
+    text-decoration:none; min-height:44px;}
+  .dashlink:active{transform:scale(.97);}
+  .dashlink .ar{font-weight:900; color:var(--accent);}
+
+  /* ヘッダ */
+  .pg-hd{background:var(--hd-bg); border:1px solid var(--hd-bd); border-radius:14px; padding:22px 24px; margin-bottom:16px;}
+  .pg-hd .badge{display:inline-block; background:#dbe7f3; color:#31415f; font-size:12px; font-weight:800; padding:3px 12px; border:1px solid #c3d4e7; border-radius:18px; margin-bottom:10px;}
+  .pg-hd h1{font-size:25px; font-weight:900; color:var(--hd-ink); margin-bottom:6px;}
+  .pg-hd p{font-size:13.5px; color:var(--sub);}
+  .stats{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;}
+  .stat{background:#fff; border:1px solid var(--hd-bd); border-radius:12px; padding:12px 20px; min-width:150px; flex:1;}
+  .stat .num{font-size:30px; font-weight:900; color:var(--accent); line-height:1.1;}
+  .stat .lbl{font-size:12.5px; font-weight:800; color:var(--sub); margin-top:3px;}
+
+  /* セクション見出し */
+  .sec-hd{margin:24px 2px 12px; padding:9px 16px; border-radius:10px;
+    background:#eef2ec; border:1px solid #dfe6dc; color:var(--hd-ink); font-size:16px; font-weight:900;}
+  .sec-hd small{display:block; font-size:12px; font-weight:700; color:var(--sub); margin-top:3px;}
+
+  /* 弱点逆引きパネル */
+  .weakpanel{background:#fdecea; border:1px solid #f0b7b1; border-left:8px solid #d9534f; border-radius:14px; padding:16px 18px; margin-bottom:16px;}
+  .weakpanel h2{font-size:17px; font-weight:900; color:#b23b34; margin-bottom:4px;}
+  .weakpanel .lead{font-size:12.5px; color:#7a4a47; margin-bottom:12px; line-height:1.7;}
+  .weakbtns{display:flex; flex-wrap:wrap; gap:10px;}
+  .weakbtn{display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #f0c7c3; border-radius:24px;
+    padding:9px 16px; font-size:13.5px; font-weight:800; color:#b23b34; cursor:pointer; min-height:44px;}
+  .weakbtn:active{transform:scale(.97);}
+  .weakbtn.active{background:#d9534f; color:#fff; border-color:#d9534f;}
+  .weakbtn .cnt{display:inline-flex; align-items:center; justify-content:center; min-width:24px; height:24px; padding:0 6px;
+    border-radius:12px; background:#f7d7d4; color:#b23b34; font-size:12px; font-weight:900;}
+  .weakbtn.active .cnt{background:#fff; color:#b23b34;}
+
+  /* フィルタバー */
+  .filterbar{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin-bottom:16px; box-shadow:0 2px 8px rgba(67,83,72,.06);}
+  .frow{display:flex; flex-wrap:wrap; gap:14px 22px; margin-bottom:14px;}
+  .fgroup{min-width:0;}
+  .fgroup > .glbl{display:block; font-size:12px; font-weight:900; color:var(--sub); margin-bottom:6px;}
+  .chips{display:flex; flex-wrap:wrap; gap:7px;}
+  .chip{display:inline-flex; align-items:center; gap:5px; background:#f3f6f1; border:1px solid var(--line); border-radius:18px;
+    padding:7px 13px; font-size:13px; font-weight:700; color:var(--ink); cursor:pointer; min-height:40px;}
+  .chip:active{transform:scale(.96);}
+  .chip.active{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .chip .c{font-size:11px; font-weight:900; opacity:.8;}
+  .searchrow{display:flex; flex-wrap:wrap; gap:10px; align-items:center;}
+  .searchrow input[type=search]{flex:1; min-width:200px; font-size:15px; padding:11px 14px; border:1px solid var(--line);
+    border-radius:10px; background:#fff; min-height:44px;}
+  .resetbtn{font-size:13.5px; font-weight:800; color:var(--sub); background:#fff; border:1px solid var(--line);
+    border-radius:24px; min-height:44px; padding:9px 20px; cursor:pointer;}
+  .resetbtn:active{transform:scale(.97);}
+  .reslabel{font-size:13px; font-weight:800; color:var(--accent); white-space:nowrap;}
+
+  /* ヒートマップ */
+  .heatwrap{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:16px; overflow-x:auto; box-shadow:0 2px 8px rgba(67,83,72,.06);}
+  table.heat{border-collapse:separate; border-spacing:5px; width:100%; min-width:560px;}
+  table.heat th{font-size:12.5px; font-weight:900; color:var(--sub); padding:6px 8px; text-align:center; white-space:nowrap;}
+  table.heat th.unitname{text-align:left; min-width:120px;}
+  table.heat td{text-align:center; padding:0;}
+  .hcell{display:flex; align-items:center; justify-content:center; width:100%; min-width:46px; height:46px; border-radius:9px;
+    font-size:15px; font-weight:900; cursor:pointer; border:1px solid transparent;}
+  .hcell.hole{background:var(--hole); border-color:var(--hole-bd); color:#a04540;}
+  .hcell.has{color:#1d3a52;}
+  .hcell:active{transform:scale(.95);}
+  .heatlegend{font-size:12px; color:var(--sub); margin-top:8px; display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+  .heatlegend .sw{display:inline-block; width:16px; height:16px; border-radius:4px; vertical-align:middle; margin-right:5px;}
+
+  /* 大問マップ */
+  .exammap{margin-bottom:8px;}
+  .exam-grp{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px; margin-bottom:10px; box-shadow:0 2px 8px rgba(67,83,72,.06);}
+  .exam-grp .eh{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 12px; margin-bottom:8px;}
+  .exam-grp .ecode{font-size:14px; font-weight:900; color:#fff; background:var(--accent); border-radius:10px; padding:3px 12px;}
+  .exam-grp .edesc{font-size:13px; font-weight:700; color:var(--sub);}
+  .exam-grp .ecnt{font-size:12px; font-weight:800; color:var(--accent); margin-left:auto;}
+  .exam-items{display:flex; flex-wrap:wrap; gap:7px;}
+  .exam-pill{display:inline-block; text-decoration:none; background:#eef2f7; border:1px solid #cfdcea; color:#2f4a68;
+    border-radius:16px; padding:7px 13px; font-size:12.5px; font-weight:800; min-height:38px;}
+  .exam-pill:active{opacity:.7;}
+  .exam-empty{font-size:12.5px; color:#a04540; font-weight:700;}
+
+  /* 一覧グリッド */
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:14px;}
+  .card{background:var(--card); border:1px solid var(--line); border-left:7px solid var(--line);
+    border-radius:13px; position:relative; box-shadow:0 2px 8px rgba(67,83,72,.06); transition:transform .1s ease;}
+  .card .open{display:block; text-decoration:none; color:inherit; padding:15px 16px 16px; border-radius:13px;}
+  .card .open:active{transform:scale(.99);}
+  .card .toprow{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:7px;}
+  .card .variant{font-size:12px; font-weight:900; color:#fff; background:var(--accent); border-radius:10px; padding:2px 10px;}
+  .card .catbadge{font-size:11.5px; font-weight:900; border-radius:10px; padding:2px 10px;}
+  .card .audioicon{margin-left:auto; font-size:12px; font-weight:800; color:var(--c-eisaku-i); background:var(--c-eisaku-s); border:1px solid #e6bbb7; border-radius:10px; padding:2px 9px;}
+  .card .tpicon{margin-left:auto; font-size:11px; font-weight:800; color:var(--sub); background:#eef2ec; border:1px solid #dfe6dc; border-radius:10px; padding:2px 9px;}
+  .card .title{font-size:16.5px; font-weight:900; line-height:1.4; margin-bottom:4px; padding-right:50px;}
+  .card .unit{font-size:13px; font-weight:700; color:var(--sub); margin-bottom:9px;}
+  .card .unit .sub{color:#7a8794; font-weight:600;}
+  .card .metarow{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:8px;}
+  .lv{font-size:11.5px; font-weight:900; border-radius:8px; padding:2px 8px; border:1px solid #cdd6e2; background:#eef2f7; color:#3a5687;}
+  .qbadge{font-size:11.5px; font-weight:800; color:var(--sub); background:#f1f4ef; border:1px solid var(--line); border-radius:8px; padding:2px 9px;}
+  .chiprow{display:flex; flex-wrap:wrap; gap:6px;}
+  .wchip{font-size:11px; font-weight:800; color:#b23b34; background:#fdecea; border:1px solid #f0c7c3; border-radius:10px; padding:2px 9px;}
+  .echip{font-size:11px; font-weight:800; color:#2f4a68; background:#eef2f7; border:1px solid #cfdcea; border-radius:10px; padding:2px 9px;}
+  .tchip{font-size:11px; font-weight:700; color:#5e6b58; background:#eef2ec; border:1px solid #dfe6dc; border-radius:10px; padding:2px 9px;}
+  /* カテゴリ別 左帯＆バッジ */
+  .card.cat-tango{border-left-color:var(--c-tango);} .cat-tango .catbadge{background:var(--c-tango-s);color:var(--c-tango-i);border:1px solid #b6c8e2;}
+  .card.cat-jukugo{border-left-color:var(--c-jukugo);} .cat-jukugo .catbadge{background:var(--c-jukugo-s);color:var(--c-jukugo-i);border:1px solid #bcdbd6;}
+  .card.cat-eisaku{border-left-color:var(--c-eisaku);} .cat-eisaku .catbadge{background:var(--c-eisaku-s);color:var(--c-eisaku-i);border:1px solid #e6bbb7;}
+  .card.cat-bunpo{border-left-color:var(--c-bunpo);} .cat-bunpo .catbadge{background:var(--c-bunpo-s);color:var(--c-bunpo-i);border:1px solid #bcd6bb;}
+  .card.cat-kakikae{border-left-color:var(--c-kakikae);} .cat-kakikae .catbadge{background:var(--c-kakikae-s);color:var(--c-kakikae-i);border:1px solid #e6cd9b;}
+  .card.cat-narabe{border-left-color:var(--c-narabe);} .cat-narabe .catbadge{background:var(--c-narabe-s);color:var(--c-narabe-i);border:1px solid #ddc2da;}
+  .card.cat-chobun{border-left-color:var(--c-chobun);} .cat-chobun .catbadge{background:var(--c-chobun-s);color:var(--c-chobun-i);border:1px solid #d2bce0;}
+  .card.cat-sogo{border-left-color:var(--c-sogo);} .cat-sogo .catbadge{background:var(--c-sogo-s);color:var(--c-sogo-i);border:1px solid #c6cdd4;}
+
+  /* やったチェック */
+  .doneBtn{position:absolute; top:13px; right:13px; width:42px; height:42px; border-radius:50%;
+    border:3px solid #aeb8aa; background:#fff; font-size:20px; line-height:1; color:transparent;
+    cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2;}
+  .card.is-done{background:#eef5ef; border-color:#bcd6bd;}
+  .card.is-done .doneBtn{background:#56875b; border-color:#56875b; color:#fff;}
+
+  .empty{grid-column:1/-1; text-align:center; padding:40px 20px; color:var(--sub); font-size:15px; font-weight:700;}
+  .storageWarn{display:none; background:#fff0ef; border:1px solid #e5aaa5; color:#7f3530;
+    border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:13px; font-weight:700;}
+  .note{font-size:12.5px; color:var(--sub); text-align:center; margin-top:28px; line-height:1.9;}
+  button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #1d70b8; outline-offset:2px;}
+  @media(max-width:560px){ .grid{grid-template-columns:1fr;} .pg-hd h1{font-size:21px;} }
+</style>
+<style>.summer-return{position:relative;z-index:20;display:inline-flex;align-items:center;min-height:44px;margin:10px 14px;padding:9px 14px;border:1px solid #cdd8e8;border-radius:18px;background:#fff;color:#3f6f9f;font:800 13px/1.4 sans-serif;text-decoration:none}</style>
+</head>
+<body>
+<a class="summer-return" href="夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+<div class="wrap">
+
+  <!-- ダッシュボードへ戻る（両ダッシュボード・同階層） -->
+  <div class="dashlinks">
+    <a class="dashlink" href="index_iPad_学習ダッシュボード.html"><span class="ar">‹</span>学習ダッシュボード（夏前）</a>
+    <a class="dashlink" href="夏休みダッシュボード.html"><span class="ar">‹</span>夏休みダッシュボード</a>
+  </div>
+
+  <header class="pg-hd">
+    <span class="badge">中1夏前 ｜ 9月特訓選抜むけ ｜ 英語 管理者用メタ台帳</span>
+    <h1>英語プリント 問題インデックス台帳</h1>
+    <p>1プリント＝1枚。問題タイプ・単元・難度・弱点・特訓大問で絞り込み、本番(大問1〜7)から逆引きする索引です。解法・着眼・答えは出ません。</p>
+    <p style="margin-top:10px;"><a href="英語まるごと整理ダッシュボード.html" style="display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:800;color:#2f6e4e;background:#e8f5ee;border:1px solid #b2d9c3;border-radius:20px;padding:7px 18px;text-decoration:none;">📗 英語まるごと整理（語彙・熟語・文法の自己テスト）へ</a></p>
+    <div class="stats">
+      <div class="stat"><div class="num" id="stPrints">–</div><div class="lbl">プリント枚数</div></div>
+      <div class="stat"><div class="num" id="stQ">–</div><div class="lbl">英語問題 合計</div></div>
+      <div class="stat"><div class="num" id="stG">–</div><div class="lbl">採点項目 合計</div></div>
+      <div class="stat"><div class="num" id="stShown">–</div><div class="lbl">いま表示中</div></div>
+    </div>
+  </header>
+
+  <div class="storageWarn" id="storageWarn">このブラウザでは「やった」チェックの保存ができません（他の機能は使えます）。</div>
+
+  <!-- 弱点逆引きパネル -->
+  <section class="weakpanel">
+    <h2>弱点から逆引き（確定6弱点）</h2>
+    <p class="lead">押すとその弱点に効くプリントだけに即絞り込み。英語の失点源は<b>スペリング</b>と<b>三単現の-s</b>・<b>文頭大文字</b>のミス量。</p>
+    <div class="weakbtns" id="weakBtns"></div>
+  </section>
+
+  <!-- フィルタバー -->
+  <section class="filterbar">
+    <div class="frow">
+      <div class="fgroup"><span class="glbl">問題タイプ</span><div class="chips" id="fCategory"></div></div>
+      <div class="fgroup"><span class="glbl">単元・文法項目</span><div class="chips" id="fUnit"></div></div>
+    </div>
+    <div class="frow">
+      <div class="fgroup"><span class="glbl">難度（範囲に該当・推定）</span><div class="chips" id="fLevel"></div></div>
+      <div class="fgroup"><span class="glbl">弱点</span><div class="chips" id="fWeak"></div></div>
+    </div>
+    <div class="frow">
+      <div class="fgroup"><span class="glbl">9月 特訓大問</span><div class="chips" id="fExam"></div></div>
+      <div class="fgroup"><span class="glbl">その他</span><div class="chips" id="fMisc"></div></div>
+    </div>
+    <div class="searchrow">
+      <input type="search" id="search" placeholder="キーワード検索（タイトル・単元・小単元・ファイル名）" autocomplete="off">
+      <span class="reslabel" id="resLabel"></span>
+      <button class="resetbtn" id="resetBtn">絞り込み解除</button>
+    </div>
+  </section>
+
+  <!-- ヒートマップ -->
+  <div class="sec-hd">カバレッジ・ヒートマップ<small>行＝問題タイプ／列＝難度。赤いセル＝そのレベルのプリントが無い「穴」。セルを押すとそのタイプ×難度に絞り込み。</small></div>
+  <div class="heatwrap">
+    <table class="heat" id="heatTable"></table>
+    <div class="heatlegend">
+      <span><span class="sw" style="background:var(--hole);border:1px solid var(--hole-bd)"></span>0枚（穴）</span>
+      <span><span class="sw" style="background:#dde9f3"></span>1枚以上（数字＝枚数）</span>
+    </div>
+  </div>
+
+  <!-- 9月大問マップ -->
+  <div class="sec-hd">9月 特訓選抜・大問対応マップ<small>本番の大問1〜7構成から、対応プリントを逆引き。exam_target が紐づくものだけ並びます。対応0件＝赤い穴。</small></div>
+  <div class="exammap" id="examMap"></div>
+
+  <!-- 一覧 -->
+  <div class="sec-hd">プリント一覧<small>カード全体がリンク。タップで該当プリントを別タブで開きます。答えは表示しません。</small></div>
+  <div class="grid" id="grid"></div>
+
+  <p class="note">
+    正本データ：英語問題台帳.json（全106レコード）をインライン埋め込み。枚数・問題数・採点項目はすべて records から再集計（problem_inventory.json の実カウント由来）。<br>
+    難度・弱点・大問対応はルールベースの推定を含みます（台帳JSONのmetaに付与ルールを明記）。捏造はありません。<br>
+    このページは管理者用メタ索引です。<b>解法・着眼・答え・単語の綴りは一切表示しません</b>（きみの初見解答を妨げないため）。<br>
+    最終的な見た目・表示はiPad/ブラウザでの目視に委ねます。 生成日: 2026-07-13
+  </p>
+
+</div>
+
+<script>
+/* ===== 正本データ：英語問題台帳.json records をインライン埋め込み（全106件） ===== */
+var RECORDS = [{"file":"U10_前置詞_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U10_前置詞_基礎深化.html","folder":"英語基礎","variant":"U10","type_print":"基礎","title":"U10 前置詞 基礎深化","unit":"前置詞","subunit":"基礎深化","category":"総合","levels":["L2","L3"],"level_min":2,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":2,"L3":12,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":[],"tags":["基礎"],"exam_target":["大問3"],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 英語問題なし"},{"file":"U11_現在進行形_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U11_現在進行形_基礎深化.html","folder":"英語基礎","variant":"U11","type_print":"基礎","title":"U11 現在進行形 基礎深化","unit":"現在進行形","subunit":"基礎深化","category":"文法","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":[],"tags":["基礎"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 PG:14"},{"file":"U12_過去形_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U12_過去形_基礎深化.html","folder":"英語基礎","variant":"U12","type_print":"基礎","title":"U12 過去形 基礎深化","unit":"過去形","subunit":"基礎深化","category":"文法","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":[],"tags":["基礎"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 PT:14"},{"file":"U1_be動詞_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U1_be動詞_基礎深化.html","folder":"英語基礎","variant":"U1","type_print":"基礎","title":"U1 be動詞 基礎深化","unit":"be動詞","subunit":"基礎深化","category":"文法","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":0,"L3":14,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":["be・一般動詞の切替"],"tags":["基礎"],"exam_target":["大問2","大問6"],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 B:14"},{"file":"U2_一般動詞_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U2_一般動詞_基礎深化.html","folder":"英語基礎","variant":"U2","type_print":"基礎","title":"U2 一般動詞 基礎深化","unit":"一般動詞","subunit":"基礎深化","category":"文法","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":0,"L3":14,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":["be・一般動詞の切替"],"tags":["基礎"],"exam_target":["大問3","大問6"],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 V:14"},{"file":"U3_三単現_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U3_三単現_基礎深化.html","folder":"英語基礎","variant":"U3","type_print":"基礎","title":"U3 三単現 基礎深化","unit":"三単現","subunit":"基礎深化","category":"文法","levels":["L2","L3"],"level_min":2,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":2,"L3":12,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":["三単現の-s"],"tags":["基礎"],"exam_target":["大問1","大問6"],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 S:14"},{"file":"U4_名詞の複数形_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U4_名詞の複数形_基礎深化.html","folder":"英語基礎","variant":"U4","type_print":"基礎","title":"U4 名詞の複数形 基礎深化","unit":"名詞の複数形","subunit":"基礎深化","category":"総合","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":0,"L3":14,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":[],"tags":["基礎"],"exam_target":["大問6"],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 英語問題なし"},{"file":"U5_代名詞_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U5_代名詞_基礎深化.html","folder":"英語基礎","variant":"U5","type_print":"基礎","title":"U5 代名詞 基礎深化","unit":"代名詞","subunit":"基礎深化","category":"文法","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":0,"L3":14,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":[],"tags":["基礎"],"exam_target":["大問2","大問6"],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 PR:14"},{"file":"U6_can_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U6_can_基礎深化.html","folder":"英語基礎","variant":"U6","type_print":"基礎","title":"U6 can 基礎深化","unit":"can","subunit":"基礎深化","category":"総合","levels":["L2","L3"],"level_min":2,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":2,"L3":12,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":[],"tags":["基礎"],"exam_target":["大問3","大問6"],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 英語問題なし"},{"file":"U7_命令文_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U7_命令文_基礎深化.html","folder":"英語基礎","variant":"U7","type_print":"基礎","title":"U7 命令文 基礎深化","unit":"命令文","subunit":"基礎深化","category":"総合","levels":["L2","L3"],"level_min":2,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":2,"L3":12,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":[],"tags":["基礎"],"exam_target":["大問6"],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 英語問題なし"},{"file":"U8_疑問詞_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U8_疑問詞_基礎深化.html","folder":"英語基礎","variant":"U8","type_print":"基礎","title":"U8 疑問詞 基礎深化","unit":"疑問詞","subunit":"基礎深化","category":"総合","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":0,"L3":14,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":["語順"],"tags":["基礎"],"exam_target":["大問5"],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 英語問題なし"},{"file":"U9_形容詞副詞_基礎深化.html","path":"プリント/英語基礎/","relpath":"プリント/英語基礎/U9_形容詞副詞_基礎深化.html","folder":"英語基礎","variant":"U9","type_print":"基礎","title":"U9 形容詞副詞 基礎深化","unit":"形容詞・副詞","subunit":"基礎深化","category":"文法","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":0,"L3":14,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":["語順"],"tags":["基礎"],"exam_target":["大問4"],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 AD:14"},{"file":"01_書きかえマスター_特訓大問6.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/01_書きかえマスター_特訓大問6.html","folder":"特訓選抜英語","variant":"特01","type_print":"特訓","title":"01 書きかえマスター 特訓大問6","unit":"書きかえ","subunit":"be⇄一般・否定・疑問・過去 等の書きかえ","category":"書きかえ","levels":["L2","L3"],"level_min":2,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":6,"L3":4,"L4":0,"L5":0,"L6":0,"L7":0},"questions":10,"grade_items":10,"has_audio":false,"weakness":["三単現の-s","be・一般動詞の切替"],"tags":["形式演習"],"exam_target":["大問6"],"count_note":"problem_inventory.json の total_en=10（数学Mを除外）／英語接頭辞内訳 R:10"},{"file":"02_並べ替えマスター_特訓大問4.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/02_並べ替えマスター_特訓大問4.html","folder":"特訓選抜英語","variant":"特02","type_print":"特訓","title":"02 並べ替えマスター 特訓大問4","unit":"並べ替え","subunit":"余分語ありの語順整序","category":"並べ替え","levels":["L2","L3"],"level_min":2,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":5,"L3":5,"L4":0,"L5":0,"L6":0,"L7":0},"questions":10,"grade_items":10,"has_audio":false,"weakness":["語順"],"tags":["形式演習"],"exam_target":["大問4"],"count_note":"problem_inventory.json の total_en=10（数学Mを除外）／英語接頭辞内訳 O:10"},{"file":"03_長文ひっかけマスター_特訓大問7.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/03_長文ひっかけマスター_特訓大問7.html","folder":"特訓選抜英語","variant":"特03","type_print":"特訓","title":"03 長文ひっかけマスター 特訓大問7","unit":"長文","subunit":"内容一致ひっかけ（人物・曜日・否定）","category":"長文","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":4,"L2":3,"L3":1,"L4":0,"L5":0,"L6":0,"L7":0},"questions":8,"grade_items":8,"has_audio":false,"weakness":["内容一致ひっかけ"],"tags":["形式演習"],"exam_target":["大問7"],"count_note":"problem_inventory.json の total_en=8（数学Mを除外）／英語接頭辞内訳 Q:8"},{"file":"04_大問1マスター_適語補充.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/04_大問1マスター_適語補充.html","folder":"特訓選抜英語","variant":"特04","type_print":"特訓","title":"04 大問1マスター 適語補充","unit":"頭文字指定1語補充","subunit":"つづり・三単現・複数形・can・冠詞","category":"文法","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":9,"L2":5,"L3":0,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング","三単現の-s"],"tags":["形式演習","L7-v3.0監査済み","O0"],"exam_target":["大問1"],"count_note":"_tools/problem_inventory.json total_en=14／実HTML data-gid K1:14"},{"file":"05_大問2マスター_適語選択.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/05_大問2マスター_適語選択.html","folder":"特訓選抜英語","variant":"特05","type_print":"特訓","title":"05 大問2マスター 適語選択","unit":"文法・代名詞選択","subunit":"主格・所有格・目的格・be/do・冠詞・指示語","category":"文法","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":2,"L2":12,"L3":0,"L4":0,"L5":0,"L6":0,"L7":0},"questions":14,"grade_items":14,"has_audio":false,"weakness":["be・一般動詞の切替"],"tags":["形式演習","L7-v3.0監査済み","固定4択"],"exam_target":["大問2"],"count_note":"_tools/problem_inventory.json total_en=14／実HTML data-gid K2:14"},{"file":"06_大問3マスター_適語補充.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/06_大問3マスター_適語補充.html","folder":"特訓選抜英語","variant":"特06","type_print":"特訓","title":"06 大問3マスター 適語補充","unit":"日本語誘導2語補充","subunit":"三単現・複数形・副詞・can・命令文・代名詞・冠詞","category":"文法","levels":["L2","L3"],"level_min":2,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":7,"L3":1,"L4":0,"L5":0,"L6":0,"L7":0},"questions":8,"grade_items":8,"has_audio":false,"weakness":["三単現の-s"],"tags":["形式演習","L7-v3.0監査済み","O1"],"exam_target":["大問3"],"count_note":"_tools/problem_inventory.json total_en=8／実HTML data-gid K3:8"},{"file":"07_大問5マスター_対話補充.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/07_大問5マスター_対話補充.html","folder":"特訓選抜英語","variant":"特07","type_print":"特訓","title":"07 大問5マスター 対話補充","unit":"対話2語補充","subunit":"疑問詞・代用表現・can・数量表現","category":"文法","levels":["L2","L3"],"level_min":2,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":6,"L3":2,"L4":0,"L5":0,"L6":0,"L7":0},"questions":8,"grade_items":8,"has_audio":false,"weakness":["語順"],"tags":["形式演習","L7-v3.0監査済み","O1"],"exam_target":["大問5"],"count_note":"_tools/problem_inventory.json total_en=8／実HTML data-gid K5:8"},{"file":"08_語数指定英作マスター.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/08_語数指定英作マスター.html","folder":"特訓選抜英語","variant":"特08","type_print":"特訓","title":"08 語数指定英作マスター","unit":"語数指定英作文","subunit":"日本文を指定語・指定語数で1文英作","category":"英作文","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":0,"L2":0,"L3":10,"L4":0,"L5":0,"L6":0,"L7":0},"questions":10,"grade_items":10,"has_audio":false,"weakness":["スペリング","三単現の-s"],"tags":["6月形式補助","L7-v3.0監査済み","O2"],"exam_target":[],"count_note":"_tools/problem_inventory.json total_en=10／実HTML data-gid WS:10"},{"file":"09_本番通し01_50分.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/09_本番通し01_50分.html","folder":"特訓選抜英語","variant":"特09","type_print":"自作通し","title":"09 自作通し01 目安50分","unit":"2023構成参照45問通し","subunit":"大問1〜7・45問100点・50分","category":"総合","levels":["L1","L2","L3","L4"],"level_min":1,"level_max":4,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":10,"L2":20,"L3":13,"L4":2,"L5":0,"L6":0,"L7":0},"weighted_l_distribution_100pt":{"L1":18,"L2":44,"L3":34,"L4":4,"L5":0,"L6":0,"L7":0},"percentiles_weighted":{"P25":"L2","P50":"L2","P67":"L3","P90":"L3"},"questions":45,"grade_items":45,"has_audio":false,"weakness":["スペリング","三単現の-s","語順","内容一致ひっかけ"],"tags":["2023構成参照","候補分布整合","独立3評定待ち","目安50分","形式演習"],"exam_target":["通し","大問1","大問2","大問3","大問4","大問5","大問6","大問7"],"count_note":"_tools/problem_inventory.json total_en=45／実HTML data-gid TS:45","student_use":"学習使用不可（独立3評定待ち）"},{"file":"10_本番通し02_50分.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/10_本番通し02_50分.html","folder":"特訓選抜英語","variant":"特10","type_print":"自作通し","title":"10 自作通し02 50分","unit":"平行自作45欄通し","subunit":"大問1〜7・45問100点・50分","category":"総合","levels":["L1","L2","L3","L4"],"level_min":1,"level_max":4,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":10,"L2":20,"L3":13,"L4":2,"L5":0,"L6":0,"L7":0},"weighted_l_distribution_100pt":{"L1":18,"L2":44,"L3":34,"L4":4,"L5":0,"L6":0,"L7":0},"percentiles_weighted":{"P25":"L2","P50":"L2","P67":"L3","P90":"L3"},"questions":45,"grade_items":45,"has_audio":false,"weakness":["スペリング","三単現の-s","語順","内容一致ひっかけ"],"tags":["平行模試候補","独立3評定待ち","L7-v3.0単独評定"],"exam_target":["通し","大問1","大問2","大問3","大問4","大問5","大問6","大問7"],"count_note":"_tools/problem_inventory.json total_en=45／実HTML data-gid TS:45","student_use":"学習使用不可（独立3評定待ち）"},{"file":"11_本番通し03_50分.html","path":"プリント/特訓選抜英語/","relpath":"プリント/特訓選抜英語/11_本番通し03_50分.html","folder":"特訓選抜英語","variant":"特11","type_print":"自作通し","title":"11 自作通し03 50分","unit":"平行自作45欄通し","subunit":"大問1〜7・45問100点・50分","category":"総合","levels":["L1","L2","L3","L4"],"level_min":1,"level_max":4,"level_estimated":false,"difficulty_standard":"L7-v3.0","audit_status":"仮確定（単独評定・要監査／アンカー未整備）","rating_n":1,"l_distribution":{"L1":10,"L2":20,"L3":13,"L4":2,"L5":0,"L6":0,"L7":0},"weighted_l_distribution_100pt":{"L1":18,"L2":44,"L3":34,"L4":4,"L5":0,"L6":0,"L7":0},"percentiles_weighted":{"P25":"L2","P50":"L2","P67":"L3","P90":"L3"},"questions":45,"grade_items":45,"has_audio":false,"weakness":["スペリング","三単現の-s","語順","内容一致ひっかけ"],"tags":["平行模試候補","独立3評定待ち","L7-v3.0単独評定"],"exam_target":["通し","大問1","大問2","大問3","大問4","大問5","大問6","大問7"],"count_note":"_tools/problem_inventory.json total_en=45／実HTML data-gid TS:45","student_use":"学習使用不可（独立3評定待ち）"},{"file":"_テンプレート_週末復習.html","path":"プリント/横断/","relpath":"プリント/横断/_テンプレート_週末復習.html","folder":"横断","variant":"雛形","type_print":"横断","title":"テンプレート 週末復習","unit":"語彙","subunit":"単語・熟語・英作文","category":"総合","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":3,"grade_items":3,"has_audio":false,"weakness":["スペリング"],"tags":["雛形","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=3（数学Mを除外）／英語接頭辞内訳 EW:1, P:1, W:1"},{"file":"redo02_難問デー_正負の文章を式に.html","path":"プリント/横断/","relpath":"プリント/横断/redo02_難問デー_正負の文章を式に.html","folder":"横断","variant":"難02","type_print":"横断","title":"redo02 難問デー 正負の文章を式に","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["難問","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"redo03_難問デー_正負と小学難問.html","path":"プリント/横断/","relpath":"プリント/横断/redo03_難問デー_正負と小学難問.html","folder":"横断","variant":"難03","type_print":"横断","title":"redo03 難問デー 正負と小学難問","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["難問","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"redo05_難問デー_文字式で数量を表す.html","path":"プリント/横断/","relpath":"プリント/横断/redo05_難問デー_文字式で数量を表す.html","folder":"横断","variant":"難05","type_print":"横断","title":"redo05 難問デー 文字式で数量を表す","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["難問","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"redo06_難問デー_代入と一次式.html","path":"プリント/横断/","relpath":"プリント/横断/redo06_難問デー_代入と一次式.html","folder":"横断","variant":"難06","type_print":"横断","title":"redo06 難問デー 代入と一次式","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["難問","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"redo07_難問デー_文字式の利用.html","path":"プリント/横断/","relpath":"プリント/横断/redo07_難問デー_文字式の利用.html","folder":"横断","variant":"難07","type_print":"横断","title":"redo07 難問デー 文字式の利用","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["難問","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"redo09_難問デー_総合.html","path":"プリント/横断/","relpath":"プリント/横断/redo09_難問デー_総合.html","folder":"横断","variant":"難09","type_print":"横断","title":"redo09 難問デー 総合","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L3"],"level_min":3,"level_max":3,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["難問","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"復習01_小学校算数スタート_中1単語熟語.html","path":"プリント/横断/","relpath":"プリント/横断/復習01_小学校算数スタート_中1単語熟語.html","folder":"横断","variant":"復01","type_print":"横断","title":"復習01 小学校算数スタート 中1単語熟語","unit":"語彙","subunit":"単語・熟語・英作文","category":"総合","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":9,"grade_items":9,"has_audio":false,"weakness":["スペリング"],"tags":["小学復習","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=9（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:5"},{"file":"復習02_分数の計算.html","path":"プリント/横断/","relpath":"プリント/横断/復習02_分数の計算.html","folder":"横断","variant":"復02","type_print":"横断","title":"復習02 分数の計算","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["小学復習","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"復習03_割合と百分率.html","path":"プリント/横断/","relpath":"プリント/横断/復習03_割合と百分率.html","folder":"横断","variant":"復03","type_print":"横断","title":"復習03 割合と百分率","unit":"語彙","subunit":"単語・熟語・英作文","category":"総合","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":9,"grade_items":9,"has_audio":false,"weakness":["スペリング"],"tags":["小学復習","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=9（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:5"},{"file":"復習04_概数と数直線.html","path":"プリント/横断/","relpath":"プリント/横断/復習04_概数と数直線.html","folder":"横断","variant":"復04","type_print":"横断","title":"復習04 概数と数直線","unit":"語彙","subunit":"単語・熟語・英作文","category":"総合","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":9,"grade_items":9,"has_audio":false,"weakness":["スペリング"],"tags":["小学復習","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=9（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:5"},{"file":"復習05_倍数約数と単位換算.html","path":"プリント/横断/","relpath":"プリント/横断/復習05_倍数約数と単位換算.html","folder":"横断","variant":"復05","type_print":"横断","title":"復習05 倍数約数と単位換算","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["小学復習","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"復習06_速さと比_小学校総まとめ.html","path":"プリント/横断/","relpath":"プリント/横断/復習06_速さと比_小学校総まとめ.html","folder":"横断","variant":"復06","type_print":"横断","title":"復習06 速さと比 小学校総まとめ","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["小学復習","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"復習07_図形_面積と複合図形.html","path":"プリント/横断/","relpath":"プリント/横断/復習07_図形_面積と複合図形.html","folder":"横断","variant":"復07","type_print":"横断","title":"復習07 図形 面積と複合図形","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["小学復習","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"復習08_場合の数と規則性.html","path":"プリント/横断/","relpath":"プリント/横断/復習08_場合の数と規則性.html","folder":"横断","variant":"復08","type_print":"横断","title":"復習08 場合の数と規則性","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["小学復習","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"復習09_速さと割合の応用.html","path":"プリント/横断/","relpath":"プリント/横断/復習09_速さと割合の応用.html","folder":"横断","variant":"復09","type_print":"横断","title":"復習09 速さと割合の応用","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["小学復習","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"通常01_数学四則混合と英語疑問詞.html","path":"プリント/横断/","relpath":"プリント/横断/通常01_数学四則混合と英語疑問詞.html","folder":"横断","variant":"通01","type_print":"横断","title":"通常01 数学四則混合と英語疑問詞","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["通し","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"通常02_正負の数の利用と英語複数形.html","path":"プリント/横断/","relpath":"プリント/横断/通常02_正負の数の利用と英語複数形.html","folder":"横断","variant":"通02","type_print":"横断","title":"通常02 正負の数の利用と英語複数形","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["通し","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"通常03_英作文と数学ミニ.html","path":"プリント/横断/","relpath":"プリント/横断/通常03_英作文と数学ミニ.html","folder":"横断","variant":"通03","type_print":"横断","title":"通常03 英作文と数学ミニ","unit":"語彙","subunit":"単語・熟語・英作文","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング"],"tags":["通し","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"通常04_正負の数まとめと速さのグラフ復習.html","path":"プリント/横断/","relpath":"プリント/横断/通常04_正負の数まとめと速さのグラフ復習.html","folder":"横断","variant":"通04","type_print":"横断","title":"通常04 正負の数まとめと速さのグラフ復習","unit":"語彙・文法","subunit":"単語・熟語・英作文＋三単現書きかえ","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":15,"grade_items":15,"has_audio":false,"weakness":["スペリング","三単現の-s"],"tags":["通し","含:熟語","含:英作文","含:書きかえ"],"exam_target":[],"count_note":"problem_inventory.json の total_en=15（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, R:1, W:10"},{"file":"通常05_文字式の表し方1と三単現.html","path":"プリント/横断/","relpath":"プリント/横断/通常05_文字式の表し方1と三単現.html","folder":"横断","variant":"通05","type_print":"横断","title":"通常05 文字式の表し方1と三単現","unit":"語彙・文法","subunit":"単語・熟語・英作文＋三単現書きかえ","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":15,"grade_items":15,"has_audio":false,"weakness":["スペリング","三単現の-s"],"tags":["通し","含:熟語","含:英作文","含:書きかえ"],"exam_target":[],"count_note":"problem_inventory.json の total_en=15（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, R:1, W:10"},{"file":"通常06_文字式で数量を表す.html","path":"プリント/横断/","relpath":"プリント/横断/通常06_文字式で数量を表す.html","folder":"横断","variant":"通06","type_print":"横断","title":"通常06 文字式で数量を表す","unit":"語彙・文法","subunit":"単語・熟語・英作文＋三単現書きかえ","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":15,"grade_items":15,"has_audio":false,"weakness":["スペリング","三単現の-s"],"tags":["通し","含:熟語","含:英作文","含:書きかえ"],"exam_target":[],"count_note":"problem_inventory.json の total_en=15（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, R:1, W:10"},{"file":"通常07_代入と式の値.html","path":"プリント/横断/","relpath":"プリント/横断/通常07_代入と式の値.html","folder":"横断","variant":"通07","type_print":"横断","title":"通常07 代入と式の値","unit":"語彙・文法","subunit":"単語・熟語・英作文＋三単現書きかえ","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":15,"grade_items":15,"has_audio":false,"weakness":["スペリング","三単現の-s"],"tags":["通し","含:熟語","含:英作文","含:書きかえ"],"exam_target":[],"count_note":"problem_inventory.json の total_en=15（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, R:1, W:10"},{"file":"通常08_一次式の加法減法.html","path":"プリント/横断/","relpath":"プリント/横断/通常08_一次式の加法減法.html","folder":"横断","variant":"通08","type_print":"横断","title":"通常08 一次式の加法減法","unit":"語彙・文法","subunit":"単語・熟語・英作文＋三単現書きかえ","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":15,"grade_items":15,"has_audio":false,"weakness":["スペリング","三単現の-s"],"tags":["通し","含:熟語","含:英作文","含:書きかえ"],"exam_target":[],"count_note":"problem_inventory.json の total_en=15（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, R:1, W:10"},{"file":"通常09_一次式の計算と分配.html","path":"プリント/横断/","relpath":"プリント/横断/通常09_一次式の計算と分配.html","folder":"横断","variant":"通09","type_print":"横断","title":"通常09 一次式の計算と分配","unit":"語彙・文法","subunit":"単語・熟語・英作文＋三単現書きかえ","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":15,"grade_items":15,"has_audio":false,"weakness":["スペリング","三単現の-s"],"tags":["通し","含:熟語","含:英作文","含:書きかえ"],"exam_target":[],"count_note":"problem_inventory.json の total_en=15（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, R:1, W:10"},{"file":"通常10_文字式の利用_文章を式に.html","path":"プリント/横断/","relpath":"プリント/横断/通常10_文字式の利用_文章を式に.html","folder":"横断","variant":"通10","type_print":"横断","title":"通常10 文字式の利用 文章を式に","unit":"語彙・文法","subunit":"単語・熟語・英作文＋三単現書きかえ","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":15,"grade_items":15,"has_audio":false,"weakness":["スペリング","三単現の-s"],"tags":["通し","含:熟語","含:英作文","含:書きかえ"],"exam_target":[],"count_note":"problem_inventory.json の total_en=15（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, R:1, W:10"},{"file":"通常11_夏前総合_正負と文字式.html","path":"プリント/横断/","relpath":"プリント/横断/通常11_夏前総合_正負と文字式.html","folder":"横断","variant":"通11","type_print":"横断","title":"通常11 夏前総合 正負と文字式","unit":"語彙・文法","subunit":"単語・熟語・英作文＋三単現書きかえ","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":15,"grade_items":15,"has_audio":false,"weakness":["スペリング","三単現の-s"],"tags":["通し","含:熟語","含:英作文","含:書きかえ"],"exam_target":[],"count_note":"problem_inventory.json の total_en=15（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, R:1, W:10"},{"file":"週末復習01_第1週.html","path":"プリント/横断/","relpath":"プリント/横断/週末復習01_第1週.html","folder":"横断","variant":"週01","type_print":"横断","title":"週末復習01 第1週","unit":"語彙","subunit":"単語・熟語・英作文","category":"総合","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":19,"grade_items":19,"has_audio":false,"weakness":["スペリング"],"tags":["週末","含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=19（数学Mを除外）／英語接頭辞内訳 EW:3, P:6, W:10"},{"file":"Day02_英語_スペリングとbe動詞.html","path":"プリント/英語/","relpath":"プリント/英語/Day02_英語_スペリングとbe動詞.html","folder":"英語","variant":"Day02","type_print":"Day","title":"Day02 英語 スペリングとbe動詞","unit":"語彙・be動詞","subunit":"スペリング＋be動詞","category":"単語","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング","be・一般動詞の切替"],"tags":["含:熟語","含:英作文"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 EW:1, P:3, W:10"},{"file":"Day06_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day06_その1.html","folder":"暗記カード","variant":"Day06-1","type_print":"暗記","title":"Day06 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day06_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day06_その2.html","folder":"暗記カード","variant":"Day06-2","type_print":"暗記","title":"Day06 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 I:3, K:5, W:5"},{"file":"Day07_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day07_その1.html","folder":"暗記カード","variant":"Day07-1","type_print":"暗記","title":"Day07 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, W:5, Y:3"},{"file":"Day07_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day07_その2.html","folder":"暗記カード","variant":"Day07-2","type_print":"暗記","title":"Day07 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day08_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day08_その1.html","folder":"暗記カード","variant":"Day08-1","type_print":"暗記","title":"Day08 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, F:3, K:5, W:5"},{"file":"Day08_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day08_その2.html","folder":"暗記カード","variant":"Day08-2","type_print":"暗記","title":"Day08 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, W:5, Y:3"},{"file":"Day09_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day09_その1.html","folder":"暗記カード","variant":"Day09-1","type_print":"暗記","title":"Day09 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day09_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day09_その2.html","folder":"暗記カード","variant":"Day09-2","type_print":"暗記","title":"Day09 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 F:3, K:5, W:5"},{"file":"Day10_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day10_その1.html","folder":"暗記カード","variant":"Day10-1","type_print":"暗記","title":"Day10 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, I:3, K:5, W:5"},{"file":"Day10_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day10_その2.html","folder":"暗記カード","variant":"Day10-2","type_print":"暗記","title":"Day10 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day11_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day11_その1.html","folder":"暗記カード","variant":"Day11-1","type_print":"暗記","title":"Day11 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day11_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day11_その2.html","folder":"暗記カード","variant":"Day11-2","type_print":"暗記","title":"Day11 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day12_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day12_その1.html","folder":"暗記カード","variant":"Day12-1","type_print":"暗記","title":"Day12 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day12_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day12_その2.html","folder":"暗記カード","variant":"Day12-2","type_print":"暗記","title":"Day12 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day13_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day13_その1.html","folder":"暗記カード","variant":"Day13-1","type_print":"暗記","title":"Day13 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day13_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day13_その2.html","folder":"暗記カード","variant":"Day13-2","type_print":"暗記","title":"Day13 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day14_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day14_その1.html","folder":"暗記カード","variant":"Day14-1","type_print":"暗記","title":"Day14 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day14_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day14_その2.html","folder":"暗記カード","variant":"Day14-2","type_print":"暗記","title":"Day14 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day15_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day15_その1.html","folder":"暗記カード","variant":"Day15-1","type_print":"暗記","title":"Day15 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day15_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day15_その2.html","folder":"暗記カード","variant":"Day15-2","type_print":"暗記","title":"Day15 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day16_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day16_その1.html","folder":"暗記カード","variant":"Day16-1","type_print":"暗記","title":"Day16 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day16_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day16_その2.html","folder":"暗記カード","variant":"Day16-2","type_print":"暗記","title":"Day16 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day17_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day17_その1.html","folder":"暗記カード","variant":"Day17-1","type_print":"暗記","title":"Day17 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day17_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day17_その2.html","folder":"暗記カード","variant":"Day17-2","type_print":"暗記","title":"Day17 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day18_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day18_その1.html","folder":"暗記カード","variant":"Day18-1","type_print":"暗記","title":"Day18 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day18_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day18_その2.html","folder":"暗記カード","variant":"Day18-2","type_print":"暗記","title":"Day18 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day19_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day19_その1.html","folder":"暗記カード","variant":"Day19-1","type_print":"暗記","title":"Day19 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day19_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day19_その2.html","folder":"暗記カード","variant":"Day19-2","type_print":"暗記","title":"Day19 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day20_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day20_その1.html","folder":"暗記カード","variant":"Day20-1","type_print":"暗記","title":"Day20 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day20_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day20_その2.html","folder":"暗記カード","variant":"Day20-2","type_print":"暗記","title":"Day20 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day21_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day21_その1.html","folder":"暗記カード","variant":"Day21-1","type_print":"暗記","title":"Day21 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day21_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day21_その2.html","folder":"暗記カード","variant":"Day21-2","type_print":"暗記","title":"Day21 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day22_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day22_その1.html","folder":"暗記カード","variant":"Day22-1","type_print":"暗記","title":"Day22 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day22_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day22_その2.html","folder":"暗記カード","variant":"Day22-2","type_print":"暗記","title":"Day22 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day23_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day23_その1.html","folder":"暗記カード","variant":"Day23-1","type_print":"暗記","title":"Day23 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day23_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day23_その2.html","folder":"暗記カード","variant":"Day23-2","type_print":"暗記","title":"Day23 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day24_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day24_その1.html","folder":"暗記カード","variant":"Day24-1","type_print":"暗記","title":"Day24 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day24_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day24_その2.html","folder":"暗記カード","variant":"Day24-2","type_print":"暗記","title":"Day24 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day25_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day25_その1.html","folder":"暗記カード","variant":"Day25-1","type_print":"暗記","title":"Day25 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day25_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day25_その2.html","folder":"暗記カード","variant":"Day25-2","type_print":"暗記","title":"Day25 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day26_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day26_その1.html","folder":"暗記カード","variant":"Day26-1","type_print":"暗記","title":"Day26 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day26_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day26_その2.html","folder":"暗記カード","variant":"Day26-2","type_print":"暗記","title":"Day26 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day27_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day27_その1.html","folder":"暗記カード","variant":"Day27-1","type_print":"暗記","title":"Day27 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day27_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day27_その2.html","folder":"暗記カード","variant":"Day27-2","type_print":"暗記","title":"Day27 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day28_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day28_その1.html","folder":"暗記カード","variant":"Day28-1","type_print":"暗記","title":"Day28 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day28_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day28_その2.html","folder":"暗記カード","variant":"Day28-2","type_print":"暗記","title":"Day28 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day29_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day29_その1.html","folder":"暗記カード","variant":"Day29-1","type_print":"暗記","title":"Day29 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day29_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day29_その2.html","folder":"暗記カード","variant":"Day29-2","type_print":"暗記","title":"Day29 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"Day30_その1.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day30_その1.html","folder":"暗記カード","variant":"Day30-1","type_print":"暗記","title":"Day30 その1","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"Day30_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/Day30_その2.html","folder":"暗記カード","variant":"Day30-2","type_print":"暗記","title":"Day30 その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"月_暗記カード.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/月_暗記カード.html","folder":"暗記カード","variant":"月1","type_print":"暗記","title":"月 暗記カード","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"月_暗記カード_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/月_暗記カード_その2.html","folder":"暗記カード","variant":"月2","type_print":"暗記","title":"月 暗記カード その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"木_暗記カード.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/木_暗記カード.html","folder":"暗記カード","variant":"木1","type_print":"暗記","title":"木 暗記カード","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, P:3, W:5"},{"file":"木_暗記カード_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/木_暗記カード_その2.html","folder":"暗記カード","variant":"木2","type_print":"暗記","title":"木 暗記カード その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 F:3, K:5, W:5"},{"file":"水_暗記カード.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/水_暗記カード.html","folder":"暗記カード","variant":"水1","type_print":"暗記","title":"水 暗記カード","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, F:3, K:5, W:5"},{"file":"水_暗記カード_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/水_暗記カード_その2.html","folder":"暗記カード","variant":"水2","type_print":"暗記","title":"水 暗記カード その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, W:5, Y:3"},{"file":"火_暗記カード.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/火_暗記カード.html","folder":"暗記カード","variant":"火1","type_print":"暗記","title":"火 暗記カード","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, K:5, W:5, Y:3"},{"file":"火_暗記カード_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/火_暗記カード_その2.html","folder":"暗記カード","variant":"火2","type_print":"暗記","title":"火 暗記カード その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"金_暗記カード.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/金_暗記カード.html","folder":"暗記カード","variant":"金1","type_print":"暗記","title":"金 暗記カード","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":16,"grade_items":16,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=16（数学Mを除外）／英語接頭辞内訳 B:2, EW:1, I:3, K:5, W:5"},{"file":"金_暗記カード_その2.html","path":"プリント/暗記カード/","relpath":"プリント/暗記カード/金_暗記カード_その2.html","folder":"暗記カード","variant":"金2","type_print":"暗記","title":"金 暗記カード その2","unit":"語彙","subunit":"単語・熟語・語彙カード","category":"単語","levels":["L1"],"level_min":1,"level_max":1,"level_estimated":true,"questions":13,"grade_items":13,"has_audio":false,"weakness":["スペリング"],"tags":["暗記"],"exam_target":[],"count_note":"problem_inventory.json の total_en=13（数学Mを除外）／英語接頭辞内訳 K:5, P:3, W:5"},{"file":"復習英語_単語つづり1.html","path":"プリント/夏_特訓数学プリント/","relpath":"プリント/夏_特訓数学プリント/復習英語_単語つづり1.html","folder":"夏_特訓数学プリント","variant":"復英","type_print":"数学同梱","title":"復習英語 単語つづり1","unit":"語彙・be動詞","subunit":"つづり・熟語・be動詞の復習","category":"文法","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":11,"grade_items":11,"has_audio":false,"weakness":["スペリング","be・一般動詞の切替"],"tags":["数学同梱","含:単語"],"exam_target":[],"count_note":"problem_inventory.json の total_en=11（数学Mを除外）／英語接頭辞内訳 B:4, C:5, W:2"},{"file":"復習英語_熟語とbe動詞1.html","path":"プリント/夏_特訓数学プリント/","relpath":"プリント/夏_特訓数学プリント/復習英語_熟語とbe動詞1.html","folder":"夏_特訓数学プリント","variant":"復英","type_print":"数学同梱","title":"復習英語 熟語とbe動詞1","unit":"語彙・be動詞","subunit":"つづり・熟語・be動詞の復習","category":"総合","levels":["L1","L2"],"level_min":1,"level_max":2,"level_estimated":true,"questions":14,"grade_items":14,"has_audio":false,"weakness":["スペリング","be・一般動詞の切替"],"tags":["数学同梱"],"exam_target":[],"count_note":"problem_inventory.json の total_en=14（数学Mを除外）／英語接頭辞内訳 GQ:14"}];
+
+/* exam_blueprint（範囲正本§3より・説明文として表示するだけ） */
+var EXAM_BLUEPRINT = {"大問1": "綴り補充（適語補充・頭文字指定・3単現）", "大問2": "代名詞・be 記号選択", "大問3": "前置詞・否定・依頼(Can/Will you) 適語補充", "大問4": "並べ替え（余分語あり）", "大問5": "疑問詞 対話補充＋順8", "大問6": "書きかえ", "大問7": "長文 内容一致ひっかけ", "通し": "大問1〜7 まるごとの本番セット（50分）"};
+var EXAM_ORDER = ["大問1", "大問2", "大問3", "大問4", "大問5", "大問6", "大問7", "通し"];
+var WEAK_KEYS = ["スペリング", "三単現の-s", "文頭大文字(C型)", "be・一般動詞の切替", "語順", "内容一致ひっかけ"];
+var CAT_ORDER = ["単語", "熟語", "英作文", "文法", "書きかえ", "並べ替え", "長文", "総合"];
+var CAT_CLASS = {"単語": "tango", "熟語": "jukugo", "英作文": "eisaku", "文法": "bunpo", "書きかえ": "kakikae", "並べ替え": "narabe", "長文": "chobun", "総合": "sogo"};
+var LEVELS = [1,2,3,4,5];
+
+/* ===== 状態 ===== */
+var state = { category:null, unit:null, level:null, weak:null, exam:null, misc:null, kw:"" };
+
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function uniq(arr){ var o=[],seen={}; arr.forEach(function(x){ if(!seen[x]){seen[x]=1;o.push(x);} }); return o; }
+
+/* ===== やったチェック localStorage（壊れても他機能継続・数学版と非衝突キー） ===== */
+var STORE_KEY = "honoka_eng_index_done_v1";
+var doneSet = {};
+var storageOK = true;
+try {
+  var raw = window.localStorage.getItem(STORE_KEY);
+  if(raw){ var arr = JSON.parse(raw); if(arr && arr.length){ arr.forEach(function(k){ doneSet[k]=1; }); } }
+} catch(e){ storageOK = false; }
+function saveDone(){
+  if(!storageOK) return;
+  try { window.localStorage.setItem(STORE_KEY, JSON.stringify(Object.keys(doneSet))); }
+  catch(e){ storageOK = false; document.getElementById("storageWarn").style.display="block"; }
+}
+if(!storageOK){ document.getElementById("storageWarn").style.display="block"; }
+
+/* ===== ヘッダ集計：records から再集計 ===== */
+function computeHeader(){
+  var prints = RECORDS.length;
+  var q = 0, g = 0;
+  RECORDS.forEach(function(r){ q += r.questions; g += r.grade_items; });
+  document.getElementById("stPrints").textContent = prints;
+  document.getElementById("stQ").textContent = q;
+  document.getElementById("stG").textContent = g;
+}
+
+/* ===== フィルタ判定 ===== */
+function levelMatch(r, lv){ return lv >= r.level_min && lv <= r.level_max; }
+function passes(r){
+  if(state.category && r.category !== state.category) return false;
+  if(state.unit && r.unit !== state.unit) return false;
+  if(state.level && !levelMatch(r, state.level)) return false;
+  if(state.weak){
+    if(state.weak === "弱点指定なし"){ if(r.weakness && r.weakness.length) return false; }
+    else { if((r.weakness||[]).indexOf(state.weak)<0) return false; }
+  }
+  if(state.exam){ if((r.exam_target||[]).indexOf(state.exam)<0) return false; }
+  if(state.misc){
+    if(state.misc === "__audio__"){ if(!r.has_audio) return false; }
+    else { if((r.tags||[]).indexOf(state.misc)<0) return false; }
+  }
+  if(state.kw){
+    var hay = (r.title+" "+r.unit+" "+r.subunit+" "+r.file).toLowerCase();
+    if(hay.indexOf(state.kw.toLowerCase())<0) return false;
+  }
+  return true;
+}
+function filtered(){ return RECORDS.filter(passes); }
+function countIf(fn){ var n=0; RECORDS.forEach(function(r){ if(fn(r)) n++; }); return n; }
+
+/* ===== チップ生成ヘルパ ===== */
+function makeChip(container, label, count, isActive, onClick){
+  var b = document.createElement("button");
+  b.type = "button";
+  b.className = "chip" + (isActive ? " active":"");
+  b.innerHTML = esc(label) + (count!=null ? ' <span class="c">'+count+'</span>' : '');
+  b.addEventListener("click", onClick);
+  container.appendChild(b);
+}
+
+/* ===== フィルタバー描画 ===== */
+function renderFilters(){
+  // 問題タイプ（CAT_ORDER順・存在するものだけ）
+  var cc = document.getElementById("fCategory"); cc.innerHTML="";
+  CAT_ORDER.forEach(function(c){
+    var n = countIf(function(r){return r.category===c;});
+    if(n===0) return;
+    makeChip(cc, c, n, state.category===c, function(){
+      state.category = (state.category===c)?null:c; rerender();
+    });
+  });
+  // 単元（出現順で動的）
+  var units = uniq(RECORDS.map(function(r){return r.unit;}));
+  var uc = document.getElementById("fUnit"); uc.innerHTML="";
+  units.forEach(function(u){
+    makeChip(uc, u, countIf(function(r){return r.unit===u;}), state.unit===u, function(){
+      state.unit = (state.unit===u)?null:u; rerender();
+    });
+  });
+  // 難度 L1〜L5
+  var lc = document.getElementById("fLevel"); lc.innerHTML="";
+  LEVELS.forEach(function(lv){
+    makeChip(lc, "L"+lv, countIf(function(r){return levelMatch(r,lv);}), state.level===lv, function(){
+      state.level = (state.level===lv)?null:lv; rerender();
+    });
+  });
+  // 弱点 + 弱点指定なし
+  var wc = document.getElementById("fWeak"); wc.innerHTML="";
+  WEAK_KEYS.forEach(function(w){
+    makeChip(wc, w, countIf(function(r){return (r.weakness||[]).indexOf(w)>=0;}), state.weak===w, function(){
+      state.weak = (state.weak===w)?null:w; rerender();
+    });
+  });
+  makeChip(wc, "弱点指定なし", countIf(function(r){return !(r.weakness&&r.weakness.length);}), state.weak==="弱点指定なし", function(){
+    state.weak = (state.weak==="弱点指定なし")?null:"弱点指定なし"; rerender();
+  });
+  // 9月 大問
+  var ec = document.getElementById("fExam"); ec.innerHTML="";
+  EXAM_ORDER.forEach(function(x){
+    var n = countIf(function(r){return (r.exam_target||[]).indexOf(x)>=0;});
+    makeChip(ec, x, n, state.exam===x, function(){
+      state.exam = (state.exam===x)?null:x; rerender();
+    });
+  });
+  // その他：リスニング / 各tag
+  var mc = document.getElementById("fMisc"); mc.innerHTML="";
+  var nAudio = countIf(function(r){return r.has_audio;});
+  if(nAudio>0){
+    makeChip(mc, "リスニングあり", nAudio, state.misc==="__audio__", function(){
+      state.misc = (state.misc==="__audio__")?null:"__audio__"; rerender();
+    });
+  }
+  var tags = uniq([].concat.apply([], RECORDS.map(function(r){return r.tags||[];})));
+  tags.forEach(function(t){
+    makeChip(mc, t, countIf(function(r){return (r.tags||[]).indexOf(t)>=0;}), state.misc===t, function(){
+      state.misc = (state.misc===t)?null:t; rerender();
+    });
+  });
+}
+
+/* ===== 弱点逆引きパネル ===== */
+function renderWeakPanel(){
+  var c = document.getElementById("weakBtns"); c.innerHTML="";
+  WEAK_KEYS.forEach(function(w){
+    var n = countIf(function(r){return (r.weakness||[]).indexOf(w)>=0;});
+    if(n===0) return; /* 0件キーはチップ自体を出さない */
+    var b = document.createElement("button");
+    b.type="button";
+    b.className = "weakbtn" + (state.weak===w?" active":"");
+    b.innerHTML = esc(w) + ' <span class="cnt">'+n+'</span>';
+    b.addEventListener("click", function(){
+      state.weak = (state.weak===w)?null:w;
+      rerender();
+      window.scrollTo({top: document.querySelector(".filterbar").offsetTop - 8, behavior:"smooth"});
+    });
+    c.appendChild(b);
+  });
+}
+
+/* ===== ヒートマップ（行=問題タイプ, 列=L1〜L5） ===== */
+function renderHeat(){
+  var cats = CAT_ORDER.filter(function(c){ return countIf(function(r){return r.category===c;})>0; });
+  var t = document.getElementById("heatTable"); t.innerHTML="";
+  var thead = document.createElement("tr");
+  var th0 = document.createElement("th"); th0.className="unitname"; th0.textContent="タイプ ＼ 難度"; thead.appendChild(th0);
+  LEVELS.forEach(function(lv){ var th=document.createElement("th"); th.textContent="L"+lv; thead.appendChild(th); });
+  var thT=document.createElement("th"); thT.textContent="計"; thead.appendChild(thT);
+  t.appendChild(thead);
+  cats.forEach(function(cat){
+    var tr = document.createElement("tr");
+    var tdU = document.createElement("th"); tdU.className="unitname"; tdU.textContent=cat; tr.appendChild(tdU);
+    LEVELS.forEach(function(lv){
+      var n = countIf(function(r){return r.category===cat && levelMatch(r,lv);});
+      var td = document.createElement("td");
+      var cell = document.createElement("div");
+      cell.className = "hcell " + (n===0 ? "hole":"has");
+      cell.textContent = n===0 ? "" : n;
+      cell.addEventListener("click", function(){
+        if(state.category===cat && state.level===lv){ state.category=null; state.level=null; }
+        else { state.category=cat; state.level=lv; }
+        rerender();
+        window.scrollTo({top: document.getElementById("grid").offsetTop - 60, behavior:"smooth"});
+      });
+      td.appendChild(cell); tr.appendChild(td);
+    });
+    var tdTot=document.createElement("td");
+    var cellT=document.createElement("div"); cellT.className="hcell has"; cellT.style.background="#eef2f7";
+    cellT.textContent = countIf(function(r){return r.category===cat;});
+    tdTot.appendChild(cellT); tr.appendChild(tdTot);
+    t.appendChild(tr);
+  });
+}
+
+/* ===== 9月大問マップ ===== */
+function renderExamMap(){
+  var c = document.getElementById("examMap"); c.innerHTML="";
+  EXAM_ORDER.forEach(function(x){
+    var recs = RECORDS.filter(function(r){return (r.exam_target||[]).indexOf(x)>=0;});
+    var g = document.createElement("div"); g.className="exam-grp";
+    var head = document.createElement("div"); head.className="eh";
+    head.innerHTML = '<span class="ecode">'+esc(x)+'</span><span class="edesc">'+esc(EXAM_BLUEPRINT[x]||"")+'</span><span class="ecnt">'+recs.length+'枚</span>';
+    g.appendChild(head);
+    var items = document.createElement("div"); items.className="exam-items";
+    if(recs.length===0){
+      var em = document.createElement("span"); em.className="exam-empty"; em.textContent="対応プリントなし（穴）";
+      items.appendChild(em);
+    } else {
+      recs.forEach(function(r){
+        var a = document.createElement("a");
+        a.className="exam-pill";
+        a.href = encodeURI(r.relpath);
+        a.target = "_blank"; a.rel="noopener";
+        a.textContent = r.variant + "・" + r.title;
+        items.appendChild(a);
+      });
+    }
+    g.appendChild(items);
+    c.appendChild(g);
+  });
+}
+
+/* ===== カード一覧 ===== */
+function lvBadges(r){
+  var out="";
+  (r.levels||[]).forEach(function(L){ out += '<span class="lv">'+esc(L)+'</span>'; });
+  return out;
+}
+function renderGrid(){
+  var rows = filtered();
+  var grid = document.getElementById("grid"); grid.innerHTML="";
+  document.getElementById("stShown").textContent = rows.length;
+  var active = [];
+  if(state.category) active.push("タイプ:"+state.category);
+  if(state.unit) active.push("単元:"+state.unit);
+  if(state.level) active.push("難度:L"+state.level);
+  if(state.weak) active.push("弱点:"+state.weak);
+  if(state.exam) active.push(state.exam);
+  if(state.misc) active.push(state.misc==="__audio__"?"リスニングあり":state.misc);
+  if(state.kw) active.push('"'+state.kw+'"');
+  document.getElementById("resLabel").textContent = active.length ? (rows.length+"枚 ／ "+active.join(" ・ ")) : (rows.length+"枚 表示中");
+
+  if(rows.length===0){
+    var e=document.createElement("div"); e.className="empty";
+    e.textContent="条件に合うプリントはありません。「絞り込み解除」で全件に戻せます。";
+    grid.appendChild(e); return;
+  }
+  rows.forEach(function(r){
+    var card = document.createElement("div");
+    var done = !!doneSet[r.file];
+    card.className = "card cat-"+(CAT_CLASS[r.category]||"sogo") + (done?" is-done":"");
+
+    var a = document.createElement("a");
+    a.className="open";
+    a.href = encodeURI(r.relpath);
+    a.target="_blank"; a.rel="noopener";
+
+    var rightIcon = r.has_audio
+      ? '<span class="audioicon">リスニング</span>'
+      : '<span class="tpicon">'+esc(r.type_print)+'</span>';
+    var wchips = (r.weakness||[]).map(function(w){return '<span class="wchip">'+esc(w)+'</span>';}).join("");
+    var echips = (r.exam_target||[]).map(function(x){return '<span class="echip">'+esc(x)+'</span>';}).join("");
+    var tchips = (r.tags||[]).map(function(t){return '<span class="tchip">'+esc(t)+'</span>';}).join("");
+    var subHtml = r.subunit ? ' <span class="sub">／ '+esc(r.subunit)+'</span>' : '';
+
+    a.innerHTML =
+      '<div class="toprow">'+
+        '<span class="variant">'+esc(r.variant)+'</span>'+
+        '<span class="catbadge">'+esc(r.category)+'</span>'+
+        rightIcon +
+      '</div>'+
+      '<div class="title">'+esc(r.title)+'</div>'+
+      '<div class="unit">'+esc(r.unit)+subHtml+'</div>'+
+      '<div class="metarow">'+ lvBadges(r) +
+        '<span class="qbadge">英語問題 '+r.questions+'</span>'+
+        '<span class="qbadge">採点 '+r.grade_items+'</span>'+
+      '</div>'+
+      '<div class="chiprow">'+ wchips + echips + tchips +'</div>';
+    card.appendChild(a);
+
+    var btn = document.createElement("button");
+    btn.type="button"; btn.className="doneBtn"; btn.textContent="✓";
+    btn.setAttribute("aria-label","やったチェック "+r.variant);
+    btn.addEventListener("click", function(ev){
+      ev.preventDefault(); ev.stopPropagation();
+      if(doneSet[r.file]){ delete doneSet[r.file]; card.classList.remove("is-done"); }
+      else { doneSet[r.file]=1; card.classList.add("is-done"); }
+      saveDone();
+    });
+    card.appendChild(btn);
+
+    grid.appendChild(card);
+  });
+}
+
+/* ===== 再描画 ===== */
+function rerender(){
+  renderWeakPanel();
+  renderFilters();
+  renderGrid();
+}
+
+/* 検索（インクリメンタル） */
+document.getElementById("search").addEventListener("input", function(e){
+  state.kw = e.target.value || "";
+  renderGrid();
+});
+
+/* 絞り込み解除 */
+document.getElementById("resetBtn").addEventListener("click", function(){
+  state = { category:null, unit:null, level:null, weak:null, exam:null, misc:null, kw:"" };
+  document.getElementById("search").value="";
+  rerender();
+});
+
+/* ===== 初期化 ===== */
+computeHeader();
+renderHeat();
+renderExamMap();
+rerender();
+</script>
+</body>
+</html>

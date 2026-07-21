@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 特訓選抜 英語 大問4対策「並べ替えマスター」v2（難度UP＝余分語を紛らわしく:活用違い/品詞違い/主格目的格を混入。複合文・3単現疑問・頻度副詞・how many/what time）。装飾絵文字削除。夏前CSS/JS流用。KEY=tokkun_e_re4。-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓 英語 並べ替えマスター（大問4）｜20分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:6px}
+.pg-sub{font-size:13.5px;color:#3a4a63;margin-top:8px}
+.howto{background:#fffaf0;border:1px solid #e8d6a8;border-radius:8px;padding:12px 16px;margin-bottom:18px;font-size:13.5px;color:#7a5a1e}
+.howto b{color:#8a5a19}
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:#e6eef8;border-left:6px solid #9fb8d9}
+.sec-hd h2{font-size:17px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-body{padding:16px 20px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:14px 16px;margin:14px 0}
+.qnum-e{display:inline-block;font-size:12px;font-weight:800;color:#4c5b70;background:#eef2ec;border:1px solid #dfe6dc;border-radius:10px;padding:2px 10px;margin-bottom:8px}
+.jp-box{font-size:18px;font-weight:900;color:#31415f;background:#fff;border:2px solid #c8d4e6;border-left:6px solid #9fb8d9;border-radius:8px;padding:11px 15px;margin-bottom:10px}
+.bank{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:10px}
+.card{display:inline-block;background:#eef3fb;border:1px solid #c3d4e7;border-radius:8px;padding:6px 12px;font-size:15px;font-weight:700;color:#31415f}
+.card .k{display:inline-block;font-size:11px;font-weight:800;color:#7a8aa3;margin-right:4px}
+.frame{font-size:14px;color:#4c5b70;margin-bottom:8px}
+.ew-line{color:#aeb4bd;font-size:16px;border-bottom:2px solid #d8ddd4;padding:8px 4px;margin-bottom:10px;letter-spacing:2px}
+.ans-btn{margin-top:2px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;margin-top:10px}
+.ans-box.open{display:block}
+.rw-type{display:inline-block;font-size:12px;font-weight:800;color:#31527a;background:#e6eef8;border:1px solid #c3d4e7;border-radius:8px;padding:2px 10px;margin-bottom:6px}
+.rw-why{background:#f7faff;border:1px solid #d8e2f0;border-radius:8px;padding:10px 14px;font-size:13.5px;line-height:1.9;color:#33425a}
+.rw-why b{color:#2f4a72}
+.rw-order{font-size:14px;font-weight:800;color:#31527a;margin:6px 0 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 14px;margin-top:8px;font-size:13px;color:#8a5a19}
+.bx-warn::before{content:"⚠️ 余分な語と、ねらわれる間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-warn .ng{color:#9b514d;font-weight:800}.bx-warn .ok{color:#3f7a4a;font-weight:800}
+.ans-final{margin-top:10px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.grade .o,.grade .x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.grade .o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.grade .x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.cheer{text-align:center;font-size:14px;color:#5a6b50;margin-top:12px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important}
+  .write3{display:block!important}
+  .sec,.q{break-inside:avoid;page-break-inside:avoid}
+  .sec{box-shadow:none;margin-bottom:16px}
+}
+</style>
+</head>
+<body data-eng="1">
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓選抜 英語</span><span class="pg-badge">大問4 並べ替え</span><span class="pg-badge">全10問</span></div>
+  <h1>並べ替えマスター（特訓 大問4）</h1>
+  <p>目安 約20分　＝日本語に合うよう語を並べる。1つだけ余分な語がまざっているよ。</p>
+  <p class="pg-sub">特訓の余分な語は「<b>正しい語とまぎらわしいもの</b>」（likes と like、is と are、her と she など）が入る。そこが本番のワナ。</p>
+</div>
+
+<div class="howto">
+  <b>やり方</b>：①日本語と語群を読む → ②答えを見る前に、英文を<b>正しい順で書く</b>（1つは使わない＝余分） → ③「解説を読む→こたえへ」 → ④○✕、✕なら<b>3回</b>書く。<br>
+  <b>コツ</b>：まず<b>動詞</b>を決める。be動詞か一般動詞か、主語が3人称単数か。それで does/do・-s の有無・余分語が見えてくる。
+</div>
+
+<div class="sec"><div class="sec-hd"><h2>並べ替え 10問（特訓 大問4・実物レベル）</h2><span class="badge-grade">L7-v3監査：L2×5／L3×5</span></div><div class="sec-body">
+
+  <!-- 1 疑問詞what＋3単現(余分=likes) -->
+  <div class="q" data-id="O-1"><div class="qnum-e">問題1</div>
+    <div class="jp-box">あなたのお姉さんは何の教科が好きですか。</div>
+    <div class="bank"><span class="card"><span class="k">ア</span>like</span><span class="card"><span class="k">イ</span>does</span><span class="card"><span class="k">ウ</span>what</span><span class="card"><span class="k">エ</span>likes</span><span class="card"><span class="k">オ</span>subject</span><span class="card"><span class="k">カ</span>your</span><span class="card"><span class="k">キ</span>sister</span></div>
+    <div class="frame">（　）（　）（　）（　）（　）（　）?　← 1つ余る</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【疑問詞 what＋3単現の疑問文】</div>
+      <div class="rw-why">What subject を先頭に。3人称単数(your sister)なので <b>does</b>、動詞は<b>原形 like</b>。<br><span class="rw-order">順番：ウ → オ → イ → カ → キ → ア</span></div>
+      <div class="bx-warn">余分＝<span class="ng">エ likes</span>。does を使うので <span class="ok">like（原形）</span>。likes を選ぶと-sが二重。</div>
+      <div class="ans-final"><span>こたえ</span>What subject does your sister like?</div>
+    </div>
+    <div class="gq" data-gid="O-1"><div class="grade">書けた？ <button class="o" onclick="g(this,'O-1','o')">○</button><button class="x" onclick="g(this,'O-1','x')">✕</button></div><div class="write3">📝 まちがえたら3回　What subject does your sister like?</div></div>
+  </div>
+
+  <!-- 2 be複数＋前置詞(余分=is) -->
+  <div class="q" data-id="O-2"><div class="qnum-e">問題2</div>
+    <div class="jp-box">私のノートは机の上にあります。</div>
+    <div class="bank"><span class="card"><span class="k">ア</span>is</span><span class="card"><span class="k">イ</span>on</span><span class="card"><span class="k">ウ</span>are</span><span class="card"><span class="k">エ</span>the</span><span class="card"><span class="k">オ</span>desk</span><span class="card"><span class="k">カ</span>notebooks</span></div>
+    <div class="frame">My（　）（　）（　）（　）（　）.　← 1つ余る</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【複数主語＋be動詞＋場所の on】</div>
+      <div class="rw-why">My notebooks（複数）なので be動詞は <b>are</b>。「机の上に」on the desk。<br><span class="rw-order">順番：カ → ウ → イ → エ → オ</span></div>
+      <div class="bx-warn">余分＝<span class="ng">ア is</span>。notebooks は複数だから <span class="ok">are</span>（is につられない）。</div>
+      <div class="ans-final"><span>こたえ</span>My notebooks are on the desk.</div>
+    </div>
+    <div class="gq" data-gid="O-2"><div class="grade">書けた？ <button class="o" onclick="g(this,'O-2','o')">○</button><button class="x" onclick="g(this,'O-2','x')">✕</button></div><div class="write3">📝 まちがえたら3回　My notebooks are on the desk.</div></div>
+  </div>
+
+  <!-- 3 3単現否定(余分=don't) -->
+  <div class="q" data-id="O-3"><div class="qnum-e">問題3</div>
+    <div class="jp-box">私の父はコーヒーを飲みません。</div>
+    <div class="bank"><span class="card"><span class="k">ア</span>drink</span><span class="card"><span class="k">イ</span>doesn't</span><span class="card"><span class="k">ウ</span>don't</span><span class="card"><span class="k">エ</span>coffee</span></div>
+    <div class="frame">My father（　）（　）（　）.　← 1つ余る</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【3単現の否定文】</div>
+      <div class="rw-why">My father（3人称単数）の否定は <b>doesn't</b>、動詞は<b>原形 drink</b>。<br><span class="rw-order">順番：イ → ア → エ</span></div>
+      <div class="bx-warn">余分＝<span class="ng">ウ don't</span>。主語が3人称単数なので <span class="ok">doesn't</span>（don't ではない）。</div>
+      <div class="ans-final"><span>こたえ</span>My father doesn't drink coffee.</div>
+    </div>
+    <div class="gq" data-gid="O-3"><div class="grade">書けた？ <button class="o" onclick="g(this,'O-3','o')">○</button><button class="x" onclick="g(this,'O-3','x')">✕</button></div><div class="write3">📝 まちがえたら3回　My father doesn't drink coffee.</div></div>
+  </div>
+
+  <!-- 4 頻度副詞(余分=am) -->
+  <div class="q" data-id="O-4"><div class="qnum-e">問題4</div>
+    <div class="jp-box">私はたいてい7時に起きます。</div>
+    <div class="bank"><span class="card"><span class="k">ア</span>up</span><span class="card"><span class="k">イ</span>usually</span><span class="card"><span class="k">ウ</span>get</span><span class="card"><span class="k">エ</span>seven</span><span class="card"><span class="k">オ</span>at</span><span class="card"><span class="k">カ</span>am</span></div>
+    <div class="frame">I（　）（　）（　）（　）（　）.　← 1つ余る</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【頻度の副詞＋一般動詞＋時刻の at】</div>
+      <div class="rw-why">「たいてい」usually は一般動詞 get の前。「起きる」get up、「7時に」at seven。<br><span class="rw-order">順番：イ → ウ → ア → オ → エ</span></div>
+      <div class="bx-warn">余分＝<span class="ng">カ am</span>。get は一般動詞だから be動詞(am)は不要。<span class="ok">I usually get up</span> の語順。</div>
+      <div class="ans-final"><span>こたえ</span>I usually get up at seven.</div>
+    </div>
+    <div class="gq" data-gid="O-4"><div class="grade">書けた？ <button class="o" onclick="g(this,'O-4','o')">○</button><button class="x" onclick="g(this,'O-4','x')">✕</button></div><div class="write3">📝 まちがえたら3回　I usually get up at seven.</div></div>
+  </div>
+
+  <!-- 5 否定命令(余分=you) -->
+  <div class="q" data-id="O-5"><div class="qnum-e">問題5</div>
+    <div class="jp-box">ここで走ってはいけません。</div>
+    <div class="bank"><span class="card"><span class="k">ア</span>run</span><span class="card"><span class="k">イ</span>here</span><span class="card"><span class="k">ウ</span>don't</span><span class="card"><span class="k">エ</span>you</span></div>
+    <div class="frame">（　）（　）（　）.　← 1つ余る</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【否定の命令文】</div>
+      <div class="rw-why">「〜してはいけない」は <b>Don't</b> ＋動詞の原形で始める。主語は書かない。<br><span class="rw-order">順番：ウ → ア → イ</span></div>
+      <div class="bx-warn">余分＝<span class="ng">エ you</span>。命令文に主語 you は不要。文頭 <span class="ok">Don't</span> は大文字。</div>
+      <div class="ans-final"><span>こたえ</span>Don't run here.</div>
+    </div>
+    <div class="gq" data-gid="O-5"><div class="grade">書けた？ <button class="o" onclick="g(this,'O-5','o')">○</button><button class="x" onclick="g(this,'O-5','x')">✕</button></div><div class="write3">📝 まちがえたら3回　Don't run here.</div></div>
+  </div>
+
+  <!-- 6 3単現疑問＋目的語(余分=has) -->
+  <div class="q" data-id="O-6"><div class="qnum-e">問題6</div>
+    <div class="jp-box">あなたのお兄さんは犬を飼っていますか。</div>
+    <div class="bank"><span class="card"><span class="k">ア</span>have</span><span class="card"><span class="k">イ</span>does</span><span class="card"><span class="k">ウ</span>has</span><span class="card"><span class="k">エ</span>your</span><span class="card"><span class="k">オ</span>brother</span><span class="card"><span class="k">カ</span>a</span><span class="card"><span class="k">キ</span>dog</span></div>
+    <div class="frame">（　）（　）（　）（　）（　）（　）?　← 1つ余る</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【3単現の疑問文・has は have に】</div>
+      <div class="rw-why">3人称単数(your brother)の疑問は <b>Does</b>、動詞は原形 <b>have</b>。<br><span class="rw-order">順番：イ → エ → オ → ア → カ → キ</span></div>
+      <div class="bx-warn">余分＝<span class="ng">ウ has</span>。Does を使うので <span class="ok">have（原形）</span>。has は使わない。</div>
+      <div class="ans-final"><span>こたえ</span>Does your brother have a dog?</div>
+    </div>
+    <div class="gq" data-gid="O-6"><div class="grade">書けた？ <button class="o" onclick="g(this,'O-6','o')">○</button><button class="x" onclick="g(this,'O-6','x')">✕</button></div><div class="write3">📝 まちがえたら3回　Does your brother have a dog?</div></div>
+  </div>
+
+  <!-- 7 how many(余分=much) -->
+  <div class="q" data-id="O-7"><div class="qnum-e">問題7</div>
+    <div class="jp-box">あなたは本を何冊持っていますか。</div>
+    <div class="bank"><span class="card"><span class="k">ア</span>many</span><span class="card"><span class="k">イ</span>books</span><span class="card"><span class="k">ウ</span>do</span><span class="card"><span class="k">エ</span>how</span><span class="card"><span class="k">オ</span>have</span><span class="card"><span class="k">カ</span>you</span><span class="card"><span class="k">キ</span>much</span></div>
+    <div class="frame">（　）（　）（　）（　）（　）（　）?　← 1つ余る</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【How many＋数えられる名詞】</div>
+      <div class="rw-why">数をたずねる <b>How many</b>＋複数名詞(books)。後ろは疑問文 do you have。<br><span class="rw-order">順番：エ → ア → イ → ウ → カ → オ</span></div>
+      <div class="bx-warn">余分＝<span class="ng">キ much</span>。数えられる books は <span class="ok">many</span>（much は水・お金など数えられないもの）。</div>
+      <div class="ans-final"><span>こたえ</span>How many books do you have?</div>
+    </div>
+    <div class="gq" data-gid="O-7"><div class="grade">書けた？ <button class="o" onclick="g(this,'O-7','o')">○</button><button class="x" onclick="g(this,'O-7','x')">✕</button></div><div class="write3">📝 まちがえたら3回　How many books do you have?</div></div>
+  </div>
+
+  <!-- 8 what time(余分=at) -->
+  <div class="q" data-id="O-8"><div class="qnum-e">問題8</div>
+    <div class="jp-box">あなたは何時に寝ますか。</div>
+    <div class="bank"><span class="card"><span class="k">ア</span>time</span><span class="card"><span class="k">イ</span>do</span><span class="card"><span class="k">ウ</span>what</span><span class="card"><span class="k">エ</span>you</span><span class="card"><span class="k">オ</span>go</span><span class="card"><span class="k">カ</span>bed</span><span class="card"><span class="k">キ</span>to</span><span class="card"><span class="k">ク</span>at</span></div>
+    <div class="frame">（　）（　）（　）（　）（　）（　）（　）?　← 1つ余る</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【What time＋一般動詞の疑問文】</div>
+      <div class="rw-why">時刻をたずねる <b>What time</b>。後ろは do you go to bed（寝る＝go to bed）。<br><span class="rw-order">順番：ウ → ア → イ → エ → オ → キ → カ</span></div>
+      <div class="bx-warn">余分＝<span class="ng">ク at</span>。What time でたずねるとき at は不要（at は「at six」のように答えで使う）。</div>
+      <div class="ans-final"><span>こたえ</span>What time do you go to bed?</div>
+    </div>
+    <div class="gq" data-gid="O-8"><div class="grade">書けた？ <button class="o" onclick="g(this,'O-8','o')">○</button><button class="x" onclick="g(this,'O-8','x')">✕</button></div><div class="write3">📝 まちがえたら3回　What time do you go to bed?</div></div>
+  </div>
+
+  <!-- 9 代名詞目的格(余分=she) -->
+  <div class="q" data-id="O-9"><div class="qnum-e">問題9</div>
+    <div class="jp-box">私は毎日彼女を手伝います。</div>
+    <div class="bank"><span class="card"><span class="k">ア</span>she</span><span class="card"><span class="k">イ</span>help</span><span class="card"><span class="k">ウ</span>her</span><span class="card"><span class="k">エ</span>every</span><span class="card"><span class="k">オ</span>day</span></div>
+    <div class="frame">I（　）（　）（　）（　）.　← 1つ余る</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【代名詞の目的格（〜を）】</div>
+      <div class="rw-why">「彼女を」は動詞の後ろ＝目的格 <b>her</b>。「毎日」every day。<br><span class="rw-order">順番：イ → ウ → エ → オ</span></div>
+      <div class="bx-warn">余分＝<span class="ng">ア she</span>。she は「彼女<u>は</u>」（主語）。「彼女<u>を</u>」は <span class="ok">her</span>。</div>
+      <div class="ans-final"><span>こたえ</span>I help her every day.</div>
+    </div>
+    <div class="gq" data-gid="O-9"><div class="grade">書けた？ <button class="o" onclick="g(this,'O-9','o')">○</button><button class="x" onclick="g(this,'O-9','x')">✕</button></div><div class="write3">📝 まちがえたら3回　I help her every day.</div></div>
+  </div>
+
+  <!-- 10 these are(余分=is) -->
+  <div class="q" data-id="O-10"><div class="qnum-e">問題10</div>
+    <div class="jp-box">これらは私のえんぴつです。</div>
+    <div class="bank"><span class="card"><span class="k">ア</span>is</span><span class="card"><span class="k">イ</span>these</span><span class="card"><span class="k">ウ</span>my</span><span class="card"><span class="k">エ</span>are</span><span class="card"><span class="k">オ</span>pencils</span></div>
+    <div class="frame">（　）（　）（　）（　）.　← 1つ余る</div>
+    <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+    <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+    <div class="ans-box">
+      <div class="rw-type">【these（複数）＋are】</div>
+      <div class="rw-why">「これら」these は複数なので be動詞は <b>are</b>。えんぴつも複数 pencils。<br><span class="rw-order">順番：イ → エ → ウ → オ</span></div>
+      <div class="bx-warn">余分＝<span class="ng">ア is</span>。these は複数だから <span class="ok">are</span>（is にしない）。</div>
+      <div class="ans-final"><span>こたえ</span>These are my pencils.</div>
+    </div>
+    <div class="gq" data-gid="O-10"><div class="grade">書けた？ <button class="o" onclick="g(this,'O-10','o')">○</button><button class="x" onclick="g(this,'O-10','x')">✕</button></div><div class="write3">📝 まちがえたら3回　These are my pencils.</div></div>
+  </div>
+
+</div></div>
+
+<button class="done" id="doneBtn" onclick="finish()">ぜんぶ並べられた！</button>
+<div class="fin" id="fin"></div>
+<div class="cheer">「動詞を決める→余分なまぎらわしい語を外す」。この2手で大問4は確実に取れるよ。</div>
+
+</div>
+<script>
+var KEY='tokkun_e_re4';
+function t(b){if(!b.dataset.label)b.dataset.label=b.textContent;var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');b.textContent=open?'とじる':b.dataset.label;}
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}var w3=box.querySelector('.write3');if(v==='x'){if(w3)w3.style.display='block';}else{if(w3)w3.style.display='none';}}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくできた！まぎらわしい余分語、見ぬけるようになったね';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);if(!v)return;var b=box.querySelector('.'+v);if(b)b.classList.add('sel');if(v==='x'){var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}});if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}};
+/* ===== 復習英語キュー送りフック（×/○・英語問題のみ・自己ループ防止） ===== */
+function sendToRevQ(btn,id,result){
+  if(typeof PRE!=='undefined' && PRE==='revq_') return;        // 受け皿自身では動かさない
+  if(typeof KEY==='undefined') return;
+  if(KEY.indexOf('revq')===0) return;
+  var q=btn&&btn.closest?btn.closest('.q'):null; if(!q) return;
+  if(q.classList.contains('calc')) return;                      // 数学除外
+  var engPrint=!!document.querySelector('[data-eng="1"]');
+  var isVocab=q.classList.contains('vocab'), isWriting=q.classList.contains('writing');
+  if(!engPrint && !isVocab && !isWriting) return;               // 混在で英語クラス無し→送らない
+  var kindEl=q.querySelector('.qnum-e'); var kindRaw=kindEl?(kindEl.textContent||''):'';
+  if(/漢字|書き|読み/.test(kindRaw)) return;                    // 暗記カードの漢字除外
+  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.qbody');
+  var enEl=q.querySelector('.ans-final')||q.querySelector('.ans-box .ans-main');
+  if(!jpEl||!enEl) return;
+  var jp=cleanRevQText(jpEl), en=cleanRevQText(enEl);
+  if(!jp||!en) return;
+  if(!/[A-Za-z]/.test(en)) return;                              // 答えに英字なし→英語でない→除外
+  if(result==='o'){bumpRevQPo(en);return;}                      // ○：既存項目の po++ のみ（新規追加しない）
+  var kind='単語',badge='tango';
+  if(isWriting||/英作文/.test(kindRaw)||/[.!?]\s*$/.test(en)){kind='英作文';badge='eisaku';}
+  else if(/熟語/.test(kindRaw)){kind='熟語';badge='jukugo';}
+  pushRevQDyn({jp:jp,en:en,kind:kind,badge:badge,day:revqToday(),src:(KEY+'_'+id)});
+}
+function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[（(][^）)]*でもOK[^）)]*[）)]/g,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function revqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function revqNorm(s){return String(s||'').toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function bumpRevQPo(en){try{var K='revq_dyn';var raw=localStorage.getItem(K);if(raw==null)return;var arr;try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;var key=revqNorm(en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].po=(+arr[i].po||0)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}}catch(e){}}
+function pushRevQDyn(item){try{var K='revq_dyn';var raw=localStorage.getItem(K);var arr;if(raw==null){arr=[];}else{try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;}var key=revqNorm(item.en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;arr[i].po=0;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;item.po=0;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
+</script>
+</body>
+</html>

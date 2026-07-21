@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓S2 速さ ― 9月 大問3(2)・大問6 直撃｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"📝 今日の進め方（ルールはこれだけ）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.tool-hint{background:#f3f6fb;border:1px solid #cdd9e6;border-radius:8px;padding:9px 13px;margin:12px 0}
+.tool-hint summary{cursor:pointer;font-size:13px;font-weight:800;color:#3f6f9f;list-style:none}
+.tool-hint summary::-webkit-details-marker{display:none}
+.tool-hint .tin{margin-top:9px;font-size:13.5px;line-height:2.0;color:#3a4756;border-top:1px dashed #cdd9e6;padding-top:9px}
+.tool-hint .tin b{color:#2f5a8a}
+.tool-hint .tin ul{margin:4px 0 4px 1.3em}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ ★よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月本番へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ いいかえ（何を聞かれているの？）";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-chk{background:#eef6fb;border-left:4px solid #5b8fbf}
+.bx-chk::before{content:"✅ 検算（自分で○をつけられる子になる）";display:block;font-size:12px;font-weight:800;color:#2f5a8a;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.subq{margin:8px 0 0 4px;font-size:17px;font-weight:800;color:#31415f;line-height:2.2}
+.subq .no{display:inline-block;width:22px;color:#7a8798}
+.fill{display:inline-block;min-width:70px;border-bottom:2.5px solid #7aa7d9;text-align:center;font-weight:900;color:#2f5a8a;padding:0 6px}
+.wex{background:#eef6fb;border:2px solid #a8c8e4;border-left:7px solid #5b8fbf;border-radius:8px;padding:12px 14px;margin:10px 0}
+.wex::before{content:"👀 例：やり方をぜんぶ見せるよ（読んだらノートに写してから次へ）";display:block;font-size:12px;font-weight:900;color:#2f5a8a;margin-bottom:6px}
+.wex .wl{margin:5px 0;font-size:14px;line-height:1.95;color:#25415f}
+.wex .wl b{color:#c0392b}
+.half{background:#fdf7ee;border:2px solid #eccf9a;border-left:7px solid #e0a85c;border-radius:8px;padding:12px 14px;margin:10px 0}
+.half::before{content:"🧩 穴あき：半分うまっているよ。のこりの □ を自分でうめよう";display:block;font-size:12px;font-weight:900;color:#8a5a17;margin-bottom:6px}
+.half .hl{margin:6px 0;font-size:14px;line-height:2.1;color:#5a4520}
+.half .hl b{color:#8a5a17}
+.svgfig{display:block;margin:10px auto;background:#fff;border:1px solid #dde3ea;border-radius:8px;width:100%;max-width:520px;height:auto}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.step.q5{border-left-color:#d98aa7;background:#fdf2f6}
+.step.q5 > span:first-child{background:#f7dce8;border-color:#eebccf;color:#9a3f63}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:.95em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.red{color:#9b514d;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓S2</span><span class="pg-badge">数学：速さ</span><span class="pg-badge">出会い算・追いつき算</span><span class="pg-badge">L1-L4</span></div>
+  <h1>特訓S2 速さ ― 9月 大問3(2)・大問6 直撃</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問10）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">この1枚は、9月本番の <strong>大問3(2)（往復の速さ）</strong> と <strong>大問6（バスの出会い・自転車の追い越し）</strong> をまっすぐ狙い撃つ。きみは「時速18km ＝ 分速300m」「分速80m ＝ 時速4.8km」を<strong>2回とも落としている</strong>。ここは<strong>速さの土台</strong>で、ここが崩れると大問6が丸ごと消える。逆にここさえ立て直せば、大問6は「和」と「差」の2語で解ける。今日その2語を手に入れよう🌸</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① まず自分で解く</b>（解説を先に見ない。まちがえていい）</li>
+    <li><b>② 線分図をかく</b>（速さの問題は、図をかいた人が勝つ）</li>
+    <li><b>③ 解説を読む</b>（読んだら、式をノートに写す）</li>
+    <li><b>④ ○✕をつける</b>（✕はミスの型もえらぶ）</li>
+    <li><b>⑤ 検算する</b>（出た答えを問題文にもどして確かめる）</li>
+  </ol>
+</div>
+
+<details class="tool-hint">
+  <summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+  <div class="tin">
+    <b>速さの3公式</b>
+    <ul>
+      <li>道のり ＝ 速さ × 時間</li>
+      <li>速さ　 ＝ 道のり ÷ 時間</li>
+      <li>時間　 ＝ 道のり ÷ 速さ</li>
+    </ul>
+    <b>単位のはしご</b>
+    <ul>
+      <li>秒速 →（×60）→ 分速 →（×60）→ 時速　／　時速 →（÷60）→ 分速 →（÷60）→ 秒速</li>
+      <li>1km ＝ 1000m　　1時間 ＝ 60分　　1分 ＝ 60秒　　1時間 ＝ 3600秒</li>
+      <li>時間を分数で書くとき：20分 ＝ <span class="frac"><span class="n">20</span><span class="d">60</span></span> 時間 ＝ <span class="frac"><span class="n">1</span><span class="d">3</span></span> 時間、2時間30分 ＝ <span class="frac"><span class="n">5</span><span class="d">2</span></span> 時間</li>
+    </ul>
+  </div>
+</details>
+
+<!-- ===== 大問0 診断 ===== -->
+<div class="unit-banner"><span class="unit-num">大問0 ★診断</span><span class="unit-name">前にやった問題。今日はどう？</span><span class="unit-time">目安 2分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問1【診断】</span>□に あてはまる数を 書きなさい。</div>
+  <div class="subq"><span class="no">①</span>時速18km ＝ 分速 <span class="fill">　　</span> m</div>
+  <div class="subq"><span class="no">②</span>分速80m ＝ 時速 <span class="fill">　　</span> km</div>
+  <div class="note-draw">答えには単位を必ず書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">「時速」は<strong>1時間に進む道のり</strong>、「分速」は1分に進む道のり。1時間は1分の60倍だから、時速から分速にするときは1時間ぶんを60等分する。単位の記号をいじるのではなく、意味でいいかえると迷わない。</div>
+    <div class="step q1"><span>①</span>まず道のり：18km ＝ 18 × 1000 ＝ 18000m（1時間に18000m進む）<br>次に時間：<span class="math">18000 ÷ 60 ＝ 300</span> → 分速300m</div>
+    <div class="step q1"><span>②</span>まず時間：1分で80m → 1時間（60分）では <span class="math">80 × 60 ＝ 4800</span> → 時速4800m<br>次に道のり：<span class="math">4800 ÷ 1000 ＝ 4.8</span> → 時速4.8km</div>
+    <div class="bx bx-warn">時速 → 分速 で <span class="red">60 で割るのか掛けるのかで迷ったら</span>、分速のほうが小さい数になるはず（1分で進む距離のほうが、1時間で進む距離より短い）と考える。前に 時速18km → 分速300m で落としたのはここ。もし 18 ÷ 60 ＝ 0.3 として「分速0.3m」にしたら、1分で30cmしか進まない人になってしまう。<br>②では km に直すのを忘れて「時速4800m」で止めない。聞かれている単位（km）を答えの横に先に書いてしまうと防げる。</div>
+    <div class="step q4"><span>コツ</span>時速◯km → 分速△m は「÷6 して ×100」で暗算できる。18 ÷ 6 ＝ 3 → ×100 → 分速300m。54 ÷ 6 ＝ 9 → ×100 → 分速900m。（÷60 して ×1000 を分けただけ）</div>
+    <div class="bx bx-chk">① 300 × 60 ＝ 18000m ＝ 18km ○　／　② 4.8km ＝ 4800m、4800 ÷ 60 ＝ 80 → 分速80m ○　どちらも元にもどった。</div>
+    <div class="bx bx-link">2問とも○だったら、この型はもう<strong>克服！</strong>「時速18km ＝ 分速300m」「分速80m ＝ 時速4.8km」で2回落としていたところを、今日きみは自力で取り返した。9月の大問6はこの速さの単位でできている。土台がもどった以上、あとは上に積むだけ🌸　もし✕でも大丈夫。この1枚を最後までやれば、帰りにはできるようになっている。</div>
+    <div class="ans-final"><span>こたえ</span>① 分速300m　② 時速4.8km</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="m19_1"><div class="grade"><span class="gq-label">問1【診断】</span>○✕ → <button class="o" onclick="g(this,'m19_1','o')">○</button><button class="x" onclick="g(this,'m19_1','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 大問1 基礎 ===== -->
+<div class="unit-banner"><span class="unit-num">大問1</span><span class="unit-name">基礎｜3用法・単位換算・単位そろえ　L1-L2</span><span class="unit-time">目安 8分</span></div>
+
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問2【例】</span>次の①〜③を求めなさい。</div>
+  <div class="subq"><span class="no">①</span>分速70m で 15分 歩いた。進んだ道のりは何 m ですか。</div>
+  <div class="subq"><span class="no">②</span>1200m を 15分 で歩いた。速さは分速何 m ですか。</div>
+  <div class="subq"><span class="no">③</span>分速60m で 900m 進むには、何分かかりますか。</div>
+  <div class="wex">
+    <div class="wl"><b>速さ・道のり・時間は3つで1セット</b>。どれか2つがわかれば、のこりの1つは必ず出る。</div>
+    <div class="wl">① 聞かれているのは<b>道のり</b>。道のり ＝ 速さ × 時間 → <span class="math">70 × 15 ＝ 1050</span> → <b>1050m</b></div>
+    <div class="wl">② 聞かれているのは<b>速さ</b>。速さ ＝ 道のり ÷ 時間 → <span class="math">1200 ÷ 15 ＝ 80</span> → <b>分速80m</b></div>
+    <div class="wl">③ 聞かれているのは<b>時間</b>。時間 ＝ 道のり ÷ 速さ → <span class="math">900 ÷ 60 ＝ 15</span> → <b>15分</b></div>
+    <div class="wl">見分け方：<b>かけ算になるのは「道のり」を出すときだけ</b>。あとの2つは「道のり ÷ 何か」。だから <b>道のりを真ん中に置いて考える</b>とまちがえない。</div>
+    <div class="wl">検算：① 1050 ÷ 15 ＝ 70（分速70m にもどる）○　② 80 × 15 ＝ 1200m ○　③ 60 × 15 ＝ 900m ○</div>
+  </div>
+  <div class="note-draw">読んだら、①②③の式をそのままノートに写そう。写しながら「これは道のり／速さ／時間のどれを聞かれている？」と口で言ってみて。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">3つの公式を丸暗記しなくていい。<strong>「分速70m」＝「1分で70m進む」</strong>といいかえれば、15分なら70mが15回分。だから 70 × 15。逆に「1200mを15分」なら、1分あたりに直すために 1200 ÷ 15。ぜんぶ「1分あたり」に戻す作業だと思えばいい。</div>
+    <div class="step q1"><span>①</span>道のり ＝ 速さ × 時間 → 70 × 15 ＝ 1050m</div>
+    <div class="step q1"><span>②</span>速さ ＝ 道のり ÷ 時間 → 1200 ÷ 15 ＝ 分速80m</div>
+    <div class="step q1"><span>③</span>時間 ＝ 道のり ÷ 速さ → 900 ÷ 60 ＝ 15分</div>
+    <div class="bx bx-warn"><span class="red">「とりあえず割る」「とりあえず掛ける」をやらない</span>。何を聞かれているかを先に○で囲む。答えの単位も手がかりになる：答えに「m」がついたら道のり、「分速◯m」なら速さ、「分」なら時間。<br>もう1つ。②で 15 ÷ 1200 とひっくり返さない。速さは「1分あたりの道のり」だから、<strong>道のりを時間で割る</strong>（大きい方を小さい方で割る、ではない。意味で決める）。</div>
+    <div class="bx bx-chk">出た答えを問題文にもどす。①1050m を 15分で割ると 70 → 分速70m ○　②分速80m で 15分歩けば 80×15＝1200m ○　③分速60m で 15分歩けば 60×15＝900m ○</div>
+    <div class="ans-final"><span>こたえ</span>① 1050m　② 分速80m　③ 15分</div>
+      <div class="tec-link">型：<b>速さ・往復型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="m19_2"><div class="grade"><span class="gq-label">問2【例】</span>写せた？ → <button class="o" onclick="g(this,'m19_2','o')">○</button><button class="x" onclick="g(this,'m19_2','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問3【穴あき】</span>□に あてはまる数を 書きなさい。</div>
+  <div class="subq"><span class="no">①</span>時速54km ＝ 分速 <span class="fill">　　</span> m</div>
+  <div class="subq"><span class="no">②</span>分速45m ＝ 時速 <span class="fill">　　</span> km</div>
+  <div class="subq"><span class="no">③</span>秒速20m ＝ 時速 <span class="fill">　　</span> km</div>
+  <div class="half">
+    <div class="hl"><b>①</b>　54km ＝ <b>54000</b> m　→　54000 ÷ 60 ＝ <span class="fill">　　</span>　→　分速 <span class="fill">　　</span> m</div>
+    <div class="hl"><b>②</b>　45 × 60 ＝ <b>2700</b> m（1時間に進む道のり）　→　2700 ÷ 1000 ＝ <span class="fill">　　</span>　→　時速 <span class="fill">　　</span> km</div>
+    <div class="hl"><b>③</b>　1時間 ＝ 60 × 60 ＝ <b>3600</b> 秒　→　20 × 3600 ＝ <span class="fill">　　</span> m ＝ <span class="fill">　　</span> km　→　時速 <span class="fill">　　</span> km</div>
+  </div>
+  <div class="note-draw">□をうめたら、答えを1行に書き直そう。単位を必ずつけること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">速さの換算は<strong>2つの単位を別々に直す</strong>だけ。「km ↔ m」（道のり）と「時 ↔ 分 ↔ 秒」（時間）を、1つずつ順番に。いっぺんにやろうとするから事故る。</div>
+    <div class="step q2"><span>①</span>54km ＝ 54000m。1時間に54000m進む。1分ぶんにするので <span class="math">54000 ÷ 60 ＝ 900</span> → 分速900m</div>
+    <div class="step q2"><span>②</span>1分で45m → 1時間（60分）で <span class="math">45 × 60 ＝ 2700</span>m。m を km に直して <span class="math">2700 ÷ 1000 ＝ 2.7</span> → 時速2.7km</div>
+    <div class="step q2"><span>③</span>秒 →(60)→ 分 →(60)→ 時。階段が2段ある。だから 1時間 ＝ 60 × 60 ＝ 3600秒。「秒から時へは60を2回」と口に出そう。<br>1秒で20m → 1時間で <span class="math">20 × 3600 ＝ 72000</span>m ＝ 72km → 時速72km</div>
+    <div class="step q4"><span>コツ</span>時速◯km → 分速△m は「÷6 して ×100」で暗算できる。18 ÷ 6 ＝ 3 → ×100 → 分速300m。54 ÷ 6 ＝ 9 → ×100 → 分速900m。（÷60 して ×1000 を分けただけ）</div>
+    <div class="bx bx-warn"><span class="red">③で ×60 を1回で止めない</span>。秒 → 時 は 60 を2回（＝3600）。「秒 → 分 → 時」と階段を2段のぼると数えてから計算する。20 × 60 ＝ 1200 で止めると「時速1.2km」＝歩くより遅い電車になってしまう。<br>もう1つ。大きくなるのか小さくなるのかを先に予想する。秒速 → 時速 は数が大きくなるはず（1秒より1時間のほうが長く進める）。時速 → 分速 は<strong>小さくなるはず</strong>。この予想と合わなければ、×と÷を逆にしている。</div>
+    <div class="bx bx-chk">① 900 × 60 ＝ 54000m ＝ 54km ○　② 2.7km ＝ 2700m、2700 ÷ 60 ＝ 45 → 分速45m ○　③ 72km ＝ 72000m、72000 ÷ 3600 ＝ 20 → 秒速20m ○</div>
+    <div class="ans-final"><span>こたえ</span>① 分速900m　② 時速2.7km　③ 時速72km</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="m19_3"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'m19_3','o')">○</button><button class="x" onclick="g(this,'m19_3','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問4</span>次の問いに答えなさい。</div>
+  <div class="subq"><span class="no">①</span>分速60m で 1.2km 進むには、何分かかりますか。</div>
+  <div class="subq"><span class="no">②</span>時速12km の自転車で 1時間20分 走ると、何 km 進みますか。</div>
+  <div class="note-draw">まず自分で解いてから、答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">この問題の正体は「速さ」ではなく<strong>「単位がそろっていない」</strong>こと。①は m と km がまざっている。②は 時間 と 分 がまざっている。そろえてから公式に入れる。順番を逆にすると必ず事故る。</div>
+    <div class="step q2"><span>①</span>1.2km ＝ 1200m にそろえる。時間 ＝ 道のり ÷ 速さ → <span class="math">1200 ÷ 60 ＝ 20</span> → 20分</div>
+    <div class="step q2"><span>②</span>速さが「時速」なので、時間も「時間」の単位にそろえる。<br>1時間20分 ＝ 80分。1時間 ＝ 60分だから <span class="frac"><span class="n">80</span><span class="d">60</span></span> 時間 ＝ <span class="frac"><span class="n">4</span><span class="d">3</span></span> 時間。<br>道のり ＝ 速さ × 時間 → 12 × <span class="frac"><span class="n">4</span><span class="d">3</span></span> ＝ <span class="frac"><span class="n">48</span><span class="d">3</span></span> ＝ 16km</div>
+    <div class="step q2"><span>別解</span>②を分でそろえてもよい。時速12km ＝ 分速 12000 ÷ 60 ＝ 200m。80分走るので 200 × 80 ＝ 16000m ＝ 16km。同じ答えになる。</div>
+    <div class="bx bx-warn"><span class="red">「1時間20分 ＝ 1.2時間」としない</span>。時計は10進法ではなく60進法。20分は1時間の <span class="frac"><span class="n">20</span><span class="d">60</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">3</span></span> だから、1時間20分 ＝ 1<span class="frac"><span class="n">1</span><span class="d">3</span></span> 時間 ＝ <span class="frac"><span class="n">4</span><span class="d">3</span></span> 時間。<br>同じ理由で 2時間30分 ＝ 2.3時間 も×。正しくは <span class="frac"><span class="n">5</span><span class="d">2</span></span> 時間（＝2.5時間）。<strong>分を60で割って時間に直す</strong>、これだけ。<br>①は 1.2 ÷ 60 と、km のまま割らないこと（0.02分という意味不明な答えになる）。</div>
+    <div class="bx bx-chk">① 分速60m で20分なら 60 × 20 ＝ 1200m ＝ 1.2km ○　② 16 ÷ 12 ＝ <span class="frac"><span class="n">4</span><span class="d">3</span></span> 時間 ＝ 1時間20分 ○</div>
+    <div class="ans-final"><span>こたえ</span>① 20分　② 16km</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="m19_4"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'m19_4','o')">○</button><button class="x" onclick="g(this,'m19_4','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 大問2 応用 ===== -->
+<div class="unit-banner"><span class="unit-num">大問2</span><span class="unit-name">応用｜往復・平均の速さ・くらべる　L3　★大問3(2)の型</span><span class="unit-time">目安 9分</span></div>
+
+<div class="q calc" data-id="E">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問5【例】</span>家から公園まで 1200m あります。行きは分速60m、帰りは分速40m で歩きました。往復の平均の速さは、分速何 m ですか。</div>
+  <div class="wex">
+    <svg class="svgfig" viewBox="0 0 520 175" preserveAspectRatio="xMidYMid meet">
+      <text x="60" y="28" font-size="13" font-weight="700" fill="#31415f">片道 1200m を 往復する</text>
+      <line x1="70" y1="70" x2="448" y2="70" stroke="#3f6f9f" stroke-width="2.5"/>
+      <polygon points="448,64 462,70 448,76" fill="#3f6f9f"/>
+      <text x="72" y="58" font-size="12" font-weight="700" fill="#2f5a8a">行き 分速60m（20分かかる）</text>
+      <line x1="450" y1="112" x2="72" y2="112" stroke="#d08a86" stroke-width="2.5"/>
+      <polygon points="72,106 58,112 72,118" fill="#d08a86"/>
+      <text x="72" y="100" font-size="12" font-weight="700" fill="#9b514d">帰り 分速40m（30分かかる）</text>
+      <rect x="50" y="130" width="440" height="36" rx="6" fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5"/>
+      <text x="62" y="154" font-size="14" font-weight="800" fill="#2f6b45">平均の速さ ＝ ぜんぶの道のり ÷ ぜんぶの時間</text>
+    </svg>
+    <div class="wl"><b>「平均の速さ」の意味</b>：もし<b>ずっと同じ速さで往復したら</b>何分速だったか、ということ。だから <b>ぜんぶの道のり ÷ ぜんぶの時間</b>。</div>
+    <div class="wl">① 行きの時間：<span class="math">1200 ÷ 60 ＝ 20</span> → 20分</div>
+    <div class="wl">② 帰りの時間：<span class="math">1200 ÷ 40 ＝ 30</span> → 30分</div>
+    <div class="wl">③ ぜんぶの道のり：<span class="math">1200 × 2 ＝ 2400</span>m　　ぜんぶの時間：<span class="math">20 ＋ 30 ＝ 50</span>分</div>
+    <div class="wl">④ 平均の速さ：<span class="math">2400 ÷ 50 ＝ 48</span> → <b>分速48m</b></div>
+    <div class="wl"><b>速さどうしを足して2で割ってはいけない</b>。(60 ＋ 40) ÷ 2 ＝ 50 は<b>まちがい</b>。おそい帰り道のほうに<b>長い時間がいる</b>から、平均は真ん中（50）より<b>おそい側に引っぱられる</b>。だから48。</div>
+    <div class="wl">検算：分速48m で50分歩くと 48 × 50 ＝ 2400m。ちゃんと往復の道のりになった○</div>
+  </div>
+  <div class="note-draw">読んだら、①〜④の式をそのままノートに写そう。「48 は 50 より小さい」と声に出して確認して。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">聞かれているのは「行きと帰りの速さの真ん中」ではなく、<strong>「往復ぜんぶをならしたら何分速か」</strong>。だから 道のりも時間も、まず合計する。速さは最後に1回だけわり算で出す。</div>
+    <div class="step q3"><span>①</span>行き：1200 ÷ 60 ＝ 20分</div>
+    <div class="step q3"><span>②</span>帰り：1200 ÷ 40 ＝ 30分</div>
+    <div class="step q3"><span>③</span>合計の道のり 2400m ／ 合計の時間 50分</div>
+    <div class="step q3"><span>④</span>2400 ÷ 50 ＝ 分速48m</div>
+    <div class="bx bx-warn"><span class="red">(60 ＋ 40) ÷ 2 ＝ 50 としない</span>。これが往復の速さで最多の失点。速さは「時間あたり」の数だから、時間の長さが違うものをそのまま平均できない。<br>気づき方：おそい方に長く時間がかかるので、答えは必ず真ん中より小さくなる。50 より大きい答えが出たら、その時点でまちがい。<br>もう1つ。道のりを 1200 のままにしない。往復なので 1200 × 2 ＝ 2400m。片道分で割ると 1200 ÷ 50 ＝ 24 となり、答えが半分になる。</div>
+    <div class="bx bx-chk">分速48m × 50分 ＝ 2400m ＝ 往復の道のり ○　さらに、48 は 40 と 60 の間にあり、50 より小さい。予想と一致 ○</div>
+    <div class="bx bx-link">9月 大問3(2) は往復の速さ（15km）。<strong>「合計の道のり ÷ 合計の時間」</strong>この1行を書けるかどうかで決まる。</div>
+    <div class="ans-final"><span>こたえ</span>分速48m</div>
+      <div class="tec-link">型：<b>速さ・往復型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="m19_5"><div class="grade"><span class="gq-label">問5【例】</span>写せた？ → <button class="o" onclick="g(this,'m19_5','o')">○</button><button class="x" onclick="g(this,'m19_5','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="F">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問6【穴あき】</span>A町からB町まで、行きは時速4km、帰りは時速6km で往復したところ、ぜんぶで 1時間15分 かかりました。A町からB町までの道のりは何 km ですか。</div>
+  <div class="half">
+    <svg class="svgfig" viewBox="0 0 520 175" preserveAspectRatio="xMidYMid meet">
+      <text x="60" y="28" font-size="13" font-weight="700" fill="#31415f">A町 ⇄ B町 を 往復する</text>
+      <line x1="70" y1="70" x2="448" y2="70" stroke="#3f6f9f" stroke-width="2.5"/>
+      <polygon points="448,64 462,70 448,76" fill="#3f6f9f"/>
+      <text x="72" y="58" font-size="12" font-weight="700" fill="#2f5a8a">行き 時速4km（1kmに ？分）</text>
+      <line x1="450" y1="112" x2="72" y2="112" stroke="#d08a86" stroke-width="2.5"/>
+      <polygon points="72,106 58,112 72,118" fill="#d08a86"/>
+      <text x="72" y="100" font-size="12" font-weight="700" fill="#9b514d">帰り 時速6km（1kmに ？分）</text>
+      <rect x="50" y="130" width="440" height="36" rx="6" fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5"/>
+      <text x="62" y="154" font-size="14" font-weight="800" fill="#2f6b45">片道は ？km</text>
+    </svg>
+    <div class="hl"><b>1</b>　1時間15分 ＝ <b>75</b> 分</div>
+    <div class="hl"><b>2</b>　行き：時速4km だから、1km 進むのに 60 ÷ 4 ＝ <b>15</b> 分</div>
+    <div class="hl"><b>3</b>　帰り：時速6km だから、1km 進むのに 60 ÷ <span class="fill">　　</span> ＝ <span class="fill">　　</span> 分</div>
+    <div class="hl"><b>4</b>　片道1km ぶんを「行って帰る」と 15 ＋ <span class="fill">　　</span> ＝ <span class="fill">　　</span> 分 かかる</div>
+    <div class="hl"><b>5</b>　75 ÷ <span class="fill">　　</span> ＝ <span class="fill">　　</span>　→　道のりは <span class="fill">　　</span> km</div>
+  </div>
+  <div class="note-draw">線分図をかいてから考えよう。□をうめたら、答えを1行で書き直すこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">道のりがわからないのに時間の合計だけがわかっている。こういうときは <strong>「1km あたり何分かかるか」</strong> に直す。すると「75分の中に、1km 往復ぶん（25分）が何個入るか」というただのわり算になる。</div>
+    <svg class="svgfig" viewBox="0 0 520 175" preserveAspectRatio="xMidYMid meet">
+      <text x="60" y="28" font-size="13" font-weight="700" fill="#31415f">片道を □ km として往復する</text>
+      <line x1="70" y1="70" x2="448" y2="70" stroke="#3f6f9f" stroke-width="2.5"/>
+      <polygon points="448,64 462,70 448,76" fill="#3f6f9f"/>
+      <text x="72" y="58" font-size="12" font-weight="700" fill="#2f5a8a">行き 時速4km（1kmに 15分）</text>
+      <line x1="450" y1="112" x2="72" y2="112" stroke="#d08a86" stroke-width="2.5"/>
+      <polygon points="72,106 58,112 72,118" fill="#d08a86"/>
+      <text x="72" y="100" font-size="12" font-weight="700" fill="#9b514d">帰り 時速6km（1kmに 10分）</text>
+      <rect x="50" y="130" width="440" height="36" rx="6" fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5"/>
+      <text x="62" y="154" font-size="14" font-weight="800" fill="#2f6b45">行きの時間 ＋ 帰りの時間 ＝ 75分</text>
+    </svg>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ①〜③</div><div class="step q3"><span>①</span>1時間15分 ＝ 75分 にそろえる</div>
+    <div class="step q3"><span>②</span>行きは時速4km ＝ 1時間（60分）で4km → 1km に <span class="math">60 ÷ 4 ＝ 15</span>分</div>
+    <div class="step q3"><span>③</span>帰りは時速6km ＝ 1時間で6km → 1km に <span class="math">60 ÷ 6 ＝ 10</span>分</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ④〜別解</div><div class="step q3"><span>④</span>片道1km ぶんを往復すると <span class="math">15 ＋ 10 ＝ 25</span>分 かかる</div>
+    <div class="step q3"><span>⑤</span>25分は「1km を往復するのにかかる時間」。ぜんぶで 75分。75分の中に 25分が何個入るかを数える。<span class="math">75 ÷ 25 ＝ 3</span>個。25分が1個 ＝ 1km ぶん。だから片道は 3km</div>
+    <div class="step q4"><span>別解</span>時間を分数で書く方法。行きは1km に <span class="frac"><span class="n">1</span><span class="d">4</span></span> 時間、帰りは1km に <span class="frac"><span class="n">1</span><span class="d">6</span></span> 時間。<br>往復で <span class="frac"><span class="n">1</span><span class="d">4</span></span> ＋ <span class="frac"><span class="n">1</span><span class="d">6</span></span> ＝ <span class="frac"><span class="n">3</span><span class="d">12</span></span> ＋ <span class="frac"><span class="n">2</span><span class="d">12</span></span> ＝ <span class="frac"><span class="n">5</span><span class="d">12</span></span> 時間。<br>全体は 1時間15分 ＝ <span class="frac"><span class="n">5</span><span class="d">4</span></span> 時間。<br><span class="frac"><span class="n">5</span><span class="d">4</span></span> ÷ <span class="frac"><span class="n">5</span><span class="d">12</span></span> ＝ <span class="frac"><span class="n">5</span><span class="d">4</span></span> × <span class="frac"><span class="n">12</span><span class="d">5</span></span> ＝ 3 → 3km（同じ答え）</div>
+    <div class="bx bx-warn"><span class="red">(4 ＋ 6) ÷ 2 ＝ 5 を「平均の速さ」として使わない</span>。これでやると 5 × <span class="frac"><span class="n">5</span><span class="d">4</span></span> ＝ 6.25km、片道 3.125km となって不正解。問5でやったとおり、速さの平均 ≠ 平均の速さ。<br>もう1つ。1時間15分 ＝ 1.15時間 としない。75分 ＝ <span class="frac"><span class="n">75</span><span class="d">60</span></span> 時間 ＝ <span class="frac"><span class="n">5</span><span class="d">4</span></span> 時間（＝1.25時間）。分は60で割る。<br>そして 75 ÷ 25 ＝ 3 の「3」が往復の道のりだと思わない。25分は片道1km ぶんの往復時間なので、出てくる3は片道の km 数。</div>
+    <div class="bx bx-chk">片道3km として問題文にもどす。行き：3 ÷ 4 ＝ 0.75時間 ＝ 45分。帰り：3 ÷ 6 ＝ 0.5時間 ＝ 30分。合計 45 ＋ 30 ＝ 75分 ＝ 1時間15分 ○　問題文とぴったり合った。</div>
+    <div class="bx bx-link">9月 大問3(2) の往復（15km）は、この「合計時間から逆算する」型。<strong>1km あたりに直す</strong>が最強の道具。</div>
+    <div class="ans-final"><span>こたえ</span>3km</div>
+      <div class="tec-link">型：<b>速さ・往復型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="m19_6"><div class="grade"><span class="gq-label">問6</span>○✕ → <button class="o" onclick="g(this,'m19_6','o')">○</button><button class="x" onclick="g(this,'m19_6','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="G">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問7</span>速いのはどちらですか。理由もノートに書きなさい。</div>
+  <div class="subq"><span class="no">①</span>分速80m で歩く A さん　と　時速5km で歩く B さん</div>
+  <div class="subq"><span class="no">②</span>秒速12m で走る電車　と　時速40km で走る車</div>
+  <div class="note-draw">答えを書く前に、2つの速さを紙の上でならべてみよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">単位がちがう速さは、<strong>そのままでは比べられない</strong>。「80」と「5」を見て「80のほうが大きい」と言うのは、身長を cm と m でくらべて「170cm のほうが 1.8m より大きい」と言うのと同じ。まず単位をそろえる。話はそれから。</div>
+    <div class="step q4"><span>①</span>A さんの分速80m を時速に直す：80 × 60 ＝ 4800m ＝ 4.8km → 時速4.8km<br>B さんは 時速5km。<span class="math">5 &gt; 4.8</span> なので B さんのほうが速い</div>
+    <div class="step q4"><span>②</span>電車の秒速12m を時速に直す：1時間＝3600秒 → 12 × 3600 ＝ 43200m ＝ 43.2km → 時速43.2km<br>車は 時速40km。<span class="math">43.2 &gt; 40</span> なので 電車のほうが速い</div>
+    <div class="bx bx-warn"><span class="red">数字の大小だけで決めない</span>。「80 &gt; 5 だから A さん」は不正解。単位がちがう数は、そろえるまで大小がわからない。<br>どちらにそろえてもよいが、<strong>大きいほうの単位（時速）にそろえる</strong>と小数が少なくてラクなことが多い。<br>そして ②で ×60 を1回で止めない。秒 → 時 は 60 を2回（3600）。問3でやったのと同じ罠がここに戻ってくる。</div>
+    <div class="bx bx-chk">別の単位でも確かめる。① 時速5km ＝ 5000m。5000 ÷ 60 ＝ 分速83.3…m。分速80m より速い → B さん ○（時速でくらべた結果と一致）<br>② 時速40km ＝ 40000m。40000 ÷ 3600 ＝ 秒速11.1…m。秒速12m より遅い → 電車が速い ○</div>
+    <div class="ans-final"><span>こたえ</span>① B さん（時速5km ＞ 時速4.8km）　② 電車（時速43.2km ＞ 時速40km）</div>
+      <div class="tec-link">型：<b>単位換算型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="m19_7"><div class="grade"><span class="gq-label">問7</span>○✕ → <button class="o" onclick="g(this,'m19_7','o')">○</button><button class="x" onclick="g(this,'m19_7','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 大問3 発展 ===== -->
+<div class="unit-banner"><span class="unit-num">大問3 ★</span><span class="unit-name">発展｜出会い算・追いつき算・時刻の逆算　L4　★大問6 直撃</span><span class="unit-time">目安 11分</span></div>
+
+<div class="q calc" data-id="H">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問8【例】</span>1800m はなれた 2 地点から、きみとお姉さんが<strong>向かい合って同時に</strong>歩き出しました。きみは分速70m、お姉さんは分速80m です。2人は何分後に出会いますか。</div>
+  <div class="wex">
+    <svg class="svgfig" viewBox="0 0 520 245" preserveAspectRatio="xMidYMid meet">
+      <text x="196" y="34" font-size="13" font-weight="700" fill="#31415f">ぜんぶで 1800m</text>
+      <line x1="60" y1="48" x2="460" y2="48" stroke="#3f6f9f" stroke-width="1.5"/>
+      <line x1="60" y1="42" x2="60" y2="54" stroke="#3f6f9f" stroke-width="1.5"/>
+      <line x1="460" y1="42" x2="460" y2="54" stroke="#3f6f9f" stroke-width="1.5"/>
+      <text x="72" y="74" font-size="12" font-weight="700" fill="#2f5a8a">分速70m</text>
+      <line x1="75" y1="86" x2="148" y2="86" stroke="#3f6f9f" stroke-width="2.5"/>
+      <polygon points="148,80 162,86 148,92" fill="#3f6f9f"/>
+      <text x="380" y="74" font-size="12" font-weight="700" fill="#9b514d">分速80m</text>
+      <line x1="445" y1="86" x2="372" y2="86" stroke="#d08a86" stroke-width="2.5"/>
+      <polygon points="372,80 358,86 372,92" fill="#d08a86"/>
+      <text x="200" y="108" font-size="12" font-weight="800" fill="#c0392b">ここで出会う</text>
+      <line x1="60" y1="126" x2="460" y2="126" stroke="#2f3b4a" stroke-width="3"/>
+      <line x1="60" y1="114" x2="60" y2="138" stroke="#2f3b4a" stroke-width="2"/>
+      <line x1="460" y1="114" x2="460" y2="138" stroke="#2f3b4a" stroke-width="2"/>
+      <line x1="247" y1="112" x2="247" y2="140" stroke="#c0392b" stroke-width="2.5"/>
+      <circle cx="247" cy="126" r="5" fill="#c0392b"/>
+      <text x="44" y="156" font-size="12" font-weight="700" fill="#31415f">きみ</text>
+      <text x="400" y="156" font-size="12" font-weight="700" fill="#31415f">お姉さん</text>
+      <line x1="60" y1="178" x2="247" y2="178" stroke="#7aa7d9" stroke-width="1.5"/>
+      <line x1="60" y1="172" x2="60" y2="184" stroke="#7aa7d9" stroke-width="1.5"/>
+      <line x1="247" y1="172" x2="247" y2="184" stroke="#7aa7d9" stroke-width="1.5"/>
+      <text x="64" y="198" font-size="12" font-weight="700" fill="#2f5a8a">きみが進んだ</text>
+      <line x1="247" y1="178" x2="460" y2="178" stroke="#d08a86" stroke-width="1.5"/>
+      <line x1="460" y1="172" x2="460" y2="184" stroke="#d08a86" stroke-width="1.5"/>
+      <text x="255" y="198" font-size="12" font-weight="700" fill="#9b514d">お姉さんが進んだ</text>
+      <rect x="50" y="208" width="440" height="32" rx="6" fill="#eafaf1" stroke="#9bcfae" stroke-width="1.5"/>
+      <text x="62" y="230" font-size="14" font-weight="800" fill="#2f6b45">2人が進んだ道のりの和 ＝ 1800m</text>
+    </svg>
+    <div class="wl"><b>出会うとき、何が起きている？</b>　2人が進んだ道のりを<b>足すと、はじめの 1800m にぴったりなる</b>。これが出会い算のすべて。</div>
+    <div class="wl">① 1分間に2人の間はどれだけちぢまる？　きみが70m、お姉さんが80m 近づくので、<b>1分で 70 ＋ 80 ＝ 150m ちぢまる</b>。</div>
+    <div class="wl">② はじめ 1800m あいている。1分で150m ずつちぢむので、<span class="math">1800 ÷ 150 ＝ 12</span> → <b>12分後</b>。</div>
+    <div class="wl">③ つまり <b>出会い算 ＝ はじめの距離 ÷ 速さの「和」</b>。2人が協力してすき間をうめていると考えればいい。</div>
+    <div class="wl">検算：きみは 70 × 12 ＝ 840m、お姉さんは 80 × 12 ＝ 960m。<span class="math">840 ＋ 960 ＝ 1800</span>m ○　ぴったり出会えた。</div>
+  </div>
+  <div class="note-draw">読んだら、線分図と①〜③の式をそのままノートに写そう。写しながら「和」と口に出して。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">「2人が出会う」を数の言葉にいいかえると、<strong>「進んだ道のりの和 ＝ はじめの距離」</strong>。人が2人いても、考えるのはすき間が1分でどれだけ減るかだけ。すき間を1人でうめていると思えば、ただのわり算になる。</div>
+    <div class="step q5"><span>①</span>1分でちぢむ距離（速さの和）：70 ＋ 80 ＝ 150m</div>
+    <div class="step q5"><span>②</span>はじめのすき間 1800m を、150m ずつうめる：1800 ÷ 150 ＝ 12分後</div>
+    <div class="bx bx-warn"><span class="red">出会いなのに「差」を使わない</span>。80 − 70 ＝ 10 で 1800 ÷ 10 ＝ 180分 としてしまうのが最多ミス。向かい合っている（近づく）＝ 和。同じ向き（追いかける）＝ 差。図の矢印の向きを見れば必ず区別できる。<br>もう1つ。答えが「12分」なのか「12分後」なのかを問題文で確認。「何分後に出会うか」と聞かれたら「12分後」。<br>そして 単位がちがうまま足さない。片方が時速、片方が分速なら、足す前に必ずそろえる（9月の大問6はここが本当の罠）。</div>
+    <div class="bx bx-chk">70 × 12 ＝ 840m、80 × 12 ＝ 960m、840 ＋ 960 ＝ 1800m ○　はじめの距離とぴったり一致した。もし合計が1800m にならなければ、どこかで和と差をまちがえている。</div>
+    <div class="bx bx-link">9月 大問6(1) はバスの出会い算（時速48km）。数が「時速」で出てくるので、<strong>まず単位をそろえてから和をとる</strong>。手順は今日とまったく同じ。図をかいて「和」と書き込めば取れる。</div>
+    <div class="ans-final"><span>こたえ</span>12分後</div>
+      <div class="tec-link">型：<b>出会い型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="m19_8"><div class="grade"><span class="gq-label">問8【例】</span>写せた？ → <button class="o" onclick="g(this,'m19_8','o')">○</button><button class="x" onclick="g(this,'m19_8','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="I">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問9【穴あき】</span>妹が分速50m で家を出発しました。その <strong>6分後</strong>に、姉が分速80m で同じ道を追いかけました。姉が家を出てから何分後に妹に追いつきますか。</div>
+  <div class="half">
+    <svg class="svgfig" viewBox="0 0 520 235" preserveAspectRatio="xMidYMid meet">
+      <text x="60" y="26" font-size="13" font-weight="700" fill="#31415f">妹が先に出発 → 6分で ？m 進んでいる</text>
+      <line x1="60" y1="52" x2="210" y2="52" stroke="#d9b46d" stroke-width="1.5"/>
+      <line x1="60" y1="46" x2="60" y2="58" stroke="#d9b46d" stroke-width="1.5"/>
+      <line x1="210" y1="46" x2="210" y2="58" stroke="#d9b46d" stroke-width="1.5"/>
+      <text x="112" y="44" font-size="12" font-weight="800" fill="#8a5a19">？m</text>
+      <line x1="60" y1="110" x2="460" y2="110" stroke="#2f3b4a" stroke-width="3"/>
+      <line x1="60" y1="98" x2="60" y2="122" stroke="#2f3b4a" stroke-width="2"/>
+      <line x1="460" y1="98" x2="460" y2="122" stroke="#2f3b4a" stroke-width="2"/>
+      <circle cx="460" cy="110" r="5" fill="#c0392b"/>
+      <text x="44" y="134" font-size="12" font-weight="700" fill="#31415f">家</text>
+      <text x="366" y="96" font-size="12" font-weight="800" fill="#c0392b">ここで追いつく</text>
+      <line x1="210" y1="148" x2="444" y2="148" stroke="#7aa7d9" stroke-width="2.5"/>
+      <polygon points="444,142 458,148 444,154" fill="#7aa7d9"/>
+      <text x="214" y="140" font-size="12" font-weight="700" fill="#2f5a8a">妹 分速50m</text>
+      <line x1="60" y1="182" x2="444" y2="182" stroke="#d08a86" stroke-width="2.5"/>
+      <polygon points="444,176 458,182 444,188" fill="#d08a86"/>
+      <text x="64" y="174" font-size="12" font-weight="700" fill="#9b514d">姉 分速80m</text>
+      <rect x="50" y="194" width="440" height="32" rx="6" fill="#fff7e8" stroke="#e6c98d" stroke-width="1.5"/>
+      <text x="62" y="216" font-size="14" font-weight="800" fill="#8a5a19">1分で ？m ずつ 差がちぢまる</text>
+    </svg>
+    <div class="hl"><b>1</b>　姉が出発するとき、妹はもう先に進んでいる。その道のり ＝ 50 × 6 ＝ <span class="fill">　　</span> m</div>
+    <div class="hl"><b>2</b>　姉は妹より <b>1分あたり</b> 80 − 50 ＝ <span class="fill">　　</span> m だけ多く進む（＝ 差がちぢむ）</div>
+    <div class="hl"><b>3</b>　はじめの差 <span class="fill">　　</span> m を、1分に <span class="fill">　　</span> m ずつちぢめる</div>
+    <div class="hl"><b>4</b>　<span class="fill">　　</span> ÷ <span class="fill">　　</span> ＝ <span class="fill">　　</span>　→　<span class="fill">　　</span> 分後に追いつく</div>
+  </div>
+  <div class="note-draw">線分図をかいてから考えよう。□をうめたら、答えを1行で書き直すこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">「追いつく」を数の言葉にいいかえると、<strong>「2人の道のりが同じになる」</strong>。姉が出発した時点で、妹はすでに前にいる。そのすき間（差）を、姉が1分あたりどれだけ食いつぶすかを考えるだけ。すき間 ÷ 1分でちぢむ分 ＝ 何分かかるか。</div>
+    <svg class="svgfig" viewBox="0 0 520 235" preserveAspectRatio="xMidYMid meet">
+      <text x="60" y="26" font-size="13" font-weight="700" fill="#31415f">妹が先に出発 → 6分で 300m 進んでいる</text>
+      <line x1="60" y1="52" x2="210" y2="52" stroke="#d9b46d" stroke-width="1.5"/>
+      <line x1="60" y1="46" x2="60" y2="58" stroke="#d9b46d" stroke-width="1.5"/>
+      <line x1="210" y1="46" x2="210" y2="58" stroke="#d9b46d" stroke-width="1.5"/>
+      <text x="108" y="44" font-size="12" font-weight="800" fill="#8a5a19">300m</text>
+      <line x1="60" y1="110" x2="460" y2="110" stroke="#2f3b4a" stroke-width="3"/>
+      <line x1="60" y1="98" x2="60" y2="122" stroke="#2f3b4a" stroke-width="2"/>
+      <line x1="460" y1="98" x2="460" y2="122" stroke="#2f3b4a" stroke-width="2"/>
+      <circle cx="460" cy="110" r="5" fill="#c0392b"/>
+      <text x="44" y="134" font-size="12" font-weight="700" fill="#31415f">家</text>
+      <text x="366" y="96" font-size="12" font-weight="800" fill="#c0392b">ここで追いつく</text>
+      <line x1="210" y1="148" x2="444" y2="148" stroke="#7aa7d9" stroke-width="2.5"/>
+      <polygon points="444,142 458,148 444,154" fill="#7aa7d9"/>
+      <text x="214" y="140" font-size="12" font-weight="700" fill="#2f5a8a">妹 分速50m</text>
+      <line x1="60" y1="182" x2="444" y2="182" stroke="#d08a86" stroke-width="2.5"/>
+      <polygon points="444,176 458,182 444,188" fill="#d08a86"/>
+      <text x="64" y="174" font-size="12" font-weight="700" fill="#9b514d">姉 分速80m</text>
+      <rect x="50" y="194" width="440" height="32" rx="6" fill="#fff7e8" stroke="#e6c98d" stroke-width="1.5"/>
+      <text x="62" y="216" font-size="14" font-weight="800" fill="#8a5a19">1分で 80−50＝30m ずつ 差がちぢまる</text>
+    </svg>
+    <div class="step q5"><span>①</span>妹の先行（はじめの差）：<span class="math">50 × 6 ＝ 300</span>m</div>
+    <div class="step q5"><span>②</span>速さの差：<span class="math">80 − 50 ＝ 30</span> → 1分で30m ずつ差がちぢむ</div>
+    <div class="step q5"><span>③</span><span class="math">300 ÷ 30 ＝ 10</span> → 10分後に追いつく</div>
+    <div class="bx bx-warn"><span class="red">追いつきなのに「和」を使わない</span>。80 ＋ 50 ＝ 130 で 300 ÷ 130 としてしまうのが最多ミス（割り切れないので、そこで「あれ？」と気づける）。向かい合う＝和、同じ向き＝差。矢印の向きを図に書けば一発。<br>もう1つ。「6分」をそのまま差にしない。差は時間ではなく道のり。6分は時間なので、必ず 50 × 6 ＝ 300m と道のりに直す。ここを飛ばして 6 ÷ 30 とやると答えが0.2分になって、明らかにおかしい。<br>そして 答えが「妹が出てから何分後」なのか「姉が出てから何分後」なのかを読む。今回は姉が家を出てからなので 10分後。妹が出てからなら 6 ＋ 10 ＝ 16分後。</div>
+    <div class="bx bx-chk">姉：80 × 10 ＝ 800m。妹：出発から 6 ＋ 10 ＝ 16分歩いたので 50 × 16 ＝ 800m。<strong>2人とも家から800m</strong> ＝ 同じ場所 ○　道のりが一致したので追いついている。</div>
+    <div class="ans-final"><span>こたえ</span>10分後（家から800m のところ）</div>
+      <div class="tec-link">型：<b>追いつき型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="m19_9"><div class="grade"><span class="gq-label">問9</span>○✕ → <button class="o" onclick="g(this,'m19_9','o')">○</button><button class="x" onclick="g(this,'m19_9','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="J">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問10 ★</span>きみは午前8時に家を出て、分速60m で学校へ向かいました。お父さんが忘れ物を届けるため、自転車（分速180m）で同じ道を追いかけたところ、<strong>午前8時30分</strong>にきみに追いつきました。<br>(1) お父さんが家を出たのは午前何時何分ですか。<br>(2) 追いついたのは、家から何 m のところですか。</div>
+  <div class="note-draw">まず自分で解いてみよう。答えを書く前に、問題文の最後の1行をもう一度読むこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">「追いついた」を数の言葉にいいかえると、<strong>「2人の、家からの道のりが等しい」</strong>。ここで大事なのは、きみの歩いた時間は最初からわかっているということ。8時 → 8時30分 だから 30分。だからまず (2) の追いついた地点が出せる。それが出れば、お父さんの時間は割り算1回。聞かれた順に解く必要はない。</div>
+    <svg class="svgfig" viewBox="0 0 520 220" preserveAspectRatio="xMidYMid meet">
+      <text x="60" y="26" font-size="13" font-weight="700" fill="#31415f">時間でみる（2人が同じ場所にいる ＝ 道のりが同じ）</text>
+      <text x="240" y="58" font-size="12" font-weight="800" fill="#c0392b">お父さん出発（？時？分）</text>
+      <line x1="327" y1="66" x2="327" y2="118" stroke="#c0392b" stroke-width="2" stroke-dasharray="5 5"/>
+      <line x1="60" y1="100" x2="460" y2="100" stroke="#2f3b4a" stroke-width="3"/>
+      <line x1="60" y1="88" x2="60" y2="112" stroke="#2f3b4a" stroke-width="2"/>
+      <line x1="460" y1="88" x2="460" y2="112" stroke="#2f3b4a" stroke-width="2"/>
+      <line x1="327" y1="92" x2="327" y2="108" stroke="#c0392b" stroke-width="2"/>
+      <text x="46" y="130" font-size="13" font-weight="800" fill="#31415f">8時</text>
+      <text x="406" y="130" font-size="13" font-weight="800" fill="#31415f">8時30分</text>
+      <text x="64" y="154" font-size="12" font-weight="700" fill="#2f5a8a">きみ 分速60m（30分歩く）</text>
+      <line x1="62" y1="162" x2="444" y2="162" stroke="#7aa7d9" stroke-width="2.5"/>
+      <polygon points="444,156 458,162 444,168" fill="#7aa7d9"/>
+      <text x="200" y="188" font-size="12" font-weight="700" fill="#9b514d">お父さん 分速180m（？分）</text>
+      <line x1="327" y1="196" x2="444" y2="196" stroke="#d08a86" stroke-width="2.5"/>
+      <polygon points="444,190 458,196 444,202" fill="#d08a86"/>
+    </svg>
+    <div class="step q5"><span>(2)</span>きみは 8時 から 8時30分 まで 30分間歩いた。<br>道のり ＝ 速さ × 時間 → <span class="math">60 × 30 ＝ 1800</span> → 追いついたのは 家から1800m のところ</div>
+    <div class="step q5"><span>(1)</span>お父さんも同じ1800m を進んで追いついた。分速180m なので、<br>時間 ＝ 道のり ÷ 速さ → <span class="math">1800 ÷ 180 ＝ 10</span> → お父さんは 10分間走った。<br>追いついたのが 8時30分 なので、その10分前に出発した。<br><span class="math">8時30分 − 10分 ＝ 8時20分</span> → 午前8時20分</div>
+    <div class="step q4"><span>方程式で</span>お父さんが家を出てから <em>x</em> 分後に追いついたとする。<br>お父さんの道のり ＝ <span class="math">180<em>x</em></span>　　きみの道のり ＝ <span class="math">60 × 30 ＝ 1800</span><br>追いついた ＝ 道のりが等しい → <span class="math">180<em>x</em> ＝ 1800</span> → <span class="math"><em>x</em> ＝ 10</span><br>出発時刻 ＝ 8時30分 の10分前 → 午前8時20分</div>
+    <div class="bx bx-warn"><span class="red">x ＝ 10 を答えにしない</span>。<em>x</em> は「かかった時間」であって、聞かれているのは「時刻」。10分を8時30分から引いて 8時20分。この最後の引き算を忘れて「10分」と書くのが、この型の最多失点。答案を出す前に問題文の最後の1行をもう一度読む。<br>もう1つ。きみの歩いた時間を、お父さんと同じ10分にしない。きみは30分歩いている（8時 → 8時30分）。2人は道のりは同じだが、時間はちがう。ここを取りちがえると 60 × 10 ＝ 600m となり、全部くずれる。<br>そして 「8時30分 − 10分」を「8時40分」としない。追いかける側はあとから出発する。答えは8時より後、8時30分より前になるはず、と先に予想しておく。</div>
+    <div class="bx bx-chk">お父さん：分速180m × 10分 ＝ 1800m。きみ：分速60m × 30分 ＝ 1800m。2人とも家から1800m、そこで出会っている ○<br>時刻でも確認：8時20分 に出て 10分走ると 8時30分。問題文と一致 ○<br>速さの差でも確認：お父さんが出た8時20分の時点で、きみは 60 × 20 ＝ 1200m 先。速さの差は 180 − 60 ＝ 120。1200 ÷ 120 ＝ 10分 ○　どのやり方でも10分。</div>
+    <div class="bx bx-link">9月 大問6(2) はまさにこの型（自転車の追い越し＋時刻の逆算、8時30分）。①道のりが等しいと書く ②時間を出す ③時刻に直す——この3行を必ず書くこと。③を忘れると、正しく計算したのに0点になる。<strong>ここが本番の最難問</strong>。今日この1問を取れたきみは、本番でも取れる🌸</div>
+    <div class="ans-final"><span>こたえ</span>(1) 午前8時20分　(2) 家から1800m</div>
+      <div class="tec-link">型：<b>追いつき型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c4" target="_blank">マル秘テクニック集 第4章</a></div>
+  </div>
+  <div class="gq" data-gid="m19_10"><div class="grade"><span class="gq-label">問10 ★</span>○✕ → <button class="o" onclick="g(this,'m19_10','o')">○</button><button class="x" onclick="g(this,'m19_10','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓S2 速さ 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">10問おつかれさま！今日もち帰ってほしいのは、たった<strong>2語</strong>。<strong>「向かい合う＝和」「追いかける＝差」</strong>。そして速さの問題は、<strong>単位をそろえた人が勝つ</strong>。「時速18km ＝ 分速300m」でつまずいていた場所は、もうきみの武器になった。9月の大問6は、この2語と線分図で落とせる🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m19';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+var RMQ_KIND='速さ';
+
+/* ===== 数学キュー送りフック（×→revmq_dyn／○→po++）=====
+   受け皿=復習数学_まちがえ復習キュー.html の mergeDyn(revmq_dyn) が読む。 */
+var RMQ_DYN='revmq_dyn';
+function rmqClean(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function rmqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function sendToRevMQ(btn,id,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    if(String(KEY).indexOf('revmq')===0)return;              /* 受け皿自身では動かさない */
+    var q=btn&&btn.closest?btn.closest('.q'):null; if(!q)return;
+    var leadEl=q.querySelector('.lead'); if(!leadEl)return;
+    var label=rmqClean(leadEl);
+    if(/【例】/.test(label))return;                            /* 例題は復習に送らない */
+    var qtxt=leadEl.parentNode?rmqClean(leadEl.parentNode):'';
+    if(label&&qtxt.indexOf(label)===0)qtxt=qtxt.slice(label.length).trim();
+    var ans=rmqClean(q.querySelector('.ans-final'));
+    if(!qtxt||!ans)return;
+    var src=KEY+'_'+id;
+    var arr;try{arr=JSON.parse(localStorage.getItem(RMQ_DYN));}catch(e){arr=null;}
+    if(!Array.isArray(arr))arr=[];
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=rmqToday();}
+    else{arr.push({src:src,jp:qtxt,en:ans,kind:RMQ_KIND,badge:'suchoku',day:rmqToday(),po:0,px:1});}
+    try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}
+  }catch(e){}
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);try{sendToRevMQ(btn,id,v);}catch(e){}
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！特訓S2 速さ クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

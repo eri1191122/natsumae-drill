@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 国語TEC 大問三の道具箱（見分け方まとめ）＝数学 特訓TEC_マル秘テクニック集 の国語版。
+ ・位置づけ：問題プリントではない参照ページ。KEY無し・○✕記録なし・sendToRevQなし（数学TECと同じ）。
+ ・全6章：第0章 位置づけ／第1章 文の成分の見分け方（★9月大問三(3)直撃）／第2章 品詞10種の見分けフロー／
+   第3章 熟語の構成／第4章 四字熟語・故事成語の覚え方／第5章 対義語・類義語のパターン／第6章 大問三の時間配分。
+ ・中身は ✓検証済DB『国語_漢字語彙文法管理_中1特訓頻出.md』からコピー：
+     §L-1(成分フロー)・§F-3(文の成分)・§F-6(本番型例文)＝第1章／§F-2(自立付属・品詞10種・ひっかけ)＝第2章／
+     §G(熟語の構成6型)＝第3章／§D群・§L-3(舌先三寸新規)・§D-2(故事成語)＝第4章／§L-2(対義語4型)・類義語12組＝第5章／§L-4(時間配分)＝第6章。
+   台帳に無かった規則（対義語パターン・舌先三寸・時間配分・成分フロー）は先に台帳§Lへ追記してから引いた。プリント側で答えを新しく作っていない。
+ ・出題帯：例に使う漢字は全て漢検4級以内（kanken.json で機械判定済／準2級以上ゼロ。没3級は日没を表示から除外・蛇足の蛇準2級は不使用）。
+ ・もどる=../../夏休みダッシュボード.html（国語文法02と同じ相対パス）。
+ ・CSS・カード形式（.tec/.trg/.lb/.big/.bx/.ttab/.nextchk/.endcheer）は数学TECを踏襲。
+-->
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>国語TEC 大問三の道具箱 ― 見分け方まとめ（文の成分・品詞・熟語・四字熟語・対義語・時間配分）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:20px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13.5px;color:#3f6f4a;font-weight:700}
+
+/* ★ 冒頭の注意（解く前に開かない） */
+.stop{background:#fdf2f4;border:3px solid #d08a86;border-radius:10px;padding:16px 18px;margin:14px 0}
+.stop::before{content:"⛔ 使い方のルール（ここだけは守って）";display:block;font-size:14px;font-weight:900;color:#9b514d;margin-bottom:8px}
+.stop ul{margin:4px 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#5a3a38}
+.stop b{color:#9b514d}
+
+.howto{background:#eaf4ee;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.howto::before{content:"🌸 このページの読み方";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.howto ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.howto ol b{color:#2f6a44}
+
+/* 目次 */
+.toc{background:#fff;border:1px solid #dfe3da;border-radius:10px;padding:12px 16px;margin:14px 0}
+.toc::before{content:"📚 もくじ（6章）";display:block;font-size:13px;font-weight:900;color:#54605a;margin-bottom:6px}
+.toc a{display:inline-block;font-size:13px;font-weight:700;color:#3f6f9f;text-decoration:none;background:#f2f6fa;border:1px solid #cdd9e6;border-radius:16px;padding:3px 11px;margin:3px 4px 3px 0}
+.toc a:hover{background:#e4edf5}
+
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:30px 0 0;scroll-margin-top:60px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+
+/* 見分け方カード（1つ1枠） */
+.tec{background:#fffefb;border:1px solid #e3e2d9;border-left:6px solid #7aa7d9;border-radius:8px;padding:12px 15px;margin:12px 0}
+.tec.hot{border-left-color:#d08a86;background:#fffbfb}
+.tec-h{font-size:16px;font-weight:900;color:#31415f;margin-bottom:7px;line-height:1.5}
+.tec-no{display:inline-block;font-size:11px;font-weight:900;color:#2f5a8a;background:#e6f0fb;border:1px solid #bcd3ee;border-radius:9px;padding:2px 9px;margin-right:7px;vertical-align:middle}
+.tec.hot .tec-no{color:#9a3f63;background:#f7dce8;border-color:#eebccf}
+.tec-row{display:flex;gap:8px;align-items:flex-start;margin:5px 0;font-size:13.5px;line-height:1.95}
+.lb{flex:0 0 auto;display:inline-block;min-width:66px;text-align:center;font-size:11px;font-weight:900;border-radius:9px;padding:2px 6px;margin-top:4px;white-space:nowrap}
+.lb-when{background:#eef1f2;border:1px solid #d6dcd5;color:#54605a}
+.lb-how{background:#fbe9cf;border:1px solid #eccf9a;color:#8a5a17}
+.lb-why{background:#dcefea;border:1px solid #aed8cf;color:#2f6a5c}
+.lb-ex{background:#ece2f7;border:1px solid #cfbce8;color:#5f4a8a}
+.lb-step{background:#e3eefa;border:1px solid #b8d0ea;color:#2f5a8a}
+.tec-row .tx{flex:1 1 auto}
+.tec-row .tx b{color:#c0392b}
+.tec-row .tx .blu{color:#2f5a8a;font-weight:800}
+.tec-row .tx .grn{color:#2f6b45;font-weight:800}
+.big{display:block;background:#f5f8fb;border:1px dashed #aebfd6;border-radius:6px;padding:8px 12px;margin:5px 0 2px;font-size:14.5px;font-weight:800;color:#31415f;line-height:2.2}
+.big .step{display:inline-block;font-size:11px;font-weight:900;color:#fff;background:#7aa7d9;border-radius:50%;width:20px;height:20px;line-height:20px;text-align:center;margin-right:5px;vertical-align:middle}
+
+/* 👀 トリガー行 ／ ★9月に使うバッジ */
+.trg{background:#fff6e6;border:1px dashed #e2b464;border-radius:6px;padding:5px 10px;margin:7px 0 2px;font-size:13px;font-weight:800;color:#7c5514;line-height:1.8}
+.trg b{color:#c0392b}
+.trg .arw{color:#2f6b45;font-weight:900}
+.q9{display:inline-block;font-size:10.5px;font-weight:900;color:#8a3a1f;background:#ffe6c9;border:1px solid #eab97e;border-radius:9px;padding:2px 8px;margin-left:6px;vertical-align:middle;white-space:nowrap}
+.legend{background:#fff;border:1px solid #dfe3da;border-radius:10px;padding:11px 15px;margin:12px 0;font-size:13px;line-height:2.0;color:#54605a}
+.legend b{color:#31415f}
+.legend::before{content:"🔎 カードの見かた";display:block;font-size:12px;font-weight:900;color:#54605a;margin-bottom:4px}
+
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ ここが9月に直撃する";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ 覚えるのは1つだけ";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 6月に落とした場所";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx b{color:#c0392b}
+
+/* 早見表 */
+.ttab{width:100%;border-collapse:collapse;margin:10px 0;font-size:13px;background:#fff}
+.ttab th{background:#eef1f5;color:#31415f;font-weight:900;border:1px solid #d6dde5;padding:7px 9px;text-align:left;font-size:12.5px}
+.ttab td{border:1px solid #e2e6ea;padding:7px 9px;line-height:1.8;vertical-align:top}
+.ttab td b{color:#c0392b}
+.ttab tr:nth-child(even) td{background:#fafbfc}
+.ttab .kw{color:#2f5a8a;font-weight:800}
+.ttab .grn{color:#2f6b45;font-weight:800}
+
+.nextchk{display:flex;align-items:center;gap:9px;background:#fdf2f6;border:2px dashed #e5aec2;border-radius:8px;padding:10px 14px;margin:12px 0 4px;font-size:13.5px;font-weight:800;color:#9a3f63;cursor:pointer}
+.nextchk input{width:20px;height:20px;accent-color:#d98aa7;flex:0 0 auto}
+
+.endcheer{text-align:center;font-size:13.5px;color:#4c5b70;margin-top:22px;background:#fff;border:1px solid #dfe3da;border-radius:10px;padding:16px 18px;line-height:2.0}
+.endcheer b{color:#2f6b45}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.toc{display:none}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .tec{break-inside:avoid;page-break-inside:avoid}
+  .ttab{break-inside:avoid;page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html">← もどる</a>
+
+<!-- ===================== 第0章 位置づけ ===================== -->
+<div class="pg-hd">
+  <div><span class="pg-badge">国語TEC</span><span class="pg-badge">大問三：知識の道具箱</span><span class="pg-badge">文の成分・品詞・熟語・四字熟語・対義語・時間配分</span></div>
+  <h1>国語TEC 大問三の道具箱 ― 見分け方まとめ</h1>
+  <p>これは問題プリントじゃない。大問三の知識を<strong>速く・正確に見分けるための道具箱（カタログ）</strong>だよ。全6章</p>
+  <p class="pg-cheer">これは<strong>答えを教えるページじゃない</strong>。<strong>「どう見分けるか」の順番と決め手</strong>を集めたページ。まず自分で解く。そのあと、まちがえたところをここで確認する。数学の「特訓TEC」の国語版だよ🌸</p>
+</div>
+
+<div class="stop">
+  <ul>
+    <li><b>解く前に開かない。解いたあと・まちがえたあとに開く。</b>これが道具箱のルール。</li>
+    <li>先に見分け方を見てしまうと、<b>「自分で考える練習」がまるごとムダになる</b>。初見で自力で解く。解けなかったら解説を読む。そのあとにここへ来る。</li>
+    <li>でも <b>大問三の知識は「速く正確に」が点になる</b>。読解に時間を残すために、知識は迷わず解きたい。だから <b>解いたあとに必ず寄る</b>こと。</li>
+    <li>1回で全部覚えようとしないで。<b>1章につき、持ち帰るのは1つでいい。</b></li>
+  </ul>
+</div>
+
+<div class="howto">
+  <ol>
+    <li><b>① 自分で解く</b>（初見で。ヒントなしで。ここが一番のばす時間）</li>
+    <li><b>② 答え合わせ・解説を読む</b></li>
+    <li><b>③ このページを開く</b> → 「さっきの問題で使えた見分け方」を1つ探す</li>
+    <li><b>④ 章末の □ にチェック</b>を入れる（次の1問で使うと決める）</li>
+    <li><b>⑤ 次にやる問題で、その見分け方を1回だけ使ってみる</b>。使えたら、それはもう自分の道具🌸</li>
+  </ol>
+</div>
+
+<div class="toc">
+  <a href="#c1">第1章 文の成分の見分け方</a>
+  <a href="#c2">第2章 品詞10種の見分けフロー</a>
+  <a href="#c3">第3章 熟語の構成</a>
+  <a href="#c4">第4章 四字熟語・故事成語の覚え方</a>
+  <a href="#c5">第5章 対義語・類義語のパターン</a>
+  <a href="#c6">第6章 大問三の時間配分</a>
+</div>
+
+<div class="legend">
+  <div>👀 <b>こう書いてあったら使う</b>：その道具を<b>呼び出す合図</b>。見分け方は「決め手」だけ覚えても本番で思い出せない。<b>「この形を見たら、この道具」</b>とセットにして覚える。まず 👀 の行だけ読めばいい。</div>
+  <div><span class="q9">★9月に直撃</span>… <b>9月の本番・大問三にそのまま出るところ</b>。ここのついた章から先に固める。</div>
+</div>
+
+
+<!-- ===================== 第1章 文の成分 ===================== -->
+<div class="unit-banner" id="c1"><span class="unit-num">第1章</span><span class="unit-name">文の成分の見分け方</span><span class="unit-time">道具2つ＋早見表</span></div>
+
+<div class="bx bx-warn">9月の大問三(3)は、<b>一文の中の3つの傍線部が「主語・述語・修飾語・接続語・独立語」のどれか</b>を答える形（2023実物は <b>とても＝修飾語／いや＝独立語／寒いのに＝接続語</b> の型）。きみの確定弱点「<b>修飾語の識別</b>」がここ。だから、まずこの章から。</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">道具1 ★</span>成分は「この順番」で判定する<span class="q9">★9月に直撃</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>傍線部が「文の成分（働き）」を聞かれたら</b> <span class="arw">→</span> 上から順にあてはめる。ぜんぶ同時に考えない</div>
+  <div class="tec-row"><span class="lb lb-step">手順</span><span class="tx">
+    <span class="big"><span class="step">1</span>まず<b>述語</b>をさがす（多くは<span class="blu">文末</span>。「どうする・どんなだ・何だ」）<br>
+    <span class="step">2</span>次に<b>主語</b>（「何が・誰が」＝〜が／は／も）<br>
+    <span class="step">3</span>残った文節は<b>修飾語</b>の候補（後の語を<span class="blu">くわしくする</span>）<br>
+    <span class="step">4</span>文頭で切れて<b>感動・呼びかけ・応答</b>なら<span class="grn">独立語</span>（はい・ああ・いや）<br>
+    <span class="step">5</span>「〜ので・から・が・のに」で終わり<b>理由・逆接でつなぐ</b>なら<span class="grn">接続語</span></span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">5つを同時に見ると迷う。<span class="grn">述語→主語→…と順番にあてる</span>と、消去法で1つに決まる。修飾語は「残ったもの」で見つかる。</span></div>
+</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">道具2 ★</span>2023本番型の3傍線を、実際に見分ける<span class="q9">★9月に直撃</span></div>
+  <div class="trg">👀 こう書いてあったら使う：<b>1つの文に、傍線が2〜3本ひいてある</b> <span class="arw">→</span> 1本ずつ、道具1の順番でさばく</div>
+  <div class="tec-row"><span class="lb lb-ex">例文</span><span class="tx"><span class="big">ああ、／今日は／<u>とても</u>／<u>寒いので、</u>／私は／上着を／着た。</span>（全7文節）</span></div>
+  <div class="tec-row"><span class="lb lb-how">見分け</span><span class="tx"><b>とても</b>＝<span class="blu">修飾語</span>（あとの「寒い」をくわしくする＝連用修飾）／<b>寒いので、</b>＝<span class="grn">接続語</span>（「〜ので」で終わり、理由でつなぐ）／<b>ああ</b>＝<span class="grn">独立語</span>（感動・呼びかけ）</span></div>
+  <div class="tec-row"><span class="lb lb-why">2023実物</span><span class="tx">本番は同じ型で <b>とても＝修飾語／いや＝独立語／寒いのに＝接続語</b>。「<span class="blu">いや</span>」は感動詞→独立語、「<span class="blu">寒いのに</span>」は逆接（のに）でつなぐ→接続語。<span class="grn">言葉がちがっても、見分け方は同じ。</span></span></div>
+</div>
+
+<table class="ttab">
+  <tr><th style="width:16%">成分</th><th style="width:30%">はたらき</th><th>見分けの決め手</th></tr>
+  <tr><td><b>主語</b></td><td>「何が・誰が」</td><td>〜が／は／も（例：<span class="kw">花が</span>咲く）</td></tr>
+  <tr><td><b>述語</b></td><td>「どうする・どんなだ・何だ」</td><td>多くは文末（例：花が<span class="kw">咲く</span>）</td></tr>
+  <tr><td><b>修飾語</b></td><td>後の語をくわしくする</td><td>連体修飾＝体言を／連用修飾＝用言を（例：<span class="kw">赤い</span>花・<span class="kw">とても</span>おいしい）</td></tr>
+  <tr><td><b>接続語</b></td><td>前後をつなぐ</td><td>〜ので／から／が／のに、で終わる文節（例：<span class="kw">寒いので、</span>着る）</td></tr>
+  <tr><td><b>独立語</b></td><td>他と直接つながらない</td><td>感動・呼びかけ・応答・提示（例：<span class="kw">はい、</span>そうです）</td></tr>
+</table>
+
+<div class="bx bx-key">迷ったら「<b>述語をさがす</b>」から。述語が決まると、そこに向かう「何が（主語）」も、それをくわしくする「修飾語」も芋づる式に見える。</div>
+
+<label class="nextchk"><input type="checkbox"><span>次の1問で「述語→主語→…」の順番を使ってみる（□ にチェック）</span></label>
+
+
+<!-- ===================== 第2章 品詞10種 ===================== -->
+<div class="unit-banner" id="c2"><span class="unit-num">第2章</span><span class="unit-name">品詞10種の見分けフロー</span><span class="unit-time">道具1つ＋早見表</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">道具3</span>品詞は「3つの質問」で決まる</div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「この単語の品詞は？」と聞かれたら</b> <span class="arw">→</span> 上から3つの質問を、順番にあてる</div>
+  <div class="tec-row"><span class="lb lb-step">手順</span><span class="tx">
+    <span class="big"><span class="step">1</span>それだけで意味が分かる？ → <b>自立語</b>（8種）／付いてるだけ → <b>付属語</b>（助詞・助動詞）<br>
+    <span class="step">2</span>形が変わる（活用する）？ → 用言 or 助動詞／変わらない → 名詞・副詞など<br>
+    <span class="step">3</span>言い切りの形を作る → <span class="blu">ウ段＝動詞</span>・<span class="blu">い＝形容詞</span>・<span class="blu">だ＝形容動詞</span></span></span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">10種を丸暗記しても本番で迷う。<span class="grn">「活用するか」「言い切りは何で終わるか」の2点</span>だけで、用言3種はすぐ決まる。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">「美しく」→ 言い切り「美し<b>い</b>」＝形容詞／「静かに」→「静か<b>だ</b>」＝形容動詞／「読ま（ない）」→「読<b>む</b>」（ウ段）＝動詞</span></div>
+</div>
+
+<table class="ttab">
+  <tr><th style="width:14%">品詞</th><th style="width:12%">自立/付属</th><th style="width:10%">活用</th><th>見分け方（決め手）</th><th style="width:20%">例語</th></tr>
+  <tr><td><b>名詞</b></td><td>自立</td><td>✕</td><td>物事の名前。「が・は」を付けて<span class="kw">主語になれる</span>（体言）</td><td>花・学校・私・こと</td></tr>
+  <tr><td><b>動詞</b></td><td>自立</td><td>○</td><td>動作・存在。言い切りが<span class="kw">ウ段</span></td><td>走る・書く・見る・ある</td></tr>
+  <tr><td><b>形容詞</b></td><td>自立</td><td>○</td><td>性質・状態。言い切りが<span class="kw">い</span></td><td>美しい・寒い・高い</td></tr>
+  <tr><td><b>形容動詞</b></td><td>自立</td><td>○</td><td>性質・状態。言い切りが<span class="kw">だ・です</span></td><td>静かだ・元気だ</td></tr>
+  <tr><td><b>副詞</b></td><td>自立</td><td>✕</td><td>おもに<span class="kw">用言</span>を修飾。「どのように」</td><td>とても・ゆっくり・きっと</td></tr>
+  <tr><td><b>連体詞</b></td><td>自立</td><td>✕</td><td><span class="kw">体言だけ</span>を修飾。活用しない</td><td>この・その・大きな</td></tr>
+  <tr><td><b>接続詞</b></td><td>自立</td><td>✕</td><td>文と文をつなぐ。単独で接続語</td><td>しかし・だから・そして</td></tr>
+  <tr><td><b>感動詞</b></td><td>自立</td><td>✕</td><td>感動・呼びかけ・応答。単独で独立語</td><td>ああ・はい・いや</td></tr>
+  <tr><td><b>助動詞</b></td><td>付属</td><td>○</td><td>意味を付け加える。<span class="kw">活用する</span>付属語</td><td>れる・ない・た・ます</td></tr>
+  <tr><td><b>助詞</b></td><td>付属</td><td>✕</td><td>関係を示す・意味を添える。<span class="kw">活用しない</span>付属語</td><td>が・を・に・は・ので</td></tr>
+</table>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">道具4</span>まちがえやすい「4つの分かれ道」</div>
+  <div class="trg">👀 こう書いてあったら使う：<b>連体詞と形容詞、副詞と連体詞、で迷ったら</b> <span class="arw">→</span> 下の決め手を1つあてる</div>
+  <div class="tec-row"><span class="lb lb-how">連体詞⇔形容詞</span><span class="tx">言い切りが「い」なら<b>形容詞</b>。「〜な」の形しかなければ<b>連体詞</b>（<span class="blu">大きな</span>箱＝連体詞／<span class="blu">大きい</span>箱＝形容詞）</span></div>
+  <div class="tec-row"><span class="lb lb-how">副詞⇔連体詞</span><span class="tx">修飾する相手が<b>用言</b>なら副詞／<b>体言</b>なら連体詞（<span class="blu">ゆっくり</span>歩く＝副詞／<span class="blu">この</span>本＝連体詞）</span></div>
+  <div class="tec-row"><span class="lb lb-how">形容動詞⇔名詞＋だ</span><span class="tx">「〜<b>な</b>＋名詞」と言えれば形容動詞（<span class="blu">静かな</span>海＝形容動詞／×学生な人＝名詞＋だ）</span></div>
+  <div class="tec-row"><span class="lb lb-how">助動詞⇔助詞</span><span class="tx"><b>活用する</b>（形が変わる）なら助動詞（ない・た・れる＝助動詞／が・を・ので＝助詞）</span></div>
+</div>
+
+<div class="bx bx-key">用言（活用する自立語）は<b>動詞・形容詞・形容動詞の3つだけ</b>。付属語で活用するのは<b>助動詞だけ</b>。ここさえ押さえれば「活用する？」の質問で半分決まる。</div>
+
+<label class="nextchk"><input type="checkbox"><span>次の1問で「言い切りの形（ウ段・い・だ）」を作って品詞を決めてみる（□ にチェック）</span></label>
+
+
+<!-- ===================== 第3章 熟語の構成 ===================== -->
+<div class="unit-banner" id="c3"><span class="unit-num">第3章</span><span class="unit-name">熟語の構成（二字熟語）</span><span class="unit-time">早見表＋道具1つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">道具5</span>二字熟語は「下から上に読んでみる」</div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「この熟語の組み立ては？」（ア〜カで選ぶ）</b> <span class="arw">→</span> まず下の字から上へ読んでみる</div>
+  <div class="tec-row"><span class="lb lb-how">決め手</span><span class="tx"><b>下→上に読んで「〜を・〜に」が入れば目的（エ）</b>。「〜が〜する」になれば主語述語（オ）。<span class="blu">読み方を変えるだけ</span>で型が見える。</span></div>
+  <div class="tec-row"><span class="lb lb-ex">例</span><span class="tx">登山→「山<b>を</b>登る」＝エ／地震→「地<b>が</b>震える」＝オ／急行→「急いで行く」＝ウ（上が下をくわしく）</span></div>
+</div>
+
+<table class="ttab">
+  <tr><th style="width:8%">型</th><th style="width:34%">組み立て</th><th style="width:30%">見分けのコツ</th><th>例（漢検4級以内）</th></tr>
+  <tr><td><b>ア</b></td><td>似た意味の字を重ねる</td><td>2字が<span class="kw">同じような意味</span></td><td>永久・親切・思考</td></tr>
+  <tr><td><b>イ</b></td><td>反対の意味の字を重ねる</td><td>2字が<span class="kw">反対</span></td><td>売買・高低・寒暖</td></tr>
+  <tr><td><b>ウ</b></td><td>上の字が下の字を修飾</td><td>上→下で「どんな／どう」</td><td>急行・青空・細道</td></tr>
+  <tr><td><b>エ</b></td><td>下が上の目的・対象〈〜を・〜に〉</td><td><span class="grn">下→上で「〜を」が入る</span></td><td>登山・読書・帰宅</td></tr>
+  <tr><td><b>オ</b></td><td>主語・述語〈〜が〜する〉</td><td><span class="grn">下→上で「〜が〜する」</span></td><td>地震・頭痛・雷鳴</td></tr>
+  <tr><td><b>カ</b></td><td>上の字が下を打ち消す</td><td>上が<span class="kw">不・無・非・未</span></td><td>不足・無害・未定</td></tr>
+</table>
+
+<div class="bx bx-key">迷ったら<b>エとオ</b>だけ「下→上に読む」テストをする。「〜を」なら<b>エ</b>、「〜が」なら<b>オ</b>。この2つが一番まちがえやすい。</div>
+
+<label class="nextchk"><input type="checkbox"><span>次の1問で「下から上に読む」テストを使ってみる（□ にチェック）</span></label>
+
+
+<!-- ===================== 第4章 四字熟語・故事成語 ===================== -->
+<div class="unit-banner" id="c4"><span class="unit-num">第4章</span><span class="unit-name">四字熟語・故事成語の覚え方</span><span class="unit-time">道具3つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">道具6</span>四字熟語は「仲間（群）」でまとめて覚える</div>
+  <div class="trg">👀 こう書いてあったら使う：<b>四字熟語を1つずつバラバラに覚えようとして忘れる</b> <span class="arw">→</span> 仲間ごとにまとめる</div>
+  <div class="tec-row"><span class="lb lb-how">数字系</span><span class="tx">数字の字が入る。<span class="blu">一石二鳥</span>（一・二）／<span class="blu">危機一髪</span>（一）。数字に注目すると空欄が埋まる。</span></div>
+  <div class="tec-row"><span class="lb lb-how">反対系</span><span class="tx">反対の字がヒント。<span class="blu">異口同音</span>（異⇔同）＝「口をそろえて同じことを言う」。反対の字を手がかりにする。</span></div>
+  <div class="tec-row"><span class="lb lb-how">由来系</span><span class="tx">物語（由来）で覚える。<span class="blu">温故知新</span>（古きをたずね新しきを知る）／<span class="blu">因果応報</span>（行いに応じた報い）。意味の理由がわかると忘れない。</span></div>
+</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">道具7 ★</span>6月に落とした3語を、道具で覚え直す</div>
+  <div class="bx bx-link" style="margin:2px 0 8px">6月の特訓で、<b>異口同音・危機一髪・舌先三寸</b>を落とした。バラバラに覚えようとすると、また忘れる。<b>仲間（群）と字のヒント</b>でつかまえ直す。</div>
+  <div class="tec-row"><span class="lb lb-how">異口同音</span><span class="tx">いくどうおん＝おおぜいが<b>口をそろえて同じことを言う</b>。<span class="blu">反対系</span>（異⇔同）。「口」を「異」に合わせる。</span></div>
+  <div class="tec-row"><span class="lb lb-how">危機一髪</span><span class="tx">ききいっぱつ＝<b>あぶない、ぎりぎりの場面</b>。<span class="blu">数字系</span>（一）。末字は<b>髪</b>（かみの毛1本の差）。<span class="grn">「発」と書くとバツ</span>。</span></div>
+  <div class="tec-row"><span class="lb lb-how">舌先三寸</span><span class="tx">したさきさんずん＝<b>口先だけのうまい言葉</b>。心がこもっていないこと。<span class="blu">体の部位「舌」＋数字「三」</span>でつかまえる。</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">道具8</span>故事成語は「由来（もとの話）」で意味を出す</div>
+  <div class="trg">👀 こう書いてあったら使う：<b>故事成語の意味を選ぶ／説明する問題</b> <span class="arw">→</span> もとの話を思い出す</div>
+  <div class="tec-row"><span class="lb lb-how">矛盾</span><span class="tx">むじゅん＝<b>つじつまが合わない</b>。どんな盾も貫く矛と、どんな矛も防ぐ盾を同時に売った商人の話から。</span></div>
+  <div class="tec-row"><span class="lb lb-how">五十歩百歩</span><span class="tx">ごじっぽひゃっぽ＝<b>大した差はない</b>。五十歩逃げた兵が、百歩逃げた兵を笑った話から。</span></div>
+  <div class="tec-row"><span class="lb lb-how">漁夫の利</span><span class="tx">ぎょふのり＝<b>二者が争う間に、第三者が利益を得る</b>。シギとハマグリが争い、漁師が両方取った話から。</span></div>
+</div>
+
+<label class="nextchk"><input type="checkbox"><span>異口同音・危機一髪・舌先三寸のうち、次に見たら思い出せそうな1つに □ をつける</span></label>
+
+
+<!-- ===================== 第5章 対義語・類義語 ===================== -->
+<div class="unit-banner" id="c5"><span class="unit-num">第5章</span><span class="unit-name">対義語・類義語のパターン</span><span class="unit-time">早見表2つ</span></div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">道具9</span>対義語は「どのパターンで反対か」を見る</div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「〜の対義語は？」で思い出せないとき</b> <span class="arw">→</span> どのパターンの反対かを考える</div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">やみくもに思い出すより、<span class="grn">「打ち消し」「向き」「程度」「正反対」のどれか</span>を決めると、相手の語がすっと出る。</span></div>
+</div>
+
+<table class="ttab">
+  <tr><th style="width:20%">パターン</th><th style="width:36%">見分け方</th><th>代表の対（漢検4級以内）</th></tr>
+  <tr><td><b>打ち消し</b></td><td>「有／無」「不」など打ち消しの字</td><td>有⇔無・可能⇔不可能・有利⇔不利</td></tr>
+  <tr><td><b>向き・増減</b></td><td>反対の向き・数量の増減</td><td>拡大⇔縮小・増加⇔減少・上昇⇔下降</td></tr>
+  <tr><td><b>程度（大小）</b></td><td>量や度合いが逆</td><td>大⇔小・多⇔少・長⇔短・高⇔低</td></tr>
+  <tr><td><b>正反対の意味</b></td><td>概念そのものが逆</td><td>複雑⇔単純・絶対⇔相対・形式⇔内容</td></tr>
+</table>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">道具10</span>類義語は「特訓頻出の12組」を先に覚える</div>
+  <div class="trg">👀 こう書いてあったら使う：<b>「〜と似た意味の言葉は？」</b> <span class="arw">→</span> この12組から探す</div>
+  <div class="tec-row"><span class="lb lb-ex">12組</span><span class="tx">進歩≒向上／容易≒簡単／関心≒興味／方法≒手段／欠点≒短所／原因≒理由／大切≒重要／必要≒不可欠／明白≒明らか／変化≒変動／目的≒目標／工夫≒考案</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">類義語は<span class="grn">出る組が決まっている</span>。この12組を先に固めれば、大問三の類義語はほぼ取れる。</span></div>
+</div>
+
+<label class="nextchk"><input type="checkbox"><span>対義語の4パターンのうち、いちばんあやしい1つに □ をつける（次の1問で意識する）</span></label>
+
+
+<!-- ===================== 第6章 時間配分 ===================== -->
+<div class="unit-banner" id="c6"><span class="unit-num">第6章</span><span class="unit-name">大問三の時間配分</span><span class="unit-time">道具3つ</span></div>
+
+<div class="bx bx-warn">大問三は<b>漢字読み書き4＋四字熟語3＋文節（または対義語）3＝10問の固定型</b>。ここは<b>取り切る大問</b>。1問に時間をかけず、<span class="red">読解に時間を残す</span>のが作戦。</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">道具11</span>知識は「1問30秒」で進む</div>
+  <div class="trg">👀 こうなったら使う：<b>大問三を解きはじめるとき</b> <span class="arw">→</span> 1問30秒のペースを頭に入れる</div>
+  <div class="tec-row"><span class="lb lb-how">やり方</span><span class="tx">知識は<b>思い出せるか、出せないか</b>。30秒で出なければ、悩んでも出にくい。<span class="blu">10問＝5分</span>で通過して、残りを読解にまわす。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">知識で10分悩むと、<span class="grn">配点の大きい読解・記述の時間が消える</span>。国語はきみの強み科目。強みで点を取るために、知識は速く。</span></div>
+</div>
+
+<div class="tec">
+  <div class="tec-h"><span class="tec-no">道具12</span>迷ったら「△」をつけて次へ</div>
+  <div class="trg">👀 こうなったら使う：<b>「これ、思い出せない…」と思った瞬間</b> <span class="arw">→</span> 問題番号に △ をつけて、次へ行く</div>
+  <div class="tec-row"><span class="lb lb-how">やり方</span><span class="tx">迷った問題は<b>△をつけて飛ばす</b>。全部見てから戻ると、<span class="grn">あとの問題がヒントになって思い出せる</span>ことが多い（数学TECと同じ作戦）。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">1問に止まると、<b>解けたはずの問題まで時間切れ</b>で落とす。飛ばすのは、あきらめじゃなくて作戦。</span></div>
+</div>
+
+<div class="tec hot">
+  <div class="tec-h"><span class="tec-no">道具13 ★</span>見直しは「へん・つくり」だけ</div>
+  <div class="trg">👀 こうなったら使う：<b>大問三を書き終えたあと（1〜2分）</b> <span class="arw">→</span> 全部読み直さない。字の部品だけ見る</div>
+  <div class="tec-row"><span class="lb lb-how">やり方</span><span class="tx">書き取りは<b>へん・つくりの部品ミス</b>が最頻。<span class="blu">部品だけ</span>を見直す。四字熟語は<b>空欄の字が別字になっていないか</b>だけ（<span class="red">発⇔髪・故⇔古</span>）。</span></div>
+  <div class="tec-row"><span class="lb lb-why">なぜ効く</span><span class="tx">全部読み直すと時間がない。<span class="grn">いちばん落とす「部品ちがい」だけ</span>を最短で見直せば、書けていた点を守れる。</span></div>
+</div>
+
+<table class="ttab">
+  <tr><th style="width:40%">やること</th><th style="width:18%">目安</th><th>ねらい</th></tr>
+  <tr><td><b>漢字 読み書き4問</b></td><td><b>各30秒</b></td><td>出れば書く。出なければ △。<span class="kw">送り仮名まで書く</span></td></tr>
+  <tr><td><b>四字熟語3問</b></td><td><b>各30秒</b></td><td>群と数字でさがす。空欄の字が別字でないか</td></tr>
+  <tr><td><b>文節／対義語3問</b></td><td><b>各30秒</b></td><td>成分は「述語→主語→…」の順（第1章）</td></tr>
+  <tr><td><b>見直し</b></td><td><b>1〜2分</b></td><td>へん・つくりだけ。△の問題に戻る。<span class="kw">ここを残す</span></td></tr>
+</table>
+
+<label class="nextchk"><input type="checkbox"><span>次の大問三で「1問30秒・迷ったら△」を試す（□ にチェック）</span></label>
+
+
+<div class="endcheer">
+  13個の道具、ぜんぶ覚えなくていい。<b>覚えるのは、今日の1つだけ</b>。<br>
+  まず <b><span class="q9">★9月に直撃</span> のついた章</b>（第1章の文の成分・第4章の6月失点3語・第6章の見直し）から固めよう。<br>
+  道具は「読んで覚えるもの」じゃなくて、<b>「1回使って、体で覚えるもの」</b>。だから <b>解いたあとに開く</b>。<b>👀 の行</b>を読んで「あ、さっきの問題これだ」と思ったら、それが持ち帰る1つ。<br>
+  ここに書いてある道具は、ぜんぶ <b>きみが実際に落とした場所</b>と、<b>9月にそのまま出るところ</b>から作った。つまり、<b>ここは「これから取れるようになる点」</b>ばかり。<br>
+  大問三は取り切る大問。速く、正確に🌸
+</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>復習・算数②｜割合（割合を求める・利益・割引）</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:16px;line-height:1.85}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#fdeef3;color:#5a2b3d;padding:24px 22px;border:1px solid #f0c9d6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#7a5563}
+.pg-badge{display:inline-block;background:#f7d7e2;color:#7a324b;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #efbccd;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13.5px;color:#a14a2f;font-weight:700}
+/* おさらい（道具箱） */
+.osarai{background:#fff;border:3px solid #f3a6c0;border-radius:14px;padding:16px 18px;margin:14px 0}
+.osarai::before{content:"はじめに｜言いかえの道具箱（%・小数・歩合）";display:block;font-size:13px;font-weight:900;color:#c34d77;margin-bottom:10px}
+table.cv{width:100%;border-collapse:collapse;font-size:14.5px;margin-bottom:10px}
+table.cv th,table.cv td{border:1px solid #eccfd9;padding:6px 8px;text-align:center}
+table.cv th{background:#fdeef3;color:#7a324b;font-weight:900;font-size:13px}
+table.cv td{font-weight:700;color:#4a3a41}
+table.cv tr td:first-child{background:#fffdfe;color:#c34d77}
+.osarai p{font-size:13.5px;color:#6a5560;font-weight:700;line-height:2.0}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#5a3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.20);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0;font-size:14px}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"よくある間違い（赤に注意）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#eef7f0;border-left:4px solid #6aa97a}
+.bx-link::before{content:"次に見抜くコツ";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-key{background:#fdeef3;border-left:4px solid #e58aa8}
+.bx-key::before{content:"ひとことで言うと";display:block;font-size:12px;font-weight:800;color:#b14a6c;margin-bottom:4px}
+.bx-check{background:#eef4fb;border-left:4px solid #7aa7d9}
+.bx-check::before{content:"確かめ（検算）";display:block;font-size:12px;font-weight:800;color:#2f5a8a;margin-bottom:4px}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:17px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:2.0}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle;background:#f7d7e2;color:#7a324b}
+/* 【例】ワークトエグザンプル＝最初から全部見せる */
+.ex{background:#f7fbff;border:2px solid #7aa7d9}
+.ex::before{content:"【例】まず 解き方を 最後まで 見て 頭に 入れよう（この問題は 解かなくて いい）";display:block;font-size:12px;font-weight:900;color:#2f5a8a;margin-bottom:8px}
+.ex .qbody .lead{background:#e6f0fb;color:#2f5a8a}
+.exwork{background:#fff;border:1px solid #d7e3f0;border-radius:8px;padding:12px 14px;margin-top:8px;font-size:14px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"ノートに書いて考えよう：";font-weight:800}
+.fig{display:block;margin:12px auto;background:#fff;border:1px solid #e6e6df;border-radius:8px;width:100%;max-width:540px;height:auto}
+.ans-btn{margin-top:8px;background:#a86b80;color:#fff;border:none;border-radius:20px;padding:9px 20px;font-size:14px;font-weight:800;cursor:pointer}
+.ans-btn:hover{background:#90586a}
+.ans-box{display:none;background:#fbf7f8;border:1px solid #ecd9df;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:14px}
+.ans-box.open{display:block}
+.ans-box .step,.exwork .step{margin:10px 0;font-size:14.5px;line-height:1.9;border-left:4px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:9px 13px}
+.ans-box .step > span:first-child,.exwork .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:2px 9px;margin-right:7px;font-weight:800;color:#54605a;font-size:12px}
+.step.s1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.s1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.s2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.s2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.s3{border-left-color:#5fa89a;background:#eef7f5}
+.step.s3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.s4{border-left-color:#e58aa8;background:#fdeef3}
+.step.s4 > span:first-child{background:#f7d7e2;border-color:#efbccd;color:#b14a6c}
+.huge{font-size:18px;font-weight:900;color:#c34d77}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:42px;height:42px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:19px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 5px;border-radius:3px;font-size:15px;font-weight:700}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:1em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.moto{background:#ffe9a3;border-radius:5px;padding:1px 6px;color:#7a5a00;font-weight:800}
+.red{color:#c0392b;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#f3a6c0,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">復習・算数②</span><span class="pg-badge">割合</span><span class="pg-badge">割合を求める・利益・割引</span></div>
+  <h1>割合の補強プリント②｜「割合そのもの」と「利益・割引」を固める</h1>
+  <p>復習・算数　目安：約30分（大問1〜大問4／解く問題は9問）　x（文字）は使わない「算数の力」で解く回</p>
+  <p class="pg-cheer">前回は「もとにする量」を さがす 練習だったね。今日は その続き。<strong>各大問の いちばん最初は【例】</strong>。解かなくて いいから、解き方を 最後まで 見て 頭に 入れよう。そのあとの 問題は 自分の 力で。<br>今日の 問題の 中には、<strong>6月の 特訓選抜で くやしい思いを した 問題と 同じ型が 3つ</strong> まざっている。今日 それを 味方に する。</p>
+</div>
+
+<div class="osarai">
+  <table class="cv">
+    <tr><th>分数</th><th>小数</th><th>％</th><th>歩合</th></tr>
+    <tr><td><span class="frac"><span class="n">1</span><span class="d">2</span></span></td><td>0.5</td><td>50%</td><td>5割</td></tr>
+    <tr><td><span class="frac"><span class="n">1</span><span class="d">4</span></span></td><td>0.25</td><td>25%</td><td>2割5分</td></tr>
+    <tr><td><span class="frac"><span class="n">3</span><span class="d">4</span></span></td><td>0.75</td><td>75%</td><td>7割5分</td></tr>
+    <tr><td><span class="frac"><span class="n">1</span><span class="d">5</span></span></td><td>0.2</td><td>20%</td><td>2割</td></tr>
+    <tr><td><span class="frac"><span class="n">1</span><span class="d">10</span></span></td><td>0.1</td><td>10%</td><td>1割</td></tr>
+    <tr><td><span class="frac"><span class="n">3</span><span class="d">10</span></span></td><td>0.3</td><td>30%</td><td>3割</td></tr>
+  </table>
+  <p>小数 → % は <strong>×100</strong>。% → 小数 は <strong>÷100</strong>。「割」は 0.1、「分」は 0.01。<br>1割 ＝ <span class="frac"><span class="n">1</span><span class="d">10</span></span> ＝ 0.1 ＝ 10%。　1分 ＝ <span class="frac"><span class="n">1</span><span class="d">100</span></span> ＝ 0.01 ＝ 1%。<br>これは 解き方 ではなく <strong>言いかえの 道具</strong>。分からなく なったら ここに もどって いい。</p>
+  <p>25% ＝ <span class="frac"><span class="n">1</span><span class="d">4</span></span>。だから 600×0.25 は 600÷4＝150 と 暗算できる。原価×1.25 は「原価 ＋ 原価の<span class="frac"><span class="n">1</span><span class="d">4</span></span>」＝600＋150＝750。筆算しなくて いい。</p>
+</div>
+
+<!-- ================= 大問1 ================= -->
+<div class="unit-banner"><span class="unit-num">大問1</span><span class="unit-name">割合そのものを 求める｜L1-L2</span><span class="unit-time">目安 7分</span></div>
+
+<!-- 例1（ワークトエグザンプル） -->
+<div class="q calc ex">
+  <div class="qbody">
+    <span class="lead">例1</span>あるクラスは 120人 います。そのうち 女子が 36人 です。女子は クラス全体の どれだけ（割合）ですか。小数・%・歩合の 3つで 答えましょう。
+  </div>
+  <div class="exwork">
+    <div class="bx bx-key">聞かれているのが <strong>「割合そのもの」</strong> のとき。まず <span class="moto">もとにする量</span> を きめて、テープ全体を <strong>1（ぜんぶ）</strong> に する。ここから 始める。</div>
+    <svg class="fig" width="440" height="175" viewBox="0 0 440 175">
+      <text x="16" y="18" font-size="12" fill="#7a5563">テープ全体 ＝ もとにする量 ＝ クラス120人 ＝ 1（ぜんぶ）</text>
+      <rect x="16" y="26" width="400" height="44" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <rect x="16" y="26" width="120" height="44" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="76" y="54" font-size="13" fill="#8a2b3d" font-weight="bold" text-anchor="middle">女子36人</text>
+      <text x="280" y="54" font-size="13" fill="#7a5a00" font-weight="bold" text-anchor="middle">クラス全体 120人（もと）</text>
+      <line x1="16" y1="84" x2="416" y2="84" stroke="#244e7a" stroke-width="1.5"/>
+      <line x1="16" y1="79" x2="16" y2="89" stroke="#244e7a" stroke-width="1.5"/>
+      <line x1="136" y1="79" x2="136" y2="89" stroke="#c34d77" stroke-width="2.5"/>
+      <line x1="416" y1="79" x2="416" y2="89" stroke="#244e7a" stroke-width="1.5"/>
+      <text x="16" y="104" font-size="12" fill="#244e7a">0</text>
+      <text x="136" y="104" font-size="12" fill="#c34d77" text-anchor="middle">？＝求める割合</text>
+      <text x="416" y="104" font-size="12" fill="#244e7a" text-anchor="end">1（＝100%）</text>
+      <text x="16" y="140" font-size="13" fill="#31415f">36は 120の 何倍？</text>
+      <text x="250" y="134" font-size="14" fill="#244e7a" text-anchor="middle"><tspan x="250" dy="0">36</tspan><tspan x="250" dy="20">120</tspan></text>
+      <line x1="228" y1="140" x2="272" y2="140" stroke="#244e7a" stroke-width="1.6"/>
+      <text x="288" y="147" font-size="13.5" fill="#244e7a">＝ 36 ÷ 120 ＝ 0.3</text>
+    </svg>
+    <div class="step s1"><span>① もとは？</span>「クラス<strong>のうち</strong> 女子」。<strong>「〜のうち」の 前</strong>が 全体 ＝ <span class="moto">もとにする量 120人</span>。テープ全体を 1 と する。</div>
+    <div class="step s1"><span>② 何を出す？</span>知りたいのは「36人は、1（ぜんぶ）の どれくらいか」。つまり <strong>36は 120の 何倍か</strong>。何倍かを 出すのは わり算。</div>
+    <div class="step s1"><span>③ 計算</span><span class="math">36 ÷ 120 ＝ 0.3</span></div>
+    <div class="step s1"><span>④ 言いかえ</span>0.3 → %は ×100 → <span class="huge">30%</span>。歩合は 0.1が 1割 だから <span class="huge">3割</span>。</div>
+    <div class="bx bx-check">120 × 0.3 ＝ 36。ちゃんと 女子36人に もどった。合っている。</div>
+    <div class="ans-final"><span>こたえ</span>0.3（＝30% ＝ 3割）</div>
+  </div>
+</div>
+
+<!-- 問1 -->
+<div class="q calc">
+  <div class="qbody">
+    <span class="lead">問1</span>定員 40人の バスに、26人 乗っています。乗っている 人数は 定員の 何%ですか。
+  </div>
+  <div class="note-draw">まず 文章の 中の <strong>「もとにする量（＝ぜんぶ・1）」</strong> に 線を ひいて 印を つけよう。テープ図を かいてから 計算に 入ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">「定員の 何%？」と 聞いている。「〜の」の 前が <span class="moto">もとにする量</span>。定員40人が テープ全体 ＝ 1。</div>
+    <svg class="fig" width="440" height="122" viewBox="0 0 440 122">
+      <text x="16" y="18" font-size="12" fill="#7a5563">もと ＝ 定員40人 ＝ 1（ぜんぶ）</text>
+      <rect x="16" y="26" width="400" height="42" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <rect x="16" y="26" width="260" height="42" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="146" y="53" font-size="13" fill="#8a2b3d" font-weight="bold" text-anchor="middle">乗っている 26人</text>
+      <text x="346" y="53" font-size="12" fill="#7a5a00" font-weight="bold" text-anchor="middle">空き 14人</text>
+      <text x="16" y="90" font-size="12.5" fill="#244e7a">26は 40の 何倍？ → 26 ÷ 40 ＝ 0.65 → ×100 → 65%</text>
+      <text x="16" y="112" font-size="12" fill="#c34d77">確かめ：40 × 0.65 ＝ 26 ○</text>
+    </svg>
+    <div class="step s1"><span>① もと</span>定員 40人（テープ全体＝1）。比べる量は 26人。</div>
+    <div class="step s1"><span>② 何倍？</span><span class="math">26 ÷ 40 ＝ 0.65</span></div>
+    <div class="step s1"><span>③ %に</span>0.65 × 100 ＝ <span class="huge">65%</span>（歩合なら 6割5分）</div>
+    <div class="bx bx-check">40の 65% は 40 × 0.65 ＝ 26。ぴったり もどった。</div>
+    <div class="bx bx-warn"><span class="red">40 ÷ 26 に しない</span>。わられる のは <strong>比べる量（26）</strong>、わる のは <span class="moto">もと（40）</span>。答えが 1 より 大きく なったら「26人が 定員より 多い」ことに なって おかしい、と 気づける。</div>
+    <div class="ans-final"><span>こたえ</span>65%</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c3" target="_blank">マル秘テクニック集 第3章</a></div>
+  </div>
+  <div class="gq" data-gid="m17_1"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'m17_1','o')">○</button><button class="x" onclick="g(this,'m17_1','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">まちがえたら、テープ図を かいて「もとは どっち？」を 声に 出そう</div></div>
+</div>
+
+<!-- 問2 -->
+<div class="q calc">
+  <div class="qbody">
+    <span class="lead">問2</span>800円 だった 品物が 値上がりして、1000円 に なりました。値上がりした 分は、値上がりする 前の ねだんの 何%ですか。
+  </div>
+  <div class="note-draw">まず 文章の 中の <strong>「もとにする量（＝ぜんぶ・1）」</strong> に 線を ひいて 印を つけよう。テープ図を かいてから 計算に 入ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">この問題の 山は <strong>どっちが もとか</strong>。「値上がりする 前の ねだんの 何%」だから、<span class="moto">もと ＝ 800円</span>。1000円 では ない。</div>
+    <svg class="fig" width="440" height="132" viewBox="0 0 440 132">
+      <text x="16" y="18" font-size="12" fill="#7a5563">もと ＝ 値上がり前の 800円 ＝ 1（ぜんぶ）</text>
+      <rect x="16" y="26" width="320" height="42" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <text x="176" y="53" font-size="13" fill="#7a5a00" font-weight="bold" text-anchor="middle">もとのねだん 800円（＝1）</text>
+      <rect x="336" y="26" width="80" height="42" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="376" y="53" font-size="11.5" fill="#8a2b3d" font-weight="bold" text-anchor="middle">＋200円</text>
+      <text x="16" y="90" font-size="12.5" fill="#244e7a">値上がり分は 1000 − 800 ＝ 200円。200は 800の 何倍？</text>
+      <text x="16" y="112" font-size="12.5" fill="#244e7a">200 ÷ 800 ＝ 0.25 → 25%（2割5分）</text>
+    </svg>
+    <div class="step s2"><span>① 値上がり分</span>1000 − 800 ＝ 200（円）。これが 比べる量。</div>
+    <div class="step s2"><span>② もと</span>「値上がりする 前の ねだん」だから <span class="moto">800円</span>（テープ全体＝1）。</div>
+    <div class="step s2"><span>③ 何倍？</span><span class="math">200 ÷ 800 ＝ 0.25</span> → <span class="huge">25%</span></div>
+    <div class="bx bx-check">800の 25%は 800 × 0.25 ＝ 200。800 ＋ 200 ＝ 1000円。文章と ぴったり 合う。</div>
+    <div class="bx bx-warn"><span class="red">200 ÷ 1000 ＝ 0.2（20%）に しない</span>。1000円は 値上がり 後。もとは 前の 800円。「〜の」の 前を 見るクセを つける。この まちがいは 大人でも やる。</div>
+    <div class="bx bx-link">値上がり・利益・増加は ぜんぶ 同じ かたち。<strong>もとは いつも「増える前」</strong>。次の 大問2の 「原価の 25%の 利益」も まったく 同じ 考え方。</div>
+    <div class="ans-final"><span>こたえ</span>25%（＝2割5分）</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c3" target="_blank">マル秘テクニック集 第3章</a></div>
+  </div>
+  <div class="gq" data-gid="m17_2"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'m17_2','o')">○</button><button class="x" onclick="g(this,'m17_2','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">まちがえたら「もとは 増える前」と 図の 横に 書こう</div></div>
+</div>
+
+<!-- ================= 大問2 ================= -->
+<div class="unit-banner"><span class="unit-num">大問2</span><span class="unit-name">原価・定価・利益｜L2-L3</span><span class="unit-time">目安 10分</span></div>
+
+<!-- 例2 -->
+<div class="q calc ex">
+  <div class="qbody">
+    <span class="lead">例2</span>原価 400円 の 品物に、原価の 20% の 利益を 見込んで 定価を つけます。定価は いくらですか。
+  </div>
+  <div class="exwork">
+    <div class="bx bx-key">まず 言葉。<strong>原価</strong>＝仕入れた ねだん。<strong>定価</strong>＝売ろうと して つけた ねだん。<strong>売値</strong>＝じっさいに 売れた ねだん。そして <strong>利益 ＝ 売値 − 原価</strong>。<br>「<strong>原価の</strong> 20%の 利益」だから、<span class="moto">もとにする量 ＝ 原価400円</span>。テープ全体が 1（＝100%）。</div>
+    <svg class="fig" width="440" height="128" viewBox="0 0 440 128">
+      <text x="16" y="18" font-size="12" fill="#7a5563">もと ＝ 原価400円 ＝ 1（ぜんぶ＝100%）</text>
+      <rect x="16" y="26" width="320" height="42" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <text x="176" y="53" font-size="13" fill="#7a5a00" font-weight="bold" text-anchor="middle">原価 400円（＝1）</text>
+      <rect x="336" y="26" width="64" height="42" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="368" y="53" font-size="10.5" fill="#8a2b3d" font-weight="bold" text-anchor="middle">利益80円</text>
+      <text x="16" y="90" font-size="12.5" fill="#244e7a">利益 ＝ 400 × 0.2 ＝ 80円　→　定価 ＝ 400 ＋ 80 ＝ 480円</text>
+      <text x="16" y="112" font-size="12.5" fill="#c34d77">まとめて：定価 ＝ 400 × (1 ＋ 0.2) ＝ 400 × 1.2 ＝ 480円（同じ）</text>
+    </svg>
+    <div class="step s1"><span>① もと</span>原価 400円 ＝ 1（テープ全体）。</div>
+    <div class="step s2"><span>② 利益を出す</span>原価の 20% ＝ 0.2 ぶん。<span class="math">400 × 0.2 ＝ 80</span>（円）</div>
+    <div class="step s2"><span>③ 定価</span>定価は 原価の <strong>上に 利益を のせた</strong> もの。<span class="math">400 ＋ 80 ＝ 480</span>（円）</div>
+    <div class="step s3"><span>④ 近道</span>1（原価）＋ 0.2（利益）＝ 1.2 だから、<span class="math">400 × 1.2 ＝ 480</span> でも 同じ。どちらで 解いても いい。</div>
+    <div class="bx bx-check">この 定価480円で 売れたら、利益 ＝ 売値480 − 原価400 ＝ 80円。ちゃんと 原価の 20% に なっている。</div>
+    <div class="ans-final"><span>こたえ</span>定価 480円</div>
+  </div>
+</div>
+
+<!-- 問3 ★6月同型 -->
+<div class="q calc">
+  <div class="qbody">
+    <span class="lead">問3 ★</span>原価 600円 の 品物に、原価の 25% の 利益を 見込んで 定価を つけました。定価は いくらですか。
+  </div>
+  <div class="note-draw">まず 文章の 中の <strong>「もとにする量（＝ぜんぶ・1）」</strong> に 線を ひいて 印を つけよう。テープ図を かいてから 計算に 入ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">例2と 同じ かたち。<span class="moto">もと ＝ 原価600円 ＝ 1</span>。25% ＝ <strong>0.25</strong>。ここを 0.2 と 見て しまうと、答えが 720円に なって しまう。</div>
+    <svg class="fig" width="440" height="128" viewBox="0 0 440 128">
+      <text x="16" y="18" font-size="12" fill="#7a5563">もと ＝ 原価600円 ＝ 1（ぜんぶ＝100%）</text>
+      <rect x="16" y="26" width="300" height="42" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <text x="166" y="53" font-size="13" fill="#7a5a00" font-weight="bold" text-anchor="middle">原価 600円（＝1）</text>
+      <rect x="316" y="26" width="75" height="42" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="353" y="53" font-size="10.5" fill="#8a2b3d" font-weight="bold" text-anchor="middle">利益150円</text>
+      <text x="16" y="90" font-size="12.5" fill="#244e7a">利益 ＝ 600 × 0.25 ＝ 150円　→　定価 ＝ 600 ＋ 150 ＝ 750円</text>
+      <text x="16" y="112" font-size="12.5" fill="#c34d77">まとめて：600 × 1.25 ＝ 750円（同じ）</text>
+    </svg>
+    <div class="step s2"><span>① 利益</span>原価の 25% ＝ 0.25 ぶん。<span class="math">600 × 0.25 ＝ 150</span>（円）</div>
+    <div class="step s2"><span>② 定価</span><span class="math">600 ＋ 150 ＝ 750</span>（円）　近道なら <span class="math">600 × 1.25 ＝ 750</span></div>
+    <div class="bx bx-check">750円で 売れたら 利益は 750 − 600 ＝ 150円。150は 600の 0.25（25%）。合っている。</div>
+    <div class="bx bx-warn"><span class="red">720円に しない</span>。720は 600 × 1.2 ＝「20%の 利益」の 答え。25% ＝ 0.25（0.2 では ない）。<br>150円で 止まらない。150は 利益。聞かれているのは <strong>定価</strong>。最後に もう一度 問題文を 読む。</div>
+    <div class="bx bx-link">6月の 特訓選抜 大問7(1) と 同じ 型。あのとき 720円と 書いた。今日 750円が 出せたら、あの1問は もう きみの もの。</div>
+    <div class="ans-final"><span>こたえ</span>定価 750円</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c3" target="_blank">マル秘テクニック集 第3章</a></div>
+  </div>
+  <div class="gq" data-gid="m17_3"><div class="grade"><span class="gq-label">問3 ★</span>○✕ → <button class="o" onclick="g(this,'m17_3','o')">○</button><button class="x" onclick="g(this,'m17_3','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">まちがえたら「25% ＝ 0.25」「定価 ＝ 原価 ＋ 利益」を 図と いっしょに 書こう</div></div>
+</div>
+
+<!-- 問4 -->
+<div class="q calc">
+  <div class="qbody">
+    <span class="lead">問4</span>原価 800円 の 品物に、原価の 30% の 利益を 見込んで 定価を つけ、その 定価どおりに 売れました。利益は 何円ですか。
+  </div>
+  <div class="note-draw">まず 文章の 中の <strong>「もとにする量（＝ぜんぶ・1）」</strong> に 線を ひいて 印を つけよう。テープ図を かいてから 計算に 入ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key"><span class="moto">もと ＝ 原価800円 ＝ 1</span>。定価どおりに 売れた ＝ <strong>売値 ＝ 定価</strong>。利益は 売値 − 原価 で 出す。</div>
+    <svg class="fig" width="440" height="128" viewBox="0 0 440 128">
+      <text x="16" y="18" font-size="12" fill="#7a5563">もと ＝ 原価800円 ＝ 1（ぜんぶ）</text>
+      <rect x="16" y="26" width="300" height="42" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <text x="166" y="53" font-size="13" fill="#7a5a00" font-weight="bold" text-anchor="middle">原価 800円（＝1）</text>
+      <rect x="316" y="26" width="90" height="42" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="361" y="53" font-size="11" fill="#8a2b3d" font-weight="bold" text-anchor="middle">利益 0.3</text>
+      <text x="16" y="90" font-size="12.5" fill="#244e7a">定価 ＝ 800 × 1.3 ＝ 1040円（売値も 1040円）</text>
+      <text x="16" y="112" font-size="12.5" fill="#c34d77">利益 ＝ 売値1040 − 原価800 ＝ 240円（＝ 800 × 0.3）</text>
+    </svg>
+    <div class="step s1"><span>① 定価</span>1 ＋ 0.3 ＝ 1.3 → <span class="math">800 × 1.3 ＝ 1040</span>（円）</div>
+    <div class="step s2"><span>② 売値</span>定価どおりに 売れた ので 売値 ＝ 1040円。</div>
+    <div class="step s3"><span>③ 利益</span><span class="math">1040 − 800 ＝ 240</span>（円）</div>
+    <div class="step s3"><span>④ 気づき</span>じつは 800 × 0.3 ＝ 240 と 同じ。定価どおりに 売れた ときだけ、利益は「原価 × 利益の 割合」に なる。</div>
+    <div class="bx bx-check">原価800 ＋ 利益240 ＝ 1040 ＝ 定価。ぴったり。</div>
+    <div class="bx bx-warn"><span class="red">1040円 と 答えない</span>。1040は 定価（売値）。聞かれているのは 利益。利益は 売値 − 原価。<br>④の 近道は <strong>値引きが ない ときだけ</strong>。次の 問5では 使えない。</div>
+    <div class="ans-final"><span>こたえ</span>利益 240円</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c3" target="_blank">マル秘テクニック集 第3章</a></div>
+  </div>
+  <div class="gq" data-gid="m17_4"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'m17_4','o')">○</button><button class="x" onclick="g(this,'m17_4','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">まちがえたら「利益 ＝ 売値 − 原価」を 3回 書こう</div></div>
+</div>
+
+<!-- 問5 -->
+<div class="q calc">
+  <div class="qbody">
+    <span class="lead">問5</span>原価 1200円 の 品物に、原価の 25% の 利益を 見込んで 定価を つけました。ところが 売れないので、<strong>定価の 10%引き</strong> で 売りました。利益は 何円ですか。
+  </div>
+  <div class="note-draw">まず 文章の 中の <strong>「もとにする量（＝ぜんぶ・1）」</strong> に 線を ひいて 印を つけよう。テープ図を かいてから 計算に 入ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">この問題の 山は <strong>もとが とちゅうで 入れかわる</strong> こと。<br>「原価の 25%の 利益」→ もとは 原価。「定価の 10%引き」→ もとは 定価。そのつど「〜の」の 前を 見る。</div>
+    <svg class="fig" width="460" height="192" viewBox="0 0 460 192">
+      <text x="16" y="16" font-size="12" fill="#7a5563">① もと ＝ 原価1200円 ＝ 1</text>
+      <rect x="16" y="24" width="240" height="36" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <text x="136" y="47" font-size="12.5" fill="#7a5a00" font-weight="bold" text-anchor="middle">原価 1200円（＝1）</text>
+      <rect x="256" y="24" width="60" height="36" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="286" y="47" font-size="10" fill="#8a2b3d" font-weight="bold" text-anchor="middle">＋300</text>
+      <text x="16" y="80" font-size="12.5" fill="#244e7a">定価 ＝ 1200 × 1.25 ＝ 1500円</text>
+      <text x="16" y="104" font-size="12" fill="#7a5563">② こんどは もとが 定価1500円（＝1）に 入れかわる</text>
+      <rect x="16" y="112" width="300" height="36" fill="#eee" stroke="#999" stroke-width="2"/>
+      <rect x="16" y="112" width="270" height="36" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="151" y="135" font-size="12.5" fill="#8a2b3d" font-weight="bold" text-anchor="middle">売値（定価の 0.9）</text>
+      <text x="324" y="135" font-size="11" fill="#555">10%引き</text>
+      <text x="16" y="168" font-size="12.5" fill="#244e7a">売値 ＝ 1500 × 0.9 ＝ 1350円</text>
+      <text x="16" y="187" font-size="12.5" fill="#c34d77" font-weight="bold">利益 ＝ 売値1350 − 原価1200 ＝ 150円</text>
+    </svg>
+    <div class="step s1"><span>① 定価</span>もとは 原価1200。1 ＋ 0.25 ＝ 1.25 → <span class="math">1200 × 1.25 ＝ 1500</span>（円）</div>
+    <div class="step s2"><span>② 売値</span>もとが 定価1500 に 変わる。10%引き ＝ 0.1 ぶん 引く → 残るのは 1 − 0.1 ＝ 0.9。<span class="math">1500 × 0.9 ＝ 1350</span>（円）</div>
+    <div class="step s3"><span>③ 利益</span><span class="math">1350 − 1200 ＝ 150</span>（円）</div>
+    <div class="bx bx-check">売値1350は 原価1200より 150円 高い。だから もうけは 150円。ちゃんと プラスに なっている。</div>
+    <div class="bx bx-warn"><span class="red">原価の 10%引き に しない</span>。引くのは 定価から。<br>利益を 定価 − 原価（＝300円）に しない。じっさいに 売れた ねだんは 1350円。利益は いつも 売値 − 原価。<br>1.25 と 0.9 を 混ぜない。かける 順に、1つずつ。</div>
+    <div class="bx bx-link">「定価を つける（×1.25）→ 値引きして 売る（×0.9）」の 2段。特訓選抜の 利益の 問題は ほぼ この かたち。<strong>もとが 変わる ところに 線を 引く</strong>のが コツ。</div>
+    <div class="ans-final"><span>こたえ</span>利益 150円</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="m17_5"><div class="grade"><span class="gq-label">問5</span>○✕ → <button class="o" onclick="g(this,'m17_5','o')">○</button><button class="x" onclick="g(this,'m17_5','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">まちがえたら「① もと＝原価 → 定価」「② もと＝定価 → 売値」を 2行で 書こう</div></div>
+</div>
+
+<!-- ================= 大問3 ================= -->
+<div class="unit-banner"><span class="unit-num">大問3</span><span class="unit-name">割引｜L2-L3</span><span class="unit-time">目安 8分</span></div>
+
+<!-- 例3 -->
+<div class="q calc ex">
+  <div class="qbody">
+    <span class="lead">例3</span>定価 2000円 の 品物を、<strong>3割引き</strong> で 売ります。売値は いくらですか。
+  </div>
+  <div class="exwork">
+    <div class="bx bx-key"><span class="moto">もと ＝ 定価2000円 ＝ 1（ぜんぶ）</span>。「3割<strong>引き</strong>」は、1（ぜんぶ）から 0.3 を <strong>引いた 分が 残る</strong> という 意味。</div>
+    <svg class="fig" width="440" height="124" viewBox="0 0 440 124">
+      <text x="16" y="18" font-size="12" fill="#7a5563">もと ＝ 定価2000円 ＝ 1（ぜんぶ）</text>
+      <rect x="16" y="26" width="400" height="42" fill="#eee" stroke="#999" stroke-width="2"/>
+      <rect x="16" y="26" width="280" height="42" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="156" y="53" font-size="13" fill="#8a2b3d" font-weight="bold" text-anchor="middle">売値（0.7）</text>
+      <text x="356" y="53" font-size="12" fill="#555" font-weight="bold" text-anchor="middle">引く 0.3</text>
+      <text x="16" y="90" font-size="12.5" fill="#244e7a">3割 ＝ 0.3。3割引き → 残るのは 1 − 0.3 ＝ 0.7</text>
+      <text x="16" y="112" font-size="12.5" fill="#c34d77">売値 ＝ 2000 × 0.7 ＝ 1400円</text>
+    </svg>
+    <div class="step s1"><span>① もと</span>定価 2000円 ＝ 1（テープ全体）。</div>
+    <div class="step s2"><span>② 引き算を 先に</span>3割 ＝ 0.3。<strong>引く</strong> のだから、残る 割合は <span class="math">1 − 0.3 ＝ 0.7</span>。</div>
+    <div class="step s2"><span>③ 売値</span><span class="math">2000 × 0.7 ＝ 1400</span>（円）</div>
+    <div class="step s3"><span>④ 別の道</span>引く 金額を 先に 出しても いい。<span class="math">2000 × 0.3 ＝ 600</span> → <span class="math">2000 − 600 ＝ 1400</span>。同じ 答え。<strong>好きな 道で いい</strong>。</div>
+    <div class="bx bx-check">1400円は 2000円より 安い。値引き なのだから 安く なって いて 当たり前。安く なって いなければ どこかで まちがえて いる。</div>
+    <div class="ans-final"><span>こたえ</span>売値 1400円</div>
+  </div>
+</div>
+
+<!-- 問6 -->
+<div class="q calc">
+  <div class="qbody">
+    <span class="lead">問6</span>定価 1800円 の シャツを、<strong>25%引き</strong> で 買いました。代金は いくらですか。
+  </div>
+  <div class="note-draw">まず 文章の 中の <strong>「もとにする量（＝ぜんぶ・1）」</strong> に 線を ひいて 印を つけよう。テープ図を かいてから 計算に 入ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key"><span class="moto">もと ＝ 定価1800円 ＝ 1</span>。25%引き ＝ 0.25 を 引く → 残る 割合は 0.75（＝7割5分）。</div>
+    <svg class="fig" width="440" height="124" viewBox="0 0 440 124">
+      <text x="16" y="18" font-size="12" fill="#7a5563">もと ＝ 定価1800円 ＝ 1（ぜんぶ）</text>
+      <rect x="16" y="26" width="400" height="42" fill="#eee" stroke="#999" stroke-width="2"/>
+      <rect x="16" y="26" width="300" height="42" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="166" y="53" font-size="13" fill="#8a2b3d" font-weight="bold" text-anchor="middle">はらう 分（0.75）</text>
+      <text x="366" y="53" font-size="12" fill="#555" font-weight="bold" text-anchor="middle">引く 0.25</text>
+      <text x="16" y="90" font-size="12.5" fill="#244e7a">1 − 0.25 ＝ 0.75　→　1800 × 0.75 ＝ 1350円</text>
+      <text x="16" y="112" font-size="12.5" fill="#c34d77">別の道：1800 × 0.25 ＝ 450 → 1800 − 450 ＝ 1350円</text>
+    </svg>
+    <div class="step s1"><span>① 残る割合</span>25% ＝ 0.25。引くから <span class="math">1 − 0.25 ＝ 0.75</span></div>
+    <div class="step s2"><span>② 代金</span><span class="math">1800 × 0.75 ＝ 1350</span>（円）</div>
+    <div class="step s3"><span>③ 別の道</span>引く 額 ＝ 1800 × 0.25 ＝ 450円 → 1800 − 450 ＝ 1350円。同じ。</div>
+    <div class="bx bx-check">1350円は 1800円より 450円 安い。450は 1800の 0.25。合っている。</div>
+    <div class="bx bx-warn"><span class="red">1800 × 0.25 ＝ 450 を そのまま 代金に しない</span>。450は <strong>引いた 額</strong>。はらう のは 残りの 1350円。<br><span class="red">25%引き と 25%の 利益 を 混ぜない</span>。引く ときは 1 − 0.25、のせる ときは 1 ＋ 0.25。</div>
+    <div class="ans-final"><span>こたえ</span>代金 1350円</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c3" target="_blank">マル秘テクニック集 第3章</a></div>
+  </div>
+  <div class="gq" data-gid="m17_6"><div class="grade"><span class="gq-label">問6</span>○✕ → <button class="o" onclick="g(this,'m17_6','o')">○</button><button class="x" onclick="g(this,'m17_6','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">まちがえたら「引くとき 1 − 割合」「のせるとき 1 ＋ 割合」を 図に 書こう</div></div>
+</div>
+
+<!-- 問7 -->
+<div class="q calc">
+  <div class="qbody">
+    <span class="lead">問7</span>定価 1500円 の 品物が、1200円 で 売られて いました。これは 何割引き ですか。
+  </div>
+  <div class="note-draw">まず 文章の 中の <strong>「もとにする量（＝ぜんぶ・1）」</strong> に 線を ひいて 印を つけよう。テープ図を かいてから 計算に 入ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">聞かれているのが <strong>割合そのもの</strong>（大問1と 同じ 種類）。<span class="moto">もと ＝ 定価1500円 ＝ 1</span>。「引いた 分が、もとの どれだけか」を 出す。</div>
+    <svg class="fig" width="440" height="124" viewBox="0 0 440 124">
+      <text x="16" y="18" font-size="12" fill="#7a5563">もと ＝ 定価1500円 ＝ 1（ぜんぶ）</text>
+      <rect x="16" y="26" width="375" height="42" fill="#eee" stroke="#999" stroke-width="2"/>
+      <rect x="16" y="26" width="300" height="42" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="166" y="53" font-size="13" fill="#8a2b3d" font-weight="bold" text-anchor="middle">売値 1200円</text>
+      <text x="354" y="53" font-size="11" fill="#555" font-weight="bold" text-anchor="middle">引いた 300円</text>
+      <text x="16" y="90" font-size="12.5" fill="#244e7a">引いた 300は 1500の 何倍？ → 300 ÷ 1500 ＝ 0.2 → 2割（20%）</text>
+      <text x="16" y="112" font-size="12.5" fill="#c34d77">別の道：1200 ÷ 1500 ＝ 0.8 → 1 − 0.8 ＝ 0.2 → 2割引き</text>
+    </svg>
+    <div class="step s1"><span>① 引いた額</span><span class="math">1500 − 1200 ＝ 300</span>（円）</div>
+    <div class="step s2"><span>② 何倍？</span>300は もと1500の 何倍か。<span class="math">300 ÷ 1500 ＝ 0.2</span></div>
+    <div class="step s2"><span>③ 歩合に</span>0.1が 1割 だから 0.2 ＝ <span class="huge">2割</span> → 2割引き（＝20%引き）。</div>
+    <div class="step s3"><span>④ 別の道</span>売値が もとの 何倍か を 先に 出す。<span class="math">1200 ÷ 1500 ＝ 0.8</span> → 残ったのが 0.8 なら 引いたのは <span class="math">1 − 0.8 ＝ 0.2</span> → 2割引き。同じ。</div>
+    <div class="bx bx-check">1500の 2割引き ＝ 1500 × 0.8 ＝ 1200円。問題の ねだんに ぴったり もどった。</div>
+    <div class="bx bx-warn"><span class="red">300 ÷ 1200 に しない</span>。もとは 定価1500（売値では ない）。<br>0.2 を 2%と 書かない。0.2 ＝ 20% ＝ 2割。「割」と「%」は 10倍 ちがう。</div>
+    <div class="bx bx-link">「何割引き？」「何%？」と <strong>割合を 聞かれたら わり算</strong>。大問1で やった「何倍？」と まったく 同じ 頭の 使い方。</div>
+    <div class="ans-final"><span>こたえ</span>2割引き（＝20%引き）</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c3" target="_blank">マル秘テクニック集 第3章</a></div>
+  </div>
+  <div class="gq" data-gid="m17_7"><div class="grade"><span class="gq-label">問7</span>○✕ → <button class="o" onclick="g(this,'m17_7','o')">○</button><button class="x" onclick="g(this,'m17_7','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">まちがえたら「割合を 聞かれたら わり算・もとで わる」を 図に 書こう</div></div>
+</div>
+
+<!-- ================= 大問4 ================= -->
+<div class="unit-banner"><span class="unit-num">大問4</span><span class="unit-name">逆算の総合｜「はじめは いくつ？」L3</span><span class="unit-time">目安 10分</span></div>
+
+<!-- 例4 -->
+<div class="q calc ex">
+  <div class="qbody">
+    <span class="lead">例4</span>持っていた お金の 40% を 使ったら、600円 残りました。はじめに 持っていた お金は いくらですか。
+  </div>
+  <div class="exwork">
+    <div class="bx bx-key">今度は <span class="moto">もとにする量（はじめの お金）が 分からない</span>。それでも テープ全体を <strong>1（ぜんぶ）</strong> と おいて しまう。ここが 出発点。</div>
+    <svg class="fig" width="440" height="124" viewBox="0 0 440 124">
+      <text x="16" y="18" font-size="12" fill="#7a5563">もと ＝ はじめの お金 ＝ ？円 ＝ 1（ぜんぶ）</text>
+      <rect x="16" y="26" width="400" height="42" fill="#fff" stroke="#bbb" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="16" y="26" width="160" height="42" fill="#ddd" stroke="#999" stroke-width="2"/>
+      <text x="96" y="53" font-size="12.5" fill="#555" font-weight="bold" text-anchor="middle">使った 0.4</text>
+      <rect x="176" y="26" width="240" height="42" fill="#cfe7ff" stroke="#244e7a" stroke-width="2"/>
+      <text x="296" y="53" font-size="13" fill="#244e7a" font-weight="bold" text-anchor="middle">残り 600円（0.6）</text>
+      <text x="16" y="90" font-size="12.5" fill="#244e7a">残りの 割合 ＝ 1 − 0.4 ＝ 0.6。その 0.6 ぶんが 600円。</text>
+      <text x="16" y="112" font-size="12.5" fill="#c34d77">1（ぜんぶ）に もどす → 600 ÷ 0.6 ＝ 1000円</text>
+    </svg>
+    <div class="step s1"><span>① もとを おく</span>はじめの お金 ＝ テープ全体 ＝ 1（ぜんぶ）。数は 分からなくて いい。</div>
+    <div class="step s2"><span>② 残りの 割合</span>40% ＝ 0.4 を 使った。残るのは <span class="math">1 − 0.4 ＝ 0.6</span>。<strong>問題が 教えて いる 600円は、この 0.6 ぶん</strong>。</div>
+    <div class="step s3"><span>③ 1に もどす</span>0.6 ぶんが 600円 なら、1（ぜんぶ）は <span class="math">600 ÷ 0.6 ＝ 1000</span>（円）</div>
+    <div class="bx bx-check">1000円の 40%は 1000 × 0.4 ＝ 400円 使った。1000 − 400 ＝ 600円 残る。文章と ぴったり。</div>
+    <div class="bx bx-warn"><span class="red">600円を「ぜんぶ」だと 思わない</span>。600は 0.6 ぶん。だから <strong>答えは 600より 大きく なる</strong>。もし 600より 小さい 答えが 出たら、その場で まちがいだと 分かる。</div>
+    <div class="ans-final"><span>こたえ</span>1000円</div>
+  </div>
+</div>
+
+<!-- 問8 ★6月同型 -->
+<div class="q calc">
+  <div class="qbody">
+    <span class="lead">問8 ★</span>色紙が 何枚か ありました。その <strong>20%</strong> を 使ったら、<strong>24枚</strong> 残りました。はじめに 色紙は 何枚 ありましたか。
+  </div>
+  <div class="note-draw">まず 文章の 中の <strong>「もとにする量（＝ぜんぶ・1）」</strong> に 線を ひいて 印を つけよう。テープ図を かいてから 計算に 入ろう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">例4と まったく 同じ かたち。<span class="moto">もと ＝ はじめの 枚数 ＝ 1（ぜんぶ）</span>。24枚は <strong>残り</strong> であって ぜんぶ では ない。</div>
+    <svg class="fig" width="440" height="124" viewBox="0 0 440 124">
+      <text x="16" y="18" font-size="12" fill="#7a5563">もと ＝ はじめの 枚数 ＝ ？枚 ＝ 1（ぜんぶ）</text>
+      <rect x="16" y="26" width="400" height="42" fill="#fff" stroke="#bbb" stroke-width="2" stroke-dasharray="5 4"/>
+      <rect x="16" y="26" width="80" height="42" fill="#ddd" stroke="#999" stroke-width="2"/>
+      <text x="56" y="53" font-size="11.5" fill="#555" font-weight="bold" text-anchor="middle">使った 0.2</text>
+      <rect x="96" y="26" width="320" height="42" fill="#cfe7ff" stroke="#244e7a" stroke-width="2"/>
+      <text x="256" y="53" font-size="13" fill="#244e7a" font-weight="bold" text-anchor="middle">残り 24枚（0.8）</text>
+      <text x="16" y="90" font-size="12.5" fill="#244e7a">残りの 割合 ＝ 1 − 0.2 ＝ 0.8。その 0.8 ぶんが 24枚。</text>
+      <text x="16" y="112" font-size="12.5" fill="#c34d77">1（ぜんぶ）に もどす → 24 ÷ 0.8 ＝ 30枚</text>
+    </svg>
+    <div class="step s1"><span>① もとを おく</span>はじめの 枚数 ＝ 1（ぜんぶ）。分からなくて いい。</div>
+    <div class="step s2"><span>② 残りの 割合</span>20% ＝ 0.2 を 使った → 残りは <span class="math">1 − 0.2 ＝ 0.8</span>。この 0.8 ぶんが 24枚。</div>
+    <div class="step s3"><span>③ 1に もどす</span><span class="math">24 ÷ 0.8 ＝ 30</span>（枚）</div>
+    <div class="bx bx-check">30枚の 20%は 30 × 0.2 ＝ 6枚 使った。30 − 6 ＝ 24枚 残る。文章と ぴったり。</div>
+    <div class="bx bx-warn"><span class="red">24 × 0.2 ＝ 4.8 の ように、24に 割合を かけない</span>。24は 残り（0.8ぶん）で、もとは これより 大きい。<br>答えが 24より 小さく なったら 100% まちがい。はじめの 枚数が 残りより 少ない なんて ありえない。答えを 書く 前に 24と 見くらべる。これだけで 助かる。</div>
+    <div class="bx bx-link">6月の 特訓選抜 大問2(2) と 同じ 型。あのとき 2.88枚 と 書いた。<strong>2.88は 24より 小さい ＝ その場で 気づける まちがい</strong>。今日から「もとは 残りより 大きい」を 最後の チェックに しよう。</div>
+    <div class="ans-final"><span>こたえ</span>30枚</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c3" target="_blank">マル秘テクニック集 第3章</a></div>
+  </div>
+  <div class="gq" data-gid="m17_8"><div class="grade"><span class="gq-label">問8 ★</span>○✕ → <button class="o" onclick="g(this,'m17_8','o')">○</button><button class="x" onclick="g(this,'m17_8','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">まちがえたら「残りの 割合を 先に 出す → 残りを ÷ で 1に もどす」を 図で 書こう</div></div>
+</div>
+
+<!-- 問9 ★6月同型 -->
+<div class="q calc">
+  <div class="qbody">
+    <span class="lead">問9 ★</span>1個 200円 で 仕入れた 品物を 100個、原価の 25% の 利益を 見込んで 定価を つけました。何個かは 定価どおりに 売れましたが、残りは <strong>定価の 20%引き</strong> に して 売り、100個 すべて 売れました。利益は 全部で 4000円 でした。20%引きで 売ったのは 何個 ですか。
+  </div>
+  <div class="note-draw">まず 文章の 中の <strong>「もとにする量（＝ぜんぶ・1）」</strong> に 線を ひいて 印を つけよう。テープ図を かいてから 計算に 入ろう。※ 最後に「何を 聞かれて いるか」を もう一度 読もう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-key">大問2と 大問3の 合体。まず <strong>1個ぶんの 利益</strong> を 2通り（定価・割引）出す。そのあと「もし ぜんぶ 定価で 売れて いたら」と くらべる。利益 ＝ 売値 − 原価 を 使う。</div>
+    <svg class="fig" width="460" height="215" viewBox="0 0 460 215">
+      <text x="16" y="16" font-size="12" fill="#7a5563">① もと ＝ 原価200円 ＝ 1（1個ぶん）</text>
+      <rect x="16" y="24" width="200" height="34" fill="#fff3c4" stroke="#d9b46d" stroke-width="2"/>
+      <text x="116" y="46" font-size="12" fill="#7a5a00" font-weight="bold" text-anchor="middle">原価 200円（＝1）</text>
+      <rect x="216" y="24" width="50" height="34" fill="#ffd0d8" stroke="#c34d77" stroke-width="2"/>
+      <text x="241" y="46" font-size="10" fill="#8a2b3d" font-weight="bold" text-anchor="middle">＋50</text>
+      <text x="278" y="46" font-size="12" fill="#31415f">定価 250円</text>
+      <text x="16" y="80" font-size="12" fill="#7a5563">② もとが 定価250円（＝1）に 入れかわる。20%引き ＝ 0.8倍</text>
+      <rect x="16" y="88" width="250" height="34" fill="#eee" stroke="#999" stroke-width="2"/>
+      <rect x="16" y="88" width="200" height="34" fill="#cfe7ff" stroke="#244e7a" stroke-width="2"/>
+      <text x="116" y="110" font-size="12" fill="#244e7a" font-weight="bold" text-anchor="middle">売値 200円（0.8）</text>
+      <text x="278" y="110" font-size="12" fill="#31415f">原価と 同じ</text>
+      <text x="16" y="146" font-size="12.5" fill="#31415f">定価で 売った 1個の 利益 ＝ 250 − 200 ＝ 50円</text>
+      <text x="16" y="168" font-size="12.5" fill="#31415f">割引で 売った 1個の 利益 ＝ 200 − 200 ＝ 0円</text>
+      <text x="16" y="196" font-size="12.5" fill="#c34d77" font-weight="bold">→ 割引に すると 1個に つき 利益が 50円 へる</text>
+    </svg>
+    <div class="step s1"><span>① 定価</span>もとは 原価200円。<span class="math">200 × 1.25 ＝ 250</span>（円）。定価で 売れた 1個の 利益は <span class="math">250 − 200 ＝ 50</span>（円）</div>
+    <div class="step s2"><span>② 割引の 売値</span>もとが 定価250円 に 変わる。20%引き → 1 − 0.2 ＝ 0.8。<span class="math">250 × 0.8 ＝ 200</span>（円）。原価と 同じ ねだん。1個の 利益は <span class="math">200 − 200 ＝ 0</span>（円）</div>
+    <div class="step s3"><span>③ もし ぜんぶ 定価なら</span>利益は <span class="math">50 × 100 ＝ 5000</span>（円）。でも 実際は 4000円。<span class="math">5000 − 4000 ＝ 1000</span>（円）分 へって いる。</div>
+    <div class="step s4"><span>④ 何個 割引した？</span>割引に すると 1個に つき 利益が 50円 へる（50円 → 0円）。1000円 へった のだから <span class="math">1000 ÷ 50 ＝ 20</span>（個）</div>
+    <div class="bx bx-check">割引 20個 → 利益 0円。定価 100 − 20 ＝ 80個 → 50 × 80 ＝ 4000円。合計 4000円。問題と ぴったり 合う。</div>
+    <div class="bx bx-warn"><span class="red">4000 ÷ 50 ＝ 80 で 止まらない</span>。80は 定価で 売れた 個数。聞かれているのは 割引で 売った 個数 ＝ 100 − 80 ＝ 20個。最後に 問題文を もう一度 読む。<br>利益を 定価 − 原価 に しない。割引した 分は 売値が ちがう。利益は いつも 売値 − 原価。</div>
+    <div class="bx bx-link">6月の 特訓選抜 大問7(2) と 同じ 型。「ぜんぶ 定価だったら いくら？」と 考えて、<strong>へった 利益 ÷ 1個で へる 利益</strong> で 個数を 出す。これが この型の 骨。</div>
+    <div class="ans-final"><span>こたえ</span>20個</div>
+      <div class="tec-link">型：<b>割合・利益型</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="m17_9"><div class="grade"><span class="gq-label">問9 ★</span>○✕ → <button class="o" onclick="g(this,'m17_9','o')">○</button><button class="x" onclick="g(this,'m17_9','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">まちがえたら「1個の 利益（定価・割引）→ ぜんぶ 定価なら → へった 分 ÷ 1個で へる 分」を 4行で 書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">今日できた（割合② 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">9問 おつかれさま。今日 手に 入れたのは 3つ。<strong>①「割合を 聞かれたら、もとで わる」</strong>（大問1・問7）<strong>② 利益は いつも「売値 − 原価」</strong>（大問2）<strong>③ もとが 分からない ときは、残りの 割合で わって 1に もどす</strong>（大問4）。<br>そして いちばん 大事なのは、答えを 書く 前の <strong>ひと目の チェック</strong>。「もとは 残りより 大きい」「値引き したら 安くなる」。これだけで、6月に くやしかった 3問は もう 落とさない。★の 3問（問3・問8・問9）で ○が ついたら、それは 本番で 取り返した 点数と 同じ。</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m17';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+var RMQ_KIND='割合';
+
+/* ===== 数学キュー送りフック（×→revmq_dyn／○→po++）2026-07-12 新設 =====
+   従来 数学プリントは復習キューへ何も送っておらず（49枚中0枚）、×が溜まらなかった。
+   受け皿=復習数学_まちがえ復習キュー.html の mergeDyn(revmq_dyn) が読む。 */
+var RMQ_DYN='revmq_dyn';
+function rmqClean(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function rmqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function sendToRevMQ(btn,id,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    if(String(KEY).indexOf('revmq')===0)return;              /* 受け皿自身では動かさない */
+    var q=btn&&btn.closest?btn.closest('.q'):null; if(!q)return;
+    var leadEl=q.querySelector('.lead'); if(!leadEl)return;
+    var label=rmqClean(leadEl);
+    if(/【例】/.test(label))return;                            /* 例題は復習に送らない */
+    var qtxt=leadEl.parentNode?rmqClean(leadEl.parentNode):'';
+    if(label&&qtxt.indexOf(label)===0)qtxt=qtxt.slice(label.length).trim();
+    var ans=rmqClean(q.querySelector('.ans-final'));
+    if(!qtxt||!ans)return;
+    var src=KEY+'_'+id;
+    var arr;try{arr=JSON.parse(localStorage.getItem(RMQ_DYN));}catch(e){arr=null;}
+    if(!Array.isArray(arr))arr=[];
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=rmqToday();}
+    else{arr.push({src:src,jp:qtxt,en:ans,kind:RMQ_KIND,badge:'suchoku',day:rmqToday(),po:0,px:1});}
+    try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}
+  }catch(e){}
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);try{sendToRevMQ(btn,id,v);}catch(e){}
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった。割合② クリア';document.getElementById('doneBtn').textContent='完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='完了ずみ';}
+};
+</script>
+</body>
+</html>

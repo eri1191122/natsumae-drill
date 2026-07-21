@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>復習07 図形（面積・複合図形・角度）｜約15分</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+
+/* もどる */
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+
+/* ヘッダー */
+.pg-hd{background:#e8edf7;color:#25324a;padding:22px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:18px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+
+/* セクション */
+.sec{background:#fff;border:1px solid #e2e7df;border-radius:8px;margin-bottom:22px;overflow:hidden;box-shadow:0 2px 8px rgba(67,83,72,.06)}
+.sec-hd{padding:15px 20px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.sec-hd h2{font-size:18px;font-weight:900;color:#2f3b4a}
+.sec-hd .badge-grade{background:rgba(255,255,255,.55);font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;border:1px solid rgba(80,96,112,.12)}
+.sec-hd .badge-time{font-size:11px;font-weight:800;padding:2px 8px;border-radius:10px;color:#405060;background:rgba(255,255,255,.45);border:1px solid rgba(80,96,112,.12);margin-left:auto}
+.sec-body{padding:16px 20px}
+
+/* 色テーマ */
+.th-red .sec-hd{background:#f7e6e4;border-left:6px solid #d8a09a}
+.th-org .sec-hd{background:#f6eadb;border-left:6px solid #d8b27c}
+.th-blue .sec-hd{background:#e6eef8;border-left:6px solid #9fb8d9}
+.th-grn .sec-hd{background:#e7f1e8;border-left:6px solid #9abf9d}
+.th-prp .sec-hd{background:#eee8f6;border-left:6px solid #b8a4d6}
+.th-teal .sec-hd{background:#e4f1ef;border-left:6px solid #91bdb7}
+
+/* 単元バナー */
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px 8px 0 0;margin-top:26px}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.unit-banner + .sec{border-radius:0 0 8px 8px;margin-top:0}
+
+/* おさらいカード（問1の答え枠の中／解く前は非表示） */
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:0 0 14px}
+.osarai::before{content:"📖 わすれた人へ｜1から思い出そう";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai h3{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai h3:first-of-type{margin-top:0}
+.osarai p{font-size:13.5px;color:#4a3d28;margin:3px 0}
+.osarai .ex{background:#fff;border:1px dashed #d9b46d;border-radius:6px;padding:8px 12px;margin:6px 0;font-size:13px;color:#5a4a2a}
+.osarai .ex b{color:#7a4f12}
+.osarai .miss{background:#fff3e8;border-radius:6px;padding:7px 12px;margin:6px 0;font-size:13px;color:#8a5a19}
+.osarai .miss::before{content:"⚠️ ありがちな勘ちがい　";font-weight:800}
+.osarai ul{margin:3px 0 3px 20px}
+.osarai li{font-size:13.5px;color:#4a3d28;margin:2px 0}
+
+/* 採点ユニット（小問ごと） */
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+
+/* 答え（一番下・緑枠） */
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:18px;font-weight:900;color:#2f6b45}
+.ans-final span{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+
+/* ボックス類 */
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+
+/* 図をかく欄 */
+.draw-box{background:#f6f8fb;border:2px dashed #b7c6dc;border-radius:8px;padding:14px 16px;margin:10px 0;color:#5d7088;font-size:13px;min-height:120px}
+.draw-box::before{content:"✏️ ここに図をかいてみよう（鉛筆メモ用）";display:block;font-size:12px;font-weight:800;color:#5d7088;margin-bottom:6px}
+
+/* 数学の1問 */
+.qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.qbody{font-size:18px;font-weight:700;margin:2px 0 4px;color:#2f3b4a}
+.qcue{font-size:12px;color:#8a93a0;margin-bottom:6px}
+
+/* 答えボタン・答え枠 */
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f1f8f1;border:1px solid #bbd7bd;border-radius:8px;padding:12px 16px;margin-top:8px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .ans-why{font-size:12.5px;color:#405060;margin-top:4px}
+.ans-box .step{margin:4px 0;font-size:13px}
+.ans-box .step span{display:inline-block;background:#fff;border:1px solid #c9decf;border-radius:4px;padding:1px 8px;margin-right:4px;font-weight:700;color:#3f6f4a;font-size:11px}
+
+/* 自己採点 */
+.grade{margin-top:10px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+
+/* ✕のとき 3回書こう */
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:14px;color:#8a5a19}
+
+/* ミス分類（✗のときだけ） */
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt > span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+
+/* 数式・色 */
+.math{font-family:'Courier New',monospace;background:#f2f4f5;padding:1px 4px;border-radius:3px;font-size:14px}
+.red{color:#9b514d;font-weight:800}
+
+/* 数学の1問 枠 */
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:12px 0}
+
+/* できたボタン */
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.end-cheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+
+/* 印刷設定 */
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#f9faf9;border:1px solid #ccc}
+  .write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .sec{break-inside:avoid;page-break-inside:avoid;box-shadow:none;margin-bottom:16px}
+  .unit-banner + .sec{break-before:avoid;page-break-before:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+}
+/* 武装版分数縦組み（!important でspecificityバグ対策） */
+.frac{display:inline-flex!important;flex-direction:column!important;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:.95em;border:none!important;background:none!important;border-radius:0!important;padding:0!important}
+.frac .n{display:block!important;border:none!important;border-bottom:1.6px solid currentColor!important;background:none!important;border-radius:0!important;padding:0 4px 1px!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+.frac .d{display:block!important;border:none!important;background:none!important;border-radius:0!important;padding:1px 4px 0!important;margin:0!important;font-size:1em!important;color:inherit!important;font-weight:inherit!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../index_iPad_学習ダッシュボード.html">← もどる</a>
+
+<!-- ページヘッダー -->
+<div class="pg-hd">
+  <div><span class="pg-badge">復習07</span><span class="pg-badge">数学：図形（面積・複合図形・角度）</span></div>
+  <h1>図形（面積・複合図形・角度）</h1>
+  <p>6/22(月)　目安：約15分　対象: 中1</p>
+  <div class="pg-cheer">🌸 きょうは英語10＋熟語3＋英作文1＋図形。約30分。必修で空欄にした「半円−三角形」も問5（★難問）でやっつけよう。</div>
+</div>
+
+<!-- ============ 英語：単語 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語</span>
+  <span class="unit-name">単語 10問（意味 → ノートに英語）</span>
+  <span class="unit-time">意味を見て、ノートに英語を書こう</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>単語を書いてみよう</h2><span class="badge-grade">中1必須</span></div>
+  <div class="sec-body">
+    <div class="q vocab" data-id="W-1"><div class="qnum-e">英①｜単語</div><div class="qword">9月</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">September</div><div class="ans-read">読み：セプテンバー</div><div class="bx bx-warn">先頭は大文字 <span class="red">S</span>eptember。Sep-tem-ber。tem を忘れない。</div></div><div class="gq" data-gid="W-1"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-1','o')">○</button><button class="x" onclick="g(this,'W-1','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-2"><div class="qnum-e">英②｜単語</div><div class="qword">10月</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">October</div><div class="ans-read">読み：オクトーバー</div><div class="bx bx-warn">先頭は大文字 <span class="red">O</span>ctober。Oc-to-ber。</div></div><div class="gq" data-gid="W-2"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-2','o')">○</button><button class="x" onclick="g(this,'W-2','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-3"><div class="qnum-e">英③｜単語</div><div class="qword">11月</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">November</div><div class="ans-read">読み：ノーベンバー</div><div class="bx bx-warn">先頭は大文字 <span class="red">N</span>ovember。No-vem-ber。</div></div><div class="gq" data-gid="W-3"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-3','o')">○</button><button class="x" onclick="g(this,'W-3','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-4"><div class="qnum-e">英④｜単語</div><div class="qword">12月</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">December</div><div class="ans-read">読み：ディセンバー</div><div class="bx bx-warn">先頭は大文字 <span class="red">D</span>ecember。De-cem-ber。</div></div><div class="gq" data-gid="W-4"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-4','o')">○</button><button class="x" onclick="g(this,'W-4','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-5"><div class="qnum-e">英⑤｜単語</div><div class="qword">1（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">one</div><div class="ans-read">読み：ワン</div><div class="bx bx-warn">o-n-e。won（勝った）と同じ音だがつづりは one。</div></div><div class="gq" data-gid="W-5"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-5','o')">○</button><button class="x" onclick="g(this,'W-5','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-6"><div class="qnum-e">英⑥｜単語</div><div class="qword">2（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">two</div><div class="ans-read">読み：トゥー</div><div class="bx bx-warn">t-w-o。<span class="red">w は読まない</span>が書く（to/too と混ぜない）。</div></div><div class="gq" data-gid="W-6"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-6','o')">○</button><button class="x" onclick="g(this,'W-6','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-7"><div class="qnum-e">英⑦｜単語</div><div class="qword">3（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">three</div><div class="ans-read">読み：スリー</div><div class="bx bx-warn">th＋ree。th を t にしない。e は2つ。</div></div><div class="gq" data-gid="W-7"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-7','o')">○</button><button class="x" onclick="g(this,'W-7','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-8"><div class="qnum-e">英⑧｜単語</div><div class="qword">4（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">four</div><div class="ans-read">読み：フォー</div><div class="bx bx-warn">f-o-u-r。u を忘れない（for と混ぜない）。※14は fourteen、40は forty(uなし)。</div></div><div class="gq" data-gid="W-8"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-8','o')">○</button><button class="x" onclick="g(this,'W-8','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-9"><div class="qnum-e">英⑨｜単語</div><div class="qword">5（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">five</div><div class="ans-read">読み：ファイヴ</div><div class="bx bx-warn">f-i-v-e。語尾 ve。※5番目は fifth（v→f に変わる）。</div></div><div class="gq" data-gid="W-9"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-9','o')">○</button><button class="x" onclick="g(this,'W-9','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="W-10"><div class="qnum-e">英⑩｜単語</div><div class="qword">6（数字）</div><div class="qhint">英語で書いてみよう（ノートに）</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">six</div><div class="ans-read">読み：シックス</div><div class="bx bx-warn">s-i-x。x で終わる。</div></div><div class="gq" data-gid="W-10"><div class="grade">書けた？ <button class="o" onclick="g(this,'W-10','o')">○</button><button class="x" onclick="g(this,'W-10','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+  </div>
+</div>
+
+<!-- ============ 英語：熟語 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語</span>
+  <span class="unit-name">熟語 3問</span>
+  <span class="unit-time">小さいことば（for / to / at）を落とさない</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>熟語を書いてみよう</h2><span class="badge-grade">中1</span></div>
+  <div class="sec-body">
+    <div class="q vocab" data-id="P-1"><div class="qnum-e">英⑪｜熟語</div><div class="qword">〜をさがす</div><div class="qhint">英語（2語）で書こう</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">look for ～</div><div class="ans-read">読み：ルック フォー</div><div class="bx bx-warn"><strong>for を落とさない</strong>。I look for my pen.（ペンをさがす）。look at（見る）と区別。</div></div><div class="gq" data-gid="P-1"><div class="grade">書けた？ <button class="o" onclick="g(this,'P-1','o')">○</button><button class="x" onclick="g(this,'P-1','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="P-2"><div class="qnum-e">英⑫｜熟語</div><div class="qword">〜を聞く</div><div class="qhint">英語（2語）で書こう</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">listen to ～</div><div class="ans-read">読み：リッスン トゥ</div><div class="bx bx-warn"><strong>to を落とさない</strong>。listen <strong>to</strong> music。listen の t は読まない。</div></div><div class="gq" data-gid="P-2"><div class="grade">書けた？ <button class="o" onclick="g(this,'P-2','o')">○</button><button class="x" onclick="g(this,'P-2','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+    <div class="q vocab" data-id="P-3"><div class="qnum-e">英⑬｜熟語</div><div class="qword">〜が得意だ</div><div class="qhint">英語（3語）で書こう</div><button class="ans-btn" onclick="t(this)">答えを見る</button><div class="ans-box"><div class="ans-main">be good at ～</div><div class="ans-read">読み：ビー グッド アット</div><div class="bx bx-warn"><strong>at を落とさない</strong>。I am good at math.（数学が得意）。be は am/are/is に変える。</div></div><div class="gq" data-gid="P-3"><div class="grade">書けた？ <button class="o" onclick="g(this,'P-3','o')">○</button><button class="x" onclick="g(this,'P-3','x')">✕</button></div><div class="write3">📝 まちがえたら3回書こう　＿＿＿＿＿　＿＿＿＿＿　＿＿＿＿＿</div></div></div>
+  </div>
+</div>
+
+<!-- ============ 英語：英作文 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">英語</span>
+  <span class="unit-name">英作文 1問</span>
+  <span class="unit-time">復習07／文法：一般動詞の否定文（don't）</span>
+</div>
+<div class="sec th-prp">
+  <div class="sec-hd"><h2>英作文にチャレンジ</h2><span class="badge-grade">中1</span></div>
+  <div class="sec-body">
+    <div class="q writing" data-id="EW-1">
+      <div class="qnum-e">英⑭｜英作文</div>
+      <div class="ew-task">📝 この日本語を、英語にして下の線に書こう（文法は自分で考える）</div>
+      <div class="ew-jp">「私は魚が好きではありません。」</div>
+      <div class="ew-line">✏️ ＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿＿</div>
+      <button class="ans-btn" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="deep-head">📖 文法のせつめい（読んでから下の答えへ。わかる子は読みとばしてOK）</div>
+        <div class="deep">
+          <p><b>一般動詞（like / play / have など「〜する」）の否定文は、動詞の前に <span class="ok">don't</span> を置く。</b>うしろの動詞は<b>原形のまま</b>。</p>
+          <p>I like fish.（好きです）→ I <b>don't</b> like fish.（好きではありません）。<br>don't は do not のみじかい形。</p>
+          <p><b>be動詞とは作り方が違う。</b>be動詞は not を足す（I am not）。一般動詞は <b>don't＋原形</b>。<span class="ng">✕ I am not like fish.</span> → <span class="ok">○ I don't like fish.</span></p>
+          <p><b>主語が he/she のときだけ</b> doesn't を使い、動詞は原形（She doesn't like fish.）。I/You/We/They は don't。</p>
+          <p><b>ゴール🌸</b>：「〜しない」は don't＋原形 で作れる。be動詞と混ぜない。</p>
+        </div>
+        <div class="fill">
+          <div class="fill-q">✍ 確認：一般動詞の否定は（ ① ）＋動詞の（ ② ）。be動詞には使わない。</div>
+          <button class="fill-btn" onclick="this.nextElementSibling.classList.toggle('open')">確認の答えを見る</button>
+          <div class="fill-a">① don't（do not） ／ ② 原形</div>
+        </div>
+        <div class="ans-final"><span>こたえ</span>I don't like fish.</div>
+      </div>
+      <div class="gq" data-gid="EW-1">
+        <div class="grade">書けた？ <button class="o" onclick="g(this,'EW-1','o')">○</button><button class="x" onclick="g(this,'EW-1','x')">✕</button></div>
+        <div class="write3">📝 まちがえたら、正しい文を3回書こう　＿＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿＿　＿＿＿＿＿＿＿＿＿</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============ 数学：図形（面積・複合図形・角度）8問 ============ -->
+<div class="unit-banner">
+  <span class="unit-num">数学</span>
+  <span class="unit-name">図形（面積・複合図形・角度）　まず自分で解く → 答え・解説</span>
+  <span class="unit-time">目安 15分</span>
+</div>
+<div class="sec th-blue">
+  <div class="sec-hd"><h2>まず自分で解く → 答え・解説を見る</h2><span class="badge-grade">小4〜6 → 中1橋渡し</span></div>
+  <div class="sec-body">
+
+    <!-- 問1 長方形・三角形の面積（おさらいカードはこの答え枠の先頭に同梱＝解く前は非表示） -->
+    <div class="q calc" data-id="M-1">
+      <div class="qnum">数①・②　L1 基礎</div>
+      <div class="qbody">次の面積を求めよう。<br>
+        (1) 縦6cm、横8cm の長方形<br>
+        (2) 底辺8cm、高さ5cm の三角形</div>
+      <svg viewBox="0 0 340 130" style="max-width:340px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" xmlns="http://www.w3.org/2000/svg">
+        <rect x="20" y="35" width="120" height="60" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
+        <text x="80" y="28" font-size="13" fill="#31415f" text-anchor="middle">横8cm</text>
+        <text x="8" y="70" font-size="13" fill="#31415f" text-anchor="middle" transform="rotate(-90 8 70)">縦6cm</text>
+        <polygon points="190,95 310,95 250,30" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
+        <line x1="250" y1="95" x2="250" y2="30" stroke="#33485a" stroke-width="1" stroke-dasharray="4 3"/>
+        <rect x="250" y="85" width="10" height="10" fill="none" stroke="#33485a" stroke-width="1"/>
+        <text x="250" y="112" font-size="13" fill="#31415f" text-anchor="middle">底辺8cm</text>
+        <text x="262" y="65" font-size="13" fill="#31415f" text-anchor="start">高さ5cm</text>
+      </svg>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="osarai">
+          <h3>① 面積の公式（ことばの意味）</h3>
+          <p>「面積」＝そのかたちが、どれだけの広さをもっているか（たたみ何まいぶんか、のような広さ）。たんいは cm²（平方センチメートル）。「²」は「同じものを2回かけた」というしるしで、広さには必ずつく。</p>
+          <ul>
+            <li><b>長方形</b>＝たて × よこ</li>
+            <li><b>三角形</b>＝底辺 × 高さ <b>÷2</b></li>
+            <li><b>平行四辺形</b>＝底辺 × 高さ</li>
+            <li><b>台形</b>＝(上底 ＋ 下底) × 高さ ÷2</li>
+            <li><b>円（面積）</b>＝半径 × 半径 × 3.14</li>
+            <li><b>円周（まわりの長さ）</b>＝直径 × 3.14（直径＝半径×2）</li>
+            <li><b>半円（面積）</b>＝円の半分なので「半径 × 半径 × 3.14 <b>÷2</b>」</li>
+            <li><b>おうぎ形（面積）</b>＝まず円全部を出して、<b>中心角/360</b> をかける（例：中心角90°なら <span class="frac"><span class="n">90</span><span class="d">360</span></span>＝<span class="frac"><span class="n">1</span><span class="d">4</span></span> をかける）</li>
+          </ul>
+          <p>※円は「<b>面積は半径を2回</b>」「<b>円周は直径を1回</b>」。半円・おうぎ形は<b>まず円全部を出してから割合をかける</b>と決めるとミスが減る。</p>
+
+          <h3>② なぜ三角形は ÷2 なの？（理由がわかると忘れない）</h3>
+          <p>同じ三角形をもう1つ用意して、さかさまにピタッと合わせると長方形（平行四辺形）になる。三角形はそのちょうど<b>半分</b>。だから「底辺×高さ」をしたあと最後に÷2する。公式を忘れても、この絵を思い出せば自分で作れる。</p>
+
+          <h3>③ 高さって、どの長さ？（いちばん大事）</h3>
+          <p>「高さ」は、ななめの辺の長さではない。底辺に対して<b>まっすぐ垂直（直角）</b>におろした長さだけが高さ。図の中の小さな四角（直角のしるし）をさがすと見つかる。</p>
+
+          <h3>④ 複合図形（へんなかたち）のやり方</h3>
+          <p>L字や、円から三角形をくりぬいた形など、公式が1つでは使えない形は、つぎの2つのどちらかで考える。</p>
+          <ul>
+            <li><b>引く</b>：大きいかたち から、いらない部分 を引く（例：半円 − 三角形）</li>
+            <li><b>分けて足す</b>：いくつかの長方形などに分けて、それぞれの面積を足す</li>
+          </ul>
+          <p>むずかしい特別な公式はいらない。「知っている形に分ける／知っている形から引く」だけ。</p>
+
+          <h3>⑤ 三角形の角度（内角の和・外角）</h3>
+          <p>まずことば。<b>内角</b>＝図形の<b>内がわ</b>にできる角。<b>外角</b>＝1つの辺をまっすぐのばしたとき、外がわにできる角。<br>
+          ・<b>三角形の内角の和は、いつも180°</b>。だから2つの角が分かれば、残り1つは <b>180−（2つの角）</b>で出る。<br>
+          ・<b>外角＝となり合わない（はなれた）2つの内角の和</b>。たとえば頂点Cの外角は、∠Aと∠Bを足した大きさになる。<br>
+          （理由：外角は、すぐとなりの内角と一直線（180°）でならぶ。内角の和も180°。だから外角＝はなれた2つの内角の和になる。）</p>
+          <div class="ex">∠A＝65°、∠B＝40° の三角形。いっしょに1回。<br>
+            → 残りの∠C＝180−65−40＝<b>75°</b>。<br>
+            → 頂点Cの外角＝はなれた2つ（∠A＋∠B）＝65＋40＝<b>105°</b>。<br>
+            確かめ：外角は内角75°のとなりで一直線 → 180−75＝105°。合う。</div>
+          <p class="miss">外角を「残りの内角75°」と混同しない。外角は<b>はなれた2つの内角の和</b>。内角の和を出すとき、角を1つ足し忘れない。</p>
+
+          <h3>⑥ 平行線と角（同位角・錯角）</h3>
+          <p>2本の平行な直線に、1本の直線が交わってできる角には、名前のついた関係がある。<br>
+          ・<b>同位角</b>＝2つの交点で<b>同じ向き</b>にある角どうし。平行なら<b>等しい</b>。<br>
+          ・<b>錯角</b>＝交わる線をはさんで<b>すじ違い（ななめ向かい）</b>にある角どうし。平行なら<b>等しい</b>。<br>
+          ・一直線でとなり合う2つの角は、たして<b>180°</b>（一直線＝180°だから）。<br>
+          使い方：分かっている角を、同位角・錯角でべつの場所へ「うつす」→ そこからとなり合う角は180°から引いて出す。</p>
+          <div class="ex">平行な2直線。一方の交点の角が70°。もう一方で、その70°のとなりの角xは？　いっしょに1回。<br>
+            → 同位角は等しい → もう一方の交点にも<b>70°</b>がうつる。<br>
+            → xはその70°のとなりで一直線 → x＝180−70＝<b>110°</b>。</div>
+          <p class="miss">同位角・錯角は<b>等しい</b>、となり合って一直線になる角は<b>たして180°</b>。この2つを混ぜない。x を70°と即答しない（xは70°の<b>となり</b>）。</p>
+
+          <h3>⑦ いっしょに1回（やさしい例）</h3>
+          <div class="ex">底辺6cm・高さ4cm の三角形の面積は？<br>
+            → 公式は 底辺×高さ÷2。<br>
+            → 6 × 4 ＝ 24。<br>
+            → 最後に <b>÷2</b> → 24 ÷ 2 ＝ <b>12cm²</b>。「三角形ときたら最後に÷2」を声に出す。</div>
+
+          <div class="miss">「半径」と「直径」をまちがえる人が一番多い。直径は半径の2倍。円の面積は<b>半径</b>を2回かける（直径ではない）。問題に出ている数が半径か直径か、まず○で囲もう。</div>
+        </div>
+        <div class="step"><span>解説(1)</span>長方形＝縦×横 → 6×8＝<strong>48cm²</strong></div>
+        <div class="step"><span>解説(2)</span>三角形＝底辺×高さ÷2 → 8×5÷2＝40÷2＝<strong>20cm²</strong></div>
+        <div class="step"><span>なぜ÷2？</span>同じ三角形をもう1つ逆さに合わせると長方形（平行四辺形）になる。三角形はその<strong>半分</strong>だから÷2。公式を忘れても、この絵を思い出せば自分で作れる。</div>
+        <div class="bx bx-link">面積を「縦×横」「底辺×高さ÷2」と式で表す力は、中学で文字を使った面積（a×b、底辺a・高さh）にそのまま育つ。</div>
+        <div class="bx bx-warn">三角形で÷2を忘れて40cm²としやすい。「三角形ときたら最後に÷2」を口に出す。cm²（平方センチ）の²も書き忘れない。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 48cm²　(2) 20cm²</div>
+      </div>
+      <div class="gq" data-gid="M-1a">
+        <div class="grade"><span class="gq-label">数①（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1a','o')">○</button><button class="x" onclick="g(this,'M-1a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-1b">
+        <div class="grade"><span class="gq-label">数②（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-1b','o')">○</button><button class="x" onclick="g(this,'M-1b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- 問2 平行四辺形・台形の面積 -->
+    <div class="q calc" data-id="M-2">
+      <div class="qnum">数③・④　L1 基礎</div>
+      <div class="qbody">次の面積を求めよう。<br>
+        (1) 底辺7cm、高さ4cm の平行四辺形<br>
+        (2) 上底3cm、下底7cm、高さ4cm の台形</div>
+      <svg viewBox="0 0 340 140" style="max-width:340px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="40,95 140,95 165,40 65,40" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
+        <line x1="65" y1="40" x2="65" y2="95" stroke="#33485a" stroke-width="1" stroke-dasharray="4 3"/>
+        <rect x="65" y="85" width="10" height="10" fill="none" stroke="#33485a" stroke-width="1"/>
+        <text x="90" y="112" font-size="13" fill="#31415f" text-anchor="middle">底辺7cm</text>
+        <text x="50" y="72" font-size="13" fill="#31415f" text-anchor="end">高さ4cm</text>
+        <polygon points="210,95 320,95 300,40 240,40" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
+        <line x1="240" y1="40" x2="240" y2="95" stroke="#33485a" stroke-width="1" stroke-dasharray="4 3"/>
+        <rect x="240" y="85" width="10" height="10" fill="none" stroke="#33485a" stroke-width="1"/>
+        <text x="270" y="34" font-size="13" fill="#31415f" text-anchor="middle">上底3cm</text>
+        <text x="265" y="112" font-size="13" fill="#31415f" text-anchor="middle">下底7cm</text>
+        <text x="226" y="72" font-size="13" fill="#31415f" text-anchor="end">高さ4cm</text>
+      </svg>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="step"><span>解説(1)</span>平行四辺形＝底辺×高さ → 7×4＝<strong>28cm²</strong></div>
+        <div class="step"><span>解説(2)</span>台形＝(上底＋下底)×高さ÷2 → (3＋7)×4÷2＝10×4÷2＝40÷2＝<strong>20cm²</strong></div>
+        <div class="step"><span>なぜこの形？</span>台形は同じものを逆さに2つ合わせると、長さ(上底＋下底)・高さの平行四辺形になる。その半分だから÷2。だから(上底＋下底)を先に足す。</div>
+        <div class="bx bx-link">「どの長さが高さか」を見ぬく力は、中学の図形（三角形の合同・面積比）でいちばん効いてくる。</div>
+        <div class="bx bx-warn">いちばん多いミスが<span class="red">高さの取り違え</span>。平行四辺形・台形のななめの辺を高さにしない。高さは底辺と<strong>直角</strong>に交わるまっすぐな長さだけ。図で直角マークを探す。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 28cm²　(2) 20cm²</div>
+      </div>
+      <div class="gq" data-gid="M-2a">
+        <div class="grade"><span class="gq-label">数③（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2a','o')">○</button><button class="x" onclick="g(this,'M-2a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-2b">
+        <div class="grade"><span class="gq-label">数④（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-2b','o')">○</button><button class="x" onclick="g(this,'M-2b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- 問3 円の面積・円周 -->
+    <div class="q calc" data-id="M-3">
+      <div class="qnum">数⑤・⑥　L2 標準</div>
+      <div class="qbody">半径5cm の円について求めよう。（円周率＝3.14）<br>
+        (1) 円の面積　(2) 円周（まわりの長さ）</div>
+      <svg viewBox="0 0 340 130" style="max-width:340px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="170" cy="65" r="52" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
+        <circle cx="170" cy="65" r="2.5" fill="#33485a"/>
+        <line x1="170" y1="65" x2="222" y2="65" stroke="#33485a" stroke-width="2" marker-end="url(#ar3)"/>
+        <defs><marker id="ar3" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#33485a"/></marker></defs>
+        <text x="196" y="60" font-size="13" fill="#31415f" text-anchor="middle">半径5cm</text>
+      </svg>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="step"><span>解説(1)</span>円の面積＝半径×半径×3.14 → 5×5×3.14＝25×3.14＝<strong>78.5cm²</strong></div>
+        <div class="step"><span>解説(2)</span>円周＝直径×3.14。直径＝半径×2＝10 → 10×3.14＝<strong>31.4cm</strong></div>
+        <div class="step"><span>見分け方</span><strong>面積は半径</strong>を2回かける、<strong>円周は直径</strong>を1回かける。「面積＝半径、円周＝直径」と唱えると混ざらない。</div>
+        <div class="bx bx-link">円の面積・円周は中学でもそのまま使い、おうぎ形・円柱の表面積へ広がる。半径rを使った r×r×3.14 の形に慣れておこう。</div>
+        <div class="bx bx-warn">⚠️ <span class="red">半径と直径の混同</span>が最大の落とし穴。半径5を直径10と思って面積を10×10×3.14とすると<strong>4倍</strong>になってしまう。問題が半径か直径か、まず丸で囲む。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 78.5cm²　(2) 31.4cm</div>
+      </div>
+      <div class="gq" data-gid="M-3a">
+        <div class="grade"><span class="gq-label">数⑤（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3a','o')">○</button><button class="x" onclick="g(this,'M-3a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-3b">
+        <div class="grade"><span class="gq-label">数⑥（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-3b','o')">○</button><button class="x" onclick="g(this,'M-3b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- 問4 半円・おうぎ形 -->
+    <div class="q calc" data-id="M-4">
+      <div class="qnum">数⑦・⑧　L2 標準</div>
+      <div class="qbody">（円周率＝3.14）<br>
+        (1) 半径6cm の<strong>半円</strong>の面積<br>
+        (2) 半径6cm、中心角90° の<strong>おうぎ形</strong>の面積</div>
+      <svg viewBox="0 0 340 130" style="max-width:340px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" xmlns="http://www.w3.org/2000/svg">
+        <path d="M30,90 A55,55 0 0 1 140,90 Z" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
+        <text x="85" y="115" font-size="13" fill="#31415f" text-anchor="middle">半径6cm（半円）</text>
+        <path d="M210,90 L210,35 A55,55 0 0 1 265,90 Z" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
+        <rect x="210" y="78" width="12" height="12" fill="none" stroke="#33485a" stroke-width="1"/>
+        <text x="226" y="73" font-size="13" fill="#31415f" text-anchor="start">90°</text>
+        <text x="248" y="115" font-size="13" fill="#31415f" text-anchor="middle">半径6cm</text>
+      </svg>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="step"><span>まず円</span>半径6の円の面積＝6×6×3.14＝<strong>113.04cm²</strong></div>
+        <div class="step"><span>解説(1)</span>半円は円のちょうど半分 → 113.04÷2＝<strong>56.52cm²</strong></div>
+        <div class="step"><span>解説(2)</span>中心角90°は1周360°の <span class="math"><span class="frac"><span class="n">90</span><span class="d">360</span></span>＝<span class="frac"><span class="n">1</span><span class="d">4</span></span></span> → 113.04×<span class="frac"><span class="n">1</span><span class="d">4</span></span>＝<strong>28.26cm²</strong></div>
+        <div class="step"><span>考え方</span>半円もおうぎ形も「まず<strong>まるごと円</strong>を出して、何分のいくつかをかける」。半円なら×<span class="frac"><span class="n">1</span><span class="d">2</span></span>、中心角なら×(中心角/360)。</div>
+        <div class="bx bx-link">「中心角の割合をかける」は中学のおうぎ形の弧の長さ・面積でそのまま使う中心の考え方。</div>
+        <div class="bx bx-warn">いきなり半円の式を覚えようとしない。まず円全部を出してから割合をかける、の2段で考えるとミスが減る。中心角90°を÷2（半分）と勘違いしない（90°は<span class="frac"><span class="n">1</span><span class="d">4</span></span>）。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 56.52cm²　(2) 28.26cm²</div>
+      </div>
+      <div class="gq" data-gid="M-4a">
+        <div class="grade"><span class="gq-label">数⑦（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4a','o')">○</button><button class="x" onclick="g(this,'M-4a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-4b">
+        <div class="grade"><span class="gq-label">数⑧（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-4b','o')">○</button><button class="x" onclick="g(this,'M-4b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- 問5 ★最重要 テスト同型 影＝半円−三角形 -->
+    <div class="q calc" data-id="M-5">
+      <div class="qnum">数⑨　★難問(L3)　テスト同型・最重要</div>
+      <div class="qbody">直径10cm の半円がある。その<strong>直径を斜辺</strong>とする直角二等辺三角形を、半円の中にぴったり入れた。<br>
+        色のついた<strong>影の部分（半円から三角形を除いた残り）</strong>の面積を求めよう。（円周率＝3.14、三角形の高さは5cm）</div>
+      <svg viewBox="0 0 340 160" style="max-width:340px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <pattern id="hatch5" width="7" height="7" patternTransform="rotate(45)" patternUnits="userSpaceOnUse">
+            <line x1="0" y1="0" x2="0" y2="7" stroke="#9fb8d9" stroke-width="2"/>
+          </pattern>
+        </defs>
+        <path d="M70,110 A75,75 0 0 1 220,110 Z" fill="url(#hatch5)" stroke="#33485a" stroke-width="2"/>
+        <polygon points="70,110 220,110 145,35" fill="#f6e6df" stroke="#33485a" stroke-width="2"/>
+        <rect x="138" y="35" width="14" height="14" fill="none" stroke="#33485a" stroke-width="1.5" transform="rotate(45 145 42)"/>
+        <line x1="145" y1="110" x2="145" y2="35" stroke="#33485a" stroke-width="1" stroke-dasharray="4 3"/>
+        <text x="145" y="128" font-size="13" fill="#31415f" text-anchor="middle">直径 10cm</text>
+        <text x="152" y="78" font-size="13" fill="#31415f" text-anchor="start">5cm</text>
+        <line x1="300" y1="60" x2="200" y2="92" stroke="#33485a" stroke-width="1.5" marker-end="url(#ar5)"/>
+        <defs><marker id="ar5" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 z" fill="#33485a"/></marker></defs>
+        <text x="302" y="56" font-size="13" fill="#31415f" text-anchor="end">この部分（影）</text>
+      </svg>
+      <div class="draw-box"></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="step"><span>方針</span>影＝<strong>半円 − 三角形</strong>。直接は出しにくい形は「大きい図形から、いらない部分を引く」。まず方針をことばで書く。</div>
+        <div class="step"><span>半円</span>直径10 → 半径は半分の<strong>5</strong>。半円＝5×5×3.14÷2＝78.5÷2＝<strong>39.25cm²</strong></div>
+        <div class="step"><span>三角形</span>底辺＝直径10、高さ＝5 → 10×5÷2＝50÷2＝<strong>25cm²</strong></div>
+        <div class="step"><span>影</span>39.25 − 25 ＝<strong>14.25cm²</strong></div>
+        <div class="bx bx-link">「全体から引いて求める」は複合図形の王道で、中学の図形問題でずっと武器になる。今日この1問で「影＝大きい形−いらない形」を体に入れれば、もう空欄にしない。</div>
+        <div class="bx bx-link">複合図形の難問をもっとやりたい人へ ＝ 特訓数学プリント P8（複合図形L4）へ。この単元は9月特訓の大問2（図形）に直結する最重要単元。</div>
+        <div class="bx bx-warn">⚠️ ここがテストで空欄にしたところ。むずかしい特別な公式はいらない。<span class="red">直径10を半径10と間違えない</span>（半径は5）。三角形の÷2も忘れない。引く順番は「半円 − 三角形」。</div>
+        <div class="ans-final"><span>こたえ</span>14.25cm²</div>
+      </div>
+      <div class="gq" data-gid="M-5">
+        <div class="grade"><span class="gq-label">数⑨</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-5','o')">○</button><button class="x" onclick="g(this,'M-5','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- 問6 L字型 2通り -->
+    <div class="q calc" data-id="M-6">
+      <div class="qnum">数⑩　★難問(L3)</div>
+      <div class="qbody">下のような<strong>L字型（凹型）</strong>の図形の面積を求めよう。<br>
+        全体は縦8cm・横6cm の長方形から、<strong>右上の角</strong>（縦3cm・横2cm の長方形）を切り取った形。<br>
+        「① 2つの長方形に分ける方法」と「② 大きい長方形から欠けを引く方法」の<strong>2通り</strong>で求め、答えが合うか確かめよう。</div>
+      <svg viewBox="0 0 340 180" style="max-width:340px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="90,30 210,30 210,75 250,75 250,150 90,150" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
+        <line x1="90" y1="75" x2="250" y2="75" stroke="#7a8aa0" stroke-width="1" stroke-dasharray="5 3"/>
+        <text x="150" y="24" font-size="13" fill="#31415f" text-anchor="middle">横4cm</text>
+        <text x="230" y="92" font-size="13" fill="#31415f" text-anchor="middle">横2cm</text>
+        <text x="170" y="168" font-size="13" fill="#31415f" text-anchor="middle">横6cm</text>
+        <text x="84" y="95" font-size="13" fill="#31415f" text-anchor="end">縦8cm</text>
+        <text x="216" y="56" font-size="13" fill="#31415f" text-anchor="start">縦3cm</text>
+        <text x="256" y="118" font-size="13" fill="#31415f" text-anchor="start">縦5cm</text>
+      </svg>
+      <div class="draw-box"></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="step"><span>方法①分ける</span>横に2つに切る。下の長方形＝縦5×横6＝30。上の長方形＝縦3×横(6−2)＝3×4＝12。合計 30＋12＝<strong>42cm²</strong></div>
+        <div class="step"><span>方法②引く</span>大きい長方形＝縦8×横6＝48。欠け＝縦3×横2＝6。48−6＝<strong>42cm²</strong></div>
+        <div class="step"><span>たしかめ</span>①も②も<strong>42cm²</strong>でぴったり一致。やり方が違っても答えが同じなら、まず正解とみてよい。</div>
+        <div class="bx bx-link">「分ける」「引く」の2通りで同じ答えになる、と確かめるクセは、中学の図形・式変形で自分のミスを自分で見つける力になる。</div>
+        <div class="bx bx-link">複合図形の難問をもっとやりたい人へ ＝ 特訓数学プリント P8（複合図形L4）へ。この単元は9月特訓の大問2（図形）に直結する最重要単元。</div>
+        <div class="bx bx-warn">分けたとき、上の長方形の横は全体の6ではなく欠けを除いた<strong>4cm</strong>。寸法を図に書き込まずに暗算すると、ここでズレやすい。引く方法では「大きい長方形−欠け」の欠けを正確に。</div>
+        <div class="ans-final"><span>こたえ</span>42cm²（① と ② どちらでも同じ）</div>
+      </div>
+      <div class="gq" data-gid="M-6">
+        <div class="grade"><span class="gq-label">数⑩</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-6','o')">○</button><button class="x" onclick="g(this,'M-6','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- 問7 角度 内角の和・外角 -->
+    <div class="q calc" data-id="M-7">
+      <div class="qnum">数⑪・⑫　L2 標準　角度</div>
+      <div class="qbody">三角形ABCで、∠A＝65°、∠B＝40° のとき、<br>
+        (1) 残りの ∠C（内角）は何度か。<br>
+        (2) 頂点Cで、辺BCをのばしてできる<strong>外角</strong>は何度か。</div>
+      <svg viewBox="0 0 340 150" style="max-width:340px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" xmlns="http://www.w3.org/2000/svg">
+        <polygon points="120,30 50,115 230,115" fill="#e6eef8" stroke="#33485a" stroke-width="2"/>
+        <line x1="230" y1="115" x2="300" y2="115" stroke="#33485a" stroke-width="2"/>
+        <text x="120" y="24" font-size="13" fill="#31415f" text-anchor="middle">A</text>
+        <text x="42" y="122" font-size="13" fill="#31415f" text-anchor="end">B</text>
+        <text x="232" y="132" font-size="13" fill="#31415f" text-anchor="middle">C</text>
+        <text x="120" y="48" font-size="13" fill="#31415f" text-anchor="middle">65°</text>
+        <text x="70" y="110" font-size="13" fill="#31415f" text-anchor="middle">40°</text>
+        <text x="210" y="108" font-size="13" fill="#31415f" text-anchor="end">?</text>
+        <text x="250" y="108" font-size="13" fill="#31415f" text-anchor="start">?（外角）</text>
+      </svg>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="step"><span>解説(1)</span>三角形の内角の和は180°。∠C＝180−65−40＝<strong>75°</strong></div>
+        <div class="step"><span>解説(2)</span>外角＝となり合わない2つの内角の和 → 65＋40＝<strong>105°</strong></div>
+        <div class="step"><span>たしかめ</span>外角は内角∠C(75°)のとなりで一直線だから 180−75＝105°。2つの出し方が一致 → OK。</div>
+        <div class="bx bx-link">「外角＝はなれた2内角の和」は中学の三角形・多角形の角度問題でくり返し使う。理由（内角の和180°と一直線180°）まで分かると応用がきく。</div>
+        <div class="bx bx-warn">外角を「のこりの内角75°」と混同しない。外角は<strong>はなれた2つの内角の和</strong>。内角の和の計算で角を1つ足し忘れない。</div>
+        <div class="ans-final"><span>こたえ</span>(1) 75°　(2) 105°</div>
+      </div>
+      <div class="gq" data-gid="M-7a">
+        <div class="grade"><span class="gq-label">数⑪（1）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7a','o')">○</button><button class="x" onclick="g(this,'M-7a','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+      <div class="gq" data-gid="M-7b">
+        <div class="grade"><span class="gq-label">数⑫（2）</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-7b','o')">○</button><button class="x" onclick="g(this,'M-7b','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+    <!-- 問8 平行線 同位角・錯角 -->
+    <div class="q calc" data-id="M-8">
+      <div class="qnum">数⑬　★難問(L3)　平行線と角（中1への橋渡し）</div>
+      <div class="qbody">2本の平行な直線 ℓ と m に、1本の直線が交わっている。<br>
+        直線 ℓ との交点でできる角の1つが <strong>70°</strong> のとき、直線 m 側でそれと<strong>一直線にならぶ角 x</strong> の大きさを求めよう。<br>
+        （x は、70°の角と同じ向きの角のとなりにある角）</div>
+      <svg viewBox="0 0 340 160" style="max-width:340px;width:100%;height:auto;display:block;margin:8px auto;background:#fff" xmlns="http://www.w3.org/2000/svg">
+        <line x1="20" y1="50" x2="320" y2="50" stroke="#33485a" stroke-width="2"/>
+        <line x1="20" y1="115" x2="320" y2="115" stroke="#33485a" stroke-width="2"/>
+        <line x1="90" y1="15" x2="250" y2="150" stroke="#33485a" stroke-width="2"/>
+        <path d="M165,44 l8,3 l-8,3" fill="none" stroke="#33485a" stroke-width="1.5"/>
+        <path d="M165,109 l8,3 l-8,3" fill="none" stroke="#33485a" stroke-width="1.5"/>
+        <text x="312" y="44" font-size="13" fill="#31415f" text-anchor="start">ℓ</text>
+        <text x="312" y="109" font-size="13" fill="#31415f" text-anchor="start">m</text>
+        <text x="150" y="44" font-size="13" fill="#31415f" text-anchor="middle">70°</text>
+        <text x="205" y="108" font-size="13" fill="#31415f" text-anchor="middle">x</text>
+      </svg>
+      <div class="draw-box"></div>
+      <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+      <div class="ans-box">
+        <div class="step"><span>ステップ1</span>平行線では<strong>同位角は等しい</strong>。70°と同じ向きの角は、m側でも<strong>70°</strong>。</div>
+        <div class="step"><span>ステップ2</span>その70°のとなりで一直線になる角が x。一直線は180° → x＝180−70＝<strong>110°</strong>。</div>
+        <div class="step"><span>たしかめ</span>錯角（すじ違いの向き）も70°で同じ。x はその70°のとなりとして 180−70＝110°。どちらの道でも110°で一致。</div>
+        <div class="bx bx-link">同位角・錯角は中1図形の主役。「平行 → 同じ向きの角は等しい」「一直線 → たして180°」を図に書き込みながら追う練習が、証明問題の土台になる。</div>
+        <div class="bx bx-link">角度の難問をもっとやりたい人へ ＝ 特訓数学プリント P8（複合図形L4）へ。この単元は9月特訓の大問2（図形）に直結する最重要単元。</div>
+        <div class="bx bx-warn">同位角・錯角は<strong>等しい</strong>、となり合って一直線になる角は<strong>たして180°</strong>。この2つを混ぜない。x を70°と即答しない（x は70°の<strong>となり</strong>）。</div>
+        <div class="ans-final"><span>こたえ</span>x ＝ 110°</div>
+      </div>
+      <div class="gq" data-gid="M-8">
+        <div class="grade"><span class="gq-label">数⑬</span>答えを見て丸つけ → <button class="o" onclick="g(this,'M-8','o')">○</button><button class="x" onclick="g(this,'M-8','x')">✕</button></div>
+        <div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（復習07 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="end-cheer">「影＝大きい図形 − いらない部分」。きょうの問5で、テストで空欄にしたところをちゃんと自分の手で解けた。これは大きな一歩だよ。よくがんばったね！</div>
+
+</div>
+
+<script>
+var KEY='fukushu07';
+
+// 答えトグル
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+// 自己採点 ○✕（採点ユニット .gq 単位＝小問ごと）
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);if(v==='x'){try{sendToRevQ(btn,id,'x');}catch(e){}}else if(v==='o'){try{sendToRevQ(btn,id,'o');}catch(e){}}
+  var mt=box.querySelector('.mt');
+  var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{
+    if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}
+    if(w3)w3.style.display='none';
+  }
+}
+
+// ミス分類（.gq の data-gid 単位）
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}
+  var w=btn.parentNode;
+  w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);
+}
+
+// 完了
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  document.getElementById('fin').textContent='よくがんばった！ダッシュボードにチェックがつきました 🎉';
+  document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+}
+
+// 復元（.gq＝採点ユニット単位）
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;
+    if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){
+      var b=box.querySelector('.'+v);
+      if(b)b.classList.add('sel');
+      if(v==='x'){
+        var mt=box.querySelector('.mt');
+        if(mt){
+          mt.classList.add('open');
+          var mv=localStorage.getItem(KEY+'_'+id+'_m');
+          if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}
+        }
+        var w3=box.querySelector('.write3');
+        if(w3)w3.style.display='block';
+      }
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){
+    document.getElementById('doneBtn').textContent='✓ 完了ずみ';
+  }
+};
+/* ===== 復習英語キュー送りフック（×/○・英語問題のみ・自己ループ防止） ===== */
+function sendToRevQ(btn,id,result){
+  if(typeof PRE!=='undefined' && PRE==='revq_') return;        // 受け皿自身では動かさない
+  if(typeof KEY==='undefined') return;
+  if(KEY.indexOf('revq')===0) return;
+  var q=btn&&btn.closest?btn.closest('.q'):null; if(!q) return;
+  if(q.classList.contains('calc')) return;                      // 数学除外
+  var engPrint=!!document.querySelector('[data-eng="1"]');
+  var isVocab=q.classList.contains('vocab'), isWriting=q.classList.contains('writing');
+  if(!engPrint && !isVocab && !isWriting) return;               // 混在で英語クラス無し→送らない
+  var kindEl=q.querySelector('.qnum-e'); var kindRaw=kindEl?(kindEl.textContent||''):'';
+  if(/漢字|書き|読み/.test(kindRaw)) return;                    // 暗記カードの漢字除外
+  var jpEl=q.querySelector('.ew-jp')||q.querySelector('.qword')||q.querySelector('.jp')||q.querySelector('.jp-box')||q.querySelector('.src-box')||q.querySelector('.qen')||q.querySelector('.qbody');
+  var enEl=q.querySelector('.ans-final')||q.querySelector('.ans-box .ans-main');
+  if(!jpEl||!enEl) return;
+  var jp=cleanRevQText(jpEl), en=cleanRevQText(enEl);
+  if(!jp||!en) return;
+  if(!/[A-Za-z]/.test(en)) return;                              // 答えに英字なし→英語でない→除外
+  if(result==='o'){bumpRevQPo(en);return;}                      // ○：既存項目の po++ のみ（新規追加しない）
+  var kind='単語',badge='tango';
+  if(isWriting||/英作文/.test(kindRaw)||/[.!?]\s*$/.test(en)){kind='英作文';badge='eisaku';}
+  else if(/熟語/.test(kindRaw)){kind='熟語';badge='jukugo';}
+  pushRevQDyn({jp:jp,en:en,kind:kind,badge:badge,day:revqToday(),src:(KEY+'_'+id)});
+}
+function cleanRevQText(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[（(][^）)]*でもOK[^）)]*[）)]/g,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function revqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function revqNorm(s){return String(s||'').toLowerCase().replace(/[\s　]+/g,' ').trim();}
+function bumpRevQPo(en){try{var K='revq_dyn';var raw=localStorage.getItem(K);if(raw==null)return;var arr;try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;var key=revqNorm(en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].po=(+arr[i].po||0)+1;localStorage.setItem(K,JSON.stringify(arr));return;}}}catch(e){}}
+function pushRevQDyn(item){try{var K='revq_dyn';var raw=localStorage.getItem(K);var arr;if(raw==null){arr=[];}else{try{arr=JSON.parse(raw);}catch(e){return;}if(!Array.isArray(arr))return;}var key=revqNorm(item.en);for(var i=0;i<arr.length;i++){if(revqNorm(arr[i].en)===key){arr[i].day=item.day;arr[i].src=item.src;arr[i].x=(+arr[i].x||1)+1;arr[i].po=0;localStorage.setItem(K,JSON.stringify(arr));return;}}item.x=1;item.po=0;arr.push(item);localStorage.setItem(K,JSON.stringify(arr));}catch(e){}}
+</script>
+</body>
+</html>

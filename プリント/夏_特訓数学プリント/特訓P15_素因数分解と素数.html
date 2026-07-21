@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓P15 素因数分解と素数（7月からの新範囲）｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"📝 今日の進め方";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"⚠️ よくある間違い";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 特訓選抜・中学数学へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-key{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-key::before{content:"⭐ ここが今日のいちばん大事";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:12px 0}
+.osarai::before{content:"📖 ことばの意味（今日はじめて出てくる用語）";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai .ot{font-size:15px;font-weight:900;color:#7a4f12;margin:10px 0 4px}
+.osarai p{font-size:13.5px;line-height:1.95;color:#5a4520;margin:4px 0}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.9;color:#5a4520}
+.osarai b{color:#7a4f12}
+.rei{background:#f4f8fd;border:2px solid #bcd3ee;border-left:7px solid #7aa7d9;border-radius:8px;padding:14px 16px;margin:12px 0}
+.rei::before{content:"【例】解き方を最初から見せる例題（まず読んで、まねしてノートに1回書こう）";display:block;font-size:12.5px;font-weight:900;color:#2f5a8a;margin-bottom:8px}
+.rei .rq{font-size:15.5px;font-weight:800;color:#25324a;background:#fff;border:1px dashed #bcd3ee;border-radius:6px;padding:8px 11px;margin-bottom:8px}
+.rei .rs{margin:6px 0;font-size:13.5px;line-height:1.9;background:#fff;border-left:3px solid #7aa7d9;border-radius:0 6px 6px 0;padding:6px 11px;color:#31415f}
+.rei .rs > span:first-child{display:inline-block;background:#e6f0fb;border:1px solid #bcd3ee;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#2f5a8a;font-size:11px}
+.rei .rans{margin-top:8px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:9px 12px;font-size:15px;font-weight:900;color:#2f6b45}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qnum{font-size:12px;font-weight:800;color:#4c5b70}
+.q.calc .qbody{font-size:17px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:1.95}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13px;line-height:1.9;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.zukai{background:#fbfaf5;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Courier New',monospace;font-size:13px;color:#6a5a32;white-space:pre-wrap;line-height:1.7}
+.zukai::before{content:"📐 図（すだれ算・表）";display:block;font-family:'Hiragino Kaku Gothic ProN',sans-serif;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.gq{margin-top:8px}
+.gq + .gq{margin-top:6px;padding-top:8px;border-top:1px dashed #e3e2d9}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+sup{font-size:.72em;vertical-align:super;line-height:0}
+.red{color:#9b514d;font-weight:800}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 2px;font-size:0.9em}
+.frac .n{border-bottom:1.6px solid currentColor;padding:0 4px 1px}
+.frac .d{padding:1px 4px 0}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}
+  .wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .pg-hd{padding:16px;margin-bottom:12px}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}
+  .write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}
+  .q{break-inside:avoid;page-break-inside:avoid}
+  .rei{break-inside:avoid;page-break-inside:avoid}
+}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="partial-n1" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓P15</span><span class="pg-badge">数学：正負の数（新範囲）</span><span class="pg-badge">素数・素因数分解 L1-L4</span></div>
+  <h1>素因数分解と素数｜7月から「正負の数」に入る新しい単元</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問9・通し番号）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">7月からの「正負の数」には <strong>素数・素因数分解</strong> が入る。9月の特訓選抜の出題範囲だよ。しかも春の首都圏オープンで、<strong>素数の問題と平方数の問題を落としている</strong>。つまりここは「まだ手をつけていない＝これから一番のびる場所」。今日は4つの型を1枚に。各大問の最初に【例】がついているから、まず【例】を読んで、そのあとは自分の力で解こう🌸</p>
+</div>
+
+<div class="cardbox">
+  <ol>
+    <li><b>① 【例】を読む</b>（解き方を最初から全部見せてある。まねしてノートに1回書く）</li>
+    <li><b>② そのあとの問題は自分の力で</b>（【例】は見返してよい。答えは見ない）</li>
+    <li><b>③ ノートに手を動かす</b>（頭の中だけで済ませない）</li>
+    <li><b>④ 「解説を読む → こたえへ」を開く</b>（自分で解いてから開く）</li>
+    <li><b>⑤ ○✕をつける</b>（✕はミスの型も選ぶ）</li>
+  </ol>
+</div>
+
+<!-- ============ 大問1 素数の判定（問1〜問3） ============ -->
+<div class="unit-banner"><span class="unit-num">問1〜3</span><span class="unit-name">素数の判定 L1-L2 基礎</span><span class="unit-time">目安 7分</span></div>
+
+<div class="osarai">
+  <div class="ot">① 素数（そすう）とは</div>
+  <p><b>1とその数自身でしか割り切れない、1より大きい整数</b>のこと。<br>
+  たとえば7は、7÷1＝7、7÷7＝1 でしか割り切れない。だから7は素数。</p>
+  <div class="ot">② 素因数（そいんすう）とは</div>
+  <p>ある整数の約数のうち、<b>素数であるもの</b>を、その数の素因数という。</p>
+  <div class="ot">③ 素因数分解（そいんすうぶんかい）とは</div>
+  <p>整数を<b>素数だけのかけ算の形に表すこと</b>。「これ以上バラせない部品（素数）に分解する」というイメージ。</p>
+  <div class="ot">④ 指数（しすう）の書き方</div>
+  <p>同じ数を何回かけたかを右上に小さく書く。<span class="math">2×2×2＝2<sup>3</sup></span>、<span class="math">3×3＝3<sup>2</sup></span>。素因数分解の答えは、この<b>指数の形まで書く</b>のがルール。</p>
+</div>
+
+<div class="rei">
+  <div class="rq">【例】39は素数ですか。理由もつけて答えなさい。</div>
+  <div class="rs"><span>手順1</span>小さい素数から順にわってみる。<span class="math">2, 3, 5, 7, …</span>の順。</div>
+  <div class="rs"><span>手順2</span>2でわれる？　39は奇数だからわれない。<br>3でわれる？　<span class="math">39÷3＝13</span>　→ <strong>われた！</strong></div>
+  <div class="rs"><span>手順3</span>わり切れたということは、39の約数に <span class="math">3</span> と <span class="math">13</span> がある。1と39以外の約数があるので<strong>素数ではない</strong>。</div>
+  <div class="rs"><span>どこまで試す？</span>「わる数×わる数」がもとの数をこえたら、そこでやめてよい。39なら <span class="math">7×7＝49＞39</span> なので、7まで試して1つもわれなければ素数と決まる。</div>
+  <div class="rans">こたえ　素数ではない（39＝3×13 とわけられるから）</div>
+</div>
+
+<div class="q calc" data-id="A">
+  <div class="qnum">★素数の判定</div>
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問1</span>1から20までの整数のうち、<strong>素数を小さい順に全部</strong>書きなさい。また、それは何個ですか。</div>
+  <div class="note-draw">まず1から20まで書き出してみよう。手を動かしてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q1"><span>考え方</span>1から20を書き出して、素数の定義（1とその数自身でしかわれない・1より大きい）に合うものだけ残す。</div>
+    <div class="step q1"><span>ふるい</span>2の倍数（4,6,8,10,12,14,16,18,20）は2でわれるので消える。3の倍数（9,15）も消える。残った15は3でわれるのでこれも消える。1は1より大きくないので最初から入らない。</div>
+    <div class="step q1"><span>残るもの</span><span class="math">2, 3, 5, 7, 11, 13, 17, 19</span>　→ 8個。</div>
+    <div class="bx bx-warn"><span class="red">1を入れない</span>（1は素数ではない。約数が1しかなく「1とその数自身」が同じになってしまう）。<span class="red">9を入れない</span>（9＝3×3）。<span class="red">15を入れない</span>（15＝3×5）。</div>
+    <div class="bx bx-link">20までの素数8個は、これから素因数分解でずっと使う道具。声に出して「に・さん・ご・なな・じゅういち・じゅうさん・じゅうなな・じゅうきゅう」と言えるようにしておくと、計算が速くなる。</div>
+    <div class="ans-final"><span>こたえ</span>2, 3, 5, 7, 11, 13, 17, 19　／　全部で 8個</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m15_1"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'m15_1','o')">○</button><button class="x" onclick="g(this,'m15_1','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい答えをノートに3回書こう</div></div>
+</div>
+
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問2</span>次の4つの数のうち、<strong>素数はどれ</strong>ですか。素数でないものは、素数でない理由（何でわれるか）も書きなさい。<br>
+    <span class="math">51　　57　　61　　91</span></div>
+  <div class="note-draw">1つずつノートで確かめよう。手を動かしてから解説を開こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q2"><span>51</span>各位の和が <span class="math">5＋1＝6</span> で3の倍数 → 3でわれる。<span class="math">51＝3×17</span>。<strong>素数ではない</strong>。</div>
+    <div class="step q2"><span>57</span>各位の和が <span class="math">5＋7＝12</span> で3の倍数 → 3でわれる。<span class="math">57＝3×19</span>。素数ではない。</div>
+    <div class="step q2"><span>61</span>2×（奇数）でない、3の倍数でない（6＋1＝7）、5でも7でもわれない。<span class="math">8×8＝64＞61</span> なので7まで確かめれば十分。素数。</div>
+    <div class="step q2"><span>91</span>2・3・5ではわれないが <span class="math">91÷7＝13</span>。<span class="math">91＝7×13</span>。素数ではない。</div>
+    <div class="step q3"><span>なぜ7でやめていい？</span>もし61が8以上の数でわれるなら、かけて61になる相方は8より小さい数になる（大きい×大きい では61をこえてしまうから）。<br>その小さい相方は <span class="math">2・3・5・7</span> のどれかのはず。でもそこは全部ためして、われなかった。<br>だから8以上でもわれない。7で止めてよい。</div>
+    <div class="bx bx-warn"><span class="red">91を素数とまちがえる人がとても多い</span>（＝7×13）。2・3・5でわれないと「もう素数だ」と決めてしまうのがワナ。7も必ず試すこと。</div>
+    <div class="bx bx-link">「51・57・91は素数っぽく見えるけど素数ではない」は入試の定番ひっかけ。3の倍数の見分け方（各位の和が3の倍数）はここで武器になる。</div>
+    <div class="ans-final"><span>こたえ</span>素数は <strong>61</strong>　／　51＝3×17、57＝3×19、91＝7×13</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m15_2"><div class="grade"><span class="gq-label">問2</span>○✕ → <button class="o" onclick="g(this,'m15_2','o')">○</button><button class="x" onclick="g(this,'m15_2','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい答えをノートに3回書こう</div></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問3</span>ゆいさんは「<strong>2は偶数だから素数ではない</strong>」と言いました。また「<strong>1は1でしかわれないから素数だ</strong>」とも言いました。この2つは正しいですか。正しくないものは、理由をつけて直しなさい。</div>
+  <div class="note-draw">定義（ことばの意味）にもどって、自分の言葉で書いてみよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q3"><span>2について</span>素数の決まりは「1とその数自身でしかわれない」だけ。<strong>偶数か奇数かは関係ない</strong>。2の約数は1と2だけ → 2は素数。</div>
+    <div class="step q3"><span>ただし</span>2以外の偶数は必ず2でわれてしまう。だから偶数の素数は2ただ1つ。「2だけが特別」と覚えるのではなく、定義から確かめられるようにしよう。</div>
+    <div class="step q3"><span>1について</span>素数は「1より大きい整数」。1はそもそも仲間に入れない。1は「1とその数自身」が同じ数になってしまい、約数が1個しかないから、素数ではない。</div>
+    <div class="bx bx-warn"><span class="red">「偶数＝素数ではない」ではない</span>（2は素数）。「1は素数」ではない。この2つは特訓選抜の正誤問題で毎年ねらわれる。</div>
+    <div class="bx bx-key">素数かどうかは、<strong>偶数・奇数で決めない。定義（1とその数自身でしかわれない・1より大きい）で決める</strong>。</div>
+    <div class="ans-final"><span>こたえ</span>どちらも正しくない。2は素数（偶数の素数は2だけ）。1は素数ではない（素数は1より大きい整数）。</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m15_3"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'m15_3','o')">○</button><button class="x" onclick="g(this,'m15_3','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ============ 大問2 素因数分解（問4〜問5） ============ -->
+<div class="unit-banner"><span class="unit-num">問4〜5</span><span class="unit-name">素因数分解（指数の形まで書く）L2 標準</span><span class="unit-time">目安 6分</span></div>
+
+<div class="rei">
+  <div class="rq">【例】60を素因数分解しなさい。</div>
+  <div class="rs"><span>手順1</span><strong>小さい素数から順に</strong>わっていく。わり切れなくなったら次の素数へ。</div>
+  <div class="zukai">2 ) 60
+2 ) 30
+3 ) 15
+      5   ← 5は素数。ここで止める
+
+たてに並んだ数をかける → 2×2×3×5</div>
+  <div class="rs"><span>手順2</span><span class="math">60÷2＝30</span>、<span class="math">30÷2＝15</span>、15は2でわれないので3へ。<span class="math">15÷3＝5</span>、5は素数なので終わり。</div>
+  <div class="rs"><span>手順3</span>わった素数とさいごに残った素数をすべてかける。<span class="math">60＝2×2×3×5</span>。</div>
+  <div class="rs"><span>手順4</span>同じ数は<strong>指数の形</strong>にまとめる。2が2個だから <span class="math">2<sup>2</sup></span>。</div>
+  <div class="rans">こたえ　60＝2<sup>2</sup>×3×5</div>
+</div>
+
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問4</span>84を素因数分解しなさい。（指数の形まで書くこと）</div>
+  <div class="note-draw">ノートにすだれ算を書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="zukai">2 ) 84
+2 ) 42
+3 ) 21
+      7</div>
+    <div class="step q1"><span>わる</span><span class="math">84÷2＝42</span>、<span class="math">42÷2＝21</span>、21は2でわれないので3へ。<span class="math">21÷3＝7</span>、7は素数で終わり。</div>
+    <div class="step q1"><span>まとめる</span><span class="math">84＝2×2×3×7＝2<sup>2</sup>×3×7</span>。</div>
+    <div class="step q1"><span>検算</span><span class="math">2<sup>2</sup>×3×7＝4×21＝84</span>○。かけ算してもとの数にもどるか必ず確かめる。</div>
+    <div class="bx bx-warn"><span class="red">84＝4×21 で止めない</span>（4も21も素数ではない。まだバラせる）。指数を書き忘れない（2×2×3×7 のままより 2<sup>2</sup>×3×7 が正式な答え）。</div>
+    <div class="step q4"><span>コツ</span><strong>2でわれる</strong>＝一の位が偶数。3でわれる＝各位の和が3の倍数（84 は <span class="math">8＋4＝12</span> だから3でわれる）。5でわれる＝一の位が0か5。<br>わる前にこの3つを見るだけで、<strong>すだれ算の速さが変わる</strong>。</div>
+    <div class="ans-final"><span>こたえ</span>84＝2<sup>2</sup>×3×7</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m15_4"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'m15_4','o')">○</button><button class="x" onclick="g(this,'m15_4','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+</div>
+
+<div class="q calc" data-id="E">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問5</span>360を素因数分解しなさい。（指数の形まで書くこと）</div>
+  <div class="note-draw">ノートにすだれ算を書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="zukai">2 ) 360
+2 ) 180
+2 )  90
+3 )  45
+3 )  15
+       5</div>
+    <div class="step q2"><span>わる</span>2で3回われる（360→180→90）。90は2でわれるが45は奇数なのでここで3へ。3で2回われる（45→15→5）。5は素数で終わり。</div>
+    <div class="step q2"><span>まとめる</span><span class="math">360＝2×2×2×3×3×5＝2<sup>3</sup>×3<sup>2</sup>×5</span>。</div>
+    <div class="step q2"><span>検算</span><span class="math">2<sup>3</sup>×3<sup>2</sup>×5＝8×9×5＝360</span>○。</div>
+    <div class="bx bx-warn"><span class="red">とちゅうでわるのをやめない</span>。「もうこれ以上小さい素数でわれない」ところまで続ける。2で何回わったかを数えまちがえない（メモを縦にそろえて書くとまちがえにくい）。</div>
+    <div class="bx bx-link">素因数分解は、このあとの<strong>最大公約数・最小公倍数・約数の個数・平方根</strong>の全部の土台になる。中3の「√」もここから始まる。</div>
+    <div class="step q4"><span>コツ</span>2でわれる＝一の位が偶数。3でわれる＝各位の和が3の倍数（360 は <span class="math">3＋6＋0＝9</span> だから3でわれる）。5でわれる＝一の位が0か5。<br>わる前にこの3つを見るだけで、<strong>すだれ算の速さが変わる</strong>。</div>
+    <div class="ans-final"><span>こたえ</span>360＝2<sup>3</sup>×3<sup>2</sup>×5</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m15_5"><div class="grade"><span class="gq-label">問5</span>○✕ → <button class="o" onclick="g(this,'m15_5','o')">○</button><button class="x" onclick="g(this,'m15_5','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ============ 大問3 約数の個数（問6〜問7） ============ -->
+<div class="unit-banner"><span class="unit-num">問6〜7</span><span class="unit-name">約数の個数（素因数分解から求める）L3 応用</span><span class="unit-time">目安 8分</span></div>
+
+<div class="rei">
+  <div class="rq">【例】72の約数は全部で何個ありますか。</div>
+  <div class="rs"><span>手順1</span>まず素因数分解する。<span class="math">72＝2<sup>3</sup>×3<sup>2</sup></span>。</div>
+  <div class="rs"><span>手順2</span>72の約数は「2を何個か、3を何個か、かけ合わせた数」でできている。<br>2は <span class="math">0個・1個・2個・3個</span> の <strong>4通り</strong>（0個＝使わない、も1通り）。<br>3は <span class="math">0個・1個・2個</span> の <strong>3通り</strong>。</div>
+  <div class="rs"><span>手順3</span>2の選び方と3の選び方は自由に組み合わせられるから <span class="math">4×3＝12通り</span>。組み合わせ1つが約数1個に対応する。</div>
+  <div class="zukai">          3を0個  3を1個  3を2個
+2を0個 →    1       3       9
+2を1個 →    2       6      18
+2を2個 →    4      12      36
+2を3個 →    8      24      72
+                            計 12個</div>
+  <div class="rs"><span>手順4</span>つまり<strong>指数に1をたしてかける</strong>。<span class="math">(3＋1)×(2＋1)＝4×3＝12</span>。「1をたす」のは<strong>0個のときも数える</strong>から。</div>
+  <div class="rans">こたえ　12個（1,2,3,4,6,8,9,12,18,24,36,72）</div>
+</div>
+
+<div class="q calc" data-id="F">
+  <div class="qbody">
+    <span class="lead" style="background:#dcefea;color:#2f6a5c">問6</span>180の約数は全部で何個ありますか。</div>
+  <div class="note-draw">ノートに手を動かしてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q3"><span>素因数分解</span><span class="math">180＝2×2×3×3×5＝2<sup>2</sup>×3<sup>2</sup>×5</span>。（検算：4×9×5＝180○）</div>
+    <div class="step q3"><span>指数＋1</span>2は指数2 →3通り、3は指数2 →3通り、5は指数1 →2通り。</div>
+    <div class="step q3"><span>5の指数は？</span>5には右上の数字がついていない。でも「何も書かない＝1回かけた」という意味。つまり <span class="math">5＝5<sup>1</sup></span>。<br>だから5の指数は <strong>0ではなく 1</strong>。通り数は <span class="math">1＋1＝2</span>通り。</div>
+    <div class="step q3"><span>かける</span><span class="math">(2＋1)×(2＋1)×(1＋1)＝3×3×2＝18</span>。</div>
+    <div class="bx bx-warn"><span class="red">5の指数を0とかんちがいしない</span>（180には5が1個あるので指数は1、通り数は2）。<span class="red">指数をそのままかけない</span>（2×2×1＝4 は誤り。必ず＋1してからかける）。</div>
+    <div class="ans-final"><span>こたえ</span>18個</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m15_6"><div class="grade"><span class="gq-label">問6</span>○✕ → <button class="o" onclick="g(this,'m15_6','o')">○</button><button class="x" onclick="g(this,'m15_6','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+</div>
+
+<div class="q calc" data-id="G">
+  <div class="qbody">
+    <span class="lead" style="background:#ece2f7;color:#5f4a8a">問7</span>600の約数は全部で何個ありますか。</div>
+  <div class="note-draw">ノートに手を動かしてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="zukai">2 ) 600
+2 ) 300
+2 ) 150
+3 )  75
+5 )  25
+       5</div>
+    <div class="step q4"><span>素因数分解</span><span class="math">600＝2<sup>3</sup>×3×5<sup>2</sup></span>。（検算：8×3×25＝600○）</div>
+    <div class="step q4"><span>指数＋1</span>2は指数3 →4通り、3は指数1 →2通り、5は指数2 →3通り。</div>
+    <div class="step q4"><span>かける</span><span class="math">(3＋1)×(1＋1)×(2＋1)＝4×2×3＝24</span>。</div>
+    <div class="bx bx-warn">600のような大きい数を<span class="red">1から順に書き出して数えない</span>（時間がかかるし数えもれる）。素因数分解してから指数＋1をかける方が速くて正確。</div>
+    <div class="bx bx-link">「約数の個数」は特訓選抜の大問1〜2の得点源。素因数分解さえできれば、あとはかけ算だけで答えが出る。</div>
+    <div class="step q2"><span>コツ</span><strong>2でわれる</strong>＝一の位が偶数。3でわれる＝各位の和が3の倍数（600 は <span class="math">6＋0＋0＝6</span> だから3でわれる）。5でわれる＝一の位が0か5。<br>わる前にこの3つを見るだけで、<strong>すだれ算の速さが変わる</strong>。</div>
+    <div class="ans-final"><span>こたえ</span>24個</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m15_7"><div class="grade"><span class="gq-label">問7</span>○✕ → <button class="o" onclick="g(this,'m15_7','o')">○</button><button class="x" onclick="g(this,'m15_7','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+</div>
+
+<!-- ============ 大問4 平方数（問8〜問9） ============ -->
+<div class="unit-banner"><span class="unit-num">問8〜9</span><span class="unit-name">平方数にする（★首都圏オープンで落とした型）L3-L4 応用</span><span class="unit-time">目安 9分</span></div>
+
+<div class="rei">
+  <div class="rq">【例】72にできるだけ小さい自然数をかけて、ある自然数の2乗にしたい。どんな数をかければよいですか。また、そのときの2乗の数も答えなさい。</div>
+  <div class="rs"><span>そもそも</span>「ある自然数の2乗」＝平方数。<span class="math">36＝6<sup>2</sup></span>、<span class="math">144＝12<sup>2</sup></span> のような数。<br>平方数を素因数分解すると、<span class="math">36＝2<sup>2</sup>×3<sup>2</sup></span>、<span class="math">144＝2<sup>4</sup>×3<sup>2</sup></span> のように<strong>指数が全部偶数</strong>になる。同じ部品を2つずつペアにできるからだ。</div>
+  <div class="rs"><span>手順1</span>素因数分解する。<span class="math">72＝2<sup>3</sup>×3<sup>2</sup></span>。</div>
+  <div class="rs"><span>手順2</span>指数を見る。3の指数は2（偶数・OK）。<strong>2の指数が3で奇数</strong>＝ここだけペアが作れず1個あまっている。</div>
+  <div class="rs"><span>手順3</span>あまっている2を1個おぎなえばよい。だから<strong>2をかける</strong>。<br><span class="math">72×2＝2<sup>4</sup>×3<sup>2</sup></span> → 指数が全部偶数になった。</div>
+  <div class="rs"><span>手順4</span>2乗の数は、むずかしく考えず<strong>まず計算する</strong>。<span class="math">72×2＝144</span>。<br>つぎに「<strong>何を2回かけたら144？</strong>」をさがす。<span class="math">10×10＝100</span>、<span class="math">20×20＝400</span> → 144はその間だから、答えは<strong>10と20の間</strong>。<br><span class="math">12×12＝144</span>○　だから <span class="math">144＝12<sup>2</sup></span>。</div>
+  <div class="rans">こたえ　2をかける　／　そのとき 144＝12<sup>2</sup></div>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問8</span>54にできるだけ小さい自然数をかけて、ある自然数の2乗にしたい。かける数を求めなさい。また、そのときの2乗の数も答えなさい。</div>
+  <div class="note-draw">ノートに手を動かしてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step q1"><span>素因数分解</span><span class="math">54＝2×27＝2×3<sup>3</sup></span>。（検算：2×27＝54○）</div>
+    <div class="step q1"><span>指数を見る</span>2の指数は1（奇数）、3の指数は3（奇数）。<strong>両方とも奇数</strong>なので、どちらも1個ずつおぎなう必要がある。</div>
+    <div class="step q1"><span>かける数</span><span class="math">2×3＝6</span>。<span class="math">54×6＝2<sup>2</sup>×3<sup>4</sup></span> → 指数が全部偶数。</div>
+    <div class="step q1"><span>2乗の数</span>むずかしく考えず、まず <span class="math">54×6＝324</span> を計算する。<br>つぎに「何を2回かけたら324？」をさがす。<span class="math">10×10＝100</span>、<span class="math">20×20＝400</span> → 324はその間だから、答えは10と20の間。<br><span class="math">18×18＝324</span>○　だから <span class="math">324＝18<sup>2</sup></span>。</div>
+    <div class="bx bx-warn"><span class="red">3<sup>3</sup> だから3を3個かける、としない</span>。足りないのは<strong>ペアにあぶれた1個だけ</strong>（3をもう1個かければ3<sup>4</sup>になる）。2を見落とさない（2の指数1も奇数）。</div>
+    <div class="ans-final"><span>こたえ</span>6をかける　／　そのとき 324＝18<sup>2</sup></div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m15_8"><div class="grade"><span class="gq-label">問8★首都圏オープンで落とした型</span>○✕ → <button class="o" onclick="g(this,'m15_8','o')">○</button><button class="x" onclick="g(this,'m15_8','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+</div>
+
+<div class="q calc" data-id="I">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問9 ★</span>252を<strong>できるだけ小さい自然数でわって</strong>、ある自然数の2乗にしたい。わる数を求めなさい。また、そのときの2乗の数も答えなさい。</div>
+  <div class="note-draw">ノートに手を動かしてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="zukai">2 ) 252
+2 ) 126
+3 )  63
+3 )  21
+       7</div>
+    <div class="step q2"><span>素因数分解</span><span class="math">252＝2<sup>2</sup>×3<sup>2</sup>×7</span>。（検算：4×9×7＝252○）</div>
+    <div class="step q2"><span>指数を見る</span>2の指数2（偶数・OK）、3の指数2（偶数・OK）、<strong>7の指数だけ1で奇数</strong>。</div>
+    <div class="step q2"><span>今回は「わる」</span>かけるときは足りない分をおぎなった。わるときは、あまっている分を取り除く。あまっているのは7が1個だから 7でわる。</div>
+    <div class="step q2"><span>2乗の数</span><span class="math">252÷7＝2<sup>2</sup>×3<sup>2</sup>＝(2×3)<sup>2</sup>＝6<sup>2</sup>＝36</span>○。</div>
+    <div class="bx bx-key">かける問題もわる問題も、見るところは同じ＝素因数分解して「指数が奇数の素数」をさがす。<br>かける＝足りない1個をおぎなう／わる＝あまった1個を<strong>取り除く</strong>。この対で覚えると、どちらを聞かれても迷わない。</div>
+    <div class="bx bx-warn"><span class="red">かける問題と同じ答え（7をかける）にしない</span>。聞かれているのは「わる数」。252÷7＝36 で終わらない。「36＝6<sup>2</sup>」と2乗の形まで答える。</div>
+    <div class="bx bx-link">この「指数を偶数にそろえる」考え方は、中3の平方根（√の中を簡単にする・√が整数になる条件）でそのまま使う。今ここで身につけると3年分ずっと効く。</div>
+    <div class="ans-final"><span>こたえ</span>7でわる　／　そのとき 36＝6<sup>2</sup></div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m15_9"><div class="grade"><span class="gq-label">問9 ★L4</span>○✕ → <button class="o" onclick="g(this,'m15_9','o')">○</button><button class="x" onclick="g(this,'m15_9','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、正しい式と答えをノートに3回書こう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓P15 素因数分解と素数 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">9問おつかれさま！今日は<strong>まったく新しい単元</strong>に、はじめて自分の力で挑んだ日。素数の判定・素因数分解・約数の個数・平方数の4つの型は、9月の特訓選抜で必ず出る新範囲だよ。全部が「素因数分解できるか」から始まっているのが分かったかな。まちがえた問題はノートに3回書いて、明日もう一度やってみよう。首都圏オープンで落とした平方数の型に、今日きみは正面から向き合えた。それがいちばんの前進🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m15';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+var RMQ_KIND='素因数分解';
+
+/* ===== 数学キュー送りフック（×→revmq_dyn／○→po++）2026-07-12 新設 =====
+   従来 数学プリントは復習キューへ何も送っておらず（49枚中0枚）、×が溜まらなかった。
+   受け皿=復習数学_まちがえ復習キュー.html の mergeDyn(revmq_dyn) が読む。 */
+var RMQ_DYN='revmq_dyn';
+function rmqClean(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function rmqToday(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+function sendToRevMQ(btn,id,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    if(String(KEY).indexOf('revmq')===0)return;              /* 受け皿自身では動かさない */
+    var q=btn&&btn.closest?btn.closest('.q'):null; if(!q)return;
+    var leadEl=q.querySelector('.lead'); if(!leadEl)return;
+    var label=rmqClean(leadEl);
+    if(/【例】/.test(label))return;                            /* 例題は復習に送らない */
+    var qtxt=leadEl.parentNode?rmqClean(leadEl.parentNode):'';
+    if(label&&qtxt.indexOf(label)===0)qtxt=qtxt.slice(label.length).trim();
+    var ans=rmqClean(q.querySelector('.ans-final'));
+    if(!qtxt||!ans)return;
+    var src=KEY+'_'+id;
+    var arr;try{arr=JSON.parse(localStorage.getItem(RMQ_DYN));}catch(e){arr=null;}
+    if(!Array.isArray(arr))arr=[];
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=rmqToday();}
+    else{arr.push({src:src,jp:qtxt,en:ans,kind:RMQ_KIND,badge:'suchoku',day:rmqToday(),po:0,px:1});}
+    try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}
+  }catch(e){}
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');
+  box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});
+  btn.classList.add('sel');
+  localStorage.setItem(KEY+'_'+id,v);try{sendToRevMQ(btn,id,v);}catch(e){}
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！素因数分解と素数 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){
+    var id=box.dataset.gid;if(!id)return;
+    var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}
+    }
+  });
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

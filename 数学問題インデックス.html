@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中1夏前 数学プリント 問題インデックス台帳</title>
+<style>
+  :root{
+    --bg:#f7f8f5; --ink:#263238; --sub:#4c5b70;
+    --card:#ffffff; --line:#e2e7df;
+    --hd-bg:#e8edf7; --hd-bd:#c8d4e6; --hd-ink:#25324a;
+    --accent:#3f6f9f;
+    /* カテゴリ色 */
+    --c-keisan:#91bdb7;   --c-keisan-s:#e4f1ef;  --c-keisan-i:#33635d;
+    --c-bunsho:#d8a09a;   --c-bunsho-s:#f7e6e4;  --c-bunsho-i:#8a4f49;
+    --c-zukei:#d8b27c;    --c-zukei-s:#f6eadb;   --c-zukei-i:#80592a;
+    --c-kisoku:#8fae8a;   --c-kisoku-s:#e7f1e6;  --c-kisoku-i:#3d6b3e;
+    --c-graph:#8aa6cf;    --c-graph-s:#e6edf7;   --c-graph-i:#3a5687;
+    --c-sogo:#b08fc0;     --c-sogo-s:#efe6f4;    --c-sogo-i:#5e3f72;
+    --hole:#f6d3cf;       --hole-bd:#e3a8a2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6; padding:18px 16px 80px; font-size:16px;}
+  .wrap{width:100%; max-width:1180px; margin:0 auto;}
+
+  /* ダッシュボードへ戻る（両ダッシュボード・同階層） */
+  .dashlinks{display:flex; flex-wrap:wrap; gap:9px; margin-bottom:14px;}
+  .dashlink{display:inline-flex; align-items:center; gap:7px; background:#fff; border:1px solid var(--hd-bd);
+    border-radius:24px; padding:10px 16px; font-size:13.5px; font-weight:800; color:var(--hd-ink);
+    text-decoration:none; min-height:44px;}
+  .dashlink:active{transform:scale(.97);}
+  .dashlink .ar{font-weight:900; color:var(--accent);}
+
+  /* セクションタブ（最上部） */
+  .sectabs{display:flex; flex-wrap:wrap; gap:9px; margin-bottom:14px;}
+  .sectab{display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--hd-bd);
+    border-radius:26px; padding:11px 18px; font-size:14.5px; font-weight:900; color:var(--hd-ink);
+    cursor:pointer; min-height:46px;}
+  .sectab:active{transform:scale(.97);}
+  .sectab.active{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .sectab .cnt{display:inline-flex; align-items:center; justify-content:center; min-width:26px; height:24px; padding:0 7px;
+    border-radius:12px; background:#e3ecf5; color:#31415f; font-size:12.5px; font-weight:900;}
+  .sectab.active .cnt{background:#fff; color:var(--accent);}
+
+  /* ヘッダ */
+  .pg-hd{background:var(--hd-bg); border:1px solid var(--hd-bd); border-radius:14px; padding:22px 24px; margin-bottom:16px;}
+  .pg-hd .badge{display:inline-block; background:#dbe7f3; color:#31415f; font-size:12px; font-weight:800; padding:3px 12px; border:1px solid #c3d4e7; border-radius:18px; margin-bottom:10px;}
+  .pg-hd h1{font-size:25px; font-weight:900; color:var(--hd-ink); margin-bottom:6px;}
+  .pg-hd p{font-size:13.5px; color:var(--sub);}
+  .pg-hd .seclead{font-size:13px; font-weight:800; color:var(--accent); margin-top:8px;}
+  .stats{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;}
+  .stat{background:#fff; border:1px solid var(--hd-bd); border-radius:12px; padding:12px 20px; min-width:140px; flex:1;}
+  .stat .num{font-size:30px; font-weight:900; color:var(--accent); line-height:1.1;}
+  .stat .lbl{font-size:12.5px; font-weight:800; color:var(--sub); margin-top:3px;}
+  .stat .dyn{font-size:11.5px; font-weight:800; color:#8a4f49; margin-top:4px;}
+
+  /* セクション見出し */
+  .sec-hd{margin:24px 2px 12px; padding:9px 16px; border-radius:10px;
+    background:#eef2ec; border:1px solid #dfe6dc; color:var(--hd-ink); font-size:16px; font-weight:900;}
+  .sec-hd small{display:block; font-size:12px; font-weight:700; color:var(--sub); margin-top:3px;}
+
+  /* 弱点逆引きパネル */
+  .weakpanel{background:#fdecea; border:1px solid #f0b7b1; border-left:8px solid #d9534f; border-radius:14px; padding:16px 18px; margin-bottom:16px;}
+  .weakpanel h2{font-size:17px; font-weight:900; color:#b23b34; margin-bottom:4px;}
+  .weakpanel .lead{font-size:12.5px; color:#7a4a47; margin-bottom:12px; line-height:1.7;}
+  .weakbtns{display:flex; flex-wrap:wrap; gap:10px;}
+  .weakbtn{display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #f0c7c3; border-radius:24px;
+    padding:9px 16px; font-size:13.5px; font-weight:800; color:#b23b34; cursor:pointer; min-height:44px;}
+  .weakbtn:active{transform:scale(.97);}
+  .weakbtn.active{background:#d9534f; color:#fff; border-color:#d9534f;}
+  .weakbtn .cnt{display:inline-flex; align-items:center; justify-content:center; min-width:24px; height:24px; padding:0 6px;
+    border-radius:12px; background:#f7d7d4; color:#b23b34; font-size:12px; font-weight:900;}
+  .weakbtn.active .cnt{background:#fff; color:#b23b34;}
+
+  /* フィルタバー */
+  .filterbar{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin-bottom:16px; box-shadow:0 2px 8px rgba(67,83,72,.06);}
+  .frow{display:flex; flex-wrap:wrap; gap:14px 22px; margin-bottom:14px;}
+  .fgroup{min-width:0;}
+  .fgroup > .glbl{display:block; font-size:12px; font-weight:900; color:var(--sub); margin-bottom:6px;}
+  .chips{display:flex; flex-wrap:wrap; gap:7px;}
+  .chip{display:inline-flex; align-items:center; gap:5px; background:#f3f6f1; border:1px solid var(--line); border-radius:18px;
+    padding:7px 13px; font-size:13px; font-weight:700; color:var(--ink); cursor:pointer; min-height:40px;}
+  .chip:active{transform:scale(.96);}
+  .chip.active{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .chip.zero{opacity:.42;}
+  .chip .c{font-size:11px; font-weight:900; opacity:.8;}
+  .searchrow{display:flex; flex-wrap:wrap; gap:10px; align-items:center;}
+  .searchrow input[type=search]{flex:1; min-width:200px; font-size:15px; padding:11px 14px; border:1px solid var(--line);
+    border-radius:10px; background:#fff; min-height:44px;}
+  .resetbtn{font-size:13.5px; font-weight:800; color:var(--sub); background:#fff; border:1px solid var(--line);
+    border-radius:24px; min-height:44px; padding:9px 20px; cursor:pointer;}
+  .resetbtn:active{transform:scale(.97);}
+  .reslabel{font-size:13px; font-weight:800; color:var(--accent); white-space:nowrap;}
+
+  /* ヒートマップ */
+  .heatwrap{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:16px; overflow-x:auto; box-shadow:0 2px 8px rgba(67,83,72,.06);}
+  table.heat{border-collapse:separate; border-spacing:5px; width:100%; min-width:560px;}
+  table.heat th{font-size:12.5px; font-weight:900; color:var(--sub); padding:6px 8px; text-align:center; white-space:nowrap;}
+  table.heat th.unitname{text-align:left; min-width:130px;}
+  table.heat td{text-align:center; padding:0;}
+  .hcell{display:flex; align-items:center; justify-content:center; width:100%; min-width:48px; height:46px; border-radius:9px;
+    font-size:15px; font-weight:900; cursor:pointer; border:1px solid transparent;}
+  .hcell.hole{background:var(--hole); border-color:var(--hole-bd); color:#a04540;}
+  .hcell.has{color:#1d3a52; background:#dde9f3;}
+  .hcell:active{transform:scale(.95);}
+  .heatlegend{font-size:12px; color:var(--sub); margin-top:8px; display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+  .heatlegend .sw{display:inline-block; width:16px; height:16px; border-radius:4px; vertical-align:middle; margin-right:5px;}
+
+  /* 大問マップ */
+  .exammap{margin-bottom:8px;}
+  .exam-grp{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px; margin-bottom:10px; box-shadow:0 2px 8px rgba(67,83,72,.06);}
+  .exam-grp .eh{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 12px; margin-bottom:8px;}
+  .exam-grp .ecode{font-size:14px; font-weight:900; color:#fff; background:var(--accent); border-radius:10px; padding:3px 12px;}
+  .exam-grp .edesc{font-size:13px; font-weight:700; color:var(--sub);}
+  .exam-grp .ecnt{font-size:12px; font-weight:800; color:var(--accent); margin-left:auto;}
+  .exam-items{display:flex; flex-wrap:wrap; gap:7px;}
+  .exam-pill{display:inline-block; text-decoration:none; background:#eef2f7; border:1px solid #cfdcea; color:#2f4a68;
+    border-radius:16px; padding:7px 13px; font-size:12.5px; font-weight:800; min-height:38px;}
+  .exam-pill:active{opacity:.7;}
+  .exam-empty{font-size:12.5px; color:#a04540; font-weight:700;}
+
+  /* 一覧グリッド */
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:14px;}
+  .card{background:var(--card); border:1px solid var(--line); border-left:7px solid var(--line);
+    border-radius:13px; position:relative; box-shadow:0 2px 8px rgba(67,83,72,.06); transition:transform .1s ease;}
+  .card .open{display:block; text-decoration:none; color:inherit; padding:15px 16px 16px; border-radius:13px;}
+  .card .open:active{transform:scale(.99);}
+  .card .toprow{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:7px;}
+  .card .variant{font-size:12px; font-weight:900; color:#fff; background:var(--accent); border-radius:10px; padding:2px 10px;}
+  .card .catbadge{font-size:11.5px; font-weight:900; border-radius:10px; padding:2px 10px;}
+  .card .svgicon{margin-left:auto; font-size:12px; font-weight:800; color:var(--c-zukei-i); background:var(--c-zukei-s); border:1px solid #e6cd9b; border-radius:10px; padding:2px 9px;}
+  .card .title{font-size:17px; font-weight:900; line-height:1.4; margin-bottom:4px; padding-right:50px;}
+  .card .unit{font-size:13px; font-weight:700; color:var(--sub); margin-bottom:9px;}
+  .card .unit .sub{color:#7a8794; font-weight:600;}
+  .card .enote{font-size:11.5px; font-weight:800; color:#8a4f49; background:#f7e6e4; border:1px solid #e6bbb7;
+    border-radius:9px; padding:2px 9px; display:inline-block; margin-bottom:9px;}
+  .card .metarow{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:8px;}
+  .lv{font-size:11.5px; font-weight:900; border-radius:8px; padding:2px 8px; border:1px solid #cdd6e2; background:#eef2f7; color:#3a5687;}
+  .qbadge{font-size:11.5px; font-weight:800; color:var(--sub); background:#f1f4ef; border:1px solid var(--line); border-radius:8px; padding:2px 9px;}
+  .qbadge.dyn{color:#8a4f49; background:#f7e6e4; border-color:#e6bbb7;}
+  .chiprow{display:flex; flex-wrap:wrap; gap:6px;}
+  .wchip{font-size:11px; font-weight:800; color:#b23b34; background:#fdecea; border:1px solid #f0c7c3; border-radius:10px; padding:2px 9px;}
+  .echip{font-size:11px; font-weight:800; color:#2f4a68; background:#eef2f7; border:1px solid #cfdcea; border-radius:10px; padding:2px 9px;}
+  .tchip{font-size:11px; font-weight:700; color:#5e6b58; background:#eef2ec; border:1px solid #dfe6dc; border-radius:10px; padding:2px 9px;}
+  /* カテゴリ別 左帯＆バッジ */
+  .card.cat-keisan{border-left-color:var(--c-keisan);} .cat-keisan .catbadge{background:var(--c-keisan-s);color:var(--c-keisan-i);border:1px solid #bcdbd6;}
+  .card.cat-bunsho{border-left-color:var(--c-bunsho);} .cat-bunsho .catbadge{background:var(--c-bunsho-s);color:var(--c-bunsho-i);border:1px solid #e6bbb7;}
+  .card.cat-zukei{border-left-color:var(--c-zukei);} .cat-zukei .catbadge{background:var(--c-zukei-s);color:var(--c-zukei-i);border:1px solid #e6cd9b;}
+  .card.cat-kisoku{border-left-color:var(--c-kisoku);} .cat-kisoku .catbadge{background:var(--c-kisoku-s);color:var(--c-kisoku-i);border:1px solid #bcd6bb;}
+  .card.cat-graph{border-left-color:var(--c-graph);} .cat-graph .catbadge{background:var(--c-graph-s);color:var(--c-graph-i);border:1px solid #b6c8e2;}
+  .card.cat-sogo{border-left-color:var(--c-sogo);} .cat-sogo .catbadge{background:var(--c-sogo-s);color:var(--c-sogo-i);border:1px solid #d2bce0;}
+
+  /* やったチェック */
+  .doneBtn{position:absolute; top:13px; right:13px; width:42px; height:42px; border-radius:50%;
+    border:3px solid #aeb8aa; background:#fff; font-size:20px; line-height:1; color:transparent;
+    cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2;}
+  .card.is-done{background:#eef5ef; border-color:#bcd6bd;}
+  .card.is-done .doneBtn{background:#56875b; border-color:#56875b; color:#fff;}
+
+  .empty{grid-column:1/-1; text-align:center; padding:40px 20px; color:var(--sub); font-size:15px; font-weight:700;}
+  .storageWarn{display:none; background:#fff0ef; border:1px solid #e5aaa5; color:#7f3530;
+    border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:13px; font-weight:700;}
+  .note{font-size:12.5px; color:var(--sub); text-align:center; margin-top:28px; line-height:1.9;}
+  button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #1d70b8; outline-offset:2px;}
+  @media(max-width:560px){ .grid{grid-template-columns:1fr;} .pg-hd h1{font-size:21px;} }
+</style>
+<style>.summer-return{position:relative;z-index:20;display:inline-flex;align-items:center;min-height:44px;margin:10px 14px;padding:9px 14px;border:1px solid #cdd8e8;border-radius:18px;background:#fff;color:#3f6f9f;font:800 13px/1.4 sans-serif;text-decoration:none}</style>
+</head>
+<body>
+<a class="summer-return" href="夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+<div class="wrap">
+  <div style="margin:0 0 14px;padding:11px 13px;border:2px solid #b56a2d;border-radius:10px;background:#fff7e8;color:#6b431f;font-size:13px;line-height:1.7"><strong>難易度フィルタ利用停止</strong>：一覧の L1〜L5 は旧・無版表示です。現行 <code>difficulty_standard=L7-v3.0</code> へ自動換算できません。現行監査は107/541採点単位だけで、全単位n=1監査6教材・一部n=1監査14教材・残りは新L未監査です。n=1は候補・要監査であり確定Lではありません。</div>
+
+  <!-- ダッシュボードへ戻る（両ダッシュボード・同階層） -->
+  <div class="dashlinks">
+    <a class="dashlink" href="index_iPad_学習ダッシュボード.html"><span class="ar">‹</span>学習ダッシュボード（夏前）</a>
+    <a class="dashlink" href="夏休みダッシュボード.html"><span class="ar">‹</span>夏休みダッシュボード</a>
+  </div>
+
+  <!-- セクション切替タブ（最上部） -->
+  <div class="sectabs" id="secTabs"></div>
+
+  <header class="pg-hd">
+    <span class="badge">中1夏前 ｜ 9月特訓選抜むけ ｜ 管理者用メタ台帳</span>
+    <h1>数学プリント 問題インデックス台帳</h1>
+    <p>1プリント＝1枚。単元・難度・問題数で絞り込み、本番(大問構成)から逆引きする索引です。解法・答えは出ません。</p>
+    <p style="margin:.4em 0"><a href="数学処方ビュー.html" style="display:inline-block;background:#ff9800;color:#fff;text-decoration:none;padding:7px 16px;border-radius:999px;font-weight:700;font-size:.85rem">⭐ 「きょうの1枚」処方ビューへ →</a> <span style="font-size:.8rem;color:#5b6b8c">（在庫の一望はこの台帳／やる順はあちら）</span></p>
+    <p class="seclead" id="secLead">–</p>
+    <div class="stats">
+      <div class="stat"><div class="num" id="stPrints">–</div><div class="lbl">プリント枚数</div></div>
+      <div class="stat"><div class="num" id="stQ">–</div><div class="lbl">設問 合計</div><div class="dyn" id="stDyn"></div></div>
+      <div class="stat"><div class="num" id="stG">–</div><div class="lbl">採点項目 合計</div></div>
+      <div class="stat"><div class="num" id="stShown">–</div><div class="lbl">いま表示中</div></div>
+    </div>
+  </header>
+
+  <div class="storageWarn" id="storageWarn">このブラウザでは「やった」チェックの保存ができません（他の機能は使えます）。</div>
+
+  <!-- 弱点逆引きパネル -->
+  <section class="weakpanel">
+    <h2>弱点から逆引き（確定4弱点）</h2>
+    <p class="lead">押すとその弱点に効くプリントだけに即絞り込み（いま選んでいるセクションの範囲内）。9月の律速は<b>文章→式</b>と<b>方程式の利用4型</b>。</p>
+    <div class="weakbtns" id="weakBtns"></div>
+  </section>
+
+  <!-- フィルタバー -->
+  <section class="filterbar">
+    <div class="frow">
+      <div class="fgroup"><span class="glbl">カテゴリ</span><div class="chips" id="fCategory"></div></div>
+      <div class="fgroup"><span class="glbl">単元</span><div class="chips" id="fUnit"></div></div>
+    </div>
+    <div class="frow">
+      <div class="fgroup"><span class="glbl">難度（範囲に該当）</span><div class="chips" id="fLevel"></div></div>
+      <div class="fgroup"><span class="glbl">弱点</span><div class="chips" id="fWeak"></div></div>
+    </div>
+    <div class="frow">
+      <div class="fgroup"><span class="glbl">9月 大問</span><div class="chips" id="fExam"></div></div>
+      <div class="fgroup"><span class="glbl">その他</span><div class="chips" id="fMisc"></div></div>
+    </div>
+    <div class="searchrow">
+      <input type="search" id="search" placeholder="キーワード検索（タイトル・小単元・ファイル名）" autocomplete="off">
+      <span class="reslabel" id="resLabel"></span>
+      <button class="resetbtn" id="resetBtn">絞り込み解除</button>
+    </div>
+  </section>
+
+  <!-- ヒートマップ -->
+  <div class="sec-hd">カバレッジ・ヒートマップ<small>行＝単元／列＝難度。いま選んでいるセクションに連動。赤いセル＝そのレベルのプリントが無い「穴」。セルを押すとその単元×難度に絞り込み。</small></div>
+  <div class="heatwrap">
+    <table class="heat" id="heatTable"></table>
+    <div class="heatlegend">
+      <span><span class="sw" style="background:var(--hole);border:1px solid var(--hole-bd)"></span>0枚（穴）</span>
+      <span><span class="sw" style="background:#dde9f3"></span>1枚以上（数字＝枚数）</span>
+    </div>
+  </div>
+
+  <!-- 9月大問マップ -->
+  <div class="sec-hd">9月 特訓選抜・大問対応マップ<small>本番の大問構成から、対応プリントを逆引き。exam_target が明記されたものだけ並びます（いま選んでいるセクションの範囲内）。</small></div>
+  <div class="exammap" id="examMap"></div>
+
+  <!-- 一覧 -->
+  <div class="sec-hd">プリント一覧<small>カード全体がリンク。タップで該当プリントを別タブで開きます。</small></div>
+  <div class="grid" id="grid"></div>
+
+  <p class="note">
+    正本データ：数学問題台帳.json（全76レコード・section分類つき）をインライン埋め込み。枚数・設問・採点項目はすべて records から再集計（section別）。<br>
+    このページは管理者用メタ索引です。解法・着眼・答えは一切表示しません（きみの初見解答を妨げないため）。
+  </p>
+
+</div>
+
+<script>
+/* ===== 正本データ：数学問題台帳.json records を改変せずインライン埋め込み（全76件・section分類つき） ===== */
+var RECORDS = [{"file":"Day01_数学_正負の数_除法逆数.html","series":"Day","variant":"Day01","path":"プリント/数学/","section":"専用","type_print":"Day","unit":"正負の数","subunit":"わり算と逆数","category":"計算","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"questions":7,"grade_items":7,"has_svg":false,"weakness":["正負・符号"],"tags":[],"exam_target":[],"title":"正負の数 わり算と逆数","count_note":"data-id M-1〜M-7 の数学ブロック(英語除外)"},{"file":"Day03_数学_正負の数_意味と文章を式に.html","series":"Day","variant":"Day03","path":"プリント/数学/","section":"専用","type_print":"Day","unit":"正負の数の利用","subunit":"意味・大小・文章を式に","category":"文章→式","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"questions":7,"grade_items":7,"has_svg":false,"weakness":["正負・符号","文章→式(最大律速0/25)"],"tags":[],"exam_target":[],"title":"正負の数（意味・大小・文章を式に）","count_note":"data-id M-1〜M-7 の数学ブロック(英語除外)"},{"file":"特訓P1_正負の数_L3L4.html","series":"P1","variant":"P1","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"正負の数","subunit":"累乗の符号・絶対値・大小・正負の表","category":"計算","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":17,"grade_items":17,"has_svg":false,"weakness":["正負・符号"],"tags":[],"exam_target":["大問1"],"title":"正負の数 L2-L3（特訓選抜レベル）","count_note":"data-gid q01〜q17（大問A〜H）"},{"file":"特訓P1b_正負の数_計算精度ドリル.html","series":"P1","variant":"P1b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"正負の数","subunit":"計算精度（速く・正確に）","category":"計算","levels":["L1","L2"],"level_min":1,"level_max":2,"questions":18,"grade_items":18,"has_svg":false,"weakness":["正負・符号"],"tags":["ドリル"],"exam_target":["大問1"],"title":"正負の数 計算精度ドリル","count_note":"data-gid q01〜q18"},{"file":"特訓P2a_文字式_演習.html","series":"P2","variant":"P2a","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"文字式","subunit":"表し方のルール・数量を式に・代入・一次式の計算","category":"計算","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":22,"grade_items":22,"has_svg":false,"weakness":[],"tags":[],"exam_target":["大問1","大問2"],"title":"文字式 演習","count_note":"data-gid q01〜q22"},{"file":"特訓P2b_文字式_特訓_立式.html","series":"P2","variant":"P2b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"文字式","subunit":"負の数の代入（かっこ）・立式（文章を式に）","category":"文章→式","levels":["L3"],"level_min":3,"level_max":3,"questions":19,"grade_items":19,"has_svg":false,"weakness":["文章→式(最大律速0/25)"],"tags":[],"exam_target":[],"title":"文字式 特訓（負の数の代入と立式）","count_note":"data-gid q01〜q19"},{"file":"特訓P2c_文字式_計算精度ドリル.html","series":"P2","variant":"P2c","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"文字式","subunit":"同類項・加減・分配・分数・代入（計算精度）","category":"計算","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":18,"grade_items":18,"has_svg":false,"weakness":[],"tags":["ドリル"],"exam_target":["大問1"],"title":"文字式 計算精度ドリル","count_note":"data-gid q01〜q18"},{"file":"特訓P3_方程式の解法_演習.html","series":"P3","variant":"P3","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の解法","subunit":"移項・かっこ・小数係数・分数係数","category":"計算","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":15,"grade_items":15,"has_svg":false,"weakness":[],"tags":[],"exam_target":["大問1"],"title":"方程式の解法 演習","count_note":"data-gid q01〜q15"},{"file":"特訓P3b_方程式の解法_ドリル.html","series":"P3","variant":"P3b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の解法","subunit":"小数係数・分数係数（計算精度）","category":"計算","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":18,"grade_items":18,"has_svg":false,"weakness":[],"tags":["ドリル"],"exam_target":["大問1"],"title":"方程式の解法 ドリル","count_note":"data-gid q01〜q18"},{"file":"特訓P4_文章を式に1_型カード_個数過不足.html","series":"P4","variant":"P4","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の利用","subunit":"型カードで立式（個数・代金・過不足・年齢）","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":8,"grade_items":8,"has_svg":false,"weakness":["文章→式(最大律速0/25)","方程式の利用4型(9月律速)"],"tags":["型カード"],"exam_target":["大問3"],"title":"文章を式にする①（型カード）","count_note":"data-gid q01〜q08"},{"file":"特訓P4b_文章を式に_個数過不足2.html","series":"P4","variant":"P4b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の利用","subunit":"個数・過不足（4問じっくり）","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":4,"grade_items":5,"has_svg":false,"weakness":["文章→式(最大律速0/25)","方程式の利用4型(9月律速)"],"tags":["じっくり"],"exam_target":["大問3"],"title":"文章を式にする②（個数・過不足）","count_note":"問1〜問4。問4のみ椅子/生徒の2採点でgq5"},{"file":"特訓P4c_文章を式に_個数過不足3.html","series":"P4","variant":"P4c","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の利用","subunit":"個数・過不足（もう一度固める）","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":4,"grade_items":5,"has_svg":false,"weakness":["文章→式(最大律速0/25)","方程式の利用4型(9月律速)"],"tags":["じっくり"],"exam_target":["大問3"],"title":"文章を式にする③（個数・過不足）","count_note":"問1〜問4。問4のみ2採点でgq5"},{"file":"特訓P4d_文章を式に_整数比例配分利益.html","series":"P4","variant":"P4d","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の利用","subunit":"整数・2けたの数・比例配分・利益","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":4,"grade_items":4,"has_svg":false,"weakness":["文章→式(最大律速0/25)","方程式の利用4型(9月律速)","割合・概数"],"tags":["抜け型埋め"],"exam_target":["大問3"],"title":"文章を式にする④（整数・比例配分・利益）","count_note":"data-gid q01〜q04"},{"file":"特訓P5_文章を式に2_速さ_割合利益.html","series":"P5","variant":"P5","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の利用","subunit":"速さ（往復・追いつき・出会い）と割合・利益","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":8,"grade_items":8,"has_svg":false,"weakness":["文章→式(最大律速0/25)","方程式の利用4型(9月律速)","割合・概数"],"tags":[],"exam_target":["大問3"],"title":"文章を式にする②（速さ・割合・利益）","count_note":"data-gid q01〜q08"},{"file":"特訓P5b_文章を式に_速さ2.html","series":"P5","variant":"P5b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の利用","subunit":"速さ②（往復・出会い・追いつき・トンネル）","category":"文章→式","levels":["L3"],"level_min":3,"level_max":3,"questions":4,"grade_items":4,"has_svg":true,"weakness":["文章→式(最大律速0/25)","方程式の利用4型(9月律速)"],"tags":["じっくり"],"exam_target":["大問3"],"title":"速さ②（4問じっくり）","count_note":"data-gid q01〜q04"},{"file":"特訓P5c_文章を式に_割合食塩水.html","series":"P5","variant":"P5c","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の利用","subunit":"割合・食塩水（割引・値上げ・濃度・人数増減）","category":"文章→式","levels":["L3"],"level_min":3,"level_max":3,"questions":4,"grade_items":4,"has_svg":false,"weakness":["文章→式(最大律速0/25)","方程式の利用4型(9月律速)","割合・概数"],"tags":["じっくり"],"exam_target":["大問3"],"title":"割合・食塩水（4問じっくり）","count_note":"data-gid q01〜q04"},{"file":"特訓P6_文章を式に3_正負の文章.html","series":"P6","variant":"P6","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"正負の数の利用","subunit":"正負の文章（基準を決める・仮平均・正負の立式）","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":8,"grade_items":8,"has_svg":false,"weakness":["正負・符号","文章→式(最大律速0/25)"],"tags":[],"exam_target":["大問2"],"title":"文章を式にする③（正負の数の文章）","count_note":"data-gid q01〜q08。問3・問4が正負の表・平均（基準＋差の平均）＝大問2(1)直撃。本文解説bx-linkも『特訓選抜 大問2の正負の表・平均直撃』と明記"},{"file":"特訓P6b_文章を式に_正負文章2.html","series":"P6","variant":"P6b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"正負の数の利用","subunit":"正負の文章②（気温・水位・収支・仮平均）","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":4,"grade_items":4,"has_svg":false,"weakness":["正負・符号","文章→式(最大律速0/25)"],"tags":["じっくり"],"exam_target":["大問2"],"title":"正負の数の文章②（4問じっくり）","count_note":"data-gid q01〜q04。問1（気温の表・平均）・問4（身長の仮平均・表）が大問2(1)直撃。本文解説bx-linkも『特訓選抜 大問2』と明記"},{"file":"特訓P7_方程式の利用_4型混合演習.html","series":"P7","variant":"P7","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の利用","subunit":"4型混合演習（個数・速さ・割合・比／動点）","category":"文章→式","levels":["L3"],"level_min":3,"level_max":3,"questions":6,"grade_items":6,"has_svg":false,"weakness":["文章→式(最大律速0/25)","方程式の利用4型(9月律速)"],"tags":["本番型ミックス"],"exam_target":["大問3"],"title":"方程式の利用 4型混合","count_note":"data-gid q01〜q06"},{"file":"特訓P7b_方程式の利用_過去問同型.html","series":"P7","variant":"P7b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の利用","subunit":"大問3そっくり4型（型判定力）","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":4,"grade_items":5,"has_svg":true,"weakness":["文章→式(最大律速0/25)","方程式の利用4型(9月律速)"],"tags":["過去問同型","型判定"],"exam_target":["大問3"],"title":"方程式の利用 過去問同型（大問3）","count_note":"問1〜問4。問3のみ2採点でgq5"},{"file":"特訓P7c_方程式の利用_発展L4.html","series":"P7","variant":"P7c","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"方程式の利用","subunit":"発展（速さの最難問・大問6対策）","category":"文章→式","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":5,"has_svg":true,"weakness":["文章→式(最大律速0/25)","方程式の利用4型(9月律速)"],"tags":["発展"],"exam_target":["大問6"],"title":"方程式の利用・発展（大問6 速さ最難問）","count_note":"問1〜問4。問1のみ(1)(2)でgq5"},{"file":"特訓P8_複合図形_円_折り返し角.html","series":"P8","variant":"P8","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"平面図形","subunit":"複合図形の面積（引き算）・円とおうぎ形・折り返しの角度","category":"図形","levels":["L2","L3","L4"],"level_min":2,"level_max":4,"questions":7,"grade_items":7,"has_svg":true,"weakness":[],"tags":[],"exam_target":["大問2"],"title":"図形（複合面積・円とおうぎ形・折り返し角）","count_note":"data-gid q01〜q07。問5（花びら型）＝大問2(4)・問6（折り返し角）＝大問2(2)・問1/2/7（複合面積）＝大問2(3)系。本文解説bx-linkに『特訓選抜 大問2(4)』『大問2(2)』を明記"},{"file":"特訓P8a_図形_演習.html","series":"P8","variant":"P8a","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"平面図形","subunit":"面積の公式・円とおうぎ形・角度の基礎","category":"図形","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":12,"grade_items":12,"has_svg":true,"weakness":[],"tags":[],"exam_target":["大問2"],"title":"図形 演習（基礎）","count_note":"data-gid q01〜q12"},{"file":"特訓P8b_複合図形L4_砂時計折り返し花びら.html","series":"P8","variant":"P8b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"平面図形","subunit":"砂時計型（面積一定）・折り返し角・花びら・おうぎ形","category":"図形","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":5,"has_svg":true,"weakness":[],"tags":["発展"],"exam_target":["大問2"],"title":"複合図形L4","count_note":"問1〜問4。問4のみ弧/面積でgq5。問1（砂時計型）＝大問2(3)・問2（折り返し角）＝大問2(2)・問3（花びら）＝大問2(4)・問4（おうぎ形）。pg-badgeに『9月大問2直撃』・本文解説bx-linkに『9月特訓選抜 大問2』を複数明記"},{"file":"特訓P8c_図形角度集中.html","series":"P8","variant":"P8c","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"平面図形","subunit":"折り返しの角・平行線（同位角/錯角）・三角形の外角","category":"図形","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":4,"has_svg":true,"weakness":[],"tags":[],"exam_target":["大問2"],"title":"図形・角度集中","count_note":"data-gid q01〜q04。問1・問4（折り返し角）＝大問2(2)直撃。問2（平行線・錯角）・問3（外角）は折り返し角を解く前提技能。pg-badgeに『9月大問2直撃』・本文解説bx-linkに『9月特訓選抜 大問2（折り返し・角度）』を複数明記"},{"file":"特訓P8d_図形複合面積2.html","series":"P8","variant":"P8d","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"平面図形","subunit":"L字・階段・円の組合せ・くりぬき","category":"図形","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":4,"has_svg":true,"weakness":[],"tags":[],"exam_target":[],"title":"図形・複合面積②","count_note":"data-gid q01〜q04"},{"file":"特訓P8e_円とおうぎ形.html","series":"P8","variant":"P8e","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"平面図形","subunit":"円周・面積・弧・中心角の逆算・円と正方形のすき間","category":"図形","levels":["L2","L3","L4"],"level_min":2,"level_max":4,"questions":4,"grade_items":7,"has_svg":true,"weakness":[],"tags":["じっくり"],"exam_target":["大問2"],"title":"円とおうぎ形（4問じっくり）","count_note":"問1〜問4。問1〜3が各2小問でgq7。円の周/面積・おうぎ形の弧/面積・中心角逆算・円と正方形のすき間＝大問2(4)『円・半円・花びら面積』の前提技能。pg-badgeに『9月大問2直撃』・本文解説bx-linkに『9月特訓選抜 大問2は円とおうぎ形が主役』を明記"},{"file":"特訓P8f_等積変形面積一定.html","series":"P8","variant":"P8f","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"平面図形","subunit":"等積変形・面積一定（砂時計型・点が動いても面積不変）","category":"図形","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":4,"has_svg":true,"weakness":[],"tags":["発展"],"exam_target":[],"title":"等積変形と面積一定","count_note":"data-gid q01〜q04"},{"file":"特訓P8g_図形総合.html","series":"P8","variant":"P8g","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"平面図形","subunit":"図形総合・本番型ミックス（インターリーブ）","category":"図形","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":5,"has_svg":true,"weakness":[],"tags":["総合ミックス","インターリーブ"],"exam_target":[],"title":"図形・総合（本番型ミックス）","count_note":"問1〜問4。問3のみ2小問でgq5"},{"file":"特訓P9_規則性_n式.html","series":"P9","variant":"P9","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"規則性","subunit":"ならび方のきまりを n の式に（差→n式→大きい番目）","category":"規則性","levels":["L2","L3","L4"],"level_min":2,"level_max":4,"questions":7,"grade_items":7,"has_svg":true,"weakness":[],"tags":[],"exam_target":["大問4"],"title":"規則性（n式の基本）","count_note":"data-gid q01〜q07"},{"file":"特訓P9a_規則性_演習.html","series":"P9","variant":"P9a","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"規則性","subunit":"差を見つけて n 式にする（基礎固め）","category":"規則性","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":8,"grade_items":8,"has_svg":true,"weakness":[],"tags":[],"exam_target":["大問4"],"title":"規則性 演習（基礎）","count_note":"data-gid q01〜q08"},{"file":"特訓P9b_規則性L4_タイルn式逆算.html","series":"P9","variant":"P9b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"規則性","subunit":"タイルの数え方→n式→逆算","category":"規則性","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":6,"has_svg":true,"weakness":[],"tags":["発展"],"exam_target":["大問4"],"title":"規則性②（タイル・大問4直撃）","count_note":"問1〜問4。問3・問4が各2小問でgq6"},{"file":"特訓P9c_規則性碁石マッチ2.html","series":"P9","variant":"P9c","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"規則性","subunit":"マッチ棒と碁石→n式→逆算","category":"規則性","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":6,"has_svg":true,"weakness":[],"tags":["発展"],"exam_target":["大問4"],"title":"規則性③（マッチ棒・碁石・大問4直撃）","count_note":"問1〜問4。問3・問4が各2小問でgq6"},{"file":"特訓P9d_規則性数表三角数.html","series":"P9","variant":"P9d","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"規則性","subunit":"三角数・数表・階段→n式→逆算","category":"規則性","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":12,"has_svg":true,"weakness":[],"tags":["発展"],"exam_target":["大問4"],"title":"規則性④（三角数・数表・大問4別パターン）","count_note":"問1〜問4。各3小問でgq12"},{"file":"特訓P9e_規則性総合.html","series":"P9","variant":"P9e","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"規則性","subunit":"規則性総合・本番型ミックス（インターリーブ）","category":"規則性","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":12,"has_svg":true,"weakness":[],"tags":["総合ミックス","インターリーブ"],"exam_target":["大問4"],"title":"規則性・総合（本番型ミックス）","count_note":"問1〜問4。各3小問でgq12"},{"file":"特訓P10_速さグラフ_水そう.html","series":"P10","variant":"P10","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"関数・グラフ","subunit":"速さのグラフ（行き・休み・帰り）と水そうの水位","category":"グラフ","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":5,"grade_items":5,"has_svg":true,"weakness":[],"tags":[],"exam_target":["大問5"],"title":"グラフ（速さの動き・水そう）","count_note":"data-gid q01〜q05"},{"file":"特訓P10a_速さグラフ_水そう_演習.html","series":"P10","variant":"P10a","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"関数・グラフ","subunit":"グラフ読み取り・比例・単位そろえ（基礎）","category":"グラフ","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":7,"grade_items":7,"has_svg":true,"weakness":[],"tags":[],"exam_target":["大問5"],"title":"グラフ 演習（基礎）","count_note":"data-gid q01〜q07"},{"file":"特訓P10b_グラフ水そうL4.html","series":"P10","variant":"P10b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"関数・グラフ","subunit":"給水グラフ・満水時刻逆算・L字水そう","category":"グラフ","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":8,"has_svg":true,"weakness":[],"tags":["発展"],"exam_target":["大問5"],"title":"グラフ・水そう（満水時刻逆算）","count_note":"問1〜問4。各2小問でgq8"},{"file":"特訓P10c_グラフ水そう2.html","series":"P10","variant":"P10c","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"関数・グラフ","subunit":"給水・満水・折れ線・排水","category":"グラフ","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":8,"has_svg":true,"weakness":[],"tags":[],"exam_target":["大問5"],"title":"グラフ・水そう②","count_note":"問1〜問4。各2小問でgq8"},{"file":"特訓P10d_速さグラフダイヤ.html","series":"P10","variant":"P10d","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"関数・グラフ","subunit":"速さのグラフ・ダイヤグラム（傾き＝速さ・交点＝同時刻同地点）","category":"グラフ","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":10,"has_svg":true,"weakness":[],"tags":["ダイヤグラム"],"exam_target":["大問5"],"title":"速さのグラフ・ダイヤグラム","count_note":"問1〜問4。小問計10でgq10"},{"file":"特訓P10e_比例と座標.html","series":"P10","variant":"P10e","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"関数・グラフ","subunit":"座標を読む・比例の式 y=ax・点が通るか判定","category":"グラフ","levels":["L2","L3","L4"],"level_min":2,"level_max":4,"questions":4,"grade_items":8,"has_svg":true,"weakness":[],"tags":["9月範囲外"],"exam_target":[],"title":"比例と座標・グラフ（★9月範囲外：比例反比例は11月・グラフ除く。10月以降の資産として温存）","count_note":"問1〜問4。各2小問でgq8"},{"file":"特訓P10f_グラフ総合.html","series":"P10","variant":"P10f","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"関数・グラフ","subunit":"グラフ種類見分け・本番型ミックス（水そう・ダイヤ・比例）","category":"グラフ","levels":["L3","L4"],"level_min":3,"level_max":4,"questions":4,"grade_items":8,"has_svg":true,"weakness":[],"tags":["総合ミックス","インターリーブ"],"exam_target":["大問5","大問6"],"title":"グラフ・総合（本番型ミックス）","count_note":"問1〜問4。各2小問でgq8。本文『大問5・6直撃』"},{"file":"特訓P11_ケアレス潰し_答案化.html","series":"P11","variant":"P11","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"精度・答案","subunit":"符号・累乗ミス速攻・まちがい探し・答案の作法","category":"計算","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":13,"grade_items":13,"has_svg":false,"weakness":["正負・符号"],"tags":["ケアレス対策","答案化"],"exam_target":[],"title":"ケアレス潰し・答案の作り方","count_note":"data-gid q01〜q13"},{"file":"特訓P12_過去問形式_通しセット.html","series":"P12","variant":"P12","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"総合（実戦）","subunit":"過去問形式 通しセット①（大問1〜6・100点）","category":"総合","levels":["L2","L3","L4"],"level_min":2,"level_max":4,"questions":12,"grade_items":12,"difficulty_standard":"L7-v3.0","v3_audit_status":"単独評定・要監査（生成問題の独立3評定未完了）","v3_distribution":{"L1":0,"L2":5,"L3":6,"L4":1,"L5":0,"L6":0,"L7":0},"v3_quantiles":{"P25":2,"P50":3,"P67":3,"P90":3},"has_svg":false,"weakness":[],"tags":["短縮通し","旧L表示"],"exam_target":["通し"],"title":"過去問形式 通しセット①","count_note":"data-gid q01〜q12"},{"file":"特訓P12b_過去問形式_通しセット2.html","series":"P12","variant":"P12b","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"総合（実戦）","subunit":"過去問形式 通しセット②（数値ちがい・100点）","category":"総合","levels":["L2","L3","L4"],"level_min":2,"level_max":4,"questions":12,"grade_items":12,"difficulty_standard":"L7-v3.0","v3_audit_status":"単独評定・要監査（生成問題の独立3評定未完了）","v3_distribution":{"L1":0,"L2":5,"L3":6,"L4":1,"L5":0,"L6":0,"L7":0},"v3_quantiles":{"P25":2,"P50":3,"P67":3,"P90":3},"has_svg":false,"weakness":[],"tags":["短縮通し","旧L表示"],"exam_target":["通し"],"title":"過去問形式 通しセット②","count_note":"data-gid q01〜q12"},{"file":"特訓P12c_過去問形式_通しセット3.html","series":"P12","variant":"P12c","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"総合（実戦）","subunit":"過去問形式 通しセット③（本番リズム仕上げ・100点）","category":"総合","levels":["L2","L3","L4"],"level_min":2,"level_max":4,"questions":12,"grade_items":12,"difficulty_standard":"L7-v3.0","v3_audit_status":"単独評定・要監査（生成問題の独立3評定未完了）","v3_distribution":{"L1":0,"L2":6,"L3":5,"L4":1,"L5":0,"L6":0,"L7":0},"v3_quantiles":{"P25":2,"P50":2,"P67":3,"P90":3},"has_svg":false,"weakness":[],"tags":["短縮通し","旧L表示"],"exam_target":["通し"],"title":"過去問形式 通しセット③","count_note":"data-gid q01〜q12"},{"file":"特訓P12d_過去問通し4.html","series":"P12","variant":"P12d","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"総合（50分通し）","subunit":"50分通し④（20採点単位・5点×20・自作配点100点）","category":"総合","levels":[],"level_min":null,"level_max":null,"v3_candidate_levels":[2,3,4,5],"questions":20,"grade_items":20,"time_limit_min":50,"difficulty_standard":"L7-v3.0","v3_audit_status":"単独評定n=1候補・独立3評定未完了。監査待ち・学習使用不可","v3_distribution":{"L1":0,"L2":3,"L3":7,"L4":9,"L5":1,"L6":0,"L7":0},"v3_quantiles":{"P25":3,"P50":3,"P67":4,"P90":4},"has_svg":true,"is_dynamic":false,"weakness":[],"tags":["50分通し","監査待ち","学習使用不可","2026-07-16改訂"],"exam_target":["通し"],"title":"特訓選抜形式 50分通し④","count_note":"data-gid q01〜q20（q19=問6(2)、q20=問11(2)）","profile_id":"TOKKUN-MATH-50-20-v1","student_use":false,"manifest":"特訓P12d_P12e_P12f_v3生成マニフェスト.json","blind_audit":"数学50分3フォーム_blind_audit.json"},{"file":"特訓P12e_50分通し5_独立フォーム.html","series":"P12","variant":"P12e","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"総合（50分通し）","subunit":"50分通し⑤（20採点単位・5点×20・自作配点100点）","category":"総合","levels":[],"level_min":null,"level_max":null,"v3_candidate_levels":[2,3,4,5],"questions":20,"grade_items":20,"time_limit_min":50,"difficulty_standard":"L7-v3.0","v3_audit_status":"単独評定n=1候補・独立3評定未完了。監査待ち・学習使用不可","v3_distribution":{"L1":0,"L2":3,"L3":7,"L4":9,"L5":1,"L6":0,"L7":0},"v3_quantiles":{"P25":3,"P50":3,"P67":4,"P90":4},"has_svg":true,"is_dynamic":false,"weakness":[],"tags":["50分通し","監査待ち","学習使用不可","2026-07-16新規"],"exam_target":["通し"],"title":"特訓選抜形式 50分通し⑤","count_note":"data-gid e01〜e20","profile_id":"TOKKUN-MATH-50-20-v1","student_use":false,"manifest":"特訓P12d_P12e_P12f_v3生成マニフェスト.json","blind_audit":"数学50分3フォーム_blind_audit.json"},{"file":"特訓P12f_50分通し6_独立フォーム.html","series":"P12","variant":"P12f","path":"プリント/夏_特訓数学プリント/","section":"専用","type_print":"特訓","unit":"総合（50分通し）","subunit":"50分通し⑥（20採点単位・5点×20・自作配点100点）","category":"総合","levels":[],"level_min":null,"level_max":null,"v3_candidate_levels":[2,3,4,5],"questions":20,"grade_items":20,"time_limit_min":50,"difficulty_standard":"L7-v3.0","v3_audit_status":"単独評定n=1候補・独立3評定未完了。監査待ち・学習使用不可","v3_distribution":{"L1":0,"L2":3,"L3":7,"L4":9,"L5":1,"L6":0,"L7":0},"v3_quantiles":{"P25":3,"P50":3,"P67":4,"P90":4},"has_svg":false,"is_dynamic":false,"weakness":[],"tags":["50分通し","監査待ち","学習使用不可","2026-07-16新規"],"exam_target":["通し"],"title":"特訓選抜形式 50分通し⑥","count_note":"data-gid f01〜f20","profile_id":"TOKKUN-MATH-50-20-v1","student_use":false,"manifest":"特訓P12d_P12e_P12f_v3生成マニフェスト.json","blind_audit":"数学50分3フォーム_blind_audit.json"},{"file":"復習算数_割合_三用法と逆算と残り.html","series":"復習","variant":"復習算数_割合","path":"プリント/夏_特訓数学プリント/","section":"復習・前提","type_print":"復習","unit":"数と計算（小学）","subunit":"割合・三用法・逆算・残りの割合","category":"計算","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"questions":6,"grade_items":6,"has_svg":true,"is_dynamic":false,"weakness":["割合・概数"],"tags":["小学復習","前提単元"],"exam_target":[],"english_note":"数学のみ（英語なし）","title":"割合の補強（÷でもとに戻す・残りの〜）","count_note":"data-id q00〜q05 を6問として実カウント"},{"file":"復習数学_まちがえ復習キュー.html","series":"復習","variant":"復習数学_キュー","path":"プリント/夏_特訓数学プリント/","section":"復習・前提","type_print":"復習","unit":"正負の数","subunit":"誤答だけを動的に再出題（現在は数直線・絶対値1件）","category":"総合","levels":["L1","L2"],"level_min":1,"level_max":2,"questions":null,"grade_items":null,"has_svg":false,"is_dynamic":true,"weakness":["正負・符号"],"tags":["復習キュー","動的ツール"],"exam_target":[],"english_note":"数学のみ（英語なし）","title":"復習・数学（まちがえだけ）","count_note":"動的キュー。固定問題なし(QS配列、実行時に変動)"},{"file":"復習01_小学校算数スタート_中1単語熟語.html","series":"横断復習","variant":"復習01","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"数と計算（小学）","subunit":"整数・分数・小数・計算規則の総合","category":"計算","levels":["L1","L2"],"level_min":1,"level_max":2,"questions":8,"grade_items":16,"has_svg":false,"is_dynamic":false,"weakness":[],"tags":["小学復習","横断複合"],"exam_target":[],"english_note":"英14＋数8","title":"小学校算数スタート＋中1単語・熟語","count_note":"data-id M-1〜M-8 を数学8問"},{"file":"復習02_分数の計算.html","series":"横断復習","variant":"復習02","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"数と計算（小学）","subunit":"分数の加減乗除・混合計算","category":"計算","levels":["L1","L2"],"level_min":1,"level_max":2,"questions":8,"grade_items":10,"has_svg":false,"is_dynamic":false,"weakness":[],"tags":["小学復習","横断複合"],"exam_target":[],"english_note":"英14＋数8","title":"分数の計算＋中1単語・熟語","count_note":"data-id M-1〜M-8 を数学8問"},{"file":"復習03_割合と百分率.html","series":"横断復習","variant":"復習03","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"数と計算（小学）","subunit":"割合・百分率・歩合","category":"計算","levels":["L1","L2"],"level_min":1,"level_max":2,"questions":8,"grade_items":12,"has_svg":false,"is_dynamic":false,"weakness":["割合・概数"],"tags":["小学復習","横断複合"],"exam_target":[],"english_note":"英9＋数8","title":"割合・百分率・歩合＋中1単語・熟語","count_note":"data-id M-1〜M-8 を数学8問"},{"file":"復習04_概数と数直線.html","series":"横断復習","variant":"復習04","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"数と計算（小学）","subunit":"概数・四捨五入・数直線","category":"計算","levels":["L1","L2"],"level_min":1,"level_max":2,"questions":8,"grade_items":12,"has_svg":false,"is_dynamic":false,"weakness":["割合・概数"],"tags":["小学復習","横断複合"],"exam_target":[],"english_note":"英9＋数8","title":"概数と数直線＋中1単語・熟語","count_note":"data-id M-1〜M-8 を数学8問"},{"file":"復習05_倍数約数と単位換算.html","series":"横断復習","variant":"復習05","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"数と計算（小学）","subunit":"倍数・約数・単位換算","category":"計算","levels":["L1","L2"],"level_min":1,"level_max":2,"questions":8,"grade_items":12,"has_svg":false,"is_dynamic":false,"weakness":[],"tags":["小学復習","横断複合"],"exam_target":[],"english_note":"英14＋数8","title":"倍数・約数と単位換算＋中1単語・熟語","count_note":"data-id M-1〜M-8 を数学8問"},{"file":"復習06_速さと比_小学校総まとめ.html","series":"横断復習","variant":"復習06","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"数と計算（小学）","subunit":"速さ・比・小学校総まとめ","category":"計算","levels":["L1","L2"],"level_min":1,"level_max":2,"questions":7,"grade_items":8,"has_svg":false,"is_dynamic":false,"weakness":[],"tags":["小学復習","横断複合"],"exam_target":[],"english_note":"英14＋数7","title":"速さと比＋小学校総まとめ","count_note":"data-id M-1〜M-7 を数学7問(M-8なし)"},{"file":"復習07_図形_面積と複合図形.html","series":"横断復習","variant":"復習07","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"図形（小学）","subunit":"面積・複合図形・角度","category":"図形","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"questions":8,"grade_items":13,"has_svg":true,"is_dynamic":false,"weakness":[],"tags":["小学復習","横断複合"],"exam_target":[],"english_note":"英14＋数8","title":"図形（面積・複合図形・角度）","count_note":"data-id M-1〜M-8 を数学8問"},{"file":"復習08_場合の数と規則性.html","series":"横断復習","variant":"復習08","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"場合の数・規則性（小学）","subunit":"場合の数・規則性・数列","category":"規則性","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"questions":8,"grade_items":8,"has_svg":true,"is_dynamic":false,"weakness":[],"tags":["小学復習","横断複合"],"exam_target":[],"english_note":"英14＋数8","title":"場合の数・規則性・数列（8問）","count_note":"data-id M-1〜M-8 を数学8問"},{"file":"復習09_速さと割合の応用.html","series":"横断復習","variant":"復習09","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"数と計算（小学）","subunit":"速さ・割合・整数の応用","category":"文章→式","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"questions":8,"grade_items":9,"has_svg":true,"is_dynamic":false,"weakness":["割合・概数","文章→式(最大律速0/25)"],"tags":["小学復習","横断複合"],"exam_target":[],"english_note":"英14＋数8","title":"速さ・割合・整数の応用","count_note":"data-id M-1〜M-8 を数学8問"},{"file":"通常01_数学四則混合と英語疑問詞.html","series":"横断通常","variant":"通常01","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"正負の数","subunit":"四則混合・累乗・分配法則","category":"計算","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"questions":6,"grade_items":6,"has_svg":false,"is_dynamic":false,"weakness":["正負・符号"],"tags":["横断複合"],"exam_target":[],"english_note":"英14＋数6","title":"正負の数 四則混合＋疑問詞what","count_note":"data-id M-1〜M-6 を数学6問"},{"file":"通常02_正負の数の利用と英語複数形.html","series":"横断通常","variant":"通常02","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"正負の数の利用","subunit":"正負の文章題（基準との差・移動・平均）","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":5,"grade_items":6,"has_svg":false,"is_dynamic":false,"weakness":["正負・符号","文章→式(最大律速0/25)"],"tags":["横断複合"],"exam_target":[],"english_note":"英14＋数5(M-3欠番)","title":"正負の数の利用（文章題）＋名詞の複数形","count_note":"data-id M-1/2/4/5/6 を数学5問"},{"file":"通常03_英作文と数学ミニ.html","series":"横断通常","variant":"通常03","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"正負の数","subunit":"正負の数ミニ確認（加減・乗除・文章題・数直線移動）","category":"計算","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"questions":5,"grade_items":5,"has_svg":false,"is_dynamic":false,"weakness":["正負・符号"],"tags":["横断複合"],"exam_target":[],"english_note":"英14＋数5（英作文メイン）","title":"形容詞の英作文＋正負の数ミニ確認","count_note":"data-id M-1〜M-5 を数学5問"},{"file":"通常04_正負の数まとめと速さのグラフ復習.html","series":"横断通常","variant":"通常04","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"正負の数","subunit":"絶対値・大小・平均・活用・速さのグラフ","category":"総合","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":4,"grade_items":8,"has_svg":true,"is_dynamic":false,"weakness":["正負・符号"],"tags":["横断複合"],"exam_target":[],"english_note":"英14＋数4","title":"正負の数まとめ＋速さのグラフ1問","count_note":"data-id M-1〜M-4 を数学4問"},{"file":"通常05_文字式の表し方1と三単現.html","series":"横断通常","variant":"通常05","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"文字式","subunit":"文字式の表し方・三単現・二段割合復習","category":"計算","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"questions":5,"grade_items":10,"has_svg":true,"is_dynamic":false,"weakness":["割合・概数"],"tags":["横断複合"],"exam_target":[],"english_note":"英14＋数5","title":"文字式の表し方①＋三単現・二段割合","count_note":"data-id M-1〜M-5 を数学5問"},{"file":"通常06_文字式で数量を表す.html","series":"横断通常","variant":"通常06","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"文字式","subunit":"数量を文字式で表す（代金・速さ・割合・図形）","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":5,"grade_items":8,"has_svg":true,"is_dynamic":false,"weakness":["文章→式(最大律速0/25)"],"tags":["横断複合"],"exam_target":[],"english_note":"英14＋数5","title":"数量を文字式で表す＋命令文","count_note":"data-id M-1〜M-5 を数学5問"},{"file":"通常07_代入と式の値.html","series":"横断通常","variant":"通常07","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"文字式","subunit":"代入と式の値（負の数の代入・複数変数・3乗・分数）","category":"計算","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":4,"grade_items":12,"has_svg":true,"is_dynamic":false,"weakness":[],"tags":["横断複合"],"exam_target":[],"english_note":"英14＋数4","title":"代入と式の値（負の数はかっこが命）","count_note":"data-id M-1〜M-4 を数学4問"},{"file":"通常08_一次式の加法減法.html","series":"横断通常","variant":"通常08","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"文字式","subunit":"一次式の加法・減法（項・係数・同類項）","category":"計算","levels":["L1","L2","L3"],"level_min":1,"level_max":3,"questions":5,"grade_items":8,"has_svg":true,"is_dynamic":false,"weakness":[],"tags":["横断複合"],"exam_target":[],"english_note":"英14＋数5","title":"一次式の加法・減法＋Let's・順列","count_note":"data-id M-1〜M-5 を数学5問"},{"file":"通常09_一次式の計算と分配.html","series":"横断通常","variant":"通常09","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"文字式","subunit":"一次式の計算・分配（数×一次式・−( )・分数係数）","category":"計算","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":4,"grade_items":7,"has_svg":false,"is_dynamic":false,"weakness":[],"tags":["横断複合"],"exam_target":[],"english_note":"英14＋数4","title":"一次式の計算・分配＋because","count_note":"data-id M-1〜M-4 を数学4問"},{"file":"通常10_文字式の利用_文章を式に.html","series":"横断通常","variant":"通常10","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"文字式","subunit":"文字式の利用（文章を式になおす・規則性）","category":"文章→式","levels":["L2","L3"],"level_min":2,"level_max":3,"questions":4,"grade_items":5,"has_svg":true,"is_dynamic":false,"weakness":["文章→式(最大律速0/25)"],"tags":["横断複合"],"exam_target":[],"english_note":"英14＋数4","title":"文字式の利用（文章を式に）＋時の前置詞","count_note":"data-id M-1〜M-4 を数学4問"},{"file":"通常11_夏前総合_正負と文字式.html","series":"横断通常","variant":"通常11","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"正負の数・文字式","subunit":"正負四則＋文字式計算＋代入＋文章を式に（総合）","category":"総合","levels":["L3"],"level_min":3,"level_max":3,"questions":4,"grade_items":4,"has_svg":false,"is_dynamic":false,"weakness":["正負・符号","文章→式(最大律速0/25)"],"tags":["横断複合","夏前総合"],"exam_target":[],"english_note":"英14＋数4(M-5はチャレンジ枠)","title":"夏前ぜんぶ総まとめ（正負＋文字式）＋but","count_note":"data-id M-1〜M-4 を数学4問"},{"file":"週末復習01_第1週.html","series":"横断週末","variant":"週末復習01","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"数と計算（小学）","subunit":"計算順番・分数・割合・概数・最大公約数・速さ（小学総合）","category":"総合","levels":["L1","L2"],"level_min":1,"level_max":2,"questions":6,"grade_items":6,"has_svg":false,"is_dynamic":false,"weakness":["割合・概数"],"tags":["横断複合","週末復習"],"exam_target":[],"english_note":"英19＋数6","title":"第1週 週末復習（6/15〜21）","count_note":"data-id M-1〜M-6 を数学6問"},{"file":"redo02_難問デー_正負の文章を式に.html","series":"横断難問","variant":"redo02","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"正負の数の利用","subunit":"正負の数・文章を式に（基準・仮平均・増減追跡）","category":"文章→式","levels":["L4"],"level_min":4,"level_max":4,"questions":3,"grade_items":5,"has_svg":false,"is_dynamic":false,"weakness":["正負・符号","文章→式(最大律速0/25)"],"tags":["横断複合","難問デー"],"exam_target":[],"english_note":"英14＋数3(全問L4)","title":"redo02 難問の日（L4）正負の文章を式に","count_note":"data-id M-1〜M-3 を数学3問"},{"file":"redo03_難問デー_正負と小学難問.html","series":"横断難問","variant":"redo03","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"正負の数・図形（小学）","subunit":"正負の大小・速さグラフ・複合図形面積（L4）","category":"総合","levels":["L4"],"level_min":4,"level_max":4,"questions":3,"grade_items":4,"has_svg":true,"is_dynamic":false,"weakness":["正負・符号"],"tags":["横断複合","難問デー"],"exam_target":[],"english_note":"英14＋数3(全問L4)","title":"redo03 難問の日（L4）正負と小学難問","count_note":"data-id M-1〜M-3 を数学3問"},{"file":"redo05_難問デー_文字式で数量を表す.html","series":"横断難問","variant":"redo05","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"文字式","subunit":"数量を文字式で（複数変数代金・等式不等式・規則性n式）","category":"文章→式","levels":["L4"],"level_min":4,"level_max":4,"questions":3,"grade_items":6,"has_svg":true,"is_dynamic":false,"weakness":["文章→式(最大律速0/25)"],"tags":["横断複合","難問デー"],"exam_target":[],"english_note":"英14＋数3(全問L4)","title":"redo05 難問の日（L4）文字式で数量を表す","count_note":"data-id M-1〜M-3 を数学3問"},{"file":"redo06_難問デー_代入と一次式.html","series":"横断難問","variant":"redo06","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"文字式","subunit":"負の数の代入・一次式の加減分配（累乗・複数項・証明）","category":"計算","levels":["L4"],"level_min":4,"level_max":4,"questions":3,"grade_items":5,"has_svg":false,"is_dynamic":false,"weakness":[],"tags":["横断複合","難問デー"],"exam_target":[],"english_note":"英14＋数3(全問L4)","title":"redo06 難問の日（L4）代入と一次式","count_note":"data-id M-1〜M-3 を数学3問"},{"file":"redo07_難問デー_文字式の利用.html","series":"横断難問","variant":"redo07","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"文字式","subunit":"文字式の利用（割引売値・面積と周・規則性）","category":"文章→式","levels":["L4"],"level_min":4,"level_max":4,"questions":3,"grade_items":6,"has_svg":true,"is_dynamic":false,"weakness":["文章→式(最大律速0/25)"],"tags":["横断複合","難問デー"],"exam_target":[],"english_note":"英14＋数3(全問L4)","title":"redo07 難問の日（L4）文字式の利用","count_note":"data-id M-1〜M-3 を数学3問"},{"file":"redo09_難問デー_総合.html","series":"横断難問","variant":"redo09","path":"プリント/横断/","section":"横断・複合","type_print":"横断","unit":"正負の数・文字式","subunit":"正負四則・文字式総合・規則性（三角数）","category":"総合","levels":["L4"],"level_min":4,"level_max":4,"questions":3,"grade_items":5,"has_svg":true,"is_dynamic":false,"weakness":["正負・符号","文章→式(最大律速0/25)"],"tags":["横断複合","難問デー"],"exam_target":[],"english_note":"英14＋数3(全問L4)","title":"redo09 難問の日（L4・総合）","count_note":"data-id M-1〜M-3 を数学3問"},{"file":"復習算数_割合2_割合を求める_利益と割引.html","series":"復習算数","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"小学生の復習（割合）","levels":["L1","L2","L3"],"questions":9,"grade_items":9,"weakness":["割合・概数","文章→式"],"exam_target":["大問3"],"title":"割合②（割合を求める・原価定価利益・割引・逆算）","tags":["2026-07-13追加"]},{"file":"特訓0801_中間診断.html","series":"特訓0801","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"診断","levels":["L2","L3"],"questions":4,"grade_items":12,"difficulty_standard":"L7-v3.0","v3_audit_status":"単独評定・要監査（生成問題の独立3評定未完了）","v3_distribution":{"L1":0,"L2":5,"L3":5,"L4":2,"L5":0,"L6":0,"L7":0},"v3_quantiles":{"P25":2,"P50":3,"P67":3,"P90":4},"weakness":[],"exam_target":["通し"],"title":"8月1日 中間診断（計算・方程式4型・正負・図形／100点）","tags":["2026-07-13追加"]},{"file":"特訓N1_数直線と絶対値_最大最小差.html","series":"特訓N1","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"正負の数","levels":["L1","L2","L3"],"questions":9,"grade_items":9,"weakness":["数直線","絶対値"],"exam_target":["大問1","大問2"],"title":"数直線と絶対値・最大と最小の差（＋最大公約数の文章題）","tags":["2026-07-13追加"]},{"file":"特訓P13_型あて道場1.html","series":"特訓P13","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"方程式の利用","levels":["L2","L3"],"questions":6,"grade_items":6,"weakness":["文章→式"],"exam_target":["大問3"],"title":"型あて道場①（4型を自分で見抜く）","tags":["2026-07-13追加"]},{"file":"特訓P14_型あて道場2.html","series":"特訓P14","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"方程式の利用","levels":["L3","L4"],"questions":6,"grade_items":6,"weakness":["文章→式","割合・概数"],"exam_target":["大問3"],"title":"型あて道場②（過不足応用・利益二段・割引率x）","tags":["2026-07-13追加"]},{"file":"特訓P15_素因数分解と素数.html","series":"特訓P15","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"正負の数（素数・素因数分解）","levels":["L1","L2","L3","L4"],"questions":9,"grade_items":9,"weakness":[],"exam_target":["大問1"],"title":"素因数分解と素数（シラバス「7月以降『正負の数』は素数・素因数分解を含む」）","tags":["2026-07-13追加"]},{"file":"特訓P16_単位換算ドリル.html","series":"特訓P16","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"小学生の復習（単位換算）","levels":["L1","L2","L3"],"questions":12,"grade_items":12,"weakness":["単位換算"],"exam_target":["大問2","大問5","大問6"],"title":"単位換算①（面積10000倍・体積1000000倍の理由／時速↔分速）","tags":["2026-07-13追加"]},{"file":"特訓P17_単位換算2_実戦と検算.html","series":"特訓P17","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"小学生の復習（単位換算）","levels":["L2","L3"],"questions":10,"grade_items":10,"weakness":["単位換算"],"exam_target":["大問2","大問5","大問6"],"title":"単位換算②（実戦と検算＝cm³/分・km/h・面積）","tags":["2026-07-13追加"]},{"file":"特訓P4e_文章を式に_過不足二段.html","series":"特訓P4e","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"方程式の利用","levels":["L3","L4"],"questions":4,"grade_items":4,"weakness":["文章→式","方程式の利用4型"],"exam_target":["大問3"],"title":"文章を式に⑤（過不足・二段）","tags":["2026-07-13追加"]},{"file":"特訓S1_分数と符号の精度_9月大問1.html","series":"特訓S1","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"正負の数","levels":["L2","L3","L4"],"questions":9,"grade_items":9,"weakness":["正負・符号","分数"],"exam_target":["大問1"],"title":"分数と符号の精度（累乗・符号・分数の順序＝最多失点）","tags":["2026-07-13追加"]},{"file":"特訓S2_速さ_出会いと追いつき_9月大問3と6.html","series":"特訓S2","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"小学生の復習（速さ）／方程式の利用","levels":["L2","L3","L4"],"questions":10,"grade_items":10,"weakness":["単位換算","文章→式"],"exam_target":["大問3","大問6"],"title":"速さ（3用法・単位・出会い・追いつき・時刻逆算）","tags":["2026-07-13追加"]},{"file":"特訓S3_数え方の重複処理と規則性_9月大問4.html","series":"特訓S3","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"文字と式（規則性）","levels":["L2","L3","L4"],"questions":10,"grade_items":10,"weakness":["場合の数","規則性"],"exam_target":["大問4"],"title":"数え方の重複処理と規則性（÷2と−4の対比→3n−3→逆算）","tags":["2026-07-13追加"]},{"file":"特訓S4_正負の表と平均_数直線_9月大問2.html","series":"特訓S4","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"正負の数","levels":["L1","L2","L3"],"questions":8,"grade_items":8,"weakness":["平均","数直線"],"exam_target":["大問2"],"title":"正負の表と平均・数直線（基準法・最大最小の差）","tags":["2026-07-13追加"]},{"file":"特訓S5_9月形式ミックス_総合.html","series":"特訓S5","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"総合（実戦）","levels":["L2","L3","L4"],"questions":8,"grade_items":8,"difficulty_standard":"L7-v3.0","v3_audit_status":"単独評定・要監査（生成問題の独立3評定未完了）","v3_distribution":{"L1":0,"L2":0,"L3":4,"L4":4,"L5":0,"L6":0,"L7":0},"v3_quantiles":{"P25":3,"P50":3,"P67":4,"P90":4},"weakness":[],"exam_target":["通し"],"title":"9月形式ミックス（単元名を伏せた白紙演習）","tags":["2026-07-13追加"]},{"file":"特訓TEC_マル秘テクニック集_計算が楽になる技.html","series":"特訓TEC","path":"プリント/夏_特訓数学プリント/","section":"専用","unit":"道具箱（問題ページではない）","levels":[],"questions":0,"grade_items":0,"weakness":[],"exam_target":[],"title":"マル秘テクニック集（10章・技34個／解いたあとに開く）","tags":["2026-07-13追加"]}];
+
+/* exam_blueprint（meta より・説明文として表示するだけ） */
+var EXAM_BLUEPRINT = {
+  "大問1":"計算・式の値・一次方程式の解法（小数/分数係数）","大問2":"小問集合（正負の数の表・平均／折り返し角／複合図形面積・砂時計／円・花びら面積）","大問3":"方程式の利用4型（個数・速さ・割合・過不足）",
+  "大問4":"規則性","大問5":"グラフ","大問6":"速さの最難問","通し":"大問1〜6 まるごとの本番セット"
+};
+var EXAM_ORDER = ["大問1","大問2","大問3","大問4","大問5","大問6","通し"];
+/* weakness_keys（meta より・改変禁止の4種） */
+var WEAK_KEYS = ["正負・符号","文章→式(最大律速0/25)","割合・概数","方程式の利用4型(9月律速)"];
+var WEAK_LABELS = {
+  "正負・符号":"正負・符号",
+  "文章→式(最大律速0/25)":"文章→式（最大律速 0/25）",
+  "割合・概数":"割合・概数",
+  "方程式の利用4型(9月律速)":"方程式の利用4型（9月律速）"
+};
+var LEVELS = [1,2,3,4,5];
+
+/* セクション定義（タブ順／__all__ = ぜんぶ） */
+var SECTIONS = ["専用","復習・前提","横断・複合"];
+var SECTION_LEAD = {
+  "専用":"数学だけのプリント。9月特訓選抜のコア。",
+  "復習・前提":"小学算数など前提単元のプリント（動的ツールを含む）。",
+  "横断・複合":"英数複合プリントの数学部分のみ（英語の内訳は english_note に表示）。",
+  "__all__":"全セクションを横断して表示しています。"
+};
+
+/* カテゴリ → CSSクラス接尾辞 */
+var CAT_CLASS = {"計算":"keisan","文章→式":"bunsho","図形":"zukei","規則性":"kisoku","グラフ":"graph","総合":"sogo"};
+
+/* ===== 状態 ===== */
+/* section の初期値は「専用」（コア47枚の純度を保つ） */
+var state = { section:"専用", category:null, unit:null, level:null, weak:null, exam:null, misc:null, kw:"" };
+/* misc: '__svg__' | tag名 */
+
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function uniq(arr){ var o=[],seen={}; arr.forEach(function(x){ if(!seen[x]){seen[x]=1;o.push(x);} }); return o; }
+
+/* ===== セクション範囲 =====
+   現在のセクション選択に属するレコードだけを母集合とする。
+   フィルタ・ヒートマップ・大問マップ・弱点パネルは全てこの母集合の中で効く。 */
+function inSection(r){ return state.section==="__all__" ? true : (r.section===state.section); }
+function sectionRecords(){ return RECORDS.filter(inSection); }
+
+/* ===== やったチェック localStorage（壊れても他機能継続） ===== */
+var STORE_KEY = "honoka_math_index_done_v2";
+var doneSet = {};
+var storageOK = true;
+try {
+  var raw = window.localStorage.getItem(STORE_KEY);
+  if(raw){ var arr = JSON.parse(raw); if(arr && arr.length){ arr.forEach(function(k){ doneSet[k]=1; }); } }
+} catch(e){ storageOK = false; }
+function saveDone(){
+  if(!storageOK) return;
+  try { window.localStorage.setItem(STORE_KEY, JSON.stringify(Object.keys(doneSet))); }
+  catch(e){ storageOK = false; var w=document.getElementById("storageWarn"); if(w) w.style.display="block"; }
+}
+if(!storageOK){ document.getElementById("storageWarn").style.display="block"; }
+
+/* ===== セクションタブ ===== */
+function renderSecTabs(){
+  var c = document.getElementById("secTabs"); c.innerHTML="";
+  function tab(key, label){
+    var n = (key==="__all__") ? RECORDS.length : RECORDS.filter(function(r){return r.section===key;}).length;
+    var b = document.createElement("button");
+    b.type="button";
+    b.className = "sectab" + (state.section===key ? " active":"");
+    b.innerHTML = esc(label) + ' <span class="cnt">'+n+'</span>';
+    b.addEventListener("click", function(){
+      if(state.section===key) return;
+      state.section = key;
+      // section を変えたら範囲内フィルタは解除（範囲が変わるため）
+      state.category=null; state.unit=null; state.level=null; state.weak=null; state.exam=null; state.misc=null;
+      fullRender();
+    });
+    c.appendChild(b);
+  }
+  tab("専用","専用");
+  tab("復習・前提","復習・前提");
+  tab("横断・複合","横断・複合");
+  tab("__all__","ぜんぶ");
+}
+
+/* ===== ヘッダ集計：現在のセクション範囲を records から再集計 =====
+   ・枚数 = 範囲内レコード数
+   ・設問合計 = Σ questions（is_dynamic は questions=null なので加算しない）
+   ・採点項目合計 = Σ grade_items（同上）
+   ・動的ツールは別途「動的ツール N件」と添える */
+function computeHeader(){
+  var recs = sectionRecords();
+  var prints = recs.length;
+  var q = 0, g = 0, dyn = 0;
+  recs.forEach(function(r){
+    if(r.is_dynamic){ dyn++; return; }
+    if(typeof r.questions === "number") q += r.questions;
+    if(typeof r.grade_items === "number") g += r.grade_items;
+  });
+  document.getElementById("stPrints").textContent = prints;
+  document.getElementById("stQ").textContent = q;
+  document.getElementById("stG").textContent = g;
+  document.getElementById("stDyn").textContent = dyn>0 ? ("＋ 動的ツール "+dyn+"件") : "";
+  var leadName = state.section==="__all__" ? "ぜんぶ" : state.section;
+  document.getElementById("secLead").textContent =
+    "セクション：" + leadName + "（" + prints + "枚）／ " + (SECTION_LEAD[state.section]||"");
+}
+
+/* ===== フィルタ判定 ===== */
+function levelMatch(r, lv){ return lv >= r.level_min && lv <= r.level_max; }
+function passes(r){
+  if(!inSection(r)) return false;
+  if(state.category && r.category !== state.category) return false;
+  if(state.unit && r.unit !== state.unit) return false;
+  if(state.level && !levelMatch(r, state.level)) return false;
+  if(state.weak){
+    if(state.weak === "弱点指定なし"){ if(r.weakness && r.weakness.length) return false; }
+    else { if((r.weakness||[]).indexOf(state.weak)<0) return false; }
+  }
+  if(state.exam){ if((r.exam_target||[]).indexOf(state.exam)<0) return false; }
+  if(state.misc){
+    if(state.misc === "__svg__"){ if(!r.has_svg) return false; }
+    else { if((r.tags||[]).indexOf(state.misc)<0) return false; }
+  }
+  if(state.kw){
+    var hay = (r.title+" "+r.subunit+" "+r.file).toLowerCase();
+    if(hay.indexOf(state.kw.toLowerCase())<0) return false;
+  }
+  return true;
+}
+function filtered(){ return RECORDS.filter(passes); }
+
+/* セクション範囲内での件数カウント（各チップのバッジ用） */
+function countIf(fn){ var n=0; sectionRecords().forEach(function(r){ if(fn(r)) n++; }); return n; }
+
+/* ===== チップ生成ヘルパ ===== */
+function makeChip(container, label, count, isActive, onClick){
+  var b = document.createElement("button");
+  b.type = "button";
+  b.className = "chip" + (isActive ? " active":"") + ((count===0 && !isActive) ? " zero":"");
+  b.innerHTML = esc(label) + (count!=null ? ' <span class="c">'+count+'</span>' : '');
+  b.addEventListener("click", onClick);
+  container.appendChild(b);
+}
+
+/* ===== フィルタバー描画（チップ件数は現セクション範囲内） ===== */
+function renderFilters(){
+  var recs = sectionRecords();
+  // カテゴリ（meta定義順。範囲内に出現するものだけ表示）
+  var catOrder = ["計算","文章→式","図形","規則性","グラフ","総合"];
+  var cc = document.getElementById("fCategory"); cc.innerHTML="";
+  catOrder.forEach(function(c){
+    var n = countIf(function(r){return r.category===c;});
+    if(n===0 && state.category!==c) return;
+    makeChip(cc, c, n, state.category===c, function(){
+      state.category = (state.category===c)?null:c; rerender();
+    });
+  });
+  // 単元（範囲内の出現順で動的）
+  var units = uniq(recs.map(function(r){return r.unit;}));
+  var uc = document.getElementById("fUnit"); uc.innerHTML="";
+  units.forEach(function(u){
+    makeChip(uc, u, countIf(function(r){return r.unit===u;}), state.unit===u, function(){
+      state.unit = (state.unit===u)?null:u; rerender();
+    });
+  });
+  // 難度 L1〜L5
+  var lc = document.getElementById("fLevel"); lc.innerHTML="";
+  LEVELS.forEach(function(lv){
+    makeChip(lc, "L"+lv, countIf(function(r){return levelMatch(r,lv);}), state.level===lv, function(){
+      state.level = (state.level===lv)?null:lv; rerender();
+    });
+  });
+  // 弱点 4種 + 弱点指定なし
+  var wc = document.getElementById("fWeak"); wc.innerHTML="";
+  WEAK_KEYS.forEach(function(w){
+    makeChip(wc, WEAK_LABELS[w]||w, countIf(function(r){return (r.weakness||[]).indexOf(w)>=0;}), state.weak===w, function(){
+      state.weak = (state.weak===w)?null:w; rerender();
+    });
+  });
+  makeChip(wc, "指定なし", countIf(function(r){return !(r.weakness&&r.weakness.length);}), state.weak==="弱点指定なし", function(){
+    state.weak = (state.weak==="弱点指定なし")?null:"弱点指定なし"; rerender();
+  });
+  // 9月 大問
+  var ec = document.getElementById("fExam"); ec.innerHTML="";
+  EXAM_ORDER.forEach(function(x){
+    var n = countIf(function(r){return (r.exam_target||[]).indexOf(x)>=0;});
+    if(n===0 && state.exam!==x) return; // 範囲内に該当0なら出さない（穴は大問マップで可視化）
+    makeChip(ec, x, n, state.exam===x, function(){
+      state.exam = (state.exam===x)?null:x; rerender();
+    });
+  });
+  if(ec.children.length===0){
+    var sp=document.createElement("span"); sp.className="reslabel"; sp.style.fontWeight="700";
+    sp.textContent="このセクションには大問指定プリントなし"; ec.appendChild(sp);
+  }
+  // その他：SVG / 各tag（範囲内に出現するもの）
+  var mc = document.getElementById("fMisc"); mc.innerHTML="";
+  var svgN = countIf(function(r){return r.has_svg;});
+  if(svgN>0 || state.misc==="__svg__"){
+    makeChip(mc, "図形/SVGあり", svgN, state.misc==="__svg__", function(){
+      state.misc = (state.misc==="__svg__")?null:"__svg__"; rerender();
+    });
+  }
+  var tags = uniq([].concat.apply([], recs.map(function(r){return r.tags||[];})));
+  tags.forEach(function(t){
+    makeChip(mc, t, countIf(function(r){return (r.tags||[]).indexOf(t)>=0;}), state.misc===t, function(){
+      state.misc = (state.misc===t)?null:t; rerender();
+    });
+  });
+}
+
+/* ===== 弱点逆引きパネル（件数は現セクション範囲内） ===== */
+function renderWeakPanel(){
+  var c = document.getElementById("weakBtns"); c.innerHTML="";
+  WEAK_KEYS.forEach(function(w){
+    var n = countIf(function(r){return (r.weakness||[]).indexOf(w)>=0;});
+    var b = document.createElement("button");
+    b.type="button";
+    b.className = "weakbtn" + (state.weak===w?" active":"");
+    b.innerHTML = esc(WEAK_LABELS[w]||w) + ' <span class="cnt">'+n+'</span>';
+    b.addEventListener("click", function(){
+      state.weak = (state.weak===w)?null:w;
+      rerender();
+      var fb = document.querySelector(".filterbar");
+      if(fb) window.scrollTo({top: fb.offsetTop - 8, behavior:"smooth"});
+    });
+    c.appendChild(b);
+  });
+}
+
+/* ===== ヒートマップ（行=単元, 列=L1〜L5・現セクション連動） ===== */
+function renderHeat(){
+  var recs = sectionRecords();
+  var units = uniq(recs.map(function(r){return r.unit;}));
+  var t = document.getElementById("heatTable"); t.innerHTML="";
+  // header
+  var thead = document.createElement("tr");
+  var th0 = document.createElement("th"); th0.className="unitname"; th0.textContent="単元 ＼ 難度"; thead.appendChild(th0);
+  LEVELS.forEach(function(lv){ var th=document.createElement("th"); th.textContent="L"+lv; thead.appendChild(th); });
+  var thT=document.createElement("th"); thT.textContent="計"; thead.appendChild(thT);
+  t.appendChild(thead);
+  units.forEach(function(u){
+    var tr = document.createElement("tr");
+    var tdU = document.createElement("th"); tdU.className="unitname"; tdU.textContent=u; tr.appendChild(tdU);
+    LEVELS.forEach(function(lv){
+      var n = countIf(function(r){return r.unit===u && levelMatch(r,lv);});
+      var td = document.createElement("td");
+      var cell = document.createElement("div");
+      cell.className = "hcell " + (n===0 ? "hole":"has");
+      cell.textContent = n===0 ? "" : n;
+      cell.addEventListener("click", function(){
+        if(state.unit===u && state.level===lv){ state.unit=null; state.level=null; }
+        else { state.unit=u; state.level=lv; }
+        rerender();
+        var g=document.getElementById("grid"); if(g) window.scrollTo({top: g.offsetTop - 60, behavior:"smooth"});
+      });
+      td.appendChild(cell); tr.appendChild(td);
+    });
+    var tdTot=document.createElement("td");
+    var cellT=document.createElement("div"); cellT.className="hcell has"; cellT.style.background="#eef2f7";
+    cellT.textContent = countIf(function(r){return r.unit===u;});
+    tdTot.appendChild(cellT); tr.appendChild(tdTot);
+    t.appendChild(tr);
+  });
+}
+
+/* ===== 9月大問マップ（現セクション範囲内） ===== */
+function renderExamMap(){
+  var c = document.getElementById("examMap"); c.innerHTML="";
+  EXAM_ORDER.forEach(function(x){
+    var recs = sectionRecords().filter(function(r){return (r.exam_target||[]).indexOf(x)>=0;});
+    var g = document.createElement("div"); g.className="exam-grp";
+    var head = document.createElement("div"); head.className="eh";
+    head.innerHTML = '<span class="ecode">'+esc(x)+'</span><span class="edesc">'+esc(EXAM_BLUEPRINT[x]||"")+'</span><span class="ecnt">'+recs.length+'枚</span>';
+    g.appendChild(head);
+    var items = document.createElement("div"); items.className="exam-items";
+    if(recs.length===0){
+      var em = document.createElement("span"); em.className="exam-empty"; em.textContent="対応プリントなし（穴）";
+      items.appendChild(em);
+    } else {
+      recs.forEach(function(r){
+        var a = document.createElement("a");
+        a.className="exam-pill";
+        a.href = encodeURI(r.path + r.file);
+        a.target = "_blank"; a.rel="noopener";
+        a.textContent = r.variant + "・" + r.title;
+        items.appendChild(a);
+      });
+    }
+    g.appendChild(items);
+    c.appendChild(g);
+  });
+}
+
+/* ===== カード一覧 ===== */
+function lvBadges(r){
+  var out="";
+  (r.levels||[]).forEach(function(L){ out += '<span class="lv">'+esc(L)+'</span>'; });
+  return out;
+}
+function renderGrid(){
+  var rows = filtered();
+  var grid = document.getElementById("grid"); grid.innerHTML="";
+  document.getElementById("stShown").textContent = rows.length;
+  // 絞り込み中ラベル
+  var active = [];
+  active.push("セクション:"+(state.section==="__all__"?"ぜんぶ":state.section));
+  if(state.category) active.push("カテゴリ:"+state.category);
+  if(state.unit) active.push("単元:"+state.unit);
+  if(state.level) active.push("難度:L"+state.level);
+  if(state.weak) active.push("弱点:"+(state.weak==="弱点指定なし"?"指定なし":(WEAK_LABELS[state.weak]||state.weak)));
+  if(state.exam) active.push(state.exam);
+  if(state.misc) active.push(state.misc==="__svg__"?"SVGあり":state.misc);
+  if(state.kw) active.push('"'+state.kw+'"');
+  document.getElementById("resLabel").textContent = rows.length+"枚 ／ "+active.join(" ・ ");
+
+  if(rows.length===0){
+    var e=document.createElement("div"); e.className="empty";
+    e.textContent="条件に合うプリントはありません。「絞り込み解除」で全件に戻せます。";
+    grid.appendChild(e); return;
+  }
+  rows.forEach(function(r){
+    var card = document.createElement("div");
+    var done = !!doneSet[r.file];
+    card.className = "card cat-"+(CAT_CLASS[r.category]||"keisan") + (done?" is-done":"");
+
+    var a = document.createElement("a");
+    a.className="open";
+    a.href = encodeURI(r.path + r.file);
+    a.target="_blank"; a.rel="noopener";
+
+    var svgTag = r.has_svg ? '<span class="svgicon">図形/SVG</span>' : '';
+    // english_note（横断・複合のみ存在。「複合（数学◯問）」と分かるように添える）
+    var enoteHtml = "";
+    if(r.english_note && r.section==="横断・複合"){
+      var qn = (typeof r.questions==="number") ? r.questions : "?";
+      enoteHtml = '<div class="enote">複合（数学'+qn+'問）｜'+esc(r.english_note)+'</div>';
+    }
+    // 設問・採点バッジ（is_dynamic は可変表示）
+    var qBadges;
+    if(r.is_dynamic){
+      qBadges = '<span class="qbadge dyn">動的ツール（問題数可変）</span>';
+    } else {
+      qBadges = '<span class="qbadge">設問 '+r.questions+'</span>'+
+                '<span class="qbadge">採点 '+r.grade_items+'</span>';
+    }
+    var wchips = (r.weakness||[]).map(function(w){return '<span class="wchip">'+esc(WEAK_LABELS[w]||w)+'</span>';}).join("");
+    var echips = (r.exam_target||[]).map(function(x){return '<span class="echip">'+esc(x)+'</span>';}).join("");
+    var tchips = (r.tags||[]).map(function(t){return '<span class="tchip">'+esc(t)+'</span>';}).join("");
+
+    a.innerHTML =
+      '<div class="toprow">'+
+        '<span class="variant">'+esc(r.variant)+'</span>'+
+        '<span class="catbadge">'+esc(r.category)+'</span>'+
+        svgTag +
+      '</div>'+
+      '<div class="title">'+esc(r.title)+'</div>'+
+      '<div class="unit">'+esc(r.unit)+' <span class="sub">／ '+esc(r.subunit)+'</span></div>'+
+      enoteHtml +
+      '<div class="metarow">'+ lvBadges(r) + qBadges +'</div>'+
+      '<div class="chiprow">'+ wchips + echips + tchips +'</div>';
+    card.appendChild(a);
+
+    // やったチェック
+    var btn = document.createElement("button");
+    btn.type="button"; btn.className="doneBtn"; btn.textContent="✓";
+    btn.setAttribute("aria-label","やったチェック "+r.variant);
+    btn.addEventListener("click", function(ev){
+      ev.preventDefault(); ev.stopPropagation();
+      if(doneSet[r.file]){ delete doneSet[r.file]; card.classList.remove("is-done"); }
+      else { doneSet[r.file]=1; card.classList.add("is-done"); }
+      saveDone();
+    });
+    card.appendChild(btn);
+
+    grid.appendChild(card);
+  });
+}
+
+/* ===== 再描画 ===== */
+/* rerender: フィルタ操作のたび（セクションは変わらない） */
+function rerender(){
+  computeHeader();
+  renderWeakPanel();
+  renderFilters();
+  renderGrid();
+}
+/* fullRender: セクション切替時（タブ＋固定パーツも描き直す） */
+function fullRender(){
+  renderSecTabs();
+  computeHeader();
+  renderWeakPanel();
+  renderFilters();
+  renderHeat();
+  renderExamMap();
+  renderGrid();
+}
+
+/* 検索（インクリメンタル） */
+document.getElementById("search").addEventListener("input", function(e){
+  state.kw = e.target.value || "";
+  renderGrid(); // 検索はチップ選択状態を変えないので grid だけ更新
+});
+
+/* 絞り込み解除（セクション選択は維持） */
+document.getElementById("resetBtn").addEventListener("click", function(){
+  state.category=null; state.unit=null; state.level=null; state.weak=null; state.exam=null; state.misc=null; state.kw="";
+  document.getElementById("search").value="";
+  rerender();
+});
+
+/* ===== 初期化 ===== */
+fullRender();
+</script>
+</body>
+</html>

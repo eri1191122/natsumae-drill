@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓S1 分数と符号の精度 ― 9月 大問1 直撃｜数学</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f7f8f5;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:900px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#e8edf7;color:#25324a;padding:24px 22px;border:1px solid #c8d4e6;border-radius:10px;margin-bottom:16px}
+.pg-hd h1{font-size:21px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4c5b70}
+.pg-badge{display:inline-block;background:#dbe7f3;color:#31415f;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #c3d4e7;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.pg-cheer{margin-top:8px;font-size:13px;color:#3f6f4a;font-weight:700}
+.cardbox{background:#fff;border:2px solid #6aa97a;border-radius:10px;padding:14px 16px;margin:14px 0}
+.cardbox::before{content:"📝 今日のやり方（計算する順番・ぜったいに変えない）";display:block;font-size:13px;font-weight:900;color:#2f6a44;margin-bottom:8px}
+.cardbox ol{margin:0 0 0 1.3em;font-size:13.5px;line-height:2.0;color:#33433a}
+.cardbox ol b{color:#2f6a44}
+.osarai{background:#fffdf3;border:2px solid #e6cf8f;border-left:7px solid #d9b46d;border-radius:8px;padding:14px 16px;margin:12px 0}
+.osarai::before{content:"📖 心臓部｜マイナスは「かっこの中」か「かっこの外」か";display:block;font-size:13px;font-weight:900;color:#8a5a19;margin-bottom:8px}
+.osarai ul{margin:4px 0 4px 1.3em;font-size:13.5px;line-height:1.95;color:#5a4520}
+.osarai b{color:#7a4f12}
+.osarai .fig{display:block;margin:10px auto;background:#fff;border:1px solid #e6ddc2;border-radius:8px;width:100%;max-width:560px;height:auto}
+.unit-banner{display:flex;align-items:center;gap:12px;background:#2f3b4a;color:#fff;padding:12px 20px;border-radius:8px;margin:26px 0 0}
+.unit-banner .unit-num{font-size:13px;font-weight:900;background:rgba(255,255,255,.18);padding:3px 10px;border-radius:12px;letter-spacing:.06em}
+.unit-banner .unit-name{font-size:16px;font-weight:900;letter-spacing:.04em}
+.unit-banner .unit-time{font-size:11px;font-weight:700;background:rgba(255,255,255,.15);padding:2px 8px;border-radius:10px;margin-left:auto;white-space:nowrap}
+.bx{border-radius:8px;padding:12px 16px;margin:10px 0}
+.bx-warn{background:#fff7e8;border-left:4px solid #d9b46d}
+.bx-warn::before{content:"★ よくある間違い（きみが実際にやったミス）";display:block;font-size:12px;font-weight:800;color:#8a5a19;margin-bottom:4px}
+.bx-link{background:#f3edf8;border-left:4px solid #b7a3d6}
+.bx-link::before{content:"🔗 9月 大問1 へのつながり";display:block;font-size:12px;font-weight:800;color:#5f4b7a;margin-bottom:4px}
+.bx-say{background:#eef6fb;border-left:4px solid #5b8fbf}
+.bx-say::before{content:"🗣️ いいかえ｜この問題は何を聞いているの？";display:block;font-size:12px;font-weight:800;color:#2f5a8a;margin-bottom:4px}
+.bx-chk{background:#eaf4ee;border-left:4px solid #6aa97a}
+.bx-chk::before{content:"✅ 検算・たしかめ（30秒でできる）";display:block;font-size:12px;font-weight:800;color:#2f6a44;margin-bottom:4px}
+.bx-win{background:#fdf2f6;border-left:4px solid #d98aa7}
+.bx-win::before{content:"🌸 克服チェック";display:block;font-size:12px;font-weight:800;color:#9a3f63;margin-bottom:4px}
+.note-draw{background:#f4f7fb;border:1px dashed #aebfd6;border-radius:8px;padding:10px 14px;margin:10px 0;font-size:12.5px;color:#3f6f9f;font-weight:700}
+.note-draw::before{content:"✏️ ノートに書いて考えよう：";font-weight:800}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:8px;padding:13px 16px;margin:14px 0}
+.q.calc .qbody{font-size:16px;font-weight:700;margin:4px 0 6px;color:#31415f;line-height:2.1}
+.q.calc .qbody .lead{display:inline-block;font-size:13px;font-weight:800;border-radius:9px;padding:1px 9px;margin-right:6px;vertical-align:middle}
+.subq{margin:8px 0 0 4px;font-size:17px;font-weight:800;color:#31415f;line-height:2.4}
+.subq .no{display:inline-block;width:22px;color:#7a8798}
+.fill{display:inline-block;min-width:84px;border-bottom:2.5px solid #7aa7d9;text-align:center;font-weight:900;color:#2f5a8a;padding:0 6px}
+.wex{background:#eef6fb;border:2px solid #a8c8e4;border-left:7px solid #5b8fbf;border-radius:8px;padding:12px 14px;margin:10px 0}
+.wex::before{content:"👀 例：やり方をぜんぶ見せるよ（読んだらノートに写してから次へ）";display:block;font-size:12px;font-weight:900;color:#2f5a8a;margin-bottom:6px}
+.wex .wl{margin:5px 0;font-size:14px;line-height:2.1;color:#25415f}
+.wex .wl b{color:#c0392b}
+.hole{background:#f6fbf7;border:2px dashed #a9c9b1;border-radius:8px;padding:11px 14px;margin:10px 0}
+.hole::before{content:"✍️ 穴あき：うまっていない ＿＿ を自分でうめて、式を完成させよう";display:block;font-size:12px;font-weight:900;color:#2f6a44;margin-bottom:6px}
+.hole .hl{margin:6px 0;font-size:16px;font-weight:700;color:#31415f;line-height:2.3}
+.hole .hl .memo{font-size:12px;font-weight:700;color:#7a8798;margin-left:6px}
+.ans-btn{margin-top:8px;background:#657789;color:#fff;border:none;border-radius:20px;padding:8px 18px;font-size:13px;font-weight:700;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:6px;font-size:13px}
+.ans-box.open{display:block}
+.ans-box .step{margin:8px 0;font-size:13.5px;line-height:2.1;border-left:3px solid #cfd5ce;background:#fff;border-radius:0 6px 6px 0;padding:6px 11px}
+.ans-box .step > span:first-child{display:inline-block;background:#eef0ee;border:1px solid #d6dcd5;border-radius:5px;padding:1px 8px;margin-right:6px;font-weight:800;color:#54605a;font-size:11px}
+.step.q1{border-left-color:#7aa7d9;background:#f4f8fd}
+.step.q1 > span:first-child{background:#e6f0fb;border-color:#bcd3ee;color:#2f5a8a}
+.step.q2{border-left-color:#e0a85c;background:#fdf7ee}
+.step.q2 > span:first-child{background:#fbe9cf;border-color:#eccf9a;color:#8a5a17}
+.step.q3{border-left-color:#5fa89a;background:#eef7f5}
+.step.q3 > span:first-child{background:#dcefea;border-color:#aed8cf;color:#2f6a5c}
+.step.q4{border-left-color:#a98ed0;background:#f7f2fc}
+.step.q4 > span:first-child{background:#ece2f7;border-color:#cfbce8;color:#5f4a8a}
+.step.q5{border-left-color:#d98aa7;background:#fdf2f6}
+.step.q5 > span:first-child{background:#f7dce8;border-color:#eebccf;color:#9a3f63}
+.ans-final{margin-top:12px;background:#eafaf1;border:2px solid #9bcfae;border-radius:8px;padding:12px 14px;font-size:17px;font-weight:900;color:#2f6b45}
+.ans-final > span:first-child{display:inline-block;font-size:11px;font-weight:800;color:#3f7a4a;background:#fff;border:1px solid #b9ddc6;border-radius:8px;padding:1px 8px;margin-right:8px}
+.zukai{background:#fbfaf5;border:1px dashed #cdbf96;border-radius:8px;padding:8px 12px;margin:8px 0;font-family:'Courier New',monospace;font-size:13px;color:#6a5a32;white-space:pre-wrap;line-height:1.7}
+.zukai::before{content:"📐 図（しくみ）";display:block;font-family:'Hiragino Kaku Gothic ProN',sans-serif;font-size:11px;font-weight:800;color:#8a7434;margin-bottom:4px}
+.gq{margin-top:8px}
+.gq-label{display:inline-block;font-size:11px;font-weight:800;color:#3f6f4a;background:#eef5ee;border:1px solid #cfe2d2;border-radius:9px;padding:1px 8px;margin-bottom:2px}
+.grade{margin-top:6px;font-size:13px;color:#607086;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.o,.x{width:40px;height:40px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:18px;font-weight:700;cursor:pointer;color:#8a8794}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.write3{display:none;margin-top:8px;background:#fff7e8;border-left:4px solid #d9b46d;border-radius:8px;padding:10px 12px;font-size:13.5px;color:#8a5a19;font-weight:700}
+.mt{display:none;margin-top:8px;font-size:13px;background:#fdf6f4;border:1px solid #ecd6d2;border-radius:8px;padding:8px 12px}
+.mt.open{display:block}
+.mt>span{display:block;font-size:12px;font-weight:800;color:#9b514d;margin-bottom:6px}
+.mt button{padding:7px 12px;font-size:12.5px;font-weight:700;background:#fff;border:1px solid #e0d8d6;border-radius:18px;color:#5a5258;cursor:pointer;margin:3px 4px 0 0}
+.mt button.sel{background:#d8b27c;color:#fff;border-color:#d8b27c}
+.math{font-family:'Courier New',monospace;background:#eef1f2;padding:1px 4px;border-radius:3px;font-size:14px}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;margin:0 3px;font-size:.95em}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px;font-weight:700}
+.frac .d{padding:2px 5px 0;font-weight:700}
+.red{color:#9b514d;font-weight:800}
+.blu{color:#2f5a8a;font-weight:800}
+.done{display:block;width:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);color:#fff;font-size:18px;font-weight:900;border:none;padding:16px;border-radius:30px;margin-top:22px;cursor:pointer}
+.fin{text-align:center;color:#3f7a4a;font-size:15px;margin-top:14px;min-height:20px;font-weight:700}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:10px}
+@media print{
+  body{background:#fff;font-size:13px}.wrap{padding:8px}
+  .back,.done,.ans-btn,.grade,.mt{display:none}
+  .ans-box{display:block!important;background:#fafbfa;border:1px solid #ccc}.write3{display:block!important}
+  .unit-banner{break-inside:avoid;page-break-inside:avoid}.q{break-inside:avoid;page-break-inside:avoid}
+}
+.tool-hint{margin:8px 0;border:1px dashed #c9b8d6;border-radius:8px;background:#faf7fc;padding:6px 10px;font-size:12.5px}
+.tool-hint summary{cursor:pointer;font-weight:700;color:#7a5a95}
+.tool-hint div{margin-top:6px;color:#4a3a56;line-height:1.8}
+.tec-link{margin-top:10px;padding:7px 11px;background:#fff8e8;border:1px dashed #e0c88a;border-radius:8px;font-size:12.5px;color:#7a5f22;line-height:1.8}
+.tec-link a{color:#a8761a;font-weight:800}
+</style>
+</head>
+<body>
+<!-- difficulty_standard=L7-v3.0; visible L1-L7 tokens are legacy labels, not current ratings -->
+<script src="difficulty_standard_notice.js" data-audit-status="unreviewed" defer></script>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">特訓S1</span><span class="pg-badge">数学：分数と符号</span><span class="pg-badge">累乗・計算順序・一次方程式 L2-L4</span></div>
+  <h1>特訓S1 分数と符号の精度 ― 9月 大問1 直撃</h1>
+  <p>夏・特訓対策　目安：約30分（問1〜問9）　対象: 中1　全問に徹底解説つき</p>
+  <p class="pg-cheer">きみがテストで<strong>いちばん多く点を落としているのが、この「分数・符号・累乗の順番」</strong>。3回のテストで5回。つまり<strong>ここさえ直せば、いちばん点が増える場所</strong>ということ。9月の大問1は、まるごとこの型で出る。今日の9問は、その大問1の設計図そのもの。ここを固めれば、9月の出だしで一気にリードが取れる🌸</p>
+</div>
+
+<details class="tool-hint">
+  <summary>🔧 道具を確認する（まず自分で考えてから開こう）</summary>
+  <div class="cardbox">
+    <ol>
+      <li><b>① かっこの中</b>を先に計算する</li>
+      <li><b>② 累乗（2乗・3乗）</b>を計算する　←ここで符号が決まる</li>
+      <li><b>③ ×・÷</b> を計算する（÷ は<b>逆数のかけ算</b>に直す）</li>
+      <li><b>④ ＋・−</b> を最後に計算する</li>
+      <li><b>⑤ 約分</b>して答える（答えは約分までがルール）</li>
+      <li>最後に <b>○✕</b> をつける</li>
+    </ol>
+  </div>
+
+  <div class="osarai">
+    <ul>
+      <li>今日いちばん大事なのは、たった1つ。<b>「マイナスは、かっこの中にいる？　外にいる？」</b></li>
+      <li><b>かっこの中にいる</b>マイナスは、2乗するとき<b>いっしょに2乗される</b>（マイナス×マイナス）。</li>
+      <li><b>かっこの外にいる</b>マイナスは、<b>2乗のあとから最後にかける</b>。</li>
+    </ul>
+    <svg class="fig" viewBox="0 0 560 250" width="100%" preserveAspectRatio="xMidYMid meet">
+      <rect x="20" y="18" width="245" height="96" rx="8" fill="#fdf2f4" stroke="#d8a09a" stroke-width="2"/>
+      <text x="36" y="48" font-size="20" font-weight="800" fill="#31415f">(−3)</text>
+      <text x="88" y="38" font-size="14" font-weight="800" fill="#31415f">2</text>
+      <text x="104" y="48" font-size="18" font-weight="800" fill="#31415f">＝ (−3)×(−3)</text>
+      <text x="36" y="80" font-size="14" font-weight="700" fill="#9b514d">マイナスは かっこの中 → いっしょに2乗される</text>
+      <text x="36" y="104" font-size="15" font-weight="800" fill="#2f6b45">答えの符号は ？</text>
+      <rect x="295" y="18" width="245" height="96" rx="8" fill="#eef6fb" stroke="#5b8fbf" stroke-width="2"/>
+      <text x="311" y="48" font-size="20" font-weight="800" fill="#31415f">−3</text>
+      <text x="343" y="38" font-size="14" font-weight="800" fill="#31415f">2</text>
+      <text x="359" y="48" font-size="18" font-weight="800" fill="#31415f">＝ −(3×3)</text>
+      <text x="311" y="80" font-size="14" font-weight="700" fill="#2f5a8a">マイナスは かっこの外 → あとからかける</text>
+      <text x="311" y="104" font-size="15" font-weight="800" fill="#9b514d">答えの符号は ？</text>
+      <rect x="20" y="132" width="520" height="46" rx="8" fill="#fffdf3" stroke="#d9b46d" stroke-width="2"/>
+      <text x="36" y="161" font-size="15" font-weight="800" fill="#8a5a19">同じ「3」と「2乗」なのに、ちがいは かっこ だけ。そこを いちばん最初に見る。</text>
+      <rect x="20" y="192" width="520" height="44" rx="8" fill="#eafaf1" stroke="#9bcfae" stroke-width="2"/>
+      <text x="36" y="220" font-size="15" font-weight="800" fill="#2f6b45">分数でも まったく同じ。かっこの中か 外かを、いちばん最初に見る。</text>
+    </svg>
+  </div>
+</details>
+
+<!-- ===== 大問0 診断 ===== -->
+<div class="unit-banner"><span class="unit-num">診断</span><span class="unit-name">前にやった問題。今日はどう？　L2</span><span class="unit-time">目安 3分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問1</span>次の計算をしなさい。<span class="frac"><span class="n">2</span><span class="d">9</span></span> ＋ <span class="frac"><span class="n">16</span><span class="d">9</span></span> × <span class="frac"><span class="n">3</span><span class="d">8</span></span></div>
+  <div class="note-draw">まず自分で計算してから、答え合わせをしよう。ノートに式を全部書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-win">○がついた人へ：これ、<strong>前は落とした問題</strong>だよ。同じ数字、同じ形。それを今日は自分で解けた。克服できてる🌸　✕だった人へ：まだ落ちこまなくていい。落とす場所がハッキリした＝今日の30分で直せる場所が見えた、ということ。</div>
+    <div class="bx bx-say">聞かれているのは「たし算と かけ算、どっちを先にやる？」。かけ算が先。ここを守れるかどうかを見ている問題。</div>
+    <div class="step q1"><span>①</span>先に かけ算：<span class="frac"><span class="n">16</span><span class="d">9</span></span> × <span class="frac"><span class="n">3</span><span class="d">8</span></span>　→　かける前に約分する（16と8は8で、3と9は3で）</div>
+    <div class="step q1"><span>②</span>約分後：<span class="frac"><span class="n">2</span><span class="d">3</span></span> × <span class="frac"><span class="n">1</span><span class="d">1</span></span> ＝ <span class="frac"><span class="n">2</span><span class="d">3</span></span></div>
+    <div class="step q1"><span>③</span>たし算：<span class="frac"><span class="n">2</span><span class="d">9</span></span> ＋ <span class="frac"><span class="n">2</span><span class="d">3</span></span>　→　通分（分母を9にそろえる）→　<span class="frac"><span class="n">2</span><span class="d">9</span></span> ＋ <span class="frac"><span class="n">6</span><span class="d">9</span></span></div>
+    <div class="step q1"><span>④</span>分子だけ たす：2＋6＝8　→　<span class="frac"><span class="n">8</span><span class="d">9</span></span></div>
+    <div class="bx bx-warn">前に落としたのは、<span class="red">左から順に計算した</span>から。<span class="frac"><span class="n">2</span><span class="d">9</span></span>＋<span class="frac"><span class="n">16</span><span class="d">9</span></span> を先に足すと <span class="frac"><span class="n">18</span><span class="d">9</span></span>＝2 になって、そこに × <span class="frac"><span class="n">3</span><span class="d">8</span></span> をすると <span class="frac"><span class="n">3</span><span class="d">4</span></span> という別の答えになる。式は左から読むけど、計算は左からじゃない。×÷ が ＋− より先。</div>
+    <div class="bx bx-chk">答えの <span class="frac"><span class="n">8</span><span class="d">9</span></span> は 1 より少し小さい。もとの式は <span class="frac"><span class="n">2</span><span class="d">9</span></span>（小さい）＋ <span class="frac"><span class="n">2</span><span class="d">3</span></span>（1より小さい）だから、答えも1より小さいはず。<strong>大きさの感覚が合っている</strong>。</div>
+    <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">8</span><span class="d">9</span></span></div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m18_1"><div class="grade"><span class="gq-label">問1</span>○✕ → <button class="o" onclick="g(this,'m18_1','o')">○</button><button class="x" onclick="g(this,'m18_1','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 大問1 基礎 ===== -->
+<div class="unit-banner"><span class="unit-num">大問1</span><span class="unit-name">基礎｜分数を自由にあつかう　L1-L2</span><span class="unit-time">目安 8分</span></div>
+
+<div class="q calc" data-id="B">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問2【例】</span>次の計算をしなさい。</div>
+  <div class="subq"><span class="no">(1)</span>2<span class="frac"><span class="n">3</span><span class="d">4</span></span> ＋ 1<span class="frac"><span class="n">5</span><span class="d">6</span></span></div>
+  <div class="subq"><span class="no">(2)</span>3<span class="frac"><span class="n">1</span><span class="d">4</span></span> − 1<span class="frac"><span class="n">5</span><span class="d">6</span></span></div>
+  <div class="wex">
+    <div class="wl">(1) 整数どうし・分数どうしに分ける。整数：2＋1＝3。分数：<span class="frac"><span class="n">3</span><span class="d">4</span></span>＋<span class="frac"><span class="n">5</span><span class="d">6</span></span>。</div>
+    <div class="wl">分母4と6の最小公倍数は12。通分して <span class="frac"><span class="n">9</span><span class="d">12</span></span>＋<span class="frac"><span class="n">10</span><span class="d">12</span></span>＝<span class="frac"><span class="n">19</span><span class="d">12</span></span>。これは1より大きい（＝<b>1</b><span class="frac"><span class="n">7</span><span class="d">12</span></span>）。</div>
+    <div class="wl">その <b>1 を整数のほうにわたす</b>：3＋1＝4。よって <b>4<span class="frac"><span class="n">7</span><span class="d">12</span></span></b>。</div>
+    <div class="wl">(2) 通分すると 3<span class="frac"><span class="n">3</span><span class="d">12</span></span> − 1<span class="frac"><span class="n">10</span><span class="d">12</span></span>。<b><span class="frac"><span class="n">3</span><span class="d">12</span></span> から <span class="frac"><span class="n">10</span><span class="d">12</span></span> は引けない</b>。</div>
+    <div class="wl">そこで整数の3から <b>1 を借りる</b>（1＝<span class="frac"><span class="n">12</span><span class="d">12</span></span>）。3<span class="frac"><span class="n">3</span><span class="d">12</span></span> ＝ 2<span class="frac"><span class="n">15</span><span class="d">12</span></span> になる。</div>
+    <div class="wl">整数：2−1＝1。分数：<span class="frac"><span class="n">15</span><span class="d">12</span></span>−<span class="frac"><span class="n">10</span><span class="d">12</span></span>＝<span class="frac"><span class="n">5</span><span class="d">12</span></span>。よって <b>1<span class="frac"><span class="n">5</span><span class="d">12</span></span></b>。</div>
+  </div>
+  <div class="note-draw">読んだら、同じ式をノートに写そう。写すときに「借りる」の1行を声に出して。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">聞かれているのは「整数と分数が くっついた数（帯分数）どうしを、たしひきできる？」。やることは<strong>整数は整数、分数は分数で計算するだけ</strong>。</div>
+    <div class="step q1"><span>(1)</span>3 ＋ <span class="frac"><span class="n">19</span><span class="d">12</span></span> ＝ 3 ＋ 1<span class="frac"><span class="n">7</span><span class="d">12</span></span> ＝ 4<span class="frac"><span class="n">7</span><span class="d">12</span></span></div>
+    <div class="step q1"><span>(2)</span>3<span class="frac"><span class="n">3</span><span class="d">12</span></span> ＝ 2<span class="frac"><span class="n">15</span><span class="d">12</span></span> にしてから引く → 1<span class="frac"><span class="n">5</span><span class="d">12</span></span></div>
+    <div class="bx bx-warn">(1)で <span class="red">3<span class="frac"><span class="n">19</span><span class="d">12</span></span></span> のまま止めるのは 未完成。分子が分母より大きいまま答えにしない。(2)で 引けないのに 10−3 として <span class="frac"><span class="n">7</span><span class="d">12</span></span> とするのは、いちばん多いミス。<strong>ひき算は向きを勝手に変えてはいけない</strong>。</div>
+    <div class="bx bx-chk">(2)の検算：答え 1<span class="frac"><span class="n">5</span><span class="d">12</span></span> に 1<span class="frac"><span class="n">5</span><span class="d">6</span></span> をたして 3<span class="frac"><span class="n">1</span><span class="d">4</span></span> にもどるか？　<span class="frac"><span class="n">5</span><span class="d">12</span></span>＋<span class="frac"><span class="n">10</span><span class="d">12</span></span>＝<span class="frac"><span class="n">15</span><span class="d">12</span></span>＝1<span class="frac"><span class="n">3</span><span class="d">12</span></span>。1＋1＋1＝3 で 3<span class="frac"><span class="n">3</span><span class="d">12</span></span>＝3<span class="frac"><span class="n">1</span><span class="d">4</span></span>。もどった○</div>
+    <div class="ans-final"><span>こたえ</span>(1) 4<span class="frac"><span class="n">7</span><span class="d">12</span></span>　(2) 1<span class="frac"><span class="n">5</span><span class="d">12</span></span></div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m18_2"><div class="grade"><span class="gq-label">問2【例】</span>写せた？ → <button class="o" onclick="g(this,'m18_2','o')">○</button><button class="x" onclick="g(this,'m18_2','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問3【穴あき】</span>次の計算をしなさい。（下の式の ＿＿ を自分でうめて完成させる）</div>
+  <div class="subq"><span class="no">(1)</span><span class="frac"><span class="n">3</span><span class="d">8</span></span> ÷ <span class="frac"><span class="n">9</span><span class="d">4</span></span></div>
+  <div class="hole">
+    <div class="hl">＝ <span class="frac"><span class="n">3</span><span class="d">8</span></span> × <span class="fill">　　</span><span class="memo">← ÷ を × に変えて、うしろの分数をひっくり返す</span></div>
+    <div class="hl">＝ <span class="fill">　　</span><span class="memo">← 約分してから かける</span></div>
+  </div>
+  <div class="subq"><span class="no">(2)</span><span class="frac"><span class="n">5</span><span class="d">12</span></span> × <span class="frac"><span class="n">8</span><span class="d">15</span></span> ÷ <span class="frac"><span class="n">2</span><span class="d">9</span></span></div>
+  <div class="hole">
+    <div class="hl">＝ <span class="frac"><span class="n">5</span><span class="d">12</span></span> × <span class="frac"><span class="n">8</span><span class="d">15</span></span> × <span class="fill">　　</span><span class="memo">← ÷ を × に</span></div>
+    <div class="hl">＝ <span class="fill">　　</span><span class="memo">← 3つまとめて約分してから かける</span></div>
+  </div>
+  <div class="note-draw">まず自分で ＿＿ をうめてから、答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">聞かれているのは「わり算を かけ算に直せる？」。分数のわり算は<strong>ひっくり返してかける</strong>（ひっくり返した数を逆数という）。<span class="frac"><span class="n">9</span><span class="d">4</span></span> の逆数は <span class="frac"><span class="n">4</span><span class="d">9</span></span>。</div>
+    <div class="step q2"><span>(1)①</span><span class="frac"><span class="n">3</span><span class="d">8</span></span> ÷ <span class="frac"><span class="n">9</span><span class="d">4</span></span> ＝ <span class="frac"><span class="n">3</span><span class="d">8</span></span> × <span class="frac"><span class="n">4</span><span class="d">9</span></span></div>
+    <div class="step q2"><span>(1)②</span>約分：3と9は3で、4と8は4で → <span class="frac"><span class="n">1</span><span class="d">2</span></span> × <span class="frac"><span class="n">1</span><span class="d">3</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">6</span></span></div>
+    <div class="step q3"><span>(2)①</span><span class="frac"><span class="n">5</span><span class="d">12</span></span> × <span class="frac"><span class="n">8</span><span class="d">15</span></span> × <span class="frac"><span class="n">9</span><span class="d">2</span></span>　（÷<span class="frac"><span class="n">2</span><span class="d">9</span></span> を ×<span class="frac"><span class="n">9</span><span class="d">2</span></span> に）</div>
+    <div class="step q3"><span>(2)②</span>5と15 → 1と3、8と12 → 2と3、9と(3×3) → 1、2と2 → 1。全部約分すると 1</div>
+    <div class="bx bx-warn"><span class="red">÷ の記号だけ × に変えて、ひっくり返し忘れる</span>のが最多ミス。また 前の分数までひっくり返すのも間違い（ひっくり返すのは ÷ のうしろだけ）。答えが 1 になっても不安にならなくていい。約分しきると 1 になる式は本番でも出る。</div>
+    <div class="bx bx-chk">(1)の検算：<span class="frac"><span class="n">1</span><span class="d">6</span></span> × <span class="frac"><span class="n">9</span><span class="d">4</span></span> ＝ <span class="frac"><span class="n">9</span><span class="d">24</span></span> ＝ <span class="frac"><span class="n">3</span><span class="d">8</span></span>。もとにもどった○　わり算の検算は<strong>答え×わる数</strong>。</div>
+    <div class="ans-final"><span>こたえ</span>(1) <span class="frac"><span class="n">1</span><span class="d">6</span></span>　(2) 1</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m18_3"><div class="grade"><span class="gq-label">問3</span>○✕ → <button class="o" onclick="g(this,'m18_3','o')">○</button><button class="x" onclick="g(this,'m18_3','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="D">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問4</span>次の計算をしなさい。</div>
+  <div class="subq"><span class="no">(1)</span>0.4 ＋ <span class="frac"><span class="n">3</span><span class="d">5</span></span></div>
+  <div class="subq"><span class="no">(2)</span><span class="frac"><span class="n">3</span><span class="d">4</span></span> − 0.5 × <span class="frac"><span class="n">2</span><span class="d">3</span></span></div>
+  <div class="note-draw">まず自分で計算してから、答え合わせをしよう。答えは約分まで。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">聞かれているのは「小数と分数が まざったら どうする？」。答えは1つ、<strong>小数を分数に直してそろえる</strong>。分数を小数にすると割り切れないことがあるから、分数にそろえるのが安全。</div>
+    <div class="step q2"><span>(1)①</span>0.4 ＝ <span class="frac"><span class="n">4</span><span class="d">10</span></span> ＝ <span class="frac"><span class="n">2</span><span class="d">5</span></span>（約分を忘れない）</div>
+    <div class="step q2"><span>(1)②</span><span class="frac"><span class="n">2</span><span class="d">5</span></span> ＋ <span class="frac"><span class="n">3</span><span class="d">5</span></span> ＝ <span class="frac"><span class="n">5</span><span class="d">5</span></span> ＝ 1</div>
+    <div class="step q3"><span>(2)①</span>0.5 ＝ <span class="frac"><span class="n">1</span><span class="d">2</span></span>。かけ算が先だから <span class="frac"><span class="n">1</span><span class="d">2</span></span> × <span class="frac"><span class="n">2</span><span class="d">3</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">3</span></span></div>
+    <div class="step q3"><span>(2)②</span><span class="frac"><span class="n">3</span><span class="d">4</span></span> − <span class="frac"><span class="n">1</span><span class="d">3</span></span> → 通分（分母12）→ <span class="frac"><span class="n">9</span><span class="d">12</span></span> − <span class="frac"><span class="n">4</span><span class="d">12</span></span> ＝ <span class="frac"><span class="n">5</span><span class="d">12</span></span></div>
+    <div class="bx bx-warn">(2)で <span class="red">左から順に <span class="frac"><span class="n">3</span><span class="d">4</span></span> − 0.5 を先に計算する</span>のが危ない。× が先。これは問1とまったく同じミスの型。数字が変わっても、落とし穴は同じ場所にある。あと 0.4 ＝ <span class="frac"><span class="n">4</span><span class="d">10</span></span> のまま答えるのも減点。約分まで。</div>
+    <div class="bx bx-chk">(1)は小数でも確かめられる。<span class="frac"><span class="n">3</span><span class="d">5</span></span> ＝ 0.6 だから 0.4＋0.6＝1.0。答え1と一致○　小数に直して確かめるのは強力な検算。</div>
+    <div class="step q4"><span>コツ</span>よく出る小数⇔分数は<strong>覚えてしまうとラク</strong>。0.5＝<span class="frac"><span class="n">1</span><span class="d">2</span></span>、0.25＝<span class="frac"><span class="n">1</span><span class="d">4</span></span>、0.75＝<span class="frac"><span class="n">3</span><span class="d">4</span></span>、0.2＝<span class="frac"><span class="n">1</span><span class="d">5</span></span>、0.4＝<span class="frac"><span class="n">2</span><span class="d">5</span></span>、0.125＝<span class="frac"><span class="n">1</span><span class="d">8</span></span>。</div>
+    <div class="ans-final"><span>こたえ</span>(1) 1　(2) <span class="frac"><span class="n">5</span><span class="d">12</span></span></div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m18_4"><div class="grade"><span class="gq-label">問4</span>○✕ → <button class="o" onclick="g(this,'m18_4','o')">○</button><button class="x" onclick="g(this,'m18_4','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 大問2 応用（本丸） ===== -->
+<div class="unit-banner"><span class="unit-num">大問2 ★</span><span class="unit-name">応用｜符号と累乗と計算順序（ここが本丸）　L3</span><span class="unit-time">目安 11分</span></div>
+
+<div class="q calc" data-id="E">
+  <div class="qbody">
+    <span class="lead" style="background:#e6f0fb;color:#2f5a8a">問5【例】</span>次の2つを計算し、<b>ちがい</b>を説明しなさい。</div>
+  <div class="subq"><span class="no">(1)</span>−(<span class="frac"><span class="n">2</span><span class="d">3</span></span>)<sup>2</sup></div>
+  <div class="subq"><span class="no">(2)</span>(−<span class="frac"><span class="n">2</span><span class="d">3</span></span>)<sup>2</sup></div>
+  <div class="wex">
+    <div class="wl">(1) マイナスは <b>かっこの外</b>。だから 2乗されるのは <span class="frac"><span class="n">2</span><span class="d">3</span></span> だけ。</div>
+    <div class="wl">まず <span class="frac"><span class="n">2</span><span class="d">3</span></span> × <span class="frac"><span class="n">2</span><span class="d">3</span></span> ＝ <span class="frac"><span class="n">4</span><span class="d">9</span></span>。そのあと外のマイナスをかけて <b>−<span class="frac"><span class="n">4</span><span class="d">9</span></span></b>。</div>
+    <div class="wl">(2) マイナスは <b>かっこの中</b>。だから 2乗されるのは −<span class="frac"><span class="n">2</span><span class="d">3</span></span> ぜんぶ。</div>
+    <div class="wl">(−<span class="frac"><span class="n">2</span><span class="d">3</span></span>) × (−<span class="frac"><span class="n">2</span><span class="d">3</span></span>)。マイナス×マイナス＝<b>プラス</b>。よって <b>＋<span class="frac"><span class="n">4</span><span class="d">9</span></span></b>。</div>
+    <div class="wl">ちがい：<b>マイナスが2乗の中に入っているかどうか</b>。数字はどちらも <span class="frac"><span class="n">4</span><span class="d">9</span></span>。<b>変わるのは符号だけ</b>。</div>
+  </div>
+  <div class="zukai">マイナスが かっこの 外   … 2乗するのは 分数だけ → あとから − をつける → 答えは マイナス
+マイナスが かっこの 中   … 2乗するのは − ごと   → −×− でプラスになる → 答えは プラス
+
+     かっこ  =  「ここまでが2乗の中身だよ」という 囲い</div>
+  <div class="note-draw">読んだら、同じ式をノートに写そう。写すときに「マイナスは中？ 外？」と口に出して。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">聞かれているのは「<strong>2乗の中身はどこまでか</strong>、かっこを見て言える？」。中1でいちばん点差がつくのがここ。数の大きさではなく、囲いの位置を読む問題。</div>
+    <div class="step q1"><span>(1)</span>−(<span class="frac"><span class="n">2</span><span class="d">3</span></span>)<sup>2</sup> ＝ −(<span class="frac"><span class="n">2</span><span class="d">3</span></span>×<span class="frac"><span class="n">2</span><span class="d">3</span></span>) ＝ −<span class="frac"><span class="n">4</span><span class="d">9</span></span></div>
+    <div class="step q2"><span>(2)</span>(−<span class="frac"><span class="n">2</span><span class="d">3</span></span>)<sup>2</sup> ＝ (−<span class="frac"><span class="n">2</span><span class="d">3</span></span>)×(−<span class="frac"><span class="n">2</span><span class="d">3</span></span>) ＝ ＋<span class="frac"><span class="n">4</span><span class="d">9</span></span></div>
+    <div class="step q3"><span>まとめ</span>数字は同じ <span class="frac"><span class="n">4</span><span class="d">9</span></span>。符号だけがちがう。かっこが「2乗の中身」を決めている。</div>
+    <div class="bx bx-warn"><strong>−3<sup>2</sup> は −9。(−3)<sup>2</sup> は ＋9。</strong>マイナスが2乗の中に入っているかどうかで符号が変わる。6月の特訓1(2) <span class="math">(−3)<sup>3</sup> ÷ (<span class="frac"><span class="n">3</span><span class="d">8</span></span>) − 4 × (−3<sup>2</sup>)</span> で答えが −612 になったのは、まさにここ。−3<sup>2</sup> を (−3)<sup>2</sup>＝＋9 と読んでしまったら、最後の項の符号が全部ひっくり返る。正解は −36。問題文のかっこを、指でなぞって確認するクセをつけよう。</div>
+    <div class="bx bx-chk">符号だけの検算法：マイナスの個数を数える。かけ算・わり算では、マイナスが偶数個ならプラス、奇数個ならマイナス。(2)は −が2個（偶数）→ プラス。(1)は 中に−が0個、外に1個 → 全体で1個（奇数）→ マイナス。数字を計算する前に符号だけ先に決められる。</div>
+    <div class="bx bx-link">9月の大問1(1)は、この「累乗と符号」がそのまま出る。<strong>ここは配点が確実に取れる場所</strong>。かっこを見る1秒で、点が守れる。</div>
+    <div class="ans-final"><span>こたえ</span>(1) −<span class="frac"><span class="n">4</span><span class="d">9</span></span>　(2) ＋<span class="frac"><span class="n">4</span><span class="d">9</span></span>　ちがい：マイナスが2乗の中にあるかどうか</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m18_5"><div class="grade"><span class="gq-label">問5【例】</span>写せた？ → <button class="o" onclick="g(this,'m18_5','o')">○</button><button class="x" onclick="g(this,'m18_5','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="F">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問6【穴あき】</span>次の計算をしなさい。（＿＿ を自分でうめて完成させる）　(−<span class="frac"><span class="n">1</span><span class="d">2</span></span>)<sup>3</sup> × (−4)</div>
+  <div class="hole">
+    <div class="hl">＝ (−<span class="frac"><span class="n">1</span><span class="d">2</span></span>) × (−<span class="frac"><span class="n">1</span><span class="d">2</span></span>) × (−<span class="frac"><span class="n">1</span><span class="d">2</span></span>) × (−4)<span class="memo">← 3乗は「3回かける」</span></div>
+    <div class="hl">＝ <span class="fill">　　</span> × (−4)<span class="memo">← まず (−<span class="frac"><span class="n">1</span><span class="d">2</span></span>) の3乗だけを計算する</span></div>
+    <div class="hl">＝ <span class="fill">　　</span><span class="memo">← 符号を先に決めてから、数を計算</span></div>
+  </div>
+  <div class="note-draw">まず自分で ＿＿ をうめてから、答え合わせをしよう。答えは約分まで。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">聞かれているのは「<strong>3乗</strong>すると符号はどうなる？」。2乗はプラスになったけど、3乗はマイナスが3個。奇数個だからマイナスのまま。</div>
+    <div class="step q1"><span>①</span>符号を先に決める。(−<span class="frac"><span class="n">1</span><span class="d">2</span></span>)<sup>3</sup> は マイナスが3個（奇数）→ マイナス</div>
+    <div class="step q1"><span>②</span>数だけ計算：<span class="frac"><span class="n">1</span><span class="d">2</span></span>×<span class="frac"><span class="n">1</span><span class="d">2</span></span>×<span class="frac"><span class="n">1</span><span class="d">2</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">8</span></span>　→　(−<span class="frac"><span class="n">1</span><span class="d">2</span></span>)<sup>3</sup> ＝ −<span class="frac"><span class="n">1</span><span class="d">8</span></span></div>
+    <div class="step q2"><span>③</span>次に × (−4)。マイナス × マイナス ＝ プラス</div>
+    <div class="step q2"><span>④</span>−<span class="frac"><span class="n">1</span><span class="d">8</span></span> × (−4) ＝ ＋<span class="frac"><span class="n">4</span><span class="d">8</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">2</span></span>（約分を忘れない）</div>
+    <div class="bx bx-warn"><span class="red">分母だけ3乗して <span class="frac"><span class="n">1</span><span class="d">8</span></span> ではなく <span class="frac"><span class="n">1</span><span class="d">6</span></span> にする</span>ミスが多い（2×3＝6 としてしまう）。3乗は「3をかける」ではなく「3回かける」。2×2×2＝8。また 3乗なのにプラスにするのも危険。2乗＝プラス、3乗＝もとの符号のままと覚える。最後に <span class="frac"><span class="n">4</span><span class="d">8</span></span> のまま出すのも減点。</div>
+    <div class="bx bx-chk">大きさで確かめる。−<span class="frac"><span class="n">1</span><span class="d">8</span></span> に −4 をかけると、大きさは <span class="frac"><span class="n">1</span><span class="d">8</span></span> の4倍 ＝ <span class="frac"><span class="n">4</span><span class="d">8</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">2</span></span>。符号は マイナス2個 → プラス。<strong>大きさと符号を別々に確かめる</strong>と事故が消える。</div>
+    <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">1</span><span class="d">2</span></span></div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m18_6"><div class="grade"><span class="gq-label">問6</span>○✕ → <button class="o" onclick="g(this,'m18_6','o')">○</button><button class="x" onclick="g(this,'m18_6','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="G">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問7 ★</span>次の計算をしなさい。</div>
+  <div class="subq"><span class="no">(1)</span>(−3)<sup>2</sup> ÷ <span class="frac"><span class="n">9</span><span class="d">4</span></span> − (−<span class="frac"><span class="n">1</span><span class="d">2</span></span>)</div>
+  <div class="subq"><span class="no">(2)</span>−(<span class="frac"><span class="n">3</span><span class="d">4</span></span> − <span class="frac"><span class="n">5</span><span class="d">6</span></span>)</div>
+  <div class="note-draw">まず自分で計算してから、答え合わせをしよう。式は1行ずつ、とばさずに書くこと。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">(1)が聞いているのは「<strong>累乗 → わり算 → ひき算</strong> の順番を守れる？」。(2)が聞いているのは「かっこの前のマイナスは、中の1つ目だけでなくぜんぶにかかる、とわかっている？」。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">① (1)①〜(1)③</div><div class="step q1"><span>(1)①</span>まず累乗：(−3)<sup>2</sup> ＝ ＋9（マイナスがかっこの中 → 2個 → プラス）</div>
+    <div class="step q1"><span>(1)②</span>次にわり算。9 は <span class="frac"><span class="n">9</span><span class="d">1</span></span> と同じ。だから 9 ÷ <span class="frac"><span class="n">9</span><span class="d">4</span></span> ＝ <span class="frac"><span class="n">9</span><span class="d">1</span></span> × <span class="frac"><span class="n">4</span><span class="d">9</span></span>。上の9と下の9が消えて 4</div>
+    <div class="step q1"><span>(1)③</span>最後にひき算：4 − (−<span class="frac"><span class="n">1</span><span class="d">2</span></span>) ＝ 4 ＋ <span class="frac"><span class="n">1</span><span class="d">2</span></span> ＝ <span class="frac"><span class="n">9</span><span class="d">2</span></span>（＝4<span class="frac"><span class="n">1</span><span class="d">2</span></span>）</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">② (2)①〜(2)別解</div><div class="step q4"><span>(2)①</span>先に <b>かっこの中</b>：<span class="frac"><span class="n">3</span><span class="d">4</span></span> − <span class="frac"><span class="n">5</span><span class="d">6</span></span> → 通分（分母12）→ <span class="frac"><span class="n">9</span><span class="d">12</span></span> − <span class="frac"><span class="n">10</span><span class="d">12</span></span> ＝ −<span class="frac"><span class="n">1</span><span class="d">12</span></span></div>
+    <div class="step q4"><span>(2)②</span>外のマイナスをかける：−(−<span class="frac"><span class="n">1</span><span class="d">12</span></span>) ＝ <span class="frac"><span class="n">1</span><span class="d">12</span></span></div>
+    <div class="step q5"><span>(2)別解</span>先に配ってもよい：−(<span class="frac"><span class="n">3</span><span class="d">4</span></span> − <span class="frac"><span class="n">5</span><span class="d">6</span></span>) ＝ −<span class="frac"><span class="n">3</span><span class="d">4</span></span> ＋ <span class="frac"><span class="n">5</span><span class="d">6</span></span> ＝ −<span class="frac"><span class="n">9</span><span class="d">12</span></span> ＋ <span class="frac"><span class="n">10</span><span class="d">12</span></span> ＝ <span class="frac"><span class="n">1</span><span class="d">12</span></span>。同じ答えになる○</div>
+    <div class="bx bx-warn">(1)で <span class="red">9 ÷ <span class="frac"><span class="n">9</span><span class="d">4</span></span> を <span class="frac"><span class="n">9</span><span class="d">4</span></span> ÷ 9 の向きで計算する</span>のは×。わり算に順番の入れかえは効かない。さらに − (−<span class="frac"><span class="n">1</span><span class="d">2</span></span>) を そのまま − <span class="frac"><span class="n">1</span><span class="d">2</span></span> にすると <span class="frac"><span class="n">7</span><span class="d">2</span></span> になり不正解。マイナスのひき算は プラスのたし算。<br>(2)は −<span class="frac"><span class="n">3</span><span class="d">4</span></span> − <span class="frac"><span class="n">5</span><span class="d">6</span></span> とするのが最多ミス。かっこの前のマイナスは中の両方に配る。1つ目だけにかけて2つ目を忘れると、答えが −<span class="frac"><span class="n">19</span><span class="d">12</span></span> になってしまう。これは6月に −612 を出したのと同じ「符号のとりこぼし」。</div>
+    <div class="bx bx-chk">(2)の検算：かっこの中は <span class="frac"><span class="n">3</span><span class="d">4</span></span>（0.75）から <span class="frac"><span class="n">5</span><span class="d">6</span></span>（約0.83）を引くからマイナスの小さい数。それに外のマイナスをかけるから、答えはプラスの小さい数になるはず。<span class="frac"><span class="n">1</span><span class="d">12</span></span> は合っている○　答えの符号と大きさを、計算する前に予想するのが最強の防御。</div>
+    <div class="bx bx-link">9月の大問1(1)(2)は、この2つの型がそのまま出る。累乗の符号と<strong>かっこの前のマイナス</strong>。この2つだけで、大問1の半分の点が動く。</div>
+    <div class="ans-final"><span>こたえ</span>(1) <span class="frac"><span class="n">9</span><span class="d">2</span></span>　(2) <span class="frac"><span class="n">1</span><span class="d">12</span></span></div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c1" target="_blank">マル秘テクニック集 第1章</a></div>
+  </div>
+  <div class="gq" data-gid="m18_7"><div class="grade"><span class="gq-label">問7 ★</span>○✕ → <button class="o" onclick="g(this,'m18_7','o')">○</button><button class="x" onclick="g(this,'m18_7','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<!-- ===== 大問3 発展 ===== -->
+<div class="unit-banner"><span class="unit-num">大問3 ★</span><span class="unit-name">発展｜一次方程式（分数・小数の係数）　L3-L4</span><span class="unit-time">目安 8分</span></div>
+
+<div class="wex">
+  <div class="wl"><b>【例】</b>方程式 <span class="frac"><span class="n">x＋1</span><span class="d">2</span></span> − <span class="frac"><span class="n">x</span><span class="d">3</span></span> ＝ 1 を解く。</div>
+  <div class="wl">分数のままだと計算しにくい。だから <b>分母を消したい</b>。分母は <b>2</b> と <b>3</b>。2でも3でもわり切れる数をかければ、<b>両方いっぺんに消える</b>。それが <b>6</b>（2と3の最小公倍数）。だから <b>両辺ぜんぶに 6 をかける</b>。</div>
+  <div class="wl">6 × <span class="frac"><span class="n">x＋1</span><span class="d">2</span></span> → 6 ÷ 2 ＝ 3 が残るので <b>3(x＋1)</b>。　6 × <span class="frac"><span class="n">x</span><span class="d">3</span></span> → 6 ÷ 3 ＝ 2 が残るので <b>2x</b>。　6 × 1 ＝ 6。</div>
+  <div class="wl">よって <span class="math">3(x＋1) − 2x ＝ 6</span>。ここで <b>分子は必ずかっこでくくる</b>（分子は「ひとかたまり」だから）。</div>
+  <div class="wl">かっこをはずす：<span class="math">3x ＋ 3 − 2x ＝ 6</span>　→　<span class="math">x ＋ 3 ＝ 6</span>　→　<b>x ＝ 3</b>。</div>
+  <div class="wl">たしかめ：x＝3 を入れると <span class="frac"><span class="n">3＋1</span><span class="d">2</span></span> ＝ 2、<span class="frac"><span class="n">3</span><span class="d">3</span></span> ＝ 1。2 − 1 ＝ 1 ○　合っている。</div>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qbody">
+    <span class="lead" style="background:#fbe9cf;color:#8a5a17">問8【穴あき】</span>次の方程式を解きなさい。（＿＿ を自分でうめて完成させる）</div>
+  <div class="subq"><span class="frac"><span class="n">x−1</span><span class="d">2</span></span> − <span class="frac"><span class="n">2x＋1</span><span class="d">3</span></span> ＝ 1</div>
+  <div class="hole">
+    <div class="hl">両辺に <span class="fill">　　</span> をかける<span class="memo">← 2と3の最小公倍数</span></div>
+    <div class="hl">3(x−1) − 2(2x＋1) ＝ 6<span class="memo">← 分子は かっこでくくる（ここは書いてあげた）</span></div>
+    <div class="hl"><span class="fill">　　　　　　</span> ＝ 6<span class="memo">← かっこをはずして整理する</span></div>
+    <div class="hl">x ＝ <span class="fill">　　</span></div>
+  </div>
+  <div class="note-draw">まず自分で ＿＿ をうめてから、答え合わせをしよう。最後に必ず代入して たしかめること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">聞かれているのは「<strong>分母を消してから解く</strong>ことができる？」。分数の方程式は、分数のまま戦わない。両辺に最小公倍数をかけて、整数の方程式に変える。それだけ。</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ①〜②</div><div class="step q1"><span>①</span>両辺に 6 をかける（2と3の最小公倍数）</div>
+    <div class="step q1"><span>②</span>3(x−1) − 2(2x＋1) ＝ 6　分子は必ずかっこでくくる</div>
+    <div style="font-weight:800;color:#2f5a8a;margin:10px 0 4px;font-size:13px">◆ ③〜コツ</div><div class="step q2"><span>③</span>かっこをはずす：3x − 3 − 4x − 2 ＝ 6</div>
+    <div class="step q2"><span>④</span>整理：−x − 5 ＝ 6　→　−x ＝ 11</div>
+    <div class="step q2"><span>⑤</span>−x は「x に −1 をかけたもの」。だから両辺を −1 でわる。左：−x ÷ (−1) ＝ x　右：11 ÷ (−1) ＝ −11。よって x ＝ −11</div>
+    <div class="step q3"><span>コツ</span>−x が出たら、両辺の符号をぜんぶひっくり返すだけ。</div>
+    <div class="bx bx-warn"><span class="red">− 2(2x＋1) を −4x ＋ 2 とする</span>のが最多ミス。マイナスはかっこの中のぜんぶにかかるから −4x − 2。これは問7(2)の「かっこの前のマイナス」と同じミスの型。今日3回目に出てきた同じ落とし穴。<br>もう1つ、分子をかっこでくくらず 3x−1 と書くのも危険。<span class="frac"><span class="n">x−1</span><span class="d">2</span></span> の分子は「x−1 ぜんぶ」。6をかけたら 3 が x にも −1 にもかかる。<br>さらに 右辺の 1 に 6 をかけ忘れる（＝1のまま）。両辺の「ぜんぶ」にかける。</div>
+    <div class="bx bx-chk">x ＝ −11 を もとの式に入れる。<span class="frac"><span class="n">−11−1</span><span class="d">2</span></span> ＝ <span class="frac"><span class="n">−12</span><span class="d">2</span></span> ＝ −6。<span class="frac"><span class="n">2×(−11)＋1</span><span class="d">3</span></span> ＝ <span class="frac"><span class="n">−21</span><span class="d">3</span></span> ＝ −7。−6 − (−7) ＝ −6 ＋ 7 ＝ 1 ○　左辺＝右辺。方程式は代入すれば100%自分で採点できる。答案では必ずやること。</div>
+    <div class="bx bx-link">9月 大問1(4) は分数係数の一次方程式。<strong>この形がそのまま出る</strong>。分母を払う1行を書けるかどうかだけ。</div>
+    <div class="ans-final"><span>こたえ</span>x ＝ −11</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="m18_8"><div class="grade"><span class="gq-label">問8</span>○✕ → <button class="o" onclick="g(this,'m18_8','o')">○</button><button class="x" onclick="g(this,'m18_8','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<div class="q calc" data-id="I">
+  <div class="qbody">
+    <span class="lead" style="background:#f7dce8;color:#9a3f63">問9 ★</span>次の方程式を解きなさい。　0.3x − 1.2 ＝ 0.5x ＋ 0.4</div>
+  <div class="note-draw">まず自分で解いてから、答え合わせをしよう。最後に必ず代入して たしかめること。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="bx bx-say">聞かれているのは「<strong>小数も分数と同じように消せる</strong>と気づける？」。分数のときは最小公倍数をかけた。小数のときは 10 をかける（小数点が1つなら10、2つなら100）。やっていることはまったく同じ＝じゃまな形を消して整数にする。</div>
+    <div class="step q1"><span>①</span>両辺に 10 をかける（ぜんぶの項にかける）</div>
+    <div class="step q1"><span>②</span>3x − 12 ＝ 5x ＋ 4</div>
+    <div class="step q2"><span>③</span>x を左に、数を右に集める：3x − 5x ＝ 4 ＋ 12</div>
+    <div class="step q2"><span>④</span>−2x ＝ 16　→　x ＝ −8</div>
+    <div class="bx bx-warn"><span class="red">1.2 に 10 をかけるのを忘れて 3x − 1.2 ＝ 5x ＋ 4 とする</span>のが最多ミス。10 は「ぜんぶの項」にかける。1つでも忘れたら別の式になる。<br>次に −2x ＝ 16 から x ＝ 8 とする（マイナスを落とす）。−2 でわるのだから、答えはマイナス。これも「符号のとりこぼし」＝きみが6月に −612 を出したのと根っこは同じ。<br>移項したのに符号を変えない（3x − 5x ＝ 4 − 12 としてしまう）のも注意。引っ越したら符号は反対になる。</div>
+    <div class="bx bx-chk">x ＝ −8 を もとの式に入れる。左辺：0.3 × (−8) − 1.2 ＝ −2.4 − 1.2 ＝ −3.6。右辺：0.5 × (−8) ＋ 0.4 ＝ −4 ＋ 0.4 ＝ −3.6。左辺＝右辺 ○　合っている。</div>
+    <div class="bx bx-link">9月 大問1(3) は小数係数の一次方程式。<strong>分数は最小公倍数、小数は10や100</strong>。「じゃまな形を消して整数にする」という1つの考え方で、(3)も(4)も両方たおせる。</div>
+    <div class="ans-final"><span>こたえ</span>x ＝ −8</div>
+      <div class="tec-link">型：<b>計算</b>　この問題で使える技 → <a href="特訓TEC_マル秘テクニック集_計算が楽になる技.html#c0" target="_blank">マル秘テクニック集 第0章</a></div>
+  </div>
+  <div class="gq" data-gid="m18_9"><div class="grade"><span class="gq-label">問9 ★</span>○✕ → <button class="o" onclick="g(this,'m18_9','o')">○</button><button class="x" onclick="g(this,'m18_9','x')">✕</button></div><div class="mt"><span>ミスの型は？</span><button onclick="m(this)">計算ミス</button><button onclick="m(this)">解説で分かった</button><button onclick="m(this)">解説見ても理解できない</button></div><div class="write3">📝 まちがえたら、①〜⑤の手順をノートに書き直そう</div></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓S1 分数と符号の精度 完了）</button>
+<div class="fin" id="fin"></div>
+<div class="endcheer">9問おつかれさま！今日いちばん覚えてほしいのは、たった一言。<strong>「マイナスは、かっこの中？ 外？」</strong>。それを式を読む前に1秒だけ確認する。それだけで、今まで落としてきた点のほとんどが戻ってくる。6月に −612 と書いた式も、いまのきみならもう見抜ける。9月の大問1は、ぜんぶ今日やった型だよ🌸</div>
+
+</div>
+
+<script>
+var KEY='tokkun_m18';
+function t(b){var a=b.parentNode.querySelector('.ans-box');var open=a.classList.toggle('open');var closed=b.getAttribute('data-label')||'答えを見る';b.textContent=open?'とじる':closed;}
+var RMQ_KIND='分数と符号';
+
+/* ===== 数学キュー送りフック（×→revmq_dyn／○→po++）=====
+   受け皿=復習数学_まちがえ復習キュー.html の mergeDyn(revmq_dyn) が読む。 */
+var RMQ_DYN='revmq_dyn';
+function rmqClean(el){if(!el)return '';var t=el.textContent||'';t=t.replace(/^\s*こたえ\s*/,'');t=t.replace(/[\s　]+/g,' ').trim();return t;}
+function rmqToday(){var d=new Date();return (d.getMonth()+1)+'月'+d.getDate()+'日';}
+function sendToRevMQ(btn,id,result){
+  try{
+    if(typeof KEY==='undefined')return;
+    if(String(KEY).indexOf('revmq')===0)return;              /* 受け皿自身では動かさない */
+    var q=btn&&btn.closest?btn.closest('.q'):null; if(!q)return;
+    var leadEl=q.querySelector('.lead'); if(!leadEl)return;
+    var label=rmqClean(leadEl);
+    if(/【例】/.test(label))return;                            /* 例題は復習に送らない */
+    var qtxt=leadEl.parentNode?rmqClean(leadEl.parentNode):'';
+    if(label&&qtxt.indexOf(label)===0)qtxt=qtxt.slice(label.length).trim();
+    var ans=rmqClean(q.querySelector('.ans-final'));
+    if(!qtxt||!ans)return;
+    var src=KEY+'_'+id;
+    var arr;try{arr=JSON.parse(localStorage.getItem(RMQ_DYN));}catch(e){arr=null;}
+    if(!Array.isArray(arr))arr=[];
+    var hit=null;for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=rmqToday();}
+    else{arr.push({src:src,jp:qtxt,en:ans,kind:RMQ_KIND,badge:'suchoku',day:rmqToday(),po:0,px:1});}
+    try{localStorage.setItem(RMQ_DYN,JSON.stringify(arr));}catch(e){}
+  }catch(e){}
+}
+
+function g(btn,id,v){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+id);var _b=btn.closest('.gq');var _mt=_b?_b.querySelector('.mt'):null;if(_mt){_mt.classList.remove('open');_mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');}var _w3=_b?_b.querySelector('.write3'):null;if(_w3)_w3.style.display='none';return;}
+  var box=btn.closest('.gq');box.querySelectorAll('.o,.x').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+id,v);try{sendToRevMQ(btn,id,v);}catch(e){}
+  var mt=box.querySelector('.mt');var w3=box.querySelector('.write3');
+  if(v==='x'){ if(mt)mt.classList.add('open'); if(w3)w3.style.display='block'; }
+  else{ if(mt){mt.classList.remove('open');mt.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});localStorage.removeItem(KEY+'_'+id+'_m');} if(w3)w3.style.display='none'; }
+}
+function m(btn){if(btn.classList.contains('sel')){btn.classList.remove('sel');localStorage.removeItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m');return;}var w=btn.parentNode;w.querySelectorAll('button').forEach(function(e){e.classList.remove('sel');});btn.classList.add('sel');localStorage.setItem(KEY+'_'+btn.closest('.gq').dataset.gid+'_m',btn.textContent);}
+function finish(){localStorage.setItem(KEY+'_done','1');document.getElementById('fin').textContent='よくがんばった！分数と符号の精度 クリア 🎉';document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+window.onload=function(){
+  document.querySelectorAll('.gq').forEach(function(box){var id=box.dataset.gid;if(!id)return;var v=localStorage.getItem(KEY+'_'+id);
+    if(v){var b=box.querySelector('.'+v);if(b)b.classList.add('sel');
+      if(v==='x'){var mt=box.querySelector('.mt');if(mt){mt.classList.add('open');var mv=localStorage.getItem(KEY+'_'+id+'_m');if(mv){mt.querySelectorAll('button').forEach(function(e){if(e.textContent===mv)e.classList.add('sel');});}}var w3=box.querySelector('.write3');if(w3)w3.style.display='block';}}});
+  if(localStorage.getItem(KEY+'_done')==='1'){document.getElementById('doneBtn').textContent='✓ 完了ずみ';}
+};
+</script>
+</body>
+</html>

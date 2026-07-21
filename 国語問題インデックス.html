@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中1夏前 国語プリント 問題インデックス台帳</title>
+<style>
+  :root{
+    --bg:#f6f8f4; --ink:#26322a; --sub:#52624f;
+    --card:#ffffff; --line:#e0e7dc;
+    --hd-bg:#e9f1e6; --hd-bd:#cfdec6; --hd-ink:#2c3f2a;
+    --accent:#4a7a52;            /* 国語＝緑系のメインアクセント */
+    /* カテゴリ色（国語：知識=緑 / 記述=橙 / 読解=青紫 / 評論=藍青） */
+    --c-chishiki:#8fbb86;  --c-chishiki-s:#e7f1e3;  --c-chishiki-i:#3a6b40;
+    --c-kijutsu:#dba96f;   --c-kijutsu-s:#f7ebda;   --c-kijutsu-i:#8a5a26;
+    --c-dokkai:#9b8fce;    --c-dokkai-s:#ece8f6;    --c-dokkai-i:#534182;
+    --c-hyoron:#5c93b8;    --c-hyoron-s:#e2eef5;    --c-hyoron-i:#244e6b;
+    --hole:#f6d3cf;        --hole-bd:#e3a8a2;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+  body{font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Meiryo',sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.6; padding:18px 16px 80px; font-size:16px;}
+  .wrap{width:100%; max-width:1180px; margin:0 auto;}
+
+  /* ダッシュボードへ戻る（台帳ビューなので「もどる」ナビは置かず、冒頭の導線のみ） */
+  .dashlinks{display:flex; flex-wrap:wrap; gap:9px; margin-bottom:14px;}
+  .dashlink{display:inline-flex; align-items:center; gap:7px; background:#fff; border:1px solid var(--hd-bd);
+    border-radius:24px; padding:10px 16px; font-size:13.5px; font-weight:800; color:var(--hd-ink);
+    text-decoration:none; min-height:44px;}
+  .dashlink:active{transform:scale(.97);}
+  .dashlink .ar{font-weight:900; color:var(--accent);}
+
+  /* セクションタブ */
+  .sectabs{display:flex; flex-wrap:wrap; gap:9px; margin-bottom:14px;}
+  .sectab{display:inline-flex; align-items:center; gap:8px; background:#fff; border:1px solid var(--hd-bd);
+    border-radius:26px; padding:11px 18px; font-size:14.5px; font-weight:900; color:var(--hd-ink);
+    cursor:pointer; min-height:46px;}
+  .sectab:active{transform:scale(.97);}
+  .sectab.active{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .sectab .cnt{display:inline-flex; align-items:center; justify-content:center; min-width:26px; height:24px; padding:0 7px;
+    border-radius:12px; background:#e3efdf; color:#37583a; font-size:12.5px; font-weight:900;}
+  .sectab.active .cnt{background:#fff; color:var(--accent);}
+
+  /* ヘッダ */
+  .pg-hd{background:var(--hd-bg); border:1px solid var(--hd-bd); border-radius:14px; padding:22px 24px; margin-bottom:16px;}
+  .pg-hd .badge{display:inline-block; background:#daeed3; color:#37583a; font-size:12px; font-weight:800; padding:3px 12px; border:1px solid #c3dcb8; border-radius:18px; margin-bottom:10px;}
+  .pg-hd h1{font-size:25px; font-weight:900; color:var(--hd-ink); margin-bottom:6px;}
+  .pg-hd p{font-size:13.5px; color:var(--sub);}
+  .pg-hd .seclead{font-size:13px; font-weight:800; color:var(--accent); margin-top:8px;}
+  .stats{display:flex; flex-wrap:wrap; gap:12px; margin-top:16px;}
+  .stat{background:#fff; border:1px solid var(--hd-bd); border-radius:12px; padding:12px 20px; min-width:140px; flex:1;}
+  .stat .num{font-size:30px; font-weight:900; color:var(--accent); line-height:1.1;}
+  .stat .lbl{font-size:12.5px; font-weight:800; color:var(--sub); margin-top:3px;}
+  .stat .dyn{font-size:11.5px; font-weight:800; color:#8a5a26; margin-top:4px;}
+  .catsplit{display:flex; flex-wrap:wrap; gap:8px; margin-top:14px;}
+  .csplit{font-size:12px; font-weight:800; border-radius:18px; padding:5px 13px;}
+  .csplit.k{background:var(--c-chishiki-s); color:var(--c-chishiki-i); border:1px solid #bcd9b3;}
+  .csplit.j{background:var(--c-kijutsu-s); color:var(--c-kijutsu-i); border:1px solid #e6c79b;}
+  .csplit.d{background:var(--c-dokkai-s); color:var(--c-dokkai-i); border:1px solid #cabfe6;}
+  .csplit.h{background:var(--c-hyoron-s); color:var(--c-hyoron-i); border:1px solid #b6d2e3;}
+
+  /* セクション見出し */
+  .sec-hd{margin:24px 2px 12px; padding:9px 16px; border-radius:10px;
+    background:#edf3ea; border:1px solid #dde7d8; color:var(--hd-ink); font-size:16px; font-weight:900;}
+  .sec-hd small{display:block; font-size:12px; font-weight:700; color:var(--sub); margin-top:3px;}
+
+  /* ★整合性アラート パネル（赤枠・目立たせる） */
+  .alertpanel{background:#fdecea; border:1px solid #f0b7b1; border-left:8px solid #d9534f; border-radius:14px; padding:16px 18px; margin-bottom:16px;}
+  .alertpanel h2{font-size:17px; font-weight:900; color:#b23b34; margin-bottom:4px;}
+  .alertpanel .lead{font-size:12.5px; color:#7a4a47; margin-bottom:12px; line-height:1.7;}
+  .alertlist{list-style:none; display:flex; flex-direction:column; gap:9px;}
+  .alertlist li{background:#fff; border:1px solid #f0c7c3; border-radius:10px; padding:10px 13px; font-size:12.8px; line-height:1.7; color:#5c3a37;}
+  .alertlist li b{color:#b23b34;}
+  .alertlist .code{font-family:'SFMono-Regular',Consolas,'Courier New',monospace; font-size:12px; background:#fbe3e0; border:1px solid #f0c7c3; border-radius:5px; padding:1px 6px; color:#a23b34;}
+  .alertfoot{margin-top:12px; font-size:12px; font-weight:800; color:#9a3f39; background:#fff3f1; border:1px dashed #e3a8a2; border-radius:9px; padding:9px 12px;}
+
+  /* 弱点逆引きパネル */
+  .weakpanel{background:#fbf4ea; border:1px solid #e6cf9b; border-left:8px solid #d59a4a; border-radius:14px; padding:16px 18px; margin-bottom:16px;}
+  .weakpanel h2{font-size:17px; font-weight:900; color:#8a5a26; margin-bottom:4px;}
+  .weakpanel .lead{font-size:12.5px; color:#7a5a3a; margin-bottom:12px; line-height:1.7;}
+  .weakbtns{display:flex; flex-wrap:wrap; gap:10px;}
+  .weakbtn{display:flex; align-items:center; gap:8px; background:#fff; border:1px solid #e6cf9b; border-radius:24px;
+    padding:9px 16px; font-size:13.5px; font-weight:800; color:#8a5a26; cursor:pointer; min-height:44px;}
+  .weakbtn:active{transform:scale(.97);}
+  .weakbtn.active{background:#d59a4a; color:#fff; border-color:#d59a4a;}
+  .weakbtn.hole{border-style:dashed; border-color:#e3a8a2; color:#b23b34;}
+  .weakbtn .cnt{display:inline-flex; align-items:center; justify-content:center; min-width:24px; height:24px; padding:0 6px;
+    border-radius:12px; background:#f4e6cc; color:#8a5a26; font-size:12px; font-weight:900;}
+  .weakbtn.active .cnt{background:#fff; color:#8a5a26;}
+  .weakbtn.hole .cnt{background:#f7d7d4; color:#b23b34;}
+
+  /* フィルタバー */
+  .filterbar{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:16px 18px; margin-bottom:16px; box-shadow:0 2px 8px rgba(58,72,55,.06);}
+  .frow{display:flex; flex-wrap:wrap; gap:14px 22px; margin-bottom:14px;}
+  .fgroup{min-width:0;}
+  .fgroup > .glbl{display:block; font-size:12px; font-weight:900; color:var(--sub); margin-bottom:6px;}
+  .chips{display:flex; flex-wrap:wrap; gap:7px;}
+  .chip{display:inline-flex; align-items:center; gap:5px; background:#f2f6ef; border:1px solid var(--line); border-radius:18px;
+    padding:7px 13px; font-size:13px; font-weight:700; color:var(--ink); cursor:pointer; min-height:40px;}
+  .chip:active{transform:scale(.96);}
+  .chip.active{background:var(--accent); color:#fff; border-color:var(--accent);}
+  .chip.zero{opacity:.42;}
+  .chip .c{font-size:11px; font-weight:900; opacity:.8;}
+  .searchrow{display:flex; flex-wrap:wrap; gap:10px; align-items:center;}
+  .searchrow input[type=search]{flex:1; min-width:200px; font-size:15px; padding:11px 14px; border:1px solid var(--line);
+    border-radius:10px; background:#fff; min-height:44px;}
+  .resetbtn{font-size:13.5px; font-weight:800; color:var(--sub); background:#fff; border:1px solid var(--line);
+    border-radius:24px; min-height:44px; padding:9px 20px; cursor:pointer;}
+  .resetbtn:active{transform:scale(.97);}
+  .reslabel{font-size:13px; font-weight:800; color:var(--accent); white-space:nowrap;}
+
+  /* ヒートマップ（行＝ドメイン／値＝採点項目数） */
+  .heatwrap{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:16px; overflow-x:auto; box-shadow:0 2px 8px rgba(58,72,55,.06);}
+  table.heat{border-collapse:separate; border-spacing:5px; width:100%; min-width:520px;}
+  table.heat th{font-size:12.5px; font-weight:900; color:var(--sub); padding:6px 8px; text-align:center; white-space:nowrap;}
+  table.heat th.domname{text-align:left; min-width:150px;}
+  table.heat td{text-align:center; padding:0;}
+  .hcell{display:flex; align-items:center; justify-content:center; width:100%; min-width:56px; height:46px; border-radius:9px;
+    font-size:15px; font-weight:900; cursor:default; border:1px solid transparent;}
+  .hcell.hole{background:var(--hole); border-color:var(--hole-bd); color:#a04540;}
+  .hcell.has{color:#2c4a30; background:#dfeed9;}
+  .hbar{position:relative; width:100%; height:14px; background:#eef3ec; border-radius:7px; overflow:hidden; margin-top:4px;}
+  .hbar > span{position:absolute; left:0; top:0; height:100%; background:var(--c-chishiki); border-radius:7px;}
+  .hrow-hole .domname{color:#a04540;}
+  .heatlegend{font-size:12px; color:var(--sub); margin-top:8px; display:flex; gap:16px; flex-wrap:wrap; align-items:center;}
+  .heatlegend .sw{display:inline-block; width:16px; height:16px; border-radius:4px; vertical-align:middle; margin-right:5px;}
+  .heatnote{font-size:11.5px; color:var(--sub); margin-top:6px;}
+
+  /* 大問マップ */
+  .exammap{margin-bottom:8px;}
+  .exam-grp{background:var(--card); border:1px solid var(--line); border-radius:12px; padding:12px 16px; margin-bottom:10px; box-shadow:0 2px 8px rgba(58,72,55,.06);}
+  .exam-grp.hole{border-color:var(--hole-bd); background:#fdf2f1;}
+  .exam-grp .eh{display:flex; flex-wrap:wrap; align-items:baseline; gap:8px 12px; margin-bottom:8px;}
+  .exam-grp .ecode{font-size:14px; font-weight:900; color:#fff; background:var(--accent); border-radius:10px; padding:3px 12px;}
+  .exam-grp.hole .ecode{background:#d9534f;}
+  .exam-grp .edesc{font-size:13px; font-weight:700; color:var(--sub);}
+  .exam-grp .ecnt{font-size:12px; font-weight:800; color:var(--accent); margin-left:auto;}
+  .exam-grp.hole .ecnt{color:#b23b34;}
+  .exam-items{display:flex; flex-wrap:wrap; gap:7px;}
+  .exam-pill{display:inline-block; text-decoration:none; background:#edf3ea; border:1px solid #cfdec6; color:#37583a;
+    border-radius:16px; padding:7px 13px; font-size:12.5px; font-weight:800; min-height:38px;}
+  .exam-pill:active{opacity:.7;}
+  .exam-empty{font-size:12.8px; color:#a04540; font-weight:800; line-height:1.7;}
+
+  /* 一覧グリッド */
+  .grid{display:grid; grid-template-columns:repeat(auto-fill,minmax(330px,1fr)); gap:14px;}
+  .card{background:var(--card); border:1px solid var(--line); border-left:7px solid var(--line);
+    border-radius:13px; position:relative; box-shadow:0 2px 8px rgba(58,72,55,.06); transition:transform .1s ease;}
+  .card .open{display:block; text-decoration:none; color:inherit; padding:15px 16px 16px; border-radius:13px;}
+  .card .open:active{transform:scale(.99);}
+  .card .toprow{display:flex; align-items:center; gap:8px; flex-wrap:wrap; margin-bottom:7px;}
+  .card .variant{font-size:12px; font-weight:900; color:#fff; background:var(--accent); border-radius:10px; padding:2px 10px;}
+  .card .catbadge{font-size:11.5px; font-weight:900; border-radius:10px; padding:2px 10px;}
+  .card .warnmark{margin-left:auto; font-size:13px; font-weight:900; color:#b23b34; background:#fdecea; border:1px solid #f0c7c3; border-radius:10px; padding:2px 9px;}
+  .card .title{font-size:16.5px; font-weight:900; line-height:1.4; margin-bottom:4px; padding-right:8px;}
+  .card .unit{font-size:12.5px; font-weight:700; color:var(--sub); margin-bottom:9px;}
+  .card .cnote{font-size:11.8px; font-weight:700; color:#52624f; background:#f1f6ee; border:1px solid var(--line);
+    border-radius:9px; padding:6px 10px; line-height:1.6; margin-bottom:9px;}
+  .card .metarow{display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:8px;}
+  .qbadge{font-size:11.5px; font-weight:800; color:var(--sub); background:#f1f4ef; border:1px solid var(--line); border-radius:8px; padding:2px 9px;}
+  .qbadge.g{color:var(--accent); background:var(--c-chishiki-s); border-color:#bcd9b3;}
+  .keybadge{font-size:11px; font-weight:800; color:#3a5687; background:#eef2f7; border:1px solid #cfdcea; border-radius:8px; padding:2px 9px; font-family:'SFMono-Regular',Consolas,monospace;}
+  .keybadge.bad{color:#b23b34; background:#fdecea; border-color:#f0c7c3;}
+  .modoki{font-size:11px; font-weight:700; color:#5e6b58; background:#eef2ec; border:1px solid #dfe6dc; border-radius:8px; padding:2px 9px;}
+  .modoki.bad{color:#b23b34; background:#fdecea; border-color:#f0c7c3;}
+  .chiprow{display:flex; flex-wrap:wrap; gap:6px; margin-top:2px;}
+  .wchip{font-size:11px; font-weight:800; color:#8a5a26; background:#fbf4ea; border:1px solid #e6cf9b; border-radius:10px; padding:2px 9px;}
+  .echip{font-size:11px; font-weight:800; color:#37583a; background:#edf3ea; border:1px solid #cfdec6; border-radius:10px; padding:2px 9px;}
+  .dchip{font-size:11px; font-weight:700; color:#534182; background:#ece8f6; border:1px solid #cabfe6; border-radius:10px; padding:2px 9px;}
+  /* カテゴリ別 左帯＆バッジ */
+  .card.cat-chishiki{border-left-color:var(--c-chishiki);} .cat-chishiki .catbadge{background:var(--c-chishiki-s);color:var(--c-chishiki-i);border:1px solid #bcd9b3;}
+  .card.cat-kijutsu{border-left-color:var(--c-kijutsu);} .cat-kijutsu .catbadge{background:var(--c-kijutsu-s);color:var(--c-kijutsu-i);border:1px solid #e6c79b;}
+  .card.cat-dokkai{border-left-color:var(--c-dokkai);} .cat-dokkai .catbadge{background:var(--c-dokkai-s);color:var(--c-dokkai-i);border:1px solid #cabfe6;}
+  .card.cat-hyoron{border-left-color:var(--c-hyoron);} .cat-hyoron .catbadge{background:var(--c-hyoron-s);color:var(--c-hyoron-i);border:1px solid #b6d2e3;}
+
+  /* やったチェック（英語/数学インデックスと同方式・国語専用キーで非衝突） */
+  .doneBtn{position:absolute; top:13px; right:13px; width:42px; height:42px; border-radius:50%;
+    border:3px solid #aeb8aa; background:#fff; font-size:20px; line-height:1; color:transparent;
+    cursor:pointer; display:flex; align-items:center; justify-content:center; z-index:2;}
+  .card.is-done{background:#eef5ef; border-color:#bcd6bd;}
+  .card.is-done .doneBtn{background:#56875b; border-color:#56875b; color:#fff;}
+  .card .open{padding-right:62px;}
+  .storageWarn{display:none; background:#fff0ef; border:1px solid #e5aaa5; color:#7f3530;
+    border-radius:10px; padding:10px 14px; margin-bottom:14px; font-size:13px; font-weight:700;}
+
+  .empty{grid-column:1/-1; text-align:center; padding:40px 20px; color:var(--sub); font-size:15px; font-weight:700;}
+  .note{font-size:12.5px; color:var(--sub); text-align:center; margin-top:28px; line-height:1.9;}
+
+  /* 関連システム導線 */
+  .relwrap{background:var(--card); border:1px solid var(--line); border-radius:14px; padding:14px 16px; margin-bottom:16px; box-shadow:0 2px 8px rgba(58,72,55,.06);}
+  .rellist{display:flex; flex-direction:column; gap:8px;}
+  .relitem{display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 10px; background:#f4f8f2; border:1px solid var(--line); border-radius:10px; padding:9px 12px;}
+  .relitem .rname{font-size:13px; font-weight:900; color:var(--hd-ink);}
+  .relitem .rpath{font-size:11.5px; font-weight:600; color:var(--sub); font-family:'SFMono-Regular',Consolas,monospace; word-break:break-all;}
+
+  button:focus-visible,a:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #1d70b8; outline-offset:2px;}
+  @media(max-width:560px){ .grid{grid-template-columns:1fr;} .pg-hd h1{font-size:21px;} }
+</style>
+<style>.summer-return{position:relative;z-index:20;display:inline-flex;align-items:center;min-height:44px;margin:10px 14px;padding:9px 14px;border:1px solid #cdd8e8;border-radius:18px;background:#fff;color:#3f6f9f;font:800 13px/1.4 sans-serif;text-decoration:none}</style>
+</head>
+<body>
+<a class="summer-return" href="夏休みダッシュボード.html#today">← 夏休みプリントに戻る</a>
+<div class="wrap">
+
+  <!-- ダッシュボードへ戻る（両ダッシュボード） -->
+  <div class="dashlinks">
+    <a class="dashlink" href="index_iPad_学習ダッシュボード.html"><span class="ar">‹</span>学習ダッシュボード（夏前）</a>
+    <a class="dashlink" href="夏休みダッシュボード.html"><span class="ar">‹</span>夏休みダッシュボード</a>
+  </div>
+
+  <!-- セクション切替タブ -->
+  <div class="sectabs" id="secTabs"></div>
+
+  <!-- やったチェックの保存が使えない端末向け警告（既定は非表示） -->
+  <div class="storageWarn" id="storageWarn">⚠ この端末では「やった」チェックの保存ができません（プライベートモード等）。チェックは画面を閉じると消えます。</div>
+
+  <header class="pg-hd">
+    <span class="badge">中1夏前 ｜ 9月特訓選抜むけ ｜ 管理者用メタ台帳（国語）</span>
+    <h1>国語プリント 問題インデックス台帳</h1>
+    <p>1プリント＝1枚。カテゴリ（知識／記述／読解）・出題ドメイン・採点項目で絞り込み、9月本番(大問構成)から逆引きする索引です。解法・答えは出ません。</p>
+    <p class="seclead" id="secLead">–</p>
+    <div class="stats">
+      <div class="stat"><div class="num" id="stPrints">–</div><div class="lbl">プリント枚数</div></div>
+      <div class="stat"><div class="num" id="stQ">–</div><div class="lbl">設問 合計</div></div>
+      <div class="stat"><div class="num" id="stG">–</div><div class="lbl">採点項目 合計</div></div>
+      <div class="stat"><div class="num" id="stShown">–</div><div class="lbl">いま表示中</div></div>
+    </div>
+    <div class="catsplit" id="catSplit"></div>
+  </header>
+
+  <!-- ★整合性アラート パネル（meta.consistency_notes） -->
+  <section class="alertpanel">
+    <h2>★ 整合性アラート（実機械抽出で判明した HTML本体の既知の不整合）</h2>
+    <p class="lead">下記は<b>台帳が記録した事実</b>です。<b>是正（HTML本体の修正）はユーザー指示後</b>に別途行います。この台帳では推測で直さず、実値をそのまま載せています。</p>
+    <ul class="alertlist" id="alertList"></ul>
+    <div class="alertfoot">⚠ これはHTML本体の既知の不整合 ＝ 是正はユーザー指示後。台帳側は事実の記録のみ。</div>
+  </section>
+
+  <!-- 弱点逆引きパネル -->
+  <section class="weakpanel">
+    <h2>弱点から逆引き（確定弱点キー）</h2>
+    <p class="lead">押すとその弱点に効くプリントだけに即絞り込み（いま選んでいるセクションの範囲内）。点線・赤＝該当が薄い／ゼロの「穴」です。</p>
+    <div class="weakbtns" id="weakBtns"></div>
+  </section>
+
+  <!-- フィルタバー -->
+  <section class="filterbar">
+    <div class="frow">
+      <div class="fgroup"><span class="glbl">カテゴリ</span><div class="chips" id="fCategory"></div></div>
+      <div class="fgroup"><span class="glbl">出題ドメイン</span><div class="chips" id="fDomain"></div></div>
+    </div>
+    <div class="frow">
+      <div class="fgroup"><span class="glbl">弱点</span><div class="chips" id="fWeak"></div></div>
+      <div class="fgroup"><span class="glbl">9月 大問</span><div class="chips" id="fExam"></div></div>
+    </div>
+    <div class="searchrow">
+      <input type="search" id="search" placeholder="キーワード検索（タイトル・ドメイン・KEY・ファイル名）" autocomplete="off">
+      <span class="reslabel" id="resLabel"></span>
+      <button class="resetbtn" id="resetBtn">絞り込み解除</button>
+    </div>
+  </section>
+
+  <!-- 9月大問マップ -->
+  <div class="sec-hd">9月 特訓選抜・大問対応マップ<small>本番の大問構成から、対応プリントを逆引き。exam_target が明記されたものだけ並びます（いま選んでいるセクションの範囲内）。大問二＝評論は評論01/02を配備済み（残る質課題＝本番級の文章量）。</small></div>
+  <div class="exammap" id="examMap"></div>
+
+  <!-- ヒートマップ -->
+  <div class="sec-hd">ドメイン・カバレッジ ヒートマップ<small>行＝出題ドメイン／数字＝採点項目数（records[].domains_count から再集計）。赤いセル＝そのドメインの採点項目が無い「穴」。評論（大問二）は評論01/02で配備済み。</small></div>
+  <div class="heatwrap">
+    <table class="heat" id="heatTable"></table>
+    <div class="heatlegend">
+      <span><span class="sw" style="background:var(--hole);border:1px solid var(--hole-bd)"></span>0項目（穴）</span>
+      <span><span class="sw" style="background:#dfeed9"></span>1項目以上（数字＝採点項目数）</span>
+    </div>
+    <div class="heatnote" id="heatNote"></div>
+  </div>
+
+  <!-- 一覧 -->
+  <div class="sec-hd">プリント一覧<small>カード全体がリンク。タップで該当プリントを別タブで開きます。KEY・もどる先が不統一なカードには ⚠ マーク。</small></div>
+  <div class="grid" id="grid"></div>
+
+  <!-- 関連システム導線 -->
+  <div class="sec-hd">関連システム（国語の全体像）<small>この台帳の外側にある国語の管理ファイル群。網羅の分母・頻出語の精選・記述採点・暗記カード・夏の実行計画。</small></div>
+  <div class="relwrap">
+    <div class="rellist" id="relList"></div>
+  </div>
+
+  <p class="note">
+    正本データ：国語問題台帳.json（全8レコード・採点項目127）をインライン埋め込み（オフライン単体動作）。枚数・設問・採点項目はすべて records から再集計。<br>
+    このページは管理者用メタ索引です。解法・着眼・答えは一切表示しません（きみの初見解答を妨げないため）。
+  </p>
+
+</div>
+
+<script>
+/* ===== 正本データ：国語問題台帳.json の meta / records をインライン埋め込み（全8件・評論01/02反映・2026-06-21） ===== */
+var META = {
+  "exam_blueprint": {
+    "大問一":"文学的文章（心情・理由の記述15〜40字／語彙・指示語・抜き出し・内容一致）",
+    "大問二":"評論・説明的文章（抽象語彙の組合せ・対比の論理・主張の一文特定・抜き出し）",
+    "大問三":"漢字（読み・書取・部首画数）・四字熟語・対義類義・慣用句ことわざ・文節の働き/修飾語"
+  },
+  "category_counts_reference": { "知識(大問三型)":3, "記述(大問一型)":1, "読解(大問一型)":2, "評論(大問二型)":2 },
+  "totals_reference": { "files":8, "questions":125, "grade_items":127 },
+  "domain_coverage_reference": {
+    "漢字読み":14,"漢字書取":14,"部首画数":8,"四字熟語":14,"対義類義":8,"慣用句ことわざ":13,
+    "文節の働き・修飾(文法)":18,"記述(心情/理由/説明)":10,"読解_抽象語彙":6,"読解_指示語":4,
+    "読解_抜き出し":4,"読解_接続語":3,"読解_内容一致/主題/内容":5,"評論_一文特定":2,"評論_抽象語組合せ":2
+  },
+  "consistency_notes": {
+    "KEY混在":"【2026-06-21是正】通常02の実行コードKEYは tokkun_j02（jNN規約に合致・記録ボード/ダッシュボードと同期OK）。HTMLコメント7行目だけに古い誤記 tokkun_k_chishiki01 が残るが散文の誤りで実害なし。前ターンでコメントを実値と誤読し『k_chishiki01・j02不在』と記したのは誤りで本項にて是正。全8枚は j01/j02/j03・jk01・jr01/jr02・je01/je02 で規約一致。",
+    "もどる2系統":"index_iPad_学習ダッシュボード.html＝通常01・記述01／夏休みダッシュボード.html＝通常02・通常03・読解01・読解02。FIXES国語修正チェックの『もどる=夏休みダッシュボード固定』に通常01・記述01が違反。",
+    "記述ミス軸の不統一":"読解02の問5・問6の記述ミス診断が onclick m(...,'C'/'K'/'A') と知識系コードを流用（読解01・記述01は 内容/文末/字数 の3軸）。記録ボードの集計軸が読解02だけズレる。",
+    "data-id残存":"通常01・記述01のみ data-id を併存（他4枚は data-gid のみ）。"
+  },
+  "coverage_holes": [
+    "【2026-06-21 解消】大問二（評論）はもうゼロではない＝評論01『色の名前と虹』(je01・導入級)＋評論02『自分らしさのありか』(je02・本番級)を配備済み。残る質課題＝本番級の文章量（本番通し50分）・国語誤答キュー・使用語指定記述・部首反復（_考察_9月特訓選抜_国語の不足分析_2026-06-21.md）。",
+    "読解の本物名作は読解02トロッコのみ（青空文庫注入）。未実装＝ごん狐jr03/蜘蛛の糸jr04/走れメロスjr05/杜子春jr06。"
+  ],
+  "related_systems": {
+    "漢字配当データ(網羅の分母)":"漢検漢字データ/漢検漢字_体系学習インデックス.md（5級1026/4級313/3級284・使用追跡）",
+    "頻出語の精選台帳":"国語_漢字語彙文法管理_中1特訓頻出.md（書取120/読み80/四字60/慣用50/文法）",
+    "記述採点エンジン":"国語_記述AI採点ルーブリック.md（型カード・採点プロンプト）",
+    "暗記カード国語(毎日ドリップ)":"プリント/暗記カード/（60枚に漢字/四字/部首/慣用/文法を内蔵・別モダリティ）",
+    "夏の実行計画":"学習計画/夏休み国語学習計画_読解名作ドリブン_2026-06-19.md"
+  }
+};
+
+var RECORDS = [{"file":"国語通常01_特訓大問三型_知識.html","series":"通常","variant":"通常01","path":"プリント/国語プリント/","section":"専用","type_print":"知識","category":"知識(大問三型)","key":"tokkun_j01","modoki":"../../夏休みダッシュボード.html","questions":21,"grade_items":21,"has_passage":false,"levels":"L7-v3.0候補 P67=L1／P90=L2（n=1・アンカー未整備）","domains":["漢字書取","漢字読み","四字熟語(空欄)","文節の働き・修飾","慣用句ことわざ"],"domains_count":{"漢字書取":4,"漢字読み":4,"四字熟語":4,"文節の働き・修飾(文法)":6,"慣用句ことわざ":3},"weakness":["修飾語・文節の働き（文法）","四字熟語・語彙"],"exam_target":["大問三"],"title":"国語 通常プリント01（特訓 大問三型・知識）","count_note":"data-gid×21／data-id×21（1:1）。大問一漢字8・大問二四字4・大問三文節6・大問四慣用3"},{"file":"国語通常02_特訓大問三型_知識総点検.html","series":"通常","variant":"通常02","path":"プリント/国語プリント/","section":"専用","type_print":"知識","category":"知識(大問三型)","key":"tokkun_j02","modoki":"../../夏休みダッシュボード.html","questions":34,"grade_items":34,"has_passage":false,"levels":"L7-v3.0候補 P67=L2／P90=L2（n=1・アンカー未整備。漢検5〜4級は学年・範囲タグでLではない）","domains":["漢字読み","漢字書取","部首画数","四字熟語(空欄)","対義類義","慣用句ことわざ","文節の働き・修飾"],"domains_count":{"漢字読み":5,"漢字書取":5,"部首画数":4,"四字熟語":5,"対義類義":4,"慣用句ことわざ":5,"文節の働き・修飾(文法)":6},"weakness":["部首画数","修飾語・文節の働き（文法）","四字熟語・語彙"],"exam_target":["大問三"],"title":"特訓 大問三型 国語知識総合①","count_note":"data-gid×34（q01〜q34）。読5/書5/部首画数4/四字5/対義類義4/慣用5/文節6。実行KEY=tokkun_j02（規約合致・同期OK）。※HTMLコメント7行目に古い誤記tokkun_k_chishiki01が残存＝軽微"},{"file":"国語通常03_特訓大問三型_知識総点検02.html","series":"通常","variant":"通常03","path":"プリント/国語プリント/","section":"専用","type_print":"知識","category":"知識(大問三型)","key":"tokkun_j03","modoki":"../../夏休みダッシュボード.html","questions":34,"grade_items":34,"has_passage":false,"levels":"L7-v3.0候補 P67=L2／P90=L2（n=1・アンカー未整備。漢検5〜4級は学年・範囲タグでLではない）","domains":["漢字読み","漢字書取","部首画数","四字熟語(空欄)","対義類義","慣用句ことわざ","文節の働き・修飾"],"domains_count":{"漢字読み":5,"漢字書取":5,"部首画数":4,"四字熟語":5,"対義類義":4,"慣用句ことわざ":5,"文節の働き・修飾(文法)":6},"weakness":["部首画数","修飾語・文節の働き（文法）","四字熟語・語彙"],"exam_target":["大問三"],"title":"特訓 大問三型 国語知識総点検②（反復）","count_note":"data-gid×34（q01〜q34）。通常02の語を入れ替えた反復版"},{"file":"国語記述01_読解短文と記述_型カード.html","series":"記述","variant":"記述01","path":"プリント/国語プリント/","section":"専用","type_print":"記述","category":"記述(大問一型)","key":"tokkun_jk01","modoki":"../../夏休みダッシュボード.html","questions":7,"grade_items":7,"has_passage":true,"levels":"L7-v3.0候補 P67=L4／P90=L4（n=1。L4独立3評定3/3未完了・確定禁止）","domains":["心情記述(字数指定)","理由記述(字数指定)","内容説明記述(字数指定)"],"domains_count":{"記述(心情/理由/説明)":7},"weakness":["記述の型"],"exam_target":["大問一"],"title":"国語 記述プリント01（読解短文＋記述・型カード）","count_note":"data-gid×7／data-id×7。自作短文5本＋記述7（うち指定語つき40字3問）。○✕でなく型自己採点＋ズレ診断(内容/文末/字数/指定語)"},{"file":"国語読解01_文学長文_特訓大問一型.html","series":"読解","variant":"読解01","path":"プリント/国語プリント/","section":"専用","type_print":"読解","category":"読解(大問一型)","key":"tokkun_jr01","modoki":"../../夏休みダッシュボード.html","questions":8,"grade_items":8,"has_passage":true,"passage_chars":900,"levels":"L7-v3.0候補 P67=L2／P90=L3（n=1・アンカー未整備）","domains":["読解_抽象語彙","指示語","抜き出し","接続語","心情記述","理由記述","内容一致"],"domains_count":{"読解_抽象語彙":2,"読解_指示語":1,"読解_抜き出し":1,"読解_接続語":1,"記述(心情/理由/説明)":2,"読解_内容一致/主題/内容":1},"weakness":["記述の型","評論の抽象語彙"],"exam_target":["大問一"],"title":"国語 読解プリント01（自作文学長文「風の通り道」900字）","count_note":"data-gid×8（q01〜q08）。語彙2/指示語1/抜き出し1/接続語1/心情記述1/理由記述1/内容一致1"},{"file":"国語読解02_トロッコ_芥川.html","series":"読解","variant":"読解02","path":"プリント/国語プリント/","section":"専用","type_print":"読解","category":"読解(大問一型)","key":"tokkun_jr02","modoki":"../../夏休みダッシュボード.html","questions":8,"grade_items":8,"has_passage":true,"passage_chars":1536,"levels":"L7-v3.0候補 P67=L3／P90=L4（n=1。L4独立3評定3/3未完了・確定禁止）","domains":["読解_抽象語彙","指示語","抜き出し","心情記述","理由記述","読解_内容","内容一致・主題"],"domains_count":{"読解_抽象語彙":2,"読解_指示語":1,"読解_抜き出し":1,"記述(心情/理由/説明)":2,"読解_内容一致/主題/内容":2},"weakness":["記述の型"],"exam_target":["大問一"],"title":"長文読解②（芥川「トロッコ」青空文庫注入）","count_note":"data-gid×8（q01〜q08）。語彙2/指示語1/抜き出し1/心情記述1/理由記述1/内容1/主題1。記述ミス軸=内容/文末/字数に統一済(2026-06-23・旧C/K/A流用を是正)"},{"file":"国語評論01_説明文_分類と文化_特訓大問二型.html","series":"評論","variant":"評論01","path":"プリント/国語プリント/","section":"専用","type_print":"評論","category":"評論(大問二型)","key":"tokkun_je01","modoki":"../../夏休みダッシュボード.html","questions":8,"grade_items":8,"has_passage":true,"passage_chars":520,"levels":"L7-v3.0候補 P67=L3／P90=L4（n=1。旧『導入級』は廃止・自動換算なし）","domains":["読解_抽象語彙","読解_接続語","抽象語の組合せ","指示語","抜き出し","主張の一文特定","記述(どういうこと25字)","内容一致"],"domains_count":{"読解_抽象語彙":1,"読解_接続語":1,"評論_抽象語組合せ":1,"読解_指示語":1,"読解_抜き出し":1,"評論_一文特定":1,"記述(心情/理由/説明)":1,"読解_内容一致/主題/内容":1},"weakness":["評論の抽象語彙","記述の型"],"exam_target":["大問二"],"title":"評論①（大問二型・導入級「色の名前と虹」自作520字）","count_note":"data-gid×8。自作評論・分類/言語相対。接続語6択/抽象語/指示語/抜き出し/主張一文の初め5字/25字記述/内容一致。2026-07-16に25字抜き出し解答を一意化。"},{"file":"国語評論02_説明文_自分らしさ_特訓大問二型.html","series":"評論","variant":"評論02","path":"プリント/国語プリント/","section":"専用","type_print":"評論","category":"評論(大問二型)","key":"tokkun_je02","modoki":"../../夏休みダッシュボード.html","questions":8,"grade_items":8,"has_passage":true,"passage_chars":650,"levels":"L7-v3.0候補 P67=L3／P90=L4（n=1。旧『本番級』は廃止・自動換算なし）","domains":["読解_抽象語彙","読解_接続語","抽象語の組合せ","指示語","抜き出し","主張の一文特定","記述(理由40字)","内容一致"],"domains_count":{"読解_抽象語彙":1,"読解_接続語":1,"評論_抽象語組合せ":1,"読解_指示語":1,"読解_抜き出し":1,"評論_一文特定":1,"記述(心情/理由/説明)":1,"読解_内容一致/主題/内容":1},"weakness":["評論の抽象語彙","記述の型"],"exam_target":["大問二"],"title":"評論②（大問二型・本番級「自分らしさのありか」自作650字）","count_note":"自作評論・個性論(内発的↔他律的)。接続語6択/抽象語組合せC-D/指示語/抜き出し/主張の一文特定/40字理由記述(ルーブリック)/内容一致。本番(土井隆義圏)同難度。2026-06-21並行作成→配線。解答前ヒントなし"},{"file":"国語通常04_特訓大問三型_知識総点検03.html","series":"通常","variant":"通常04","path":"プリント/国語プリント/","section":"専用","type_print":"知識","category":"知識(大問三型)","key":"tokkun_j04","modoki":"../../夏休みダッシュボード.html","questions":21,"grade_items":21,"has_passage":false,"levels":"L7-v3.0候補 P67=L2／P90=L2（n=1・アンカー未整備）","domains":["熟語の構成","類義語","故事成語の意味","敬語","詩歌の知識"],"domains_count":{"熟語の構成":6,"類義語":4,"故事成語の意味":4,"敬語":4,"詩歌の知識":3},"weakness":["四字熟語・語彙"],"exam_target":["大問三"],"title":"通常04 知識総点検③（穴ドメイン集約）","count_note":"2026-06-22新設＝知識網羅監査の穴を集約。熟語の構成6(6型)/類義語4/故事成語の意味4/敬語(尊敬謙譲)4/詩歌3(必修補足=9月大問三には出ない)。答えは台帳§G〜§Iの分母から。解答前ヒントなし・○✕＋C/K/A"},{"file":"国語古文01_歴史的仮名遣いと古典単語_先取り.html","series":"古文","variant":"古文01","path":"プリント/国語プリント/","section":"専用","type_print":"古文","category":"古文(先取り)","key":"tokkun_jko1","modoki":"../../夏休みダッシュボード.html","questions":17,"grade_items":17,"has_passage":false,"levels":"L7-v3.0未監査（2026年9月公式範囲外。先取り/仕上げ枠で管理）","domains":["歴史的仮名遣い","古典単語の意味","係り結び"],"domains_count":{"歴史的仮名遣い":8,"古典単語の意味":6,"係り結び":3},"weakness":["古文(初見ゼロ)"],"exam_target":["先取り(特訓で出得る)"],"title":"古文01 先取り（歴史的仮名遣い・古典単語・係り結び）","count_note":"2026-06-22新設＝塾1Rシラバス接地で古文は中1夏期の確定単元と判明→先取り実装。歴史的仮名遣い8(6ルール)/古典単語の意味6/係り結び3。答えは台帳§Jの分母から。読解は別=知識のみ。解答前ヒントなし・厚解説・○✕＋C/K/A"},{"file":"国語文法02_単語と品詞.html","series":"文法","variant":"文法02","path":"プリント/国語プリント/","section":"専用","type_print":"文法","category":"知識(文法)","key":"tokkun_jb02","modoki":"../../夏休みダッシュボード.html","questions":20,"grade_items":20,"has_passage":false,"levels":"L7-v3.0候補 P67=L2／P90=L2（n=1・アンカー未整備）","domains":["単語・品詞"],"domains_count":null,"weakness":"","exam_target":["大問三"],"title":"文法（単語と品詞）＝公式範囲「文法(単語・文の組み立て)」の\"単語\"側を埋める（文節→単語／自立語付属語／品詞10種）","count_note":"2026-07-13 追加（data-gid実カウント=20）"},{"file":"国語本番通し01_50分100点_特訓型.html","series":"通し","variant":"通し01","path":"プリント/国語プリント/","section":"専用","type_print":"通し","category":"本番通し(50分100点)","key":"tokkun_jtoshi01","modoki":"../../夏休みダッシュボード.html","questions":27,"grade_items":27,"has_passage":true,"levels":"L7-v3.0候補 L1/L2/L3/L4=7/11/6/3、P67=L3／P90=L4（n=1・監査待ち・学習使用不可）","domains":["文学的文章","説明的文章","漢字・語句","文法（単語・文の組立て）"],"domains_count":{"文学読解":9,"説明文読解":8,"漢字・語句":7,"文法":3},"weakness":["L3読解の一段統合","L4候補の離れた二証拠"],"exam_target":["通し"],"title":"本番通し01（文学／説明／漢字・語句・文法）50分100点・監査待ち","count_note":"2026-07-16 v3再設計。data-gid=q01〜q27、配点40/32/28=100。文学9/説明8/知識文法10。候補7/11/6/3、P25/P50/P67/P90=L1/L2/L3/L4。L4はn=1候補で独立3評定3/3未完了。盲検監査JSONを分離。2026-07-16独立評定A対応: q13の正答文指定表示を除去。"},{"file":"国語本番通し02_50分100点_特訓型.html","series":"通し","variant":"通し02","path":"プリント/国語プリント/","section":"専用","type_print":"通し","category":"本番通し(50分100点)","key":"tokkun_jtoshi02","modoki":"../../夏休みダッシュボード.html","questions":27,"grade_items":27,"has_passage":true,"levels":"L7-v3.0候補 L1/L2/L3/L4=7/11/6/3、P67=L3／P90=L4（n=1・監査待ち・学習使用不可）","domains":["文学的文章","説明的文章","漢字・語句","文法（単語・文の組立て）"],"domains_count":{"文学読解":9,"説明文読解":8,"漢字・語句":7,"文法":3},"weakness":["L3読解の一段統合","L4候補の離れた二証拠"],"exam_target":["通し"],"title":"本番通し02（文学／説明／漢字・語句・文法）50分100点・監査待ち","count_note":"2026-07-16 v3再設計。data-gid=q01〜q27、配点40/32/28=100。文学9/説明8/知識文法10。候補7/11/6/3、P25/P50/P67/P90=L1/L2/L3/L4。L4はn=1候補で独立3評定3/3未完了。盲検監査JSONを分離。2026-07-16独立評定A対応: q13の正答文指定表示を除去。q07を本文事実『孫への読み聞かせ』『本を雨から守った』の二要素へ修正し、本文にない推定を除去。"},{"file":"国語本番通し03_50分100点_特訓型.html","series":"通し","variant":"通し03","path":"プリント/国語プリント/","section":"専用","type_print":"通し","category":"本番通し(50分100点)","key":"tokkun_jtoshi03","modoki":"../../夏休みダッシュボード.html","questions":27,"grade_items":27,"has_passage":true,"levels":"L7-v3.0候補 L1/L2/L3/L4=7/11/6/3、P67=L3／P90=L4（n=1・監査待ち・学習使用不可）","domains":["文学的文章","説明的文章","漢字・語句","文法（単語・文の組立て）"],"domains_count":{"文学読解":9,"説明文読解":8,"漢字・語句":7,"文法":3},"weakness":["L3読解の一段統合","L4候補の離れた二証拠"],"exam_target":["通し"],"title":"本番通し03（文学／説明／漢字・語句・文法）50分100点・監査待ち","count_note":"2026-07-16 v3再設計。data-gid=q01〜q27、配点40/32/28=100。文学9/説明8/知識文法10。候補7/11/6/3、P25/P50/P67/P90=L1/L2/L3/L4。L4はn=1候補で独立3評定3/3未完了。盲検監査JSONを分離。2026-07-16独立評定A対応: q13の正答文指定表示を除去。"}];
+
+/* exam_blueprint（meta より・説明文として表示） */
+var EXAM_BLUEPRINT = META.exam_blueprint;
+var EXAM_ORDER = ["大問一","大問二","大問三"];
+
+/* weakness_keys（meta.weakness_keys を逆引きパネル用に整形。
+   各弱点 → 効くプリントの判定関数。穴は hole:true で点線赤表示） */
+var WEAK_DEFS = [
+  {key:"部首画数", label:"部首画数", match:function(r){ return (r.domains_count||{})["部首画数"]>0; }},
+  {key:"修飾語・文節の働き（文法）", label:"修飾語・文節（文法）", match:function(r){ return (r.domains_count||{})["文節の働き・修飾(文法)"]>0; }},
+  {key:"記述の型", label:"記述の型", match:function(r){ return (r.domains_count||{})["記述(心情/理由/説明)"]>0; }},
+  {key:"評論の抽象語彙", label:"評論の抽象語彙", match:function(r){ return (r.weakness||[]).indexOf("評論の抽象語彙")>=0; }},
+  {key:"四字熟語・語彙", label:"四字熟語・語彙", match:function(r){ return (r.domains_count||{})["四字熟語"]>0; }}
+];
+
+/* 出題ドメイン（フィルタ用。records の domains_count キーで判定） */
+var DOMAIN_KEYS = ["漢字読み","漢字書取","部首画数","四字熟語","対義類義","慣用句ことわざ","文節の働き・修飾(文法)","記述(心情/理由/説明)","読解_抽象語彙","読解_指示語","読解_抜き出し","読解_接続語","読解_内容一致/主題/内容","評論_一文特定","評論_抽象語組合せ"];
+var DOMAIN_LABELS = {
+  "漢字読み":"漢字読み","漢字書取":"漢字書取","部首画数":"部首画数","四字熟語":"四字熟語","対義類義":"対義類義",
+  "慣用句ことわざ":"慣用句ことわざ","文節の働き・修飾(文法)":"文節・修飾(文法)","記述(心情/理由/説明)":"記述(心情/理由/説明)",
+  "読解_抽象語彙":"読解_抽象語彙","読解_指示語":"読解_指示語","読解_抜き出し":"読解_抜き出し","読解_接続語":"読解_接続語",
+  "読解_内容一致/主題/内容":"読解_内容一致/主題","評論_一文特定":"評論_一文特定(大問二)","評論_抽象語組合せ":"評論_抽象語組合せ(大問二)"
+};
+
+/* ヒートマップ行＝domain_coverage_reference の順（評論=0 を末尾の穴として含める） */
+var HEAT_DOMAINS = ["漢字読み","漢字書取","部首画数","四字熟語","対義類義","慣用句ことわざ","文節の働き・修飾(文法)","記述(心情/理由/説明)","読解_抽象語彙","読解_指示語","読解_抜き出し","読解_接続語","読解_内容一致/主題/内容","評論_一文特定","評論_抽象語組合せ"];
+
+/* セクション定義（国語は現状すべて「専用」だが、数学版と同じUIを踏襲してタブを置く） */
+var SECTIONS = ["専用"];
+var SECTION_LEAD = {
+  "専用":"国語だけのプリント（横断・複合の国語は現状なし）。9月特訓選抜のコア。",
+  "__all__":"全セクションを横断して表示しています。"
+};
+
+/* カテゴリ → CSSクラス接尾辞 */
+var CAT_CLASS = {"知識(大問三型)":"chishiki","記述(大問一型)":"kijutsu","読解(大問一型)":"dokkai","評論(大問二型)":"hyoron"};
+var CAT_ORDER = ["知識(大問三型)","記述(大問一型)","読解(大問一型)","評論(大問二型)"];
+var CAT_SHORT = {"知識(大問三型)":"知識","記述(大問一型)":"記述","読解(大問一型)":"読解","評論(大問二型)":"評論"};
+
+/* ===== 状態 ===== */
+var state = { section:"専用", category:null, domain:null, weak:null, exam:null, kw:"" };
+
+function esc(s){ return String(s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"); }
+function uniq(arr){ var o=[],seen={}; arr.forEach(function(x){ if(!seen[x]){seen[x]=1;o.push(x);} }); return o; }
+
+/* ===== やったチェック localStorage（英語/数学インデックスと同方式・国語専用キーで非衝突。壊れても他機能は継続） ===== */
+var STORE_KEY = "honoka_kokugo_index_done_v1";
+var doneSet = {};
+var storageOK = true;
+try {
+  var raw = window.localStorage.getItem(STORE_KEY);
+  if(raw){ var arr = JSON.parse(raw); if(arr && arr.length){ arr.forEach(function(k){ doneSet[k]=1; }); } }
+} catch(e){ storageOK = false; }
+function saveDone(){
+  if(!storageOK) return;
+  try { window.localStorage.setItem(STORE_KEY, JSON.stringify(Object.keys(doneSet))); }
+  catch(e){ storageOK = false; var w=document.getElementById("storageWarn"); if(w) w.style.display="block"; }
+}
+if(!storageOK){ var sw0=document.getElementById("storageWarn"); if(sw0) sw0.style.display="block"; }
+
+/* ===== セクション範囲 ===== */
+function inSection(r){ return state.section==="__all__" ? true : (r.section===state.section); }
+function sectionRecords(){ return RECORDS.filter(inSection); }
+
+/* ===== カードの不整合フラグ（⚠表示用） ===== */
+function keyIsBad(r){ return r.key.indexOf("tokkun_j")!==0 && r.key.indexOf("tokkun_jk")!==0 && r.key.indexOf("tokkun_jr")!==0; }
+function modokiIsIndexIpad(r){ return /index_iPad/.test(r.modoki); }
+/* もどる規約：FIXESの『夏休みダッシュボード固定』に対し index_iPad へ戻るものを違反扱い */
+function modokiIsBad(r){ return modokiIsIndexIpad(r); }
+function hasWarn(r){ return keyIsBad(r) || modokiIsBad(r) || (r.variant==="読解02"); }
+
+/* ===== セクションタブ ===== */
+function renderSecTabs(){
+  var c = document.getElementById("secTabs"); c.innerHTML="";
+  function tab(key, label){
+    var n = (key==="__all__") ? RECORDS.length : RECORDS.filter(function(r){return r.section===key;}).length;
+    var b = document.createElement("button");
+    b.type="button";
+    b.className = "sectab" + (state.section===key ? " active":"");
+    b.innerHTML = esc(label) + ' <span class="cnt">'+n+'</span>';
+    b.addEventListener("click", function(){
+      if(state.section===key) return;
+      state.section = key;
+      state.category=null; state.domain=null; state.weak=null; state.exam=null;
+      fullRender();
+    });
+    c.appendChild(b);
+  }
+  tab("専用","専用");
+  tab("__all__","ぜんぶ");
+}
+
+/* ===== ヘッダ集計：現在のセクション範囲を records から再集計 ===== */
+function computeHeader(){
+  var recs = sectionRecords();
+  var prints = recs.length;
+  var q = 0, g = 0;
+  recs.forEach(function(r){
+    if(typeof r.questions === "number") q += r.questions;
+    if(typeof r.grade_items === "number") g += r.grade_items;
+  });
+  document.getElementById("stPrints").textContent = prints;
+  document.getElementById("stQ").textContent = q;
+  document.getElementById("stG").textContent = g;
+  var leadName = state.section==="__all__" ? "ぜんぶ" : state.section;
+  document.getElementById("secLead").textContent =
+    "セクション：" + leadName + "（" + prints + "枚）／ " + (SECTION_LEAD[state.section]||"");
+
+  // カテゴリ別内訳（枚数＋採点項目）
+  var split = document.getElementById("catSplit"); split.innerHTML="";
+  var clsMap = {"知識(大問三型)":"k","記述(大問一型)":"j","読解(大問一型)":"d","評論(大問二型)":"h"};
+  CAT_ORDER.forEach(function(cat){
+    var sub = recs.filter(function(r){return r.category===cat;});
+    if(sub.length===0) return;
+    var gi = sub.reduce(function(s,r){return s + (typeof r.grade_items==="number"?r.grade_items:0);},0);
+    var sp = document.createElement("span");
+    sp.className = "csplit " + (clsMap[cat]||"k");
+    sp.textContent = CAT_SHORT[cat] + "：" + sub.length + "枚／採点" + gi + "項目";
+    split.appendChild(sp);
+  });
+}
+
+/* ===== フィルタ判定 ===== */
+function passes(r){
+  if(!inSection(r)) return false;
+  if(state.category && r.category !== state.category) return false;
+  if(state.domain){ if(!((r.domains_count||{})[state.domain] > 0)) return false; }
+  if(state.weak){
+    var def = WEAK_DEFS.filter(function(d){return d.key===state.weak;})[0];
+    if(def && !def.match(r)) return false;
+  }
+  if(state.exam){ if((r.exam_target||[]).indexOf(state.exam)<0) return false; }
+  if(state.kw){
+    var dn = (r.domains||[]).join(" ");
+    var hay = (r.title+" "+dn+" "+r.key+" "+r.file+" "+(r.count_note||"")).toLowerCase();
+    if(hay.indexOf(state.kw.toLowerCase())<0) return false;
+  }
+  return true;
+}
+function filtered(){ return RECORDS.filter(passes); }
+
+/* セクション範囲内での件数カウント */
+function countIf(fn){ var n=0; sectionRecords().forEach(function(r){ if(fn(r)) n++; }); return n; }
+
+/* ===== チップ生成ヘルパ ===== */
+function makeChip(container, label, count, isActive, onClick){
+  var b = document.createElement("button");
+  b.type = "button";
+  b.className = "chip" + (isActive ? " active":"") + ((count===0 && !isActive) ? " zero":"");
+  b.innerHTML = esc(label) + (count!=null ? ' <span class="c">'+count+'</span>' : '');
+  b.addEventListener("click", onClick);
+  container.appendChild(b);
+}
+
+/* ===== フィルタバー描画 ===== */
+function renderFilters(){
+  // カテゴリ
+  var cc = document.getElementById("fCategory"); cc.innerHTML="";
+  CAT_ORDER.forEach(function(c){
+    var n = countIf(function(r){return r.category===c;});
+    if(n===0 && state.category!==c) return;
+    makeChip(cc, CAT_SHORT[c], n, state.category===c, function(){
+      state.category = (state.category===c)?null:c; rerender();
+    });
+  });
+  // 出題ドメイン
+  var dc = document.getElementById("fDomain"); dc.innerHTML="";
+  DOMAIN_KEYS.forEach(function(d){
+    var n = countIf(function(r){return (r.domains_count||{})[d]>0;});
+    if(n===0 && state.domain!==d) return;
+    makeChip(dc, DOMAIN_LABELS[d]||d, n, state.domain===d, function(){
+      state.domain = (state.domain===d)?null:d; rerender();
+    });
+  });
+  // 弱点
+  var wc = document.getElementById("fWeak"); wc.innerHTML="";
+  WEAK_DEFS.forEach(function(def){
+    makeChip(wc, def.label, countIf(def.match), state.weak===def.key, function(){
+      state.weak = (state.weak===def.key)?null:def.key; rerender();
+    });
+  });
+  // 9月 大問
+  var ec = document.getElementById("fExam"); ec.innerHTML="";
+  EXAM_ORDER.forEach(function(x){
+    var n = countIf(function(r){return (r.exam_target||[]).indexOf(x)>=0;});
+    if(n===0 && state.exam!==x) return; // 大問二は0なので大問マップで穴可視化（チップは出さない）
+    makeChip(ec, x, n, state.exam===x, function(){
+      state.exam = (state.exam===x)?null:x; rerender();
+    });
+  });
+  if(ec.children.length===0){
+    var sp=document.createElement("span"); sp.className="reslabel"; sp.style.fontWeight="700";
+    sp.textContent="該当なし"; ec.appendChild(sp);
+  }
+}
+
+/* ===== 弱点逆引きパネル ===== */
+function renderWeakPanel(){
+  var c = document.getElementById("weakBtns"); c.innerHTML="";
+  WEAK_DEFS.forEach(function(def){
+    var n = countIf(def.match);
+    var b = document.createElement("button");
+    b.type="button";
+    b.className = "weakbtn" + (state.weak===def.key?" active":"") + (def.hole?" hole":"");
+    b.innerHTML = esc(def.label) + ' <span class="cnt">'+n+'</span>';
+    if(def.hole && def.holeNote){ b.title = def.holeNote; }
+    b.addEventListener("click", function(){
+      state.weak = (state.weak===def.key)?null:def.key;
+      rerender();
+      var fb = document.querySelector(".filterbar");
+      if(fb) window.scrollTo({top: fb.offsetTop - 8, behavior:"smooth"});
+    });
+    c.appendChild(b);
+  });
+}
+
+/* ===== 整合性アラート（meta.consistency_notes） ===== */
+function renderAlerts(){
+  var ul = document.getElementById("alertList"); ul.innerHTML="";
+  var notes = META.consistency_notes;
+  var titleMap = {
+    "KEY混在":"① KEY混在（規約違反）",
+    "もどる2系統":"② もどる先が2系統に分裂",
+    "記述ミス軸の不統一":"③ 記述ミス軸の不統一（読解02）",
+    "data-id残存":"④ data-id 併存（通常01・記述01のみ）"
+  };
+  ["KEY混在","もどる2系統","記述ミス軸の不統一","data-id残存"].forEach(function(k){
+    if(!notes[k]) return;
+    var li = document.createElement("li");
+    li.innerHTML = '<b>'+esc(titleMap[k]||k)+'</b>　'+esc(notes[k]);
+    ul.appendChild(li);
+  });
+}
+
+/* ===== 9月大問マップ ===== */
+function renderExamMap(){
+  var c = document.getElementById("examMap"); c.innerHTML="";
+  EXAM_ORDER.forEach(function(x){
+    var recs = sectionRecords().filter(function(r){return (r.exam_target||[]).indexOf(x)>=0;});
+    var isHole = (recs.length===0);
+    var g = document.createElement("div"); g.className="exam-grp" + (isHole?" hole":"");
+    var head = document.createElement("div"); head.className="eh";
+    head.innerHTML = '<span class="ecode">'+esc(x)+'</span><span class="edesc">'+esc(EXAM_BLUEPRINT[x]||"")+'</span><span class="ecnt">'+recs.length+'枚</span>';
+    g.appendChild(head);
+    var items = document.createElement("div"); items.className="exam-items";
+    if(isHole){
+      var em = document.createElement("span"); em.className="exam-empty";
+      em.innerHTML = '対応プリント ゼロ ＝ 最大の穴。<br>名作ドリブン計画の「評論＝AI自作で抽象語彙を狙い撃ち」が未実装キュー（学習計画/夏休み国語学習計画_読解名作ドリブン_2026-06-19.md）。';
+      items.appendChild(em);
+    } else {
+      recs.forEach(function(r){
+        var a = document.createElement("a");
+        a.className="exam-pill";
+        a.href = encodeURI(r.path + r.file);
+        a.target = "_blank"; a.rel="noopener";
+        a.textContent = r.variant + "・" + r.title;
+        items.appendChild(a);
+      });
+    }
+    g.appendChild(items);
+    c.appendChild(g);
+  });
+}
+
+/* ===== ドメイン・カバレッジ ヒートマップ（records[].domains_count から再集計） ===== */
+function renderHeat(){
+  var recs = sectionRecords();
+  // records から再集計
+  var agg = {};
+  HEAT_DOMAINS.forEach(function(d){ agg[d]=0; });
+  recs.forEach(function(r){
+    var dc = r.domains_count||{};
+    Object.keys(dc).forEach(function(k){ if(agg.hasOwnProperty(k)) agg[k]+=dc[k]; });
+  });
+  // 最大値（バー長の基準）
+  var maxv = 0; HEAT_DOMAINS.forEach(function(d){ if(agg[d]>maxv) maxv=agg[d]; });
+  if(maxv===0) maxv=1;
+
+  var t = document.getElementById("heatTable"); t.innerHTML="";
+  var thead = document.createElement("tr");
+  var th0 = document.createElement("th"); th0.className="domname"; th0.textContent="出題ドメイン"; thead.appendChild(th0);
+  var thN = document.createElement("th"); thN.textContent="採点項目数"; thead.appendChild(thN);
+  var thB = document.createElement("th"); thB.style.textAlign="left"; thB.textContent="量"; thead.appendChild(thB);
+  t.appendChild(thead);
+
+  var total = 0;
+  HEAT_DOMAINS.forEach(function(d){
+    var n = agg[d]; total += n;
+    var isHole = (n===0);
+    var tr = document.createElement("tr"); if(isHole) tr.className="hrow-hole";
+    var tdU = document.createElement("th"); tdU.className="domname"; tdU.textContent=(DOMAIN_LABELS[d]||d); tr.appendChild(tdU);
+    // 数字セル
+    var td = document.createElement("td");
+    var cell = document.createElement("div");
+    cell.className = "hcell " + (isHole ? "hole":"has");
+    cell.textContent = isHole ? "0" : n;
+    td.appendChild(cell); tr.appendChild(td);
+    // バーセル
+    var tdB = document.createElement("td"); tdB.style.padding="0 6px";
+    if(isHole){
+      var hb0 = document.createElement("div"); hb0.style.fontSize="11.5px"; hb0.style.fontWeight="800"; hb0.style.color="#a04540";
+      hb0.textContent="穴（専用問題ゼロ）"; tdB.appendChild(hb0);
+    } else {
+      var bar = document.createElement("div"); bar.className="hbar";
+      var fill = document.createElement("span"); fill.style.width = Math.round(n/maxv*100)+"%";
+      bar.appendChild(fill); tdB.appendChild(bar);
+    }
+    tr.appendChild(tdB);
+    t.appendChild(tr);
+  });
+  document.getElementById("heatNote").textContent =
+    "再集計合計＝" + total + " 採点項目（domains_count を15ドメインに分解した和＝125。評論01/02のみ grade_items=9 に対し domains_count 和=8 のため、総 grade_items=127 とは差2）。評論（大問二）は配備済み＝穴は解消。";
+}
+
+/* ===== カード一覧 ===== */
+function renderGrid(){
+  var rows = filtered();
+  var grid = document.getElementById("grid"); grid.innerHTML="";
+  document.getElementById("stShown").textContent = rows.length;
+
+  var active = [];
+  active.push("セクション:"+(state.section==="__all__"?"ぜんぶ":state.section));
+  if(state.category) active.push("カテゴリ:"+CAT_SHORT[state.category]);
+  if(state.domain) active.push("ドメイン:"+(DOMAIN_LABELS[state.domain]||state.domain));
+  if(state.weak){ var wd=WEAK_DEFS.filter(function(d){return d.key===state.weak;})[0]; active.push("弱点:"+(wd?wd.label:state.weak)); }
+  if(state.exam) active.push(state.exam);
+  if(state.kw) active.push('"'+state.kw+'"');
+  document.getElementById("resLabel").textContent = rows.length+"枚 ／ "+active.join(" ・ ");
+
+  if(rows.length===0){
+    var e=document.createElement("div"); e.className="empty";
+    e.textContent="条件に合うプリントはありません。「絞り込み解除」で全件に戻せます。";
+    grid.appendChild(e); return;
+  }
+  rows.forEach(function(r){
+    var card = document.createElement("div");
+    var isDone = !!doneSet[r.file];
+    card.className = "card cat-"+(CAT_CLASS[r.category]||"chishiki") + (isDone?" is-done":"");
+
+    var a = document.createElement("a");
+    a.className="open";
+    a.href = encodeURI(r.path + r.file);
+    a.target="_blank"; a.rel="noopener";
+
+    var warnHtml = hasWarn(r) ? '<span class="warnmark" title="KEY／もどる先／記述軸のいずれかが不統一">⚠</span>' : '';
+
+    // 設問・採点バッジ
+    var qBadges = '<span class="qbadge">設問 '+r.questions+'</span>'+
+                  '<span class="qbadge g">採点 '+r.grade_items+'</span>'+
+                  (r.has_passage ? '<span class="qbadge">本文あり'+(r.passage_chars?('('+r.passage_chars+'字)'):'')+'</span>' : '')+
+                  (r.levels && r.levels!=="—" ? '<span class="qbadge">'+esc(r.levels)+'</span>' : '');
+
+    // KEY・もどる バッジ
+    var keyBad = keyIsBad(r);
+    var keyHtml = '<span class="keybadge'+(keyBad?' bad':'')+'">KEY: '+esc(r.key)+(keyBad?' ⚠':'')+'</span>';
+    var modBad = modokiIsBad(r);
+    var modName = /index_iPad/.test(r.modoki) ? "学習DB(夏前)" : (/夏休み/.test(r.modoki) ? "夏休みDB" : r.modoki);
+    var modHtml = '<span class="modoki'+(modBad?' bad':'')+'">もどる: '+esc(modName)+(modBad?' ⚠':'')+'</span>';
+
+    // 設問構成（count_note）
+    var cnoteHtml = r.count_note ? '<div class="cnote">'+esc(r.count_note)+'</div>' : '';
+
+    // exam / weakness / domains チップ
+    var echips = (r.exam_target||[]).map(function(x){return '<span class="echip">'+esc(x)+'</span>';}).join("");
+    var wchips = (r.weakness||[]).map(function(w){return '<span class="wchip">'+esc(w)+'</span>';}).join("");
+    var dchips = (r.domains||[]).map(function(d){return '<span class="dchip">'+esc(d)+'</span>';}).join("");
+
+    a.innerHTML =
+      '<div class="toprow">'+
+        '<span class="variant">'+esc(r.variant)+'</span>'+
+        '<span class="catbadge">'+esc(CAT_SHORT[r.category]||r.category)+'</span>'+
+        warnHtml +
+      '</div>'+
+      '<div class="title">'+esc(r.title)+'</div>'+
+      '<div class="unit">'+esc(r.type_print)+'型 ／ '+esc(r.section)+'</div>'+
+      cnoteHtml +
+      '<div class="metarow">'+ qBadges +'</div>'+
+      '<div class="metarow">'+ keyHtml + modHtml + '<span class="echip">'+esc((r.exam_target||[]).join("・")||"—")+'</span></div>'+
+      '<div class="chiprow">'+ wchips + dchips +'</div>'+
+      '<div style="margin-top:8px;font-size:12.5px;font-weight:800;color:var(--accent);">開く ›</div>';
+    card.appendChild(a);
+
+    // やったチェック（カード内・リンク遷移を止めてトグル＋localStorage保存）
+    var btn = document.createElement("button");
+    btn.type="button"; btn.className="doneBtn"; btn.textContent="✓";
+    btn.setAttribute("aria-label","やったチェック "+r.variant);
+    btn.addEventListener("click", function(ev){
+      ev.preventDefault(); ev.stopPropagation();
+      if(doneSet[r.file]){ delete doneSet[r.file]; card.classList.remove("is-done"); }
+      else { doneSet[r.file]=1; card.classList.add("is-done"); }
+      saveDone();
+    });
+    card.appendChild(btn);
+
+    grid.appendChild(card);
+  });
+}
+
+/* ===== 関連システム導線（meta.related_systems） ===== */
+function renderRelated(){
+  var c = document.getElementById("relList"); c.innerHTML="";
+  var rs = META.related_systems;
+  Object.keys(rs).forEach(function(name){
+    var item = document.createElement("div"); item.className="relitem";
+    item.innerHTML = '<span class="rname">'+esc(name)+'</span><span class="rpath">'+esc(rs[name])+'</span>';
+    c.appendChild(item);
+  });
+}
+
+/* ===== 再描画 ===== */
+function rerender(){
+  computeHeader();
+  renderWeakPanel();
+  renderFilters();
+  renderGrid();
+}
+function fullRender(){
+  renderSecTabs();
+  renderAlerts();
+  computeHeader();
+  renderWeakPanel();
+  renderFilters();
+  renderExamMap();
+  renderHeat();
+  renderRelated();
+  renderGrid();
+}
+
+/* 検索 */
+document.getElementById("search").addEventListener("input", function(e){
+  state.kw = e.target.value || "";
+  renderGrid();
+});
+
+/* 絞り込み解除 */
+document.getElementById("resetBtn").addEventListener("click", function(){
+  state.category=null; state.domain=null; state.weak=null; state.exam=null; state.kw="";
+  document.getElementById("search").value="";
+  rerender();
+});
+
+/* ===== 初期化 ===== */
+fullRender();
+</script>
+</body>
+</html>
