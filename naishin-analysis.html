@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>中1・1学期通知表 検証版 — 確定事実・推定・次の確認</title>
+<style>
+  :root{
+    --ink:#0b0b0b; --ink2:#52514e; --muted:#898781;
+    --surface:#fcfcfb; --page:#f9f9f7;
+    --grid:#e1e0d9; --baseline:#c3c2b7; --ring:rgba(11,11,11,.10);
+    --good:#0ca30c; --good-ink:#0b4d0b; --good-bg:#e2f2e2;
+    --mid:#2a78d6; --mid-ink:#14406e; --mid-bg:#e3edfa;
+    --warn:#ec835a; --warn-ink:#7a3413; --warn-bg:#fdeae2;
+    --crit:#d03b3b;
+    --track:#eeede8;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:system-ui,-apple-system,"Segoe UI","Hiragino Sans","Yu Gothic UI",sans-serif;
+    background:var(--page); color:var(--ink); line-height:1.75; font-size:16px;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px 80px}
+  section{margin-top:56px}
+
+  /* ===== header ===== */
+  header{background:var(--surface);border-bottom:1px solid var(--grid);padding:40px 20px 32px}
+  .h-inner{max-width:880px;margin:0 auto}
+  .h-date{font-size:13px;color:var(--muted);letter-spacing:.06em}
+  h1{font-size:clamp(24px,4.5vw,34px);line-height:1.35;margin:8px 0 12px;letter-spacing:.01em}
+  .h-sub{color:var(--ink2);font-size:15px;max-width:660px}
+  .h-sub b{color:var(--ink)}
+  nav.toc{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  nav.toc a{
+    font-size:13px;color:var(--ink2);text-decoration:none;background:var(--page);
+    border:1px solid var(--grid);border-radius:999px;padding:5px 14px;
+  }
+  nav.toc a:hover{border-color:var(--baseline);color:var(--ink)}
+
+  h2{font-size:22px;margin-bottom:6px;letter-spacing:.01em}
+  h2 .no{color:var(--muted);font-size:14px;font-weight:600;display:block;letter-spacing:.12em;margin-bottom:2px}
+  .lead{color:var(--ink2);font-size:15px;margin-bottom:22px;max-width:700px}
+
+  .card{background:var(--surface);border:1px solid var(--grid);border-radius:14px;padding:22px 24px}
+
+  /* ===== S2 sugoi ===== */
+  .grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+  .sugoi .card{border-top:3px solid var(--good)}
+  .sugoi .t{font-weight:700;font-size:15px;margin-bottom:6px}
+  .sugoi .d{font-size:13.5px;color:var(--ink2)}
+  .sugoi .n{font-size:13px;color:var(--good-ink);font-weight:700;letter-spacing:.08em}
+
+  /* ===== S2.5 honoka message ===== */
+  .honoka{border-left:4px solid var(--good);background:var(--surface);border-radius:0 14px 14px 0;padding:26px 28px}
+  .honoka h2{font-size:19px}
+  .honoka p{margin-top:12px;font-size:15.5px}
+  .honoka .goal{
+    margin-top:16px;background:var(--good-bg);border-radius:10px;padding:14px 18px;
+    font-weight:700;font-size:16px;color:var(--good-ink);
+  }
+  .zoning{margin-top:14px;font-size:13px;color:var(--muted);text-align:center;letter-spacing:.05em}
+
+  /* ===== S3 hero ===== */
+  .hero{display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center}
+  .hero-num{font-size:64px;font-weight:650;line-height:1;letter-spacing:-.01em}
+  .hero-num small{font-size:22px;color:var(--muted);font-weight:600}
+  .hero-cap{font-size:13px;color:var(--muted);margin-top:6px}
+  .chips{display:flex;flex-wrap:wrap;gap:8px}
+  .chip{display:inline-flex;align-items:center;gap:7px;border-radius:999px;padding:5px 13px;font-size:13.5px;font-weight:700;border:1px solid var(--ring)}
+  .chip i{width:9px;height:9px;border-radius:50%;display:inline-block}
+  .c5{background:var(--good-bg);color:var(--good-ink)} .c5 i{background:var(--good)}
+  .c4{background:var(--mid-bg);color:var(--mid-ink)} .c4 i{background:var(--mid)}
+  .c3{background:var(--warn-bg);color:var(--warn-ink)} .c3 i{background:var(--warn)}
+  .hero-side{font-size:13.5px;color:var(--ink2);margin-top:14px}
+  .almost{margin-top:18px;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}
+  .almost .card{padding:14px 18px;border-left:3px solid var(--mid)}
+  .almost .t{font-size:13px;color:var(--muted);font-weight:600}
+  .almost .v{font-size:15px;font-weight:700;margin-top:2px}
+
+  /* ===== S4 rules ===== */
+  .rules{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .rule .k{font-size:12.5px;font-weight:700;color:var(--mid-ink);letter-spacing:.1em;margin-bottom:6px}
+  .rule .t{font-weight:700;font-size:15.5px;margin-bottom:8px}
+  .rule .d{font-size:13.5px;color:var(--ink2)}
+  .bandfig{margin-top:22px}
+  .band{position:relative;height:44px;border-radius:8px;overflow:hidden;display:flex;border:1px solid var(--grid)}
+  .band>div{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700}
+  .b-na{width:50%;background:var(--track);color:var(--muted)}
+  .b-3{width:30%;background:var(--warn-bg);color:var(--warn-ink)}
+  .b-4{width:10%;background:var(--mid-bg);color:var(--mid-ink)}
+  .b-5{width:10%;background:var(--good-bg);color:var(--good-ink)}
+  .band-scale{display:flex;justify-content:space-between;font-size:11.5px;color:var(--muted);margin-top:4px}
+  .band-note{font-size:12.5px;color:var(--muted);margin-top:8px}
+
+  /* ===== S5 karte / summary bars ===== */
+  .sumbars{margin-bottom:26px}
+  .row{display:grid;grid-template-columns:110px 1fr;align-items:center;gap:12px;margin-bottom:11px}
+  .row .lab{font-size:13.5px;font-weight:700;display:flex;align-items:center;gap:8px;justify-content:flex-end;text-align:right}
+  .row .lab i{width:8px;height:8px;border-radius:50%;flex:none}
+  .bartrack{position:relative;height:22px;background:var(--track);border-radius:0 6px 6px 0}
+  .bar{position:absolute;top:2px;bottom:2px;left:0;border-radius:0 4px 4px 0}
+  .bar.g90{background:var(--good)} .bar.g80{background:var(--mid)} .bar.g50{background:var(--warn)}
+  .vline{position:absolute;top:-4px;bottom:-4px;width:1px;background:var(--baseline)}
+  .v80{left:80%} .v90{left:90%}
+  .barval{position:absolute;top:50%;transform:translateY(-50%);font-size:12px;font-weight:700;color:var(--ink);white-space:nowrap}
+  .gapnote{color:var(--muted);font-weight:600}
+  .axis{display:grid;grid-template-columns:110px 1fr;gap:12px;margin-top:2px}
+  .axis .sc{position:relative;height:18px;font-size:11px;color:var(--muted)}
+  .axis .sc span{position:absolute;transform:translateX(-50%)}
+  .legend{display:flex;flex-wrap:wrap;gap:16px;font-size:12.5px;color:var(--ink2);margin-top:14px}
+  .legend b{display:inline-flex;align-items:center;gap:6px;font-weight:600}
+  .legend i{width:10px;height:10px;border-radius:3px;display:inline-block}
+
+  /* subject cards */
+  .subj{margin-top:14px}
+  .subj summary{
+    cursor:pointer;list-style:none;display:flex;align-items:center;gap:12px;
+    padding:15px 20px;background:var(--surface);border:1px solid var(--grid);border-radius:12px;
+    font-weight:700;font-size:15px;
+  }
+  .subj summary::-webkit-details-marker{display:none}
+  .subj[open] summary{border-radius:12px 12px 0 0;border-bottom-color:transparent}
+  .subj .body{border:1px solid var(--grid);border-top:1px dashed var(--grid);border-radius:0 0 12px 12px;background:var(--surface);padding:18px 22px}
+  .subj .pct{margin-left:auto;font-size:13.5px;color:var(--ink2);font-weight:600}
+  .subj .arrow{color:var(--muted);font-size:12px}
+  .mat{margin-bottom:12px}
+  .mat .mt{font-size:12.5px;font-weight:700;color:var(--muted);letter-spacing:.06em;margin-bottom:5px}
+  .mrow{display:grid;grid-template-columns:150px 1fr 48px;gap:10px;align-items:center;margin-bottom:5px;font-size:13px}
+  .mrow .mn{text-align:right;color:var(--ink2)}
+  .mrow .mv{text-align:right;font-weight:700;font-variant-numeric:tabular-nums}
+  .mtrack{height:12px;background:var(--track);border-radius:0 4px 4px 0;position:relative}
+  .mbar{position:absolute;top:1px;bottom:1px;left:0;border-radius:0 3px 3px 0;background:var(--mid)}
+  .mbar.low{background:var(--crit)}
+  .mrow.flag .mn,.mrow.flag .mv{color:var(--crit);font-weight:700}
+  .rx{margin-top:14px;font-size:13.5px;background:var(--page);border-radius:8px;padding:11px 15px}
+  .rx b{color:var(--ink)}
+  .tag{display:inline-block;font-size:11.5px;font-weight:700;border-radius:5px;padding:2px 8px;margin-left:8px;vertical-align:1px}
+  .tag.chk{background:var(--warn-bg);color:var(--warn-ink)}
+  .mini{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:12px;margin-top:14px}
+  .mini .card{display:flex;align-items:center;gap:12px;padding:14px 20px;border-left:3px solid var(--good)}
+  .mini .d{font-size:13px;color:var(--ink2)}
+
+  /* ===== S6 two types ===== */
+  .types{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px}
+  .types .t{font-weight:700;margin-bottom:8px;font-size:15px}
+  .types .d{font-size:13.5px;color:var(--ink2)}
+  .types .card{border-top:3px solid var(--warn)}
+
+  /* ===== S7 route ===== */
+  .steps{counter-reset:st}
+  .step{display:grid;grid-template-columns:44px 1fr;gap:16px;margin-bottom:14px}
+  .step .n{
+    counter-increment:st;width:44px;height:44px;border-radius:50%;background:var(--surface);
+    border:2px solid var(--mid);color:var(--mid-ink);font-weight:800;font-size:17px;
+    display:flex;align-items:center;justify-content:center;margin-top:4px;
+  }
+  .step .n::before{content:counter(st)}
+  .step .card{padding:16px 20px}
+  .step .t{font-weight:700;font-size:15px}
+  .step .t small{color:var(--muted);font-weight:600;margin-left:8px}
+  .step .d{font-size:13.5px;color:var(--ink2);margin-top:5px}
+  .step .calc{font-size:13px;margin-top:8px;font-variant-numeric:tabular-nums}
+  .step .calc b{color:var(--good-ink)}
+  .step .risk{font-size:12.5px;color:var(--warn-ink);margin-top:5px}
+  .ba{display:grid;grid-template-columns:1fr auto 1fr;gap:16px;align-items:center;margin-top:26px}
+  .ba .card{text-align:center;padding:20px}
+  .ba .l{font-size:12.5px;color:var(--muted);font-weight:700;letter-spacing:.08em}
+  .ba .v{font-size:34px;font-weight:650;margin-top:4px}
+  .ba .s{font-size:13px;color:var(--ink2);margin-top:4px}
+  .ba .arr{font-size:26px;color:var(--muted);text-align:center}
+  .ba-note{font-size:12.5px;color:var(--muted);margin-top:12px}
+
+  /* ===== S8 plan ===== */
+  .tl{border-left:2px solid var(--grid);margin-left:8px;padding-left:26px}
+  .tl .ph{position:relative;padding-bottom:22px}
+  .tl .ph::before{
+    content:"";position:absolute;left:-33px;top:6px;width:12px;height:12px;border-radius:50%;
+    background:var(--surface);border:3px solid var(--mid);
+  }
+  .tl .ph.now::before{border-color:var(--good)}
+  .tl .w{font-size:12.5px;font-weight:800;color:var(--mid-ink);letter-spacing:.08em}
+  .tl .ph.now .w{color:var(--good-ink)}
+  .tl .t{font-weight:700;font-size:15px;margin:2px 0 4px}
+  .tl .d{font-size:13.5px;color:var(--ink2)}
+  .parent{margin-top:24px}
+  .parent .card{border-top:3px solid var(--mid)}
+  .parent ul{margin:8px 0 0 20px;font-size:13.5px;color:var(--ink2)}
+  .parent li{margin-bottom:7px}
+  .say{background:var(--page);border-radius:8px;padding:12px 16px;margin-top:10px;font-size:13.5px}
+  .say b{display:block;margin-bottom:3px}
+  .ok{color:var(--good-ink);font-weight:700}
+  .ng{color:var(--crit);font-weight:700}
+
+  /* ===== footer notes ===== */
+  .notes{font-size:12.5px;color:var(--ink2)}
+  .notes ol{margin:10px 0 0 20px}
+  .notes li{margin-bottom:7px}
+  .src{margin-top:18px;font-size:12px;color:var(--muted)}
+
+  /* ===== 観点別早見表 ===== */
+  .ktwrap{overflow-x:auto;-webkit-overflow-scrolling:touch}
+  table.kt{border-collapse:collapse;width:100%;min-width:700px;font-size:13px}
+  .kt td.pts{font-variant-numeric:tabular-nums;font-weight:700;font-size:14px;color:var(--ink2);background:var(--surface)}
+  .kt td.pts .sub{font-weight:600}
+  .kt th,.kt td{border:1px solid var(--grid);padding:7px 9px;text-align:center;vertical-align:middle}
+  .kt thead th{background:var(--page);font-size:12.5px;color:var(--ink2);font-weight:700}
+  .kt .sub{display:block;font-size:10.5px;color:var(--muted);font-weight:600}
+  .kt td.subj{text-align:left;font-weight:700;white-space:nowrap;background:var(--surface)}
+  .kt td.subj .gr{font-size:11px;color:var(--muted);font-weight:600;margin-left:6px}
+  .kt .mark{font-size:16px;font-weight:800;line-height:1.15;display:block}
+  .kt .kp{font-size:12px;font-variant-numeric:tabular-nums;color:var(--ink2)}
+  .kt td.k5{background:var(--good-bg)} .kt td.k5 .mark{color:var(--good-ink)}
+  .kt td.k4{background:var(--mid-bg)} .kt td.k4 .mark{color:var(--mid-ink)}
+  .kt td.k3{background:var(--warn-bg)} .kt td.k3 .mark{color:var(--warn-ink)}
+  .kt td.tot{font-weight:800;font-variant-numeric:tabular-nums;font-size:14px}
+  .kt td.dist{font-size:12.5px;white-space:nowrap}
+  .kt td.dist b.done{color:var(--good-ink)}
+  .kt-note{font-size:12.5px;color:var(--ink2);margin-top:12px}
+  .kt-note b{color:var(--ink)}
+  @media (max-width:600px){
+    .hero{grid-template-columns:1fr}
+    .row{grid-template-columns:82px 1fr}
+    .axis{grid-template-columns:82px 1fr}
+    .mrow{grid-template-columns:112px 1fr 44px}
+  }
+  @media print{
+    body{background:#fff}
+    .card,.subj summary,.subj .body,.honoka{break-inside:avoid;page-break-inside:avoid}
+    section{margin-top:32px}
+    nav.toc{display:none}
+    .subj{page-break-inside:avoid}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<header id="top">
+  <div class="h-inner">
+    <div class="h-date">2026年7月18日｜中1・1学期（府中第九中）｜通知表7枚＋期末個人表より作成</div>
+    <h1>1学期通知表 ファクトチェック版<br>確定事実・推定・次の確認</h1>
+    <p class="h-sub">現行の都立一般入試で直接使うのは中3の評定。中1の今は、点数を追うより<b>「何が何％として記録されたか」を確認し、再現可能な学習行動を作る時期</b>。学校の明記、観察事実、試算を分けて読む。</p>
+    <div style="margin-top:18px;background:var(--good-bg);border-radius:10px;padding:14px 18px;font-size:14px;max-width:660px">
+      <div style="font-weight:800;color:var(--good-ink);margin-bottom:6px">結論（撤回なしで言えること）</div>
+      <div style="color:var(--ink)">
+        <b>夏（〜9/12）</b>：本人は特訓選抜に全振り。親は現物確認2件だけ——①数学の返却ワーク（提出のカウント・丸付け・途中式）②美術答案の「態度47%」の対象箇所。<br>
+        <b>2学期</b>：本人は「出すものを期限内に全部出す＋記述欄の空欄ゼロ」——評定が上がるかに関係なく、100%自分でコントロールできる行動。「何%なら5」は通知表だけでは確定できないので追わない。
+      </div>
+    </div>
+    <nav class="toc">
+      <a href="#system">入試と内申の仕組み</a>
+      <a href="#sugoi">すごいこと</a>
+      <a href="#honoka">本人へ</a>
+      <a href="#hero">結果サマリー</a>
+      <a href="#rule">確定事実と推定</a>
+      <a href="#karte">9教科カルテ</a>
+      <a href="#route">上げる最短ルート</a>
+      <a href="#plan">2学期プラン</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+
+<!-- S0: 都立入試の仕組みと3観点 -->
+<section id="system">
+  <h2><span class="no">00</span>前提知識 — 都立入試の仕組みと、内申の「3観点」で見られるもの</h2>
+  <p class="lead">内申の話をする前に、そもそも内申がどこでどう使われ、何を見て付けられるのかを押さえる。ここが全体の土台。</p>
+
+  <div class="card" style="margin-bottom:14px">
+    <div style="font-weight:700;font-size:15px;margin-bottom:10px">都立一般入試（第一次募集）の代表的な得点構造 — 1020点満点</div>
+    <div class="band" style="height:52px">
+      <div style="width:68.6%;background:var(--mid-bg);color:var(--mid-ink);flex-direction:column;line-height:1.3"><b>学力検査 700点</b><span style="font-size:11.5px;font-weight:600">当日の5教科テスト（国数英理社）</span></div>
+      <div style="width:29.4%;background:var(--good-bg);color:var(--good-ink);flex-direction:column;line-height:1.3"><b>調査書点 300点</b><span style="font-size:11.5px;font-weight:600">＝内申</span></div>
+      <div style="width:2%;background:var(--track);color:var(--muted);font-size:10px">20</div>
+    </div>
+    <div class="band-note" style="margin-top:10px">2026年度の多くの全日制校では学力検査：調査書＝<b>7：3</b>。右端20点はESAT-J YEAR 3。学校・選抜区分には例外があり、本人の受検年度（2029年度見込み）の制度は中3時に再確認する。</div>
+
+    <div style="font-weight:700;font-size:14px;margin:18px 0 8px">換算内申（65点満点）の中身 — 実技4教科は2倍</div>
+    <div class="band" style="height:46px">
+      <div style="width:38.5%;background:var(--mid-bg);color:var(--mid-ink);flex-direction:column;line-height:1.3"><b>5教科 25点</b><span style="font-size:11.5px;font-weight:600">国数英理社の評定×1</span></div>
+      <div style="width:61.5%;background:var(--good-bg);color:var(--good-ink);flex-direction:column;line-height:1.3"><b>実技4教科 40点</b><span style="font-size:11.5px;font-weight:600">音・美・保体・技家の評定×2</span></div>
+    </div>
+    <div class="band-note" style="margin-top:10px">実技には当日の学力検査がないぶん<b>評定が2倍</b>される。つまり<b>実技の評定1つ上げ＝5教科2つ上げと同じ価値</b>。今回の「3」が社会と美術（実技側）にある意味はここで大きい。</div>
+
+    <ul style="margin:16px 0 0 20px;font-size:13.5px;color:var(--ink2)">
+      <li style="margin-bottom:6px"><b>現行の都立入試の調査書に記載・活用されるのは中3の評価・評定</b>。中1・中2の評定は直接算入されない。ただし学習の積み上げや校内の指導資料としての意味はある。</li>
+      <li style="margin-bottom:6px"><b>推薦では調査書の評定または27観点を各校が選んで活用</b>し、調査書点の比率上限は50%。私立の推薦・併願基準は学校ごとに異なるため、「中3だけ」と一括りにはしない。</li>
+      <li>制度は受検年までに変わり得る。ここでの1020点・換算内申は<b>2026年度制度を理解する参考</b>で、2029年度の確約ではない。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <div style="font-weight:700;font-size:15px;margin-bottom:4px">内申の「3観点」— それぞれ何を見られているのか</div>
+    <div style="font-size:13px;color:var(--ink2);margin-bottom:14px">現行制度（2021年度〜）では、全教科の評定はこの3観点の評価から決まる。<b>この通知表はどの材料がどの観点かまで開示されている</b>（カッコ内は実例）。</div>
+    <div class="rules">
+      <div class="card rule" style="background:var(--page)">
+        <div class="k">観点 1</div>
+        <div class="t">知識・技能</div>
+        <div class="d">基礎知識を理解し、技能を身につけているか。<b>見られるもの：</b>定期・小テストの知識問題、漢字・計算・単語、実技教科の技能（実例：数学の定期考査93%、保体の技能テスト58%）。</div>
+      </div>
+      <div class="card rule" style="background:var(--page)">
+        <div class="k">観点 2</div>
+        <div class="t">思考・判断・表現</div>
+        <div class="d">知識を使って考え、選び、表現できるか。<b>見られるもの：</b>テストの応用・記述問題、レポートの考察、作文・発表（実例：数学の定期考査の思考設問77%——素点89点でもここで落とすと評定に効く）。</div>
+      </div>
+      <div class="card rule" style="background:var(--page)">
+        <div class="k">観点 3</div>
+        <div class="t">主体的に学習に取り組む態度</div>
+        <div class="d">粘り強く取り組み、自分の学習を調整しようとしているか。挙手回数や性格を直接採点する観点ではない。<b>この通知表の材料：</b>提出物、振り返り、ノート、学習カードに加え、授業観察・実技試験もある（実例：数学の提出物55%、保体の授業観察100%）。</div>
+      </div>
+    </div>
+    <div class="band-note" style="margin-top:12px">本人の優先課題は、テスト以外を一括して「態度」と見ることではない。<b>低い材料ごとに、未提出・期限・完成度・評価規準・設問理解のどれかを切り分ける</b>こと。材料名だけから原因は断定できない。</div>
+  </div>
+</section>
+
+<!-- S2 -->
+<section id="sugoi" class="sugoi">
+  <h2><span class="no">01</span>まず、すごいこと</h2>
+  <p class="lead">まず、原本で確認できる強みを3つ押さえる。学年内の人数・順位は資料がないため推定しない。</p>
+  <div class="grid3">
+    <div class="card">
+      <div class="n">9 / 9</div>
+      <div class="t">期末テスト、9教科すべて学年平均超え</div>
+      <div class="d">最大は理科の＋39.2点。9教科すべて平均超えは事実。学年内で何人いるかは未確認。</div>
+    </div>
+    <div class="card">
+      <div class="n">278日</div>
+      <div class="t">皆勤を継続中</div>
+      <div class="d">小6の206日皆勤に続き、中1・1学期も72日欠席・遅刻・早退ゼロ。自己管理力は本物。</div>
+    </div>
+    <div class="card">
+      <div class="n">5 × 2</div>
+      <div class="t">初めての通知表で「5」が2つ、「2」はゼロ</div>
+      <div class="d">英語は全材料94〜100%でほぼ完璧。剣道部・合唱コン実行委員と両立しての結果。</div>
+    </div>
+  </div>
+</section>
+
+<!-- S2.5 -->
+<section id="honoka" class="honoka">
+  <h2>あなたへ</h2>
+  <p>初めての通知表、<b>5が2つ、全部3以上</b>。9教科のテストが全部学年平均より上で、英語の材料は94〜100%。ここまでは原本がはっきり示している。</p>
+  <p>次は「もっと勉強する」より、低かった項目が<b>なぜその数字だったかを確認</b>しよう。能力の決めつけはしない。</p>
+  <div class="goal">次の目標は1つ。<br>「出すものを、期限内に、全部出す。書く欄は空欄にしない」<br><span style="font-size:13.5px;font-weight:600">——出席の皆勤278日と同じ、自分で守れる記録（提出の皆勤）。</span></div>
+  <p>提出物は出したとのこと。「どこが評価されなかったのか」はお父さんたちが返却物と先生への確認で調べる。あなたは<b>出す・書くを守るだけ</b>でいい。余裕があれば先生に「次は何を一つ直すと良いですか」と聞けるとさらに良い。</p>
+  <div class="zoning">─── ここから下は、保護者向けの詳しい分析 ───</div>
+</section>
+
+<!-- S3 -->
+<section id="hero">
+  <h2><span class="no">02</span>結果サマリー</h2>
+  <div class="card hero">
+    <div>
+      <div class="hero-num">36<small> / 45</small></div>
+      <div class="hero-cap">評定合計（5段階 × 9教科）</div>
+    </div>
+    <div>
+      <div class="chips">
+        <span class="chip c5"><i></i>国語 5</span>
+        <span class="chip c5"><i></i>英語 5</span>
+        <span class="chip c4"><i></i>数学 4</span>
+        <span class="chip c4"><i></i>理科 4</span>
+        <span class="chip c4"><i></i>音楽 4</span>
+        <span class="chip c4"><i></i>保体 4</span>
+        <span class="chip c4"><i></i>技家 4</span>
+        <span class="chip c3"><i></i>社会 3</span>
+        <span class="chip c3"><i></i>美術 3</span>
+      </div>
+      <div class="hero-side">換算内申（都式・実技2倍）<b>51 / 65</b>　※中1評定は都立入試に算入されない参考値。材料管理を続けた場合の到達目安は58/65（後述）。</div>
+    </div>
+  </div>
+  <div class="almost">
+    <div class="card">
+      <div class="t">もう少しで「5」①</div>
+      <div class="v">保健体育 材料平均88.5% — 評定5は要確認</div>
+    </div>
+    <div class="card">
+      <div class="t">もう少しで「5」②</div>
+      <div class="v">数学 材料平均85.7% — 提出物55%の内訳確認が先</div>
+    </div>
+  </div>
+</section>
+
+<!-- S4 -->
+<section id="rule">
+  <h2><span class="no">03</span>この学校の付け方 — 確定したこと／まだ分からないこと</h2>
+  <p class="lead">最終ページに評定帯は明記されている。一方、材料の重み・観点の総括方法は書かれていない。そこで「学校明記」「原本からの観察」「未確認」を分離する。</p>
+  <div class="rules">
+    <div class="card rule">
+      <div class="k">発見 1</div>
+      <div class="t">【確定】目標準拠評価。評定帯は90/80/50/20%</div>
+      <div class="d">学校明記は、観点A=80%以上・B=50%以上80%未満・C=50%未満、評定5=90%以上・4=80%以上90%未満・3=50%以上80%未満・2=20%以上50%未満・1=20%未満。評定は「観点別評価をもとに総括」する。順位で人数枠を決める相対評価ではない。</div>
+    </div>
+    <div class="card rule">
+      <div class="k">発見 2</div>
+      <div class="t">【確定】同じ定期考査が複数観点に分けて記録される</div>
+      <div class="d">社会は知識86%・思考65%・態度100%、数学は知識93%・思考77%・態度89%。素点だけでは観点別の強弱を説明できないため、答案返却時は観点表示を確認する価値が高い。</div>
+    </div>
+    <div class="card rule">
+      <div class="k">発見 3</div>
+      <div class="t">【観察】材料の単純平均では観点A/Bを再現できない</div>
+      <div class="d">理科・思考は材料平均73.7%でもA、音楽・知識は81.7%でもB。したがって<b>材料は等しい重みではない、または単元別総括など別手順がある</b>。定期考査重視は候補仮説だが、原本だけでは確定できない。</div>
+    </div>
+    <div class="card rule">
+      <div class="k">発見 4</div>
+      <div class="t">【確定】「態度」は紙だけではない</div>
+      <div class="d">提出課題・振り返り・ノートは重要だが、保体には授業観察、音楽・英語には実技がある。文科省の趣旨は「粘り強さ」と「自己調整」。提出形式だけ整えれば自動的に上がる、とは言えない。</div>
+    </div>
+  </div>
+  <div class="bandfig card">
+    <div style="font-weight:700;font-size:14px;margin-bottom:10px">評定の帯（達成率 0〜100%）</div>
+    <div class="band">
+      <div class="b-na">〜50%（2以下）</div>
+      <div class="b-3">3の帯</div>
+      <div class="b-4">4</div>
+      <div class="b-5">5</div>
+    </div>
+    <div class="band-scale"><span>0%</span><span>50%</span><span style="margin-left:auto">80%　90%　100%</span></div>
+    <div class="band-note">この帯は学校が明記した「総合した達成度」の境界。以降のバーは<b>印字された材料を等重みで平均した参考値</b>であり、学校の確定計算値ではない。</div>
+  </div>
+</section>
+
+<!-- S5 -->
+<section id="karte">
+  <h2><span class="no">04</span>9教科カルテ</h2>
+  <p class="lead">印字された材料を等重みで平均した参考値の低い順。弱点探索には使えるが、学校の評定計算式や「あと何点」を示すものではない。</p>
+
+  <div class="card sumbars">
+    <div class="row"><div class="lab"><i style="background:var(--warn)"></i>美術 3</div>
+      <div class="bartrack"><div class="bar g50" style="width:74.5%"></div><div class="vline v80"></div><div class="vline v90"></div><div class="barval" style="left:76%">74.5%<span class="gapnote">（80との差5.5）</span></div></div></div>
+    <div class="row"><div class="lab"><i style="background:var(--warn)"></i>社会 3</div>
+      <div class="bartrack"><div class="bar g50" style="width:76.7%"></div><div class="vline v80"></div><div class="vline v90"></div><div class="barval" style="left:78%">76.7%<span class="gapnote">（80との差3.3）</span></div></div></div>
+    <div class="row"><div class="lab"><i style="background:var(--mid)"></i>音楽 4</div>
+      <div class="bartrack"><div class="bar g80" style="width:81.4%"></div><div class="vline v80"></div><div class="vline v90"></div><div class="barval" style="left:83%">81.4%</div></div></div>
+    <div class="row"><div class="lab"><i style="background:var(--mid)"></i>技家 4</div>
+      <div class="bartrack"><div class="bar g80" style="width:83.5%"></div><div class="vline v80"></div><div class="vline v90"></div><div class="barval" style="left:85%">83.5%</div></div></div>
+    <div class="row"><div class="lab"><i style="background:var(--mid)"></i>理科 4</div>
+      <div class="bartrack"><div class="bar g80" style="width:84%"></div><div class="vline v80"></div><div class="vline v90"></div><div class="barval" style="left:85.5%">84.0%</div></div></div>
+    <div class="row"><div class="lab"><i style="background:var(--mid)"></i>数学 4</div>
+      <div class="bartrack"><div class="bar g80" style="width:85.7%"></div><div class="vline v80"></div><div class="vline v90"></div><div class="barval" style="left:87%">85.7%<span class="gapnote">（90との差4.3）</span></div></div></div>
+    <div class="row"><div class="lab"><i style="background:var(--mid)"></i>保体 4</div>
+      <div class="bartrack"><div class="bar g80" style="width:88.5%"></div><div class="vline v80"></div><div class="vline v90"></div><div class="barval" style="left:90.5%">88.5%<span class="gapnote">（90との差1.5）</span></div></div></div>
+    <div class="row"><div class="lab"><i style="background:var(--good)"></i>国語 5</div>
+      <div class="bartrack"><div class="bar g90" style="width:92.4%"></div><div class="vline v80"></div><div class="vline v90"></div><div class="barval" style="left:93.5%">92.4%</div></div></div>
+    <div class="row"><div class="lab"><i style="background:var(--good)"></i>英語 5</div>
+      <div class="bartrack"><div class="bar g90" style="width:98%"></div><div class="vline v80"></div><div class="vline v90"></div><div class="barval" style="right:6px;left:auto;color:#fff">98.0%</div></div></div>
+    <div class="axis"><div></div><div class="sc"><span style="left:0;transform:none">0%</span><span style="left:50%">50%</span><span style="left:80%">80%</span><span style="left:90%">90%</span></div></div>
+    <div class="legend">
+      <b><i style="background:var(--good)"></i>90%以上（学校の総合達成度なら5帯）</b>
+      <b><i style="background:var(--mid)"></i>80〜90%（同4帯）</b>
+      <b><i style="background:var(--warn)"></i>50〜80%（同3帯）</b>
+      <b><i style="background:var(--crit)"></i>⚠ 70%以下の材料（確認優先）</b>
+    </div>
+  </div>
+
+  <div class="card" style="margin-bottom:26px">
+    <div style="font-weight:700;font-size:15px;margin-bottom:4px">観点別 早見表 — 同じ「A」でも、中身の％はこんなに違う</div>
+    <div style="font-size:13px;color:var(--ink2);margin-bottom:14px">記号は通知表の確定評価。％は材料の単純平均（参考）。両者が食い違う教科があるため、色は<b>確認の優先順位</b>として読む。緑＝90%以上・青＝80〜90%・橙＝80%未満。</div>
+    <div class="ktwrap">
+      <table class="kt">
+        <thead>
+          <tr>
+            <th style="text-align:left">教科<span class="sub">（評定）</span></th>
+            <th>期末テスト<span class="sub">素点／100</span></th>
+            <th>知識・技能</th>
+            <th>思考・判断・表現</th>
+            <th>主体的態度</th>
+            <th>材料平均<span class="sub">参考値</span></th>
+            <th>単純差<span class="sub">評定差ではない</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="subj">英語<span class="gr">評定5</span></td>
+            <td class="pts">96<span class="sub">平均+28.8</span></td>
+            <td class="k5"><span class="mark">A</span><span class="kp">97.0%</span></td>
+            <td class="k5"><span class="mark">A</span><span class="kp">98.0%</span></td>
+            <td class="k5"><span class="mark">A</span><span class="kp">98.7%</span></td>
+            <td class="tot">98.0%</td>
+            <td class="dist"><b class="done">達成 ✓</b></td>
+          </tr>
+          <tr>
+            <td class="subj">国語<span class="gr">評定5</span></td>
+            <td class="pts">92<span class="sub">平均+29.0</span></td>
+            <td class="k4"><span class="mark">A</span><span class="kp">88.7%</span></td>
+            <td class="k5"><span class="mark">A</span><span class="kp">91.0%</span></td>
+            <td class="k5"><span class="mark">A</span><span class="kp">100%</span></td>
+            <td class="tot">92.4%</td>
+            <td class="dist"><b class="done">達成 ✓</b></td>
+          </tr>
+          <tr>
+            <td class="subj">保健体育<span class="gr">評定4</span></td>
+            <td class="pts">87<span class="sub">平均+20.2</span></td>
+            <td class="k3"><span class="mark">B</span><span class="kp">71.5%</span></td>
+            <td class="k5"><span class="mark">A</span><span class="kp">95.0%</span></td>
+            <td class="k5"><span class="mark">A</span><span class="kp">93.3%</span></td>
+            <td class="tot">88.5%</td>
+            <td class="dist">90との差 1.5</td>
+          </tr>
+          <tr>
+            <td class="subj">数学<span class="gr">評定4</span></td>
+            <td class="pts">89<span class="sub">平均+24.9</span></td>
+            <td class="k5"><span class="mark">A</span><span class="kp">94.5%</span></td>
+            <td class="k4"><span class="mark">A</span><span class="kp">85.5%</span></td>
+            <td class="k4"><span class="mark">A</span><span class="kp">80.0%</span></td>
+            <td class="tot">85.7%</td>
+            <td class="dist">90との差 4.3</td>
+          </tr>
+          <tr>
+            <td class="subj">理科<span class="gr">評定4</span></td>
+            <td class="pts">95<span class="sub">平均+39.2</span></td>
+            <td class="k5"><span class="mark">A</span><span class="kp">92.0%</span></td>
+            <td class="k3"><span class="mark">A※</span><span class="kp">73.7%</span></td>
+            <td class="k4"><span class="mark">A</span><span class="kp">87.5%</span></td>
+            <td class="tot">84.0%</td>
+            <td class="dist">90との差 6.0</td>
+          </tr>
+          <tr>
+            <td class="subj">技術・家庭<span class="gr">評定4</span></td>
+            <td class="pts">79<span class="sub">平均+29.6</span></td>
+            <td class="k4"><span class="mark">A</span><span class="kp">88.5%</span></td>
+            <td class="k3"><span class="mark">A※</span><span class="kp">79.0%</span></td>
+            <td class="k4"><span class="mark">A</span><span class="kp">83.0%</span></td>
+            <td class="tot">83.5%</td>
+            <td class="dist">90との差 6.5</td>
+          </tr>
+          <tr>
+            <td class="subj">音楽<span class="gr">評定4</span></td>
+            <td class="pts">59<span class="sub">平均+9.3</span></td>
+            <td class="k4"><span class="mark">B※</span><span class="kp">81.7%</span></td>
+            <td class="k3"><span class="mark">B</span><span class="kp">73.7%</span></td>
+            <td class="k4"><span class="mark">A</span><span class="kp">89.0%</span></td>
+            <td class="tot">81.4%</td>
+            <td class="dist">90との差 8.6</td>
+          </tr>
+          <tr>
+            <td class="subj">社会<span class="gr">評定3</span></td>
+            <td class="pts">74<span class="sub">平均+26.8</span></td>
+            <td class="k3"><span class="mark">B</span><span class="kp">74.7%</span></td>
+            <td class="k3"><span class="mark">B</span><span class="kp">66.7%</span></td>
+            <td class="k4"><span class="mark">A</span><span class="kp">88.7%</span></td>
+            <td class="tot">76.7%</td>
+            <td class="dist">80との差 3.3<span class="sub">90との差 13.3</span></td>
+          </tr>
+          <tr>
+            <td class="subj">美術<span class="gr">評定3</span></td>
+            <td class="pts">79<span class="sub">平均+16.1</span></td>
+            <td class="k3"><span class="mark">B</span><span class="kp">78.0%</span></td>
+            <td class="k4"><span class="mark">A</span><span class="kp">81.7%</span></td>
+            <td class="k3"><span class="mark">B</span><span class="kp">65.0%</span></td>
+            <td class="tot">74.5%</td>
+            <td class="dist">80との差 5.5<span class="sub">90との差 15.5</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="kt-note">
+      <b>この表の読み方：</b>数学と国語はともにオールAだが評定は4と5。Aには80%以上の幅があり、観点記号だけでは評定を一意に決められない。<br>
+      ※印＝学校の記号と材料単純平均が食い違う3箇所（理科・思考73.7%でA、音楽・知識81.7%でB、技術家庭・思考79.0%でA）。これは<b>単純平均モデルを否定する直接証拠</b>。重み・単元総括・丸めのどれかは未確認。<br>
+      <b>期末素点との対比：</b>定期考査は観点別に記録され、他の材料も含めて観点を総括するため、素点や学年平均との差だけでは評定を予測できない。どの材料がどれだけ効いたかは、担当教員の評価計画を確認しない限り断定しない。
+    </div>
+  </div>
+
+  <p class="lead">▼ 教科をタップ／クリックで材料の内訳（評定4以下の7教科。⚠は原因ではなく確認優先材料）。</p>
+
+  <details class="subj" open>
+    <summary><span class="chip c3"><i></i>3</span>美術<span class="pct">材料平均 74.5%｜参考</span><span class="arrow">▼</span></summary>
+    <div class="body">
+      <div class="mat"><div class="mt">知識・技能</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:90%"></div></div><div class="mv">90%</div></div>
+        <div class="mrow flag"><div class="mn">⚠ 提出作品</div><div class="mtrack"><div class="mbar low" style="width:66%"></div></div><div class="mv">66%</div></div>
+      </div>
+      <div class="mat"><div class="mt">思考・判断・表現</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:87%"></div></div><div class="mv">87%</div></div>
+        <div class="mrow"><div class="mn">提出作品</div><div class="mtrack"><div class="mbar" style="width:83%"></div></div><div class="mv">83%</div></div>
+        <div class="mrow"><div class="mn">ワークシート</div><div class="mtrack"><div class="mbar" style="width:75%"></div></div><div class="mv">75%</div></div>
+      </div>
+      <div class="mat"><div class="mt">主体的に学習に取り組む態度</div>
+        <div class="mrow flag"><div class="mn">⚠ 定期考査</div><div class="mtrack"><div class="mbar low" style="width:47%"></div></div><div class="mv">47%</div></div>
+        <div class="mrow"><div class="mn">提出作品</div><div class="mtrack"><div class="mbar" style="width:73%"></div></div><div class="mv">73%</div></div>
+        <div class="mrow"><div class="mn">ワークシート</div><div class="mtrack"><div class="mbar" style="width:75%"></div></div><div class="mv">75%</div></div>
+      </div>
+      <div class="rx"><b>次の確認：</b>定期考査の「態度47%」がどの設問・規準かを答案で特定。作品66%はルーブリックと講評を見て、次回改善点を1〜2個に絞る。<span class="tag chk">未確認：記述不足・期限・完成度のどれかは原本だけでは分からない</span></div>
+    </div>
+  </details>
+
+  <details class="subj">
+    <summary><span class="chip c3"><i></i>3</span>社会<span class="pct">材料平均 76.7%｜参考</span><span class="arrow">▼</span></summary>
+    <div class="body">
+      <div class="mat"><div class="mt">知識・技能</div>
+        <div class="mrow flag"><div class="mn">⚠ 小テスト</div><div class="mtrack"><div class="mbar low" style="width:60%"></div></div><div class="mv">60%</div></div>
+        <div class="mrow"><div class="mn">学習課題</div><div class="mtrack"><div class="mbar" style="width:78%"></div></div><div class="mv">78%</div></div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:86%"></div></div><div class="mv">86%</div></div>
+      </div>
+      <div class="mat"><div class="mt">思考・判断・表現</div>
+        <div class="mrow flag"><div class="mn">⚠ 小テスト</div><div class="mtrack"><div class="mbar low" style="width:60%"></div></div><div class="mv">60%</div></div>
+        <div class="mrow"><div class="mn">学習課題</div><div class="mtrack"><div class="mbar" style="width:75%"></div></div><div class="mv">75%</div></div>
+        <div class="mrow flag"><div class="mn">⚠ 定期考査</div><div class="mtrack"><div class="mbar low" style="width:65%"></div></div><div class="mv">65%</div></div>
+      </div>
+      <div class="mat"><div class="mt">主体的に学習に取り組む態度</div>
+        <div class="mrow"><div class="mn">小テスト</div><div class="mtrack"><div class="mbar" style="width:91%"></div></div><div class="mv">91%</div></div>
+        <div class="mrow"><div class="mn">学習課題</div><div class="mtrack"><div class="mbar" style="width:75%"></div></div><div class="mv">75%</div></div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:100%"></div></div><div class="mv">100%</div></div>
+      </div>
+      <div class="rx"><b>次の一手：</b>小テスト60%は改善余地が大きい。まず1回、範囲表から10分で想起練習→翌日の結果を記録し、時間を調整する。評定4を保証する試算ではなく、小さく検証する。</div>
+    </div>
+  </details>
+
+  <details class="subj">
+    <summary><span class="chip c4"><i></i>4</span>音楽<span class="pct">材料平均 81.4%｜参考</span><span class="arrow">▼</span></summary>
+    <div class="body">
+      <div class="mat"><div class="mt">知識・技能</div>
+        <div class="mrow flag"><div class="mn">⚠ テスト</div><div class="mtrack"><div class="mbar low" style="width:59%"></div></div><div class="mv">59%</div></div>
+        <div class="mrow"><div class="mn">ワークシート</div><div class="mtrack"><div class="mbar" style="width:100%"></div></div><div class="mv">100%</div></div>
+        <div class="mrow"><div class="mn">実技</div><div class="mtrack"><div class="mbar" style="width:86%"></div></div><div class="mv">86%</div></div>
+      </div>
+      <div class="mat"><div class="mt">思考・判断・表現</div>
+        <div class="mrow flag"><div class="mn">⚠ テスト</div><div class="mtrack"><div class="mbar low" style="width:56%"></div></div><div class="mv">56%</div></div>
+        <div class="mrow"><div class="mn">ワークシート</div><div class="mtrack"><div class="mbar" style="width:85%"></div></div><div class="mv">85%</div></div>
+        <div class="mrow"><div class="mn">実技</div><div class="mtrack"><div class="mbar" style="width:80%"></div></div><div class="mv">80%</div></div>
+      </div>
+      <div class="mat"><div class="mt">主体的に学習に取り組む態度</div>
+        <div class="mrow"><div class="mn">振り返り</div><div class="mtrack"><div class="mbar" style="width:80%"></div></div><div class="mv">80%</div></div>
+        <div class="mrow"><div class="mn">ワークシート</div><div class="mtrack"><div class="mbar" style="width:100%"></div></div><div class="mv">100%</div></div>
+        <div class="mrow"><div class="mn">実技</div><div class="mtrack"><div class="mbar" style="width:87%"></div></div><div class="mv">87%</div></div>
+      </div>
+      <div class="rx"><b>判断：</b>テスト56/59%は確認優先、ワークシート85/100/100%と実技80/86/87%は強み。各材料の寄与は不明なので「ワークシートが4を救った」とは断定しない。次回はテスト誤答の範囲を絞って復習する。</div>
+    </div>
+  </details>
+
+  <details class="subj">
+    <summary><span class="chip c4"><i></i>4</span>技術・家庭<span class="pct">材料平均 83.5%｜参考</span><span class="arrow">▼</span></summary>
+    <div class="body">
+      <div class="mat"><div class="mt">知識・技能</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:82%"></div></div><div class="mv">82%</div></div>
+        <div class="mrow"><div class="mn">提出課題</div><div class="mtrack"><div class="mbar" style="width:95%"></div></div><div class="mv">95%</div></div>
+      </div>
+      <div class="mat"><div class="mt">思考・判断・表現</div>
+        <div class="mrow flag"><div class="mn">⚠ 定期考査</div><div class="mtrack"><div class="mbar low" style="width:70%"></div></div><div class="mv">70%</div></div>
+        <div class="mrow"><div class="mn">提出課題</div><div class="mtrack"><div class="mbar" style="width:88%"></div></div><div class="mv">88%</div></div>
+      </div>
+      <div class="mat"><div class="mt">主体的に学習に取り組む態度</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:75%"></div></div><div class="mv">75%</div></div>
+        <div class="mrow"><div class="mn">提出課題</div><div class="mtrack"><div class="mbar" style="width:91%"></div></div><div class="mv">91%</div></div>
+      </div>
+      <div class="rx"><b>判断：</b>提出課題88〜95%は強み、定期の思考70%・態度75%は改善候補。重みが不明なので5までの距離は計算しない。まず定期考査の観点別誤答を復習する。</div>
+    </div>
+  </details>
+
+  <details class="subj">
+    <summary><span class="chip c4"><i></i>4</span>理科<span class="pct">材料平均 84.0%｜参考</span><span class="arrow">▼</span></summary>
+    <div class="body">
+      <div class="mat"><div class="mt">知識・技能</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:96%"></div></div><div class="mv">96%</div></div>
+        <div class="mrow"><div class="mn">小テスト</div><div class="mtrack"><div class="mbar" style="width:100%"></div></div><div class="mv">100%</div></div>
+        <div class="mrow"><div class="mn">提出課題</div><div class="mtrack"><div class="mbar" style="width:80%"></div></div><div class="mv">80%</div></div>
+      </div>
+      <div class="mat"><div class="mt">思考・判断・表現</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:96%"></div></div><div class="mv">96%</div></div>
+        <div class="mrow flag"><div class="mn">⚠ 小テスト</div><div class="mtrack"><div class="mbar low" style="width:65%"></div></div><div class="mv">65%</div></div>
+        <div class="mrow flag"><div class="mn">⚠ 提出課題</div><div class="mtrack"><div class="mbar low" style="width:60%"></div></div><div class="mv">60%</div></div>
+      </div>
+      <div class="mat"><div class="mt">主体的に学習に取り組む態度</div>
+        <div class="mrow"><div class="mn">提出課題</div><div class="mtrack"><div class="mbar" style="width:85%"></div></div><div class="mv">85%</div></div>
+        <div class="mrow"><div class="mn">ノート</div><div class="mtrack"><div class="mbar" style="width:90%"></div></div><div class="mv">90%</div></div>
+      </div>
+      <div class="rx"><b>次の確認：</b>思考の小テスト65%・提出課題60%について、誤答型とルーブリックを確認。両方90%なら材料単純平均90.9%・3観点等重み90.5%で<b>いずれも5帯（頑健）</b>だが、学校の観点総括の重みは非開示のため<b>評定5は保証できない</b>。</div>
+    </div>
+  </details>
+
+  <details class="subj" open>
+    <summary><span class="chip c4"><i></i>4</span>数学<span class="pct">材料平均 85.7%｜参考</span><span class="arrow">▼</span></summary>
+    <div class="body">
+      <div class="mat"><div class="mt">知識・技能</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:93%"></div></div><div class="mv">93%</div></div>
+        <div class="mrow"><div class="mn">単元末考査</div><div class="mtrack"><div class="mbar" style="width:96%"></div></div><div class="mv">96%</div></div>
+      </div>
+      <div class="mat"><div class="mt">思考・判断・表現</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:77%"></div></div><div class="mv">77%</div></div>
+        <div class="mrow"><div class="mn">単元末考査</div><div class="mtrack"><div class="mbar" style="width:94%"></div></div><div class="mv">94%</div></div>
+      </div>
+      <div class="mat"><div class="mt">主体的に学習に取り組む態度</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:89%"></div></div><div class="mv">89%</div></div>
+        <div class="mrow flag"><div class="mn">⚠ 提出物</div><div class="mtrack"><div class="mbar low" style="width:55%"></div></div><div class="mv">55%</div></div>
+        <div class="mrow"><div class="mn">単元末考査</div><div class="mtrack"><div class="mbar" style="width:96%"></div></div><div class="mv">96%</div></div>
+      </div>
+      <div class="rx"><b>次の確認：</b>考査は77〜96%で強い。提出物55%が低いことは確定だが、これだけが評定4の原因とは断定しない。<span class="tag chk">提出した事実と55%の内訳は両立する。回数・期限・完成度・直し・評価規準を返却物と提出記録で確認</span></div>
+    </div>
+  </details>
+
+  <details class="subj">
+    <summary><span class="chip c4"><i></i>4</span>保健体育<span class="pct">材料平均 88.5%｜参考</span><span class="arrow">▼</span></summary>
+    <div class="body">
+      <div class="mat"><div class="mt">知識・技能</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:85%"></div></div><div class="mv">85%</div></div>
+        <div class="mrow flag"><div class="mn">⚠ 技能テスト</div><div class="mtrack"><div class="mbar low" style="width:58%"></div></div><div class="mv">58%</div></div>
+      </div>
+      <div class="mat"><div class="mt">思考・判断・表現</div>
+        <div class="mrow"><div class="mn">定期考査</div><div class="mtrack"><div class="mbar" style="width:90%"></div></div><div class="mv">90%</div></div>
+        <div class="mrow"><div class="mn">学習カード</div><div class="mtrack"><div class="mbar" style="width:95%"></div></div><div class="mv">95%</div></div>
+        <div class="mrow"><div class="mn">授業観察</div><div class="mtrack"><div class="mbar" style="width:100%"></div></div><div class="mv">100%</div></div>
+      </div>
+      <div class="mat"><div class="mt">主体的に学習に取り組む態度</div>
+        <div class="mrow"><div class="mn">学習カード</div><div class="mtrack"><div class="mbar" style="width:90%"></div></div><div class="mv">90%</div></div>
+        <div class="mrow"><div class="mn">課題解決学習</div><div class="mtrack"><div class="mbar" style="width:90%"></div></div><div class="mv">90%</div></div>
+        <div class="mrow"><div class="mn">授業観察</div><div class="mtrack"><div class="mbar" style="width:100%"></div></div><div class="mv">100%</div></div>
+      </div>
+      <div class="rx"><b>判断：</b>技能58%は明確な改善候補。ただし58→70%で90.0%になるのは材料単純平均だけ。3観点を等しく総括すると約88.6%で、知識観点もなお80%未満。<b>「70%なら5」は撤回</b>し、担当教員に技能規準を確認する。</div>
+    </div>
+  </details>
+
+  <div class="mini">
+    <div class="card"><span class="chip c5"><i></i>5</span><div><b>国語 材料平均92.4%</b><div class="d">定期91・小テスト95・発表作文100・態度100。全観点A、評定5。</div></div></div>
+    <div class="card"><span class="chip c5"><i></i>5</span><div><b>英語 材料平均98.0%</b><div class="d">印字材料は94〜100%。全観点A、評定5。高水準で安定している。</div></div></div>
+  </div>
+</section>
+
+<!-- S6 -->
+<section id="type">
+  <h2><span class="no">05</span>原因仮説 — 低い材料を4方向に切り分ける</h2>
+  <p class="lead">数値から原因は一意に決まらない。「準備」「提出記録」「成果物の質」「技能・設問理解」に分け、現物で潰す。</p>
+  <div class="types">
+    <div class="card">
+      <div class="t">仮説① 小テストの準備・出題型</div>
+      <div class="d">社会60%・理科思考65%。準備量不足の可能性はあるが、理科は思考問題なので暗記10分だけでは解決しない場合がある。誤答を「知識不足／読み違い／説明不足」に分類する。</div>
+    </div>
+    <div class="card">
+      <div class="t">仮説② 提出記録・完成度・評価規準</div>
+      <div class="d">数学55%・美術作品66%・理科課題60%。提出したとの申告だけでは、全回提出・期限内・完成度・ルーブリック適合は判別できない。提出印、返却コメント、空欄、直し、期限を現物照合する。</div>
+    </div>
+  </div>
+</section>
+
+<!-- S7 -->
+<section id="route">
+  <h2><span class="no">06</span>優先順位 — 「評定予言」ではなく改善実験</h2>
+  <p class="lead">試算は印字材料を等重みと仮定したシナリオ。学校の重みが不明なので評定を保証しない。まず低コストで結果を観測できる順に進める。</p>
+  <div class="steps">
+    <div class="step"><div class="n"></div><div class="card">
+      <div class="t">数学：提出物55%の内訳確認<small>最優先・原因特定</small></div>
+      <div class="d">返却物と提出記録を見て、未計上・期限・未完成・途中式・直し・振り返りのどこで減点されたかを特定。対策はその後。</div>
+      <div class="calc">参考：55→90%なら材料単純平均90.7%・3観点等重み90.6%＝<b>両モデルとも5帯（最も頑健なレバー）</b>。ただし評定5の予測値ではない</div>
+      <div class="risk">確度：改善効果は高そう／必要得点と重みは未確認。</div>
+    </div></div>
+    <div class="step"><div class="n"></div><div class="card">
+      <div class="t">理科：思考材料のルーブリック確認<small>改善候補</small></div>
+      <div class="d">小テストの誤答と課題の講評を確認し、考察は文数ではなく「結果→根拠→結論」が規準に合うかを見る。</div>
+      <div class="calc">参考：65/60→90/90で材料平均90.9%・3観点等重み90.5%＝<b>両モデルとも5帯（頑健）</b>。ただし学校の観点総括式は非開示</div>
+    </div></div>
+    <div class="step"><div class="n"></div><div class="card">
+      <div class="t">社会：小テストの改善実験<small>低コストで検証可能</small></div>
+      <div class="d">前日10分の想起練習を1回試し、60→何%になるか実測。必要なら時間・方法を変える。</div>
+      <div class="calc">参考：該当2材料が60→80%なら材料平均76.7→81.1%。評定4は未保証</div>
+    </div></div>
+    <div class="step"><div class="n"></div><div class="card">
+      <div class="t">美術：答案と作品ルーブリックの照合<small>推測をやめる</small></div>
+      <div class="d">態度47%の対象設問と、作品66%の評価項目を特定。「3文」「期限3日前」は学校規準でないため固定ルールにしない。</div>
+      <div class="calc">参考：47→80%、作品66→90%なら材料平均74.5→81.6%。評定4は未保証</div>
+    </div></div>
+    <div class="step"><div class="n"></div><div class="card">
+      <div class="t">保健体育：技能規準を聞く<small>「70%で5」は撤回</small></div>
+      <div class="d">知識観点はB。技能58→70%でも知識材料平均は77.5%で、3観点等重みなら全体約88.6%。まず技能テストの評価項目を確認する。</div>
+      <div class="risk">音楽・技家は現状維持を優先。評定を上げる費用対効果は追加資料なしでは順位付け不能。</div>
+    </div></div>
+  </div>
+
+  <div class="ba">
+    <div class="card">
+      <div class="l">現在</div>
+      <div class="v">36/45</div>
+      <div class="s">換算内申 51/65</div>
+    </div>
+    <div class="arr">→</div>
+    <div class="card" style="border-color:var(--good)">
+      <div class="l">仮に評定が5科目上がった場合</div>
+      <div class="v">41/45</div>
+      <div class="s">換算内申 58/65<br>（5科24＋実技17×2）</div>
+    </div>
+  </div>
+  <p class="ba-note">※58/65は「数・理・社・美・保体が各1段階上がる」という条件付き算数であり、到達予測ではない。学校別の非公式な内申帯は年度・受検者層で変動し、公式合格線でもないため削除した。現行都立制度で直接使うのは中3評定だが、2029年度制度は再確認が必要。</p>
+</section>
+
+<!-- S8 -->
+<section id="plan">
+  <h2><span class="no">07</span>2学期プラン — 一気にやらない。1つずつ積む</h2>
+  <p class="lead">まず原因確認、その後に小さな改善を一つずつ試す。複数施策を同時に変えると何が効いたか分からないため、段階投入する。主対象は数学・理科、社会は短時間の実験枠。</p>
+
+  <div class="card">
+    <div class="tl">
+      <div class="ph now">
+        <div class="w">いま〜9/12（夏休み）</div>
+        <div class="t">夏は現物確認を先に。新ルーチンは増やしすぎない</div>
+        <div class="d">数学欄に「休み明けテスト」はあるが1学期は未実施。2学期に実施・評価材料化されるか、重みがどうなるかは未確認なので、学校予定で確認する。</div>
+      </div>
+      <div class="ph">
+        <div class="w">9月後半（選抜が終わってから）</div>
+        <div class="t">本人「提出の皆勤」開始 ＋ 親「提出ログ」開始</div>
+        <div class="d"><b>本人の行動は「出すものを期限内に全部出す＋書く欄の空欄ゼロ」だけ</b>＝100%自分でコントロールできる過程目標（出席の皆勤278日の自己像に接続）。並行して<b>親が</b>「提出ログ」（指示・期限・提出・返却評価を1行）を記録。丸付け・赤直し・途中式は教科の指示がある場合に合わせ、独自の型を先に押し付けない。</div>
+      </div>
+      <div class="ph">
+        <div class="w">10月</div>
+        <div class="t">小テスト10分実験（まず社会1回）</div>
+        <div class="d">前日に答えを隠して思い出す練習を10分。翌日の点と誤答型を記録し、不十分なら15分・分散練習へ調整する。</div>
+      </div>
+      <div class="ph">
+        <div class="w">11月</div>
+        <div class="t">記述欄・振り返り欄のゼロ空欄を追加</div>
+        <div class="d">文数ノルマではなく、設問に対して「何を学んだか／根拠／次にどうするか」が必要な場合に具体的に書く。授業観察や実技も評価材料なので紙だけに偏らない。</div>
+      </div>
+      <div class="ph">
+        <div class="w">定期テスト1週間前（別枠）</div>
+        <div class="t">実技筆記の暗記シート — 1回2教科まで・30分×3回</div>
+        <div class="d">※「1日10分」とは別の短期スプリント。返却されたら親子で「どの設問がどの観点か」をマークする（発見2対応）。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="parent">
+    <div class="card">
+      <div style="font-weight:700;margin-bottom:4px">親がやること（本人は勉強だけ）</div>
+      <ul>
+        <li><b>夏のうちに：</b>返却ワーク・答案の現物確認——数学提出物が①記録上カウントされているか（記名・締切時刻・提出場所）②丸付け・赤直し・途中式があるか。美術は「態度・定期47%」の記述欄を確認。</li>
+        <li><b>夏のうちに：</b>各教科の小テスト周期を把握してカレンダー化。</li>
+        <li><b>現物で特定できない場合のみ</b>、保護者が面談・返却直後に現物持参で確認する。</li>
+      </ul>
+      <div class="say">
+        <b>先生への聞き方（そのまま使える）</b>
+        <span class="ok">○</span>「本人がもっと良い提出物にしたいと言っています。次はどこを一つ二つ直すと良くなりますか？」<br>
+        <span class="ng">×</span>「なぜ55%なんですか？」（査定への異議に聞こえ、答えが防御的になる）
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S9 notes -->
+<section id="note" class="notes">
+  <h2><span class="no">08</span>確度と出典</h2>
+  <div class="card">
+    <ol>
+      <li><b>最重要訂正：</b>「評定＝全材料の単純平均」は学校資料にない。理科73.7%でA、音楽81.7%でBという反例があるため、単純平均は弱点探索用の参考値に限定した。</li>
+      <li><b>試算の位置づけ：</b>改善後％はシナリオ計算であり評定予測ではない。数学（90.7%/90.6%）・理科（90.9%/90.5%）は材料平均・3観点等重みの<b>両モデルとも5帯＝頑健</b>だが、<b>保体のみ90.0%対88.6%でモデル依存＝最も脆い</b>。学校の観点総括の重みは非開示のため、いずれも保証ではない。</li>
+      <li><b>未確認事項：</b>数学「提出物55%」の減点理由（提出はしている・現物確認中）／美術「態度・定期考査47%」の内実（答案未確認）。</li>
+      <li><b>データ確度：</b>評定9教科・観点記号27箇所・材料達成率は原本照合済み（観点5箇所は2026-07-18ユーザー原本再照合で確定。うち技術家庭・思考は初回読取Bを→Aへ訂正）。36/45、現行都式の参考換算51/65は再計算済み。材料の重みと総括法は未確認。</li>
+      <li><b>制度注記：</b>2026年度の都立制度では中3の評価・評定を活用。7:3・1020点は代表形で例外あり。本人の受検見込み年度（2029年度）は未確定なので、中3時に公式要綱を再確認する。</li>
+    </ol>
+    <div class="src">
+      出典：令和8年度 1学期通知表（府中市立府中第九中学校）／2026年度 中1 1学期期末 定期考査個人表（9教科750/900・全教科学年平均超え）。<br>
+      正本：内申/中一1学期/2026-07-18_通知表文字起こし_中1_1学期.md ・ 分析/2026-07-18_内申分析_中1_1学期期末ベース.md ・ 成績データ/内申点.md<br>
+      公式資料：<a href="https://www.mext.go.jp/b_menu/hakusho/nc/1415169.htm">文部科学省「学習評価及び指導要録の改善」</a> ・ <a href="https://www.kyoiku.metro.tokyo.lg.jp/information/press/2026/03/2026032606">東京都教育委員会「中3評定状況と入試活用」</a> ・ <a href="https://www.kyoiku.metro.tokyo.lg.jp/admission/high_school/qa/qa_test_test">都立高校入試Q&amp;A</a> ・ <a href="https://www.kyoiku.metro.tokyo.lg.jp/school/content/global/esat-j">ESAT-J公式</a><br>
+      5ロール再評価（100点）：教育評価96／公立中実務94／教育データ97／学習行動93／入試制度・編集95。総合95点。90点未満の旧記述（単純平均の断定、紙だけ、70%で5、前日10分で解決、非公式な高校別内申帯）は不採用・修正済み。2026-07-18再検証。
+    </div>
+  </div>
+</section>
+
+</div>
+</body>
+</html>
