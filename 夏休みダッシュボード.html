@@ -75,6 +75,15 @@ details.sec[open]>summary .tw::after{content:"▲ とじる"}
 .revkit{border:1px solid #d6e0ee;border-radius:12px;padding:12px 12px 10px;margin:2px 4px 12px;background:#f8fbff}
 .revkit-hd{font-size:14px;font-weight:900;color:#36506f;margin:0 2px 4px}
 .revkit-note{font-size:12px;color:#7a8699;margin:0 2px 8px}
+.hw{border:2px solid #b98a3a;border-radius:14px;background:#fffdf5;margin:14px 4px 12px;overflow:hidden}
+.hw-hd{background:#b98a3a;color:#fff;font-size:15px;font-weight:900;padding:10px 13px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.hw-hd .tag{font-size:11.5px;font-weight:800;background:rgba(255,255,255,.24);border-radius:999px;padding:3px 9px}
+.hw-note{font-size:12.5px;color:#7a6a45;padding:9px 13px 2px;line-height:1.6}
+.hw-a{display:flex;flex-wrap:wrap;gap:10px;padding:8px 10px 12px}
+.hw-a a{flex:1;min-width:210px;font-size:14px;font-weight:800;text-decoration:none;color:#6b4f18;background:#fdf3dc;border:1.5px solid #d9bd80;border-radius:12px;padding:14px 13px;min-height:52px;display:flex;align-items:center;gap:9px;line-height:1.4}
+.hw-a a:hover{background:#f8e9c8}
+.hw-a a .em{font-size:20px}
+.j-hw{background:#fdf3dc!important;border-color:#d9bd80!important;color:#6b4f18!important}
 .foot{text-align:center;font-size:12px;color:#8392a5;margin-top:16px}
 /* 「きょうやること」へ戻る動線（各セクション末・最下部） */
 .backtop{display:inline-flex;align-items:center;min-height:44px;margin:10px 4px 2px;font-size:12.5px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd8e8;border-radius:18px;padding:8px 14px}
@@ -191,6 +200,16 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
   <div class="t-foot">今日は2枚（約60分）でおしまいでOK。できる日はそのまま進めてもOK。順番は自動で決まります。🌸</div>
 </div>
 
+<!-- 🏫 学校の宿題（たたまずに常に見える場所。9/1提出があるので上に置く） -->
+<div class="hw" id="homework">
+  <div class="hw-hd">🏫 学校の宿題（夏休み）<span class="tag">9月1日ていしゅつ</span></div>
+  <div class="hw-note">下書き・調べたことはここ。<b>ノートや方眼紙に手で書きうつすときに開く</b>。</div>
+  <div class="hw-a">
+    <a href="報国寺新聞_iPad.html"><span class="em">🎍</span>鎌倉 事前学習「報国寺新聞」<br>＋ ネタ帳・年表・図・Q&amp;A</a>
+    <a href="地理_夏休みの課題.html"><span class="em">🌍</span>地理 夏休みの課題<br>①朝ごはんマップ ②タイムゾーン日記</a>
+  </div>
+</div>
+
 <!-- 進捗＋教科ジャンプを1本に統合（旧: ジャンプナビ7本＋ナビ4本＋進捗バーの3系統を1本へ） -->
 <div class="bar">
   <div class="barL"><span class="big" id="pct">0%</span>
@@ -199,6 +218,7 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
   </div>
   <div class="jump">
     <a class="j-rev" href="#review">🔴 弱点復習</a>
+    <a class="j-hw" href="#homework">🏫 学校の宿題</a>
     <a href="#amn">🗂️ 暗記</a>
     <a href="#math">📐 数学</a>
     <a href="#eng">🔤 英語</a>
@@ -287,10 +307,10 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
   <div class="sec-body">
     <div class="legend">どの問題があるか探すとき・処方（次に何をやるか）を見るときに使う一覧。</div>
     <div class="revkit">
-      <div class="revkit-hd">🌍 学校の宿題（地理）</div>
-      <div class="revkit-note">9月1日に出す地理の課題2本の下書き。ワークシートに手書きで写すときに見る。</div>
+      <div class="revkit-hd">🏫 学校の宿題は上に移しました</div>
+      <div class="revkit-note">地理・鎌倉（報国寺新聞）の入口は、いちばん上の <b>🏫 学校の宿題</b> のカードにあります。</div>
       <div class="tools">
-        <a href="地理_夏休みの課題.html">🌍 地理 夏休みの課題（①朝ごはんマップ ②タイムゾーン日記）</a>
+        <a href="#homework">🏫 学校の宿題へ移動</a>
       </div>
     </div>
     <div class="revkit">
