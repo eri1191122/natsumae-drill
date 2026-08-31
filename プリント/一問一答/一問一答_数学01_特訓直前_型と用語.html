@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!--
+ 一問一答 数学①（セット SET_KEY=tokkun_qa_m01・20問）。
+ _テンプレート_一問一答.html をコピーして、設定ブロックとQS配列だけを書きかえたもの。
+ 範囲＝正負の数／文字と式／方程式（型の見分け）。すべてオリジナル問題。
+ ・SRSスケジューラは載せない（忘却曲線の管理は「復習数学_まちがえ復習キュー.html」の仕事）。
+ ・✕を押した問題だけ revmq_dyn へ流す（払い出し形式は既存の数学プリントと同一）。
+ ・全問に○✕が付いたら localStorage['tokkun_qa_m01_done']='1'（ダッシュボードの✓同期規約）。
+ ・作り方の正本 → 運用ワークフロー/一問一答作成ワークフロー.md
+-->
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>一問一答 数学①｜型と用語</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f8f7;color:#263238;font-size:15px;line-height:1.75}
+.wrap{max-width:760px;margin:0 auto;padding:56px 14px 90px}
+.back{position:fixed;top:10px;left:10px;z-index:9999;display:inline-flex;align-items:center;min-height:40px;padding:6px 14px;font-size:14px;font-weight:800;color:#3f6f9f;text-decoration:none;background:#fff;border:1px solid #cdd9e6;border-radius:22px;box-shadow:0 2px 8px rgba(40,55,72,.18)}.back:active{background:#eef2f7}@media print{.back{display:none!important}}
+.back:hover{text-decoration:underline}
+.pg-hd{background:#eef2f7;color:#27374a;padding:20px 20px;border:1px solid #cdd9e6;border-radius:10px;margin-bottom:14px}
+.pg-hd h1{font-size:20px;font-weight:900;margin-bottom:6px}
+.pg-hd p{font-size:13px;color:#4a5b6e}
+.pg-badge{display:inline-block;background:#dce8f5;color:#2f5a8a;font-size:11px;font-weight:800;padding:3px 10px;border:1px solid #bcd3ee;border-radius:18px;margin-right:6px;margin-bottom:4px}
+.progress{background:#fff;border:2px solid #6f93c2;border-radius:10px;padding:12px 16px;margin:0 0 12px;font-size:15px;font-weight:800;color:#2f5a8a;text-align:center}
+.progress .oo{color:#2f6a44}
+.progress .xx{color:#9b514d}
+.track{height:10px;background:#eef2f7;border-radius:8px;overflow:hidden;margin-top:8px}
+.track .fill{height:100%;background:linear-gradient(90deg,#7fae8a,#e8c04a);width:0}
+.allclear{display:none;text-align:center;background:linear-gradient(90deg,#7a9ed0,#e8c04a);color:#fff;font-size:18px;font-weight:900;padding:18px;border-radius:14px;margin-bottom:16px}
+.allclear.show{display:block}
+.q{background:#fffefb;border:1px solid #e3e2d9;border-radius:10px;padding:14px 16px;margin:12px 0}
+.q .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:4px}
+.badge{display:inline-block;font-size:11px;font-weight:800;padding:2px 9px;border-radius:12px}
+.badge.suchoku{background:#e6f0fb;color:#2f5a8a;border:1px solid #bcd3ee}
+.badge.keisan{background:#e9f3ea;color:#2f6a44;border:1px solid #bbe0c4}
+.badge.bunsho{background:#fbe9cf;color:#8a5a17;border:1px solid #eccf9a}
+.qno{font-size:11.5px;color:#8a7d6a;font-weight:800;background:#fbf6ec;border:1px solid #ecdcc0;border-radius:10px;padding:2px 9px}
+.mystat{font-size:11.5px;font-weight:800;margin-left:auto;border-radius:10px;padding:2px 9px}
+.mystat.o{color:#2f6a44;background:#e9f3ea;border:1px solid #bbe0c4}
+.mystat.x{color:#9b514d;background:#fbeeee;border:1px solid #e6c5c3}
+.jp{font-size:19px;font-weight:800;color:#31415f;margin:8px 0 4px;line-height:1.9}
+.choices{display:flex;flex-wrap:wrap;gap:10px 18px;font-size:17px;font-weight:800;color:#27374a;background:#f4f7fb;border:1px solid #d6e2ee;border-radius:8px;padding:12px 14px;margin:8px 0 2px}
+.ans-btn{margin-top:12px;width:100%;min-height:52px;background:#657789;color:#fff;border:none;border-radius:26px;padding:10px 18px;font-size:15px;font-weight:800;cursor:pointer}
+.ans-btn:hover{background:#536577}
+.ans-box{display:none;background:#f5f7f6;border:1px solid #d9e1da;border-radius:8px;padding:12px 14px;margin-top:10px}
+.ans-box.open{display:block}
+.en{font-size:20px;font-weight:900;color:#2f5a8a;background:#eaf2fb;border:2px solid #9bbfdf;border-radius:8px;padding:10px 14px;margin-bottom:10px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.kaisetsu{font-size:13.5px;line-height:1.95;color:#33433a}
+.kaisetsu .chunk{background:#eef1f2;padding:1px 6px;border-radius:3px;font-weight:800;color:#2f5a8a}
+.kaisetsu .lab{display:inline-block;font-size:11px;font-weight:800;color:#2f5a8a;background:#dde9f5;border:1px solid #aecbe6;border-radius:8px;padding:1px 8px;margin-right:6px}
+.kaisetsu p{margin:7px 0}
+.red{color:#9b514d;font-weight:800}
+.grade{margin-top:12px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.grade .lbl{font-size:13px;color:#607086;font-weight:700}
+.o,.x{width:52px;height:52px;border-radius:50%;border:2px solid #dfe3da;background:#fff;font-size:23px;font-weight:700;cursor:pointer;color:#8a8794}
+.o:active,.x:active{transform:scale(.94)}
+.o.sel{background:#6aa97a;color:#fff;border-color:#6aa97a}
+.x.sel{background:#d08a86;color:#fff;border-color:#d08a86}
+.qnav{display:flex;gap:10px;margin:14px 0 0}
+.qnav button{flex:1;min-height:48px;border:1px solid #cdd9e6;background:#fff;color:#3f6f9f;font-size:14px;font-weight:800;border-radius:24px;cursor:pointer}
+.qnav button:disabled{opacity:.4;cursor:default}
+.qnav button:active:not(:disabled){background:#eef2f7}
+.viewseg{display:flex;gap:0;background:#eef2f7;border:1px solid #cdd9e6;border-radius:24px;padding:4px;margin:0 0 14px}
+.seg{flex:1;min-height:44px;border:none;background:transparent;font-size:14px;font-weight:800;color:#4a5b6e;border-radius:20px;cursor:pointer}
+.seg.on{background:#6f93c2;color:#fff;box-shadow:0 1px 4px rgba(47,90,138,.3)}
+.seg:active{transform:scale(.98)}
+.dict-note{font-size:12.5px;color:#5a6b7e;background:#f4f7fb;border:1px solid #d6e2ee;border-radius:8px;padding:8px 12px;margin-bottom:10px;line-height:1.7}
+.dict-row{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;background:#fffefb;border:1px solid #e3e2d9;border-radius:10px;padding:10px 14px;margin:8px 0;cursor:pointer}
+.dict-main{display:flex;align-items:center;gap:8px;flex-wrap:wrap;min-width:0}
+.dict-jp{font-size:14px;font-weight:700;color:#31415f}
+.reset{display:block;margin:30px auto 0;background:#fff;border:1px solid #e0d8d6;color:#a08a86;font-size:12px;font-weight:700;padding:7px 14px;border-radius:18px;cursor:pointer}
+.reset:hover{background:#fdf6f4}
+.endcheer{text-align:center;font-size:13px;color:#4c5b70;margin-top:18px;line-height:1.9}
+.qa-warn{background:#fff7e8;border:1px solid #e6cf9a;color:#8a5a19;font-size:11.5px;padding:6px 10px;border-radius:8px;margin-bottom:8px;line-height:1.7}
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 1px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+.back-foot{display:block;text-align:center;min-height:48px;line-height:48px;max-width:420px;margin:26px auto 0;background:#6f93c2;color:#fff;font-size:16px;font-weight:800;border-radius:26px;text-decoration:none}
+.back-foot:active{background:#5f82b1}
+.totop{position:fixed;left:14px;bottom:14px;width:48px;height:48px;border-radius:50%;border:none;background:rgba(101,119,137,.85);color:#fff;font-size:22px;font-weight:700;box-shadow:0 2px 6px rgba(0,0,0,.2);display:none;z-index:30;cursor:pointer}
+.totop.show{display:block}
+@media print{.totop{display:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#today">← 夏休みダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div><span class="pg-badge">一問一答</span><span class="pg-badge" id="hdSubject">教科</span><span class="pg-badge">すきま5分</span></div>
+  <h1 id="hdTitle">一問一答</h1>
+  <p>1問ずつ出るよ。<strong>まず自分で答えを言ってから</strong>「答えを見る」を押そう。合っていたら○、ちがったら✕。<strong>✕にした問題だけ</strong>、あとで教科の「まちがえ復習キュー」に出てくるよ。分からなくても飛ばさずに、答えを見て○✕をつけるのが大事🌸</p>
+</div>
+
+<div class="allclear" id="allclear">🌸 ぜんぶ答えた！おつかれさま 🌸</div>
+<div class="progress" id="progress">
+  <span id="pcount">0 / 0 問</span>　<span class="oo" id="pO">○0</span>　<span class="xx" id="pX">✕0</span>
+  <div class="track"><div class="fill" id="pfill"></div></div>
+</div>
+
+<div class="viewseg">
+  <button class="seg on" id="segQ" onclick="setView('quiz')">⚡ 一問一答</button>
+  <button class="seg" id="segL" onclick="setView('list')">📋 一覧（○✕を見る）</button>
+</div>
+
+<div id="stage"></div>
+
+<script>
+/* 安全網：本体scriptが構文エラー（カンマ抜け等）で止まってもこれは動く */
+window.addEventListener('load',function(){setTimeout(function(){
+  var L=document.getElementById('stage');
+  if(typeof QS==='undefined'||!L||!L.innerHTML){
+    if(L)L.innerHTML='<div class="q" style="border-color:#d08a86"><p class="red">データの読みこみに失敗しました。</p><p>さいきん問題を足したなら、<b>カンマ「,」のつけ忘れ</b>か<b>かっこの閉じわすれ</b>が原因のことが多いです。直前に足した行を見直してください。（保護者の方へ）</p></div>';
+  }
+},400);});
+</script>
+
+<button class="reset" onclick="resetAll()">↺ ○✕をぜんぶ消して 最初からやる</button>
+
+<div class="endcheer">
+  一問一答は「考える練習」ではなく<strong>「もう考えなくても出てくる」ようにする練習</strong>。<br>
+  1回でぜんぶ覚えなくていい。✕はキューが拾ってくれるから、どんどん先へ進もう🌸
+</div>
+
+<a class="back-foot" href="../../夏休みダッシュボード.html#today">✓ 終わった → ダッシュボードへ</a>
+
+</div>
+
+<button id="toTop" class="totop" aria-label="上へ" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<script>
+/* ╔══════════════ 【設定ブロック】ここだけ書きかえる ══════════════╗
+   ① SET_KEY  … 採番規則 tokkun_qa_<教科1字 m=数学 / e=英語 / k=国語><連番2桁>
+                  例 tokkun_qa_m01 / tokkun_qa_e01 / tokkun_qa_k01
+                  ★他のセットと重複させない（重複すると○✕がまざる）
+   ② SET_TITLE… 画面の見出し。キューへ送るときの見出しにも使う
+   ③ DYN_KEY  … 送り先の教科キュー。数学=revmq_dyn / 英語=revq_dyn / 国語=revjq_dyn
+   ④ SUBJECT  … 画面のバッジ表示用（数学 / 英語 / 国語）
+   ⑤ QS       … 問題。1行1問。badge は suchoku / keisan / bunsho の3つだけ（CSS定義済み）
+                  {jp:'問題文', en:'答え', k:'解説', kind:'画面に出す小見出し', badge:'suchoku'}
+                  choices:'<span>ア</span><span>イ</span>' は要らなければ書かなくてよい
+   ★解答前ヒント禁止：jp（問題文）に解き方・着眼・型名を書かない。解法は k（解説）だけに書く。
+   ★解説 k は中学生の言葉で5行以内。よくある間違いを先に出す。
+   ╚═══════════════════════════════════════════╝ */
+var SET_KEY  = 'tokkun_qa_m01';
+var SET_TITLE= '一問一答 数学①｜型と用語';
+var DYN_KEY  = 'revmq_dyn';
+var SUBJECT  = '数学';
+var QS=[
+ /* ── 用語（8問）── */
+ {kind:'用語', badge:'suchoku',
+  jp:'<strong>−7</strong> の絶対値は？',
+  en:'7',
+  k:'<p><span class="red">よくある間違い</span>「−7の絶対値は −7」。きょりがマイナスになることはない。</p>'+
+    '<p><span class="lab">なぜ</span>絶対値は「数直線で0からどれだけはなれているか」＝<span class="chunk">きょり</span>。きょりに向きはないので、−がついていても符号を外した数になる。</p>'+
+    '<p><span class="lab">ついでに</span>絶対値が0になる数は0だけ。</p>'},
+
+ {kind:'用語', badge:'suchoku',
+  jp:'<strong>3x − 5</strong> で、<strong>x の係数</strong>は？',
+  en:'3',
+  k:'<p><span class="red">よくある間違い</span>「3x」と答える。係数は<span class="chunk">文字にかかっている数だけ</span>なので 3。</p>'+
+    '<p><span class="lab">なぜ</span>3x は 3×x のこと。その「3」が係数。</p>'+
+    '<p><span class="lab">ついでに</span>−5 は文字がないので<span class="chunk">定数項</span>。−x の係数は <span class="chunk">−1</span>（1が見えないだけ）。</p>'},
+
+ {kind:'用語', badge:'suchoku',
+  jp:'方程式の「<strong>移項</strong>」とは、何をすること？',
+  en:'＝の反対がわへ項を移すこと（移すと符号が変わる）',
+  k:'<p><span class="red">よくある間違い</span>移したのに符号をそのままにする。<span class="chunk">＋5 を移したら −5</span>。</p>'+
+    '<p><span class="lab">なぜ</span>もとは「両がわから同じ数をひく」操作。<span class="chunk">x＋5＝9 → x＋5−5＝9−5</span>。この結果が「＋5を右へ移して−5」に見えるだけ。</p>'+
+    '<p><span class="lab">使い方</span>文字は左、数は右へ集める。</p>'},
+
+ {kind:'用語', badge:'suchoku',
+  jp:'<strong>7 − 2x</strong> の「項」を、ぜんぶ答えて。',
+  en:'7 と −2x',
+  k:'<p><span class="red">よくある間違い</span>「7 と 2x」と答える。<span class="chunk">− は次の項にくっついてくる</span>ので −2x。</p>'+
+    '<p><span class="lab">なぜ</span>項＝＋で区切ったときの1つ分。7−2x は 7＋(−2x) と同じ。</p>'+
+    '<p><span class="lab">確認</span>文字の部分が x だけなので、これは<span class="chunk">一次式</span>。</p>'},
+
+ {kind:'用語', badge:'suchoku',
+  jp:'−<span class="frac"><span class="n">3</span><span class="d">4</span></span> の<strong>逆数</strong>は？',
+  en:'−<span class="frac"><span class="n">4</span><span class="d">3</span></span>',
+  k:'<p><span class="red">よくある間違い</span><span class="frac"><span class="n">4</span><span class="d">3</span></span> と、符号を＋にしてしまう。逆数は<span class="chunk">符号はそのまま</span>、分子と分母だけ入れかえる。</p>'+
+    '<p><span class="lab">なぜ</span>逆数＝かけて1になる相手。<span class="chunk">(−<span class="frac"><span class="n">3</span><span class="d">4</span></span>)×(−<span class="frac"><span class="n">4</span><span class="d">3</span></span>)＝1</span>。＋にすると答えが −1 になってしまう。</p>'+
+    '<p><span class="lab">ついでに</span>0 に逆数はない（0に何をかけても1にならない）。</p>'},
+
+ {kind:'用語', badge:'suchoku',
+  jp:'1から20までの整数の中に、<strong>素数</strong>はいくつある？',
+  en:'8個（2, 3, 5, 7, 11, 13, 17, 19）',
+  k:'<p><span class="red">よくある間違い</span>1を数えて9個にする。<span class="chunk">1は素数ではない</span>。9も入れない（9＝3×3）。</p>'+
+    '<p><span class="lab">なぜ</span>素数＝約数が<span class="chunk">1と自分の2つだけ</span>の数。1は約数が1つしかないので外れる。2は約数が1と2の2つなので素数（偶数でも素数）。</p>'+
+    '<p><span class="lab">おぼえ方</span>20までは「2・3・5・7・11・13・17・19」の8個。ここは丸ごと覚えてよい。</p>'},
+
+ {kind:'用語', badge:'suchoku',
+  jp:'<strong>0 は自然数</strong>？　（はい／いいえ）',
+  en:'いいえ',
+  k:'<p><span class="red">よくある間違い</span>「0も整数だから自然数」。整数ではあるが<span class="chunk">自然数ではない</span>。</p>'+
+    '<p><span class="lab">なぜ</span>自然数＝ものを数えるときの数＝<span class="chunk">1, 2, 3, …</span>。0は「ない」ことを表す数なので入らない。</p>'+
+    '<p><span class="lab">整理</span>整数＝…, −2, −1, 0, 1, 2, …／自然数＝正の整数だけ。</p>'},
+
+ {kind:'用語', badge:'suchoku',
+  jp:'「<strong>x について解く</strong>」とは、どんな形にすること？',
+  en:'x ＝ □ の形（左を x だけ）にすること',
+  k:'<p><span class="red">よくある間違い</span>2x＝10 で止める。<span class="chunk">x＝5</span> まで書いて はじめて「解いた」。</p>'+
+    '<p><span class="lab">手順</span>①文字は左・数は右へ移項　②両がわを x の係数でわる　③x＝ の形にする。</p>'+
+    '<p><span class="lab">たしかめ</span>出た数をもとの式に入れて、左＝右になるか確認する。</p>'},
+
+ /* ── 即答計算（8問）── */
+ {kind:'即答計算', badge:'keisan',
+  jp:'<strong>(−3) ＋ (−8)</strong> ＝ ?',
+  en:'−11',
+  k:'<p><span class="red">よくある間違い</span>−5 と答える（ひき算にしてしまう）。たすのは「借金どうし」。</p>'+
+    '<p><span class="lab">なぜ</span>同じ符号どうしのたし算は<span class="chunk">絶対値をたして、符号はそのまま</span>。3＋8＝11、符号は− なので −11。</p>'+
+    '<p><span class="lab">イメージ</span>3円の借金＋8円の借金＝11円の借金。</p>'},
+
+ {kind:'即答計算', badge:'keisan',
+  jp:'<strong>(−6) − (−10)</strong> ＝ ?',
+  en:'4',
+  k:'<p><span class="red">よくある間違い</span>−6−10＝−16 とする。<span class="chunk">ひく相手が −10</span> なので、符号が2回変わる。</p>'+
+    '<p><span class="lab">手順</span>「−をひく」は「＋をたす」に直す。<span class="chunk">(−6)−(−10)＝−6＋10＝4</span>。</p>'+
+    '<p><span class="lab">たしかめ</span>数直線で −6 から右へ10進む → 4。</p>'},
+
+ {kind:'即答計算', badge:'keisan',
+  jp:'<strong>(−2)³</strong> と <strong>−2²</strong> を、それぞれ答えて。',
+  en:'(−2)³ ＝ −8　／　−2² ＝ −4',
+  k:'<p><span class="red">よくある間違い</span>−2² を 4 にする。本番でいちばん落としやすい所。</p>'+
+    '<p><span class="lab">見分け方</span>カッコがあれば<span class="chunk">−も指数の相手</span>：(−2)³＝(−2)×(−2)×(−2)＝−8。カッコがなければ<span class="chunk">2だけ2乗して、−は最後につく</span>：−2²＝−(2×2)＝−4。</p>'+
+    '<p><span class="lab">おぼえ方</span>指数がかかるのは「すぐ左の1つ」だけ。</p>'},
+
+ {kind:'即答計算', badge:'keisan',
+  jp:'<strong>−3(2x − 5)</strong> の、カッコをはずして。',
+  en:'−6x ＋ 15',
+  k:'<p><span class="red">よくある間違い</span>−6x−15 とする。<span class="chunk">−3×(−5)＝＋15</span>。うしろの項の符号を変えわすれる。</p>'+
+    '<p><span class="lab">手順</span>外の数を<span class="chunk">中のぜんぶ</span>にかける。−3×2x＝−6x、−3×(−5)＝＋15。</p>'+
+    '<p><span class="lab">たしかめ</span>x＝1 を入れる。もと：−3(2−5)＝−3×(−3)＝9。答え：−6＋15＝9○。</p>'},
+
+ {kind:'即答計算', badge:'keisan',
+  jp:'<strong>(−12) ÷ (−3) × (−2)</strong> ＝ ?',
+  en:'−8',
+  k:'<p><span class="red">よくある間違い</span>×を先に計算して (−12)÷6＝−2 とする。<span class="chunk">÷と×は左から順</span>。</p>'+
+    '<p><span class="lab">手順</span>(−12)÷(−3)＝4 → 4×(−2)＝−8。</p>'+
+    '<p><span class="lab">符号のコツ</span>先に − の個数を数える。ここは3個＝<span class="chunk">奇数個だから答えは −</span>。数だけなら 12÷3×2＝8。だから −8。</p>'},
+
+ {kind:'即答計算', badge:'keisan',
+  jp:'<strong>5x − 8 ＝ 2x ＋ 7</strong> を解いて。',
+  en:'x ＝ 5',
+  k:'<p><span class="red">よくある間違い</span>移項で符号を変えず 5x＋2x＝7−8 とする。</p>'+
+    '<p><span class="lab">手順</span>文字は左・数は右へ。<span class="chunk">5x−2x＝7＋8</span> → 3x＝15 → x＝5。</p>'+
+    '<p><span class="lab">たしかめ</span>左＝5×5−8＝17、右＝2×5＋7＝17。一致○。</p>'},
+
+ {kind:'即答計算', badge:'keisan',
+  jp:'<strong>x ＝ −4</strong> のとき、<strong>3 − 2x</strong> の値は？',
+  en:'11',
+  k:'<p><span class="red">よくある間違い</span>3−2−4＝−3 のように、カッコをつけずに代入する。</p>'+
+    '<p><span class="lab">手順</span>代入するときは<span class="chunk">かならずカッコをつける</span>：3−2×(−4)＝3＋8＝11。</p>'+
+    '<p><span class="lab">なぜ ＋8</span>−2×(−4) は − どうしのかけ算なので ＋ になる。</p>'},
+
+ {kind:'即答計算', badge:'keisan',
+  jp:'<strong>1 − 2 ＋ 3 − 4 ＋ 5 − 6 ＋ 7 − 8 ＋ 9 − 10</strong> ＝ ?',
+  en:'−5',
+  k:'<p><span class="red">よくある間違い</span>前から1つずつ計算して、途中で符号を落とす。数が多いときほど工夫する。</p>'+
+    '<p><span class="lab">手順</span>2つずつ組にする：<span class="chunk">(1−2)＋(3−4)＋(5−6)＋(7−8)＋(9−10)</span>。どの組も −1。</p>'+
+    '<p><span class="lab">答え</span>−1 が5組だから <span class="chunk">−1×5＝−5</span>。</p>'},
+
+ /* ── 型あて（4問）── */
+ {kind:'型あて', badge:'bunsho',
+  jp:'1本80円のペンと1本120円のマーカーを、合わせて12本買ったら代金は1160円でした。これは何型？',
+  choices:'<span>個数・代金型</span><span>速さ・往復型</span><span>過不足型</span><span>割合・利益型</span>',
+  en:'個数・代金型',
+  k:'<p><span class="red">よくある間違い</span>ペンとマーカーを x と y の2文字で置く。中1は<span class="chunk">文字1つ</span>で解く。</p>'+
+    '<p><span class="lab">見分け方</span>「合わせて◯本」と<span class="chunk">合計の個数が決まっている</span>のが目じるし。</p>'+
+    '<p><span class="lab">立て方</span>ペンを x 本 → マーカーは (12−x) 本。金額の合計で <span class="chunk">80x＋120(12−x)＝1160</span>。</p>'},
+
+ {kind:'型あて', badge:'bunsho',
+  jp:'あめを配ります。1人に5個ずつ配ると8個あまり、6個ずつ配ると3個たりません。これは何型？',
+  choices:'<span>個数・代金型</span><span>速さ・往復型</span><span>過不足型</span><span>割合・利益型</span>',
+  en:'過不足型',
+  k:'<p><span class="red">よくある間違い</span>「たりない3」を ＋3 にする。<span class="chunk">あまる＝＋、たりない＝−</span>。</p>'+
+    '<p><span class="lab">見分け方</span>配り方が2通りで、「あまる」「たりない」の言葉が出てきたら過不足型。</p>'+
+    '<p><span class="lab">立て方</span>変わらないもの（あめの総数）を2通りで表して＝。人数を x 人として <span class="chunk">5x＋8＝6x−3</span>。</p>'},
+
+ {kind:'型あて', badge:'bunsho',
+  jp:'家から駅まで、行きは分速60m、帰りは分速90mで往復したら、合わせて25分かかりました。これは何型？',
+  choices:'<span>個数・代金型</span><span>速さ・往復型</span><span>過不足型</span><span>割合・利益型</span>',
+  en:'速さ・往復型',
+  k:'<p><span class="red">よくある間違い</span>行きと帰りの速さをたして2でわり、平均分速75mとして解く。<span class="chunk">速さは平均できない</span>。</p>'+
+    '<p><span class="lab">見分け方</span>行き帰りで速さがちがい、<span class="chunk">合計の時間</span>が出てきたら速さ・往復型。</p>'+
+    '<p><span class="lab">立て方</span>片道を x m とおく。時間＝道のり÷速さ なので <span class="chunk"><span class="frac"><span class="n">x</span><span class="d">60</span></span>＋<span class="frac"><span class="n">x</span><span class="d">90</span></span>＝25</span>。</p>'},
+
+ {kind:'型あて', badge:'bunsho',
+  jp:'ある品物に、原価の3割の利益を見込んで定価をつけたら、定価は2600円になりました。これは何型？',
+  choices:'<span>個数・代金型</span><span>速さ・往復型</span><span>過不足型</span><span>割合・利益型</span>',
+  en:'割合・利益型',
+  k:'<p><span class="red">よくある間違い</span>2600の3割をひいて1820円とする。3割がかかるのは<span class="chunk">定価ではなく原価</span>なので、それでは合わない。</p>'+
+    '<p><span class="lab">見分け方</span>「◯割の利益」「定価」「原価」の言葉が出てきたら割合・利益型。</p>'+
+    '<p><span class="lab">立て方</span>3割の利益＝<span class="chunk">×(1＋0.3)＝×1.3</span>。原価を x 円として <span class="chunk">1.3x＝2600</span>。</p>'}
+];
+/* ══════════ ここから下は共通エンジン。さわらない ══════════ */
+
+function safeGet(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+function safeSet(k,v){try{localStorage.setItem(k,v);return true;}catch(e){return false;}}
+function safeRemove(k){try{localStorage.removeItem(k);}catch(e){}}
+function plain(s){return String(s==null?'':s).replace(/<[^>]*>/g,'').replace(/[\s　]+/g,' ').trim();}
+function todayMD(){var d=new Date();return (d.getMonth()+1)+'/'+d.getDate();}
+
+/* id自動採番（q1,q2,…）。手で id を書いた問題はそのまま尊重する */
+QS.forEach(function(q,i){if(!q.id)q.id='q'+(i+1);});
+
+/* ===== ✕を教科キューへ送る =====
+   払い出し形式は既存プリント（特訓P13ほかの a16-recovery-hook-math-v1）と同一：
+   {src,jp,en,kind,badge,day,po,px} ＋ 解説 k。src で重複を防ぎ、○はpo加算・✕はpx加算。
+   受け手（復習◯◯_まちがえ復習キュー.html の mergeDyn）が src をキーにmergeする。 */
+function sendToQueue(q,result){
+  try{
+    var src=SET_KEY+'_'+q.id, raw=safeGet(DYN_KEY), arr;
+    try{arr=raw==null?[]:JSON.parse(raw);}catch(e){return;}
+    if(!Array.isArray(arr))return;
+    var jp=SET_TITLE+' / '+plain(q.jp);
+    var hit=null; for(var i=0;i<arr.length;i++){if(arr[i]&&arr[i].src===src){hit=arr[i];break;}}
+    if(result==='o'){if(hit){hit.po=(+hit.po||0)+1;safeSet(DYN_KEY,JSON.stringify(arr));}return;}
+    if(hit){hit.px=(+hit.px||0)+1;hit.po=0;hit.day=todayMD();hit.jp=jp;hit.en=q.en;hit.k=q.k;}
+    else{arr.push({src:src,jp:jp,en:q.en,k:q.k,kind:(q.kind||SUBJECT),badge:(q.badge||'suchoku'),day:todayMD(),po:0,px:1});}
+    safeSet(DYN_KEY,JSON.stringify(arr));
+  }catch(e){}
+}
+
+function stOf(q){var v=safeGet(SET_KEY+'_'+q.id);return (v==='o'||v==='x')?v:'';}
+function counts(){var o=0,x=0;QS.forEach(function(q){var s=stOf(q);if(s==='o')o++;else if(s==='x')x++;});return{o:o,x:x,n:o+x};}
+function firstTodo(from){
+  for(var i=(from||0);i<QS.length;i++){if(!stOf(QS[i]))return i;}
+  for(var j=0;j<QS.length;j++){if(!stOf(QS[j]))return j;}
+  return -1;
+}
+
+var cur=0, VIEW='quiz';
+
+function updProgress(){
+  var c=counts();
+  document.getElementById('pcount').textContent=c.n+' / '+QS.length+' 問';
+  document.getElementById('pO').textContent='○'+c.o;
+  document.getElementById('pX').textContent='✕'+c.x;
+  document.getElementById('pfill').style.width=(QS.length?Math.round(c.n/QS.length*100):0)+'%';
+  var ac=document.getElementById('allclear');
+  if(c.n>=QS.length&&QS.length>0){safeSet(SET_KEY+'_done','1');if(VIEW==='quiz')ac.classList.add('show');}
+  else{ac.classList.remove('show');}
+}
+
+function renderQuiz(){
+  var stage=document.getElementById('stage');
+  if(cur<0)cur=0; if(cur>=QS.length)cur=QS.length-1;
+  var q=QS[cur],s=stOf(q);
+  stage.innerHTML=
+    '<div class="q" id="card">'+
+      '<div class="top">'+
+        '<span class="badge '+(q.badge||'suchoku')+'">'+(q.kind||SUBJECT)+'</span>'+
+        '<span class="qno">第'+(cur+1)+'問 / 全'+QS.length+'問</span>'+
+        (s?'<span class="mystat '+s+'">'+(s==='o'?'○ できた':'✕ 復習キューへ')+'</span>':'')+
+      '</div>'+
+      '<div class="jp">'+q.jp+'</div>'+
+      (q.choices?'<div class="choices">'+q.choices+'</div>':'')+
+      '<button class="ans-btn" id="ansBtn" onclick="toggleAns(this)">答えを見る</button>'+
+      '<div class="ans-box" id="ansBox">'+
+        '<div class="en">'+q.en+'</div>'+
+        '<div class="kaisetsu">'+q.k+'</div>'+
+        '<div class="grade"><span class="lbl">合ってた？</span>'+
+          '<button class="o'+(s==='o'?' sel':'')+'" onclick="mark(1)">○</button>'+
+          '<button class="x'+(s==='x'?' sel':'')+'" onclick="mark(0)">✕</button>'+
+        '</div>'+
+      '</div>'+
+    '</div>'+
+    '<div class="qnav">'+
+      '<button onclick="jump('+(cur-1)+')"'+(cur===0?' disabled':'')+'>← 前の問題</button>'+
+      '<button onclick="jump('+(cur+1)+')"'+(cur>=QS.length-1?' disabled':'')+'>次の問題 →</button>'+
+    '</div>';
+  updProgress();
+}
+
+function toggleAns(b){
+  var a=document.getElementById('ansBox');if(!a)return;
+  var open=a.classList.toggle('open');
+  b.textContent=open?'とじる':'答えを見る';
+}
+
+function mark(ok){
+  var q=QS[cur];
+  safeSet(SET_KEY+'_'+q.id, ok?'o':'x');
+  sendToQueue(q, ok?'o':'x');
+  updProgress();
+  var nx=firstTodo(cur+1);
+  if(nx>=0){ cur=nx; setTimeout(function(){renderQuiz();window.scrollTo({top:0,behavior:'smooth'});},450); }
+  else { setTimeout(function(){setView('list');window.scrollTo({top:0,behavior:'smooth'});},450); }
+}
+
+function jump(i){
+  if(i<0||i>=QS.length)return;
+  cur=i; VIEW='quiz';
+  document.getElementById('segQ').classList.add('on');
+  document.getElementById('segL').classList.remove('on');
+  document.getElementById('progress').style.display='';
+  renderQuiz();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+function renderList(){
+  var stage=document.getElementById('stage');
+  var c=counts();
+  var html='<div class="dict-note">タップするとその問題に とべるよ。まだ答えていない問題は「—」。✕にした問題は、教科の「まちがえ復習キュー」にも入っているよ🌸（○'+c.o+' ／ ✕'+c.x+' ／ 未'+(QS.length-c.n)+'）</div>';
+  QS.forEach(function(q,i){
+    var s=stOf(q);
+    var mk=s==='o'?'<span class="mystat o">○</span>':(s==='x'?'<span class="mystat x">✕</span>':'<span class="qno">—</span>');
+    html+='<div class="dict-row" onclick="jump('+i+')">'+
+      '<div class="dict-main"><span class="badge '+(q.badge||'suchoku')+'">'+(q.kind||SUBJECT)+'</span>'+
+      '<span class="dict-jp">'+(i+1)+'. '+plain(q.jp).slice(0,34)+'</span></div>'+
+      '<div class="dict-main">'+mk+'</div></div>';
+  });
+  stage.innerHTML=html;
+}
+
+function setView(v){
+  VIEW=v;
+  document.getElementById('segQ').classList.toggle('on',v==='quiz');
+  document.getElementById('segL').classList.toggle('on',v==='list');
+  var pg=document.getElementById('progress'),ac=document.getElementById('allclear');
+  if(v==='quiz'){ pg.style.display=''; renderQuiz(); }
+  else { pg.style.display='none'; ac.classList.remove('show'); renderList(); }
+}
+
+function resetAll(){
+  if(!confirm('このページの○✕をぜんぶ消して、'+QS.length+'問を最初から出すよ。いい？\n\n★「まちがえ復習キュー」に入った問題は消えません（そちらで復習を続けられます）'))return;
+  QS.forEach(function(q){safeRemove(SET_KEY+'_'+q.id);});
+  safeRemove(SET_KEY+'_done');
+  cur=0; setView('quiz');
+}
+
+/* 点検（保護者向け・?check=1 で画面にも出す） */
+function selfCheck(){
+  var OK=['suchoku','keisan','bunsho'],w=[],ids={};
+  if(!/^tokkun_qa_[mek][0-9]{2}$/.test(SET_KEY))w.push('SET_KEY「'+SET_KEY+'」が採番規則 tokkun_qa_<m|e|k><2桁> に合っていない');
+  if(['revmq_dyn','revq_dyn','revjq_dyn'].indexOf(DYN_KEY)<0)w.push('DYN_KEY「'+DYN_KEY+'」は既存キューのキーではない（数学revmq_dyn/英語revq_dyn/国語revjq_dyn）');
+  QS.forEach(function(q,i){
+    var p='QS['+i+']「'+plain(q.jp).slice(0,12)+'」';
+    if(OK.indexOf(q.badge)<0)w.push(p+': badge「'+q.badge+'」はCSS未定義（無装飾になる）');
+    if(!q.jp||!q.en||!q.k)w.push(p+': jp/en/k のどれかが空');
+    if(ids[q.id])w.push(p+': id重複('+q.id+')');ids[q.id]=1;
+  });
+  if(w.length){
+    console.warn('【一問一答 点検】'+w.length+'件:\n'+w.join('\n'));
+    if(location.search.indexOf('check=1')>=0){
+      var d=document.createElement('div');d.className='qa-warn';
+      d.textContent='⚠ 設定に'+w.length+'件の注意（くわしくはConsole）。保護者向け。';
+      var wrap=document.querySelector('.wrap'),ac=document.getElementById('allclear');
+      if(wrap&&ac)wrap.insertBefore(d,ac);
+    }
+  }
+}
+
+window.onload=function(){
+  document.getElementById('hdTitle').textContent=SET_TITLE;
+  document.getElementById('hdSubject').textContent=SUBJECT;
+  document.title=SET_TITLE;
+  try{selfCheck();}catch(e){}
+  var f=firstTodo(0); cur=(f>=0?f:0);
+  setView('quiz');
+  window.addEventListener('scroll',function(){var b=document.getElementById('toTop');if(!b)return;if(window.scrollY>500)b.classList.add('show');else b.classList.remove('show');},{passive:true});
+};
+/* もどってきたとき（bfcache復帰・タブ再表示）に進捗を描き直す */
+function refreshView(){try{if(VIEW==='list')renderList();else renderQuiz();}catch(e){}}
+window.addEventListener('pageshow',function(){refreshView();});
+document.addEventListener('visibilitychange',function(){if(document.visibilityState==='visible')refreshView();});
+</script>
+<script>
+/* もどる先の自動判定。既定＝夏休みダッシュボード。夏前ダッシュボードから開いたときだけ夏前へ戻す。 */
+(function(){try{
+  if(document.referrer && document.referrer.indexOf('index_iPad')>=0){
+    var as=document.querySelectorAll('a.back,a.back-foot');
+    for(var i=0;i<as.length;i++){ as[i].setAttribute('href','../../index_iPad_学習ダッシュボード.html'); }
+  }
+}catch(e){}})();
+</script>
+</body>
+</html>

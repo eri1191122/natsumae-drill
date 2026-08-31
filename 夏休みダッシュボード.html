@@ -222,6 +222,7 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
   </div>
   <div class="jump">
     <a class="j-rev" href="#review">🔴 弱点復習</a>
+    <a href="#qa1">⚡ 一問一答</a>
     <a class="j-hw" href="#homework">🏫 学校の宿題</a>
     <a href="#amn">🗂️ 暗記</a>
     <a href="#math">📐 数学</a>
@@ -242,6 +243,15 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
     <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
   </div>
 </details>
+
+<!-- ⚡ 一問一答（すきま5分・分母外／2026-08-30追加）
+     必修133の分母には一切数えない＝rowOf(..., noCount=true) で描画し allN/doneN に触らない。
+     ✕にした問題は各ページから教科キュー（revmq_dyn ほか）へ流れるので、復習キュー導線のすぐ下に置く。 -->
+<div class="revkit" id="qa1" style="margin:0 4px 18px">
+  <div class="revkit-hd">⚡ 一問一答（すきま5分・分母外）</div>
+  <div class="revkit-note">用語と型の「即答」だけを集めた短いページ。1問ずつ出るので、電車の中や寝る前の5分でOK。✕にした問題は<b>自動で教科の「まちがえ復習キュー」に入ります</b>。<b>9月対策133枚の分母には数えません</b>。</div>
+  <div id="qaRows"></div>
+</div>
 
 <!-- §1 暗記カード（折りたたみ・デフォルト閉） -->
 <details class="sec" id="amn">
@@ -634,6 +644,16 @@ document.getElementById('englishRows').innerHTML=eH;
 var mockH='';
 MOCKEXAM.forEach(function(r){ mockH+=rowOf(r,'ひらく',' ',true); });
 document.getElementById('mockRows').innerHTML=mockH;
+
+/* ⚡ 一問一答（すきま5分・2026-08-30追加）＝常にnoCount=true（分母133に影響させない）。
+   各ページが localStorage[KEY+'_done'] を書くので、既存の done() 規約だけで✓が付く。
+   新しいセットを足すときは、この配列に1行足すだけ（作り方＝運用ワークフロー/一問一答作成ワークフロー.md）。 */
+var QUICKQA = [
+  {day:"一問一答", title:"数学① 型と用語（20問・用語／即答計算／型あて）", k:"tokkun_qa_m01", f:"プリント/一問一答/一問一答_数学01_特訓直前_型と用語.html"}
+];
+var qaH='';
+QUICKQA.forEach(function(r){ qaH+=rowOf(r,'ひらく','rev',true); });
+document.getElementById('qaRows').innerHTML=qaH;
 
 /* 件数・進捗バー（全 f 実在分が分母） */
 document.getElementById('allN').textContent=allN;
