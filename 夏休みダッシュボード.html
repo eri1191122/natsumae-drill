@@ -307,7 +307,7 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
     <div class="sec-hd"><h2>🎯 本番判定・50分通し（特訓選抜そっくり模試）</h2><span class="cnt" id="cntMock">0</span><span class="tw"></span></div>
   </summary>
   <div class="sec-body">
-    <div class="legend">本番と同じ50分・100点。まちがえた問題は、その場で「よくある間違い」を読む。数学2枚・英語3枚・国語3枚＝計8枚（9月対策133枚の分母には数えません）。</div>
+    <div class="legend"><b>⭐印の2枚（国語D2・数学D1）は9/12の本番までにやる直前ドリル。まずここから。</b>そのあとの8枚は本番と同じ50分・100点の通し（数学2・英語3・国語3）。まちがえた問題は、その場で「よくある間違い」を読む。ぜんぶ9月対策133枚の分母には数えません。</div>
     <div id="mockRows"></div>
     <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
   </div>
@@ -536,8 +536,10 @@ var ENGLISH = [
    英本番①(tokkun_e_toshi01)＝ENGLISH配列の特英9と同一ファイル・同一KEY。国本番①(tokkun_jtoshi01)＝KOKUGO配列の国11と同一ファイル・同一KEY。
    どちらも既存側で分母にカウント済みのため、ここで noCount=true で再掲してもダブルカウントにはならない（数学の通4/tokkun_m12dと同型の既存登録）。 */
 var MOCKEXAM = [
-  {day:"直前 9/9", title:"直前ドリル 方程式・文字式・割合（約2時間・42問）", k:"tokkun_d1", f:"プリント/夏_特訓数学プリント/特訓D1_直前_方程式と文字式と割合.html"},
-  {day:"直前 国語", title:"⭐最優先 直前ドリル 国語の知識（漢字・四字熟語・部首画数・文法／30分×3・90問）", k:"tokkun_d2", f:"プリント/国語プリント/特訓D2_直前_国語の知識.html"},
+  {day:"9〜11日", title:"⭐ 直前ドリル 国語の知識（漢字・四字熟語・部首画数・文法／30分×3・90問）", k:"tokkun_d2", f:"プリント/国語プリント/特訓D2_直前_国語の知識.html",
+   urgent:true, why:"国語の知識は3日でいちばん点が動くところ。9日=漢字30問／10日=四字熟語ほか34問／11日=総仕上げ26問"},
+  {day:"9〜10日", title:"⭐ 直前ドリル 方程式・文字式・割合（約2時間・42問）", k:"tokkun_d1", f:"プリント/夏_特訓数学プリント/特訓D1_直前_方程式と文字式と割合.html",
+   urgent:true, why:"方程式は範囲なのにテストで一度も出ていない＝練習ゼロの場所。ふつうの問題だけ集めてある"},
   {day:"数 通5", title:"特訓選抜そっくり本番通し⑤（50分・100点）", k:"tokkun_m12e", f:"プリント/夏_特訓数学プリント/特訓P12e_50分通し5_独立フォーム.html"},
   {day:"数 通6", title:"特訓選抜そっくり本番通し⑥（50分・100点）", k:"tokkun_m12f", f:"プリント/夏_特訓数学プリント/特訓P12f_50分通し6_独立フォーム.html"},
   {day:"英 本番①", title:"英語 特訓選抜そっくり本番通し①（50分・100点）", k:"tokkun_e_toshi01", f:"プリント/特訓選抜英語/09_本番通し01_50分.html"},
@@ -722,7 +724,13 @@ KOKUGO.filter(function(r){return r.ahead;}).forEach(function(r){ROUTE_AHEAD.push
 ROUTE_FINISH=ROUTE_AHEAD.slice();
 /* 🎯 本番判定8枚＝一本道の第3段（必修130＋先取り3が全部済んでから出す余力枠）。
    noCountのまま＝分母133には数えない。英本番①/国本番①は既存KEYと同一で二重加算しない（syncActivityのseenで防止）。 */
-var ROUTE_MOCK=MOCKEXAM.map(function(r){return taskOf(r,'本番判定','50分','必修と先取りが終わったら、本番と同じ50分通しで力だめし（やらなくてもOK）');});
+/* 2026-09-09: 直前ドリルD1/D2は「やらなくてもOK」の余力枠ではない＝本番3日前の最優先。
+   urgent:true の行だけ、ラベル・時間・理由を専用のものに差し替える（他の8枚は従来どおり）。 */
+var ROUTE_MOCK=MOCKEXAM.map(function(r){
+  return r.urgent
+    ? taskOf(r,'直前・最優先','30分',r.why||'本番は9/12。ここがいちばん点が動く。これだけは必ずやる')
+    : taskOf(r,'本番判定','50分','必修と先取りが終わったら、本番と同じ50分通しで力だめし（やらなくてもOK）');
+});
 
 /* 6枠で英語2・数学2・暗記1・国語1。空になった教科は自動で飛ばす。 */
 var ROUTE=ROUTE_REVIEW.slice();
