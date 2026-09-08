@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓D1｜直前ドリル 方程式・文字式・割合</title>
+<style>
+:root{--ink:#1b1c22;--sub:#5a5f6e;--line:#e3e5ec;--bg:#fbfbfd;--key:#1f4fd8;--key-bg:#eef2ff;
+--go:#0a7d55;--go-bg:#eaf7f1;--hot:#d92b3a;--hot-bg:#fff2f3;--warn:#b26a00;--warn-bg:#fff7e8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:14px 18px 70px}
+a.back{display:inline-block;margin:6px 0 12px;color:var(--key);font-size:15px;text-decoration:none;font-weight:700}
+
+.pg-hd{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:16px;padding:22px 22px 20px;margin:0 0 18px}
+.pg-badge{display:inline-block;background:rgba(255,255,255,.16);border-radius:7px;padding:4px 10px;
+font-size:12.5px;font-weight:700;margin:0 6px 8px 0}
+.pg-hd h1{font-size:22px;margin:6px 0 8px;line-height:1.45}
+.pg-hd p{font-size:14.5px;margin:0;opacity:.9}
+.pg-cheer{margin-top:10px !important;font-size:14px !important;opacity:.8 !important}
+
+.unit-banner{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--key-bg);
+border-left:5px solid var(--key);border-radius:0 10px 10px 0;padding:11px 15px;margin:26px 0 12px}
+.unit-num{font-size:14px;font-weight:800;color:var(--key)}
+.unit-name{font-size:16px;font-weight:800}
+.unit-time{font-size:13px;color:var(--sub);margin-left:auto}
+
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.qnum{font-size:16px;font-weight:800;margin:0 0 10px}
+.qbody{font-size:17px;line-height:2.5}
+.qbody .pn{color:#2f5a8a;font-weight:700;margin-right:6px}
+.math{font-family:"Times New Roman",serif;font-size:19px;letter-spacing:.02em}
+.note-draw{background:var(--warn-bg);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:12px 0 0}
+
+.ans-btn{display:block;width:100%;margin:12px 0 0;padding:12px;border:0;border-radius:10px;
+background:var(--key);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.ans-box{display:none;margin:12px 0 0;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ans-box.open{display:block}
+.osarai{background:var(--go-bg);border-left:4px solid var(--go);border-radius:0 8px 8px 0;
+padding:10px 14px;font-size:14.5px;margin:0 0 12px}
+.step{font-size:15.5px;margin:0 0 9px;padding:0 0 0 4px}
+.step span{display:inline-block;min-width:44px;font-weight:800;color:var(--key)}
+.bx-warn{background:var(--hot-bg);border:1px solid #f6ccd1;border-radius:9px;padding:11px 14px;
+font-size:14.5px;margin:12px 0 0}
+.bx-warn b{color:var(--hot)}
+.ans-final{background:var(--ink);color:#fff;border-radius:10px;padding:12px 15px;margin:13px 0 0;font-size:15.5px}
+.ans-final span{font-weight:800;margin-right:10px}
+
+.gwrap{margin:12px 0 0;border-top:1px dashed var(--line);padding:12px 0 0}
+.gq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 7px;font-size:14px}
+.gq-label{min-width:52px;font-weight:700;color:var(--sub)}
+.gq button{border:1.5px solid var(--line);background:#fff;border-radius:7px;width:36px;height:32px;
+font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.gq button.o.on{background:var(--go);border-color:var(--go);color:#fff}
+.gq button.x.on{background:var(--hot);border-color:var(--hot);color:#fff}
+.mt{display:none;gap:6px;flex-wrap:wrap;margin:2px 0 0 52px}
+.mt.show{display:flex}
+.mt button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px;
+font-size:12.5px;cursor:pointer;font-family:inherit;width:auto;height:auto}
+.mt button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.write3{display:none;margin:6px 0 0 52px;font-size:13px;color:var(--hot);font-weight:700}
+.write3.show{display:block}
+
+.done{display:block;width:100%;margin:26px 0 0;padding:18px;border:0;border-radius:14px;
+background:var(--go);color:#fff;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit}
+.done.fin{background:var(--ink)}
+.tail{text-align:center;color:var(--sub);font-size:13.5px;margin:18px 0 0;line-height:1.9}
+
+@media print{
+ body{background:#fff}
+ a.back,.ans-btn,.ans-box,.gwrap,.done,.note-draw{display:none !important}
+ .q{break-inside:avoid;page-break-inside:avoid}
+ .pg-hd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{margin:12mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#mock">← ダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div>
+    <span class="pg-badge">特訓D1</span>
+    <span class="pg-badge">数学：方程式・文字式・割合</span>
+    <span class="pg-badge">L2〜L3（lite単独評定）</span>
+  </div>
+  <h1>直前ドリル｜方程式の基本形・文字式の計算・割合と単位換算</h1>
+  <p>特訓選抜 直前対策　目安：約2時間（問1〜問42・通し番号）　対象: 中1　全問に解説つき</p>
+  <p class="pg-cheer">ここは「ふつうの問題」だけを集めてあります。最高難度の問題は入れていません。取れるところを、こぼさず取る練習です。</p>
+</div>
+
+<!-- ===== 1. 方程式 ===== -->
+<div class="unit-banner"><span class="unit-num">問1〜20</span><span class="unit-name">方程式の基本形</span><span class="unit-time">目安 60分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qnum">★移項の基本　次の方程式を解こう。</div>
+  <div class="qbody">
+    <span class="pn">問1</span><span class="math">x + 7 = 12</span><br>
+    <span class="pn">問2</span><span class="math">x − 4 = 9</span><br>
+    <span class="pn">問3</span><span class="math">3x = 21</span><br>
+    <span class="pn">問4</span><span class="math">5x + 2 = 17</span><br>
+    <span class="pn">問5</span><span class="math">4x − 9 = 7</span><br>
+    <span class="pn">問6</span><span class="math">2x + 5 = 3x − 1</span>
+  </div>
+  <div class="note-draw">途中式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">方程式は「天びん」。左と右が同じ重さでつり合っている。<br>
+    同じものを両方から取れば、つり合いはくずれない。これが移項の正体。</div>
+    <div class="step"><span>問1</span>7を消したいので、両方から7を引く。x = 12 − 7 = 5</div>
+    <div class="step"><span>問2</span>−4を消したいので、両方に4をたす。x = 9 + 4 = 13</div>
+    <div class="step"><span>問3</span>3倍されているので、両方を3で割る。x = 21 ÷ 3 = 7</div>
+    <div class="step"><span>問4</span>まず+2を消す→5x = 15。次に5で割る→x = 3</div>
+    <div class="step"><span>問5</span>まず−9を消す→4x = 16。次に4で割る→x = 4</div>
+    <div class="step"><span>問6</span>xを左、数を右に集める。2x − 3x = −1 − 5 → −x = −6 → x = 6</div>
+    <div class="bx-warn"><b>よくある間違い：</b>移項したのに符号を変えない。<br>
+    「+7 が右へ行ったら −7」。<b>引っこしたら符号が変わる</b>。ここを書かずに暗算すると必ず落とす。</div>
+    <div class="ans-final"><span>こたえ</span>問1 x=5／問2 x=13／問3 x=7／問4 x=3／問5 x=4／問6 x=6</div>
+  </div>
+  <div class="gwrap" data-ids="q01,q02,q03,q04,q05,q06"></div>
+</div>
+
+<div class="q calc" data-id="B">
+  <div class="qnum">★かっこのある方程式　次の方程式を解こう。</div>
+  <div class="qbody">
+    <span class="pn">問7</span><span class="math">2(x + 3) = 10</span><br>
+    <span class="pn">問8</span><span class="math">3(x − 2) = 9</span><br>
+    <span class="pn">問9</span><span class="math">5(x + 1) = 3x + 11</span><br>
+    <span class="pn">問10</span><span class="math">4(x − 1) = 2(x + 3)</span><br>
+    <span class="pn">問11</span><span class="math">2(3x + 1) − 5 = 9</span>
+  </div>
+  <div class="note-draw">途中式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">かっこは先にはずす。かっこの前の数は、<b>中の全部</b>にかける。1つだけにかけて終わらない。</div>
+    <div class="step"><span>問7</span>2x + 6 = 10 → 2x = 4 → x = 2</div>
+    <div class="step"><span>問8</span>3x − 6 = 9 → 3x = 15 → x = 5</div>
+    <div class="step"><span>問9</span>5x + 5 = 3x + 11 → 2x = 6 → x = 3</div>
+    <div class="step"><span>問10</span>4x − 4 = 2x + 6 → 2x = 10 → x = 5</div>
+    <div class="step"><span>問11</span>6x + 2 − 5 = 9 → 6x − 3 = 9 → 6x = 12 → x = 2</div>
+    <div class="bx-warn"><b>よくある間違い：</b>2(x + 3) を 2x + 3 にしてしまう。<br>
+    かけるのは<b>両方</b>。2×x と 2×3 で 2x + 6。</div>
+    <div class="ans-final"><span>こたえ</span>問7 x=2／問8 x=5／問9 x=3／問10 x=5／問11 x=2</div>
+  </div>
+  <div class="gwrap" data-ids="q07,q08,q09,q10,q11"></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qnum">★分数・小数の方程式　次の方程式を解こう。</div>
+  <div class="qbody">
+    <span class="pn">問12</span><span class="math">x/2 + 3 = 7</span><br>
+    <span class="pn">問13</span><span class="math">x/3 − 1 = 2</span><br>
+    <span class="pn">問14</span><span class="math">(x + 1)/2 = 3</span><br>
+    <span class="pn">問15</span><span class="math">x/2 + x/3 = 5</span><br>
+    <span class="pn">問16</span><span class="math">0.2x + 1 = 1.6</span>
+  </div>
+  <div class="note-draw">途中式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">分数や小数が出たら、<b>両辺に同じ数をかけて消す</b>のがいちばん速い。<br>
+    分数なら分母の最小公倍数、小数なら10や100をかける。</div>
+    <div class="step"><span>問12</span>x/2 = 4 → 両辺×2 → x = 8</div>
+    <div class="step"><span>問13</span>x/3 = 3 → 両辺×3 → x = 9</div>
+    <div class="step"><span>問14</span>両辺×2 → x + 1 = 6 → x = 5</div>
+    <div class="step"><span>問15</span>分母2と3の最小公倍数6を両辺にかける → 3x + 2x = 30 → 5x = 30 → x = 6</div>
+    <div class="step"><span>問16</span>両辺×10 → 2x + 10 = 16 → 2x = 6 → x = 3</div>
+    <div class="bx-warn"><b>よくある間違い：</b>両辺にかけるとき、<b>かけ忘れる項</b>がある。<br>
+    問16で「2x + 1 = 16」にしてしまう人が多い。右の1にも、右の1.6にも、<b>全部に10をかける</b>。</div>
+    <div class="ans-final"><span>こたえ</span>問12 x=8／問13 x=9／問14 x=5／問15 x=6／問16 x=3</div>
+  </div>
+  <div class="gwrap" data-ids="q12,q13,q14,q15,q16"></div>
+</div>
+
+<div class="q calc" data-id="D">
+  <div class="qnum">★符号に気をつける方程式　次の方程式を解こう。</div>
+  <div class="qbody">
+    <span class="pn">問17</span><span class="math">−2x = 8</span><br>
+    <span class="pn">問18</span><span class="math">5 − x = 2</span><br>
+    <span class="pn">問19</span><span class="math">3x + 4 = x − 2</span><br>
+    <span class="pn">問20</span><span class="math">−(x − 3) = 5</span>
+  </div>
+  <div class="note-draw">途中式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">答えがマイナスになることも、ふつうにある。<br>
+    「マイナスが出たから間違い」ではない。式のとおりに進める。</div>
+    <div class="step"><span>問17</span>両辺を−2で割る。x = 8 ÷ (−2) = −4</div>
+    <div class="step"><span>問18</span>5を右へ → −x = 2 − 5 = −3 → 両辺に−1をかけて x = 3</div>
+    <div class="step"><span>問19</span>3x − x = −2 − 4 → 2x = −6 → x = −3</div>
+    <div class="step"><span>問20</span>かっこの前のマイナスは、中の全部の符号を変える。−x + 3 = 5 → −x = 2 → x = −2</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問20で −(x − 3) を −x − 3 にしてしまう。<br>
+    かっこの前のマイナスは <b>−1をかける</b>のと同じ。−1×x = −x、−1×(−3) = <b>+3</b>。</div>
+    <div class="ans-final"><span>こたえ</span>問17 x=−4／問18 x=3／問19 x=−3／問20 x=−2</div>
+  </div>
+  <div class="gwrap" data-ids="q17,q18,q19,q20"></div>
+</div>
+
+<!-- ===== 2. 文字式 ===== -->
+<div class="unit-banner"><span class="unit-num">問21〜32</span><span class="unit-name">文字式の計算</span><span class="unit-time">目安 30分</span></div>
+
+<div class="q calc" data-id="E">
+  <div class="qnum">★同類項をまとめる　次を計算しよう。</div>
+  <div class="qbody">
+    <span class="pn">問21</span><span class="math">3a + 5a</span><br>
+    <span class="pn">問22</span><span class="math">7x − 2x</span><br>
+    <span class="pn">問23</span><span class="math">4a + 3b − a + 2b</span>
+  </div>
+  <div class="note-draw">途中式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">まとめられるのは<b>同じ文字どうしだけ</b>。aとbはまとめられない。<br>
+    りんご3個とみかん2個を「5個」と言えないのと同じ。</div>
+    <div class="step"><span>問21</span>3 + 5 = 8 なので 8a</div>
+    <div class="step"><span>問22</span>7 − 2 = 5 なので 5x</div>
+    <div class="step"><span>問23</span>a どうし：4a − a = 3a／b どうし：3b + 2b = 5b → 3a + 5b</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問23で「−a」を「−1a」と見ずに、a を数えわすれる。<br>
+    文字の前に数がないときは <b>1</b> がかくれている。</div>
+    <div class="ans-final"><span>こたえ</span>問21 8a／問22 5x／問23 3a+5b</div>
+  </div>
+  <div class="gwrap" data-ids="q21,q22,q23"></div>
+</div>
+
+<div class="q calc" data-id="F">
+  <div class="qnum">★かっこをはずす　次を計算しよう。</div>
+  <div class="qbody">
+    <span class="pn">問24</span><span class="math">2(3x + 1)</span><br>
+    <span class="pn">問25</span><span class="math">−3(2a − 4)</span><br>
+    <span class="pn">問26</span><span class="math">5x − (2x − 3)</span><br>
+    <span class="pn">問27</span><span class="math">2(x + 3) + 3(x − 1)</span><br>
+    <span class="pn">問28</span><span class="math">4(2a − 1) − 3(a + 2)</span>
+  </div>
+  <div class="note-draw">途中式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">かっこの前の数は、中の<b>すべての項</b>にかける。<br>
+    前がマイナスなら、中の符号が<b>全部ひっくり返る</b>。</div>
+    <div class="step"><span>問24</span>2×3x = 6x、2×1 = 2 → 6x + 2</div>
+    <div class="step"><span>問25</span>−3×2a = −6a、−3×(−4) = +12 → −6a + 12</div>
+    <div class="step"><span>問26</span>−(2x − 3) = −2x + 3。よって 5x − 2x + 3 = 3x + 3</div>
+    <div class="step"><span>問27</span>2x + 6 + 3x − 3 = 5x + 3</div>
+    <div class="step"><span>問28</span>8a − 4 − 3a − 6 = 5a − 10</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問26・問28で、<b>うしろの項の符号を変えわすれる</b>。<br>
+    −3(a + 2) は −3a <b>−6</b>。「−3a + 6」にしてしまうミスがいちばん多い。</div>
+    <div class="ans-final"><span>こたえ</span>問24 6x+2／問25 −6a+12／問26 3x+3／問27 5x+3／問28 5a−10</div>
+  </div>
+  <div class="gwrap" data-ids="q24,q25,q26,q27,q28"></div>
+</div>
+
+<div class="q calc" data-id="G">
+  <div class="qnum">★わり算・分数のある文字式　次を計算しよう。</div>
+  <div class="qbody">
+    <span class="pn">問29</span><span class="math">(6x − 9) ÷ 3</span><br>
+    <span class="pn">問30</span><span class="math">x/2 + x/4</span><br>
+    <span class="pn">問31</span><span class="math">(3x + 1)/2 × 4</span><br>
+    <span class="pn">問32</span><span class="math">−2(a − 3) − (a + 1)</span>
+  </div>
+  <div class="note-draw">途中式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">わり算も、<b>全部の項</b>に効く。分数のたし算は分母をそろえてから。</div>
+    <div class="step"><span>問29</span>6x ÷ 3 = 2x、−9 ÷ 3 = −3 → 2x − 3</div>
+    <div class="step"><span>問30</span>分母を4にそろえる。x/2 = 2x/4 なので 2x/4 + x/4 = 3x/4</div>
+    <div class="step"><span>問31</span>4 ÷ 2 = 2 なので 2(3x + 1) = 6x + 2</div>
+    <div class="step"><span>問32</span>−2a + 6 − a − 1 = −3a + 5</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問29で 6x だけ割って「2x − 9」にする。<br>
+    わり算は<b>かっこの中の全部</b>にかかる。問30で分母をそろえずに「2x/6」としない。</div>
+    <div class="ans-final"><span>こたえ</span>問29 2x−3／問30 3x/4／問31 6x+2／問32 −3a+5</div>
+  </div>
+  <div class="gwrap" data-ids="q29,q30,q31,q32"></div>
+</div>
+
+<!-- ===== 3. 割合・単位換算 ===== -->
+<div class="unit-banner"><span class="unit-num">問33〜42</span><span class="unit-name">割合と単位換算</span><span class="unit-time">目安 30分</span></div>
+
+<div class="q calc" data-id="H">
+  <div class="qnum">★割合　次の問いに答えよう。</div>
+  <div class="qbody">
+    <span class="pn">問33</span>300円の20%はいくらですか。<br>
+    <span class="pn">問34</span>ある数の30%が45です。ある数はいくつですか。<br>
+    <span class="pn">問35</span>80gは200gの何%ですか。<br>
+    <span class="pn">問36</span>定価500円の品物を2割引きで買うと、いくらですか。<br>
+    <span class="pn">問37</span>原価400円の品物に25%の利益を見込んだ定価はいくらですか。<br>
+    <span class="pn">問38</span>5%の食塩水200gに、食塩は何gふくまれていますか。
+  </div>
+  <div class="note-draw">「もとにする量」がどれかを口に出してから、式を書こう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">割合の問題は、<b>「もとにする量」がどれか</b>を先に決めれば終わり。<br>
+    もとにする量 × 割合 = くらべる量。この1本だけで全部いける。</div>
+    <div class="step"><span>問33</span>もとにする量は300円。300 × 0.2 = 60円</div>
+    <div class="step"><span>問34</span>もとにする量が分からない。□ × 0.3 = 45 なので □ = 45 ÷ 0.3 = 150</div>
+    <div class="step"><span>問35</span>もとにする量は200g。80 ÷ 200 = 0.4 → 40%</div>
+    <div class="step"><span>問36</span>2割引き＝定価の8割。500 × 0.8 = 400円</div>
+    <div class="step"><span>問37</span>25%の利益＝原価の125%。400 × 1.25 = 500円</div>
+    <div class="step"><span>問38</span>もとにする量は食塩水200g。200 × 0.05 = 10g</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問36で「500 × 0.2 = 100」を答えにしてしまう。<br>
+    それは<b>引く金額</b>。聞かれているのは<b>買うときの値段</b>。「何を聞かれたか」を最後にもう一度読む。</div>
+    <div class="ans-final"><span>こたえ</span>問33 60円／問34 150／問35 40%／問36 400円／問37 500円／問38 10g</div>
+  </div>
+  <div class="gwrap" data-ids="q33,q34,q35,q36,q37,q38"></div>
+</div>
+
+<div class="q calc" data-id="I">
+  <div class="qnum">★単位換算　次の問いに答えよう。</div>
+  <div class="qbody">
+    <span class="pn">問39</span>1.5m は何cmですか。<br>
+    <span class="pn">問40</span>2400cm² は何m²ですか。<br>
+    <span class="pn">問41</span>1時間15分は何分ですか。<br>
+    <span class="pn">問42</span>時速60kmで45分走ると、何km進みますか。
+  </div>
+  <div class="note-draw">途中式をノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">長さは100倍でも、<b>面積は100×100＝10000倍</b>。<br>
+    たて・よこの両方が100倍になるから、面積はその2回分。</div>
+    <div class="step"><span>問39</span>1m = 100cm なので 1.5 × 100 = 150cm</div>
+    <div class="step"><span>問40</span>1m² = 10000cm²。2400 ÷ 10000 = 0.24m²</div>
+    <div class="step"><span>問41</span>1時間 = 60分。60 + 15 = 75分</div>
+    <div class="step"><span>問42</span>45分は 45/60 = 3/4 時間。60 × 3/4 = 45km</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問40で 2400 ÷ 100 = 24m² としてしまう。<br>
+    <b>面積は10000で割る</b>。ここは前にも落としている場所。問42は「45分」を時間に直さずに 60×45 としない。</div>
+    <div class="ans-final"><span>こたえ</span>問39 150cm／問40 0.24m²／問41 75分／問42 45km</div>
+  </div>
+  <div class="gwrap" data-ids="q39,q40,q41,q42"></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓D1 完了）</button>
+
+<p class="tail">✕をつけた問題は、正しい式と答えをノートに3回書こう。<br>
+明日（10日）は、この中から間違えた問題だけをもう一度やります。</p>
+
+</div>
+
+<script>
+var KEY='tokkun_d1';
+
+/* 解説トグル */
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+/* ○✕採点 */
+function g(btn,id,v){
+  var row=btn.closest('.gq');
+  row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=row.nextElementSibling, w3=mt.nextElementSibling;
+  if(v==='x'){mt.classList.add('show');w3.classList.add('show');}
+  else{mt.classList.remove('show');w3.classList.remove('show');}
+}
+
+/* ミス型 */
+function m(btn){
+  var p=btn.parentNode;
+  p.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+p.getAttribute('data-gid')+'_type',btn.textContent);
+}
+
+/* 採点UIを生成 */
+document.querySelectorAll('.gwrap').forEach(function(w){
+  var ids=w.getAttribute('data-ids').split(',');
+  var h='';
+  ids.forEach(function(id){
+    var n=id.replace('q','').replace(/^0/,'');
+    h+='<div class="gq"><span class="gq-label">問'+n+'</span>'
+      +'<button class="o" onclick="g(this,\''+id+'\',\'o\')">○</button>'
+      +'<button class="x" onclick="g(this,\''+id+'\',\'x\')">✕</button></div>'
+      +'<div class="mt" data-gid="'+id+'"><button onclick="m(this)">計算ミス</button>'
+      +'<button onclick="m(this)">解説で分かった</button>'
+      +'<button onclick="m(this)">解説見ても分からない</button></div>'
+      +'<div class="write3">📝 正しい式と答えをノートに3回書こう</div>';
+  });
+  w.innerHTML=h;
+});
+
+/* 保存済みを復元 */
+document.querySelectorAll('.gq').forEach(function(row){
+  var btn=row.querySelector('.o');
+  var id=btn.getAttribute('onclick').match(/'(q\d+)'/)[1];
+  var v=localStorage.getItem(KEY+'_'+id);
+  if(v){row.querySelector(v==='o'?'.o':'.x').classList.add('on');
+    if(v==='x'){row.nextElementSibling.classList.add('show');
+      row.nextElementSibling.nextElementSibling.classList.add('show');}}
+  var ty=localStorage.getItem(KEY+'_'+id+'_type');
+  if(ty){row.nextElementSibling.querySelectorAll('button').forEach(function(b){
+    if(b.textContent===ty)b.classList.add('on');})}
+});
+
+/* 完了 */
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+if(localStorage.getItem(KEY+'_done')==='1'){
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+</script>
+</body>
+</html>

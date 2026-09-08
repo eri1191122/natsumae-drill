@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓D2｜直前ドリル 国語の知識</title>
+<style>
+:root{--ink:#1b1c22;--sub:#5a5f6e;--line:#e3e5ec;--bg:#fbfbfd;--key:#1f4fd8;--key-bg:#eef2ff;
+--go:#0a7d55;--go-bg:#eaf7f1;--hot:#d92b3a;--hot-bg:#fff2f3;--warn:#b26a00;--warn-bg:#fff7e8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:14px 18px 70px}
+a.back{display:inline-block;margin:6px 0 12px;color:var(--key);font-size:15px;text-decoration:none;font-weight:700}
+
+.pg-hd{background:linear-gradient(160deg,#2b2340,#453a5e);color:#fff;border-radius:16px;padding:22px 22px 20px;margin:0 0 18px}
+.pg-badge{display:inline-block;background:rgba(255,255,255,.16);border-radius:7px;padding:4px 10px;
+font-size:12.5px;font-weight:700;margin:0 6px 8px 0}
+.pg-hd h1{font-size:22px;margin:6px 0 8px;line-height:1.45}
+.pg-hd p{font-size:14.5px;margin:0;opacity:.9}
+.pg-cheer{margin-top:10px !important;font-size:14px !important;opacity:.8 !important}
+
+.dayhd{display:flex;align-items:center;gap:10px;flex-wrap:wrap;background:var(--ink);color:#fff;
+border-radius:12px;padding:12px 18px;margin:30px 0 14px}
+.dayhd .d{font-size:17px;font-weight:800}
+.dayhd .t{font-size:13px;opacity:.75;margin-left:auto}
+
+.unit-banner{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--key-bg);
+border-left:5px solid var(--key);border-radius:0 10px 10px 0;padding:11px 15px;margin:22px 0 12px}
+.unit-num{font-size:14px;font-weight:800;color:var(--key)}
+.unit-name{font-size:16px;font-weight:800}
+.unit-time{font-size:13px;color:var(--sub);margin-left:auto}
+
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.qnum{font-size:16px;font-weight:800;margin:0 0 10px}
+.qbody{font-size:17px;line-height:2.6}
+.qbody .pn{color:#2f5a8a;font-weight:700;margin-right:6px}
+.kj{font-size:20px;font-weight:700;letter-spacing:.06em}
+.note-draw{background:var(--warn-bg);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:12px 0 0}
+
+.ans-btn{display:block;width:100%;margin:12px 0 0;padding:12px;border:0;border-radius:10px;
+background:var(--key);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.ans-box{display:none;margin:12px 0 0;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ans-box.open{display:block}
+.osarai{background:var(--go-bg);border-left:4px solid var(--go);border-radius:0 8px 8px 0;
+padding:10px 14px;font-size:14.5px;margin:0 0 12px}
+.step{font-size:15.5px;margin:0 0 9px;padding:0 0 0 4px}
+.step span{display:inline-block;min-width:48px;font-weight:800;color:var(--key)}
+.bx-warn{background:var(--hot-bg);border:1px solid #f6ccd1;border-radius:9px;padding:11px 14px;
+font-size:14.5px;margin:12px 0 0}
+.bx-warn b{color:var(--hot)}
+.ans-final{background:var(--ink);color:#fff;border-radius:10px;padding:12px 15px;margin:13px 0 0;font-size:15px;line-height:2}
+.ans-final span{font-weight:800;margin-right:10px}
+
+.gwrap{margin:12px 0 0;border-top:1px dashed var(--line);padding:12px 0 0}
+.gq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 7px;font-size:14px}
+.gq-label{min-width:52px;font-weight:700;color:var(--sub)}
+.gq button{border:1.5px solid var(--line);background:#fff;border-radius:7px;width:36px;height:32px;
+font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.gq button.o.on{background:var(--go);border-color:var(--go);color:#fff}
+.gq button.x.on{background:var(--hot);border-color:var(--hot);color:#fff}
+.mt{display:none;gap:6px;flex-wrap:wrap;margin:2px 0 0 52px}
+.mt.show{display:flex}
+.mt button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px;
+font-size:12.5px;cursor:pointer;font-family:inherit;width:auto;height:auto}
+.mt button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.write3{display:none;margin:6px 0 0 52px;font-size:13px;color:var(--hot);font-weight:700}
+.write3.show{display:block}
+
+.done{display:block;width:100%;margin:26px 0 0;padding:18px;border:0;border-radius:14px;
+background:var(--go);color:#fff;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit}
+.done.fin{background:var(--ink)}
+.tail{text-align:center;color:var(--sub);font-size:13.5px;margin:18px 0 0;line-height:1.9}
+
+@media print{
+ body{background:#fff}
+ a.back,.ans-btn,.ans-box,.gwrap,.done,.note-draw{display:none !important}
+ .q{break-inside:avoid;page-break-inside:avoid}
+ .pg-hd,.dayhd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{margin:12mm}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#mock">← ダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div>
+    <span class="pg-badge">特訓D2</span>
+    <span class="pg-badge">国語：漢字・語句・文法</span>
+    <span class="pg-badge">L1〜L2（lite単独評定）</span>
+  </div>
+  <h1>直前ドリル｜国語の知識（漢字・四字熟語・部首画数・文法）</h1>
+  <p>特訓選抜 直前対策　目安：30分×3回（問1〜問90・通し番号）　対象: 中1　全問に解説つき</p>
+  <p class="pg-cheer">読解はもう強い。あとは覚えるだけで取れるところを、全部取りにいきます。ここは「知っていれば1秒」の問題しか入れていません。</p>
+</div>
+
+<div class="dayhd"><span class="d">今日（9日）にやる</span><span class="t">漢字の読み・書き　30分</span></div>
+
+<div class="q" data-id="A">
+  <div class="qnum">★漢字の読み　次の——線の読みをひらがなで書こう。</div>
+  <div class="qbody">
+    <span class="pn">問1</span><span class="kj">営む</span>　<span class="pn">問2</span><span class="kj">耕す</span>　<span class="pn">問3</span><span class="kj">戸外</span><br>
+    <span class="pn">問4</span><span class="kj">専門</span>　<span class="pn">問5</span><span class="kj">培う</span>　<span class="pn">問6</span><span class="kj">滞る</span><br>
+    <span class="pn">問7</span><span class="kj">覆う</span>　<span class="pn">問8</span><span class="kj">承る</span>　<span class="pn">問9</span><span class="kj">著しい</span><br>
+    <span class="pn">問10</span><span class="kj">潔い</span>　<span class="pn">問11</span><span class="kj">慕う</span>　<span class="pn">問12</span><span class="kj">装う</span><br>
+    <span class="pn">問13</span><span class="kj">諭す</span>　<span class="pn">問14</span><span class="kj">陥る</span>　<span class="pn">問15</span><span class="kj">免れる</span>
+  </div>
+  <div class="note-draw">まずノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">送りがなが変わると読みも変わる。「営む＝いとなむ」は送りがな「む」までがセット。<br>
+    問1は6月の特訓選抜、問2〜4は6月のテストで実際に落とした語です。</div>
+    <div class="bx-warn"><b>よくある間違い：</b>「専門」を「せんもう」、「戸外」を「とがい」と読んでしまう。<br>
+    <b>音読みか訓読みか</b>を先に決めると迷わない。「戸外」は音読み＋音読みで「こがい」。</div>
+    <div class="ans-final"><span>こたえ</span>
+    問1 いとな(む)／問2 たがや(す)／問3 こがい／問4 せんもん／問5 つちか(う)／問6 とどこお(る)／問7 おお(う)／問8 うけたまわ(る)／問9 いちじる(しい)／問10 いさぎよ(い)／問11 した(う)／問12 よそお(う)／問13 さと(す)／問14 おちい(る)／問15 まぬか(れる)</div>
+  </div>
+  <div class="gwrap" data-ids="q01,q02,q03,q04,q05,q06,q07,q08,q09,q10,q11,q12,q13,q14,q15"></div>
+</div>
+
+<div class="q" data-id="B">
+  <div class="qnum">★漢字の書き　次のカタカナを漢字で書こう。</div>
+  <div class="qbody">
+    <span class="pn">問16</span>店を<span class="kj">イトナ</span>む　<span class="pn">問17</span>畑を<span class="kj">タガヤ</span>す<br>
+    <span class="pn">問18</span><span class="kj">センモン</span>家に聞く　<span class="pn">問19</span><span class="kj">キキイッパツ</span>で助かる<br>
+    <span class="pn">問20</span><span class="kj">オヤコウコウ</span>をする　<span class="pn">問21</span><span class="kj">キンセン</span>感覚を養う<br>
+    <span class="pn">問22</span>人との<span class="kj">カンケイ</span>を築く　<span class="pn">問23</span><span class="kj">フクザツ</span>な問題<br>
+    <span class="pn">問24</span><span class="kj">ゲンイン</span>を調べる　<span class="pn">問25</span><span class="kj">タイサク</span>を立てる<br>
+    <span class="pn">問26</span><span class="kj">コンナン</span>を乗りこえる　<span class="pn">問27</span><span class="kj">ケントウ</span>を重ねる<br>
+    <span class="pn">問28</span><span class="kj">シュウカン</span>にする　<span class="pn">問29</span>たがいを<span class="kj">ソンチョウ</span>する<br>
+    <span class="pn">問30</span><span class="kj">セイセキ</span>が上がる
+  </div>
+  <div class="note-draw">まずノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">問20〜22は7月のテストで実際に落とした語。問19は6月の特訓選抜で落とした語です。<br>
+    書けなかったものは、その場でノートに3回書く。それだけで次に出たら取れます。</div>
+    <div class="bx-warn"><b>よくある間違い：</b>「危機一発」と書いてしまう（正しくは<b>一髪</b>＝かみの毛一本の差）。<br>
+    「検討」と「見当」、「対策」と「対さく」の書きまちがいにも注意。</div>
+    <div class="ans-final"><span>こたえ</span>
+    問16 営(む)／問17 耕(す)／問18 専門／問19 危機一髪／問20 親孝行／問21 金銭／問22 関係／問23 複雑／問24 原因／問25 対策／問26 困難／問27 検討／問28 習慣／問29 尊重／問30 成績</div>
+  </div>
+  <div class="gwrap" data-ids="q16,q17,q18,q19,q20,q21,q22,q23,q24,q25,q26,q27,q28,q29,q30"></div>
+</div>
+
+<div class="dayhd"><span class="d">10日（木）にやる</span><span class="t">四字熟語・部首画数・語句・文法　30分</span></div>
+
+<div class="q" data-id="C">
+  <div class="qnum">★四字熟語・慣用句・故事成語　意味を答えよう（読みも書く）。</div>
+  <div class="qbody">
+    <span class="pn">問31</span><span class="kj">危機一髪</span>　<span class="pn">問32</span><span class="kj">一朝一夕</span><br>
+    <span class="pn">問33</span><span class="kj">試行錯誤</span>　<span class="pn">問34</span><span class="kj">温故知新</span><br>
+    <span class="pn">問35</span><span class="kj">大同小異</span>　<span class="pn">問36</span>「油を売る」<br>
+    <span class="pn">問37</span>「気が置けない」　<span class="pn">問38</span>「情けは人のためならず」<br>
+    <span class="pn">問39</span>「五十歩百歩」　<span class="pn">問40</span>「推敲」
+  </div>
+  <div class="note-draw">まずノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">問37・問38は<b>意味を逆に覚えている人がとても多い</b>語。ここは差がつきます。</div>
+    <div class="step"><span>問37</span>「気が置けない」＝<b>遠慮がいらない・気楽につきあえる</b>。「油断できない」ではない。</div>
+    <div class="step"><span>問38</span>「情けは人のためならず」＝<b>人に親切にすれば、めぐって自分に返ってくる</b>。「甘やかすとその人のためにならない」ではない。</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問37を「油断できない」、問38を「甘やかしはよくない」と答える。<br>
+    どちらも<b>正しい意味の逆</b>。この2つは出たら必ず取る。</div>
+    <div class="ans-final"><span>こたえ</span>
+    問31 ききいっぱつ／ほんの少しの差で危険になりそうな状態　問32 いっちょういっせき／わずかな時間　問33 しこうさくご／何度も試してさぐること　問34 おんこちしん／古いことを学んで新しい知識を得る　問35 だいどうしょうい／だいたい同じでわずかしか違わない　問36 むだ話をして仕事をなまける　問37 遠慮がいらない　問38 人に親切にすれば自分に返ってくる　問39 大した差はない　問40 すいこう／文章を練り直すこと</div>
+  </div>
+  <div class="gwrap" data-ids="q31,q32,q33,q34,q35,q36,q37,q38,q39,q40"></div>
+</div>
+
+<div class="q" data-id="D">
+  <div class="qnum">★部首と画数　部首名または総画数を答えよう。</div>
+  <div class="qbody">
+    <span class="pn">問41</span><span class="kj">複</span>の部首名　<span class="pn">問42</span><span class="kj">原</span>の部首名<br>
+    <span class="pn">問43</span><span class="kj">部</span>の部首名　<span class="pn">問44</span><span class="kj">四</span>の部首名<br>
+    <span class="pn">問45</span><span class="kj">陸</span>の部首名　<span class="pn">問46</span><span class="kj">郵</span>の部首名<br>
+    <span class="pn">問47</span><span class="kj">医</span>の総画数　<span class="pn">問48</span><span class="kj">費</span>の総画数
+  </div>
+  <div class="note-draw">まずノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">問41〜44・問47・問48は、5月のテストで実際に落としたところです。<br>
+    <b>阝（こざとへん・おおざと）は位置で名前が変わる。</b>左にあれば「こざとへん」、右にあれば「おおざと」。</div>
+    <div class="step"><span>問41</span>「複」は衣へん（衤）。「ネ」に見えるが、点が1つ多い<b>ころもへん</b>。</div>
+    <div class="step"><span>問45・46</span>「陸」は阝が<b>左</b>→こざとへん。「郵」は阝が<b>右</b>→おおざと。</div>
+    <div class="step"><span>問47</span>「医」は 一・ノ・矢・匚 で<b>7画</b>。かこみの「匚」は2画。</div>
+    <div class="bx-warn"><b>よくある間違い：</b>「複」を「しめすへん（礻）」と答える。<br>
+    <b>衤（ころもへん）は点が2つ、礻（しめすへん）は点が1つ。</b>「複」は服・補と同じなかま。</div>
+    <div class="ans-final"><span>こたえ</span>
+    問41 ころもへん（衤）／問42 がんだれ（厂）／問43 おおざと（阝・右）／問44 くにがまえ（囗）／問45 こざとへん（阝・左）／問46 おおざと（阝・右）／問47 7画／問48 12画</div>
+  </div>
+  <div class="gwrap" data-ids="q41,q42,q43,q44,q45,q46,q47,q48"></div>
+</div>
+
+<div class="q" data-id="E">
+  <div class="qnum">★類義語・対義語・熟語の組み立て</div>
+  <div class="qbody">
+    <span class="pn">問49</span>「原因」の対義語　<span class="pn">問50</span>「客観」の対義語<br>
+    <span class="pn">問51</span>「義務」の対義語　<span class="pn">問52</span>「進歩」の対義語<br>
+    <span class="pn">問53</span>「永久」の類義語　<span class="pn">問54</span>「関心」の類義語<br>
+    <span class="pn">問55</span>「読書」の組み立て　<span class="pn">問56</span>「高低」の組み立て
+  </div>
+  <div class="note-draw">まずノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">熟語の組み立ては<b>下から上に読んでみる</b>と分かる。<br>
+    「読書」→「書を読む」と読めたら、下の字が上の字の目的語。</div>
+    <div class="step"><span>問55</span>「読書」＝書<b>を</b>読む。下の字が上の字の目的（対象）になっている組み立て。</div>
+    <div class="step"><span>問56</span>「高低」＝高い⇔低い。<b>反対の意味の字を重ねた</b>組み立て。</div>
+    <div class="bx-warn"><b>よくある間違い：</b>「客観」の対義語を「主人」などとしてしまう。<br>
+    <b>客⇔主</b>の対応に気づけば「主観」が出る。字の片方だけが入れかわる型は多い。</div>
+    <div class="ans-final"><span>こたえ</span>
+    問49 結果／問50 主観／問51 権利／問52 退歩（または退化）／問53 永遠／問54 興味／問55 下の字が上の字の目的語になっている／問56 反対の意味の字を重ねている</div>
+  </div>
+  <div class="gwrap" data-ids="q49,q50,q51,q52,q53,q54,q55,q56"></div>
+</div>
+
+<div class="q" data-id="F">
+  <div class="qnum">★文法（単語・文の組み立て）</div>
+  <div class="qbody">
+    <span class="pn">問57</span>「美しい花がさく」の主語<br>
+    <span class="pn">問58</span>同じ文の述語<br>
+    <span class="pn">問59</span>「ゆっくり歩く」の「ゆっくり」の品詞<br>
+    <span class="pn">問60</span>「静かだ」の品詞<br>
+    <span class="pn">問61</span>「本を読む」の「を」の品詞<br>
+    <span class="pn">問62</span>「大きな箱」の「大きな」の品詞<br>
+    <span class="pn">問63</span>「今日は雨が降る」は単語いくつに分けられるか<br>
+    <span class="pn">問64</span>「白い犬がゆっくり走る」で「ゆっくり」が修飾しているのはどの文節か
+  </div>
+  <div class="note-draw">まずノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">主語は「何が・だれが」、述語は「どうする・どんなだ・何だ」。<br>
+    修飾語は<b>すぐ後ろだけを見ない</b>。意味がつながる文節をさがす。</div>
+    <div class="step"><span>問59</span>「ゆっくり」は動きのようすを表し、活用しない → <b>副詞</b>。</div>
+    <div class="step"><span>問60</span>「静かだ」は言い切りが「だ」で終わる → <b>形容動詞</b>。「静かな」と変化する。</div>
+    <div class="step"><span>問62</span>「大きな」は活用せず、いつも名詞を修飾する → <b>連体詞</b>。「大きい」（形容詞）と区別する。</div>
+    <div class="step"><span>問63</span>今日／は／雨／が／降る の<b>5語</b>。「は」「が」も1語として数える。</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問62を「形容詞」と答える。<br>
+    <b>「大きい」は形容詞、「大きな」は連体詞。</b>言い切りの形にできるかで見分ける。</div>
+    <div class="ans-final"><span>こたえ</span>
+    問57 花が／問58 さく／問59 副詞／問60 形容動詞／問61 助詞／問62 連体詞／問63 5語／問64 走る</div>
+  </div>
+  <div class="gwrap" data-ids="q57,q58,q59,q60,q61,q62,q63,q64"></div>
+</div>
+
+<div class="dayhd"><span class="d">11日（金）にやる</span><span class="t">総仕上げ　出る四字熟語・文の組み立て　30分</span></div>
+
+<div class="q" data-id="G">
+  <div class="qnum">★四字熟語　□に入る漢字1字を書こう。（　）は読み。</div>
+  <div class="qbody">
+    <span class="pn">問65</span><span class="kj">異口同□</span>（いくどうおん）　<span class="pn">問66</span><span class="kj">舌先三□</span>（したさきさんずん）<br>
+    <span class="pn">問67</span><span class="kj">因果応□</span>（いんがおうほう）　<span class="pn">問68</span><span class="kj">他□本願</span>（たりきほんがん）<br>
+    <span class="pn">問69</span><span class="kj">□行無常</span>（しょぎょうむじょう）　<span class="pn">問70</span><span class="kj">一石二□</span>（いっせきにちょう）<br>
+    <span class="pn">問71</span><span class="kj">五里霧□</span>（ごりむちゅう）　<span class="pn">問72</span><span class="kj">千載一□</span>（せんざいいちぐう）<br>
+    <span class="pn">問73</span><span class="kj">有名無□</span>（ゆうめいむじつ）　<span class="pn">問74</span><span class="kj">半信半□</span>（はんしんはんぎ）<br>
+    <span class="pn">問75</span><span class="kj">一長一□</span>（いっちょういったん）　<span class="pn">問76</span><span class="kj">空前絶□</span>（くうぜんぜつご）<br>
+    <span class="pn">問77</span><span class="kj">完全無□</span>（かんぜんむけつ）　<span class="pn">問78</span><span class="kj">古今東□</span>（ここんとうざい）<br>
+    <span class="pn">問79</span><span class="kj">単刀直□</span>（たんとうちょくにゅう）　<span class="pn">問80</span><span class="kj">自画自□</span>（じがじさん）
+  </div>
+  <div class="note-draw">まずノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai">問65と問66は、6月の特訓選抜で実際に落とした語です。<br>
+    四字熟語は<b>2字ずつに切る</b>と埋めやすい。「異口／同音」＝口はちがうのに音（言うこと）は同じ。<br>
+    <b>反対の字が向かい合う型</b>（大同小異・有名無実・半信半疑・一長一短・空前絶後・古今東西）はとても多い。</div>
+    <div class="step"><span>問66</span>「三寸」＝わずかな長さ。口先だけの上手な言い方。「村」「分」と書かない。</div>
+    <div class="step"><span>問68</span>「他力」。自分でやらず他人の力をあてにすること。「自力」ではない。</div>
+    <div class="step"><span>問71</span>「霧中」。夢を見ているのではなく<b>霧の中</b>で方角が分からない、が語源。「夢中」と書かない。</div>
+    <div class="step"><span>問78</span>「古今」は「ここん」と読む。古⇔今、東⇔西で二重に対になっている。</div>
+    <div class="bx-warn"><b>よくある間違い：</b>五里霧<b>夢</b>／単<b>短</b>刀直入／温<b>古</b>知新。<br>
+    どれも<b>音が同じ別の字</b>にひきずられた形。読みだけで書かず、意味から字を決める。</div>
+    <div class="ans-final"><span>こたえ</span>
+    問65 音／問66 寸／問67 報／問68 力／問69 諸／問70 鳥／問71 中／問72 遇／問73 実／問74 疑／問75 短／問76 後／問77 欠／問78 西／問79 入／問80 賛</div>
+  </div>
+  <div class="gwrap" data-ids="q65,q66,q67,q68,q69,q70,q71,q72,q73,q74,q75,q76,q77,q78,q79,q80"></div>
+</div>
+
+<div class="q" data-id="H">
+  <div class="qnum">★文の組み立て　文節・単語・文の成分</div>
+  <div class="qbody">
+    <span class="pn">問81〜85</span>　次の文の——線の文節の働きを、あとから選ぼう。<br>
+    　<b>ア</b> 主語　<b>イ</b> 述語　<b>ウ</b> 修飾語　<b>エ</b> 接続語　<b>オ</b> 独立語<br>
+    <span class="pn">問81</span>「友人が<u>とても</u>おいしいケーキを作ってくれた。」<br>
+    <span class="pn">問82</span>「<u>いや、</u>それは君の思いちがいだ。」<br>
+    <span class="pn">問83</span>「弟は、<u>寒いのに、</u>半そでシャツを着て出かけた。」<br>
+    <span class="pn">問84</span>「ああ、今日はとても寒いので、<u>私は</u>上着を着た。」<br>
+    <span class="pn">問85</span>「ああ、今日はとても<u>寒いので、</u>私は上着を着た。」<br>
+    <span class="pn">問86</span>「ああ、今日はとても寒いので、私は上着を着た。」は<b>いくつの文節</b>に分けられるか<br>
+    <span class="pn">問87</span>「母が庭に花を植える。」は<b>いくつの文節</b>に分けられるか<br>
+    <span class="pn">問88</span>「弟は学校へ行った。」は<b>いくつの単語</b>に分けられるか<br>
+    <span class="pn">問89</span>1つの文の中で、<b>文節の数と必ず同じ数になる</b>のは、自立語と付属語のどちらか<br>
+    <span class="pn">問90</span>「が・を・は・ので」は、自立語と付属語のどちらか
+  </div>
+  <div class="note-draw">まずノートに書いてから答え合わせをしよう。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="osarai"><b>文節</b>の切り方は「ネ」を入れる。母がネ／庭にネ／花をネ／植える＝4文節。<br>
+    <b>単語</b>はそこからさらに「が・を・は・た」などを切りはなす。<br>
+    <b>自立語は1文節に必ず1つだけ先頭に入る</b>。だから<b>文節の数＝自立語の数</b>になる。</div>
+    <div class="step"><span>問81</span>「とても」は後ろの「おいしい」をくわしくしている → <b>修飾語（ウ）</b>。くわしくされる側（被修飾語）と取りちがえない。</div>
+    <div class="step"><span>問82</span>「いや、」は感動詞。単独で文の頭に立ち、後ろとつながらない → <b>独立語（オ）</b>。</div>
+    <div class="step"><span>問83</span>「寒いのに、」は「〜のに」で前と後ろを<b>逆の意味でつないでいる</b> → <b>接続語（エ）</b>。</div>
+    <div class="step"><span>問85</span>「寒いので、」は<b>理由</b>で前後をつないでいる → <b>接続語（エ）</b>。つなぐ働きなら修飾語ではない。</div>
+    <div class="step"><span>問86</span>ああ／今日は／とても／寒いので／私は／上着を／着た ＝<b>7文節</b></div>
+    <div class="step"><span>問88</span>弟・は／学校・へ／行っ・た ＝<b>6単語</b>。「た」も1語として数える。</div>
+    <div class="bx-warn"><b>よくある間違い：</b>「〜ので」「〜のに」で終わる文節を<b>修飾語</b>と答えてしまう。<br>
+    <b>つないでいるなら接続語、くわしくしているなら修飾語。</b>まず「何をしている文節か」を言葉にしてから選ぶ。</div>
+    <div class="ans-final"><span>こたえ</span>
+    問81 ウ／問82 オ／問83 エ／問84 ア／問85 エ／問86 7文節／問87 4文節／問88 6単語／問89 自立語／問90 付属語</div>
+  </div>
+  <div class="gwrap" data-ids="q81,q82,q83,q84,q85,q86,q87,q88,q89,q90"></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 できた！（特訓D2 国語の知識 完了）</button>
+
+<p class="tail">終わったら、✕がついた問題だけをもう一度見直します。<br>
+とくに<b>文の組み立て（問81〜90）</b>は、9月の特訓選抜で実際に出た形です。ここが取れると大きい。</p>
+
+</div>
+
+<script>
+var KEY='tokkun_d2';
+
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+function g(btn,id,v){
+  var row=btn.closest('.gq');
+  row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=row.nextElementSibling, w3=mt.nextElementSibling;
+  if(v==='x'){mt.classList.add('show');w3.classList.add('show');}
+  else{mt.classList.remove('show');w3.classList.remove('show');}
+}
+function m(btn){
+  var p=btn.parentNode;
+  p.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+p.getAttribute('data-gid')+'_type',btn.textContent);
+}
+document.querySelectorAll('.gwrap').forEach(function(w){
+  var ids=w.getAttribute('data-ids').split(',');
+  var h='';
+  ids.forEach(function(id){
+    var n=id.replace('q','').replace(/^0/,'');
+    h+='<div class="gq"><span class="gq-label">問'+n+'</span>'
+      +'<button class="o" onclick="g(this,\''+id+'\',\'o\')">○</button>'
+      +'<button class="x" onclick="g(this,\''+id+'\',\'x\')">✕</button></div>'
+      +'<div class="mt" data-gid="'+id+'"><button onclick="m(this)">覚えていなかった</button>'
+      +'<button onclick="m(this)">うろ覚えだった</button>'
+      +'<button onclick="m(this)">意味を逆に覚えていた</button></div>'
+      +'<div class="write3">📝 正しい答えをノートに3回書こう</div>';
+  });
+  w.innerHTML=h;
+});
+document.querySelectorAll('.gq').forEach(function(row){
+  var btn=row.querySelector('.o');
+  var id=btn.getAttribute('onclick').match(/'(q\d+)'/)[1];
+  var v=localStorage.getItem(KEY+'_'+id);
+  if(v){row.querySelector(v==='o'?'.o':'.x').classList.add('on');
+    if(v==='x'){row.nextElementSibling.classList.add('show');
+      row.nextElementSibling.nextElementSibling.classList.add('show');}}
+  var ty=localStorage.getItem(KEY+'_'+id+'_type');
+  if(ty){row.nextElementSibling.querySelectorAll('button').forEach(function(b){
+    if(b.textContent===ty)b.classList.add('on');})}
+});
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+if(localStorage.getItem(KEY+'_done')==='1'){
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+</script>
+</body>
+</html>
