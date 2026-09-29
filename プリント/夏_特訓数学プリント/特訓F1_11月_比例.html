@@ -167,6 +167,7 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
     <div class="bx-warn"><b>ありがちな間違い：</b>先に上下(y)を数えてしまい、(y, x)の順で書いてしまう。</div>
     <div class="step"><span>①</span>原点から左へ2マスなので、x＝−2。</div>
     <div class="step"><span>②</span>そこから上へ4マスなので、y＝4。</div>
+    <div class="check-box"><b>確かめ：</b>「左に2・上に4」の位置。(−2, 4)と一致している。</div>
     <div class="ans-final"><span>こたえ</span>(−2, 4)</div>
   </div>
   <div class="gwrap" data-ids="s0c1"></div>
@@ -210,6 +211,7 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
   <div class="ans-box">
     <div class="step"><span>①</span>原点から左へ5マスなので、x＝−5。</div>
     <div class="step"><span>②</span>そこから下へ1マスなので、y＝−1。</div>
+    <div class="check-box"><b>確かめ：</b>「左に5・下に1」の位置。(−5, −1)と一致している。</div>
     <div class="ans-final"><span>こたえ</span>(−5, −1)</div>
   </div>
   <div class="gwrap" data-ids="s0p1"></div>
@@ -498,6 +500,23 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
   <div class="gwrap" data-ids="s2p4"></div>
 </div>
 
+<div class="q" data-id="s2p5">
+  <div class="qnum">★練習5　表の空らんをうめる</div>
+  <div class="qbody">yはxに比例する。表の①・②にあてはまる数を求めなさい。
+  <table class="ratetable"><tr><th>x</th><td>2</td><td>5</td><td>①</td><td>8</td></tr><tr><th>y</th><td>6</td><td>②</td><td>21</td><td>24</td></tr></table></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>表の空らんを埋めるときも、まず分かっている1組からaを求めて式を作ってしまう。あとは式に代入するだけでよい。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>式を作らずに、x＝5とx＝2の増え方を目分量で予想して②を埋めようとしてしまう。</div>
+    <div class="step"><span>①</span>分かっている組(2, 6)からa＝6÷2＝3。式はy＝3x。</div>
+    <div class="step"><span>②</span>②はx＝5のときのy：y＝3×5＝15。</div>
+    <div class="step"><span>③</span>①はy＝21のときのx：21＝3×xより、x＝21÷3＝7。</div>
+    <div class="check-box"><b>確かめ：</b>①＝7を式に戻すとy＝3×7＝21→表と一致している。</div>
+    <div class="ans-final"><span>こたえ</span>①＝7　②＝15</div>
+  </div>
+  <div class="gwrap" data-ids="s2p5"></div>
+</div>
+
 <button class="done" id="doneBtn-s2" data-fin="S2 完了しました（おつかれさま）" onclick="finishRound('s2')">🌸 S2 できた！</button>
 
 <!-- ========== S3 ========== -->
@@ -739,7 +758,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
   drawPlane('s0-p1-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
     ariaLabel:'点Rの座標を読み取る問題の図',
-    points:[ { x:-5, y:-1, name:'R', pos:'ne', coord:false } ]
+    points:[ { x:-5, y:-1, name:'R', pos:'se', coord:false } ]
   });
 
   drawPlane('s0-p2-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,

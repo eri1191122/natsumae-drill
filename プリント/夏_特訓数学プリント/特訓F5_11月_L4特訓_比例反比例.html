@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓F5｜11月特訓 L4特訓 比例反比例</title>
+<style>
+:root{--ink:#1b1c22;--sub:#5a5f6e;--line:#e3e5ec;--bg:#fbfbfd;--key:#1f4fd8;--key-bg:#eef2ff;
+--go:#0a7d55;--go-bg:#eaf7f1;--hot:#d92b3a;--hot-bg:#fff2f3;--warn:#b26a00;--warn-bg:#fff7e8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:14px 18px 70px}
+a.back{display:inline-block;margin:6px 0 12px;color:var(--key);font-size:15px;text-decoration:none;font-weight:700}
+
+.pg-hd{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:16px;padding:22px 22px 20px;margin:0 0 18px}
+.pg-badge{display:inline-block;background:rgba(255,255,255,.16);border-radius:7px;padding:4px 10px;
+font-size:12.5px;font-weight:700;margin:0 6px 8px 0}
+.pg-hd h1{font-size:22px;margin:6px 0 8px;line-height:1.45}
+.pg-hd p{font-size:14.5px;margin:0;opacity:.9}
+.pg-cheer{margin-top:10px !important;font-size:14px !important;opacity:.9 !important}
+
+.kind-box{background:var(--key-bg);border-radius:12px;padding:14px 18px;margin:0 0 20px;font-size:14.5px;line-height:1.9}
+.kind-box b{color:var(--key)}
+.goal-box{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:14px;
+padding:18px 20px;margin:28px 0 0;font-size:15.5px;line-height:1.9;text-align:center}
+.goal-box b{font-size:17.5px}
+
+.unit-banner{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--key-bg);
+border-left:5px solid var(--key);border-radius:0 10px 10px 0;padding:11px 15px;margin:26px 0 12px}
+.unit-num{font-size:14px;font-weight:800;color:var(--key)}
+.unit-name{font-size:16px;font-weight:800}
+.unit-time{font-size:13px;color:var(--sub);margin-left:auto}
+
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.q.hard{border:1.5px solid #c7cff5;box-shadow:0 2px 10px rgba(31,79,216,.08)}
+.qnum{font-size:16px;font-weight:800;margin:0 0 10px}
+.hard-badge{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:20px;background:var(--key);
+color:#fff;font-size:11.5px;font-weight:800;vertical-align:middle}
+.qbody{font-size:17px;line-height:2.5}
+.qbody .pn{color:#2f5a8a;font-weight:700;margin-right:6px}
+.note-draw{background:var(--warn-bg);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:0 0 10px}
+.note-draw b{color:var(--warn)}
+.mikata-box{background:var(--key-bg);border-left:4px solid var(--key);border-radius:0 8px 8px 0;
+padding:10px 14px;font-size:14px;line-height:1.85;margin:0 0 12px;font-weight:700}
+.mikata-box b{color:var(--key)}
+
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 2px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+
+.rt-lead{font-weight:800;font-size:14.5px;margin:0 0 6px}
+.ratetable{width:100%;border-collapse:collapse;margin:0 0 10px;font-size:13.5px}
+.ratetable th,.ratetable td{border:1px solid var(--line);padding:6px 8px;text-align:center}
+.ratetable th{background:var(--key-bg)}
+
+.fig-box{display:flex;justify-content:center;margin:6px 0 8px}
+.fig-cap{font-size:12.5px;color:var(--sub);text-align:center;margin:0 0 10px}
+
+.ans-btn{display:block;width:100%;margin:12px 0 0;padding:12px;border:0;border-radius:10px;
+background:var(--key);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.ans-box{display:none;margin:12px 0 0;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ans-box.open{display:block}
+.step{font-size:15.5px;margin:0 0 9px;padding:0 0 0 4px}
+.step>span:first-child{display:inline-block;min-width:52px;font-weight:800;color:var(--key)}
+.miss-box{background:var(--warn-bg);border-radius:9px;padding:11px 14px;font-size:14.5px;margin:12px 0 0}
+.miss-box b{color:var(--warn)}
+.bx-warn{background:var(--hot-bg);border:1px solid #f6ccd1;border-radius:9px;padding:11px 14px;
+font-size:14.5px;margin:0 0 10px}
+.bx-warn b{color:var(--hot)}
+.ans-final{background:var(--ink);color:#fff;border-radius:10px;padding:12px 15px;margin:13px 0 0;font-size:15.5px}
+.ans-final>span:first-child{font-weight:800;margin-right:10px}
+
+.more-btn{display:inline-block;margin:12px 0 0;padding:8px 16px;border:1.5px solid var(--key);
+background:#fff;color:var(--key);border-radius:8px;font-size:13.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.more-box{display:none;margin:10px 0 0;background:#fff;border:1px dashed #b7c2ef;border-radius:10px;
+padding:12px 15px;font-size:13.8px;line-height:1.9;color:var(--sub)}
+.more-box.open{display:block}
+
+.gwrap{margin:12px 0 0;border-top:1px dashed var(--line);padding:12px 0 0}
+.gq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 7px;font-size:14px}
+.gq-label{min-width:52px;font-weight:700;color:var(--sub)}
+.gq button{border:1.5px solid var(--line);background:#fff;border-radius:7px;width:36px;height:32px;
+font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.gq button.o.on{background:var(--go);border-color:var(--go);color:#fff}
+.gq button.x.on{background:var(--hot);border-color:var(--hot);color:#fff}
+.mt{display:none;gap:6px;flex-wrap:wrap;margin:2px 0 0 52px}
+.mt.show{display:flex}
+.mt button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px;
+font-size:12.5px;cursor:pointer;font-family:inherit;width:auto;height:auto}
+.mt button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.write3{display:none;margin:6px 0 0 52px;font-size:13px;color:var(--hot);font-weight:700}
+.write3.show{display:block}
+
+.done{display:block;width:100%;margin:26px 0 0;padding:18px;border:0;border-radius:14px;
+background:var(--go);color:#fff;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit}
+.done.fin{background:var(--ink)}
+.tail{text-align:center;color:var(--sub);font-size:13.5px;margin:18px 0 0;line-height:1.9}
+
+@media print{
+ body{background:#fff}
+ a.back,.ans-btn,.ans-box,.gwrap,.done{display:none !important}
+ .q{break-inside:avoid;page-break-inside:avoid}
+ .pg-hd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{margin:12mm}
+}
+/*frac-guard*/.frac{display:inline-flex!important;flex-direction:column!important;min-width:0!important;width:auto!important}.frac>span{display:block!important;min-width:0!important;width:auto!important;margin:0!important;color:inherit!important;font-weight:inherit!important}.frac>.n{border-bottom:1.8px solid currentColor!important;padding:0 5px 2px!important}.frac>.d{padding:2px 5px 0!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#mock">← ダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div>
+    <span class="pg-badge">特訓F5</span>
+    <span class="pg-badge">11月特訓 比例・反比例</span>
+    <span class="pg-badge">L4特訓（新7型・21問）</span>
+  </div>
+  <h1>比例・反比例のL4特訓（新7型）</h1>
+  <p>目安: 60分（①〜⑦ 各回9分の目安で分けてOK）　対象: 中1　全問に解説つき</p>
+  <p class="pg-cheer"><b>この回でできるようになること：</b>反比例の変域からaそのものを逆算すること／歯車が2段・3段つながったときの計算／反比例のy=xの対称性を使った面積／動く点と反比例の点を組み合わせた面積の方程式／比例か反比例かを自分で判定してから複合計算すること／スタート時刻がずれた2つの比例の関係／単位量あたりの2段階の逆算。7つとも、これまでのF1〜F4では扱っていない新しいパターンです。</p>
+</div>
+
+<div class="kind-box">
+  各テーマは「導入1問（やさしい類題）→本問2問（難問）」の順。導入は本問と同じ考え方を使うが、数字は本問とは別。<br>
+  むずかしい問題ほど、解説はていねいに書いてある。わからなかったら導入の考え方と、導入の答えの中にある「この型の見抜き方」に戻ってもう一度読もう。本問には「くわしく」ボタンがあり、押すともう一歩深い説明が読める。
+</div>
+
+<div class="unit-banner"><span class="unit-num">①</span><span class="unit-name">変域からaを逆算する</span><span class="unit-time">目安 9分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qnum">★問1　変域からaを求める(基本)</div>
+  <div class="qbody"><span class="pn">問1</span>反比例 y＝<span class="frac"><span class="n">a</span><span class="d">x</span></span> について、aは正の数とする。2≦x≦8のとき、yの変域は m≦y≦12 である。aの値とmの値を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="mikata-box"><b>この型の見抜き方：</b>xの変域とyの変域が両方セットで出てきたら、この型。aの符号がわからないときは、まずyの変域の符号でaの符号を決めてから、端の対応（xが最小のときyは最大か最小か）を考える。</div>
+    <div class="note-draw"><b>①一言で言うと：</b>aが正の反比例は、xが大きいほどyは小さくなる。だから、xの変域の両端をそれぞれ代入すれば、yの変域の両端がわかる。</div>
+    <div class="fig-box"><div id="figQ01e"></div></div>
+    <p class="fig-cap">②図で見る：y＝24/xのグラフの、2≦x≦8の部分（太い部分）。</p>
+    <div class="step"><span>③-1</span>aがまだわからないので、先に「x最小(2)のときyは最大(12)」という対応を使う。</div>
+    <div class="step"><span>③-2</span>a＝2×12＝24（xとyをかけると、いつもaになる）。</div>
+    <div class="step"><span>③-3</span>x＝8のときのyを求める：m＝24÷8＝3。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>aがまだ分かっていないのに、x＝8とy＝12を先にかけてaを求めようとしてしまう（x最小とy最大を組にするのが正しい）。</div>
+    <div class="step"><span>⑤確かめ</span>a＝24なら、x＝2でy＝24÷2＝12（合っている）。x＝8でy＝24÷8＝3（mと一致）。</div>
+    <div class="ans-final"><span>こたえ</span>a＝24、m＝3</div>
+  </div>
+  <div class="gwrap" data-ids="q01"></div>
+</div>
+
+<!-- L判定: L4 根拠=aの符号による端対応の反転を扱い、変域の両端から比例定数と残りの端点を逆算する複数条件の統合／lite単独評定 -->
+<div class="q calc hard" data-id="B">
+  <div class="qnum">★問2【難問】変域からaを求める(aが負)<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問2</span>反比例 y＝<span class="frac"><span class="n">a</span><span class="d">x</span></span> について、aは負の数とする。3≦x≦8のとき、yの変域は −8≦y≦n である。aの値とnの値を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>aが負の反比例は、x&gt;0の範囲では、xが大きいほどyも大きくなる（問1のaが正のときと逆）。</div>
+    <div class="fig-box"><div id="figQ02e"></div></div>
+    <p class="fig-cap">②図で見る：y＝−24/xのグラフの、3≦x≦8の部分（太い部分）。y座標はすべてマイナス。</p>
+    <div class="step"><span>③-1</span>aが負のときは「xが最小のときyも最小」になる（問1と逆の対応）。x最小(3)のときy最小(−8)。</div>
+    <div class="step"><span>③-2</span>a＝3×(−8)＝−24。</div>
+    <div class="step"><span>③-3</span>x＝8のときのyを求める：n＝−24÷8＝−3。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>aが正のときと同じ対応（x最小→y最大）をそのまま使ってしまう。符号をはずして絶対値だけで計算し、マイナスを付け忘れる。</div>
+    <div class="step"><span>⑤確かめ</span>a＝−24なら、x＝3でy＝−24÷3＝−8（合っている）。x＝8でy＝−24÷8＝−3（nと一致）。</div>
+    <div class="ans-final"><span>こたえ</span>a＝−24、n＝−3</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">aが負のとき、なぜ端の対応が逆になるのか：x&gt;0の範囲でy＝a/xを考えると、xが大きくなるほど数としての大きさ（絶対値）は0に近づく。aが負だから、0に近づく＝マイナスの数としては大きくなる（−8より−3の方が大きい）。だから、aが負のときはxが大きいほどyも大きい。</div>
+  </div>
+  <div class="gwrap" data-ids="q02"></div>
+</div>
+
+<!-- L判定: L4 根拠=aの符号が明示されず、yの変域の符号からaの符号を自分で判断したうえで問2と同じ逆算を行う統合的推論／lite単独評定 -->
+<div class="q calc hard" data-id="C">
+  <div class="qnum">★問3【難問】変域からaと符号を求める<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問3</span>反比例 y＝<span class="frac"><span class="n">a</span><span class="d">x</span></span> について、5≦x≦15のとき、yの変域は −6≦y≦p である。aの値とpの値を求めなさい（aの符号は問題文に書かれていないので、まず自分で決める）。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>この問題はaの符号が書かれていない。yの変域が両方ともマイナスなので、まずaの符号を自分で決めるところから始まる。</div>
+    <div class="fig-box"><div id="figQ03e"></div></div>
+    <p class="fig-cap">②図で見る：y＝−30/xのグラフの、5≦x≦15の部分（太い部分）。</p>
+    <div class="step"><span>③-1</span>xはずっと正の範囲(5≦x≦15)なのに、yはマイナスになっている。y＝a/xでxが正なのにyが負になるのは、aが負のときだけ。だからaは負。</div>
+    <div class="step"><span>③-2</span>aが負のときは「xが最小のときyも最小」（問2と同じ対応）。x最小(5)のときy最小(−6)。</div>
+    <div class="step"><span>③-3</span>a＝5×(−6)＝−30。</div>
+    <div class="step"><span>③-4</span>x＝15のときのyを求める：p＝−30÷15＝−2。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>aの符号を決めずに、−6をどちらの端に対応させればよいか迷ったまま計算を始めてしまう。</div>
+    <div class="step"><span>⑤確かめ</span>a＝−30なら、x＝5でy＝−30÷5＝−6（合っている）。x＝15でy＝−30÷15＝−2（pと一致。−6≦−2で変域の向きも正しい）。</div>
+    <div class="ans-final"><span>こたえ</span>a＝−30、p＝−2</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">この問題ではaの符号が書かれていない。でもyの変域が両方ともマイナス（−6とp）なので、x&gt;0の範囲でy＝a/xがマイナスになるのはaがマイナスのときだけ、と判断できる。符号を先に決めてから逆算する練習。</div>
+  </div>
+  <div class="gwrap" data-ids="q03"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">②</span><span class="unit-name">歯車のかみ合い（複数段）</span><span class="unit-time">目安 9分</span></div>
+
+<div class="q calc" data-id="D">
+  <div class="qnum">★問4　歯車のかみ合い(基本)</div>
+  <div class="qbody"><span class="pn">問4</span>歯数24の歯車Aが1分間に15回転している。Aとかみ合っている歯車Bの歯数は20である。歯車Bは1分間に何回転するか求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="mikata-box"><b>この型の見抜き方：</b>歯車が3つ以上出てきたら、まず「どれとどれがかみ合っているか（反比例＝歯数×回転数が同じ）」と「どれとどれが同じ軸で固定されているか（回転数がそのまま同じ）」を図で仕分けてから計算する。</div>
+    <div class="note-draw"><b>①一言で言うと：</b>かみ合っている歯車は、歯数×回転数がいつも同じ数になる（反比例の関係）。</div>
+    <table class="ratetable"><tr><th>歯車</th><th>歯数</th><th>回転数</th><th>歯数×回転数</th></tr><tr><td>A</td><td>24</td><td>15</td><td>360</td></tr><tr><td>B</td><td>20</td><td>？</td><td>360</td></tr></table>
+    <div class="step"><span>②-1</span>歯車Aの歯数×回転数＝24×15＝360。</div>
+    <div class="step"><span>②-2</span>歯車Bも同じ360になるはず。360＝20×(Bの回転数)。</div>
+    <div class="step"><span>②-3</span>Bの回転数＝360÷20＝18。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>歯数が多い方が速く回ると勘違いしてしまう（実際は歯数が多いほどゆっくり回る）。</div>
+    <div class="step"><span>④確かめ</span>20×18＝360で、Aの360と一致する。</div>
+    <div class="ans-final"><span>こたえ</span>18回転</div>
+  </div>
+  <div class="gwrap" data-ids="q04"></div>
+</div>
+
+<!-- L判定: L4 根拠=かみ合い(反比例)と同軸(等速)の2種類の関係を区別しながら2段階の歯車列を順に計算する統合／lite単独評定 -->
+<div class="q calc hard" data-id="E">
+  <div class="qnum">★問5【難問】歯車の連結(2段)<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問5</span>歯数30の歯車Aが1分間に20回転している。Aとかみ合う歯車Bの歯数は25である。歯車Bと同じ軸に、歯数10の歯車Cが固定されている（Cの回転数はBと同じになる）。Cとかみ合う歯車Dの歯数は16である。歯車Dは1分間に何回転するか求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>歯車が3つ以上あるときは、「かみ合い(反比例)」と「同じ軸(回転数が同じ)」を区別しながら順番に計算する。</div>
+    <table class="ratetable"><tr><th>歯車</th><th>歯数</th><th>回転数</th><th>関係</th></tr><tr><td>A</td><td>30</td><td>20</td><td>Bとかみ合い</td></tr><tr><td>B</td><td>25</td><td>？</td><td>Cと同軸</td></tr><tr><td>C</td><td>10</td><td>Bと同じ</td><td>Dとかみ合い</td></tr><tr><td>D</td><td>16</td><td>？</td><td>—</td></tr></table>
+    <div class="step"><span>②-1</span>A・Bはかみ合い：30×20＝600。Bの回転数＝600÷25＝24。</div>
+    <div class="step"><span>②-2</span>B・Cは同じ軸なので、Cの回転数もそのまま24（歯数は関係ない）。</div>
+    <div class="step"><span>②-3</span>C・Dはかみ合い：10×24＝240。Dの回転数＝240÷16＝15。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>Cの回転数を求めるときに、Bとの歯数の比をかけてしまう（同じ軸どうしは回転数がそのまま等しいだけで、反比例の計算は不要）。</div>
+    <div class="step"><span>④確かめ</span>C・Dの関係を逆から確認する。16×15＝240で、Cの10×24＝240と一致する。</div>
+    <div class="ans-final"><span>こたえ</span>15回転</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">歯車の列を見るときは、①かみ合っている(反比例)、②同じ軸で固定されている(回転数が同じ)、の2つを混同しないことが最大のポイント。表や図に印をつけながら整理すると間違えにくい。</div>
+  </div>
+  <div class="gwrap" data-ids="q05"></div>
+</div>
+
+<!-- L判定: L4 根拠=歯車列を末尾から逆にたどり、未知の歯数を文字式で解く複数段の逆算／lite単独評定 -->
+<div class="q calc hard" data-id="F">
+  <div class="qnum">★問6【難問】歯車の連結(歯数を逆算)<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問6</span>歯数45の歯車Pが1分間に12回転している。Pとかみ合う歯車Qの歯数をxとする。Qと同じ軸に、歯数18の歯車Rが固定されている（Rの回転数はQと同じになる）。Rとかみ合う歯車Sの歯数は24で、1分間に27回転している。歯車Qの歯数xを求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>一番最後の歯車Sから逆にたどっていくと、先にRの回転数がわかる。</div>
+    <table class="ratetable"><tr><th>歯車</th><th>歯数</th><th>回転数</th><th>関係</th></tr><tr><td>P</td><td>45</td><td>12</td><td>Qとかみ合い</td></tr><tr><td>Q</td><td>x</td><td>？</td><td>Rと同軸</td></tr><tr><td>R</td><td>18</td><td>Qと同じ</td><td>Sとかみ合い</td></tr><tr><td>S</td><td>24</td><td>27</td><td>—</td></tr></table>
+    <div class="step"><span>②-1</span>R・Sはかみ合い：24×27＝648。Rの回転数＝648÷18＝36。</div>
+    <div class="step"><span>②-2</span>Q・Rは同じ軸なので、Qの回転数も36。</div>
+    <div class="step"><span>②-3</span>P・Qはかみ合い：45×12＝540。540＝x×36なので、x＝540÷36＝15。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>逆算の順番（S→R→Q→P）を間違えて、Pの情報だけで計算しようとしてしまう。</div>
+    <div class="step"><span>④確かめ</span>x＝15なら、45×12＝540、15×36＝540で一致する。18×36＝648、24×27＝648でこちらも一致する。</div>
+    <div class="ans-final"><span>こたえ</span>x＝15（歯数15）</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">文字のまま計算を進めるのが苦手なときは、Qの歯数を□として、わかっている数だけで先に式を作ってから□について解くと整理しやすい。</div>
+  </div>
+  <div class="gwrap" data-ids="q06"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">③</span><span class="unit-name">対称な2点と三角形の面積</span><span class="unit-time">目安 9分</span></div>
+
+<div class="q calc" data-id="G">
+  <div class="qnum">★問7　対称な2点と三角形の面積(基本)</div>
+  <div class="qbody"><span class="pn">問7</span>反比例 y＝<span class="frac"><span class="n">12</span><span class="d">x</span></span> のグラフ上に、点A(2, 6)と点B(6, 2)がある（Bは、Aのx座標とy座標を入れ替えた点）。原点をOとして、三角形OABの面積を求めなさい。</div>
+  <div class="fig-box"><div id="figQ07"></div></div>
+  <p class="fig-cap">点A、点B、原点Oを結んだ三角形（辺だけを示した図）</p>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="mikata-box"><b>この型の見抜き方：</b>反比例のグラフ上に、座標を入れ替えた2点(p, q)と(q, p)が出てきたら、この型。y＝xの線について対称なので、面積は「外側の正方形（または長方形）から、周りの直角三角形をひく」方法で求める。</div>
+    <div class="note-draw"><b>①一言で言うと：</b>原点を通らない三角形は、外側にぴったり入る四角形を考えて、そこから周りの直角三角形をひくと面積が求まる。</div>
+    <div class="fig-box"><div id="figQ07e"></div></div>
+    <p class="fig-cap">②図で見る：点線が外側の正方形。青くぬった部分が三角形OAB。</p>
+    <div class="step"><span>③-1</span>O, A(2,6), B(6,2)をすべて含む四角形を考える。x座標は0〜6、y座標は0〜6だから、正方形の面積は6×6＝36。</div>
+    <div class="step"><span>③-2</span>正方形の中にできる3つの直角三角形の面積を求める。O・(0,6)・Aは底辺2×高さ6÷2＝6。A・(6,6)・Bは底辺4×高さ4÷2＝8。B・(6,0)・Oは底辺6×高さ2÷2＝6。</div>
+    <div class="step"><span>③-3</span>正方形36から3つの三角形をひく：36−(6＋8＋6)＝36−20＝16。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>3つの直角三角形のうち1つを数え忘れる。AとBの座標を逆に使ってしまう。</div>
+    <div class="step"><span>⑤確かめ</span>3つの三角形の合計20と、三角形OABの16を足すと、正方形の36になる。</div>
+    <div class="ans-final"><span>こたえ</span>16</div>
+  </div>
+  <div class="gwrap" data-ids="q07"></div>
+</div>
+
+<!-- L判定: L4 根拠=比の条件とxy=aから座標をp²=kの形で解き、対称性と長方形減算による面積計算を統合／lite単独評定 -->
+<div class="q calc hard" data-id="H">
+  <div class="qnum">★問8【難問】対称な2点の面積(比の条件から座標を求める)<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問8</span>反比例 y＝<span class="frac"><span class="n">48</span><span class="d">x</span></span> のグラフ上に点A(p, q)がある（p, qはどちらも正の数）。Aのy座標は、x座標の3倍である（q＝3p）。Bは、Aのx座標とy座標を入れ替えた点とする。原点をOとして、三角形OABの面積を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>まずAの座標を、xy＝48と「y座標はx座標の3倍」の2つの条件から決める。</div>
+    <div class="fig-box"><div id="figQ08e"></div></div>
+    <p class="fig-cap">②図で見る：点線が外側の正方形。青くぬった部分が三角形OAB。</p>
+    <div class="step"><span>③-1</span>q＝3pを、p×q＝48に代入：p×3p＝48→3p²＝48。</div>
+    <div class="step"><span>③-2</span>両辺を3でわる：p²＝16。p&gt;0だからp＝4。</div>
+    <div class="step"><span>③-3</span>q＝3×4＝12。だからA(4, 12)、B(12, 4)。</div>
+    <div class="step"><span>③-4</span>O, A(4,12), B(12,4)を含む正方形（1辺12）の面積は12×12＝144。3つの直角三角形：O・(0,12)・Aは底辺4×高さ12÷2＝24。A・(12,12)・Bは底辺8×高さ8÷2＝32。B・(12,0)・Oは底辺12×高さ4÷2＝24。</div>
+    <div class="step"><span>③-5</span>144−(24＋32＋24)＝144−80＝64。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>3p²＝48からp²＝16のあと、p＝±4の両方を答えの候補にしてしまう（pは座標のx成分でp&gt;0）。「y座標はx座標の3倍」を逆にして計算してしまう。</div>
+    <div class="step"><span>⑤確かめ</span>A(4,12)はxy＝4×12＝48で合っている。3つの三角形の合計80と64を足すと144になる。</div>
+    <div class="ans-final"><span>こたえ</span>64</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">条件「y座標はx座標の3倍」は、A(p, 3p)と言っているのと同じ。p×3p＝48を3p²＝48と整理してからp²＝16にする、この途中式を省略しないこと。</div>
+  </div>
+  <div class="gwrap" data-ids="q08"></div>
+</div>
+
+<!-- L判定: L4 根拠=問8と条件の向きを反転させ、同じ統合手順を逆向きの比で再構成／lite単独評定 -->
+<div class="q calc hard" data-id="I">
+  <div class="qnum">★問9【難問】対称な2点の面積(比の条件・逆向き)<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問9</span>反比例 y＝<span class="frac"><span class="n">20</span><span class="d">x</span></span> のグラフ上に点A(p, q)がある（p, qはどちらも正の数）。Aのx座標は、y座標の5倍である（p＝5q）。Bは、Aのx座標とy座標を入れ替えた点とする。原点をOとして、三角形OABの面積を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>問8とは逆向きの条件（xがyの5倍）。同じ考え方で座標を決めてから面積を求める。</div>
+    <div class="fig-box"><div id="figQ09e"></div></div>
+    <p class="fig-cap">②図で見る：点線が外側の正方形。青くぬった部分が三角形OAB。</p>
+    <div class="step"><span>③-1</span>p＝5qを、p×q＝20に代入：5q×q＝20→5q²＝20。</div>
+    <div class="step"><span>③-2</span>両辺を5でわる：q²＝4。q&gt;0だからq＝2。</div>
+    <div class="step"><span>③-3</span>p＝5×2＝10。だからA(10, 2)、B(2, 10)。</div>
+    <div class="step"><span>③-4</span>O, A(10,2), B(2,10)を含む正方形（1辺10）の面積は10×10＝100。3つの直角三角形：O・(0,10)・Bは底辺2×高さ10÷2＝10。B・(10,10)・Aは底辺8×高さ8÷2＝32。A・(10,0)・Oは底辺10×高さ2÷2＝10。</div>
+    <div class="step"><span>③-5</span>100−(10＋32＋10)＝100−52＝48。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>q²＝4からq＝±2の両方を候補にしてしまう。正方形の中の3つの三角形のどれか1つを二重に数えるか、数え忘れる。</div>
+    <div class="step"><span>⑤確かめ</span>A(10,2)はxy＝10×2＝20で合っている。3つの三角形の合計52と48を足すと100になる。</div>
+    <div class="ans-final"><span>こたえ</span>48</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">問8と問9は同じ考え方で、条件の向きが逆（xがyの5倍）なだけ。どちらの文字を主役にして式を立てるかを最初に決めると、混乱しない。</div>
+  </div>
+  <div class="gwrap" data-ids="q09"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">④</span><span class="unit-name">動く点と面積の方程式</span><span class="unit-time">目安 9分</span></div>
+
+<div class="q calc" data-id="J">
+  <div class="qnum">★問10　動く点と面積の方程式(基本)</div>
+  <div class="qbody"><span class="pn">問10</span>比例 y＝4x のグラフ上に点Pがあり、そのx座標をt(0&lt;t≦5)とする。y軸上に点Q(0, 10)がある。三角形OQPの面積が20になるとき、tの値を求めなさい（Oは原点）。</div>
+  <div class="fig-box"><div id="figQ10"></div></div>
+  <p class="fig-cap">y＝4xのグラフと、y軸上の点Q</p>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="mikata-box"><b>この型の見抜き方：</b>比例のグラフ上を動く点Pと、座標が文字(t)で表された条件が出てきたら、この型。面積を先にtの式で表してから、面積の値を代入して方程式として解く。</div>
+    <div class="note-draw"><b>①一言で言うと：</b>面積をtの式で表してから、その式に20を当てはめてtの方程式として解く。</div>
+    <div class="fig-box"><div id="figQ10e"></div></div>
+    <p class="fig-cap">②図で見る：面積が20になるt＝4のときの点P。</p>
+    <div class="step"><span>③-1</span>Pの座標は(t, 4t)。三角形OQPは、底辺OQ（y軸上、長さ10）、高さはPのx座標(t)。面積＝10×t÷2＝5t。</div>
+    <div class="step"><span>③-2</span>5t＝20とおく。</div>
+    <div class="step"><span>③-3</span>t＝20÷5＝4。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>底辺と高さを取り違えて、Pのy座標を高さに使ってしまう（底辺がy軸上にあるときは、高さはx座標）。</div>
+    <div class="step"><span>⑤確かめ</span>t＝4のとき、P(4, 16)。面積＝10×4÷2＝20で正しい。変域0&lt;t≦5の中にも4は入っている。</div>
+    <div class="ans-final"><span>こたえ</span>t＝4</div>
+  </div>
+  <div class="gwrap" data-ids="q10"></div>
+</div>
+
+<!-- L判定: L4 根拠=反比例の式からBの位置を先に確定させ、比例上の動点との三角形の面積方程式へつなげる複数条件の統合／lite単独評定 -->
+<div class="q calc hard" data-id="K">
+  <div class="qnum">★問11【難問】動く点と面積(反比例の点を先に求める)<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問11</span>反比例 y＝<span class="frac"><span class="n">24</span><span class="d">x</span></span> のグラフ上で、y座標が4になる点をQとする。Qのx座標をそのままx軸上におろした点をB（x座標は同じ、y座標は0）とする。比例 y＝4x のグラフ上に点Pがあり、そのx座標をt(0&lt;t≦10)とする。三角形OBPの面積が48になるとき、tの値を求めなさい（Oは原点）。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>まずQの座標を反比例の式から求めて、Bの位置を確定させる。それから比例のグラフ上のPと合わせて面積の式を作る。</div>
+    <div class="fig-box"><div id="figQ11e"></div></div>
+    <p class="fig-cap">②図で見る：Q(6,4)からBを決め、Pとの三角形OBPをつくる。</p>
+    <div class="step"><span>③-1</span>Qの座標：y＝24/xにy＝4を代入して、4＝24/x→x＝6。Q(6, 4)。だからB(6, 0)。</div>
+    <div class="step"><span>③-2</span>Pの座標は(t, 4t)。三角形OBPは、底辺OB（x軸上、長さ6）、高さはPのy座標(4t)。面積＝6×4t÷2＝12t。</div>
+    <div class="step"><span>③-3</span>12t＝48とおく。t＝48÷12＝4。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>Qの座標(6,4)をそのまま三角形の頂点に使ってしまう（実際に使うのはx座標だけを取り出したB(6,0)）。反比例の計算をせずに、いきなりtの式を立ててしまう。</div>
+    <div class="step"><span>⑤確かめ</span>t＝4のとき、P(4, 16)。面積＝6×16÷2＝48で正しい。変域0&lt;t≦10の中にも4は入っている。</div>
+    <div class="ans-final"><span>こたえ</span>t＝4</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">Bの位置を先に求めてから、tの三角形の問題に進む。2段階の問題は、1段階目を最後まで数で確定させてから2段階目に進むと迷わない。</div>
+  </div>
+  <div class="gwrap" data-ids="q11"></div>
+</div>
+
+<!-- L判定: L4 根拠=問11と未知数の立場を反転し、反比例のy座標を面積の方程式から逆算する統合／lite単独評定 -->
+<div class="q calc hard" data-id="L">
+  <div class="qnum">★問12【難問】動く点と面積(反比例のy座標を逆算)<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問12</span>比例 y＝5x のグラフ上に点P(t, 5t)があり、tの値は3である。反比例 y＝<span class="frac"><span class="n">60</span><span class="d">x</span></span> のグラフ上で、y座標がkになる点をQとする。Qのx座標をそのままx軸上におろした点をB（x座標は同じ、y座標は0）とする。三角形OBPの面積が45になるとき、kの値を求めなさい（Oは原点）。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>今回はtがすでにわかっていて、Qのy座標kの方が分からない。Pの座標を先に確定させてから、Bをkの文字式で表して式を立てる。</div>
+    <div class="fig-box"><div id="figQ12e"></div></div>
+    <p class="fig-cap">②図で見る：P(3,15)は確定。Q・Bはkが決まってから位置が決まる。</p>
+    <div class="step"><span>③-1</span>t＝3だから、P(3, 5×3)＝(3, 15)。</div>
+    <div class="step"><span>③-2</span>Qのx座標は60÷k（反比例の式にy＝kを代入）。だからB(<span class="frac"><span class="n">60</span><span class="d">k</span></span>, 0)。</div>
+    <div class="step"><span>③-3</span>三角形OBPの面積＝<span class="frac"><span class="n">60</span><span class="d">k</span></span>×15÷2＝<span class="frac"><span class="n">450</span><span class="d">k</span></span>。</div>
+    <div class="step"><span>③-4</span><span class="frac"><span class="n">450</span><span class="d">k</span></span>＝45とおく。k＝450÷45＝10。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>Bのx座標を「60/k」のまま文字式にせず、kの数を先に決めようとして計算が止まってしまう。面積の式で底辺と高さを逆にしてしまう。</div>
+    <div class="step"><span>⑤確かめ</span>k＝10のとき、Q(6, 10)なのでB(6, 0)。面積＝6×15÷2＝45で正しい。</div>
+    <div class="ans-final"><span>こたえ</span>k＝10</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">この問題は「tを求める」のではなく「反比例のグラフ上の点のy座標(k)を求める」向きに逆転している。何が分かっていて何が分かっていないかを、最初に○と□で書き出すと整理しやすい。</div>
+  </div>
+  <div class="gwrap" data-ids="q12"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑤</span><span class="unit-name">比例か反比例かを判定する文章題</span><span class="unit-time">目安 9分</span></div>
+
+<div class="q calc" data-id="M">
+  <div class="qnum">★問13　比例か反比例かの判定(基本)</div>
+  <div class="qbody"><span class="pn">問13</span>1本80円のペンをx本買うときの代金をy円とする。①xとyの関係は比例か反比例か、理由も答えなさい。②x＝15のときのyの値を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="mikata-box"><b>この型の見抜き方：</b>「比例か反比例か」と聞かれたら、まず表や文章から「割ると一定」か「掛けると一定」かを確認して理由を言葉にする。判定したあとの計算は、決めた式(y＝axまたはxy＝a)にそのままあてはめる。</div>
+    <div class="note-draw"><b>①一言で言うと：</b>1本の値段が一定だから、本数が2倍3倍になれば代金も2倍3倍になる。これが比例の条件(y÷xがいつも一定)。</div>
+    <div class="step"><span>②-1</span>y÷x＝80（1本の値段）でいつも一定だから、xとyは比例。理由：本数が増えると、そのぶん代金も同じ割合で増えるから。</div>
+    <div class="step"><span>②-2</span>式はy＝80x。</div>
+    <div class="step"><span>②-3</span>x＝15を代入：y＝80×15＝1200。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>「代金が増える」というだけで反比例（片方が増えると片方が減る関係）と勘違いしてしまう。この問題は「増えたら増える」関係。</div>
+    <div class="step"><span>④確かめ</span>y＝80xにx＝15を代入すると1200になり、80円のペン15本の代金として自然な金額になっている。</div>
+    <div class="ans-final"><span>こたえ</span>①比例(y＝80x) ②y＝1200</div>
+  </div>
+  <div class="gwrap" data-ids="q13"></div>
+</div>
+
+<!-- L判定: L4 根拠=比例か反比例かの判定理由づけと、xy=aかつy=2xという2条件からx²=kを解く統合／lite単独評定 -->
+<div class="q calc hard" data-id="N">
+  <div class="qnum">★問14【難問】判定と面積条件の複合<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問14</span>面積が72cm²の長方形をつくる。縦の長さをxcm、横の長さをycmとする。①xとyの関係は比例か反比例か、理由も答えなさい。②横の長さが縦の長さの2倍になるのは、縦の長さが何cmのときか求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>まず判定して式を作り、そのあとで「横は縦の2倍」というもう1つの条件と組み合わせる。</div>
+    <div class="step"><span>②-1</span>x×y＝72（面積が一定）でいつも一定だから、xとyは反比例。理由：縦を長くすると、面積を72のままにするには横を短くしないといけないから。</div>
+    <div class="step"><span>②-2</span>式はy＝<span class="frac"><span class="n">72</span><span class="d">x</span></span>。</div>
+    <div class="step"><span>②-3</span>「横は縦の2倍」を式にするとy＝2x。</div>
+    <div class="step"><span>②-4</span>y＝<span class="frac"><span class="n">72</span><span class="d">x</span></span>とy＝2xの両方が成り立つので、2x＝<span class="frac"><span class="n">72</span><span class="d">x</span></span>とおける。</div>
+    <div class="step"><span>②-5</span>両辺にxをかけて2x²＝72。両辺を2でわってx²＝36。x&gt;0だからx＝6。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>「長方形」という言葉から比例だと思い込んでしまう（面積が一定なのは反比例の条件）。x²＝36のあと、x＝±6の両方を候補にしてしまう（xは長さなのでx&gt;0）。</div>
+    <div class="step"><span>④確かめ</span>x＝6のとき、y＝72÷6＝12。横12は縦6の2倍になっていて、面積も6×12＝72で合っている。</div>
+    <div class="ans-final"><span>こたえ</span>①反比例(y＝72/x) ②6cm</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">長方形の面積が一定という条件と、横が縦の2倍という条件を、同時に満たすx, yを求める問題。y＝2xとy＝72/xを両方満たす→2x＝72/xと考えて、両辺にxをかけるのがポイント。</div>
+  </div>
+  <div class="gwrap" data-ids="q14"></div>
+</div>
+
+<!-- L判定: L4 根拠=判定理由づけに加え、速さの倍率変化から新しい時間を求め差分を計算する複数段の応用／lite単独評定 -->
+<div class="q calc hard" data-id="O">
+  <div class="qnum">★問15【難問】判定と速さの複合<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問15</span>ある道のりを、時速xkmで走ると、かかる時間はy時間になる。時速10kmで走ると6時間かかる道のりがある。①xとyの関係は比例か反比例か、理由も答えなさい。②時速をいまの1.5倍にすると、かかる時間はいまより何時間短くなるか求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>まず判定して式を作り、そのあとで「速さを1.5倍にする」という条件で新しい時間を求めて差を計算する。</div>
+    <div class="step"><span>②-1</span>道のりが一定だから、x×y（速さ×時間）がいつも一定で反比例。理由：速く走るほど、同じ道のりにかかる時間は短くなるから。</div>
+    <div class="step"><span>②-2</span>道のりはxy＝10×6＝60(km)。式はy＝<span class="frac"><span class="n">60</span><span class="d">x</span></span>。</div>
+    <div class="step"><span>②-3</span>新しい速さ＝10×1.5＝15(km/h)。</div>
+    <div class="step"><span>②-4</span>新しい時間＝60÷15＝4(時間)。</div>
+    <div class="step"><span>②-5</span>今との差＝6−4＝2(時間)。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>「1.5倍にする」をyの方にかけてしまう（1.5倍にするのはxの速さの方）。道のり(比例定数)を求め忘れて、いきなり新しい時間を計算しようとしてしまう。</div>
+    <div class="step"><span>④確かめ</span>新しい速さ15km/hで4時間走ると、15×4＝60kmで、もとの道のり60kmと一致する。</div>
+    <div class="ans-final"><span>こたえ</span>①反比例(y＝60/x) ②2時間短くなる</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">速さと時間は反比例の代表例。「何倍にする」という条件が出たら、まず新しい速さを数で出してから、xy＝一定の式に代入する。</div>
+  </div>
+  <div class="gwrap" data-ids="q15"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑥</span><span class="unit-name">水そうと時刻のずれ</span><span class="unit-time">目安 9分</span></div>
+
+<div class="q calc" data-id="P">
+  <div class="qnum">★問16　2つの給水管の差(同時スタート)</div>
+  <div class="qbody"><span class="pn">問16</span>A管とB管の両方を同時に開けて、水そうに水を入れる。A管は毎分4L、B管は毎分7L入る。2つの水そうにたまった水の量の差が39Lになるのは、開けてから何分後か求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="mikata-box"><b>この型の見抜き方：</b>給水管（蛇口）が2つ以上あり、スタートする時刻がずれている文章題は、この型。それぞれの給水管が動き始めてからの時間を文字で置き、2本の比例の式(y＝ax)をつくって考える。</div>
+    <div class="note-draw"><b>①一言で言うと：</b>どちらも比例の式で表せる。差の式を作って方程式として解く。</div>
+    <div class="step"><span>②-1</span>開けてからx分後、A管の量は4x(L)、B管の量は7x(L)。</div>
+    <div class="step"><span>②-2</span>差は7x−4x＝3x(L)。</div>
+    <div class="step"><span>②-3</span>3x＝39とおいて、x＝39÷3＝13。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>差を求めるときに、どちらから引くか（7x−4xか4x−7xか）で符号を間違える。</div>
+    <div class="step"><span>④確かめ</span>13分後、A管＝4×13＝52L、B管＝7×13＝91L。差は91−52＝39Lで合っている。</div>
+    <div class="ans-final"><span>こたえ</span>13分後</div>
+  </div>
+  <div class="gwrap" data-ids="q16"></div>
+</div>
+
+<!-- L判定: L4 根拠=スタート時刻がずれた2本の比例の式を局所変数(x-4)でつなぎ、一次方程式として解いて変域を確認する統合／lite単独評定 -->
+<div class="q calc hard" data-id="Q">
+  <div class="qnum">★問17【難問】スタート時刻がずれた給水管(追いつく時刻)<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問17</span>A管を開けると同時に、毎分5Lで水を入れ始める。B管は、A管を開けてから4分後に開けて、毎分9Lで水を入れ始める。2つの水そうにたまった水の量が等しくなるのは、A管を開けてから何分後か求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>A管の経過時間とB管の経過時間はずれている。B管の経過時間を「A管の経過時間−4」で表してから式を作る。</div>
+    <div class="step"><span>②-1</span>A管を開けてからx分後とする(x≧4)。A管の量は5x(L)。</div>
+    <div class="step"><span>②-2</span>B管が動いている時間は(x−4)分。B管の量は9(x−4)(L)。</div>
+    <div class="step"><span>②-3</span>等しくなる式：5x＝9(x−4)。</div>
+    <div class="step"><span>②-4</span>かっこを外す：5x＝9x−36。</div>
+    <div class="step"><span>②-5</span>移項して整理：−4x＝−36。x＝9。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>B管の経過時間を(x−4)ではなくxのまま計算してしまう（B管はA管より4分遅れてスタートしているので、動いている時間は短い）。</div>
+    <div class="step"><span>④確かめ</span>x＝9のとき、A管＝5×9＝45L。B管は(9−4)＝5分動いているので9×5＝45L。等しくなっている。x＝9≧4なので、B管はすでにスタートしている時刻で正しい。</div>
+    <div class="ans-final"><span>こたえ</span>9分後</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">B管の経過時間は「A管を開けてから」ではなく「B管を開けてから」の時間。(x−4)という形でB管の経過時間を表すのが、この型のいちばんのポイント。</div>
+  </div>
+  <div class="gwrap" data-ids="q17"></div>
+</div>
+
+<!-- L判定: L4 根拠=問17と未知数の立場を反転し、等しくなる時刻からスタートのずれpを逆算する統合／lite単独評定 -->
+<div class="q calc hard" data-id="R">
+  <div class="qnum">★問18【難問】スタート時刻のずれを逆算する<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問18</span>A管を開けると同時に、毎分6Lで水を入れ始める。B管は、A管よりp分遅れて開けて、毎分10Lで水を入れ始める。A管を開けてから15分後に、2つの水そうにたまった水の量が等しくなった。pの値を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>今回は「何分後に等しくなるか」ではなく「何分ずれてスタートしたか」を求める。等しくなる時刻(15分後)は先にわかっているので、その時刻の式を作ってpについて解く。</div>
+    <div class="step"><span>②-1</span>A管を開けてから15分後のA管の量は6×15＝90(L)。</div>
+    <div class="step"><span>②-2</span>同じ15分後、B管が動いている時間は(15−p)分。B管の量は10(15−p)(L)。</div>
+    <div class="step"><span>②-3</span>等しくなる式：90＝10(15−p)。</div>
+    <div class="step"><span>②-4</span>かっこを外す：90＝150−10p。</div>
+    <div class="step"><span>②-5</span>移項して整理：10p＝60。p＝6。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>「15分後」をB管の経過時間としてそのまま使ってしまう（B管の経過時間は(15−p)分で、pだけ短い）。</div>
+    <div class="step"><span>④確かめ</span>p＝6のとき、B管は(15−6)＝9分動いているので10×9＝90L。A管の90Lと等しくなっている。</div>
+    <div class="ans-final"><span>こたえ</span>p＝6（6分後にB管がスタートした）</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">この問題は「何分後に等しくなるか」ではなく「何分のずれでスタートしたか」を求める向き。方程式の中の文字が「時間」ではなく「ずれ」になっている点に注意。</div>
+  </div>
+  <div class="gwrap" data-ids="q18"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑦</span><span class="unit-name">単位量あたりの複合文章題</span><span class="unit-time">目安 9分</span></div>
+
+<div class="q calc" data-id="S">
+  <div class="qnum">★問19　単位量あたりの逆算(基本)</div>
+  <div class="qbody"><span class="pn">問19</span>同じ種類のくぎ150本の重さは300gだった。①このくぎ1本の重さは何gか求めなさい。②重さが500gのとき、本数は何本か求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="mikata-box"><b>この型の見抜き方：</b>「1本あたり」「1mあたり」のような単位量が出てくる文章題は、まず単位量（比例定数）を割り算で求めてから、それを使って逆算する。</div>
+    <div class="note-draw"><b>①一言で言うと：</b>まず1本あたりの重さ（単位量）を求めてから、それを使って本数や重さを逆算する。</div>
+    <div class="step"><span>②-1</span>1本の重さ＝300÷150＝2(g)。</div>
+    <div class="step"><span>②-2</span>500gのときの本数＝500÷2＝250(本)。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>300と150を逆にわって1本の重さを求めてしまう（意味のない数になる）。</div>
+    <div class="step"><span>④確かめ</span>2g×150本＝300gで合っている。2g×250本＝500gで合っている。</div>
+    <div class="ans-final"><span>こたえ</span>①2g ②250本</div>
+  </div>
+  <div class="gwrap" data-ids="q19"></div>
+</div>
+
+<!-- L判定: L4 根拠=重さが辺の長さでなく面積に比例するという見落としやすい前提を修正し単位量を再計算する統合／lite単独評定 -->
+<div class="q calc hard" data-id="T">
+  <div class="qnum">★問20【難問】単位量あたり(面積の見落とし)<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問20</span>同じ厚さで同じ材質の板から正方形を切り出す。1辺が5cmの正方形の重さは60gだった。この板から1辺が8cmの正方形を切り出すと、重さは何gになるか求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>重さが比例するのは「1辺の長さ」ではなく「面積」。まず面積を求めてから、面積あたりの重さ（単位量）を計算する。</div>
+    <div class="step"><span>②-1</span>1辺5cmの正方形の面積＝5×5＝25(cm²)。</div>
+    <div class="step"><span>②-2</span>面積1cm²あたりの重さ＝60÷25＝2.4(g)。</div>
+    <div class="step"><span>②-3</span>1辺8cmの正方形の面積＝8×8＝64(cm²)。</div>
+    <div class="step"><span>②-4</span>重さ＝64×2.4＝153.6(g)。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>1辺の長さの比（8÷5＝1.6倍）をそのまま重さにかけて60×1.6＝96gとしてしまう（重さは面積に比例するので、1.6×1.6＝2.56倍が正しい）。</div>
+    <div class="step"><span>④確かめ</span>60×2.56＝153.6で、面積から計算した答えと一致する。</div>
+    <div class="ans-final"><span>こたえ</span>153.6g</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">重さが比例するのは「面積」であって「1辺の長さ」ではない。1辺が1.6倍(8÷5)になっても、重さは1.6倍ではなく1.6×1.6＝2.56倍になる。</div>
+  </div>
+  <div class="gwrap" data-ids="q20"></div>
+</div>
+
+<!-- L判定: L4 根拠=重さから長さへの単位量あたりの逆算と、cm→mの単位換算を経た本数計算という2段階の複合／lite単独評定 -->
+<div class="q calc hard" data-id="U">
+  <div class="qnum">★問21【難問】単位量あたりの2段階の逆算<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問21</span>同じ太さのロープがある。このロープ4mの重さは180gである。別のロープの重さを量ったら945gあった。このロープを1本175cmずつに切り分けると、何本切り出せるか求めなさい（あまりは考えなくてよい）。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>まず「重さ→長さ」の単位量あたりの計算をして、そのあと「長さ→本数」の単位換算をする、2段階の問題。</div>
+    <div class="step"><span>②-1</span>1mあたりの重さ＝180÷4＝45(g)。</div>
+    <div class="step"><span>②-2</span>945gのロープの長さ＝945÷45＝21(m)。</div>
+    <div class="step"><span>②-3</span>175cmをmに直す：175cm＝1.75m。</div>
+    <div class="step"><span>②-4</span>切り出せる本数＝21÷1.75＝12(本)。</div>
+    <div class="bx-warn"><b>③よくある間違い：</b>単位をそろえずに、21mを175cmでそのままわろうとしてしまう（mとcmをそろえてから計算する）。</div>
+    <div class="step"><span>④確かめ</span>1.75m×12本＝21mで合っている。21m×45g/m＝945gで、もとの重さと一致する。</div>
+    <div class="ans-final"><span>こたえ</span>12本</div>
+    <button class="more-btn" onclick="t2(this)">くわしく</button>
+    <div class="more-box">「重さ→長さ」の単位量あたりの計算と、「長さ→本数」の単位換算(cm→m)を、2回続けて行う問題。どちらの変換にも同じ考え方(割り算)を使っている。</div>
+  </div>
+  <div class="gwrap" data-ids="q21"></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓F5 完了）</button>
+
+<div class="goal-box">
+  <b>次の目標</b><br>
+  難問を見たら、まず「この型の見抜き方」のどれに当てはまるかを最初に探す。
+</div>
+
+<p class="tail">✕をつけた問題は、図か表をノートに書き写してから、もう一度手順を追ってみよう。<br>
+難問はすぐにできなくて当たり前。導入の1問に戻って考え方を確認してから、もう一度挑戦しよう。</p>
+
+</div>
+
+<script src="11月関数図.js"></script>
+<script>
+var KEY='tokkun_f11_5';
+
+/* 解説トグル */
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+/* くわしくトグル */
+function t2(b){
+  var box=b.nextElementSibling;
+  var open=box.classList.toggle('open');
+  b.textContent=open?'とじる':'くわしく';
+}
+
+/* ○✕採点 */
+function g(btn,id,v){
+  var row=btn.closest('.gq');
+  row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=row.nextElementSibling, w3=mt.nextElementSibling;
+  if(v==='x'){mt.classList.add('show');w3.classList.add('show');}
+  else{mt.classList.remove('show');w3.classList.remove('show');}
+}
+
+/* ミス型 */
+function m(btn){
+  var p=btn.parentNode;
+  p.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+p.getAttribute('data-gid')+'_type',btn.textContent);
+}
+
+/* 採点UIを生成 */
+document.querySelectorAll('.gwrap').forEach(function(w){
+  var ids=w.getAttribute('data-ids').split(',');
+  var h='';
+  ids.forEach(function(id){
+    var n=id.replace('q','').replace(/^0/,'');
+    h+='<div class="gq"><span class="gq-label">問'+n+'</span>'
+      +'<button class="o" onclick="g(this,\''+id+'\',\'o\')">○</button>'
+      +'<button class="x" onclick="g(this,\''+id+'\',\'x\')">✕</button></div>'
+      +'<div class="mt" data-gid="'+id+'"><button onclick="m(this)">計算ミス</button>'
+      +'<button onclick="m(this)">解説で分かった</button>'
+      +'<button onclick="m(this)">解説見ても分からない</button></div>'
+      +'<div class="write3">📝 正しい式・答えをノートに3回書こう</div>';
+  });
+  w.innerHTML=h;
+});
+
+/* 保存済みを復元 */
+document.querySelectorAll('.gq').forEach(function(row){
+  var btn=row.querySelector('.o');
+  var id=btn.getAttribute('onclick').match(/'(q\d+)'/)[1];
+  var v=localStorage.getItem(KEY+'_'+id);
+  if(v){row.querySelector(v==='o'?'.o':'.x').classList.add('on');
+    if(v==='x'){row.nextElementSibling.classList.add('show');
+      row.nextElementSibling.nextElementSibling.classList.add('show');}}
+  var ty=localStorage.getItem(KEY+'_'+id+'_type');
+  if(ty){row.nextElementSibling.querySelectorAll('button').forEach(function(b){
+    if(b.textContent===ty)b.classList.add('on');})}
+});
+
+/* 完了 */
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+if(localStorage.getItem(KEY+'_done')==='1'){
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+
+/* 図の描画 */
+window.addEventListener('DOMContentLoaded', function () {
+
+  // 問1：解説（y=24/xの2≦x≦8部分）
+  drawPlane('figQ01e', {
+    xmin:0, xmax:10, ymin:0, ymax:14,
+    ariaLabel:'y=24/xのグラフと、xの変域2≦x≦8の部分',
+    graphs:[{type:'inv', a:24, color:'orange', label:'y=24/x'}],
+    highlight:{ graphIndex:0, xFrom:2, xTo:8, fromOpen:false, toOpen:false },
+    points:[{x:2,y:12,name:'',coord:true,pos:'nw'},{x:8,y:3,name:'',coord:true,pos:'se'}]
+  });
+
+  // 問2：解説（y=-24/xの3≦x≦8部分）
+  drawPlane('figQ02e', {
+    xmin:0, xmax:10, ymin:-10, ymax:2,
+    ariaLabel:'y=-24/xのグラフと、xの変域3≦x≦8の部分',
+    graphs:[{type:'inv', a:-24, color:'orange', label:'y=-24/x'}],
+    highlight:{ graphIndex:0, xFrom:3, xTo:8, fromOpen:false, toOpen:false },
+    points:[{x:3,y:-8,name:'',coord:true,pos:'sw'},{x:8,y:-3,name:'',coord:true,pos:'ne'}]
+  });
+
+  // 問3：解説（y=-30/xの5≦x≦15部分）
+  drawPlane('figQ03e', {
+    xmin:0, xmax:17, ymin:-8, ymax:2,
+    ariaLabel:'y=-30/xのグラフと、xの変域5≦x≦15の部分',
+    graphs:[{type:'inv', a:-30, color:'orange', label:'y=-30/x'}],
+    highlight:{ graphIndex:0, xFrom:5, xTo:15, fromOpen:false, toOpen:false },
+    points:[{x:5,y:-6,name:'',coord:true,pos:'sw'},{x:15,y:-2,name:'',coord:true,pos:'ne'}]
+  });
+
+  // 問7：三角形OAB（問題）
+  drawPlane('figQ07', {
+    xmin:-1, xmax:7, ymin:-1, ymax:7,
+    ariaLabel:'y=12/xのグラフと、点A、点B、原点Oを結んだ三角形',
+    graphs:[{type:'inv', a:12, color:'orange', label:'y=12/x'}],
+    points:[{x:2,y:6,name:'A',coord:true,pos:'nw'},{x:6,y:2,name:'B',coord:true,pos:'se'}],
+    segments:[{x1:0,y1:0,x2:2,y2:6},{x1:0,y1:0,x2:6,y2:2},{x1:2,y1:6,x2:6,y2:2}]
+  });
+  // 問7：解説（外側の正方形つき）
+  drawPlane('figQ07e', {
+    xmin:-1, xmax:7, ymin:-1, ymax:7,
+    ariaLabel:'三角形OABと外側の正方形',
+    graphs:[{type:'inv', a:12, color:'orange', label:'y=12/x'}],
+    points:[{x:2,y:6,name:'A',coord:true,pos:'nw'},{x:6,y:2,name:'B',coord:true,pos:'se'}],
+    segments:[{x1:0,y1:0,x2:2,y2:6},{x1:0,y1:0,x2:6,y2:2},{x1:2,y1:6,x2:6,y2:2},
+              {x1:0,y1:6,x2:6,y2:6,dash:true},{x1:6,y1:6,x2:6,y2:0,dash:true}],
+    polygons:[{pts:[[0,0],[2,6],[6,2]]}]
+  });
+
+  // 問8：解説（A(4,12),B(12,4)）
+  drawPlane('figQ08e', {
+    xmin:-1, xmax:14, ymin:-1, ymax:14,
+    ariaLabel:'三角形OABと外側の正方形（A(4,12),B(12,4)）',
+    graphs:[{type:'inv', a:48, color:'orange', label:'y=48/x'}],
+    points:[{x:4,y:12,name:'A',coord:true,pos:'nw'},{x:12,y:4,name:'B',coord:true,pos:'se'}],
+    segments:[{x1:0,y1:0,x2:4,y2:12},{x1:0,y1:0,x2:12,y2:4},{x1:4,y1:12,x2:12,y2:4},
+              {x1:0,y1:12,x2:12,y2:12,dash:true},{x1:12,y1:12,x2:12,y2:0,dash:true}],
+    polygons:[{pts:[[0,0],[4,12],[12,4]]}]
+  });
+
+  // 問9：解説（A(10,2),B(2,10)）
+  drawPlane('figQ09e', {
+    xmin:-1, xmax:12, ymin:-1, ymax:12,
+    ariaLabel:'三角形OABと外側の正方形（A(10,2),B(2,10)）',
+    graphs:[{type:'inv', a:20, color:'orange', label:'y=20/x'}],
+    points:[{x:10,y:2,name:'A',coord:true,pos:'se'},{x:2,y:10,name:'B',coord:true,pos:'nw'}],
+    segments:[{x1:0,y1:0,x2:10,y2:2},{x1:0,y1:0,x2:2,y2:10},{x1:10,y1:2,x2:2,y2:10},
+              {x1:0,y1:10,x2:10,y2:10,dash:true},{x1:10,y1:10,x2:10,y2:0,dash:true}],
+    polygons:[{pts:[[0,0],[10,2],[2,10]]}]
+  });
+
+  // 問10：y=4xとQ（問題）
+  drawPlane('figQ10', {
+    xmin:-1, xmax:6, ymin:-1, ymax:11,
+    ariaLabel:'y=4xのグラフと、y軸上の点Q(0,10)',
+    graphs:[{type:'prop', a:4, color:'blue', label:'y=4x'}],
+    points:[{x:0,y:10,name:'Q',coord:true,pos:'nw'}]
+  });
+  // 問10：解説（Pと三角形OQP）
+  drawPlane('figQ10e', {
+    xmin:-1, xmax:6, ymin:-1, ymax:17,
+    ariaLabel:'三角形OQP（t=4のとき）',
+    graphs:[{type:'prop', a:4, color:'blue', label:'y=4x'}],
+    points:[{x:0,y:10,name:'Q',coord:true,pos:'nw'},{x:4,y:16,name:'P',coord:true,pos:'ne'}],
+    segments:[{x1:0,y1:16,x2:4,y2:16,dash:true}],
+    polygons:[{pts:[[0,0],[0,10],[4,16]]}]
+  });
+
+  // 問11：解説（Q,B,Pと三角形OBP）
+  drawPlane('figQ11e', {
+    xmin:-1, xmax:8, ymin:-1, ymax:17,
+    ariaLabel:'反比例y=24/x上の点Qから決めたBと、比例y=4x上の点Pの三角形OBP',
+    graphs:[{type:'inv', a:24, color:'orange', label:'y=24/x'},{type:'prop', a:4, color:'blue', label:'y=4x'}],
+    points:[{x:6,y:4,name:'Q',coord:true,pos:'ne'},{x:6,y:0,name:'B',coord:true,pos:'se'},{x:4,y:16,name:'P',coord:true,pos:'nw'}],
+    segments:[{x1:6,y1:4,x2:6,y2:0,dash:true},{x1:6,y1:0,x2:4,y2:16},{x1:0,y1:0,x2:4,y2:16}],
+    polygons:[{pts:[[0,0],[6,0],[4,16]]}]
+  });
+
+  // 問12：解説（P,Q,Bと三角形OBP）
+  drawPlane('figQ12e', {
+    xmin:-1, xmax:8, ymin:-1, ymax:17,
+    ariaLabel:'比例y=5x上の点Pと、反比例y=60/x上の点Qから決めたBの三角形OBP',
+    graphs:[{type:'inv', a:60, color:'orange', label:'y=60/x'},{type:'prop', a:5, color:'blue', label:'y=5x'}],
+    points:[{x:6,y:10,name:'Q',coord:true,pos:'ne'},{x:6,y:0,name:'B',coord:true,pos:'se'},{x:3,y:15,name:'P',coord:true,pos:'nw'}],
+    segments:[{x1:6,y1:10,x2:6,y2:0,dash:true},{x1:6,y1:0,x2:3,y2:15},{x1:0,y1:0,x2:3,y2:15}],
+    polygons:[{pts:[[0,0],[6,0],[3,15]]}]
+  });
+
+});
+</script>
+</body>
+</html>

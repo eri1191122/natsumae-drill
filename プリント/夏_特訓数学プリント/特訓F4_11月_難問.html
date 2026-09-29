@@ -125,7 +125,7 @@ background:var(--go);color:#fff;font-size:18px;font-weight:800;cursor:pointer;fo
 
 <div class="q calc" data-id="A">
   <div class="qnum">★問1　長方形から三角形をひく</div>
-  <div class="qbody"><span class="pn">問1</span>点A(1, 5)、点B(4, 1)、原点Oを結んだ三角形OABがある。下の図を見て、「外側の長方形から3つの直角三角形をひく」方法で、三角形OABの面積を求めなさい。</div>
+  <div class="qbody"><span class="pn">問1</span>点A(1, 5)、点B(4, 1)、原点Oを結んだ三角形OABがある。下の図を見て、三角形OABの面積を求めなさい。</div>
   <div class="fig-box"><div id="figQ01"></div></div>
   <p class="fig-cap">点A、点B、原点Oを結んだ三角形（辺だけを示した図）</p>
   <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
@@ -649,7 +649,7 @@ window.addEventListener('DOMContentLoaded', function () {
   drawPlane('figQ09e', {
     xmin:-10, xmax:10, ymin:-10, ymax:10, unit:20,
     ariaLabel:'y=18/xと点P、点Rの長方形',
-    graphs:[{type:'inv', a:18, color:'orange', label:'y=18/x'}],
+    graphs:[{type:'inv', a:18, color:'orange', label:'y=18/x', labelAt:4.5}],
     points:[{x:3,y:6,name:'P',coord:true,pos:'ne'},{x:-9,y:-2,name:'R',coord:true,pos:'se'}],
     segments:[{x1:3,y1:6,x2:3,y2:0,dash:true},{x1:3,y1:6,x2:0,y2:6,dash:true},
               {x1:-9,y1:-2,x2:-9,y2:0,dash:true},{x1:-9,y1:-2,x2:0,y2:-2,dash:true}],
@@ -680,7 +680,7 @@ window.addEventListener('DOMContentLoaded', function () {
     xmin:-2, xmax:10, ymin:-2, ymax:10,
     ariaLabel:'y=(3/4)xと点P',
     graphs:[{type:'prop', a:0.75, color:'blue', label:'y=(3/4)x'}],
-    points:[{x:8,y:6,name:'P',coord:true,pos:'ne'},{x:8,y:0,name:'H',pos:'se'}],
+    points:[{x:8,y:6,name:'P',coord:true,pos:'ne'},{x:8,y:0,name:'H',pos:'se',dx:8,dy:-8}],
     segments:[{x1:8,y1:6,x2:8,y2:0,dash:true}]
   });
   // 問13：解説（三角形の塗りつき）
@@ -688,7 +688,7 @@ window.addEventListener('DOMContentLoaded', function () {
     xmin:-2, xmax:10, ymin:-2, ymax:10,
     ariaLabel:'三角形OHPの面積',
     graphs:[{type:'prop', a:0.75, color:'blue', label:'y=(3/4)x'}],
-    points:[{x:8,y:6,name:'P',coord:true,pos:'ne'},{x:8,y:0,name:'H',pos:'se'}],
+    points:[{x:8,y:6,name:'P',coord:true,pos:'ne'},{x:8,y:0,name:'H',pos:'se',dx:8,dy:-8}],
     segments:[{x1:8,y1:6,x2:8,y2:0,dash:true}],
     polygons:[{pts:[[0,0],[8,0],[8,6]]}]
   });
@@ -706,7 +706,7 @@ window.addEventListener('DOMContentLoaded', function () {
     ariaLabel:'t=6のときの点Pと三角形',
     graphs:[{type:'prop', a:2/3, color:'blue', label:'y=(2/3)x'}],
     highlight:{graphIndex:0, xFrom:0, xTo:9, fromOpen:true, toOpen:false},
-    points:[{x:6,y:4,name:'P',coord:true,pos:'ne'},{x:6,y:0,name:'H',pos:'se'}],
+    points:[{x:6,y:4,name:'P',coord:true,pos:'ne'},{x:6,y:0,name:'H',pos:'se',dx:8,dy:-8}],
     segments:[{x1:6,y1:4,x2:6,y2:0,dash:true}],
     polygons:[{pts:[[0,0],[6,0],[6,4]]}]
   });

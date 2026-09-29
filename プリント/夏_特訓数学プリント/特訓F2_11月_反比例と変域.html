@@ -286,7 +286,7 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
     <div class="note-draw"><b>次からのコツ：</b>a＝x×y（かけ算）と決めて、毎回同じ順で計算する。</div>
     <div class="bx-warn"><b>ありがちな間違い：</b>比例と混同してa＝(−4)÷5を計算してしまう。</div>
     <div class="step"><span>①</span>a＝5×(−4)＝−20。</div>
-    <div class="step"><span>②</span>y＝<span class="frac"><span class="n">−20</span><span class="d">x</span></span>と書く。</div>
+    <div class="step"><span>②</span>y＝−<span class="frac"><span class="n">20</span><span class="d">x</span></span>と書く。</div>
     <div class="ans-final"><span>こたえ</span>y＝−<span class="frac"><span class="n">20</span><span class="d">x</span></span></div>
   </div>
   <div class="gwrap" data-ids="s5c1"></div>
@@ -369,6 +369,23 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
     <div class="ans-final"><span>こたえ</span>反比例といえる（a＝24）</div>
   </div>
   <div class="gwrap" data-ids="s5p4"></div>
+</div>
+
+<div class="q" data-id="s5p5">
+  <div class="qnum">★練習5　表の空らんをうめる</div>
+  <div class="qbody">yはxに反比例する。表の①・②にあてはまる数を求めなさい。
+  <table class="ratetable"><tr><th>x</th><td>2</td><td>①</td><td>8</td><td>12</td></tr><tr><th>y</th><td>12</td><td>4</td><td>②</td><td>2</td></tr></table></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>反比例の表も、まず分かっている1組からaを求めて式を作ってしまう。あとは式に代入するだけでよい。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>比例のくせでy÷xを計算してaを求めようとし、一定にならず混乱してしまう。反比例はx×yでaを求める。</div>
+    <div class="step"><span>①</span>分かっている組(2, 12)からa＝2×12＝24。式はy＝<span class="frac"><span class="n">24</span><span class="d">x</span></span>。</div>
+    <div class="step"><span>②</span>②はx＝8のときのy：y＝24÷8＝3。</div>
+    <div class="step"><span>③</span>①はy＝4のときのx：x×4＝24より、x＝24÷4＝6。</div>
+    <div class="check-box"><b>確かめ：</b>①＝6を式に戻すとy＝24÷6＝4→表と一致している。</div>
+    <div class="ans-final"><span>こたえ</span>①＝6　②＝3</div>
+  </div>
+  <div class="gwrap" data-ids="s5p5"></div>
 </div>
 
 <button class="done" id="doneBtn-s5" data-fin="S5 完了しました（おつかれさま）" onclick="finishRound('s5')">🌸 S5 できた！</button>
@@ -522,8 +539,7 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
 
 <div class="q" data-id="s7c1">
   <div class="qnum">★確かめ1　比例の変域を求める（aが負）</div>
-  <div class="qbody">y＝−2xについて、−1≦x≦3のときのyの変域を求めなさい。
-  <div class="fig-wrap"><div id="s7-c1-fig"></div></div></div>
+  <div class="qbody">y＝−2xについて、−1≦x≦3のときのyの変域を求めなさい。</div>
   <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
   <div class="ans-box">
     <div class="note-draw"><b>次からのコツ：</b>両端のxをまず代入し、出てきたyの値を小さい順に並べ直す。</div>
@@ -531,6 +547,7 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
     <div class="step"><span>①</span>x＝−1を代入：y＝−2×(−1)＝2。</div>
     <div class="step"><span>②</span>x＝3を代入：y＝−2×3＝−6。</div>
     <div class="step"><span>③</span>aが負なので大小が入れ替わる。小さい順に並べ直すと−6≦y≦2。</div>
+    <div class="fig-wrap"><div id="s7-c1-fig"></div></div>
     <div class="ans-final"><span>こたえ</span>−6≦y≦2</div>
   </div>
   <div class="gwrap" data-ids="s7c1"></div>
@@ -538,8 +555,7 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
 
 <div class="q" data-id="s7c2">
   <div class="qnum">★確かめ2　端を含むか含まないか</div>
-  <div class="qbody">y＝2xについて、−2＜x≦3のときのyの変域を求めなさい。
-  <div class="fig-wrap"><div id="s7-c2-fig"></div></div></div>
+  <div class="qbody">y＝2xについて、−2＜x≦3のときのyの変域を求めなさい。</div>
   <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
   <div class="ans-box">
     <div class="note-draw"><b>次からのコツ：</b>xの不等号（＜か≦か）は、そのまま対応するyの不等号に引きつぐ。</div>
@@ -547,6 +563,7 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
     <div class="step"><span>①</span>x＝−2を代入：y＝2×(−2)＝−4（−2は含まないので、この−4も含まない）。</div>
     <div class="step"><span>②</span>x＝3を代入：y＝2×3＝6（3は含むので、この6も含む）。</div>
     <div class="step"><span>③</span>aが正なので大小は同じ順。−4＜y≦6。</div>
+    <div class="fig-wrap"><div id="s7-c2-fig"></div></div>
     <div class="ans-final"><span>こたえ</span>−4＜y≦6</div>
   </div>
   <div class="gwrap" data-ids="s7c2"></div>
@@ -554,14 +571,14 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
 
 <div class="q" data-id="s7c3">
   <div class="qnum">★確かめ3　反比例の変域を求める</div>
-  <div class="qbody">y＝6÷xについて、2≦x≦6のときのyの変域を求めなさい。
-  <div class="fig-wrap"><div id="s7-c3-fig"></div></div></div>
+  <div class="qbody">y＝6÷xについて、2≦x≦6のときのyの変域を求めなさい。</div>
   <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
   <div class="ans-box">
     <div class="note-draw"><b>次からのコツ：</b>反比例でも、両端のxを実際に代入して確かめる。xが正の範囲だけなら、大きいxほどyは小さくなる。</div>
     <div class="step"><span>①</span>x＝2を代入：y＝6÷2＝3。</div>
     <div class="step"><span>②</span>x＝6を代入：y＝6÷6＝1。</div>
     <div class="step"><span>③</span>xが2から6へ増えると、yは3から1へ減っている。小さい順に並べると1≦y≦3。</div>
+    <div class="fig-wrap"><div id="s7-c3-fig"></div></div>
     <div class="ans-final"><span>こたえ</span>1≦y≦3</div>
   </div>
   <div class="gwrap" data-ids="s7c3"></div>
@@ -569,13 +586,13 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
 
 <div class="q" data-id="s7p1">
   <div class="qnum">★練習1　比例の変域を求める（aが負・分数）</div>
-  <div class="qbody">y＝−<span class="frac"><span class="n">1</span><span class="d">2</span></span>xについて、−4≦x≦6のときのyの変域を求めなさい。
-  <div class="fig-wrap"><div id="s7-p1-fig"></div></div></div>
+  <div class="qbody">y＝−<span class="frac"><span class="n">1</span><span class="d">2</span></span>xについて、−4≦x≦6のときのyの変域を求めなさい。</div>
   <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
   <div class="ans-box">
     <div class="step"><span>①</span>x＝−4を代入：y＝−<span class="frac"><span class="n">1</span><span class="d">2</span></span>×(−4)＝2。</div>
     <div class="step"><span>②</span>x＝6を代入：y＝−<span class="frac"><span class="n">1</span><span class="d">2</span></span>×6＝−3。</div>
     <div class="step"><span>③</span>aが負なので大小が入れ替わる。小さい順に並べ直すと−3≦y≦2。</div>
+    <div class="fig-wrap"><div id="s7-p1-fig"></div></div>
     <div class="ans-final"><span>こたえ</span>−3≦y≦2</div>
   </div>
   <div class="gwrap" data-ids="s7p1"></div>
@@ -583,8 +600,7 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
 
 <div class="q" data-id="s7p2">
   <div class="qnum">★練習2　反比例の変域を求める（aが負）</div>
-  <div class="qbody">y＝−12÷xについて、2≦x≦4のときのyの変域を求めなさい。
-  <div class="fig-wrap"><div id="s7-p2-fig"></div></div></div>
+  <div class="qbody">y＝−12÷xについて、2≦x≦4のときのyの変域を求めなさい。</div>
   <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
   <div class="ans-box">
     <div class="note-draw"><b>次からのコツ：</b>「aが負だから機械的に逆にする」のではなく、必ず代入して確かめる。</div>
@@ -592,6 +608,7 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
     <div class="step"><span>①</span>x＝2を代入：y＝−12÷2＝−6。</div>
     <div class="step"><span>②</span>x＝4を代入：y＝−12÷4＝−3。</div>
     <div class="step"><span>③</span>xが2から4へ増えると、yは−6から−3へ増えている（マイナスの数として小さくなっていく）。このままの順で−6≦y≦−3。</div>
+    <div class="fig-wrap"><div id="s7-p2-fig"></div></div>
     <div class="check-box"><b>確かめ：</b>この問題はaが負でも、xが正の範囲では大小の順が入れ替わらなかった。必ず代入して確かめることが大事。</div>
     <div class="ans-final"><span>こたえ</span>−6≦y≦−3</div>
   </div>
@@ -600,13 +617,13 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
 
 <div class="q" data-id="s7p3">
   <div class="qnum">★練習3　比例の変域を求める（xが負の範囲）</div>
-  <div class="qbody">y＝2xについて、xの値が−3から−1まで変化するときのyの変域を求めなさい。
-  <div class="fig-wrap"><div id="s7-p3-fig"></div></div></div>
+  <div class="qbody">y＝2xについて、xの値が−3から−1まで変化するときのyの変域を求めなさい。</div>
   <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
   <div class="ans-box">
     <div class="step"><span>①</span>x＝−3を代入：y＝2×(−3)＝−6。</div>
     <div class="step"><span>②</span>x＝−1を代入：y＝2×(−1)＝−2。</div>
     <div class="step"><span>③</span>aが正なので大小は同じ順。−6≦y≦−2。</div>
+    <div class="fig-wrap"><div id="s7-p3-fig"></div></div>
     <div class="ans-final"><span>こたえ</span>−6≦y≦−2</div>
   </div>
   <div class="gwrap" data-ids="s7p3"></div>
@@ -621,6 +638,7 @@ background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;fo
     <div class="step"><span>①</span>ア：2×(−4)＝−8→一致→○。</div>
     <div class="step"><span>②</span>イ：(−2)×(−4)＝8→−8と不一致→✕。</div>
     <div class="step"><span>③</span>ウ：4×(−2)＝−8→一致→○。</div>
+    <div class="fig-wrap"><div id="s7-p4-fig"></div></div>
     <div class="ans-final"><span>こたえ</span>ア、ウ</div>
   </div>
   <div class="gwrap" data-ids="s7p4"></div>
@@ -796,6 +814,16 @@ window.addEventListener('DOMContentLoaded', function () {
     ariaLabel:'y=2xの−3≦x≦−1の部分を太くした図',
     graphs:[ { type:'prop', a:2, color:'blue', label:'y=2x' } ],
     highlight:{ graphIndex:0, xFrom:-3, xTo:-1, fromOpen:false, toOpen:false }
+  });
+
+  drawPlane('s7-p4-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'y=−8/xのグラフと点ア・イ・ウ',
+    graphs:[ { type:'inv', a:-8, color:'orange', label:'y=−8/x' } ],
+    points:[
+      { x:2, y:-4, name:'ア', pos:'se', coord:true },
+      { x:-2, y:-4, name:'イ', pos:'sw', coord:true },
+      { x:4, y:-2, name:'ウ', pos:'se', coord:true }
+    ]
   });
 
 });
