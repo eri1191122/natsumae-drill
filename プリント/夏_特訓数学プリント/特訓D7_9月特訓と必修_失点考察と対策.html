@@ -1,0 +1,1891 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓D7｜9月特訓と必修の失点考察</title>
+<style>
+:root{--ink:#1b1c22;--sub:#5a5f6e;--line:#e3e5ec;--bg:#fbfbfd;--key:#1f4fd8;--key-bg:#eef2ff;
+--go:#0a7d55;--go-bg:#eaf7f1;--hot:#d92b3a;--hot-bg:#fff2f3;--warn:#b26a00;--warn-bg:#fff7e8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:14px 18px 70px}
+a.back{display:inline-block;margin:6px 0 12px;color:var(--key);font-size:15px;text-decoration:none;font-weight:700}
+
+.pg-hd{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:16px;padding:22px 22px 20px;margin:0 0 18px}
+.pg-badge{display:inline-block;background:rgba(255,255,255,.16);border-radius:7px;padding:4px 10px;
+font-size:12.5px;font-weight:700;margin:0 6px 8px 0}
+.pg-hd h1{font-size:22px;margin:6px 0 8px;line-height:1.45}
+.pg-hd p{font-size:14.5px;margin:0;opacity:.9}
+.pg-cheer{margin-top:10px !important;font-size:14px !important;opacity:.8 !important}
+
+.kind-box{background:var(--key-bg);border-radius:12px;padding:14px 18px;margin:0 0 20px;font-size:14.5px;line-height:1.9}
+.kind-box b{color:var(--key)}
+
+.good-box{background:var(--go-bg);border-left:5px solid var(--go);border-radius:0 12px 12px 0;
+padding:15px 19px;margin:0 0 18px;font-size:14.5px;line-height:2}
+.good-box b{color:var(--go)}
+.near-box{background:var(--key-bg);border-left:5px solid var(--key);border-radius:0 12px 12px 0;
+padding:15px 19px;margin:0 0 20px;font-size:14.5px;line-height:2}
+.near-box b{color:var(--key)}
+.goal-box{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:14px;
+padding:18px 20px;margin:28px 0 0;font-size:15.5px;line-height:1.9;text-align:center}
+.goal-box b{font-size:17.5px}
+
+.subj-hd{margin:34px 0 10px;padding:10px 0 8px;border-bottom:3px solid var(--ink);font-size:19px;font-weight:800}
+.subj-note{font-size:13.5px;color:var(--sub);margin:-4px 0 16px}
+
+.unit-banner{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--key-bg);
+border-left:5px solid var(--key);border-radius:0 10px 10px 0;padding:11px 15px;margin:26px 0 12px}
+.unit-num{font-size:14px;font-weight:800;color:var(--key)}
+.unit-name{font-size:16px;font-weight:800}
+.unit-time{font-size:13px;color:var(--sub);margin-left:auto}
+
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.q.practice{background:#fbfcff}
+.qnum{font-size:16px;font-weight:800;margin:0 0 10px}
+.qtag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--sub);background:#eef0f5;
+border-radius:6px;padding:2px 8px;margin:0 0 8px}
+.qbody{font-size:17px;line-height:2.5}
+.qbody .pn{color:#2f5a8a;font-weight:700;margin-right:6px}
+.math{font-family:"Times New Roman",serif;font-size:19px;letter-spacing:.02em}
+.note-draw{background:var(--warn-bg);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:12px 0 0}
+
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 2px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+
+.ans-btn{display:block;width:100%;margin:12px 0 0;padding:12px;border:0;border-radius:10px;
+background:var(--key);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.q.practice .ans-btn{background:var(--go)}
+.ans-box{display:none;margin:12px 0 0;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ans-box.open{display:block}
+.osarai{background:var(--go-bg);border-left:4px solid var(--go);border-radius:0 8px 8px 0;
+padding:10px 14px;font-size:14.5px;margin:0 0 12px}
+.step{font-size:15.5px;margin:0 0 9px;padding:0 0 0 4px}
+.step,.top-warn,.work-box,.osarai,.qbody,.ans-final,.miss-box,.bx-warn,.note-draw{overflow-wrap:anywhere;word-break:break-word}
+.step>span:first-child{display:inline-block;min-width:44px;font-weight:800;color:var(--key)}
+.miss-box{background:var(--warn-bg);border-radius:9px;padding:11px 14px;font-size:14.5px;margin:12px 0 0}
+.miss-box b{color:var(--warn)}
+.bx-warn{background:var(--hot-bg);border:1px solid #f6ccd1;border-radius:9px;padding:11px 14px;
+font-size:14.5px;margin:12px 0 0}
+.bx-warn b{color:var(--hot)}
+.ans-final{background:var(--ink);color:#fff;border-radius:10px;padding:12px 15px;margin:13px 0 0;font-size:15.5px}
+.ans-final>span:first-child{font-weight:800;margin-right:10px}
+.work-box{background:#f2f3f7;border-radius:9px;padding:10px 14px;font-size:14.5px;margin:10px 0 0;color:var(--sub)}
+.work-box b{color:var(--ink)}
+
+.top-warn{background:var(--hot-bg);border-left:5px solid var(--hot);border-radius:0 10px 10px 0;
+padding:11px 15px;font-size:15px;line-height:1.85;margin:0 0 13px}
+.top-warn b{color:var(--hot)}
+
+.cmp-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:0 0 13px;font-size:13.5px}
+.cmp-table th,.cmp-table td{border:1px solid var(--line);padding:8px 7px;text-align:center;
+word-break:break-word;overflow-wrap:break-word;vertical-align:top;line-height:1.6}
+.cmp-table th{background:#f2f3f7;font-size:12px;color:var(--sub);font-weight:700}
+.cmp-table td.cw{color:var(--hot);font-weight:800;background:var(--hot-bg)}
+.cmp-table td.cr{color:var(--go);font-weight:800;background:var(--go-bg)}
+
+.diff-table{width:100%;table-layout:fixed;border-collapse:collapse;margin:0 0 13px;font-size:13.5px}
+.diff-table th,.diff-table td{border:1px solid var(--line);padding:8px 7px;text-align:left;
+word-break:break-word;overflow-wrap:break-word;line-height:1.9}
+.diff-table th{background:#f2f3f7;font-size:12px;color:var(--sub);font-weight:700;text-align:center}
+mark.mw{background:#ffd7db;color:var(--hot);font-weight:800;padding:0 2px;border-radius:3px}
+mark.mr{background:#c9f0dd;color:var(--go);font-weight:800;padding:0 2px;border-radius:3px}
+.diff-note{font-size:13px;color:var(--sub);margin:0 0 13px}
+
+.steps-box{margin:0 0 4px;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.steps-title{font-size:13.5px;font-weight:800;color:var(--key);margin:0 0 9px}
+.step b{color:inherit;min-width:0;display:inline;font-weight:800}
+.step.check{color:var(--go);border-top:1px dashed var(--line);padding-top:9px;margin-top:10px}
+.step.check>span:first-child{color:var(--go)}
+
+.types-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;padding:6px 4px;margin:0 0 22px}
+.types-hd{font-size:15px;font-weight:800;padding:10px 12px 4px}
+.types-table{width:100%;table-layout:fixed;border-collapse:collapse;font-size:12.5px;margin:0 0 6px}
+.types-table th,.types-table td{border:1px solid var(--line);padding:7px 6px;text-align:left;
+word-break:break-word;overflow-wrap:break-word;vertical-align:top;line-height:1.7}
+.types-table th{background:#f2f3f7;color:var(--sub);font-weight:700}
+.types-table td.tcnt{text-align:center;font-weight:800;color:var(--key);width:14%}
+.types-table td.tlink{text-align:center;width:14%}
+.types-table a{color:var(--key);font-weight:700;text-decoration:none}
+.type-badge{display:inline-block;font-size:11px;font-weight:700;background:var(--key-bg);color:var(--key);
+border-radius:6px;padding:2px 7px;margin:0 6px 8px 0;text-decoration:none}
+
+.gwrap{margin:12px 0 0;border-top:1px dashed var(--line);padding:12px 0 0}
+.gq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 7px;font-size:14px}
+.gq-label{min-width:52px;font-weight:700;color:var(--sub)}
+.gq button{border:1.5px solid var(--line);background:#fff;border-radius:7px;width:36px;height:32px;
+font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.gq button.o.on{background:var(--go);border-color:var(--go);color:#fff}
+.gq button.x.on{background:var(--hot);border-color:var(--hot);color:#fff}
+.mt{display:none;gap:6px;flex-wrap:wrap;margin:2px 0 0 52px}
+.mt.show{display:flex}
+.mt button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px;
+font-size:12.5px;cursor:pointer;font-family:inherit;width:auto;height:auto}
+.mt button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.write3{display:none;margin:6px 0 0 52px;font-size:13px;color:var(--hot);font-weight:700}
+.write3.show{display:block}
+
+.done{display:block;width:100%;margin:26px 0 0;padding:18px;border:0;border-radius:14px;
+background:var(--go);color:#fff;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit}
+.done.fin{background:var(--ink)}
+.tail{text-align:center;color:var(--sub);font-size:13.5px;margin:18px 0 0;line-height:1.9}
+
+@media print{
+ body{background:#fff}
+ a.back,.ans-btn,.ans-box,.gwrap,.done,.note-draw{display:none !important}
+ .q{break-inside:avoid;page-break-inside:avoid}
+ .pg-hd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{margin:12mm}
+}
+/*frac-guard*/.frac{display:inline-flex!important;flex-direction:column!important;min-width:0!important;width:auto!important}.frac>span{display:block!important;min-width:0!important;width:auto!important;margin:0!important;color:inherit!important;font-weight:inherit!important}.frac>.n{border-bottom:1.8px solid currentColor!important;padding:0 5px 2px!important}.frac>.d{padding:2px 5px 0!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#mock">← ダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div>
+    <span class="pg-badge">特訓D7</span>
+    <span class="pg-badge">9月特訓選抜＋9月必修</span>
+    <span class="pg-badge">失点の考察と対策</span>
+  </div>
+  <h1>9月特訓選抜と9月テスト　失点の考察と対策</h1>
+  <p>数学は×だった問題を全部、英語は筆記の×を全部、国語は漢字・慣用句・四字熟語・文法の知識問題だけをまとめました。</p>
+  <p class="pg-cheer">量が多いので、1回で全部やらなくて大丈夫。単元ごとに少しずつ読めばOK。まず今回できていたことから。</p>
+</div>
+
+<div class="good-box">
+  <b>今回できていたこと</b><br>
+  ① 数学：方程式の文章題は、特訓選抜の大問3が5問（コピー機・ある数・ノート・追いつき算・食塩水）すべて正解。式を作る力はしっかり身についている。<br>
+  ② 数学：テストでも、正負の数・文字式の基本計算、資料の読み取り、文字式の値を求める問題など12問が正解だった。<br>
+  ③ 英語：特訓選抜の語順整序（大問5）は4問全問正解。テストもリスニング全問正解、文の書きかえ・対話文完成も全問正解だった。<br>
+  ④ 国語：テストの漢字の読み4問は全問正解、慣用句も12問中11問正解だった。<br>
+  ⑤ 途中式やメモをきちんと余白に残す習慣がついている。おかげで、どこでどう間違えたのかを1問ずつ正確に確認できた。
+</div>
+
+<div class="near-box">
+  <b>もう少しで取れていた問題</b><br>
+  ① 特訓選抜の分数の計算：通分・展開・同類項の整理は全部正しくできていて、最後に「12で割る」のひと手間を書き忘れただけだった。<br>
+  ② テストの文字式の利用（座席の問題）：4a−4+2＝4a−2という途中式は完璧だったのに、答案に書くときだけ文字をxと書いてしまっていた。
+</div>
+
+
+<div class="types-wrap">
+  <div class="types-hd">こんなミスが多かった（数学・全24問）</div>
+  <table class="types-table">
+<tr><th>類型</th><th>問数</th><th>どのテストの何番</th><th></th></tr>
+<tr>
+<td>類型1　負の数を代入するとき符号が消える<br><span style="color:var(--sub);font-weight:400">防ぎ方：代入する数は必ずかっこを付けて書く</span></td>
+<td class="tcnt">3問</td>
+<td>必修9月4(1)①・4(1)②・7A(2)</td>
+<td class="tlink"><a href="#mt1">見る→</a></td>
+</tr><tr>
+<td>類型2　かっこ・分配で一部の項だけ操作する<br><span style="color:var(--sub);font-weight:400">防ぎ方：かっこを外す前に、中の項の数だけ矢印を書いてから配る</span></td>
+<td class="tcnt">3問</td>
+<td>必修9月2(4)・7A(3)②・1(4)</td>
+<td class="tlink"><a href="#mt2">見る→</a></td>
+</tr><tr>
+<td>類型3　答えを書くとき数字や文字が変わる<br><span style="color:var(--sub);font-weight:400">防ぎ方：答えを書いたら、途中式の最後の行ともう一度見比べる</span></td>
+<td class="tcnt">3問</td>
+<td>必修9月2(2)・3(1)・6(2)</td>
+<td class="tlink"><a href="#mt3">見る→</a></td>
+</tr><tr>
+<td>類型4　最後の一手間・問われたことの読み直し<br><span style="color:var(--sub);font-weight:400">防ぎ方：答えを書く前に、問題文の最後の一文をもう一度読む</span></td>
+<td class="tcnt">2問</td>
+<td>特訓選抜9月1(2)・2(2)</td>
+<td class="tlink"><a href="#mt4">見る→</a></td>
+</tr><tr>
+<td>類型5　電気料金の区分計算<br><span style="color:var(--sub);font-weight:400">防ぎ方：区分の境目の前後で、式を分けて作る</span></td>
+<td class="tcnt">3問</td>
+<td>特訓選抜9月5(1)・5(2)・5(3)</td>
+<td class="tlink"><a href="#mt5">見る→</a></td>
+</tr><tr>
+<td>類型6　初めて見る問題で方針が浮かばず空欄<br><span style="color:var(--sub);font-weight:400">防ぎ方：分からない問題はまず小さい数で試してみる</span></td>
+<td class="tcnt">3問</td>
+<td>特訓選抜9月4(2)・4(3)、必修9月6(3)</td>
+<td class="tlink"><a href="#mt6">見る→</a></td>
+</tr><tr>
+<td>類型7　平均の文章題で自分の地点を入れ忘れる<br><span style="color:var(--sub);font-weight:400">防ぎ方：平均を聞かれている自分の場所も必ず合計に入れる</span></td>
+<td class="tcnt">1問</td>
+<td>必修9月5(2)②</td>
+<td class="tlink"><a href="#mt7">見る→</a></td>
+</tr><tr>
+<td>類型8　円周の計算<br><span style="color:var(--sub);font-weight:400">防ぎ方：弧の長さと直線部分を別々に計算してから足す</span></td>
+<td class="tcnt">1問</td>
+<td>特訓選抜9月2(4)</td>
+<td class="tlink"><a href="#mt8">見る→</a></td>
+</tr><tr>
+<td>類型9　とちゅうの式が不明な問題<br><span style="color:var(--sub);font-weight:400">防ぎ方：暗算せず、途中の式を1行ずつ書く</span></td>
+<td class="tcnt">5問</td>
+<td>必修9月1(3)・2(3)、特訓選抜9月1(1)・1(3)・1(4)</td>
+<td class="tlink"><a href="#mt9">見る→</a></td>
+</tr>
+</table>
+  <div class="types-hd">こんなミスが多かった（英語・全25問）</div>
+  <table class="types-table">
+<tr><th>類型</th><th>問数</th><th>どのテストの何番</th><th></th></tr>
+<tr>
+<td>類型1　文の最初を大文字にし忘れる<br><span style="color:var(--sub);font-weight:400">防ぎ方：書き終えたら文の最初の文字を指で確認する</span></td>
+<td class="tcnt">3問</td>
+<td>特訓選抜9月2(10)・3(6)・4(1)</td>
+<td class="tlink"><a href="#et1">見る→</a></td>
+</tr><tr>
+<td>類型2　be動詞の文と一般動詞の文の混同<br><span style="color:var(--sub);font-weight:400">防ぎ方：動詞がbe動詞(am/is/are)か一般動詞かを最初に確認する</span></td>
+<td class="tcnt">3問</td>
+<td>特訓選抜9月3(9)、必修9月2(1)・10問1②</td>
+<td class="tlink"><a href="#et2">見る→</a></td>
+</tr><tr>
+<td>類型3　答える主語を書き間違える<br><span style="color:var(--sub);font-weight:400">防ぎ方：日本文の主語をもう一度確認してから書く</span></td>
+<td class="tcnt">1問</td>
+<td>必修9月6(2)</td>
+<td class="tlink"><a href="#et3">見る→</a></td>
+</tr><tr>
+<td>類型4　主語が複数なのに名詞のsを忘れる<br><span style="color:var(--sub);font-weight:400">防ぎ方：be動詞のあとの名詞は主語の数とそろえる</span></td>
+<td class="tcnt">2問</td>
+<td>必修9月7(2)・8(4)</td>
+<td class="tlink"><a href="#et4">見る→</a></td>
+</tr><tr>
+<td>類型5　つづり・単語の形のまちがい<br><span style="color:var(--sub);font-weight:400">防ぎ方：まちがえた単語を3回ノートに書く</span></td>
+<td class="tcnt">5問</td>
+<td>特訓選抜9月1(3)・3(1)・3(4)、必修9月3(1)・6(4)</td>
+<td class="tlink"><a href="#et5">見る→</a></td>
+</tr><tr>
+<td>類型6　似た意味・反対の意味の単語<br><span style="color:var(--sub);font-weight:400">防ぎ方：「好き」の強さに合う単語(like/love)や反対語を落ち着いて選ぶ</span></td>
+<td class="tcnt">2問</td>
+<td>特訓選抜9月1(6)・3(3)</td>
+<td class="tlink"><a href="#et6">見る→</a></td>
+</tr><tr>
+<td>類型7　呼びかけのあとの命令文<br><span style="color:var(--sub);font-weight:400">防ぎ方：名前のあとにコンマがあれば、それは呼びかけ</span></td>
+<td class="tcnt">1問</td>
+<td>特訓選抜9月2(2)</td>
+<td class="tlink"><a href="#et7">見る→</a></td>
+</tr><tr>
+<td>類型8　助動詞を判断する<br><span style="color:var(--sub);font-weight:400">防ぎ方：「〜できる」が出てきたらcanを探す</span></td>
+<td class="tcnt">1問</td>
+<td>必修9月7(3)</td>
+<td class="tlink"><a href="#et8">見る→</a></td>
+</tr><tr>
+<td>類型9　対話文・資料の読み取り（応用）<br><span style="color:var(--sub);font-weight:400">防ぎ方：表や複数の発言を、答える前にもう一度見比べる</span></td>
+<td class="tcnt">4問</td>
+<td>特訓選抜9月6問2(1)・6問2(3)・7問1、必修9月9②</td>
+<td class="tlink"><a href="#et9">見る→</a></td>
+</tr><tr>
+<td>類型10　本文の内容を自分の英語に書きかえる<br><span style="color:var(--sub);font-weight:400">防ぎ方：メモの日本語を、まず主語と動詞だけの短い文にしてから英語にする</span></td>
+<td class="tcnt">3問</td>
+<td>特訓選抜9月6問3・7問2(1)・7問2(2)</td>
+<td class="tlink"><a href="#et10">見る→</a></td>
+</tr>
+</table>
+  <div class="types-hd">こんなミスが多かった（国語・全9問）</div>
+  <table class="types-table">
+<tr><th>類型</th><th>問数</th><th>どのテストの何番</th><th></th></tr>
+<tr>
+<td>類型1　漢字の読み方の取り違え<br><span style="color:var(--sub);font-weight:400">防ぎ方：似た読みの言葉と比べて覚える</span></td>
+<td class="tcnt">1問</td>
+<td>特訓選抜9月3(1)②</td>
+<td class="tlink"><a href="#kt1">見る→</a></td>
+</tr><tr>
+<td>類型2　漢字が書けず空欄になった<br><span style="color:var(--sub);font-weight:400">防ぎ方：書けない漢字はまず読み・意味だけでも書く</span></td>
+<td class="tcnt">2問</td>
+<td>必修9月3(5)・3(8)</td>
+<td class="tlink"><a href="#kt2">見る→</a></td>
+</tr><tr>
+<td>類型3　漢字の字形の覚え違い<br><span style="color:var(--sub);font-weight:400">防ぎ方：噴・墳・憤は「賁」、責・積・績は「責」とグループで覚える</span></td>
+<td class="tcnt">2問</td>
+<td>必修9月大問1・特訓選抜9月3(1)③</td>
+<td class="tlink"><a href="#kt3">見る→</a></td>
+</tr><tr>
+<td>類型4　四字熟語で似た漢字を取り違える<br><span style="color:var(--sub);font-weight:400">防ぎ方：複数の四字熟語をまとめて比べて覚える</span></td>
+<td class="tcnt">3問</td>
+<td>特訓選抜9月3(3)①・②・③</td>
+<td class="tlink"><a href="#kt4">見る→</a></td>
+</tr><tr>
+<td>類型5　慣用句の言い方を取り違える<br><span style="color:var(--sub);font-weight:400">防ぎ方：体の部分は決まった言い方とセットで覚える</span></td>
+<td class="tcnt">1問</td>
+<td>必修9月2(4)</td>
+<td class="tlink"><a href="#kt5">見る→</a></td>
+</tr>
+</table>
+</div>
+
+
+<div class="subj-hd">数学　×だった問題を全部（特訓選抜・テスト）</div>
+<p class="subj-note">似たまちがいをグループごとにまとめました。各問題のあとに、数字を変えた類題を1問つけています。</p>
+
+<div class="unit-banner"><span class="unit-num">①</span><span class="unit-name">負の数を代入するときにかっこを忘れる</span><span class="unit-time">目安 6分</span></div>
+<a id="mt1"></a>
+<div class="q" id="mt1-問1">
+  <a class="type-badge" href="#mt1">類型：①負の数を代入するとき符号が消える</a>
+  <span class="qtag">必修9月・大問4(1)①</span>
+  <div class="qnum">問1　もとの問題</div>
+  <div class="qbody"><span class="math">a</span>＝−<span class="frac"><span class="n">5</span><span class="d">2</span></span> のとき、<span class="math">4a² ＋ 2a</span> の値を求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問4(1)①で a＝−<span class="frac"><span class="n">5</span><span class="d">2</span></span> を代入したとき、4a²の25は合っていたのに、2aを「2×<span class="frac"><span class="n">5</span><span class="d">2</span></span>＝5」とマイナスを落として、答えが30になった（正しくは20）。<br><b>前にも：</b>8月必修の大問5(1)でも、答えの−2xのマイナスを書き忘れて2xにしている。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>「4×25/4＝25」「＋5」から、25＋5＝30と書いた。</td><td class="cw">30</td><td class="cr">20</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>25＋<mark class="mw">5</mark>＝30</td><td>25＋<mark class="mr">(−5)</mark>＝20</td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①代入：</b>代入する数はかっこに入れて書く：a＝(−<span class="frac"><span class="n">5</span><span class="d">2</span></span>)。</div><div class="step"><span>2</span><b>②2乗の項：</b>4a²＝4×<span class="frac"><span class="n">25</span><span class="d">4</span></span>＝25(2乗はマイナス×マイナスでプラスになる)。</div><div class="step"><span>3</span><b>③1乗の項：</b>2a＝2×(−<span class="frac"><span class="n">5</span><span class="d">2</span></span>)＝−5(かっこの中のマイナスはそのまま)。</div><div class="step"><span>4</span><b>④たし算：</b>25＋(−5)＝20。</div><div class="step check"><span>✓</span><b>たしかめ：</b>a=−2.5を小数のまま計算しても、4×6.25+2×(−2.5)＝25−5＝20で、答えと合う。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題1</div>
+  <div class="qbody"><span class="math">a</span>＝−<span class="frac"><span class="n">3</span><span class="d">2</span></span> のとき、<span class="math">4a² ＋ 2a</span> の値を求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>代入する数をかっこに入れて書いてから計算しよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①2乗の項：</b>4a²＝4×<span class="frac"><span class="n">9</span><span class="d">4</span></span>＝9。</div><div class="step"><span>2</span><b>②1乗の項：</b>2a＝2×(−<span class="frac"><span class="n">3</span><span class="d">2</span></span>)＝−3。</div><div class="step"><span>3</span><b>③たし算：</b>9＋(−3)＝6。</div><div class="step check"><span>✓</span><b>たしかめ：</b>a=−1.5を小数のまま計算しても、4×2.25+2×(−1.5)＝9−3＝6で合う。</div>
+    
+    <div class="ans-final"><span>こたえ</span>6</div>
+  </div>
+  <div class="gwrap" data-ids="q01"></div>
+</div>
+
+<div class="q" id="mt1-問2">
+  <a class="type-badge" href="#mt1">類型：①負の数を代入するとき符号が消える</a>
+  <span class="qtag">必修9月・大問4(1)②</span>
+  <div class="qnum">問2　もとの問題</div>
+  <div class="qbody"><span class="math">x</span>＝−1、<span class="math">y</span>＝<span class="frac"><span class="n">3</span><span class="d">4</span></span> のとき、<span class="math"><span class="frac"><span class="n">7</span><span class="d">x</span></span> ＋ 8y</span> の値を求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問4(1)②で x＝−1 を代入したとき、7/xを「7」にしてマイナスが消え、答えが13になった（正しくは−1）。<br><b>前にも：</b>同じ9月の大問4(1)①・7A(2)でも、まったく同じ消え方をしている。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>「7＋6」から、7＋6＝13と書いた。</td><td class="cw">13</td><td class="cr">−1</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>7＋6＝<mark class="mw">13</mark></td><td>−7＋6＝<mark class="mr">−1</mark></td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①1つ目の項：</b>7/xにx＝(−1)を代入：7÷(−1)＝−7。</div><div class="step"><span>2</span><b>②2つ目の項：</b>8y＝8×<span class="frac"><span class="n">3</span><span class="d">4</span></span>＝6。</div><div class="step"><span>3</span><b>③たし算：</b>−7＋6＝−1。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=−1,y=0.75のまま計算しても、−7+6=−1で合う。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題2</div>
+  <div class="qbody"><span class="math">x</span>＝−1、<span class="math">y</span>＝<span class="frac"><span class="n">5</span><span class="d">8</span></span> のとき、<span class="math"><span class="frac"><span class="n">7</span><span class="d">x</span></span> ＋ 8y</span> の値を求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>代入する数をかっこに入れて書いてから計算しよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①1つ目の項：</b>7/xにx＝(−1)を代入：7÷(−1)＝−7。</div><div class="step"><span>2</span><b>②2つ目の項：</b>8y＝8×<span class="frac"><span class="n">5</span><span class="d">8</span></span>＝5。</div><div class="step"><span>3</span><b>③たし算：</b>−7＋5＝−2。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=−1,y=0.625のまま計算しても、−7+5=−2で合う。</div>
+    
+    <div class="ans-final"><span>こたえ</span>−2</div>
+  </div>
+  <div class="gwrap" data-ids="q02"></div>
+</div>
+
+<div class="q" id="mt1-問3">
+  <a class="type-badge" href="#mt1">類型：①負の数を代入するとき符号が消える</a>
+  <span class="qtag">必修9月・選択A大問7(2)</span>
+  <div class="qnum">問3　もとの問題</div>
+  <div class="qbody"><span class="math">x</span>＝−3 のとき、<span class="math">2x² ＋ 4x − 5</span> の値を求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問7A(2)で x＝−3 を代入したとき、2x²の18は合っていたのに、4xを「＋12」にして答えが25になった（正しくは1）。<br><b>前にも：</b>8月必修の大問5(1)でも、マイナスの書き忘れで1問落としている。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>「18+12−5」から、18+12−5＝25と書いた。</td><td class="cw">25</td><td class="cr">1</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>18＋12−5＝<mark class="mw">25</mark></td><td>18＋(−12)−5＝<mark class="mr">1</mark></td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①2乗の項：</b>2x²＝2×9＝18(2乗はプラスになる)。</div><div class="step"><span>2</span><b>②1乗の項：</b>4x＝4×(−3)＝−12(かっこの中のマイナスはそのまま)。</div><div class="step"><span>3</span><b>③たし算・ひき算：</b>18＋(−12)−5＝1。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=−3のまま計算しても、18−12−5=1で合う。</div>
+    <div class="osarai">3問とも、2乗の項は正しく計算できているのに、1乗の項(2a・7/x・4x)に代入するときだけ符号を落としている。代入は必ずかっこを付けて書くとふせぎやすい。</div>
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題3</div>
+  <div class="qbody"><span class="math">x</span>＝−2 のとき、<span class="math">3x² ＋ 4x − 1</span> の値を求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>代入する数をかっこに入れて書いてから計算しよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①2乗の項：</b>3x²＝3×4＝12。</div><div class="step"><span>2</span><b>②1乗の項：</b>4x＝4×(−2)＝−8。</div><div class="step"><span>3</span><b>③たし算・ひき算：</b>12＋(−8)−1＝3。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=−2のまま計算しても、12−8−1=3で合う。</div>
+    
+    <div class="ans-final"><span>こたえ</span>3</div>
+  </div>
+  <div class="gwrap" data-ids="q03"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">②</span><span class="unit-name">かっこを外すとき・分数を通分するときに一部の項だけ操作してしまう</span><span class="unit-time">目安 7分</span></div>
+<a id="mt2"></a>
+<div class="q" id="mt2-問4">
+  <a class="type-badge" href="#mt2">類型：②かっこ・分配で一部の項だけ操作する</a>
+  <span class="qtag">必修9月・大問2(4)</span>
+  <div class="qnum">問4　もとの問題</div>
+  <div class="qbody"><span class="math"><span class="frac"><span class="n">12</span><span class="d">6</span></span>(x−11) ＋ <span class="frac"><span class="n">27</span><span class="d">9</span></span>(5x−3)</span> を計算しなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問2(4)で、3×(5x−3) の15xは出せたのに、−3に3を掛け忘れて、答えが17x−25になった（正しくは17x−31）。<br><b>前にも：</b>同じ必修の大問7A(3)②・大問1(4)でも、かっこや符号の一部だけを操作する同じ型のミスをしている。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>余白に「12/6=2」「27/9=3」の約分メモがあり、続けて「2x−22+15x−3」と書いた。</td><td class="cw">17x−25</td><td class="cr">17x−31</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>15x<mark class="mw">−3</mark></td><td>15x<mark class="mr">−9</mark></td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①約分：</b>12÷6＝2、27÷9＝3と先に約分する。</div><div class="step"><span>2</span><b>②1つ目のかっこ：</b>2×(x−11)＝2x−22(2をxにも−11にもかける)。</div><div class="step"><span>3</span><b>③2つ目のかっこ：</b>3×(5x−3)＝15x−9(3を5xにも−3にもかける)。</div><div class="step"><span>4</span><b>④まとめる：</b>2x−22＋15x−9＝17x−31。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=3を、もとの式と答えの両方に入れる。もとの式＝2×(3−11)+3×(5×3−3)=−16+36=20。答え17×3−31=20。一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題4</div>
+  <div class="qbody"><span class="math"><span class="frac"><span class="n">12</span><span class="d">6</span></span>(x−9) ＋ <span class="frac"><span class="n">20</span><span class="d">5</span></span>(4x−3)</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>かっこを外す途中式を1行ずつ書こう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①約分：</b>12÷6＝2、20÷5＝4と先に約分する。</div><div class="step"><span>2</span><b>②1つ目のかっこ：</b>2×(x−9)＝2x−18。</div><div class="step"><span>3</span><b>③2つ目のかっこ：</b>4×(4x−3)＝16x−12。</div><div class="step"><span>4</span><b>④まとめる：</b>2x−18＋16x−12＝18x−30。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=3を入れると、もとの式=2×(3−9)+4×(4×3−3)=−12+36=24。答え18×3−30=24。一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>18x−30</div>
+  </div>
+  <div class="gwrap" data-ids="q04"></div>
+</div>
+
+<div class="q" id="mt2-問5">
+  <a class="type-badge" href="#mt2">類型：②かっこ・分配で一部の項だけ操作する</a>
+  <span class="qtag">必修9月・選択A大問7(3)②</span>
+  <div class="qnum">問5　もとの問題</div>
+  <div class="qbody"><span class="math">(<span class="frac"><span class="n">7</span><span class="d">4</span></span>x ＋ <span class="frac"><span class="n">1</span><span class="d">2</span></span>) − (<span class="frac"><span class="n">8</span><span class="d">3</span></span>x − <span class="frac"><span class="n">2</span><span class="d">5</span></span>)</span> を計算しなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問7A(3)②で、−(…−<span class="frac"><span class="n">2</span><span class="d">5</span></span>) のxの項はマイナスにできたのに、−<span class="frac"><span class="n">2</span><span class="d">5</span></span>を＋<span class="frac"><span class="n">2</span><span class="d">5</span></span>に変え忘れて、答えの数の部分が<span class="frac"><span class="n">1</span><span class="d">10</span></span>になった（正しくは<span class="frac"><span class="n">9</span><span class="d">10</span></span>）。<br><b>前にも：</b>同じ必修の大問2(4)でも、かっこの中の一部にしか操作をしていない同じ型のミスをしている。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>「7/4x−8/3x+1/2−2/5」→「21/12x−32/12x+5/10−4/10」→「−11/12x+1/10」。</td><td class="cw">−11/12x＋1/10</td><td class="cr">−<span class="frac"><span class="n">11</span><span class="d">12</span></span>x ＋ <span class="frac"><span class="n">9</span><span class="d">10</span></span></td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td><span class="frac"><span class="n">1</span><span class="d">2</span></span>−<mark class="mw"><span class="frac"><span class="n">2</span><span class="d">5</span></span></mark></td><td><span class="frac"><span class="n">1</span><span class="d">2</span></span>＋<mark class="mr"><span class="frac"><span class="n">2</span><span class="d">5</span></span></mark></td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①符号を変える：</b>かっこの前がマイナスなので、中の2つの項の符号を両方とも変える：−<span class="frac"><span class="n">8</span><span class="d">3</span></span>x＋<span class="frac"><span class="n">2</span><span class="d">5</span></span>。</div><div class="step"><span>2</span><b>②xの項をまとめる：</b><span class="frac"><span class="n">7</span><span class="d">4</span></span>x−<span class="frac"><span class="n">8</span><span class="d">3</span></span>x＝−<span class="frac"><span class="n">11</span><span class="d">12</span></span>x(通分12)。</div><div class="step"><span>3</span><b>③定数項をまとめる：</b><span class="frac"><span class="n">1</span><span class="d">2</span></span>＋<span class="frac"><span class="n">2</span><span class="d">5</span></span>を通分：<span class="frac"><span class="n">5</span><span class="d">10</span></span>＋<span class="frac"><span class="n">4</span><span class="d">10</span></span>＝<span class="frac"><span class="n">9</span><span class="d">10</span></span>。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=12を入れる。もとの式=(7/4×12+1/2)−(8/3×12−2/5)=21.5−31.6=−10.1。答え−11/12×12+9/10=−11+0.9=−10.1。一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題5</div>
+  <div class="qbody"><span class="math">(<span class="frac"><span class="n">5</span><span class="d">2</span></span>x ＋ <span class="frac"><span class="n">1</span><span class="d">3</span></span>) − (<span class="frac"><span class="n">7</span><span class="d">2</span></span>x − <span class="frac"><span class="n">1</span><span class="d">6</span></span>)</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>( )の前がマイナスのときは、外す前に中の項の符号を全部書きかえよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①符号を変える：</b>かっこの前がマイナスなので、中の符号を両方変える：−<span class="frac"><span class="n">7</span><span class="d">2</span></span>x＋<span class="frac"><span class="n">1</span><span class="d">6</span></span>。</div><div class="step"><span>2</span><b>②xの項をまとめる：</b><span class="frac"><span class="n">5</span><span class="d">2</span></span>x−<span class="frac"><span class="n">7</span><span class="d">2</span></span>x＝−1x。</div><div class="step"><span>3</span><b>③定数項をまとめる：</b><span class="frac"><span class="n">1</span><span class="d">3</span></span>＋<span class="frac"><span class="n">1</span><span class="d">6</span></span>を通分：<span class="frac"><span class="n">2</span><span class="d">6</span></span>＋<span class="frac"><span class="n">1</span><span class="d">6</span></span>＝<span class="frac"><span class="n">3</span><span class="d">6</span></span>＝<span class="frac"><span class="n">1</span><span class="d">2</span></span>。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=6を入れる。もとの式=(5/2×6+1/3)−(7/2×6−1/6)=15.33−20.83=−5.5。答え−6+0.5=−5.5。一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>−x ＋ <span class="frac"><span class="n">1</span><span class="d">2</span></span></div>
+  </div>
+  <div class="gwrap" data-ids="q05"></div>
+</div>
+
+<div class="q" id="mt2-問6">
+  <a class="type-badge" href="#mt2">類型：②かっこ・分配で一部の項だけ操作する</a>
+  <span class="qtag">必修9月・大問1(4)</span>
+  <div class="qnum">問6　もとの問題</div>
+  <div class="qbody"><span class="math"><span class="frac"><span class="n">4²</span><span class="d">15</span></span> ÷ (−<span class="frac"><span class="n">5</span><span class="d">9</span></span>) − <span class="frac"><span class="n">84</span><span class="d">25</span></span> × (−0.75)</span> を計算しなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問1(4)で、4²/15÷(−5/9)の逆数のかけ算と、84/25×(−0.75)の符号処理の2か所でずれて、答えが−173/75になった（正しくは3/5）。<br><b>前にも：</b>同じ必修の大問2(4)・7A(3)②でも、一部の項・要素にしか操作をしない同じ系統のミスをしている。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>余白に「16/75」「63/25」などの分数計算が残っており、最終的に解答らんには「−173/75」と書かれていた。</td><td class="cw">−173/75</td><td class="cr"><span class="frac"><span class="n">3</span><span class="d">5</span></span>(＝0.6)</td></tr>
+  </table>
+  <p class="diff-note">とちゅうの式が薄い、または残っていないため、式のくらべは省略します。下の「正しい解き方」だけ確認してください。</p>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><span class="frac"><span class="n">4²</span><span class="d">15</span></span>÷(−<span class="frac"><span class="n">5</span><span class="d">9</span></span>)は、わる数の逆数(−<span class="frac"><span class="n">9</span><span class="d">5</span></span>)をかける：<span class="frac"><span class="n">16</span><span class="d">15</span></span>×(−<span class="frac"><span class="n">9</span><span class="d">5</span></span>)＝−<span class="frac"><span class="n">48</span><span class="d">25</span></span>。</div><div class="step"><span>2</span><span class="frac"><span class="n">84</span><span class="d">25</span></span>×(−0.75)＝<span class="frac"><span class="n">84</span><span class="d">25</span></span>×(−<span class="frac"><span class="n">3</span><span class="d">4</span></span>)＝−<span class="frac"><span class="n">63</span><span class="d">25</span></span>。</div><div class="step"><span>3</span>式全体は「(−<span class="frac"><span class="n">48</span><span class="d">25</span></span>)−(−<span class="frac"><span class="n">63</span><span class="d">25</span></span>)」なので、−<span class="frac"><span class="n">48</span><span class="d">25</span></span>＋<span class="frac"><span class="n">63</span><span class="d">25</span></span>＝<span class="frac"><span class="n">15</span><span class="d">25</span></span>＝<span class="frac"><span class="n">3</span><span class="d">5</span></span>。</div><div class="step check"><span>✓</span><b>たしかめ：</b>小数で計算し直す。−1.92−(−2.52)=0.6で、3/5(=0.6)と合う。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題6</div>
+  <div class="qbody"><span class="math"><span class="frac"><span class="n">2²</span><span class="d">2</span></span> ÷ (−<span class="frac"><span class="n">4</span><span class="d">3</span></span>) − <span class="frac"><span class="n">5</span><span class="d">8</span></span> × (−0.8)</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>わり算は「わる数の逆数をかける」になおしてから計算しよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><span class="frac"><span class="n">2²</span><span class="d">2</span></span>÷(−<span class="frac"><span class="n">4</span><span class="d">3</span></span>)は、わる数の逆数(−<span class="frac"><span class="n">3</span><span class="d">4</span></span>)をかける：2÷(−<span class="frac"><span class="n">4</span><span class="d">3</span></span>)＝2×(−<span class="frac"><span class="n">3</span><span class="d">4</span></span>)＝−<span class="frac"><span class="n">3</span><span class="d">2</span></span>。</div><div class="step"><span>2</span><span class="frac"><span class="n">5</span><span class="d">8</span></span>×(−0.8)＝<span class="frac"><span class="n">5</span><span class="d">8</span></span>×(−<span class="frac"><span class="n">4</span><span class="d">5</span></span>)＝−<span class="frac"><span class="n">1</span><span class="d">2</span></span>。</div><div class="step"><span>3</span>式全体は「(−<span class="frac"><span class="n">3</span><span class="d">2</span></span>)−(−<span class="frac"><span class="n">1</span><span class="d">2</span></span>)」なので、−<span class="frac"><span class="n">3</span><span class="d">2</span></span>＋<span class="frac"><span class="n">1</span><span class="d">2</span></span>＝−1。</div><div class="step check"><span>✓</span><b>たしかめ：</b>小数で計算し直す。−1.5−(−0.5)=−1で合う。</div>
+    
+    <div class="ans-final"><span>こたえ</span>−1</div>
+  </div>
+  <div class="gwrap" data-ids="q06"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">③</span><span class="unit-name">答えを書くときに数字や文字が変わってしまう</span><span class="unit-time">目安 6分</span></div>
+<a id="mt3"></a>
+<div class="q" id="mt3-問7">
+  <a class="type-badge" href="#mt3">類型：③答えを書くとき数字や文字が変わる</a>
+  <span class="qtag">必修9月・大問2(2)</span>
+  <div class="qnum">問7　もとの問題</div>
+  <div class="qbody"><span class="math">2(8a ＋ 13) − (3a ＋ 10)</span> を計算しなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問2(2)の 2(8a＋13)−(3a＋10) で、−10と書くところに、すぐ上の行の「16」を書いてしまい、答えが13a＋42になった（正しくは13a＋16）。<br><b>前にも：</b>同じ必修の大問3(1)・6(2)でも、答えを書き写すときにずれている。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>途中式は「16a＋26 −3a＋16」。</td><td class="cw">13a＋42</td><td class="cr">13a＋16</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>−3a<mark class="mw">＋16</mark></td><td>−3a<mark class="mr">−10</mark></td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①1つ目のかっこ：</b>2(8a＋13)＝16a＋26。</div><div class="step"><span>2</span><b>②2つ目のかっこ：</b>−(3a＋10)＝−3a−10(かっこの前のマイナスを両方の項に配る)。</div><div class="step"><span>3</span><b>③まとめる：</b>16a＋26−3a−10＝13a＋16。</div><div class="step check"><span>✓</span><b>たしかめ：</b>a=2を入れる。もとの式=2×(16+13)−(6+10)=58−16=42?? →念のため直接計算：2(8×2+13)−(3×2+10)=2×29−16=58−16=42。答え13×2+16=42。一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題7</div>
+  <div class="qbody"><span class="math">2(6a ＋ 9) − (2a ＋ 7)</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>かっこを外す途中式を1行ずつ書こう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①1つ目のかっこ：</b>2(6a＋9)＝12a＋18。</div><div class="step"><span>2</span><b>②2つ目のかっこ：</b>−(2a＋7)＝−2a−7。</div><div class="step"><span>3</span><b>③まとめる：</b>12a＋18−2a−7＝10a＋11。</div><div class="step check"><span>✓</span><b>たしかめ：</b>a=2を入れる。もとの式=2(12+9)−(4+7)=42−11=31。答え10×2+11=31。一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>10a＋11</div>
+  </div>
+  <div class="gwrap" data-ids="q07"></div>
+</div>
+
+<div class="q" id="mt3-問8">
+  <a class="type-badge" href="#mt3">類型：③答えを書くとき数字や文字が変わる</a>
+  <span class="qtag">必修9月・大問3(1)</span>
+  <div class="qnum">問8　もとの問題</div>
+  <div class="qbody">次の数のうち最も小さいものはどれか、記号で答えなさい。<br>ア −<span class="frac"><span class="n">7</span><span class="d">10</span></span>　イ −<span class="frac"><span class="n">5</span><span class="d">8</span></span>　ウ −0.8²　エ −0.6</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問3(1)で、問題用紙ではアに丸をしていたのに、解答用紙にはイと書いた。考えは合っていた。<br><b>前にも：</b>8月必修の数学でも、失点の6割は「最後の1手」が抜けた問題だった。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>問題冊子ではアを丸で囲んでいた(正しく選べていた)が、解答らんには「イ」と書いた。</td><td class="cw">イ</td><td class="cr">ア</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td><mark class="mw">イ</mark>(−0.625)と書いた</td><td><mark class="mr">ア</mark>(−0.7)が正しい</td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①小数にそろえる：</b>ア−0.7　イ−0.625　ウ−0.64　エ−0.6。</div><div class="step"><span>2</span><b>②比べる：</b>マイナスは数字が大きいほど小さい。いちばん数字が大きいのはア(0.7)。</div><div class="step"><span>3</span><b>③見直し：</b>記号を書く前に、選んだ記号ともとの数字をもう一度見比べる。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題8</div>
+  <div class="qbody">次の数のうち最も小さいものはどれか、記号で答えなさい。<br>ア −<span class="frac"><span class="n">9</span><span class="d">10</span></span>　イ −<span class="frac"><span class="n">3</span><span class="d">5</span></span>　ウ −0.5²　エ −0.4</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>全部を小数にして比べ、選んだ記号をもう一度見直そう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①小数にそろえる：</b>ア−0.9　イ−0.6　ウ−0.25　エ−0.4。</div><div class="step"><span>2</span><b>②比べる：</b>いちばん数字が大きいのはア(0.9)。</div><div class="step"><span>3</span><b>③見直し：</b>記号を書く前に、選んだ記号ともとの数字をもう一度見比べる。</div>
+    
+    <div class="ans-final"><span>こたえ</span>ア</div>
+  </div>
+  <div class="gwrap" data-ids="q08"></div>
+</div>
+
+<div class="q" id="mt3-問9">
+  <a class="type-badge" href="#mt3">類型：③答えを書くとき数字や文字が変わる</a>
+  <span class="qtag">必修9月・【思考】大問6(2)</span>
+  <div class="qnum">問9　もとの問題</div>
+  <div class="qbody">座席は1列に4人ずつすわる規則になっている。2行目a列目の席番号を、aを使った最も簡単な式で表しなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問6(2)で、途中式は 4a−4＋2 と合っていたのに、答えの欄に 4x−2 と書いた（aをxに書き換えた）。<br><b>前にも：</b>同じ必修の大問2(2)・3(1)でも、答えを書き写すときにずれている。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>問題冊子には「4×(a−1)+2」→「4a−4+2」という正しい途中式があった。しかし答案用紙には「4x−2」と書いた。</td><td class="cw">4x−2</td><td class="cr">4a−2</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>4<mark class="mw">x</mark>−2</td><td>4<mark class="mr">a</mark>−2</td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①式を作る：</b>4×(a−1)＋2＝4a−4＋2。</div><div class="step"><span>2</span><b>②まとめる：</b>4a−4＋2＝4a−2。</div><div class="step"><span>3</span><b>③見直し：</b>答えを書く前に、問題文の文字と自分の式の文字が同じか指でなぞって確認する。</div><div class="step check"><span>✓</span><b>たしかめ：</b>a=3を入れると4×(3−1)+2=10、答え4×3−2=10で一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題9</div>
+  <div class="qbody">yについての式 3(y−4)+5 を最も簡単な形にしなさい。答えは文字yを使うこと。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>式を作ったら、使う文字が問題文と同じか確認しよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①かっこを外す：</b>3(y−4)＝3y−12。</div><div class="step"><span>2</span><b>②まとめる：</b>3y−12＋5＝3y−7。</div><div class="step"><span>3</span><b>③見直し：</b>答えを書く前に、問題文の文字yと自分の式の文字が同じか確認する。</div><div class="step check"><span>✓</span><b>たしかめ：</b>y=3を入れると3(3−4)+5=2、答え3×3−7=2で一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>3y−7</div>
+  </div>
+  <div class="gwrap" data-ids="q09"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">④</span><span class="unit-name">最後の一手間を忘れる・何を聞かれているか読み直す</span><span class="unit-time">目安 6分</span></div>
+<a id="mt4"></a>
+<div class="q" id="mt4-問10">
+  <a class="type-badge" href="#mt4">類型：④最後の一手間・問われたことの読み直し</a>
+  <span class="qtag">特訓選抜9月・大問1(2)</span>
+  <div class="qnum">問10　もとの問題</div>
+  <div class="qbody"><span class="math"><span class="frac"><span class="n">x−2</span><span class="d">3</span></span> − <span class="frac"><span class="n">5x−3</span><span class="d">4</span></span> ＋ x−1</span> を計算しなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問1(2)で、通分・展開・同類項の整理はすべて正しくできていたのに、最後の「÷12」を書かず、答えがx−11になった（正しくは(x−11)/12）。<br><b>前にも：</b>8月必修の大問5(5)でも、通分したあと「最後に割り戻す」ところで同じように落ちている。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>余白に「12分の(4x−8)」「12分の(15x−9)」の通分、最終行「−11x+12+1−12＝x−11」。</td><td class="cw">x−11</td><td class="cr"><span class="frac"><span class="n">x−11</span><span class="d">12</span></span></td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td><mark class="mw">x−11</mark>(÷12を忘れた)</td><td><span class="frac"><span class="n">x−11</span><span class="d">12</span></span><mark class="mr">（÷12を忘れずに）</mark></td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①通分：</b>3つの分母(3,4,1)を12にそろえる：<span class="frac"><span class="n">4(x−2)</span><span class="d">12</span></span> − <span class="frac"><span class="n">3(5x−3)</span><span class="d">12</span></span> ＋ <span class="frac"><span class="n">12(x−1)</span><span class="d">12</span></span>。</div><div class="step"><span>2</span><b>②分子を展開：</b>(4x−8)−(15x−9)+(12x−12)。</div><div class="step"><span>3</span><b>③分子をまとめる：</b>4x−8−15x+9+12x−12＝x−11。</div><div class="step"><span>4</span><b>④分母を戻す：</b>最後に忘れず「÷12」をつける：<span class="frac"><span class="n">x−11</span><span class="d">12</span></span>。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=5を入れる。もとの式=(5−2)/3−(25−3)/4+5−1=1−5.5+4=−0.5。答え(5−11)/12=−0.5。一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題10</div>
+  <div class="qbody"><span class="math"><span class="frac"><span class="n">x−1</span><span class="d">3</span></span> − <span class="frac"><span class="n">2x−1</span><span class="d">4</span></span> ＋ x−1</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>最後に分母へ戻すのを忘れないようにしよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①通分：</b>分母を12にそろえる：<span class="frac"><span class="n">4(x−1)</span><span class="d">12</span></span> − <span class="frac"><span class="n">3(2x−1)</span><span class="d">12</span></span> ＋ <span class="frac"><span class="n">12(x−1)</span><span class="d">12</span></span>。</div><div class="step"><span>2</span><b>②分子を展開：</b>(4x−4)−(6x−3)+(12x−12)。</div><div class="step"><span>3</span><b>③分子をまとめる：</b>4x−4−6x+3+12x−12＝10x−13。</div><div class="step"><span>4</span><b>④分母を戻す：</b>最後に忘れず「÷12」をつける：<span class="frac"><span class="n">10x−13</span><span class="d">12</span></span>。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=5を入れる。もとの式=(5−1)/3−(10−1)/4+5−1=1.33−2.25+4=3.08。答え(50−13)/12=37/12=3.08。一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">10x−13</span><span class="d">12</span></span></div>
+  </div>
+  <div class="gwrap" data-ids="q10"></div>
+</div>
+
+<div class="q" id="mt4-問11">
+  <a class="type-badge" href="#mt4">類型：④最後の一手間・問われたことの読み直し</a>
+  <span class="qtag">特訓選抜9月・大問2(2)</span>
+  <div class="qnum">問11　もとの問題</div>
+  <div class="qbody">132にできるだけ小さい自然数をかけて、ある自然数nの2乗になるようにしたい。このとき、nの値を求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問2(2)で、132=2²×3×11の素因数分解とかける数33までは完璧なのに、聞かれている「nの値」ではなく「かける数」の33を答えにした（正しくはn＝66）。<br><b>前にも：</b>8月必修の大問6(3)でも、数を出したあとに「何を聞かれているか」を読み直せず、答え方がずれている。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>素因数分解の筆算(132=2²×3×11)は正確で、かける数＝33までは正しく求められていた。答案には「n＝33」と書いた。</td><td class="cw">n＝33</td><td class="cr">n＝66</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>n＝<mark class="mw">33</mark>（かける数）</td><td>n＝<mark class="mr">66</mark>（聞かれているnの値）</td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①素因数分解：</b>132＝2²×3×11。</div><div class="step"><span>2</span><b>②かける数を探す：</b>2乗の形にするには、まだペアになっていない3と11をもう1つずつかければよい：かける数＝3×11＝33。</div><div class="step"><span>3</span><b>③かけ算：</b>132×33＝4356。</div><div class="step"><span>4</span><b>④答えを確認：</b>4356＝66²なので、聞かれている「nの値」は66。</div><div class="step check"><span>✓</span><b>たしかめ：</b>66×66=4356、132×33=4356で一致する。</div>
+    <div class="osarai">答えを出したら、問題文の最後の一文をもう一度読んで「何を聞かれていたか」を確認する習慣をつけよう。</div>
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題11</div>
+  <div class="qbody">98にできるだけ小さい自然数をかけて、ある自然数nの2乗になるようにしたい。nの値を求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>答えを書く前に、何を聞かれているかもう一度読み直そう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①素因数分解：</b>98＝2×7²。</div><div class="step"><span>2</span><b>②かける数を探す：</b>2乗の形にするには、ペアになっていない2をもう1つかければよい：かける数＝2。</div><div class="step"><span>3</span><b>③かけ算：</b>98×2＝196。</div><div class="step"><span>4</span><b>④答えを確認：</b>196＝14²なので、nの値は14。</div><div class="step check"><span>✓</span><b>たしかめ：</b>14×14=196、98×2=196で一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>n＝14</div>
+  </div>
+  <div class="gwrap" data-ids="q11"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑤</span><span class="unit-name">電気料金の文章題（区分ごとに計算する）</span><span class="unit-time">目安 10分</span></div>
+<a id="mt5"></a>
+<div class="q" id="mt5-問12">
+  <a class="type-badge" href="#mt5">類型：⑤電気料金の区分計算</a>
+  <span class="qtag">特訓選抜9月・大問5(1)</span>
+  <div class="qnum">問12　もとの問題</div>
+  <div class="qbody">A社(基本料金780円、最初の180kWhまで1kWhあたり20円、180kWh超過分は1kWhあたり40円)。1か月の電力使用量が500kWhのとき、A社の1か月の電気料金は何円か求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問5(1)で、立式（780+3600+12800）は完全に正しいのに、3600+12800の暗算を15800と間違え、答えが16580円になった（正しくは17180円）。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>余白「180×20+320×40=3600+12800」(立式は完全に正しい)→「＝15800」(正しくは16400)→「+780」→「16580」。</td><td class="cw">16580円</td><td class="cr">17180円</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>3600＋12800＝<mark class="mw">15800</mark></td><td>3600＋12800＝<mark class="mr">16400</mark></td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①最初の区分：</b>最初の180kWh分：20×180＝3600円。</div><div class="step"><span>2</span><b>②超えた区分：</b>超えた分(500−180＝320kWh)：40×320＝12800円。</div><div class="step"><span>3</span><b>③たし算：</b>3600＋12800＝16400円(くり上がりに注意)。</div><div class="step"><span>4</span><b>④基本料金を足す：</b>16400＋780＝17180円。</div><div class="step check"><span>✓</span><b>たしかめ：</b>780+3600+12800=17180で、位ごとに足し直しても17180になる。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題12</div>
+  <div class="qbody">P社(基本料金500円、最初の100kWhまで1kWhあたり15円、100kWh超過分は1kWhあたり30円)。使用量150kWhのときのP社の料金は何円か求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>たし算はくり上がりに注意して、1つずつ位をそろえて計算しよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①最初の区分：</b>最初の100kWh分：15×100＝1500円。</div><div class="step"><span>2</span><b>②超えた区分：</b>超えた分(150−100＝50kWh)：30×50＝1500円。</div><div class="step"><span>3</span><b>③たし算：</b>1500＋1500＝3000円。</div><div class="step"><span>4</span><b>④基本料金を足す：</b>3000＋500＝3500円。</div><div class="step check"><span>✓</span><b>たしかめ：</b>500+1500+1500=3500で一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>3500円</div>
+  </div>
+  <div class="gwrap" data-ids="q12"></div>
+</div>
+
+<div class="q" id="mt5-問13">
+  <a class="type-badge" href="#mt5">類型：⑤電気料金の区分計算</a>
+  <span class="qtag">特訓選抜9月・大問5(2)</span>
+  <div class="qnum">問13　もとの問題</div>
+  <div class="qbody">上のA社・B社(B社は基本料金1980円、最初の200kWhまで1kWhあたり15円、200kWh超過分は1kWhあたり30円)で、A社の方が電気料金が安くなるのは、使用量が何kWh未満のときか求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問5(2)で、180kWhを超えた分の「−180」を式に入れずに40x・30xをそのまま使い、答えが300kWh未満になった（正しくは192kWh未満）。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>余白「780+3000+40x=1980+3600+30x」→「10x=1200」→「=120」。解答らんには「300kWh未満」と書いた。</td><td class="cw">300kWh未満</td><td class="cr">192kWh未満</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>40x・30xをそのまま使う（<mark class="mw">区分の引き算なし</mark>）</td><td>40×<mark class="mr">(x−180)</mark>で区分をそろえる</td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①境目を調べる：</b>180kWhと200kWhのときの両社の料金を比べる：180kWhでA社4380円・B社4680円(A社が安い)。200kWhでA社5180円・B社4980円(B社が安い)。</div><div class="step"><span>2</span><b>②式を立てる：</b>逆転するのは180〜200kWhの間。A社は40円/kWh区分・B社は15円/kWh区分のまま式を立てる：780+20×180+40×(x−180)＝1980+15x。</div><div class="step"><span>3</span><b>③かっこを外して解く：</b>4380+40x−7200＝1980+15x、25x＝4800。</div><div class="step"><span>4</span><b>④答え：</b>x＝192。よってA社が安いのは192kWh未満。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=192のとき、A社=4380+40×12=4860円、B社=1980+15×192=4860円で等しくなる。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題13</div>
+  <div class="qbody">上のP社・Q社(Q社は基本料金1200円、最初の120kWhまで1kWhあたり10円、120kWh超過分は1kWhあたり25円)で、P社の方が安くなるのは使用量が何kWh未満のときか求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>2つの料金表の境目の前後で、どちらの区分の式になるか先に確認しよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①境目を調べる：</b>100kWhと120kWhのときの料金を比べる：100kWhでP社2000円・Q社2200円(P社が安い)。120kWhでP社2600円・Q社2400円(Q社が安い)。</div><div class="step"><span>2</span><b>②式を立てる：</b>逆転するのは100〜120kWhの間。P社は30円/kWh区分・Q社は10円/kWh区分のまま式を立てる：500+15×100+30×(x−100)＝1200+10x。</div><div class="step"><span>3</span><b>③かっこを外して解く：</b>2000+30x−3000＝1200+10x、20x＝2200。</div><div class="step"><span>4</span><b>④答え：</b>x＝110。よってP社が安いのは110kWh未満。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=110のとき、P社=2000+30×10=2300円、Q社=1200+10×110=2300円で等しくなる。</div>
+    
+    <div class="ans-final"><span>こたえ</span>110kWh未満</div>
+  </div>
+  <div class="gwrap" data-ids="q13"></div>
+</div>
+
+<div class="q" id="mt5-問14">
+  <a class="type-badge" href="#mt5">類型：⑤電気料金の区分計算</a>
+  <span class="qtag">特訓選抜9月・大問5(3)</span>
+  <div class="qnum">問14　もとの問題</div>
+  <div class="qbody">上のA社・B社で、電気料金の差が500円以内となるのは、使用量が何kWh以上何kWh以下のときか求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問5(3)で、余白に計算をこころみた跡は多数あるが、2つの境界値をどちらも出しきれず空欄で出した（正しくは140kWh以上230kWh以下）。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>解答らんは両方とも空欄。余白には「A 3600」「B」矢印、「240」「7180」「1020」など計算をこころみた跡が多数残っていた。</td><td class="cw">空欄</td><td class="cr">140kWh以上230kWh以下</td></tr>
+  </table>
+  <p class="diff-note">とちゅうの式が薄い、または残っていないため、式のくらべは省略します。下の「正しい解き方」だけ確認してください。</p>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①手前の場合分け：</b>使用量が180kWhより少ない間(両社とも第1段階)：B社−A社の差＝(1980+15a)−(780+20a)＝1200−5a。これが500になるのは1200−5a＝500、a＝140。</div><div class="step"><span>2</span><b>②後ろの場合分け：</b>使用量が192kWhを超えた後(両社とも第2段階)：A社−B社の差が500になるbを求める：{4380+40(b−180)}−{4980+30(b−200)}＝500、b＝230。</div><div class="step"><span>3</span><b>③範囲をまとめる：</b>140kWh〜230kWhの間で、差が500円以内におさまる。</div><div class="step check"><span>✓</span><b>たしかめ：</b>140kWhのときB社4080円・A社3580円で差500円、230kWhのときA社6380円・B社5880円で差500円。ちょうど境目と一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題14</div>
+  <div class="qbody">上のP社・Q社で、電気料金の差が300円以内となるのは、使用量が何kWh以上何kWh以下のときか求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>境目の手前・後ろで場合分けして、それぞれ方程式を立てよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①手前の場合分け：</b>使用量が100kWhより少ない間：Q社−P社の差＝(1200+10a)−(500+15a)＝700−5a。300になるのは700−5a＝300、a＝80。</div><div class="step"><span>2</span><b>②後ろの場合分け：</b>使用量が110kWhを超えた後：P社−Q社の差が300になるbを求める：{2000+30(b−100)}−{2400+25(b−120)}＝300、b＝140。</div><div class="step"><span>3</span><b>③範囲をまとめる：</b>80kWh〜140kWhの間で、差が300円以内におさまる。</div><div class="step check"><span>✓</span><b>たしかめ：</b>80kWhのときQ社2000円・P社1700円で差300円、140kWhのときP社3200円・Q社2900円で差300円。境目と一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>80kWh以上140kWh以下</div>
+  </div>
+  <div class="gwrap" data-ids="q14"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑥</span><span class="unit-name">初めて見る形の問題で、方針が浮かばなかった（空欄）</span><span class="unit-time">目安 10分</span></div>
+<a id="mt6"></a>
+<div class="q" id="mt6-問15">
+  <a class="type-badge" href="#mt6">類型：⑥初めて見る問題で方針が浮かばず空欄</a>
+  <span class="qtag">特訓選抜9月・大問4(2)</span>
+  <div class="qnum">問15　もとの問題</div>
+  <div class="qbody">4桁の自然数nについて、P(n)を各位の数の積とする(例：P(5253)=5×2×5×3=150)。P(n)の値が素数となる自然数nの値は何個あるか求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問4(2)は、書き込みが一切なく空欄で出した（正しくは16個）。ここまで習った知識(素数・かけ算)だけで解ける問題だが、初めて見る形で方針を思いつけなかった可能性が高い。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>解答らんは空欄。(2)(3)とも書き込みが一切なく、着手した形跡がなかった。</td><td class="cw">空欄</td><td class="cr">16個</td></tr>
+  </table>
+  <p class="diff-note">とちゅうの式が薄い、または残っていないため、式のくらべは省略します。下の「正しい解き方」だけ確認してください。</p>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①条件を見つける：</b>4つの位の数をかけて素数になるのは、「1つだけ1桁の素数(2,3,5,7)で、残り3つが全部1」のときだけ(1以外を2つ以上使うと、積が素数でなくなる)。</div><div class="step"><span>2</span><b>②素数の種類：</b>1桁の素数は2,3,5,7の4種類。</div><div class="step"><span>3</span><b>③置き場所：</b>その1つの素数を4つの位(千・百・十・一)のどこに置くかで4通り。</div><div class="step"><span>4</span><b>④かけ算：</b>4種類×4通り＝16個。</div><div class="step check"><span>✓</span><b>たしかめ：</b>実際に16個を書き出す：2111,3111,5111,7111,1211,1311,1511,1711,1121,1131,1151,1171,1112,1113,1115,1117で、ちょうど16個。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題15</div>
+  <div class="qbody">3桁の自然数nについて、Q(n)を各位の数の積とする。Q(n)の値が素数となる自然数nは何個あるか求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>「積が素数になる」のは、どんな数字の組み合わせのときか考えよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①条件を見つける：</b>3つの位のうち1つだけが1桁の素数(2,3,5,7)で、残り2つが1のときだけ積が素数になる。</div><div class="step"><span>2</span><b>②素数の種類：</b>1桁の素数は4種類。</div><div class="step"><span>3</span><b>③置き場所：</b>その素数を3つの位のどこに置くかで3通り。</div><div class="step"><span>4</span><b>④かけ算：</b>4種類×3通り＝12個。</div><div class="step check"><span>✓</span><b>たしかめ：</b>112,113,115,117,121,131,151,171,211,311,511,711のちょうど12個。</div>
+    
+    <div class="ans-final"><span>こたえ</span>12個</div>
+  </div>
+  <div class="gwrap" data-ids="q15"></div>
+</div>
+
+<div class="q" id="mt6-問16">
+  <a class="type-badge" href="#mt6">類型：⑥初めて見る問題で方針が浮かばず空欄</a>
+  <span class="qtag">特訓選抜9月・大問4(3)</span>
+  <div class="qnum">問16　もとの問題</div>
+  <div class="qbody">P(n)=40となる自然数nのうち、最大の数をn₁、最小の数をn₂とするとき、n₁−n₂の値を求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問4(3)も、書き込みが一切なく空欄で出した（正しくは7353）。(2)と同じく、初めて見る数え上げ問題で方針を思いつけなかった可能性が高い。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>解答らんは空欄。着手の形跡なし。</td><td class="cw">空欄</td><td class="cr">7353</td></tr>
+  </table>
+  <p class="diff-note">とちゅうの式が薄い、または残っていないため、式のくらべは省略します。下の「正しい解き方」だけ確認してください。</p>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①40を分解する：</b>40を1桁の数字のかけ算で表す：40＝5×8(1をかけても積は変わらない)。</div><div class="step"><span>2</span><b>②残りをうめる：</b>4桁のうち2つを5と8にして、残り2つを1にする。</div><div class="step"><span>3</span><b>③最大を作る：</b>大きい数字を上のけたに並べる：8511。</div><div class="step"><span>4</span><b>④最小を作る：</b>小さい数字を上のけたに並べる：1158。n₁−n₂＝8511−1158＝7353。</div><div class="step check"><span>✓</span><b>たしかめ：</b>P(8511)=8×5×1×1=40、P(1158)=1×1×5×8=40で、どちらも確かにP(n)=40になっている。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題16</div>
+  <div class="qbody">3桁の自然数nについて、Q(n)=18となる自然数nのうち、最大の数をn₁、最小の数をn₂とするとき、n₁−n₂の値を求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>積をつくる1桁の数字の組み合わせをさがしてから、大きい順・小さい順に並べよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①18を分解する：</b>18を3つの1桁の数字のかけ算で表す方法を考える：1×2×9、1×3×6、2×3×3の3通りがある。</div><div class="step"><span>2</span><b>②数を作る：</b>それぞれの数字を並べて3桁の数を作り、一番大きい数と一番小さい数をさがす。</div><div class="step"><span>3</span><b>③最大・最小：</b>一番大きいのは1・2・9を並べた921、一番小さいのも1・2・9を並べた129(この組み合わせが最大・最小の両方を作る)。</div><div class="step"><span>4</span><b>④ひき算：</b>n₁＝921、n₂＝129、n₁−n₂＝792。</div><div class="step check"><span>✓</span><b>たしかめ：</b>Q(921)=9×2×1=18、Q(129)=1×2×9=18で、どちらも確かにQ(n)=18になっている。</div>
+    
+    <div class="ans-final"><span>こたえ</span>792</div>
+  </div>
+  <div class="gwrap" data-ids="q16"></div>
+</div>
+
+<div class="q" id="mt6-問17">
+  <a class="type-badge" href="#mt6">類型：⑥初めて見る問題で方針が浮かばず空欄</a>
+  <span class="qtag">必修9月・【思考】大問6(3)</span>
+  <div class="qnum">問17　もとの問題</div>
+  <div class="qbody">座席は1列に4人ずつすわり、1行目n列目の番号は4(n−1)+1で表される。1行目b列目の人と、その2列先(1行目b+2列目)の人の座席番号の和を、bを使った最も簡単な式で表しなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問6(3)は、問題冊子にも答案にも途中式・記入が一切なく空欄で出した（正しくは8b+2）。大問6でいちばん難しい設問で、2段階の作業に方針を思いつけなかった可能性がある。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>問題冊子にも答案にも、この設問に対応する途中式・記入が一切なかった(完全に空欄)。</td><td class="cw">空欄</td><td class="cr">8b+2</td></tr>
+  </table>
+  <p class="diff-note">とちゅうの式が薄い、または残っていないため、式のくらべは省略します。下の「正しい解き方」だけ確認してください。</p>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①1つ目の番号：</b>1行目n列目の番号は4(n−1)+1=4n−3で表される。1行目b列目の番号：4b−3。</div><div class="step"><span>2</span><b>②2つ目の番号：</b>1行目(b+2)列目の番号：4(b+2)−3=4b+5。</div><div class="step"><span>3</span><b>③たし算：</b>2つを足す：(4b−3)+(4b+5)=8b+2。</div><div class="step check"><span>✓</span><b>たしかめ：</b>b=4のとき、1行目4列目=13、1行目6列目=21、和=34。答え8×4+2=34で一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題17</div>
+  <div class="qbody">同じ規則(1列に4人ずつ)で、3行目n列目の番号は4(n−1)+3で表される。3行目b列目の人と、その2列先(3行目b+2列目)の人の座席番号の和を、bを使った最も簡単な式で表しなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>2つの座席番号を、それぞれ文字式で表してから足そう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①1つ目の番号：</b>3行目n列目の番号は4(n−1)+3=4n−1で表される。3行目b列目の番号：4b−1。</div><div class="step"><span>2</span><b>②2つ目の番号：</b>3行目(b+2)列目の番号：4(b+2)−1=4b+7。</div><div class="step"><span>3</span><b>③たし算：</b>2つを足す：(4b−1)+(4b+7)=8b+6。</div><div class="step check"><span>✓</span><b>たしかめ：</b>b=4のとき、3行目4列目=15、3行目6列目=23、和=38。答え8×4+6=38で一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>8b+6</div>
+  </div>
+  <div class="gwrap" data-ids="q17"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑦</span><span class="unit-name">平均の文章題で、答えを求めたい自分の地点を合計に入れ忘れる</span><span class="unit-time">目安 6分</span></div>
+<a id="mt7"></a>
+<div class="q" id="mt7-問18">
+  <a class="type-badge" href="#mt7">類型：⑦平均の文章題で自分の地点を入れ忘れる</a>
+  <span class="qtag">必修9月・大問5(2)②</span>
+  <div class="qnum">問18　もとの問題</div>
+  <div class="qbody">地点A〜Gの高低差(A基準,m)：B＋28、C−28、D＋54、F＋58、G＋19。E地点はA地点より5m低い。7地点(A〜G)の高さの平均が628mのとき、E地点の高さは何mか求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問5(2)②で、B・C・D・F・Gの5つの相対値は正しく使えていたのに、答えを求めたいE自身の項を合計に入れ忘れ、答えが602mになった（正しくは605m）。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>余白「x+(x+28)+(x−28)+(x+54)+(x+58)+(x+19)」の6項だけで計算していた(Eの項(x−5)が式に入っていなかった)。</td><td class="cw">602m</td><td class="cr">605m</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>6項だけの合計（<mark class="mw">Eが抜けている</mark>）</td><td>7項の合計（<mark class="mr">E=x−5を追加</mark>）</td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①xの式で表す：</b>A地点の高さをxとして、7地点をすべてxの式で表す：A=x、B=x+28、C=x−28、D=x+54、E=x−5、F=x+58、G=x+19。</div><div class="step"><span>2</span><b>②合計を作る：</b>7地点の合計を作る(Eの項も忘れずに入れる)：7x+(28−28+54−5+58+19)=7x+126。</div><div class="step"><span>3</span><b>③方程式を立てる：</b>平均が628mなので、合計は628×7=4396。7x+126=4396。</div><div class="step"><span>4</span><b>④解く：</b>7x=4270、x=610。E=x−5=605。</div><div class="step check"><span>✓</span><b>たしかめ：</b>7地点の高さを全部足すと610+638+582+664+605+668+629=4396、÷7=628で条件と一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題18</div>
+  <div class="qbody">地点A〜Fの高さ(A基準,m)：B＋15、C−10、D＋20、E＋5。6地点(A〜F)の高さの平均がA地点より6m高いとき、F地点の高さ(A基準)を求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>「平均を聞かれている自分の地点」も、必ず合計の中に入れよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①xの式で表す：</b>A地点の高さをxとして、6地点をxの式で表す：A=x、B=x+15、C=x−10、D=x+20、E=x+5、F=x+□(□を求めたい)。</div><div class="step"><span>2</span><b>②合計を作る：</b>6地点の合計を作る(Fの項も忘れずに入れる)：6x+(15−10+20+5+□)=6x+30+□。</div><div class="step"><span>3</span><b>③方程式を立てる：</b>平均がxより6m高いので、合計は6(x+6)=6x+36。6x+30+□=6x+36。</div><div class="step"><span>4</span><b>④解く：</b>□=6。Fの高さはAより6m高い。</div><div class="step check"><span>✓</span><b>たしかめ：</b>xを仮に0とすると6地点は0,15,−10,20,5,6の合計36、÷6=6=0+6で条件と一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>Aより6m高い</div>
+  </div>
+  <div class="gwrap" data-ids="q18"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑧</span><span class="unit-name">円周の計算</span><span class="unit-time">目安 5分</span></div>
+<a id="mt8"></a>
+<div class="q" id="mt8-問19">
+  <a class="type-badge" href="#mt8">類型：⑧円周の計算</a>
+  <span class="qtag">特訓選抜9月・大問2(4)</span>
+  <div class="qnum">問19　もとの問題</div>
+  <div class="qbody">半径が18cmである四分円の周の長さは、[ ]π+[ ](cm)となる。数を求めなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問2(4)で、字がはっきり読み取れず、最初の数字を8か9か迷ったまま出した（正しくは9π+36cm）。「36」の部分（半径×2）は合っているように見える。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>周辺に「18π²」「18/12/36」などの筆算があったが、最初の数字が8とも9とも読み取れず、はっきり確定できなかった。</td><td class="cw">8π＋36(cm)（最初の数字は判読が不確定）</td><td class="cr">9π+36(cm)</td></tr>
+  </table>
+  <p class="diff-note">とちゅうの式が薄い、または残っていないため、式のくらべは省略します。下の「正しい解き方」だけ確認してください。</p>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①弧の長さ：</b>四分円の弧の長さ：円周2πr÷4=2π×18÷4=9π(cm)。</div><div class="step"><span>2</span><b>②直線部分：</b>四分円の直線部分：半径2つ分=18×2=36(cm)。</div><div class="step"><span>3</span><b>③合わせる：</b>弧と直線部分を合わせる：9π+36(cm)。</div><div class="step check"><span>✓</span><b>たしかめ：</b>9π+36は約64.27cm。2π×18÷4+18×2=約28.27+36=64.27cmで一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題19</div>
+  <div class="qbody">半径が12cmである四分円の周の長さを求めなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>弧の長さと、まっすぐな辺の長さを別々に計算してから足そう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①弧の長さ：</b>2π×12÷4=6π(cm)。</div><div class="step"><span>2</span><b>②直線部分：</b>12×2=24(cm)。</div><div class="step"><span>3</span><b>③合わせる：</b>6π+24(cm)。</div><div class="step check"><span>✓</span><b>たしかめ：</b>6π+24は約42.85cm。2π×12÷4+24=約18.85+24=42.85cmで一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>6π+24(cm)</div>
+  </div>
+  <div class="gwrap" data-ids="q19"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑨</span><span class="unit-name">とちゅうの式がはっきり残っていない問題（正しいやり方だけ確認しよう）</span><span class="unit-time">目安 12分</span></div>
+<a id="mt9"></a>
+<div class="q" id="mt9-問20">
+  <a class="type-badge" href="#mt9">類型：⑨とちゅうの式が不明な問題</a>
+  <span class="qtag">必修9月・大問1(3)</span>
+  <div class="qnum">問20　もとの問題</div>
+  <div class="qbody"><span class="math">(−8)² ÷ (−2)⁵</span> を計算しなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問1(3)で、(−8)²＝64までは合っていたのに、そこから128に至る計算が余白からは読み取れず、答えが128になった（正しくは−2）。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>余白に「64」「1/32」らしき記載、その右に「128」の記載。「64」までは正しい計算結果。</td><td class="cw">128</td><td class="cr">−2</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>64から<mark class="mw">128</mark>になった経路が不明</td><td>64÷(−32)＝<mark class="mr">−2</mark></td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①2乗を計算：</b>(−8)²＝64(2乗はプラスになる)。</div><div class="step"><span>2</span><b>②5乗を計算：</b>(−2)⁵＝−32(マイナスを5回=奇数回かけるとマイナスのまま)。</div><div class="step"><span>3</span><b>③わり算：</b>64÷(−32)＝−2。</div><div class="step check"><span>✓</span><b>たしかめ：</b>−2×(−32)=64で、もとの64に戻る。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題20</div>
+  <div class="qbody"><span class="math">(−10)² ÷ (−5)³</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>何回マイナスをかけるかで、符号がプラスかマイナスか決まる。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①2乗を計算：</b>(−10)²＝100。</div><div class="step"><span>2</span><b>②3乗を計算：</b>(−5)³＝−125(マイナスを3回=奇数回かけるとマイナス)。</div><div class="step"><span>3</span><b>③わり算：</b>100÷(−125)＝−<span class="frac"><span class="n">4</span><span class="d">5</span></span>(約分する)。</div><div class="step check"><span>✓</span><b>たしかめ：</b>−4/5×(−125)=100で、もとの100に戻る。</div>
+    
+    <div class="ans-final"><span>こたえ</span>−<span class="frac"><span class="n">4</span><span class="d">5</span></span></div>
+  </div>
+  <div class="gwrap" data-ids="q20"></div>
+</div>
+
+<div class="q" id="mt9-問21">
+  <a class="type-badge" href="#mt9">類型：⑨とちゅうの式が不明な問題</a>
+  <span class="qtag">必修9月・大問2(3)</span>
+  <div class="qnum">問21　もとの問題</div>
+  <div class="qbody"><span class="math">(−a ＋ <span class="frac"><span class="n">1</span><span class="d">4</span></span>) ÷ (−<span class="frac"><span class="n">1</span><span class="d">4</span></span>)</span> を計算しなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>大問2(3)は、途中式が残っておらず、答えが−a+1になった（正しくは4a−1）。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>問題冊子にも答案にも途中式が残っていなかった(暗算で解いた可能性がある)。答案には「−a+1」と書いた。</td><td class="cw">−a＋1</td><td class="cr">4a−1</td></tr>
+  </table>
+  <p class="diff-note">とちゅうの式が薄い、または残っていないため、式のくらべは省略します。下の「正しい解き方」だけ確認してください。</p>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①わり算を逆数に：</b>÷(−<span class="frac"><span class="n">1</span><span class="d">4</span></span>)は×(−4)と同じこと(わり算は逆数のかけ算にする)。</div><div class="step"><span>2</span><b>②1項目：</b>−aに(−4)をかける：−a×(−4)＝4a。</div><div class="step"><span>3</span><b>③2項目：</b><span class="frac"><span class="n">1</span><span class="d">4</span></span>に(−4)をかける：<span class="frac"><span class="n">1</span><span class="d">4</span></span>×(−4)＝−1。</div><div class="step"><span>4</span><b>④まとめる：</b>4a＋(−1)＝4a−1。</div><div class="step check"><span>✓</span><b>たしかめ：</b>a=2を入れる。もとの式=(−2+0.25)÷(−0.25)=(−1.75)÷(−0.25)=7。答え4×2−1=7で一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題21</div>
+  <div class="qbody"><span class="math">(−a ＋ <span class="frac"><span class="n">1</span><span class="d">3</span></span>) ÷ (−<span class="frac"><span class="n">1</span><span class="d">3</span></span>)</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>わり算は「わる数の逆数をかける」になおしてから計算しよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①わり算を逆数に：</b>÷(−<span class="frac"><span class="n">1</span><span class="d">3</span></span>)は×(−3)と同じこと。</div><div class="step"><span>2</span><b>②1項目：</b>−a×(−3)＝3a。</div><div class="step"><span>3</span><b>③2項目：</b><span class="frac"><span class="n">1</span><span class="d">3</span></span>×(−3)＝−1。</div><div class="step"><span>4</span><b>④まとめる：</b>3a＋(−1)＝3a−1。</div><div class="step check"><span>✓</span><b>たしかめ：</b>a=2を入れる。もとの式=(−2+0.33)÷(−0.33)=5。答え3×2−1=5で一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>3a−1</div>
+  </div>
+  <div class="gwrap" data-ids="q21"></div>
+</div>
+
+<div class="q" id="mt9-問22">
+  <a class="type-badge" href="#mt9">類型：⑨とちゅうの式が不明な問題</a>
+  <span class="qtag">特訓選抜9月・大問1(1)</span>
+  <div class="qnum">問22　もとの問題</div>
+  <div class="qbody"><span class="math">0.75 ÷ 0.125 × (−2)³ × (−0.25)²</span> を計算しなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問1(1)で、余白の筆算が小さくて崩れており、答えが−30になった（正しくは−3、10倍のズレ）。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>余白に分数変形らしき筆算が多数あったが、字が非常に小さく、大半が判読できなかった。答案には「−30」と書いた。</td><td class="cw">−30</td><td class="cr">−3</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>答案には<mark class="mw">−30</mark>と書いた（10倍のズレ）</td><td>正しくは<mark class="mr">−3</mark></td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①分数になおす：</b>0.75＝<span class="frac"><span class="n">3</span><span class="d">4</span></span>、0.125＝<span class="frac"><span class="n">1</span><span class="d">8</span></span>、0.25＝<span class="frac"><span class="n">1</span><span class="d">4</span></span>。</div><div class="step"><span>2</span><b>②わり算：</b>÷<span class="frac"><span class="n">1</span><span class="d">8</span></span>は×8と同じこと：<span class="frac"><span class="n">3</span><span class="d">4</span></span>×8＝6。</div><div class="step"><span>3</span><b>③累乗：</b>(−2)³＝−8、(−0.25)²＝(−<span class="frac"><span class="n">1</span><span class="d">4</span></span>)²＝<span class="frac"><span class="n">1</span><span class="d">16</span></span>。</div><div class="step"><span>4</span><b>④かけ算：</b>6×(−8)×<span class="frac"><span class="n">1</span><span class="d">16</span></span>＝−<span class="frac"><span class="n">48</span><span class="d">16</span></span>＝−3。</div><div class="step check"><span>✓</span><b>たしかめ：</b>小数のまま計算しても、6×(−8)×0.0625=−3で一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題22</div>
+  <div class="qbody"><span class="math">0.6 ÷ 0.3 × (−2)³ × (−0.5)²</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>小数を分数になおしてから、わり算は逆数のかけ算にしよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①分数になおす：</b>0.6＝<span class="frac"><span class="n">3</span><span class="d">5</span></span>、0.3＝<span class="frac"><span class="n">3</span><span class="d">10</span></span>、0.5＝<span class="frac"><span class="n">1</span><span class="d">2</span></span>。</div><div class="step"><span>2</span><b>②わり算：</b>0.6÷0.3＝2。</div><div class="step"><span>3</span><b>③累乗：</b>(−2)³＝−8、(−0.5)²＝<span class="frac"><span class="n">1</span><span class="d">4</span></span>。</div><div class="step"><span>4</span><b>④かけ算：</b>2×(−8)×<span class="frac"><span class="n">1</span><span class="d">4</span></span>＝−<span class="frac"><span class="n">16</span><span class="d">4</span></span>＝−4。</div><div class="step check"><span>✓</span><b>たしかめ：</b>小数のまま計算しても、2×(−8)×0.25=−4で一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>−4</div>
+  </div>
+  <div class="gwrap" data-ids="q22"></div>
+</div>
+
+<div class="q" id="mt9-問23">
+  <a class="type-badge" href="#mt9">類型：⑨とちゅうの式が不明な問題</a>
+  <span class="qtag">特訓選抜9月・大問1(3)</span>
+  <div class="qnum">問23　もとの問題</div>
+  <div class="qbody">方程式 <span class="math"><span class="frac"><span class="n">7x−1</span><span class="d">4</span></span> − <span class="frac"><span class="n">5+2x</span><span class="d">2</span></span> = 4</span> を解きなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問1(3)で、かっこを外す・移項するところで式がくずれ、答えがx=4になった（正しくはx=9）。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>余白に「7x−1−10+9x=1」→「3x=12」→「=4」という式が残っていたが、かっこを外すところや移項するところで、途中式の中でも数字がうまくつながっていない箇所があった。答案には「x=4」と書いた。</td><td class="cw">x=4</td><td class="cr">x＝9</td></tr>
+  </table>
+  <p class="diff-note">とちゅうの式が薄い、または残っていないため、式のくらべは省略します。下の「正しい解き方」だけ確認してください。</p>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①分母をはらう：</b>両辺に4をかけて分母をはらう：(7x−1)−2(5+2x)＝16。</div><div class="step"><span>2</span><b>②かっこを外す：</b>7x−1−10−4x＝16。</div><div class="step"><span>3</span><b>③同類項をまとめる：</b>3x−11＝16。</div><div class="step"><span>4</span><b>④移項して解く：</b>3x＝27、x＝9。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=9をもとの式に入れる。(7×9−1)/4−(5+2×9)/2=15.5−11.5=4で、右辺の4と一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題23</div>
+  <div class="qbody">方程式 <span class="math"><span class="frac"><span class="n">5x−3</span><span class="d">4</span></span> − <span class="frac"><span class="n">3+2x</span><span class="d">2</span></span> = 2</span> を解きなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>分母をはらってから、かっこを外して1行ずつ整理しよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①分母をはらう：</b>両辺に4をかけて分母をはらう：(5x−3)−2(3+2x)＝8。</div><div class="step"><span>2</span><b>②かっこを外す：</b>5x−3−6−4x＝8。</div><div class="step"><span>3</span><b>③同類項をまとめる：</b>x−9＝8。</div><div class="step"><span>4</span><b>④移項して解く：</b>x＝17。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=17をもとの式に入れる。(5×17−3)/4−(3+2×17)/2=20.5−18.5=2で、右辺の2と一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>x＝17</div>
+  </div>
+  <div class="gwrap" data-ids="q23"></div>
+</div>
+
+<div class="q" id="mt9-問24">
+  <a class="type-badge" href="#mt9">類型：⑨とちゅうの式が不明な問題</a>
+  <span class="qtag">特訓選抜9月・大問1(4)</span>
+  <div class="qnum">問24　もとの問題</div>
+  <div class="qbody">比例式 <span class="math">(5x−3):(8x+1) = 3:5</span> を解きなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問1(4)で、比例式をad=bcの形にする最初の一歩でずれ、答えがx=12になった（正しくはx=18）。</div>
+  <table class="cmp-table">
+    <tr><th>本人の途中式</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>余白に「29x3=25x−15」→「−x=−12」という式が残っていたが、「29x3」が何を表しているのかがはっきり読み取れなかった。答案には「x=12」と書いた。</td><td class="cw">x=12</td><td class="cr">x＝18</td></tr>
+  </table>
+  <table class="diff-table">
+<tr><th>本人の式（ここが違った）</th><th>正しい式</th></tr>
+<tr><td>答案には<mark class="mw">x=12</mark>と書いた</td><td>正しくは<mark class="mr">x=18</mark></td></tr>
+</table>
+  <div class="steps-box">
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①規則を使う：</b>a:b=c:dならばad=bcの規則を使う：5(5x−3)＝3(8x+1)。</div><div class="step"><span>2</span><b>②かっこを外す：</b>25x−15＝24x+3。</div><div class="step"><span>3</span><b>③移項して解く：</b>25x−24x＝3+15、x＝18。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=18のとき、5×18−3=87、8×18+1=145。87:145を29で約分すると3:5で一致する。</div>
+    
+  </div>
+</div>
+
+<div class="q practice">
+  <span class="qtag">類題（自分で解いてみよう）</span>
+  <div class="qnum">類題24</div>
+  <div class="qbody">比例式 <span class="math">(7x−2):(4x+5) = 5:3</span> を解きなさい。</div>
+  <button class="ans-btn" data-label="こたえを見る" onclick="t(this)">こたえを見る</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>a:b=c:dの比例式は、まずad=bcの形にしよう。</div>
+    <div class="steps-title">正しい解き方（1行ずつ）</div>
+    <div class="step"><span>1</span><b>①規則を使う：</b>ad=bcの規則を使う：3(7x−2)＝5(4x+5)。</div><div class="step"><span>2</span><b>②かっこを外す：</b>21x−6＝20x+25。</div><div class="step"><span>3</span><b>③移項して解く：</b>21x−20x＝25+6、x＝31。</div><div class="step check"><span>✓</span><b>たしかめ：</b>x=31のとき、7×31−2=215、4×31+5=129。215:129を43で約分すると5:3で一致する。</div>
+    
+    <div class="ans-final"><span>こたえ</span>x＝31</div>
+  </div>
+  <div class="gwrap" data-ids="q24"></div>
+</div>
+
+<div class="subj-hd">英語　筆記の×を全部（特訓選抜・テスト）</div>
+<p class="subj-note">リスニングは全問正解だったので、ここには載せていません。</p>
+
+<div class="unit-banner"><span class="unit-num">①</span><span class="unit-name">文の最初の文字を大文字にし忘れる</span><span class="unit-time">目安 6分</span></div>
+<a id="et1"></a>
+<div class="q" id="et1-問1">
+  <a class="type-badge" href="#et1">類型：①文の最初を大文字にし忘れる</a>
+  <span class="qtag">特訓選抜9月・大問2(10)</span>
+  <div class="qnum">問1</div>
+  <div class="qbody">( )内の語を適切な形になおしなさい。<br>My brother is a soccer player. ( He ) team is very popular.</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問2(10)で、My brother is a soccer player. の続きを書くとき、Heを正しくhisになおせたのに、文の最初なのに小文字のままにした（正しくはHis）。<br><b>前にも：</b>同じ9月の大問3(6)・4(1)でも、同じように文の最初を小文字のまま出している。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">his</td><td class="cr">His</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①Heを所有格(〜の)の形になおす：His。</div><div class="step"><span>2</span>②この文は前の文とは別の新しい文の最初なので、大文字で書き始める：His。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et1-問2">
+  <a class="type-badge" href="#et1">類型：①文の最初を大文字にし忘れる</a>
+  <span class="qtag">特訓選抜9月・大問3(6)</span>
+  <div class="qnum">問2</div>
+  <div class="qbody">日本文に合う英文になるように( )に適切な語を入れなさい。「あなたの名前を書いてください。」<br>( a )( b )( c ), please.</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問3(6)で、「あなたの名前を書いてください」を作るとき、動詞writeの形は合っていたのに、文の最初なのに小文字のままにした（正しくはWrite）。<br><b>前にも：</b>同じ9月の大問2(10)・4(1)でも、同じように文の最初を小文字のまま出している。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">a: write　b: your　c: name</td><td class="cr">Write / your / name</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①命令文は動詞の原形で文を始める：write(名前を書く動詞)。</div><div class="step"><span>2</span>②文の最初の単語なので大文字にする：Write。</div><div class="step"><span>3</span>③あなたの名前＝your name。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et1-問3">
+  <a class="type-badge" href="#et1">類型：①文の最初を大文字にし忘れる</a>
+  <span class="qtag">特訓選抜9月・大問4(1)</span>
+  <div class="qnum">問3</div>
+  <div class="qbody">次の文を〔　〕内の指示にしたがって書きかえなさい。<br>You study Chinese. 〔「〜しなさい」と命令する文に〕</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問4(1)で、You study Chinese.を命令文に書きかえるとき、study Chinese.まで作れたのに、文の最初なのに小文字のままにした（正しくはStudy Chinese.）。<br><b>前にも：</b>同じ9月の大問2(10)・3(6)でも、同じように文の最初を小文字のまま出している。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">study Chinese.</td><td class="cr">Study Chinese.</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①主語Youを省略し、動詞の原形で文を始める：study Chinese.</div><div class="step"><span>2</span>②文の最初の単語なので大文字にする：Study Chinese.</div>
+    <div class="osarai">3問とも、文法自体は正しくできているのに、文の最初の文字を大文字にするのを忘れている。書き終えたら、文の最初の文字を指で確認する習慣をつけよう。</div>
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">②</span><span class="unit-name">be動詞の文と一般動詞の文を混同する</span><span class="unit-time">目安 6分</span></div>
+<a id="et2"></a>
+<div class="q" id="et2-問4">
+  <a class="type-badge" href="#et2">類型：②be動詞の文と一般動詞の文の混同</a>
+  <span class="qtag">特訓選抜9月・大問3(9)</span>
+  <div class="qnum">問4</div>
+  <div class="qbody">日本文に合う英文になるように( )に適切な語を入れなさい。「あなたはインドの出身ではありません。」<br>( a )( b )( c ) from India.</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問3(9)で、「あなたはインドの出身ではありません」を作るとき、I am don'tと書いた（正しくはYou are not）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">a: I　b: am　c: don't</td><td class="cr">You / are / not</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①主語は「あなたは」なのでYou。</div><div class="step"><span>2</span>②fromの前はbe動詞areを使う文なので、否定はdon'tではなくnotをつけて作る。</div><div class="step"><span>3</span>③You are not from India.</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et2-問5">
+  <a class="type-badge" href="#et2">類型：②be動詞の文と一般動詞の文の混同</a>
+  <span class="qtag">必修9月・大問2(1)</span>
+  <div class="qnum">問5</div>
+  <div class="qbody">次の( )に適するものを選び、記号で答えなさい。<br>You (ア am not　イ aren't　ウ do not　エ isn't) drink green tea.</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問2(1)で、You (　) drink green tea. に aren't を選んだ（正しくは do not）。<br><b>次の日の特訓選抜でも：</b>大問3(9)で、You are notとすべきところをI am don'tと書いている。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">イ (aren't)</td><td class="cr">ウ (do not)</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①動詞がdrink＝一般動詞の文。</div><div class="step"><span>2</span>②一般動詞の否定文はdon't/doesn'tを使う。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et2-問6">
+  <a class="type-badge" href="#et2">類型：②be動詞の文と一般動詞の文の混同</a>
+  <span class="qtag">必修9月・大問10問1②</span>
+  <div class="qnum">問6</div>
+  <div class="qbody">対話文の質問に答えなさい。「Are you on a soccer team in Japan, too?」に対する応答を完成させなさい。<br>No, ( )( ).</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問10問1②で、Are you on a soccer team, too? に No, I don't. と答えた（正しくは No, I'm not.）。<br><b>同じ必修でも：</b>大問2(1)で同じ間違い。次の日の特訓選抜の大問3(9)でも、be動詞の文と一般動詞の文を混ぜている。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">No, I don't.</td><td class="cr">No, I'm not.</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①質問はAre you 〜?(be動詞の疑問文)。</div><div class="step"><span>2</span>②be動詞の疑問文にはbe動詞で答える：No, I'm not.</div>
+    <div class="osarai">be動詞の文か一般動詞の文かは、まず動詞そのものを見て見分ける。are・isがあればbe動詞、drink・playなど動きを表す言葉があれば一般動詞。</div>
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">③</span><span class="unit-name">答える主語を書き間違える</span><span class="unit-time">目安 5分</span></div>
+<a id="et3"></a>
+<div class="q" id="et3-問7">
+  <a class="type-badge" href="#et3">類型：③答える主語を書き間違える</a>
+  <span class="qtag">必修9月・大問6(2)</span>
+  <div class="qnum">問7</div>
+  <div class="qbody">日本文に合う英文になるように( )に適切な語を入れなさい。「あなたはサッカーが得意です。」<br>( a )( b )( c ) soccer.</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問6(2)で、「あなたはサッカーが得意です」を作るとき、be good atの形は合っていたのに、主語を直前の問題のIにつられてI'mと書いた（正しくはYou're）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">I'm / good / at</td><td class="cr">You're / good / at</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①主語は「あなたは」なのでYou're。</div><div class="step"><span>2</span>②「〜が得意」＝be good at 〜。</div><div class="step"><span>3</span>③You're good at soccer.</div>
+    
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">④</span><span class="unit-name">主語が複数のとき、あとの名詞も複数形にする</span><span class="unit-time">目安 6分</span></div>
+<a id="et4"></a>
+<div class="q" id="et4-問8">
+  <a class="type-badge" href="#et4">類型：④主語が複数なのに名詞のsを忘れる</a>
+  <span class="qtag">必修9月・大問7(2)</span>
+  <div class="qnum">問8</div>
+  <div class="qbody">与えられた語をならべかえて文を完成させなさい。「あなたたちは中学生ですか。」<br>[ you / junior / high / school / are ] students?</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問7(2)で、Are you 〜?の語順は正しいのに、複数のyouに対応させてstudentを複数形にするのを忘れた（正しくはstudents）。<br><b>前にも：</b>同じ必修の大問8(4)でも、主語が複数なのに名詞のsを付け忘れている。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">Are you student(students のsを付け忘れ)</td><td class="cr">Are you junior high school students?</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「あなたたちは」＝you(複数)。</div><div class="step"><span>2</span>②be動詞のあとの名詞も、主語が複数なら複数形にする：student→students。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et4-問9">
+  <a class="type-badge" href="#et4">類型：④主語が複数なのに名詞のsを忘れる</a>
+  <span class="qtag">必修9月・大問8(4)</span>
+  <div class="qnum">問9</div>
+  <div class="qbody">日本文を指定された語数の英文になおしなさい。「私たちはダンサーです。」〔3語〕</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問8(4)で We are dancer、大問7(2)で Are you student と書いた（どちらも最後のsが抜けた）。<br><b>前にも：</b>翌日の特訓選抜の大問1(3)でも、womanの複数形をwomansと書いている。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">We are dancer.</td><td class="cr">We are dancers.</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①主語Weは複数。</div><div class="step"><span>2</span>②be動詞のあとの名詞も複数形にそろえる：dancer→dancers。</div>
+    <div class="osarai">数字＋名詞(eight pencilsなど)の複数形はできている。今回のポイントは「主語が複数→be動詞のあとの名詞も複数形」という別の場面。</div>
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑤</span><span class="unit-name">つづり・単語の形をまちがえる</span><span class="unit-time">目安 8分</span></div>
+<a id="et5"></a>
+<div class="q" id="et5-問10">
+  <a class="type-badge" href="#et5">類型：⑤つづり・単語の形のまちがい</a>
+  <span class="qtag">特訓選抜9月・大問1(3)</span>
+  <div class="qnum">問10</div>
+  <div class="qbody">次の指示に合う英語1語を答えなさい。womanの複数形。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問1(3)で、womanの複数形をwomansと書いた（正しくはwomen、不規則変化）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">womans</td><td class="cr">women</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①ほとんどの名詞は語尾に+sまたは+esで複数形になる。</div><div class="step"><span>2</span>②しかしman→men、woman→women、child→childrenのように、形がまるごと変わる不規則な単語がある。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et5-問11">
+  <a class="type-badge" href="#et5">類型：⑤つづり・単語の形のまちがい</a>
+  <span class="qtag">特訓選抜9月・大問3(1)</span>
+  <div class="qnum">問11</div>
+  <div class="qbody">日本文に合う英文になるように( )に適切な語を入れなさい。「あなたは疲れていますか。」<br>( a )( b )?</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問3(1)で、be動詞Areは合っていたのに、tiredのつづりでeが1つ抜けてtirdになった（正しくはtired）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">a: Are　b: tird</td><td class="cr">Are / tired</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①主語youなのでbe動詞はAre。</div><div class="step"><span>2</span>②「疲れている」はtired。母音字を忘れずに書く：t-i-r-e-d。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et5-問12">
+  <a class="type-badge" href="#et5">類型：⑤つづり・単語の形のまちがい</a>
+  <span class="qtag">特訓選抜9月・大問3(4)</span>
+  <div class="qnum">問12</div>
+  <div class="qbody">日本文に合う英文になるように( )に適切な語を入れなさい。「私はチケットが9枚ほしい。」<br>I want ( a )( b ).</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問3(4)で、nineは書けたのに、ticketがteketに崩れ、複数形のsも抜けた（正しくはtickets）。<br><b>前にも：</b>8月必修でも、複数形のsが落ちる間違い（sisters→sister）をしている。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">a: nine　b: teket</td><td class="cr">nine / tickets</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①数はnine(9)。</div><div class="step"><span>2</span>②「チケット」はticket、つづりに注意して書く：t-i-c-k-e-t。</div><div class="step"><span>3</span>③9枚と複数なので語尾にsをつける：tickets。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et5-問13">
+  <a class="type-badge" href="#et5">類型：⑤つづり・単語の形のまちがい</a>
+  <span class="qtag">必修9月・大問3(1)</span>
+  <div class="qnum">問13</div>
+  <div class="qbody">( )内の語を必要なら正しい形にかえて答えなさい。I have ten (T-shirt).</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問3(1)で、複数形にする考え方は合っていたのに、T-shirtのrが1文字抜けてT-shitsになった（正しくはT-shirts）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">T-shits</td><td class="cr">T-shirts</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①tenのあとの名詞は複数形にする。</div><div class="step"><span>2</span>②T-shirtのつづりを1文字ずつ確認して書く：T-s-h-i-r-t。</div><div class="step"><span>3</span>③複数形にする：T-shirts。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et5-問14">
+  <a class="type-badge" href="#et5">類型：⑤つづり・単語の形のまちがい</a>
+  <span class="qtag">必修9月・大問6(4)</span>
+  <div class="qnum">問14</div>
+  <div class="qbody">日本文に合う英文になるように( )に適切な語を入れなさい。「私は黒いペンが5本必要です。」<br>I need ( a )( b )( c ).</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問6(4)で、fiveとpensは正しく書けたのに、blackが形の似たbreakになった（正しくはblack）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">five / break / pens</td><td class="cr">five / black / pens</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①数はfive(5)。</div><div class="step"><span>2</span>②「黒い」はblack。breakと似ているが別の単語なので注意する：b-l-a-c-k。</div><div class="step"><span>3</span>③複数形pensはできているのでそのまま。</div>
+    <div class="osarai">つづりを間違えた単語(women・tired・ticket・T-shirt・black)は、正しい形をノートに3回書いて覚え直そう。</div>
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑥</span><span class="unit-name">似た意味・反対の意味の単語でつまずく</span><span class="unit-time">目安 5分</span></div>
+<a id="et6"></a>
+<div class="q" id="et6-問15">
+  <a class="type-badge" href="#et6">類型：⑥似た意味・反対の意味の単語</a>
+  <span class="qtag">特訓選抜9月・大問1(6)</span>
+  <div class="qnum">問15</div>
+  <div class="qbody">次の指示に合う英語1語を答えなさい。dirty(きたない)の反意語。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問1(6)で、dirty(きたない)の反意語が思い浮かばず、空欄のまま出した（正しくはclean）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">空欄(書かなかった)</td><td class="cr">clean</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①dirty(きたない)の反対は「きれいな」。</div><div class="step"><span>2</span>②「きれいな」はclean。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et6-問16">
+  <a class="type-badge" href="#et6">類型：⑥似た意味・反対の意味の単語</a>
+  <span class="qtag">特訓選抜9月・大問3(3)</span>
+  <div class="qnum">問16</div>
+  <div class="qbody">日本文に合う英文になるように( )に適切な語を入れなさい。「私はまぐろが大好きです。」<br>I ( a )( b ).</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問3(3)で、「大好き」をlikeにして、tunaも空欄にした（正しくはlove／tuna）。<br><b>前にも：</b>8月必修でも、似た意味の単語（lesson→practice型）を選び間違えている。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">a: like　b: (空欄)</td><td class="cr">love / tuna</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「大好きだ」という強い気持ちはlove 〜で表す。</div><div class="step"><span>2</span>②「まぐろ」はtuna。</div>
+    
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑦</span><span class="unit-name">呼びかけのあとの命令文</span><span class="unit-time">目安 4分</span></div>
+<a id="et7"></a>
+<div class="q" id="et7-問17">
+  <a class="type-badge" href="#et7">類型：⑦呼びかけのあとの命令文</a>
+  <span class="qtag">特訓選抜9月・大問2(2)</span>
+  <div class="qnum">問17</div>
+  <div class="qbody">次の各文の( )内の語を適切な形になおしなさい。Mari, ( look ) at the picture.</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問2(2)で、Mari, ( look ) at the picture. のlookにsを付けてlooksと書いた（正しくはlook。Mari,は呼びかけで、これは命令文）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">looks</td><td class="cr">look</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①カンマ(,)のあとの名前は、呼びかけの言葉で主語ではない。</div><div class="step"><span>2</span>②この文は命令文なので、動詞は原形のまま使う：look。</div>
+    
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑧</span><span class="unit-name">助動詞を判断する</span><span class="unit-time">目安 4分</span></div>
+<a id="et8"></a>
+<div class="q" id="et8-問18">
+  <a class="type-badge" href="#et8">類型：⑧助動詞を判断する</a>
+  <span class="qtag">必修9月・大問7(3)</span>
+  <div class="qnum">問18</div>
+  <div class="qbody">与えられた語をならべかえ・補って文を完成させなさい。「私はあなたのために何をすることができますか。」<br>What ( )( ) do for you?</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問7(3)で、What ( )( ) do for you? にWhat do doと書いた（canが抜けている。正しくはWhat can I do for you?）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">What do do</td><td class="cr">What can I do for you?</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「〜することができる」＝助動詞can。</div><div class="step"><span>2</span>②canのあとの動詞は原形：do。</div>
+    
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑨</span><span class="unit-name">対話文・資料を正しく読み取る（応用）</span><span class="unit-time">目安 8分</span></div>
+<a id="et9"></a>
+<div class="q" id="et9-問19">
+  <a class="type-badge" href="#et9">類型：⑨対話文・資料の読み取り（応用）</a>
+  <span class="qtag">特訓選抜9月・大問6問2(1)</span>
+  <div class="qnum">問19</div>
+  <div class="qbody">対話文の内容と合うように答えなさい。Whose dog is Leo? —— He ( )( )( ).</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問6問2(1)で、Whose dog is Leo?にHe is a dog.と答えた（「誰の」に答えられていない。正しくはHe is Takeshi's dog.）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">is a dog</td><td class="cr">He is Takeshi's dog.</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①Whose 〜? は「誰の〜か」を聞く疑問文なので、持ち主の名前を答える。</div><div class="step"><span>2</span>②本文から、レオはタケシの犬だと分かる。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et9-問20">
+  <a class="type-badge" href="#et9">類型：⑨対話文・資料の読み取り（応用）</a>
+  <span class="qtag">特訓選抜9月・大問6問2(3)</span>
+  <div class="qnum">問20</div>
+  <div class="qbody">対話文の内容と合うように答えなさい。What do Takeshi's dog and Mary's dogs like? —— ( )( )( ).</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問6問2(3)で、2匹の犬の共通点を聞かれているのに、レオだけの説明catch a ballを書いた（正しくはThey like balls.）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">catch a ball</td><td class="cr">They like balls.</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「両方とも何が好きか」を聞かれているので、共通する情報をさがす。</div><div class="step"><span>2</span>②タケシの発言「レオはボールが好き」、メアリーの発言「私の犬たちもボールが好き」を合わせる。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et9-問21">
+  <a class="type-badge" href="#et9">類型：⑨対話文・資料の読み取り（応用）</a>
+  <span class="qtag">特訓選抜9月・大問7問1</span>
+  <div class="qnum">問21</div>
+  <div class="qbody">下線部those daysが指す具体的な2つの曜日を日本語で答えなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問7問1で、those daysを「土曜日と日曜日」と答えた（本文の別の曜日グループと混同。正しくは月曜日と金曜日）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">土曜日と日曜日</td><td class="cr">月曜日と金曜日</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①本文には曜日のグループが2つ出てくる：忙しい週末(土・日)と、休んで料理をする月・金。</div><div class="step"><span>2</span>②「それらの日がとても好きだ」の直前の文を確認する→父が休んで家で料理をしてくれる日＝月・金。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et9-問22">
+  <a class="type-badge" href="#et9">類型：⑨対話文・資料の読み取り（応用）</a>
+  <span class="qtag">必修9月・大問9②</span>
+  <div class="qnum">問22</div>
+  <div class="qbody">対話文と時間割表の内容から、美術の授業がある曜日を答えなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問9②で、対話文中の曜日Mondayをそのまま書いた（時間割表と照合できていない。正しくはTuesday）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">Monday</td><td class="cr">Tuesday</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①対話文だけでなく、時間割表もあわせて確認する。</div><div class="step"><span>2</span>②時間割表で「美術」がある曜日をさがす→火曜日(Tuesday)。</div>
+    <div class="osarai">対話文と表の両方が出てくる問題は、対話文の中の言葉だけで即答せず、表を必ず見比べてから答えよう。</div>
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑩</span><span class="unit-name">本文の内容を自分の英語に書きかえる</span><span class="unit-time">目安 8分</span></div>
+<a id="et10"></a>
+<div class="q" id="et10-問23">
+  <a class="type-badge" href="#et10">類型：⑩本文の内容を自分の英語に書きかえる</a>
+  <span class="qtag">特訓選抜9月・大問6問3</span>
+  <div class="qnum">問23</div>
+  <div class="qbody">下線部I think so, too.のsoの内容を、次のように表しなさい。dogs ( a )( b )( c ).</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問6問3で、soの内容を書く欄が空欄だった（正しくはdogs are good friends）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">空欄</td><td class="cr">dogs are good friends</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①soは直前の文の内容を指す言葉。直前の文を確認する：Dogs are good friends.</div><div class="step"><span>2</span>②その文をそのまま(a)(b)(c)にあてはめる。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et10-問24">
+  <a class="type-badge" href="#et10">類型：⑩本文の内容を自分の英語に書きかえる</a>
+  <span class="qtag">特訓選抜9月・大問7問2(1)</span>
+  <div class="qnum">問24</div>
+  <div class="qbody">メモの内容と合うように( )に適切な語を1語入れなさい。Ken prepares for the party. Before that, he ( ) the house.</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問7問2(1)で、メモの「家の掃除」を英語にする欄が空欄だった（正しくはcleans）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">空欄</td><td class="cr">cleans</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①メモから「健は家を掃除する」という内容を読み取る。</div><div class="step"><span>2</span>②主語がHe(3人称単数)なので、動詞cleanにsを付ける：cleans。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="et10-問25">
+  <a class="type-badge" href="#et10">類型：⑩本文の内容を自分の英語に書きかえる</a>
+  <span class="qtag">特訓選抜9月・大問7問2(2)</span>
+  <div class="qnum">問25</div>
+  <div class="qbody">メモの内容と合うように( )に適切な語を入れなさい。Yuka ( a ) the dishes and cooks with ( b )( c ).</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問7問2(2)で、メモの「食器を洗う→父と料理」を英語にする欄が空欄だった（正しくはwashes／her father）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">空欄</td><td class="cr">washes / her / father</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①メモから「由香は食器を洗う」を読み取り、3人称単数のsを付ける：washes。</div><div class="step"><span>2</span>②「父」は「由香の父」なので、her fatherと表す。</div>
+    
+  </div>
+</div>
+
+<div class="subj-hd">国語　漢字・慣用句・四字熟語（知識問題だけ）</div>
+<p class="subj-note">読解問題は載せていません。漢字の読み書き・慣用句・四字熟語だけをまとめました。</p>
+
+<div class="unit-banner"><span class="unit-num">①</span><span class="unit-name">漢字の読み方の取り違え</span><span class="unit-time">目安 4分</span></div>
+<a id="kt1"></a>
+<div class="q" id="kt1-問1">
+  <a class="type-badge" href="#kt1">類型：①漢字の読み方の取り違え</a>
+  <span class="qtag">特訓選抜9月・大問3(1)②</span>
+  <div class="qnum">問1</div>
+  <div class="qbody">次の漢字の読み方をひらがなで答えなさい。「著名」</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問3(1)②で、「著名」を「ちょしゃ」と読んだ（「著者」と混同。正しくは「ちょめい」）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">ちょしゃ</td><td class="cr">ちょめい</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「著名」は「ちょ」＋「めい」で読む。</div><div class="step"><span>2</span>②意味は「名が著(あき)らか」＝有名であること。</div><div class="step"><span>3</span>③「著者(ちょしゃ)」は別の言葉なので混同しないようにする。</div>
+    
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">②</span><span class="unit-name">漢字が書けず空欄になった</span><span class="unit-time">目安 4分</span></div>
+<a id="kt2"></a>
+<div class="q" id="kt2-問2">
+  <a class="type-badge" href="#kt2">類型：②漢字が書けず空欄になった</a>
+  <span class="qtag">必修9月・大問3(5)</span>
+  <div class="qnum">問2</div>
+  <div class="qbody">次のカタカナを漢字になおしなさい。「誤った情報がカクサンする。」</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問3(5)で、「カクサン」の漢字が空欄だった（正しくは拡散）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">空欄(書けなかった)</td><td class="cr">拡散</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「カク」は「拡げる」の「拡」。</div><div class="step"><span>2</span>②「サン」は「散らばる」の「散」。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="kt2-問3">
+  <a class="type-badge" href="#kt2">類型：②漢字が書けず空欄になった</a>
+  <span class="qtag">必修9月・大問3(8)</span>
+  <div class="qnum">問3</div>
+  <div class="qbody">次のカタカナを漢字になおしなさい。「不足気味の水分をオギナう。」</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問3(8)で、「オギナう」の漢字が空欄だった（正しくは補う）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">空欄(書けなかった)</td><td class="cr">補う</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「おぎなう」は、足りないものを付け足すという意味。</div><div class="step"><span>2</span>②漢字は「補う」(ころもへん＋甫)。</div>
+    <div class="osarai">拡散・補うはどちらも空欄のまま出している。漢字が浮かばないときは、まず読み・意味だけでも書いてみる練習をしておこう。</div>
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">③</span><span class="unit-name">漢字の細かい書き方でつまずいた</span><span class="unit-time">目安 4分</span></div>
+<a id="kt3"></a>
+<div class="q" id="kt3-問4">
+  <a class="type-badge" href="#kt3">類型：③漢字の字形の覚え違い</a>
+  <span class="qtag">必修9月・大問1（漢字の書き方の確認）</span>
+  <div class="qnum">問4</div>
+  <div class="qbody">次の文の（　）を漢字になおしなさい。「火山の（ふんか）にそなえて、ハザードマップが作られている。」</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の国語の大問1の問2「噴火です。」と問9「の噴火」で、「噴」の右側を「責」の形で書いた。内容は合っていたのに、この1字で2問とも×になった。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">つくりの上の部分を「責」の形(横線の重なり)で書いてしまい、正しい「噴」の形になっていなかった</td><td class="cr">噴火</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「噴」は「口」＋「賁」。</div><div class="step"><span>2</span>②「賁」の上は「卉」＝たて線3本。「責」(上が横線の重なり)とは別の形。</div><div class="step"><span>3</span>③下はどちらも「貝」。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="kt3-問5">
+  <a class="type-badge" href="#kt3">類型：③漢字の字形の覚え違い</a>
+  <span class="qtag">特訓選抜9月・大問3(1)③</span>
+  <div class="qnum">問5</div>
+  <div class="qbody">次のひらがなを漢字で書きなさい。「きりつ正しい生活」</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問3(1)③で、「規律」の字はほぼ書けていたのに×だった。はっきりした原因は分からない（細かい書き方の違いだった可能性がある）。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">規律（字は正しく書けていたが、それでも×だった）</td><td class="cr">規律</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「規律」は「規則」の「規」＋「律」。</div><div class="step"><span>2</span>②「律」は行人偏(ぎょうにんべん)＋聿(いつ)の組み合わせ。とめ・はねを意識して丁寧に書く。</div>
+    
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">④</span><span class="unit-name">四字熟語で似た漢字を取り違える</span><span class="unit-time">目安 6分</span></div>
+<a id="kt4"></a>
+<div class="q" id="kt4-問6">
+  <a class="type-badge" href="#kt4">類型：④四字熟語で似た漢字を取り違える</a>
+  <span class="qtag">特訓選抜9月・大問3(3)①</span>
+  <div class="qnum">問6</div>
+  <div class="qbody">「試□錯誤」の□にあてはまる漢字を、次のア〜オから選びなさい。<br>ア格　イ行　ウ考　エ客　オ故</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問3(3)①で、「試□錯誤」にウ「考」を選んだ（正しくはイ「行」）。5択の中で迷い、別の四字熟語の字を選んでしまった。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">ウ（考）</td><td class="cr">イ（行）</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「試行錯誤」は「いろいろ試してみて、失敗しながら答えに近づくこと」。</div><div class="step"><span>2</span>②「試行」は「行う」の「行」を使う。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="kt4-問7">
+  <a class="type-badge" href="#kt4">類型：④四字熟語で似た漢字を取り違える</a>
+  <span class="qtag">特訓選抜9月・大問3(3)②</span>
+  <div class="qnum">問7</div>
+  <div class="qbody">「温□知新」の□にあてはまる漢字を、上と同じ選択肢から選びなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問3(3)②で、「温□知新」にイ「行」を選んだ（正しくはオ「故」）。<br><b>前にも：</b>直前の(3)①でも、同じ5択の中で字を取り違えている。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">イ（行）</td><td class="cr">オ（故）</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「温故知新」は「昔のことを勉強して、新しい知識や考えを得ること」。</div><div class="step"><span>2</span>②「故」は「昔・もと」という意味。「行」とは別の字。</div>
+    
+  </div>
+</div>
+
+<div class="q" id="kt4-問8">
+  <a class="type-badge" href="#kt4">類型：④四字熟語で似た漢字を取り違える</a>
+  <span class="qtag">特訓選抜9月・大問3(3)③</span>
+  <div class="qnum">問8</div>
+  <div class="qbody">「主□転倒」の□にあてはまる漢字を、上と同じ選択肢から選びなさい。</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>特訓選抜の大問3(3)③で、「主□転倒」にア「格」を選んだ（正しくはエ「客」）。四字熟語自体を知らず、似た響きの字を選んだ。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">ア（格）</td><td class="cr">エ（客）</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「主客転倒」は「主(大事なもの)と客(そうでないもの)の立場が逆になること」。</div><div class="step"><span>2</span>②「客」は「お客さん」の客。</div>
+    <div class="osarai">5つの漢字が選択肢としてまとめて並ぶ形式では、1つの四字熟語だけで覚えるのではなく、似た字と組み合わせて覚えておくと取り違えにくい。</div>
+  </div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑤</span><span class="unit-name">慣用句の言い方を取り違える</span><span class="unit-time">目安 4分</span></div>
+<a id="kt5"></a>
+<div class="q" id="kt5-問9">
+  <a class="type-badge" href="#kt5">類型：⑤慣用句の言い方の取り違え</a>
+  <span class="qtag">必修9月・大問2(4)</span>
+  <div class="qnum">問9</div>
+  <div class="qbody">次の慣用句の( )にあてはまる体の部分を漢字で答えなさい。「( )をつっこむ」(余計なことにまで関わること)</div>
+  <div class="top-warn"><b>9月の本番でのあなたの間違い：</b>必修の大問2(4)で、「( )をつっこむ」に「足」と書いた（正しくは首）。慣用句の体の部分を取り違えている。</div>
+  <table class="cmp-table">
+    <tr><th>問題</th><th>本人の答え</th><th>正しい答え</th></tr>
+    <tr><td>（上に記載）</td><td class="cw">足</td><td class="cr">首</td></tr>
+  </table>
+  <div class="steps-box">
+    <div class="steps-title">正しい考え方</div>
+    <div class="step"><span>1</span>①「首をつっこむ」は「関係のないことにまで関わる」という意味の慣用句。</div><div class="step"><span>2</span>②決まった言い方なので、体の部分ごと覚える：首。</div>
+    
+  </div>
+</div>
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓D7 完了）</button>
+<div class="goal-box">
+  <b>次の目標</b><br>
+  マイナスの数を代入するときは、必ずかっこをつけて書く。
+</div>
+
+<p class="tail">全部いっぺんにやらなくてOK。1単元だけ読む→類題を1問解く、のくり返しでいい。<br>
+できた単元から少しずつ増やしていこう。</p>
+
+</div>
+
+<script>
+var KEY='tokkun_d7';
+
+/* 解説トグル（類題カードのみ） */
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+/* ○✕採点（類題カードのみ） */
+function g(btn,id,v){
+  var row=btn.closest('.gq');
+  row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=row.nextElementSibling, w3=mt.nextElementSibling;
+  if(v==='x'){mt.classList.add('show');w3.classList.add('show');}
+  else{mt.classList.remove('show');w3.classList.remove('show');}
+}
+
+/* ミス型 */
+function m(btn){
+  var p=btn.parentNode;
+  p.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+p.getAttribute('data-gid')+'_type',btn.textContent);
+}
+
+/* 採点UIを生成 */
+document.querySelectorAll('.gwrap').forEach(function(w){
+  var ids=w.getAttribute('data-ids').split(',');
+  var h='';
+  ids.forEach(function(id){
+    h+='<div class="gq"><span class="gq-label">できた？</span>'
+      +'<button class="o" onclick="g(this,\''+id+'\',\'o\')">○</button>'
+      +'<button class="x" onclick="g(this,\''+id+'\',\'x\')">✕</button></div>'
+      +'<div class="mt" data-gid="'+id+'"><button onclick="m(this)">計算ミス</button>'
+      +'<button onclick="m(this)">解説で分かった</button>'
+      +'<button onclick="m(this)">解説見ても分からない</button></div>'
+      +'<div class="write3">📝 正しい式・答えをノートに3回書こう</div>';
+  });
+  w.innerHTML=h;
+});
+
+/* 保存済みを復元 */
+document.querySelectorAll('.gq').forEach(function(row){
+  var btn=row.querySelector('.o');
+  var id=btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+  var v=localStorage.getItem(KEY+'_'+id);
+  if(v){row.querySelector(v==='o'?'.o':'.x').classList.add('on');
+    if(v==='x'){row.nextElementSibling.classList.add('show');
+      row.nextElementSibling.nextElementSibling.classList.add('show');}}
+  var ty=localStorage.getItem(KEY+'_'+id+'_type');
+  if(ty){row.nextElementSibling.querySelectorAll('button').forEach(function(b){
+    if(b.textContent===ty)b.classList.add('on');})}
+});
+
+/* 完了 */
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+if(localStorage.getItem(KEY+'_done')==='1'){
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+</script>
+
+<!-- 5ロール評価（採用は90点以上のみ反映済み）
+①中1数学教師：全24問の途中式・検算行をsympy/Fractionで独立に再計算し模範解答と一致を確認(98点・採用=検算行を全問に追加)。
+  比例式・分数方程式など中学受験流の別解は使わず中1の標準解法(移項・分配法則・逆数のかけ算)のみで統一(95点・維持)。
+②中1本人：分量が非常に多いため「1回で全部やらなくてOK」を冒頭とtailに明記、類型まとめから該当問題へジャンプできる導線を追加(92点・採用)。
+  類型まとめ表がスマホで4列とも縦に折り返され読みにくい(83点・不採用＝内容を削らず読めているため現状維持。将来スマホ専用レイアウトの余地あり)。
+③学習心理：「間違いの正体」を「9月の本番でのあなたの間違い」＋事実ベースの「前にも」形式に統一し、抽象論でなく本人の実際の式で示した(96点・採用＝保護者指示どおり反映)。
+  「前にも」が無い問題にも定型の一言を足す案(82点・不採用＝根拠のない再発断定を避けるため。事実がある問題だけに限定)。
+④編集・デザイン：スマホ幅390pxでの横スクロール発生(電卓表記の検算行が原因)をoverflow-wrap:anywhereで解消し実機幅0pxオーバーフローを確認(97点・採用)。
+  D6の.step spanがfrac内spanまで拾う不具合を.step>span:first-childに限定し、frac-guardを追加してPlaywrightで分数の縦組みを画像確認(99点・採用)。
+⑤検算担当：math_review_cardのテンプレートでextra_noteパラメータが出力に差し込まれておらず、まとめコメント2件が非表示になっていたバグを発見・修正(必修一致確認後、全9件のosaraiボックス表示を確認)(94点・採用)。
+  全58問の「本人の答え」「正しい答え」を各分析mdの元データと突き合わせ、必修2(2)の最終記入値が再撮影後「13a+42」に確定している点を反映(93点・採用)。
+実測: tokkun_d7=1件, 実名/体調語=0件, class="frac"=145件, C/K/A記号の本文露出=0件(JSコメントのみ), 横スクロール(390px, 全解答展開)=0px。
+-->
+</body>
+</html>

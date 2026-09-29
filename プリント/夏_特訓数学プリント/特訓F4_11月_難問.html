@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓F4｜11月特訓 難問</title>
+<style>
+:root{--ink:#1b1c22;--sub:#5a5f6e;--line:#e3e5ec;--bg:#fbfbfd;--key:#1f4fd8;--key-bg:#eef2ff;
+--go:#0a7d55;--go-bg:#eaf7f1;--hot:#d92b3a;--hot-bg:#fff2f3;--warn:#b26a00;--warn-bg:#fff7e8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:14px 18px 70px}
+a.back{display:inline-block;margin:6px 0 12px;color:var(--key);font-size:15px;text-decoration:none;font-weight:700}
+
+.pg-hd{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:16px;padding:22px 22px 20px;margin:0 0 18px}
+.pg-badge{display:inline-block;background:rgba(255,255,255,.16);border-radius:7px;padding:4px 10px;
+font-size:12.5px;font-weight:700;margin:0 6px 8px 0}
+.pg-hd h1{font-size:22px;margin:6px 0 8px;line-height:1.45}
+.pg-hd p{font-size:14.5px;margin:0;opacity:.9}
+.pg-cheer{margin-top:10px !important;font-size:14px !important;opacity:.9 !important}
+
+.kind-box{background:var(--key-bg);border-radius:12px;padding:14px 18px;margin:0 0 20px;font-size:14.5px;line-height:1.9}
+.kind-box b{color:var(--key)}
+.goal-box{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:14px;
+padding:18px 20px;margin:28px 0 0;font-size:15.5px;line-height:1.9;text-align:center}
+.goal-box b{font-size:17.5px}
+
+.unit-banner{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--key-bg);
+border-left:5px solid var(--key);border-radius:0 10px 10px 0;padding:11px 15px;margin:26px 0 12px}
+.unit-num{font-size:14px;font-weight:800;color:var(--key)}
+.unit-name{font-size:16px;font-weight:800}
+.unit-time{font-size:13px;color:var(--sub);margin-left:auto}
+
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.q.hard{border:1.5px solid #c7cff5;box-shadow:0 2px 10px rgba(31,79,216,.08)}
+.qnum{font-size:16px;font-weight:800;margin:0 0 10px}
+.hard-badge{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:20px;background:var(--key);
+color:#fff;font-size:11.5px;font-weight:800;vertical-align:middle}
+.qbody{font-size:17px;line-height:2.5}
+.qbody .pn{color:#2f5a8a;font-weight:700;margin-right:6px}
+.note-draw{background:var(--warn-bg);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:0 0 10px}
+.note-draw b{color:var(--warn)}
+
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 2px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+
+.rt-lead{font-weight:800;font-size:14.5px;margin:0 0 6px}
+.ratetable{width:100%;border-collapse:collapse;margin:0 0 10px;font-size:13.5px}
+.ratetable th,.ratetable td{border:1px solid var(--line);padding:6px 8px;text-align:center}
+.ratetable th{background:var(--key-bg)}
+
+.fig-box{display:flex;justify-content:center;margin:6px 0 8px}
+.fig-cap{font-size:12.5px;color:var(--sub);text-align:center;margin:0 0 10px}
+
+.ans-btn{display:block;width:100%;margin:12px 0 0;padding:12px;border:0;border-radius:10px;
+background:var(--key);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.ans-box{display:none;margin:12px 0 0;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ans-box.open{display:block}
+.step{font-size:15.5px;margin:0 0 9px;padding:0 0 0 4px}
+.step>span:first-child{display:inline-block;min-width:52px;font-weight:800;color:var(--key)}
+.miss-box{background:var(--warn-bg);border-radius:9px;padding:11px 14px;font-size:14.5px;margin:12px 0 0}
+.miss-box b{color:var(--warn)}
+.bx-warn{background:var(--hot-bg);border:1px solid #f6ccd1;border-radius:9px;padding:11px 14px;
+font-size:14.5px;margin:0 0 10px}
+.bx-warn b{color:var(--hot)}
+.ans-final{background:var(--ink);color:#fff;border-radius:10px;padding:12px 15px;margin:13px 0 0;font-size:15.5px}
+.ans-final>span:first-child{font-weight:800;margin-right:10px}
+
+.gwrap{margin:12px 0 0;border-top:1px dashed var(--line);padding:12px 0 0}
+.gq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 7px;font-size:14px}
+.gq-label{min-width:52px;font-weight:700;color:var(--sub)}
+.gq button{border:1.5px solid var(--line);background:#fff;border-radius:7px;width:36px;height:32px;
+font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.gq button.o.on{background:var(--go);border-color:var(--go);color:#fff}
+.gq button.x.on{background:var(--hot);border-color:var(--hot);color:#fff}
+.mt{display:none;gap:6px;flex-wrap:wrap;margin:2px 0 0 52px}
+.mt.show{display:flex}
+.mt button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px;
+font-size:12.5px;cursor:pointer;font-family:inherit;width:auto;height:auto}
+.mt button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.write3{display:none;margin:6px 0 0 52px;font-size:13px;color:var(--hot);font-weight:700}
+.write3.show{display:block}
+
+.done{display:block;width:100%;margin:26px 0 0;padding:18px;border:0;border-radius:14px;
+background:var(--go);color:#fff;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit}
+.done.fin{background:var(--ink)}
+.tail{text-align:center;color:var(--sub);font-size:13.5px;margin:18px 0 0;line-height:1.9}
+
+@media print{
+ body{background:#fff}
+ a.back,.ans-btn,.ans-box,.gwrap,.done{display:none !important}
+ .q{break-inside:avoid;page-break-inside:avoid}
+ .pg-hd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{margin:12mm}
+}
+/*frac-guard*/.frac{display:inline-flex!important;flex-direction:column!important;min-width:0!important;width:auto!important}.frac>span{display:block!important;min-width:0!important;width:auto!important;margin:0!important;color:inherit!important;font-weight:inherit!important}.frac>.n{border-bottom:1.8px solid currentColor!important;padding:0 5px 2px!important}.frac>.d{padding:2px 5px 0!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#mock">← ダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div>
+    <span class="pg-badge">特訓F4</span>
+    <span class="pg-badge">11月特訓 比例・反比例</span>
+    <span class="pg-badge">難問（11〜13回目）</span>
+  </div>
+  <h1>比例・反比例の難問</h1>
+  <p>目安: 45分（①〜⑤ 各回15分の目安で3回に分けてOK）　対象: 中1　全問に解説つき</p>
+  <p class="pg-cheer"><b>この回でできるようになること：</b>比例・反比例の基本を組み合わせて、交点や面積、整数の点の個数、直線が通る範囲といった「難問」を、中学1年の知識だけで解けるようになる。各テーマは、かんたんな類題（導入）→本番の難問の順にならんでいる。</p>
+</div>
+
+<div class="kind-box">
+  各テーマは「導入2問（やさしい類題）→本問（難問）」の順。導入は本問と同じ考え方を使うが、数字は本問とは別。<br>
+  むずかしい問題ほど、解説はていねいに・図には補助線と数値を入れてある。わからなかったら導入の考え方に戻ってもう一度読もう。
+</div>
+
+<div class="unit-banner"><span class="unit-num">①</span><span class="unit-name">交点と三角形の面積（S10）</span><span class="unit-time">目安 15分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qnum">★問1　長方形から三角形をひく</div>
+  <div class="qbody"><span class="pn">問1</span>点A(1, 5)、点B(4, 1)、原点Oを結んだ三角形OABがある。下の図を見て、「外側の長方形から3つの直角三角形をひく」方法で、三角形OABの面積を求めなさい。</div>
+  <div class="fig-box"><div id="figQ01"></div></div>
+  <p class="fig-cap">点A、点B、原点Oを結んだ三角形（辺だけを示した図）</p>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>原点を通らない辺がある三角形は、外側にぴったり入る長方形を考えて、そこから周りの3つの直角三角形をひくと面積が求まる。</div>
+    <div class="fig-box"><div id="figQ01e"></div></div>
+    <p class="fig-cap">②図で見る：点線が外側の長方形。青くぬった部分が三角形OAB。</p>
+    <div class="step"><span>③-1</span>3点をすべて含む長方形を考える。x座標は0〜4、y座標は0〜5だから、長方形の面積は4×5＝20。</div>
+    <div class="step"><span>③-2</span>長方形の中にできる3つの直角三角形の面積を求める。O・(0,5)・Aの三角形は底辺1×高さ5÷2＝2.5。A・(4,5)・Bの三角形は底辺3×高さ4÷2＝6。B・(4,0)・Oの三角形は底辺1×高さ4÷2＝2。</div>
+    <div class="step"><span>③-3</span>長方形20から3つの三角形をひく：20−(2.5＋6＋2)＝20−10.5＝9.5。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>3つの直角三角形のうち1つを数え忘れる。また、どの2辺が直角三角形の底辺・高さになるか勘違いする。</div>
+    <div class="step"><span>⑤確かめ</span>3つの三角形の面積の合計10.5と、三角形OABの面積9.5を足すと、長方形の面積20になる。</div>
+    <div class="ans-final"><span>こたえ</span>9.5</div>
+  </div>
+  <div class="gwrap" data-ids="q01"></div>
+</div>
+
+<div class="q calc" data-id="B">
+  <div class="qnum">★問2　比例と反比例の交点</div>
+  <div class="qbody"><span class="pn">問2</span>y＝3xとy＝<span class="frac"><span class="n">12</span><span class="d">x</span></span>のグラフの交点のうち、x&gt;0のものの座標を求めなさい。</div>
+  <div class="fig-box"><div id="figQ02"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>2つのグラフが重なる点は、2つの式を同時に満たすx, yを求めれば見つかる。</div>
+    <div class="fig-box"><div id="figQ02e"></div></div>
+    <div class="step"><span>③-1</span>3x＝<span class="frac"><span class="n">12</span><span class="d">x</span></span>とおく（同じxでyが等しいところが交点）。</div>
+    <div class="step"><span>③-2</span>両辺にxをかけて、3x²＝12。</div>
+    <div class="step"><span>③-3</span>x²＝4。x&gt;0だからx＝2。y＝3×2＝6。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>両辺にxをかけるのを忘れて、3x＝12からいきなりx＝4としてしまう（xが分母にあることを忘れる）。</div>
+    <div class="step"><span>⑤確かめ</span>x＝2をy＝<span class="frac"><span class="n">12</span><span class="d">x</span></span>に入れると12÷2＝6で、y＝3xの6とも一致する。</div>
+    <div class="ans-final"><span>こたえ</span>(2, 6)</div>
+  </div>
+  <div class="gwrap" data-ids="q02"></div>
+</div>
+
+<!-- L判定: L4 根拠=2つの交点(連立)を求め面積公式(長方形-corner)を統合する標準手順の組合せ／lite単独評定 -->
+<div class="q calc hard" data-id="C">
+  <div class="qnum">★問3【難問】三角形OABの面積<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問3</span>2つの比例のグラフ y＝2x と y＝<span class="frac"><span class="n">1</span><span class="d">2</span></span>x、反比例のグラフ y＝<span class="frac"><span class="n">8</span><span class="d">x</span></span> がある。y＝2xとy＝<span class="frac"><span class="n">8</span><span class="d">x</span></span>の交点をA、y＝<span class="frac"><span class="n">1</span><span class="d">2</span></span>xとy＝<span class="frac"><span class="n">8</span><span class="d">x</span></span>の交点をB とするとき（どちらもx&gt;0）、三角形OABの面積を求めなさい（Oは原点）。</div>
+  <div class="fig-box"><div id="figQ03"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>まずAとBの座標を求め、それから「外側の長方形−3つの直角三角形」で面積を出す。</div>
+    <div class="fig-box"><div id="figQ03e"></div></div>
+    <p class="fig-cap">②図で見る：点線が外側の長方形。青くぬった部分が三角形OAB。</p>
+    <div class="step"><span>③-1</span>Aを求める：2x＝<span class="frac"><span class="n">8</span><span class="d">x</span></span>→2x²＝8→x²＝4→x＝2（x&gt;0）。y＝2×2＝4。A(2, 4)。</div>
+    <div class="step"><span>③-2</span>Bを求める：<span class="frac"><span class="n">1</span><span class="d">2</span></span>x＝<span class="frac"><span class="n">8</span><span class="d">x</span></span>→<span class="frac"><span class="n">1</span><span class="d">2</span></span>x²＝8→x²＝16→x＝4（x&gt;0）。y＝<span class="frac"><span class="n">1</span><span class="d">2</span></span>×4＝2。B(4, 2)。</div>
+    <div class="step"><span>③-3</span>O, A(2,4), B(4,2)を含む長方形（0〜4, 0〜4）の面積は4×4＝16。周りの3つの直角三角形：O・(0,4)・Aは底辺2×高さ4÷2＝4、A・(4,4)・Bは底辺2×高さ2÷2＝2、B・(4,0)・Oは底辺2×高さ4÷2＝4。合計10。</div>
+    <div class="step"><span>③-4</span>16−10＝6。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>AとBを求めるとき、どちらの式をy＝<span class="frac"><span class="n">8</span><span class="d">x</span></span>と組み合わせるのか取り違える。またx²＝16でx＝±4のうちx&gt;0を選び忘れる。</div>
+    <div class="step"><span>⑤確かめ</span>3つの直角三角形の合計10と三角形OABの6を足すと、長方形の16になる。</div>
+    <div class="ans-final"><span>こたえ</span>6</div>
+  </div>
+  <div class="gwrap" data-ids="q03"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">②</span><span class="unit-name">反比例のグラフ上の整数点（S11-1）</span><span class="unit-time">目安 15分</span></div>
+
+<div class="q calc" data-id="D">
+  <div class="qnum">★問4　整数の点を数える（正の範囲）</div>
+  <div class="qbody"><span class="pn">問4</span>反比例 y＝<span class="frac"><span class="n">20</span><span class="d">x</span></span> のグラフ上で、x座標とy座標がどちらも正の整数になる点は何個あるか。</div>
+  <div class="fig-box"><div id="figQ04"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>x座標とy座標がどちらも正の整数になる点は、x×y＝20になる正の整数の組（20の約数の組）を全部探せばよい。</div>
+    <div class="fig-box"><div id="figQ04e"></div></div>
+    <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>4</td><td>5</td><td>10</td><td>20</td></tr><tr><th>y</th><td>20</td><td>10</td><td>5</td><td>4</td><td>2</td><td>1</td></tr></table>
+    <div class="step"><span>③-1</span>20を2つの正の整数の積で表す組をすべて探す：1×20, 2×10, 4×5, 5×4, 10×2, 20×1。</div>
+    <div class="step"><span>③-2</span>組の数を数える：6組。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>1×20と20×1を同じ組だと思って1つにまとめてしまう。xとyの順番が違えば別の点になる（座標は(x, y)の順）。</div>
+    <div class="step"><span>⑤確かめ</span>見つけた6組はどれもx×y＝20になっている（1×20＝20、2×10＝20、4×5＝20…）。</div>
+    <div class="ans-final"><span>こたえ</span>6個</div>
+  </div>
+  <div class="gwrap" data-ids="q04"></div>
+</div>
+
+<div class="q calc" data-id="E">
+  <div class="qnum">★問5　整数の点を数える（負もふくむ）</div>
+  <div class="qbody"><span class="pn">問5</span>反比例 y＝−<span class="frac"><span class="n">12</span><span class="d">x</span></span> のグラフ上で、x座標とy座標がどちらも整数になる点は何個あるか（x, yは正でも負でもよい）。</div>
+  <div class="fig-box"><div id="figQ05"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>負の座標もふくめるときは、まず正の約数の組を探してから、符号の組み合わせを考える。</div>
+    <div class="fig-box"><div id="figQ05e"></div></div>
+    <div class="step"><span>③-1</span>12の正の約数を全部探す：1, 2, 3, 4, 6, 12（6個）。</div>
+    <div class="step"><span>③-2</span>x＝正の約数dのとき、y＝−12÷d（負の整数）になる。これで6個の点。</div>
+    <div class="step"><span>③-3</span>x＝負の約数(−d)のとき、y＝−12÷(−d)＝12÷d（正の整数）になる。これでさらに6個の点。</div>
+    <div class="step"><span>③-4</span>合計6＋6＝12個。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>正の約数の組（6個）だけ数えて、xが負の場合を数え忘れる。</div>
+    <div class="step"><span>⑤確かめ</span>x＝3のときy＝−12÷3＝−4（3×(−4)＝−12で合っている）。x＝−3のときy＝−12÷(−3)＝4（(−3)×4＝−12で合っている）。</div>
+    <div class="ans-final"><span>こたえ</span>12個</div>
+  </div>
+  <div class="gwrap" data-ids="q05"></div>
+</div>
+
+<!-- L判定: L4 根拠=24の約数8組を漏れなく列挙し負の分岐を対称で2倍する複数条件の統合／lite単独評定 -->
+<div class="q calc hard" data-id="F">
+  <div class="qnum">★問6【難問】整数の点の個数（負もふくむ）<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問6</span>反比例 y＝<span class="frac"><span class="n">24</span><span class="d">x</span></span> のグラフ上で、x座標とy座標がともに整数になる点は何個あるか（x, yは正でも負でもよい）。</div>
+  <div class="fig-box"><div id="figQ06"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>aが正の反比例では、xとyの符号は必ず同じ（プラス同士かマイナス同士）になる。まず正の約数の組を全部探し、それを2倍する。</div>
+    <div class="fig-box"><div id="figQ06e"></div></div>
+    <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>3</td><td>4</td><td>6</td><td>8</td><td>12</td><td>24</td></tr><tr><th>y</th><td>24</td><td>12</td><td>8</td><td>6</td><td>4</td><td>3</td><td>2</td><td>1</td></tr></table>
+    <p class="fig-cap">↑正の組8つ。x, yを両方マイナスにした組がさらに8つある。</p>
+    <div class="step"><span>③-1</span>24の正の約数を全部探す：1, 2, 3, 4, 6, 8, 12, 24（8個）。だから正の整数の組(x, y)は8組。</div>
+    <div class="step"><span>③-2</span>y＝<span class="frac"><span class="n">24</span><span class="d">x</span></span>はaが正なので、xが負のときyも必ず負になる。正のときと同じ組み合わせがそのまま符号だけ反転して8組できる。</div>
+    <div class="step"><span>③-3</span>8＋8＝16個。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>24の約数を数えもれる（とくに8や12を忘れやすい）。また、xが負のときyが正になると勘違いしてしまう（aが正のとき、x, yは同符号）。</div>
+    <div class="step"><span>⑤確かめ</span>x＝8のときy＝24÷8＝3（8×3＝24）。x＝−8のときy＝24÷(−8)＝−3（(−8)×(−3)＝24で合っている）。</div>
+    <div class="ans-final"><span>こたえ</span>16個</div>
+  </div>
+  <div class="gwrap" data-ids="q06"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">③</span><span class="unit-name">反比例のグラフ上の点でできる長方形（S11-2）</span><span class="unit-time">目安 15分</span></div>
+
+<div class="q calc" data-id="G">
+  <div class="qnum">★問7　長方形の面積（点が分かっている）</div>
+  <div class="qbody"><span class="pn">問7</span>反比例 y＝<span class="frac"><span class="n">8</span><span class="d">x</span></span> のグラフ上の点P(2, 4)から、x軸、y軸にそれぞれ垂線をおろしてできる長方形の面積を求めなさい。</div>
+  <div class="fig-box"><div id="figQ07"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>x軸・y軸におろした垂線でできる長方形の面積は、その点のx座標とy座標をかければ求まる。</div>
+    <div class="fig-box"><div id="figQ07e"></div></div>
+    <div class="step"><span>③-1</span>Pのx座標は2、y座標は4。</div>
+    <div class="step"><span>③-2</span>長方形の面積＝2×4＝8。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>面積を求めるのに、x座標とy座標をかけずに、原点からの距離を計算しようとしてしまう。</div>
+    <div class="step"><span>⑤確かめ</span>Pはy＝<span class="frac"><span class="n">8</span><span class="d">x</span></span>上の点なので、x×y＝2×4＝8＝aと一致する。</div>
+    <div class="ans-final"><span>こたえ</span>8</div>
+  </div>
+  <div class="gwrap" data-ids="q07"></div>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qnum">★問8　長方形の面積（x座標だけ分かっている）</div>
+  <div class="qbody"><span class="pn">問8</span>反比例 y＝<span class="frac"><span class="n">8</span><span class="d">x</span></span> のグラフ上に、x座標が−4である点Qがある。Qから、x軸、y軸にそれぞれ垂線をおろしてできる長方形の面積を求めなさい。</div>
+  <div class="fig-box"><div id="figQ08"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>先にQのy座標を求めてから、長方形の面積を計算する。</div>
+    <div class="fig-box"><div id="figQ08e"></div></div>
+    <div class="step"><span>③-1</span>x＝−4を式に代入してyを求める：y＝8÷(−4)＝−2。Q(−4, −2)。</div>
+    <div class="step"><span>③-2</span>長方形の辺の長さは、座標の符号を外した「長さ」なので、4と2を使う。</div>
+    <div class="step"><span>③-3</span>長方形の面積＝4×2＝8。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>yがマイナスだからといって、面積もマイナスにしてしまう。長方形の辺の長さはいつも正の数。</div>
+    <div class="step"><span>⑤確かめ</span>(−4)×(−2)＝8＝aと一致する。</div>
+    <div class="ans-final"><span>こたえ</span>8</div>
+  </div>
+  <div class="gwrap" data-ids="q08"></div>
+</div>
+
+<!-- L判定: L5 根拠=xy=aという不変量を自力で発見し新しい数値で一般化して説明させる／lite単独評定 -->
+<div class="q calc hard" data-id="I">
+  <div class="qnum">★問9【難問】長方形の面積はいつも同じ<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問9</span>反比例 y＝<span class="frac"><span class="n">a</span><span class="d">x</span></span> のグラフ上に点P(3, 6)がある。<br>
+  (1) aの値を求めなさい。<br>
+  (2) 点Pから、x軸、y軸にそれぞれ垂線をおろしてできる長方形の面積を求めなさい。<br>
+  (3) このグラフ上でx座標が−9である点をRとする。Rについても同じように長方形をつくり、面積を求めなさい。そして、(2)の面積と比べて分かることを説明しなさい。</div>
+  <div class="fig-box"><div id="figQ09"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>反比例のグラフ上の点でできる長方形の面積は、グラフのどこでもいつも同じ値（aの絶対値）になる。</div>
+    <div class="fig-box"><div id="figQ09e"></div></div>
+    <p class="fig-cap">②図で見る：Pの長方形（青）とRの長方形（オレンジ）。形はちがうが面積は同じ。</p>
+    <div class="step"><span>③-1</span>(1) Pはy＝<span class="frac"><span class="n">a</span><span class="d">x</span></span>上にあるので、a＝x×y＝3×6＝18。</div>
+    <div class="step"><span>③-2</span>(2) Pでできる長方形の面積＝3×6＝18。</div>
+    <div class="step"><span>③-3</span>(3) x＝−9をy＝<span class="frac"><span class="n">18</span><span class="d">x</span></span>に代入：y＝18÷(−9)＝−2。R(−9, −2)。長方形の面積＝9×2＝18。</div>
+    <div class="step"><span>③-4</span>(2)と(3)を比べると、どちらも面積は18で同じ。これは、反比例のグラフ上のどの点でも「x座標×y座標」の絶対値がいつもaと同じ18になるから（これが反比例の式x×y＝aの意味そのもの）。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>(3)でx＝−9を代入したあと、yの符号を落として長方形の面積をマイナスにしてしまう。また、(2)と(3)を比べる説明で「たまたま同じ」で終わらせ、「x×y＝aだから」という理由を書かない。</div>
+    <div class="step"><span>⑤確かめ</span>3×6＝18、9×2＝18。どちらもa＝18に一致している。</div>
+    <div class="ans-final"><span>こたえ</span>(1) a＝18　(2) 18　(3) 18（(2)と同じ。グラフ上のどの点でも長方形の面積はaの絶対値18になるから）</div>
+  </div>
+  <div class="gwrap" data-ids="q09"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">④</span><span class="unit-name">直線が線分と交わるaの範囲（S12-1）</span><span class="unit-time">目安 15分</span></div>
+
+<div class="q calc" data-id="J">
+  <div class="qnum">★問10　1点を通るaを求める</div>
+  <div class="qbody"><span class="pn">問10</span>点(5, 4)を通る比例のグラフ y＝axのaの値を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>比例のグラフが通る1点がわかれば、a＝y÷xで求められる。</div>
+    <div class="step"><span>③-1</span>a＝4÷5＝<span class="frac"><span class="n">4</span><span class="d">5</span></span>。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>x÷yのように、xとyを逆にして計算してしまう。</div>
+    <div class="step"><span>⑤確かめ</span>x＝5を代入すると<span class="frac"><span class="n">4</span><span class="d">5</span></span>×5＝4で合っている。</div>
+    <div class="ans-final"><span>こたえ</span>a＝<span class="frac"><span class="n">4</span><span class="d">5</span></span></div>
+  </div>
+  <div class="gwrap" data-ids="q10"></div>
+</div>
+
+<div class="q calc" data-id="K">
+  <div class="qnum">★問11　1点を通るaを求める</div>
+  <div class="qbody"><span class="pn">問11</span>点(4, 10)を通る比例のグラフ y＝axのaの値を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>比例のグラフが通る1点がわかれば、a＝y÷xで求められる。</div>
+    <div class="step"><span>③-1</span>a＝10÷4＝<span class="frac"><span class="n">5</span><span class="d">2</span></span>。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>約分をせずに<span class="frac"><span class="n">10</span><span class="d">4</span></span>のままにしてしまう（正しくは<span class="frac"><span class="n">5</span><span class="d">2</span></span>まで約分する）。</div>
+    <div class="step"><span>⑤確かめ</span>x＝4を代入すると<span class="frac"><span class="n">5</span><span class="d">2</span></span>×4＝10で合っている。</div>
+    <div class="ans-final"><span>こたえ</span>a＝<span class="frac"><span class="n">5</span><span class="d">2</span></span></div>
+  </div>
+  <div class="gwrap" data-ids="q11"></div>
+</div>
+
+<!-- L判定: L4 根拠=線分の両端を通るaを求め掃引区間として統合する標準手順／lite単独評定 -->
+<div class="q calc hard" data-id="L">
+  <div class="qnum">★問12【難問】直線が線分と交わるaの範囲<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問12</span>2点A(3, 6)、B(6, 2)を結ぶ線分ABがある。比例のグラフ y＝axがこの線分ABと交わるとき、aの値の範囲を求めなさい。</div>
+  <div class="fig-box"><div id="figQ12"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>y＝axは、原点を通る直線がaの値によって向きを変えながら回転していくイメージ。線分の両端を通るときのaを求めれば、その間のaで必ず線分と交わる。</div>
+    <div class="fig-box"><div id="figQ12e"></div></div>
+    <p class="fig-cap">②図で見る：線分ABと、両端を通る2本の直線（a＝2とa＝1/3）。</p>
+    <div class="step"><span>③-1</span>直線が点Aを通るときのaを求める：a＝6÷3＝2。</div>
+    <div class="step"><span>③-2</span>直線が点Bを通るときのaを求める：a＝2÷6＝<span class="frac"><span class="n">1</span><span class="d">3</span></span>。</div>
+    <div class="step"><span>③-3</span>aが2から<span class="frac"><span class="n">1</span><span class="d">3</span></span>まで少しずつ変わる間、直線はAからBまで線分ABの上をずっと通り続ける（線分は折れ曲がっていないので、途中で外れることはない）。だから、aの範囲は<span class="frac"><span class="n">1</span><span class="d">3</span></span>以上2以下。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>aが大きい方・小さい方を逆にして、範囲の不等号を間違えてしまう。また、線分の両端を含む（＝も入る）ことを見落として不等号だけにしてしまう。</div>
+    <div class="step"><span>⑤確かめ</span>a＝2のとき直線はAを通り、a＝<span class="frac"><span class="n">1</span><span class="d">3</span></span>のとき直線はBを通る。間のa（例えばa＝1）でも、直線y＝xは線分ABの上のどこかを通る。</div>
+    <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">1</span><span class="d">3</span></span>≦a≦2</div>
+  </div>
+  <div class="gwrap" data-ids="q12"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑤</span><span class="unit-name">動く点と三角形の面積（S12-2）</span><span class="unit-time">目安 15分</span></div>
+
+<div class="q calc" data-id="M">
+  <div class="qnum">★問13　動く点の三角形（数で計算）</div>
+  <div class="qbody"><span class="pn">問13</span>比例 y＝<span class="frac"><span class="n">3</span><span class="d">4</span></span>x のグラフ上の点P(8, 6)と、x軸上の点(8, 0)、原点Oでできる三角形の面積を求めなさい。</div>
+  <div class="fig-box"><div id="figQ13"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>原点と、x軸上の点と、比例のグラフ上の点でできる三角形は直角三角形になるので、底辺×高さ÷2で求まる。</div>
+    <div class="fig-box"><div id="figQ13e"></div></div>
+    <div class="step"><span>③-1</span>底辺は原点から(8, 0)までの長さ＝8。</div>
+    <div class="step"><span>③-2</span>高さはPのy座標＝6。</div>
+    <div class="step"><span>③-3</span>面積＝8×6÷2＝24。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>底辺と高さを、Pの座標そのもの（x座標とy座標）ではなく別の長さと勘違いしてしまう。</div>
+    <div class="step"><span>⑤確かめ</span>Pがy＝<span class="frac"><span class="n">3</span><span class="d">4</span></span>x上にあるか確認：<span class="frac"><span class="n">3</span><span class="d">4</span></span>×8＝6で合っている。</div>
+    <div class="ans-final"><span>こたえ</span>24</div>
+  </div>
+  <div class="gwrap" data-ids="q13"></div>
+</div>
+
+<div class="q calc" data-id="N">
+  <div class="qnum">★問14　動く点の三角形（式で表す）</div>
+  <div class="qbody"><span class="pn">問14</span>比例 y＝<span class="frac"><span class="n">3</span><span class="d">4</span></span>x のグラフ上の点Pのx座標をtとする（t&gt;0）。点Pと、x軸上の点(t, 0)、原点Oでできる三角形の面積を、tの式で表しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>具体的な数の代わりにtを使っても、面積の求め方（底辺×高さ÷2）は同じ。</div>
+    <div class="step"><span>③-1</span>Pの座標は(t, <span class="frac"><span class="n">3</span><span class="d">4</span></span>t)。</div>
+    <div class="step"><span>③-2</span>底辺＝t、高さ＝<span class="frac"><span class="n">3</span><span class="d">4</span></span>t。</div>
+    <div class="step"><span>③-3</span>面積＝t×<span class="frac"><span class="n">3</span><span class="d">4</span></span>t÷2＝<span class="frac"><span class="n">3</span><span class="d">8</span></span>t²。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>高さの部分に具体的な数字がないと不安になり、tを勝手に1のような数に置きかえて計算してしまう。文字のまま計算してよい。</div>
+    <div class="step"><span>⑤確かめ</span>t＝8を代入すると<span class="frac"><span class="n">3</span><span class="d">8</span></span>×64＝24で、問13の答えと一致する。</div>
+    <div class="ans-final"><span>こたえ</span><span class="frac"><span class="n">3</span><span class="d">8</span></span>t²</div>
+  </div>
+  <div class="gwrap" data-ids="q14"></div>
+</div>
+
+<!-- L判定: L4 根拠=面積をtの式に一般化した上で変域内の方程式を解く複数条件の統合／lite単独評定 -->
+<div class="q calc hard" data-id="O">
+  <div class="qnum">★問15【難問】面積が12になるとき<span class="hard-badge">本問</span></div>
+  <div class="qbody"><span class="pn">問15</span>比例 y＝<span class="frac"><span class="n">2</span><span class="d">3</span></span>x のグラフ上を点Pが動く。Pのx座標をt（0&lt;t≦9）とする。<br>
+  (1) 点Pと、x軸上の点(t, 0)、原点Oでできる三角形の面積を、tの式で表しなさい。<br>
+  (2) この面積が12になるときのtの値を求めなさい。</div>
+  <div class="fig-box"><div id="figQ15"></div></div>
+  <p class="fig-cap">太線が点Pの動く範囲（0&lt;t≦9）。左端は含まない（白丸）、右端は含む（黒丸）。</p>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>まず面積をtの式に表し、その式に12を当てはめてtの方程式として解く。</div>
+    <div class="fig-box"><div id="figQ15e"></div></div>
+    <p class="fig-cap">②図で見る：面積が12になるt＝6のときの点P。</p>
+    <div class="step"><span>③-1</span>(1) Pの座標は(t, <span class="frac"><span class="n">2</span><span class="d">3</span></span>t)。底辺t、高さ<span class="frac"><span class="n">2</span><span class="d">3</span></span>tだから、面積＝t×<span class="frac"><span class="n">2</span><span class="d">3</span></span>t÷2＝<span class="frac"><span class="n">1</span><span class="d">3</span></span>t²。</div>
+    <div class="step"><span>③-2</span>(2) <span class="frac"><span class="n">1</span><span class="d">3</span></span>t²＝12とおく。</div>
+    <div class="step"><span>③-3</span>両辺に3をかけてt²＝36。t&gt;0だからt＝6。</div>
+    <div class="step"><span>③-4</span>変域0&lt;t≦9の中に6は入っているので、これが答え。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>t²＝36からt＝6と−6の両方を答えにしてしまう（tはx座標として使っているのでt&gt;0）。また、変域の中に答えが入っているかを確認しない。</div>
+    <div class="step"><span>⑤確かめ</span>t＝6のとき、面積＝<span class="frac"><span class="n">1</span><span class="d">3</span></span>×36＝12で正しい。</div>
+    <div class="ans-final"><span>こたえ</span>(1) <span class="frac"><span class="n">1</span><span class="d">3</span></span>t²　(2) t＝6</div>
+  </div>
+  <div class="gwrap" data-ids="q15"></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓F4 完了）</button>
+
+<div class="goal-box">
+  <b>次の目標</b><br>
+  難問を見たら、まず「導入で練習したどの考え方が使えるか」を最初に探す。
+</div>
+
+<p class="tail">✕をつけた問題は、図を自分でノートに書き写してから、もう一度手順を追ってみよう。<br>
+難問はすぐにできなくて当たり前。導入の2問に戻って考え方を確認してから、もう一度挑戦しよう。</p>
+
+</div>
+
+<script src="11月関数図.js"></script>
+<script>
+var KEY='tokkun_f11_4';
+
+/* 解説トグル */
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+/* ○✕採点 */
+function g(btn,id,v){
+  var row=btn.closest('.gq');
+  row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=row.nextElementSibling, w3=mt.nextElementSibling;
+  if(v==='x'){mt.classList.add('show');w3.classList.add('show');}
+  else{mt.classList.remove('show');w3.classList.remove('show');}
+}
+
+/* ミス型 */
+function m(btn){
+  var p=btn.parentNode;
+  p.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+p.getAttribute('data-gid')+'_type',btn.textContent);
+}
+
+/* 採点UIを生成 */
+document.querySelectorAll('.gwrap').forEach(function(w){
+  var ids=w.getAttribute('data-ids').split(',');
+  var h='';
+  ids.forEach(function(id){
+    var n=id.replace('q','').replace(/^0/,'');
+    h+='<div class="gq"><span class="gq-label">問'+n+'</span>'
+      +'<button class="o" onclick="g(this,\''+id+'\',\'o\')">○</button>'
+      +'<button class="x" onclick="g(this,\''+id+'\',\'x\')">✕</button></div>'
+      +'<div class="mt" data-gid="'+id+'"><button onclick="m(this)">計算ミス</button>'
+      +'<button onclick="m(this)">解説で分かった</button>'
+      +'<button onclick="m(this)">解説見ても分からない</button></div>'
+      +'<div class="write3">📝 正しい式・答えをノートに3回書こう</div>';
+  });
+  w.innerHTML=h;
+});
+
+/* 保存済みを復元 */
+document.querySelectorAll('.gq').forEach(function(row){
+  var btn=row.querySelector('.o');
+  var id=btn.getAttribute('onclick').match(/'(q\d+)'/)[1];
+  var v=localStorage.getItem(KEY+'_'+id);
+  if(v){row.querySelector(v==='o'?'.o':'.x').classList.add('on');
+    if(v==='x'){row.nextElementSibling.classList.add('show');
+      row.nextElementSibling.nextElementSibling.classList.add('show');}}
+  var ty=localStorage.getItem(KEY+'_'+id+'_type');
+  if(ty){row.nextElementSibling.querySelectorAll('button').forEach(function(b){
+    if(b.textContent===ty)b.classList.add('on');})}
+});
+
+/* 完了 */
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+if(localStorage.getItem(KEY+'_done')==='1'){
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+
+/* 図の描画 */
+window.addEventListener('DOMContentLoaded', function () {
+
+  // 問1：三角形OAB（問題）
+  drawPlane('figQ01', {
+    xmin:-1, xmax:6, ymin:-1, ymax:6,
+    ariaLabel:'点A、点B、原点Oを結んだ三角形',
+    points:[{x:1,y:5,name:'A',coord:true,pos:'nw'},{x:4,y:1,name:'B',coord:true,pos:'se'}],
+    segments:[{x1:0,y1:0,x2:1,y2:5},{x1:0,y1:0,x2:4,y2:1},{x1:1,y1:5,x2:4,y2:1}]
+  });
+  // 問1：解説（外側の長方形つき）
+  drawPlane('figQ01e', {
+    xmin:-1, xmax:6, ymin:-1, ymax:6,
+    ariaLabel:'三角形OABと外側の長方形',
+    points:[{x:1,y:5,name:'A',coord:true,pos:'nw'},{x:4,y:1,name:'B',coord:true,pos:'se'}],
+    segments:[{x1:0,y1:0,x2:1,y2:5},{x1:0,y1:0,x2:4,y2:1},{x1:1,y1:5,x2:4,y2:1},
+              {x1:0,y1:5,x2:4,y2:5,dash:true},{x1:4,y1:5,x2:4,y2:0,dash:true}],
+    polygons:[{pts:[[0,0],[1,5],[4,1]]}]
+  });
+
+  // 問2：交点（問題）
+  drawPlane('figQ02', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'y=3xとy=12/xのグラフ',
+    graphs:[{type:'prop', a:3, color:'blue', label:'y=3x'},{type:'inv', a:12, color:'orange', label:'y=12/x', labelAt:3}]
+  });
+  // 問2：解説（交点つき）
+  drawPlane('figQ02e', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'y=3xとy=12/xの交点',
+    graphs:[{type:'prop', a:3, color:'blue', label:'y=3x'},{type:'inv', a:12, color:'orange', label:'y=12/x', labelAt:3}],
+    points:[{x:2,y:6,name:'交点',coord:true,pos:'ne'}]
+  });
+
+  // 問3：三角形OAB（問題）
+  drawPlane('figQ03', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'比例2本と反比例のグラフ',
+    graphs:[
+      {type:'prop', a:2, color:'blue', style:'solid', label:'y=2x'},
+      {type:'prop', a:0.5, color:'blue', style:'dash', label:'y=x/2'},
+      {type:'inv', a:8, color:'orange', style:'solid', label:'y=8/x'}
+    ]
+  });
+  // 問3：解説（A, B, 三角形, 長方形つき）
+  drawPlane('figQ03e', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'交点A, Bと三角形OAB、外側の長方形',
+    graphs:[
+      {type:'prop', a:2, color:'blue', style:'solid', label:'y=2x'},
+      {type:'prop', a:0.5, color:'blue', style:'dash', label:'y=x/2'},
+      {type:'inv', a:8, color:'orange', style:'solid', label:'y=8/x'}
+    ],
+    points:[{x:2,y:4,name:'A',pos:'nw',coord:true},{x:4,y:2,name:'B',pos:'se',coord:true}],
+    segments:[{x1:0,y1:4,x2:4,y2:4,dash:true},{x1:4,y1:4,x2:4,y2:0,dash:true}],
+    polygons:[{pts:[[0,0],[2,4],[4,2]]}]
+  });
+
+  // 問4：y=20/x（問題）
+  drawPlane('figQ04', {
+    xmin:0, xmax:21, ymin:0, ymax:21, unit:13,
+    ariaLabel:'y=20/xのグラフ',
+    graphs:[{type:'inv', a:20, color:'orange', label:'y=20/x'}]
+  });
+  // 問4：解説（整数点つき）
+  var lat20 = [[1,20],[2,10],[4,5],[5,4],[10,2],[20,1]];
+  drawPlane('figQ04e', {
+    xmin:0, xmax:21, ymin:0, ymax:21, unit:13,
+    ariaLabel:'y=20/x上の正の整数点',
+    graphs:[{type:'inv', a:20, color:'orange', label:'y=20/x'}],
+    points: lat20.map(function(p){ return {x:p[0], y:p[1]}; })
+  });
+
+  // 問5：y=-12/x（問題）
+  drawPlane('figQ05', {
+    xmin:-13, xmax:13, ymin:-13, ymax:13, unit:13,
+    ariaLabel:'y=-12/xのグラフ',
+    graphs:[{type:'inv', a:-12, color:'orange', label:'y=-12/x'}]
+  });
+  // 問5：解説（整数点つき）
+  var lat12 = [[1,-12],[2,-6],[3,-4],[4,-3],[6,-2],[12,-1],[-1,12],[-2,6],[-3,4],[-4,3],[-6,2],[-12,1]];
+  drawPlane('figQ05e', {
+    xmin:-13, xmax:13, ymin:-13, ymax:13, unit:13,
+    ariaLabel:'y=-12/x上の整数点（正負とも）',
+    graphs:[{type:'inv', a:-12, color:'orange', label:'y=-12/x'}],
+    points: lat12.map(function(p){ return {x:p[0], y:p[1]}; })
+  });
+
+  // 問6：y=24/x（問題）
+  drawPlane('figQ06', {
+    xmin:-25, xmax:25, ymin:-25, ymax:25, unit:13, labelEvery:4,
+    ariaLabel:'y=24/xのグラフ',
+    graphs:[{type:'inv', a:24, color:'orange', label:'y=24/x'}]
+  });
+  // 問6：解説（整数点つき）
+  var lat24 = [[1,24],[2,12],[3,8],[4,6],[6,4],[8,3],[12,2],[24,1],
+               [-1,-24],[-2,-12],[-3,-8],[-4,-6],[-6,-4],[-8,-3],[-12,-2],[-24,-1]];
+  drawPlane('figQ06e', {
+    xmin:-25, xmax:25, ymin:-25, ymax:25, unit:13, labelEvery:4,
+    ariaLabel:'y=24/x上の整数点（正負とも）16個',
+    graphs:[{type:'inv', a:24, color:'orange', label:'y=24/x'}],
+    points: lat24.map(function(p){ return {x:p[0], y:p[1]}; })
+  });
+
+  // 問7：P(2,4)（問題）
+  drawPlane('figQ07', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'y=8/xと点P',
+    graphs:[{type:'inv', a:8, color:'orange', label:'y=8/x'}],
+    points:[{x:2,y:4,name:'P',coord:true,pos:'ne'}]
+  });
+  // 問7：解説（長方形つき）
+  drawPlane('figQ07e', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'y=8/xと点Pからの長方形',
+    graphs:[{type:'inv', a:8, color:'orange', label:'y=8/x'}],
+    points:[{x:2,y:4,name:'P',coord:true,pos:'ne'}],
+    segments:[{x1:2,y1:4,x2:2,y2:0,dash:true},{x1:2,y1:4,x2:0,y2:4,dash:true}],
+    polygons:[{pts:[[0,0],[2,0],[2,4],[0,4]]}]
+  });
+
+  // 問8：x=-4の案内線（問題）
+  drawPlane('figQ08', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'y=8/xとx=-4の目印',
+    graphs:[{type:'inv', a:8, color:'orange', label:'y=8/x'}],
+    segments:[{x1:-4,y1:-6,x2:-4,y2:6,dash:true}]
+  });
+  // 問8：解説（Qと長方形）
+  drawPlane('figQ08e', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'y=8/xと点Qからの長方形',
+    graphs:[{type:'inv', a:8, color:'orange', label:'y=8/x'}],
+    points:[{x:-4,y:-2,name:'Q',coord:true,pos:'sw'}],
+    segments:[{x1:-4,y1:-2,x2:-4,y2:0,dash:true},{x1:-4,y1:-2,x2:0,y2:-2,dash:true}],
+    polygons:[{pts:[[0,0],[-4,0],[-4,-2],[0,-2]]}]
+  });
+
+  // 問9：y=18/x, P(3,6)（問題）
+  drawPlane('figQ09', {
+    xmin:-10, xmax:10, ymin:-10, ymax:10, unit:20,
+    ariaLabel:'y=18/xと点P、x=-9の目印',
+    graphs:[{type:'inv', a:18, color:'orange', label:'y=18/x'}],
+    points:[{x:3,y:6,name:'P',coord:true,pos:'ne'}],
+    segments:[{x1:-9,y1:-10,x2:-9,y2:10,dash:true}]
+  });
+  // 問9：解説（PとRの長方形）
+  drawPlane('figQ09e', {
+    xmin:-10, xmax:10, ymin:-10, ymax:10, unit:20,
+    ariaLabel:'y=18/xと点P、点Rの長方形',
+    graphs:[{type:'inv', a:18, color:'orange', label:'y=18/x'}],
+    points:[{x:3,y:6,name:'P',coord:true,pos:'ne'},{x:-9,y:-2,name:'R',coord:true,pos:'se'}],
+    segments:[{x1:3,y1:6,x2:3,y2:0,dash:true},{x1:3,y1:6,x2:0,y2:6,dash:true},
+              {x1:-9,y1:-2,x2:-9,y2:0,dash:true},{x1:-9,y1:-2,x2:0,y2:-2,dash:true}],
+    polygons:[{pts:[[0,0],[3,0],[3,6],[0,6]]},{pts:[[0,0],[-9,0],[-9,-2],[0,-2]], fill:'rgba(154,52,18,0.18)'}]
+  });
+
+  // 問12：線分AB（問題）
+  drawPlane('figQ12', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'2点A, Bを結ぶ線分',
+    points:[{x:3,y:6,name:'A',coord:true,pos:'nw'},{x:6,y:2,name:'B',coord:true,pos:'sw'}],
+    segments:[{x1:3,y1:6,x2:6,y2:2}]
+  });
+  // 問12：解説（境界の2直線つき）
+  drawPlane('figQ12e', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'線分ABと両端を通る2本の比例の直線',
+    graphs:[
+      {type:'prop', a:2, color:'blue', style:'solid', label:'y=2x'},
+      {type:'prop', a:1/3, color:'blue', style:'dash', label:'y=(1/3)x'}
+    ],
+    points:[{x:3,y:6,name:'A',coord:true,pos:'nw'},{x:6,y:2,name:'B',coord:true,pos:'sw'}],
+    segments:[{x1:3,y1:6,x2:6,y2:2}]
+  });
+
+  // 問13：P(8,6)（問題）
+  drawPlane('figQ13', {
+    xmin:-2, xmax:10, ymin:-2, ymax:10,
+    ariaLabel:'y=(3/4)xと点P',
+    graphs:[{type:'prop', a:0.75, color:'blue', label:'y=(3/4)x'}],
+    points:[{x:8,y:6,name:'P',coord:true,pos:'ne'},{x:8,y:0,name:'H',pos:'se'}],
+    segments:[{x1:8,y1:6,x2:8,y2:0,dash:true}]
+  });
+  // 問13：解説（三角形の塗りつき）
+  drawPlane('figQ13e', {
+    xmin:-2, xmax:10, ymin:-2, ymax:10,
+    ariaLabel:'三角形OHPの面積',
+    graphs:[{type:'prop', a:0.75, color:'blue', label:'y=(3/4)x'}],
+    points:[{x:8,y:6,name:'P',coord:true,pos:'ne'},{x:8,y:0,name:'H',pos:'se'}],
+    segments:[{x1:8,y1:6,x2:8,y2:0,dash:true}],
+    polygons:[{pts:[[0,0],[8,0],[8,6]]}]
+  });
+
+  // 問15：動く範囲（問題）
+  drawPlane('figQ15', {
+    xmin:-2, xmax:10, ymin:-2, ymax:10,
+    ariaLabel:'y=(2/3)xと点Pの動く範囲',
+    graphs:[{type:'prop', a:2/3, color:'blue', label:'y=(2/3)x'}],
+    highlight:{graphIndex:0, xFrom:0, xTo:9, fromOpen:true, toOpen:false}
+  });
+  // 問15：解説（t=6の点と三角形）
+  drawPlane('figQ15e', {
+    xmin:-2, xmax:10, ymin:-2, ymax:10,
+    ariaLabel:'t=6のときの点Pと三角形',
+    graphs:[{type:'prop', a:2/3, color:'blue', label:'y=(2/3)x'}],
+    highlight:{graphIndex:0, xFrom:0, xTo:9, fromOpen:true, toOpen:false},
+    points:[{x:6,y:4,name:'P',coord:true,pos:'ne'},{x:6,y:0,name:'H',pos:'se'}],
+    segments:[{x1:6,y1:4,x2:6,y2:0,dash:true}],
+    polygons:[{pts:[[0,0],[6,0],[6,4]]}]
+  });
+
+});
+</script>
+</body>
+</html>

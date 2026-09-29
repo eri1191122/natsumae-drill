@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓D4｜9月選抜やり直し</title>
+<style>
+:root{--ink:#1b1c22;--sub:#5a5f6e;--line:#e3e5ec;--bg:#fbfbfd;--key:#1f4fd8;--key-bg:#eef2ff;
+--go:#0a7d55;--go-bg:#eaf7f1;--hot:#d92b3a;--hot-bg:#fff2f3;--warn:#b26a00;--warn-bg:#fff7e8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:14px 18px 70px}
+a.back{display:inline-block;margin:6px 0 12px;color:var(--key);font-size:15px;text-decoration:none;font-weight:700}
+
+.pg-hd{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:16px;padding:22px 22px 20px;margin:0 0 18px}
+.pg-badge{display:inline-block;background:rgba(255,255,255,.16);border-radius:7px;padding:4px 10px;
+font-size:12.5px;font-weight:700;margin:0 6px 8px 0}
+.pg-hd h1{font-size:22px;margin:6px 0 8px;line-height:1.45}
+.pg-hd p{font-size:14.5px;margin:0;opacity:.9}
+.pg-cheer{margin-top:10px !important;font-size:14px !important;opacity:.8 !important}
+
+.kind-box{background:var(--key-bg);border-radius:12px;padding:14px 18px;margin:0 0 20px;font-size:14.5px;line-height:1.9}
+.kind-box b{color:var(--key)}
+
+.unit-banner{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--key-bg);
+border-left:5px solid var(--key);border-radius:0 10px 10px 0;padding:11px 15px;margin:26px 0 12px}
+.unit-num{font-size:14px;font-weight:800;color:var(--key)}
+.unit-name{font-size:16px;font-weight:800}
+.unit-time{font-size:13px;color:var(--sub);margin-left:auto}
+
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.qnum{font-size:16px;font-weight:800;margin:0 0 10px}
+.qbody{font-size:17px;line-height:2.5}
+.qbody .pn{color:#2f5a8a;font-weight:700;margin-right:6px}
+.math{font-family:"Times New Roman",serif;font-size:19px;letter-spacing:.02em}
+.note-draw{background:var(--warn-bg);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:12px 0 0}
+
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 2px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+
+.ratetable{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+.ratetable th,.ratetable td{border:1px solid var(--line);padding:6px 8px;text-align:center}
+.ratetable th{background:var(--key-bg)}
+
+.ans-btn{display:block;width:100%;margin:12px 0 0;padding:12px;border:0;border-radius:10px;
+background:var(--key);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.ans-box{display:none;margin:12px 0 0;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ans-box.open{display:block}
+.osarai{background:var(--go-bg);border-left:4px solid var(--go);border-radius:0 8px 8px 0;
+padding:10px 14px;font-size:14.5px;margin:0 0 12px}
+.step{font-size:15.5px;margin:0 0 9px;padding:0 0 0 4px}
+.step>span:first-child{display:inline-block;min-width:44px;font-weight:800;color:var(--key)}
+.miss-box{background:var(--warn-bg);border-radius:9px;padding:11px 14px;font-size:14.5px;margin:12px 0 0}
+.miss-box b{color:var(--warn)}
+.bx-warn{background:var(--hot-bg);border:1px solid #f6ccd1;border-radius:9px;padding:11px 14px;
+font-size:14.5px;margin:12px 0 0}
+.bx-warn b{color:var(--hot)}
+.ans-final{background:var(--ink);color:#fff;border-radius:10px;padding:12px 15px;margin:13px 0 0;font-size:15.5px}
+.ans-final>span:first-child{font-weight:800;margin-right:10px}
+
+.gwrap{margin:12px 0 0;border-top:1px dashed var(--line);padding:12px 0 0}
+.gq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 7px;font-size:14px}
+.gq-label{min-width:52px;font-weight:700;color:var(--sub)}
+.gq button{border:1.5px solid var(--line);background:#fff;border-radius:7px;width:36px;height:32px;
+font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.gq button.o.on{background:var(--go);border-color:var(--go);color:#fff}
+.gq button.x.on{background:var(--hot);border-color:var(--hot);color:#fff}
+.mt{display:none;gap:6px;flex-wrap:wrap;margin:2px 0 0 52px}
+.mt.show{display:flex}
+.mt button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px;
+font-size:12.5px;cursor:pointer;font-family:inherit;width:auto;height:auto}
+.mt button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.write3{display:none;margin:6px 0 0 52px;font-size:13px;color:var(--hot);font-weight:700}
+.write3.show{display:block}
+
+.done{display:block;width:100%;margin:26px 0 0;padding:18px;border:0;border-radius:14px;
+background:var(--go);color:#fff;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit}
+.done.fin{background:var(--ink)}
+.tail{text-align:center;color:var(--sub);font-size:13.5px;margin:18px 0 0;line-height:1.9}
+
+@media print{
+ body{background:#fff}
+ a.back,.ans-btn,.ans-box,.gwrap,.done,.note-draw{display:none !important}
+ .q{break-inside:avoid;page-break-inside:avoid}
+ .pg-hd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{margin:12mm}
+}
+/*frac-guard*/.frac{display:inline-flex!important;flex-direction:column!important;min-width:0!important;width:auto!important}.frac>span{display:block!important;min-width:0!important;width:auto!important;margin:0!important;color:inherit!important;font-weight:inherit!important}.frac>.n{border-bottom:1.8px solid currentColor!important;padding:0 5px 2px!important}.frac>.d{padding:2px 5px 0!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#mock">← ダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div>
+    <span class="pg-badge">特訓D4</span>
+    <span class="pg-badge">9月選抜やり直し</span>
+    <span class="pg-badge">数学11問＋英語10問＋国語5問＋型1枚</span>
+  </div>
+  <h1>9月選抜やり直し｜本番で落とした問題だけ</h1>
+  <p>目安: 数学60分＋英語20分＋国語20分　対象: 中1　全問に解説つき</p>
+  <p class="pg-cheer">ここにあるのは、9月の本番で実際に間違えた問題だけ。もう一度、自分の力で解いてみよう。</p>
+</div>
+
+<div class="kind-box">
+  <b>間違いの3つの型</b><br>
+  ① あと一歩の仕上げ：やり方はわかっていたのに、最後の一歩（符号・単位・書き方）でこぼした<br>
+  ② 覚えていなかった：そのルール・単語をまだ知らなかった<br>
+  ③ 初めての型：見たことのない出題のされ方に、その場で戸惑った
+</div>
+
+<!-- ===== 数学 ===== -->
+<div class="unit-banner"><span class="unit-num">数学　問1〜11</span><span class="unit-name">9月選抜で落とした11問</span><span class="unit-time">目安 60分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qnum">★大問1　計算・文字式・方程式・比例式</div>
+  <div class="qbody">
+    <span class="pn">問1</span><span class="math">0.75 ÷ 0.125 × (−2)³ × (−0.25)²</span> を計算しなさい。<br>
+    <span class="pn">問2</span><span class="math"><span class="frac"><span class="n">x−2</span><span class="d">3</span></span> − <span class="frac"><span class="n">5x−3</span><span class="d">4</span></span> ＋ x − 1</span> を計算しなさい。<br>
+    <span class="pn">問3</span>方程式　<span class="math"><span class="frac"><span class="n">7x−1</span><span class="d">4</span></span> − <span class="frac"><span class="n">5+2x</span><span class="d">2</span></span> ＝ 4</span>　を解きなさい。<br>
+    <span class="pn">問4</span>比例式　<span class="math">(5x − 3) : (8x + 1) ＝ 3 : 5</span>　を解きなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>途中式をノートに書いてから答え合わせをしよう。</div>
+    <div class="osarai">小数はぜんぶ分数に直し、累乗を先に計算してから、左から順にかけ算・わり算・分数の計算を進めよう。</div>
+    <div class="step"><span>問1</span>0.75＝4分の3、0.125＝8分の1、(−2)³＝−8、(−0.25)²＝16分の1 → わり算は逆数のかけ算にする → 4分の3×8×(−8)×16分の1＝−3</div>
+    <div class="step"><span>問2</span>分母3と4の最小公倍数12で通分 → {4(x−2)−3(5x−3)+12x−12}を12でわる形 → 展開して同類項をまとめる → 4x−8−15x+9+12x−12＝x−11 → 最後に12でわった形にする</div>
+    <div class="step"><span>問3</span>両辺に4をかけて分数を消す → 7x−1−2(5+2x)＝16 → かっこをはずす → 7x−1−10−4x＝16 → 3x−11＝16 → 3x＝27 → x＝9</div>
+    <div class="step"><span>問4</span>比例式は内側どうし・外側どうしをかけると等しい → 5(5x−3)＝3(8x+1) → 25x−15＝24x+3 → x＝18</div>
+    <div class="miss-box"><b>本番でのつまずき：</b>問1「−30」で10倍のずれ／問2 分子x−11までは合っていたが最後の「÷12」を忘れた／問3 式の符号が数か所で崩れx＝4になった／問4 比例式の式の立て方でつまずきx＝12になった</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問1 0.125を10分の1のように書く／問2 通分して計算したあと、分母に戻すのを忘れる／問3 −2(5+2x)の後ろの符号を変えわすれる／問4 5×(5x−3)の5を一部だけにかける</div>
+    <div class="ans-final"><span>こたえ</span>問1 −3／問2 <span class="frac"><span class="n">x−11</span><span class="d">12</span></span>／問3 x＝9／問4 x＝18</div>
+  </div>
+  <div class="gwrap" data-ids="q01,q02,q03,q04"></div>
+</div>
+
+<div class="q calc" data-id="B">
+  <div class="qnum">★大問2　整数の性質・図形の周</div>
+  <div class="qbody">
+    <span class="pn">問5</span>132にできるだけ小さい自然数をかけて、ある自然数nの2乗になるようにしたい。このとき、nの値を求めなさい。<br>
+    <span class="pn">問6</span>半径が18cmである四分円の周の長さは、<span class="math">[　]π ＋ [　](cm)</span> となる。[　]にあてはまる数を答えなさい。ただし、πは円周率とする。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>途中式をノートに書いてから答え合わせをしよう。</div>
+    <div class="osarai">「n²になる」は素因数分解してペアが作れない数を見つける問題。周の長さは弧と直線部分に分けて考える問題。</div>
+    <div class="step"><span>問5</span>132を素因数分解 → 132＝2²×3×11 → 2乗の形にするには、まだペアになっていない3と11をもう1組ずつ足せばよい → かける数は3×11＝33 → 132×33＝4356＝66² → n＝66</div>
+    <div class="step"><span>問6</span>四分円の周＝弧の部分＋半径2本分 → 弧＝円周×4分の1＝2×π×18÷4＝9π → 半径2本分＝18×2＝36 → あわせて9π＋36(cm)</div>
+    <div class="miss-box"><b>本番でのつまずき：</b>問5 素因数分解と「かける数＝33」までは合っていたが、聞かれている「n」ではなく「かける数」を答えてしまった／問6 弧の部分の計算でずれが生じた可能性がある</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問5 最後の一文（「nの値を求めなさい」）をもう一度読まずに答える／問6「4分の1」をかけ忘れて円周をまるごと使ってしまう</div>
+    <div class="ans-final"><span>こたえ</span>問5 n＝66／問6 9π＋36(cm)</div>
+  </div>
+  <div class="gwrap" data-ids="q05,q06"></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qnum">★大問4　約束記号　P(n)を使いこなす（初めての型）</div>
+  <div class="qbody">
+    4桁の自然数nについて、P(n)を「各位の数の積」と定める。例えば、P(5253) ＝ 5×2×5×3 ＝ 150 となる。<br><br>
+    <span class="pn">問7</span>P(n)の値が素数となる自然数nの値は何個あるか求めなさい。<br>
+    <span class="pn">問8</span>P(n)＝40 となる自然数nのうち、最大の数をn₁、最小の数をn₂とするとき、n₁－n₂の値を求めなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>まず最初の定義の文をもう一度読んでから、途中式をノートに書こう。</div>
+    <div class="osarai">初めての型の読み方：約束記号が出たら、定義の文をそのまま数字でなぞればいい。難しく考えなくていい。</div>
+    <div class="step"><span>問7</span>積が素数になるのは「1つだけ1桁の素数（2,3,5,7のどれか）、残り3つが全部1」のときだけ（1は何回かけても積を変えないから） → 1桁の素数は2,3,5,7の4種類 → その数字を4桁のどの位置に置くかで4通り → 4×4＝16個</div>
+    <div class="step"><span>問8</span>40を1桁どうしの積で作ると5×8のみ → 残りの2桁は積を変えない「1」を使う → 大きい数字を上の位に並べると最大＝8511 → 小さい数字を上の位に並べると最小＝1158 → 8511−1158＝7353</div>
+    <div class="miss-box"><b>本番でのつまずき：</b>問7・問8とも手をつけられず空欄のままだった</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問7「1」を使わない組み合わせも数えようとして混乱する／問8 40を作る数字の組み合わせを5×8以外にも探して時間を使いすぎる（1桁×1桁で40になるのはこれだけ）</div>
+    <div class="ans-final"><span>こたえ</span>問7 16個／問8 7353</div>
+  </div>
+  <div class="gwrap" data-ids="q07,q08"></div>
+</div>
+
+<div class="q calc" data-id="D">
+  <div class="qnum">★大問5　電気料金プラン（初めての型）</div>
+  <div class="qbody">
+    電力会社A・Bの1か月の電気料金は、基本料金とその月の使用量で段階的に定まる電力量料金の合計で、下の表のとおり。<br>
+    <table class="ratetable">
+      <tr><th></th><th>基本料金</th><th>電力量料金・第1段階</th><th>電力量料金・第2段階</th></tr>
+      <tr><td>A社</td><td>780円</td><td>最初の180kWhまで1kWhあたり20円</td><td>180kWhを超えた分は1kWhあたり40円</td></tr>
+      <tr><td>B社</td><td>1980円</td><td>最初の200kWhまで1kWhあたり15円</td><td>200kWhを超えた分は1kWhあたり30円</td></tr>
+    </table>
+    <span class="pn">問9</span>1か月の電力使用量が500kWhのとき、A社の1か月の電気料金は何円か求めなさい。<br>
+    <span class="pn">問10</span>A社の方が電気料金が安くなるのは、1か月の電力使用量が何kWh未満のときか求めなさい。<br>
+    <span class="pn">問11</span>A社とB社の1か月の電気料金の差が500円以内となるのは、電力使用量が何kWh以上何kWh以下のときか求めなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>段階が変わる場所（180kWh・200kWh）を表に書き出してから、途中式をノートに。</div>
+    <div class="osarai">初めての型の読み方：料金の問題は、区切りごとに分けて表にすると整理しやすい。段階が変わる場所を必ずチェックする。</div>
+    <div class="step"><span>問9</span>基本料金780円は必ずかかる → 最初の180kWhは180×20＝3600円 → 超えた分は500−180＝320kWhで320×40＝12800円 → 780＋3600＋12800＝17180円</div>
+    <div class="step"><span>問10</span>A社とB社の料金が等しくなる使用量を求める → 180kWhを超えた分は(x−180)のように引き算してから単価をかける → 整理すると10x＝1200の形になり、x＝192 → A社の方が安いのはこの数より下のとき</div>
+    <div class="step"><span>問11</span>A社が安い側とB社が安い側の2通りに分けて考える → A社側（180kWh未満）で差が500円になる使用量→140kWh → B社側（200kWhを超える側）で差が500円になる使用量→230kWh → あわせて140kWh以上230kWh以下</div>
+    <div class="miss-box"><b>本番でのつまずき：</b>問9 立式は完全に合っていたが3600＋12800の足し算を計算ミスした／問10「180kWhを超えた分」の式の作り方でつまずいた／問11 計算を試みた跡はあったが最後まで書ききれず空欄のままだった</div>
+    <div class="bx-warn"><b>よくある間違い：</b>問9 使用量全部を「180kWhまでの料金」で計算してしまう／問10「180kWhを超えた分」を(x−180)と書かずxだけで計算してしまう／問11 2つの場合分けのうち片方しか計算せずに終わる</div>
+    <div class="ans-final"><span>こたえ</span>問9 17180円／問10 192kWh未満／問11 140kWh以上230kWh以下</div>
+  </div>
+  <div class="gwrap" data-ids="q09,q10,q11"></div>
+</div>
+
+<!-- ===== 英語 ===== -->
+<div class="unit-banner"><span class="unit-num">英語　問12〜21</span><span class="unit-name">9月選抜の失点を10問に凝縮</span><span class="unit-time">目安 20分</span></div>
+
+<div class="q calc" data-id="E">
+  <div class="qnum">★文の書き始めは必ず大文字</div>
+  <div class="qbody">
+    <span class="pn">問12</span>「（あなたは）中国語を勉強しなさい。」を英語の命令文で書きなさい。<br>
+    <span class="pn">問13</span>「あなたの名前を書いてください。」を英語で書きなさい。<br>
+    <span class="pn">問14</span>次の文の（　）に入る1語を書きなさい。　My brother is a soccer player. (　) team is very popular.
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>書き終わったら、文の一番最初の1文字だけもう一度見直そう。</div>
+    <div class="osarai">日本語の「〜しなさい」の文は動詞の原形で始める。文の一番最初の文字は、意味に関係なく必ず大文字にする。</div>
+    <div class="step"><span>問12</span>「勉強する」の原形studyで文を始める → Study Chinese.</div>
+    <div class="step"><span>問13</span>「書く」の原形writeで文を始める → Write your name, please.</div>
+    <div class="step"><span>問14</span>前の文の「私の兄」を指す代名詞はHe → 名詞の前に置く形（所有格）にするとHis → His team is very popular.</div>
+    <div class="miss-box"><b>本番でのつまずき：</b>3問とも意味・文法は合っていたのに、書き始めが小文字（study／write／his）のままで全部×になった</div>
+    <div class="osarai">書いたら2点確認：①文頭は大文字になっているか　②数えられる名詞にsは付いているか</div>
+    <div class="ans-final"><span>こたえ</span>問12 Study Chinese.／問13 Write your name, please.／問14 His</div>
+  </div>
+  <div class="gwrap" data-ids="q12,q13,q14"></div>
+</div>
+
+<div class="q calc" data-id="F">
+  <div class="qnum">★つづりを正しく書こう</div>
+  <div class="qbody">
+    <span class="pn">問15</span>womanの複数形を書きなさい。<br>
+    <span class="pn">問16</span>次の（　）に入る1語を書きなさい。　Are you (　)? （疲れていますか。）<br>
+    <span class="pn">問17</span>次の（　）に入る1語を書きなさい。　I want nine (　). （チケットが9枚ほしい。）<br>
+    <span class="pn">問18</span>dirty（きたない）の反意語を書きなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>見て終わりにせず、声に出して1文字ずつ確認してから書こう。</div>
+    <div class="osarai">つづりは1文字ずつのかたまりで覚えると崩れにくい。</div>
+    <div class="step"><span>問15</span>woman→women。man／womanの複数形は不規則で、sをつけずに中のaをeに変える</div>
+    <div class="step"><span>問16</span>tired。t-i-r-e-d。「疲れる」tireに状態を表すedがついた形。母音のiを忘れない</div>
+    <div class="step"><span>問17</span>tickets。t-i-c-k-e-t。「チ」はti、「ケ」はckのセットで書く。数が9枚なので複数形のsも忘れない</div>
+    <div class="step"><span>問18</span>clean。c-l-e-a-n。「きれいな」の意味。dirty（きたない）とセットで覚える</div>
+    <div class="miss-box"><b>本番でのつまずき：</b>問15 womansと規則のsをつけてしまった／問16 tirdと母音が抜けた／問17 teketとつづりが崩れ複数のsも落ちた／問18 空欄のままだった</div>
+    <div class="osarai">書いたら2点確認：①文頭は大文字になっているか　②数えられる名詞にsは付いているか</div>
+    <div class="ans-final"><span>こたえ</span>問15 women／問16 tired／問17 tickets／問18 clean</div>
+  </div>
+  <div class="gwrap" data-ids="q15,q16,q17,q18"></div>
+</div>
+
+<div class="q calc" data-id="G">
+  <div class="qnum">★「大好き」はloveで</div>
+  <div class="qbody">
+    <span class="pn">問19</span>次の日本文を英語にしなさい。「私はまぐろが大好きです。」　I (　)(　).
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>「好き」と「大好き」で使う動詞が違うことを思い出そう。</div>
+    <div class="osarai">「好き」はlike、「大好き」はloveで表すと気持ちの強さが伝わる。</div>
+    <div class="step"><span>問19</span>「大好き」はlove。「まぐろ」はtuna → I love tuna.</div>
+    <div class="miss-box"><b>本番でのつまずき：</b>loveと書くべきところをlikeと書き、tunaのところは空欄のままだった</div>
+    <div class="osarai">書いたら2点確認：①文頭は大文字になっているか　②数えられる名詞にsは付いているか</div>
+    <div class="ans-final"><span>こたえ</span>問19 love tuna</div>
+  </div>
+  <div class="gwrap" data-ids="q19"></div>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qnum">★be動詞の否定文にdon'tは使わない</div>
+  <div class="qbody">
+    <span class="pn">問20</span>次の日本文を英語にしなさい。「あなたはインドの出身ではありません。」　(　)(　)(　) from India.
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>主語は誰か、be動詞はどれかを先に確認しよう。</div>
+    <div class="osarai">be動詞（am／are／is）の文を否定にするときはnotを置くだけ。同じ文にdoやdon'tは使わない。</div>
+    <div class="step"><span>問20</span>主語は「あなた」なのでYou → be動詞はare → 否定はareのあとにnotを置く → You are not from India.</div>
+    <div class="miss-box"><b>本番でのつまずき：</b>You are notと書くべきところを、主語をIに取り違え、be動詞の否定文にdon'tを混ぜてI am don'tと書いてしまった</div>
+    <div class="osarai">書いたら2点確認：①文頭は大文字になっているか　②数えられる名詞にsは付いているか</div>
+    <div class="ans-final"><span>こたえ</span>問20 You are not</div>
+  </div>
+  <div class="gwrap" data-ids="q20"></div>
+</div>
+
+<div class="q calc" data-id="I">
+  <div class="qnum">★数を表す言葉のあとは複数形</div>
+  <div class="qbody">
+    <span class="pn">問21</span>次の日本文を英語にしなさい。「私はチケットを5枚買いました。」　I bought five (　).
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>数字のあとの名詞にsが付いているか、書いたら見直そう。</div>
+    <div class="osarai">five, two, threeのような数を表す言葉のあとの名詞は、1個（a／an）のとき以外は必ず複数形にする。</div>
+    <div class="step"><span>問21</span>「チケット」ticketに、数が5枚なのでsをつける → I bought five tickets.</div>
+    <div class="miss-box"><b>本番でのつまずき：</b>本番でも「9枚」のticketsを書くときに複数のsが抜けていた</div>
+    <div class="osarai">書いたら2点確認：①文頭は大文字になっているか　②数えられる名詞にsは付いているか</div>
+    <div class="ans-final"><span>こたえ</span>問21 tickets</div>
+  </div>
+  <div class="gwrap" data-ids="q21"></div>
+</div>
+
+<!-- ===== 国語 ===== -->
+<div class="unit-banner"><span class="unit-num">国語　問22〜26</span><span class="unit-name">大問3で落とした漢字・語句5問＋型カード</span><span class="unit-time">目安 20分</span></div>
+
+<div class="q calc" data-id="J">
+  <div class="qnum">★漢字・語句を書けるようにする</div>
+  <div class="qbody">
+    <span class="pn">問22</span>次の傍線の漢字の読みをひらがなで書きなさい。　著名な作家の講演を聞く。<br>
+    <span class="pn">問23</span>次の傍線のひらがなを漢字に直しなさい。　きりつ正しい生活を送る。<br>
+    <span class="pn">問24</span>次の四字熟語の□にあてはまる漢字を、あとから一つ選びなさい。　試□錯誤　（格・行・考・客・故）<br>
+    <span class="pn">問25</span>次の四字熟語の□にあてはまる漢字を、あとから一つ選びなさい。　温□知新　（格・行・考・客・故）<br>
+    <span class="pn">問26</span>次の四字熟語の□にあてはまる漢字を、あとから一つ選びなさい。　主□転倒　（格・行・考・客・故）
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>5つの漢字（格・行・考・客・故）は3問で使い回す。1問ずつ確定させよう。</div>
+    <div class="osarai">漢字は読みと意味をセットで覚える。四字熟語は5つの漢字を使い回すので、どの熟語にどの字が対応するかを1つずつ確認しよう。</div>
+    <div class="step"><span>問22</span>ちょめい。「著」＋「名」＝名前が広く知れわたっていること。「著者（ちょしゃ）」と読みが違うので注意</div>
+    <div class="step"><span>問23</span>規律。「規」則正しい「律」（リズム）というきまり。とめ・はねまでていねいに書く</div>
+    <div class="step"><span>問24</span>行（試行錯誤）。「試しに行動して、まちがえて、また試す」という意味</div>
+    <div class="step"><span>問25</span>故（温故知新）。「故（ふる）きを温（たず）ねて新しきを知る」＝昔を調べて新しい知識を得ること</div>
+    <div class="step"><span>問26</span>客（主客転倒）。「主」役と「客」役が入れ替わる＝大事なこととそうでないことが逆になること</div>
+    <div class="miss-box"><b>本番でのつまずき：</b>問22「著者」の読みと混同した／問23 字形（とめ・はねなど）で×になった可能性がある／問24「考」を選んだ／問25 別の熟語で使う「行」を選んだ／問26「格」を選んだ</div>
+    <div class="bx-warn"><b>よくある間違い：</b>5つの漢字（格・行・考・客・故）を1つの四字熟語だけで考えず、3つの空欄すべてを見てから選ぶ</div>
+    <div class="ans-final"><span>こたえ</span>問22 ちょめい／問23 規律／問24 行／問25 故／問26 客</div>
+  </div>
+  <div class="gwrap" data-ids="q22,q23,q24,q25,q26"></div>
+</div>
+
+<div class="q">
+  <div class="qnum">【型カード】段落をまたいで根拠をさがすときの手順</div>
+  <div class="qbody" style="font-size:15.5px;line-height:2.2">
+    傍線のすぐそばに答えがないときは、あわてずこの順番で探そう。<br><br>
+    ① 傍線の文に主語がなければ<br>
+    ② 前の文へ1つずつ戻る<br>
+    ③ 「は」「が」を見つけたら、それが主語
+  </div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓D4 完了）</button>
+
+<p class="tail">✕をつけた問題は、正しい式・文をノートに3回書こう。<br>
+次にやるときは、この中から間違えた問題だけをもう一度やります。</p>
+
+</div>
+
+<script>
+var KEY='tokkun_d4';
+
+/* 解説トグル */
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+/* ○✕採点 */
+function g(btn,id,v){
+  var row=btn.closest('.gq');
+  row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=row.nextElementSibling, w3=mt.nextElementSibling;
+  if(v==='x'){mt.classList.add('show');w3.classList.add('show');}
+  else{mt.classList.remove('show');w3.classList.remove('show');}
+}
+
+/* ミス型 */
+function m(btn){
+  var p=btn.parentNode;
+  p.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+p.getAttribute('data-gid')+'_type',btn.textContent);
+}
+
+/* 採点UIを生成 */
+document.querySelectorAll('.gwrap').forEach(function(w){
+  var ids=w.getAttribute('data-ids').split(',');
+  var h='';
+  ids.forEach(function(id){
+    var n=id.replace('q','').replace(/^0/,'');
+    h+='<div class="gq"><span class="gq-label">問'+n+'</span>'
+      +'<button class="o" onclick="g(this,\''+id+'\',\'o\')">○</button>'
+      +'<button class="x" onclick="g(this,\''+id+'\',\'x\')">✕</button></div>'
+      +'<div class="mt" data-gid="'+id+'"><button onclick="m(this)">計算ミス</button>'
+      +'<button onclick="m(this)">解説で分かった</button>'
+      +'<button onclick="m(this)">解説見ても分からない</button></div>'
+      +'<div class="write3">📝 正しい式・答えをノートに3回書こう</div>';
+  });
+  w.innerHTML=h;
+});
+
+/* 保存済みを復元 */
+document.querySelectorAll('.gq').forEach(function(row){
+  var btn=row.querySelector('.o');
+  var id=btn.getAttribute('onclick').match(/'(q\d+)'/)[1];
+  var v=localStorage.getItem(KEY+'_'+id);
+  if(v){row.querySelector(v==='o'?'.o':'.x').classList.add('on');
+    if(v==='x'){row.nextElementSibling.classList.add('show');
+      row.nextElementSibling.nextElementSibling.classList.add('show');}}
+  var ty=localStorage.getItem(KEY+'_'+id+'_type');
+  if(ty){row.nextElementSibling.querySelectorAll('button').forEach(function(b){
+    if(b.textContent===ty)b.classList.add('on');})}
+});
+
+/* 完了 */
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+if(localStorage.getItem(KEY+'_done')==='1'){
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓F3｜11月特訓 利用とL3チェック</title>
+<style>
+:root{--ink:#1b1c22;--sub:#5a5f6e;--line:#e3e5ec;--bg:#fbfbfd;--key:#1f4fd8;--key-bg:#eef2ff;
+--go:#0a7d55;--go-bg:#eaf7f1;--hot:#d92b3a;--hot-bg:#fff2f3;--warn:#b26a00;--warn-bg:#fff7e8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:14px 18px 70px}
+a.back{display:inline-block;margin:6px 0 12px;color:var(--key);font-size:15px;text-decoration:none;font-weight:700}
+
+.pg-hd{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:16px;padding:22px 22px 20px;margin:0 0 18px}
+.pg-badge{display:inline-block;background:rgba(255,255,255,.16);border-radius:7px;padding:4px 10px;
+font-size:12.5px;font-weight:700;margin:0 6px 8px 0}
+.pg-hd h1{font-size:22px;margin:6px 0 8px;line-height:1.45}
+.pg-hd p{font-size:14.5px;margin:0;opacity:.9}
+.pg-cheer{margin-top:10px !important;font-size:14px !important;opacity:.9 !important}
+
+.kind-box{background:var(--key-bg);border-radius:12px;padding:14px 18px;margin:0 0 20px;font-size:14.5px;line-height:1.9}
+.kind-box b{color:var(--key)}
+.good-box{background:var(--go-bg);border-left:5px solid var(--go);border-radius:0 12px 12px 0;
+padding:15px 19px;margin:0 0 18px;font-size:14.5px;line-height:2}
+.good-box b{color:var(--go)}
+.goal-box{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:14px;
+padding:18px 20px;margin:28px 0 0;font-size:15.5px;line-height:1.9;text-align:center}
+.goal-box b{font-size:17.5px}
+
+.unit-banner{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--key-bg);
+border-left:5px solid var(--key);border-radius:0 10px 10px 0;padding:11px 15px;margin:26px 0 12px}
+.unit-num{font-size:14px;font-weight:800;color:var(--key)}
+.unit-name{font-size:16px;font-weight:800}
+.unit-time{font-size:13px;color:var(--sub);margin-left:auto}
+
+.sample-box{background:var(--key-bg);border:1.5px dashed var(--key);border-radius:14px;padding:16px 18px;margin:0 0 16px}
+.sample-badge{display:inline-block;background:var(--key);color:#fff;font-size:12px;font-weight:800;
+border-radius:6px;padding:3px 9px;margin:0 0 8px}
+.sample-q{font-size:16px;line-height:2;margin:0 0 10px}
+
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.qnum{font-size:16px;font-weight:800;margin:0 0 10px}
+.step-badge{display:inline-block;margin-left:8px;padding:2px 9px;border-radius:20px;background:#eef0f4;
+color:var(--sub);font-size:11.5px;font-weight:700;vertical-align:middle}
+.qbody{font-size:17px;line-height:2.5}
+.qbody .pn{color:#2f5a8a;font-weight:700;margin-right:6px}
+.math{font-family:"Times New Roman",serif;font-size:19px;letter-spacing:.02em}
+.note-draw{background:var(--warn-bg);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:0 0 10px}
+.note-draw b{color:var(--warn)}
+
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 2px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+
+.rt-lead{font-weight:800;font-size:14.5px;margin:0 0 6px}
+.ratetable{width:100%;border-collapse:collapse;margin:0 0 10px;font-size:13.5px}
+.ratetable th,.ratetable td{border:1px solid var(--line);padding:6px 8px;text-align:center}
+.ratetable th{background:var(--key-bg)}
+
+.fig-box{display:flex;justify-content:center;margin:6px 0 8px}
+.fig-cap{font-size:12.5px;color:var(--sub);text-align:center;margin:0 0 10px}
+
+.ans-btn{display:block;width:100%;margin:12px 0 0;padding:12px;border:0;border-radius:10px;
+background:var(--key);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.ans-box{display:none;margin:12px 0 0;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ans-box.open{display:block}
+.osarai{background:var(--go-bg);border-left:4px solid var(--go);border-radius:0 8px 8px 0;
+padding:10px 14px;font-size:14.5px;margin:10px 0 0}
+.step{font-size:15.5px;margin:0 0 9px;padding:0 0 0 4px}
+.step>span:first-child{display:inline-block;min-width:52px;font-weight:800;color:var(--key)}
+.miss-box{background:var(--warn-bg);border-radius:9px;padding:11px 14px;font-size:14.5px;margin:12px 0 0}
+.miss-box b{color:var(--warn)}
+.bx-warn{background:var(--hot-bg);border:1px solid #f6ccd1;border-radius:9px;padding:11px 14px;
+font-size:14.5px;margin:0 0 10px}
+.bx-warn b{color:var(--hot)}
+.ans-final{background:var(--ink);color:#fff;border-radius:10px;padding:12px 15px;margin:13px 0 0;font-size:15.5px}
+.ans-final>span:first-child{font-weight:800;margin-right:10px}
+
+.gwrap{margin:12px 0 0;border-top:1px dashed var(--line);padding:12px 0 0}
+.gq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 7px;font-size:14px}
+.gq-label{min-width:52px;font-weight:700;color:var(--sub)}
+.gq button{border:1.5px solid var(--line);background:#fff;border-radius:7px;width:36px;height:32px;
+font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.gq button.o.on{background:var(--go);border-color:var(--go);color:#fff}
+.gq button.x.on{background:var(--hot);border-color:var(--hot);color:#fff}
+.mt{display:none;gap:6px;flex-wrap:wrap;margin:2px 0 0 52px}
+.mt.show{display:flex}
+.mt button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px;
+font-size:12.5px;cursor:pointer;font-family:inherit;width:auto;height:auto}
+.mt button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.write3{display:none;margin:6px 0 0 52px;font-size:13px;color:var(--hot);font-weight:700}
+.write3.show{display:block}
+
+.diag-wrap{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:6px 0 14px}
+.diag-btn{display:block;width:100%;margin:4px 0 0;padding:13px;border:0;border-radius:10px;
+background:var(--ink);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+#s9result{display:none;margin:14px 0 0}
+
+.done{display:block;width:100%;margin:26px 0 0;padding:18px;border:0;border-radius:14px;
+background:var(--go);color:#fff;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit}
+.done.fin{background:var(--ink)}
+.tail{text-align:center;color:var(--sub);font-size:13.5px;margin:18px 0 0;line-height:1.9}
+
+@media print{
+ body{background:#fff}
+ a.back,.ans-btn,.ans-box,.gwrap,.done,.diag-wrap{display:none !important}
+ .q{break-inside:avoid;page-break-inside:avoid}
+ .pg-hd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{margin:12mm}
+}
+/*frac-guard*/.frac{display:inline-flex!important;flex-direction:column!important;min-width:0!important;width:auto!important}.frac>span{display:block!important;min-width:0!important;width:auto!important;margin:0!important;color:inherit!important;font-weight:inherit!important}.frac>.n{border-bottom:1.8px solid currentColor!important;padding:0 5px 2px!important}.frac>.d{padding:2px 5px 0!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#mock">← ダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div>
+    <span class="pg-badge">特訓F3</span>
+    <span class="pg-badge">11月特訓 比例・反比例</span>
+    <span class="pg-badge">利用とL3チェック（9〜10回目）</span>
+  </div>
+  <h1>比例・反比例の利用／L3チェック</h1>
+  <p>目安: 30分（①利用15分＋②チェック15分）　対象: 中1　全問に解説つき</p>
+  <p class="pg-cheer"><b>この回でできるようになること：</b>文章題を読んで「割ると一定か、掛けると一定か」を自分で判断して式を作れるようになる。そして、比例・反比例の基本（S0〜S8）が身についているかを10問でチェックする。</p>
+</div>
+
+<div class="unit-banner"><span class="unit-num">①</span><span class="unit-name">利用：割ると一定か、掛けると一定か（S8）</span><span class="unit-time">目安 15分</span></div>
+
+<div class="kind-box">
+  <div class="dan1"><b>①一言で言うと：</b>文章題は、表を作って「わり算をすると同じ数になるか」「かけ算をすると同じ数になるか」をまず確かめてから式を作る。</div>
+  <div class="rt-lead" style="margin-top:10px">②図で見る：よく出る4つの場面</div>
+  <table class="ratetable">
+    <tr><th>場面</th><th>一定になる式</th><th>関係</th></tr>
+    <tr><td>歯車の歯数と回転数</td><td>歯数×回転数</td><td>反比例</td></tr>
+    <tr><td>針金の長さと重さ</td><td>重さ÷長さ</td><td>比例</td></tr>
+    <tr><td>長方形の縦と横（面積が一定）</td><td>縦×横</td><td>反比例</td></tr>
+    <tr><td>速さと時間（道のりが一定）</td><td>速さ×時間</td><td>反比例</td></tr>
+  </table>
+  <div><b>③よくある間違い：</b><br>
+  ・表を作らずに「たぶん比例だろう」と思い込みで式を立ててしまう。<br>
+  ・割ると一定なのに、公式だけ覚えていて<span class="frac"><span class="n">a</span><span class="d">x</span></span>の形を使ってしまう（比例と反比例を逆にする）。<br>
+  ・単位をそろえずに計算する（cmとm、分と時間が混ざる）。</div>
+</div>
+
+<div class="sample-box">
+  <span class="sample-badge">見本（といてみよう→この解き方をまねしよう）</span>
+  <div class="sample-q"><span class="pn">見本</span>歯数18の歯車Aが1分間に20回転している。かみ合っている歯車Bは1分間に24回転する。歯車Bの歯数を求めなさい。</div>
+  <div class="note-draw"><b>①一言で言うと：</b>かみ合っている歯車は「歯数×回転数」がいつも同じになる（反比例の関係）。</div>
+  <div class="rt-lead">②図で見る</div>
+  <table class="ratetable">
+    <tr><th>歯車</th><th>歯数</th><th>回転数</th><th>歯数×回転数</th></tr>
+    <tr><td>A</td><td>18</td><td>20</td><td>360</td></tr>
+    <tr><td>B</td><td>？</td><td>24</td><td>360</td></tr>
+  </table>
+  <div class="step"><span>③-1</span>AとBがかみ合っている間、かみ合った歯の数はAもBも同じだけ動くので、「歯数×回転数」はAとBで等しい。</div>
+  <div class="step"><span>③-2</span>まずAの「歯数×回転数」を計算する：18×20＝360。</div>
+  <div class="step"><span>③-3</span>Bも同じ360になるので、（Bの歯数）×24＝360。よってBの歯数＝360÷24＝15。</div>
+  <div class="bx-warn"><b>④よくある間違い：</b>歯数が多い方が回転数も多いと思い込んでしまう。実際は、歯数が多いほど回転数は少なくなる（反比例）。</div>
+  <div class="step"><span>⑤確かめ</span>15×24＝360。Aの360と同じになった。</div>
+  <div class="ans-final"><span>こたえ</span>15（枚）</div>
+</div>
+
+<div class="q calc" data-id="A">
+  <div class="qnum">★問1　針金の長さと重さ</div>
+  <div class="qbody"><span class="pn">問1</span>太さが一定の針金がある。この針金3mの重さは54gだった。この針金11mの重さは何gか。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>太さが一定の針金は、長さと重さが比例する（長さが2倍、3倍になると重さも2倍、3倍になる）。</div>
+    <div class="rt-lead">②図で見る</div>
+    <table class="ratetable"><tr><th>長さ(m)</th><td>3</td><td>11</td></tr><tr><th>重さ(g)</th><td>54</td><td>？</td></tr></table>
+    <div class="step"><span>③-1</span>比例定数a（1mあたりの重さ）を求める：54÷3＝18(g/m)。</div>
+    <div class="step"><span>③-2</span>11mの重さは、a×11で求められる：18×11＝198。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>54と3を逆にして3÷54を計算してしまう。「1mあたりの重さ」になる方（大きい数÷小さい数）で割る。</div>
+    <div class="step"><span>⑤確かめ</span>198÷11＝18。3mのときと同じ「1mあたり18g」になった。</div>
+    <div class="ans-final"><span>こたえ</span>198g</div>
+  </div>
+  <div class="gwrap" data-ids="q01"></div>
+</div>
+
+<div class="q calc" data-id="B">
+  <div class="qnum">★問2　面積が一定の長方形</div>
+  <div class="qbody"><span class="pn">問2</span>面積が48cm²の長方形がある。縦の長さが6cmのとき、横の長さは何cmか。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>面積が決まっている長方形は、「縦×横」がいつも一定になる（反比例の関係）。</div>
+    <div class="rt-lead">②図で見る</div>
+    <table class="ratetable"><tr><th>縦(cm)</th><td>6</td></tr><tr><th>横(cm)</th><td>？</td></tr><tr><th>縦×横</th><td>48</td></tr></table>
+    <div class="step"><span>③-1</span>「縦×横＝面積」という関係を使う：6×横＝48。</div>
+    <div class="step"><span>③-2</span>横＝48÷6＝8。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>面積を求める公式のまま「48×6」としてしまう。ここではすでにわかっている面積を、割り算で使う。</div>
+    <div class="step"><span>⑤確かめ</span>6×8＝48。面積48cm²と一致する。</div>
+    <div class="ans-final"><span>こたえ</span>8cm</div>
+  </div>
+  <div class="gwrap" data-ids="q02"></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qnum">★問3　速さと時間</div>
+  <div class="qbody"><span class="pn">問3</span>家から駅までの道のりは一定である。分速80mで歩くと15分かかる。分速60mで歩くと何分かかるか。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>道のりが決まっているとき、「速さ×時間」はいつも一定になる（その一定の値が道のり）。</div>
+    <div class="rt-lead">②図で見る</div>
+    <table class="ratetable"><tr><th>速さ(m/分)</th><td>80</td><td>60</td></tr><tr><th>時間(分)</th><td>15</td><td>？</td></tr></table>
+    <div class="step"><span>③-1</span>まず道のりを求める：80×15＝1200(m)。</div>
+    <div class="step"><span>③-2</span>分速60mでかかる時間は、1200÷60で求められる：1200÷60＝20。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>速さが遅くなったのに、時間も短くなると考えてしまう。速さが遅いほど、時間は長くかかる（反比例）。</div>
+    <div class="step"><span>⑤確かめ</span>60×20＝1200。道のり1200mと一致する。</div>
+    <div class="ans-final"><span>こたえ</span>20分</div>
+  </div>
+  <div class="gwrap" data-ids="q03"></div>
+</div>
+
+<div class="q calc" data-id="D">
+  <div class="qnum">★問4　歯車の歯数と回転数</div>
+  <div class="qbody"><span class="pn">問4</span>歯数30の歯車Aが1分間に16回転している。かみ合っている歯車Bの歯数が24のとき、歯車Bは1分間に何回転するか。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>かみ合っている歯車は「歯数×回転数」がAとBで等しい。</div>
+    <div class="rt-lead">②図で見る</div>
+    <table class="ratetable"><tr><th>歯車</th><th>歯数</th><th>回転数</th><th>歯数×回転数</th></tr><tr><td>A</td><td>30</td><td>16</td><td>480</td></tr><tr><td>B</td><td>24</td><td>？</td><td>480</td></tr></table>
+    <div class="step"><span>③-1</span>Aの「歯数×回転数」＝30×16＝480。</div>
+    <div class="step"><span>③-2</span>Bも同じ480になるので、24×（Bの回転数）＝480。</div>
+    <div class="step"><span>③-3</span>Bの回転数＝480÷24＝20。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>Bは歯数がAより少ないので、回転数もAより少ないと思ってしまう。歯数が少ないほど回転数は多くなる。</div>
+    <div class="step"><span>⑤確かめ</span>24×20＝480。Aの480と同じ。</div>
+    <div class="ans-final"><span>こたえ</span>20回転</div>
+  </div>
+  <div class="gwrap" data-ids="q04"></div>
+</div>
+
+<div class="q calc" data-id="E">
+  <div class="qnum">★問5　針金の長さと重さ</div>
+  <div class="qbody"><span class="pn">問5</span>太さが一定の針金4mの重さは60gだった。この針金の重さが105gのとき、長さは何mか。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>比例定数（1mあたりの重さ）をまず求めてから使う。</div>
+    <div class="rt-lead">②図で見る</div>
+    <table class="ratetable"><tr><th>長さ(m)</th><td>4</td><td>？</td></tr><tr><th>重さ(g)</th><td>60</td><td>105</td></tr></table>
+    <div class="step"><span>③-1</span>比例定数a＝60÷4＝15(g/m)。</div>
+    <div class="step"><span>③-2</span>重さが105gになる長さは、105÷15で求められる：105÷15＝7。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>105÷4のように、比例定数を求めずに問題文の数どうしをそのまま割ってしまう。</div>
+    <div class="step"><span>⑤確かめ</span>15×7＝105。</div>
+    <div class="ans-final"><span>こたえ</span>7m</div>
+  </div>
+  <div class="gwrap" data-ids="q05"></div>
+</div>
+
+<div class="q calc" data-id="F">
+  <div class="qnum">★問6　面積が一定の長方形</div>
+  <div class="qbody"><span class="pn">問6</span>面積が36cm²の長方形がある。横の長さが9cmのとき、縦の長さは何cmか。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>「縦×横＝面積」がいつも一定になる。</div>
+    <div class="rt-lead">②図で見る</div>
+    <table class="ratetable"><tr><th>縦(cm)</th><td>？</td></tr><tr><th>横(cm)</th><td>9</td></tr><tr><th>縦×横</th><td>36</td></tr></table>
+    <div class="step"><span>③-1</span>縦×9＝36という関係を使う。</div>
+    <div class="step"><span>③-2</span>縦＝36÷9＝4。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>横÷縦のように、面積の36を使わずに計算してしまう。</div>
+    <div class="step"><span>⑤確かめ</span>4×9＝36。</div>
+    <div class="ans-final"><span>こたえ</span>4cm</div>
+  </div>
+  <div class="gwrap" data-ids="q06"></div>
+</div>
+
+<div class="q calc" data-id="G">
+  <div class="qnum">★問7　前のステップの復習（S7 変域）</div>
+  <div class="qbody"><span class="pn">問7</span>y＝−<span class="frac"><span class="n">2</span><span class="d">x</span></span>について、xの変域が2≦x≦5のとき、yの変域を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>反比例でaが負のとき、x（正の範囲）が大きくなるほどyも大きくなる（0に近づく）。</div>
+    <div class="rt-lead">②図で見る</div>
+    <table class="ratetable"><tr><th>x</th><td>2</td><td>5</td></tr><tr><th>y</th><td>−1</td><td>−<span class="frac"><span class="n">2</span><span class="d">5</span></span></td></tr></table>
+    <div class="step"><span>③-1</span>x＝2のとき、y＝−2÷2＝−1。</div>
+    <div class="step"><span>③-2</span>x＝5のとき、y＝−2÷5＝−<span class="frac"><span class="n">2</span><span class="d">5</span></span>。</div>
+    <div class="step"><span>③-3</span>aが負なので、xが増えるとyも増える（−1より−<span class="frac"><span class="n">2</span><span class="d">5</span></span>の方が大きい）。よってyはこの間を動く。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>aが正のときと同じ向きで考えて、変域の大小を逆にしてしまう。</div>
+    <div class="step"><span>⑤確かめ</span>x＝2→y＝−1、x＝5→y＝−<span class="frac"><span class="n">2</span><span class="d">5</span></span>。−1<−<span class="frac"><span class="n">2</span><span class="d">5</span></span>で向きが合っている。</div>
+    <div class="ans-final"><span>こたえ</span>−1≦y≦−<span class="frac"><span class="n">2</span><span class="d">5</span></span></div>
+  </div>
+  <div class="gwrap" data-ids="q07"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">②</span><span class="unit-name">L3チェック（10問・15分）</span><span class="unit-time">8問以上で次へ</span></div>
+
+<div class="kind-box">
+10問を解いて、全部に○✕をつけよう。とちゅうでヒントは見ずに、まず自分の力で解いてみること。<br>
+全部つけ終わったら、いちばん下の「採点する」を押すと、次にやることを教えてくれる。<br>
+<b>8問以上正解 → このあと特訓F4（難問）に進もう。7問以下 → 間違えた場所に戻ってからもう一度この10問をやろう。</b>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qnum">★問8　座標の読み取り<span class="step-badge">S0</span></div>
+  <div class="qbody"><span class="pn">問8</span>下の図の点Pの座標を答えなさい。</div>
+  <div class="fig-box"><div id="figQ08"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>座標は必ず（x座標, y座標）の順。x（横）が先。</div>
+    <div class="step"><span>③-1</span>横方向を確認：原点から左へ3進んでいる→x＝−3。</div>
+    <div class="step"><span>③-2</span>縦方向を確認：原点から上へ4進んでいる→y＝4。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>縦と横の順番を逆にして(4,−3)と書いてしまう。</div>
+    <div class="step"><span>⑤確かめ</span>x＝−3は左3マス、y＝4は上4マスで、図のPの位置と一致する。</div>
+    <div class="ans-final"><span>こたえ</span>P(−3, 4)</div>
+  </div>
+  <div class="gwrap" data-ids="q08"></div>
+</div>
+
+<div class="q calc" data-id="I">
+  <div class="qnum">★問9　比例の見分け方<span class="step-badge">S1</span></div>
+  <div class="qbody"><span class="pn">問9</span>下の表について、yはxに比例しているか、反比例しているか、どちらでもないか答えなさい（比例なら比例定数も書くこと）。</div>
+  <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>y</th><td>5</td><td>10</td><td>15</td><td>20</td></tr></table>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>比例か反比例かは、y÷x（比例）とx×y（反比例）の両方を計算して、一定になる方を探す。</div>
+    <div class="rt-lead">②図で見る</div>
+    <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>y÷x</th><td>5</td><td>5</td><td>5</td><td>5</td></tr></table>
+    <div class="step"><span>③-1</span>y÷xを計算する：5÷1＝5、10÷2＝5、15÷3＝5、20÷4＝5。</div>
+    <div class="step"><span>③-2</span>全部5で一定なので比例。比例定数はa＝5。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>x×yも確かめずに「表の数が増えているから比例」と見た目だけで判断してしまう。</div>
+    <div class="step"><span>⑤確かめ</span>a＝5としてy＝5xに戻すと、x＝4のとき5×4＝20で表と一致する。</div>
+    <div class="ans-final"><span>こたえ</span>比例している（比例定数5）</div>
+  </div>
+  <div class="gwrap" data-ids="q09"></div>
+</div>
+
+<div class="q calc" data-id="J">
+  <div class="qnum">★問10　比例の式<span class="step-badge">S2</span></div>
+  <div class="qbody"><span class="pn">問10</span>yはxに比例し、x＝−4のときy＝10である。yをxの式で表しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>比例定数aは、a＝y÷xで求める。</div>
+    <div class="step"><span>③-1</span>a＝y÷x＝10÷(−4)＝−<span class="frac"><span class="n">5</span><span class="d">2</span></span>。</div>
+    <div class="step"><span>③-2</span>y＝ax にaを当てはめる：y＝−<span class="frac"><span class="n">5</span><span class="d">2</span></span>x。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>10÷(−4)の符号を忘れて、a＝<span class="frac"><span class="n">5</span><span class="d">2</span></span>（プラス）としてしまう。</div>
+    <div class="step"><span>⑤確かめ</span>x＝−4を代入すると−<span class="frac"><span class="n">5</span><span class="d">2</span></span>×(−4)＝10で合っている。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−<span class="frac"><span class="n">5</span><span class="d">2</span></span>x</div>
+  </div>
+  <div class="gwrap" data-ids="q10"></div>
+</div>
+
+<div class="q calc" data-id="K">
+  <div class="qnum">★問11　比例のグラフ<span class="step-badge">S3</span></div>
+  <div class="qbody"><span class="pn">問11</span>下のグラフはある比例のグラフである。点Qの座標を参考にして式を求めなさい。</div>
+  <div class="fig-box"><div id="figQ11"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>原点を通る直線上の1点がわかれば、a＝y÷xで式が求まる。</div>
+    <div class="step"><span>③-1</span>点Qの座標は(3, −6)。a＝y÷x＝(−6)÷3＝−2。</div>
+    <div class="step"><span>③-2</span>式はy＝−2x。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>座標の符号を読み間違えて、aの符号を逆にしてしまう。</div>
+    <div class="step"><span>⑤確かめ</span>x＝3を代入すると−2×3＝−6でQのy座標と一致する。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−2x</div>
+  </div>
+  <div class="gwrap" data-ids="q11"></div>
+</div>
+
+<div class="q calc" data-id="L">
+  <div class="qnum">★問12　反比例の見分け方<span class="step-badge">S4</span></div>
+  <div class="qbody"><span class="pn">問12</span>下の表について、yはxに比例しているか、反比例しているか答えなさい。式も求めなさい。</div>
+  <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>3</td><td>4</td><td>6</td></tr><tr><th>y</th><td>24</td><td>12</td><td>8</td><td>6</td><td>4</td></tr></table>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>x×yが一定なら反比例。</div>
+    <div class="rt-lead">②図で見る</div>
+    <table class="ratetable"><tr><th>x×y</th><td>24</td><td>24</td><td>24</td><td>24</td><td>24</td></tr></table>
+    <div class="step"><span>③-1</span>x×yを計算する：1×24、2×12、3×8、4×6、6×4、どれも24。</div>
+    <div class="step"><span>③-2</span>反比例なのでa＝24。式はy＝<span class="frac"><span class="n">24</span><span class="d">x</span></span>。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>y÷xを計算して一定にならないので「どちらでもない」と判断してしまう。反比例はx×yで確かめる。</div>
+    <div class="step"><span>⑤確かめ</span>x＝6のとき24÷6＝4で表と一致する。</div>
+    <div class="ans-final"><span>こたえ</span>反比例している、y＝<span class="frac"><span class="n">24</span><span class="d">x</span></span></div>
+  </div>
+  <div class="gwrap" data-ids="q12"></div>
+</div>
+
+<div class="q calc" data-id="M">
+  <div class="qnum">★問13　反比例の式<span class="step-badge">S5</span></div>
+  <div class="qbody"><span class="pn">問13</span>yはxに反比例し、x＝−3のときy＝7である。yをxの式で表しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>反比例の比例定数aは、a＝x×yで求める。</div>
+    <div class="step"><span>③-1</span>a＝x×y＝(−3)×7＝−21。</div>
+    <div class="step"><span>③-2</span>y＝<span class="frac"><span class="n">a</span><span class="d">x</span></span>にaを当てはめる：y＝−<span class="frac"><span class="n">21</span><span class="d">x</span></span>。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>a＝x÷yのように、割り算で求めようとしてしまう。反比例のaはかけ算で求める。</div>
+    <div class="step"><span>⑤確かめ</span>x＝−3を代入すると−21÷(−3)＝7で合っている。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−<span class="frac"><span class="n">21</span><span class="d">x</span></span></div>
+  </div>
+  <div class="gwrap" data-ids="q13"></div>
+</div>
+
+<div class="q calc" data-id="N">
+  <div class="qnum">★問14　反比例のグラフ<span class="step-badge">S6</span></div>
+  <div class="qbody"><span class="pn">問14</span>下のグラフはある反比例のグラフである。点Qの座標を参考にして式を求めなさい。</div>
+  <div class="fig-box"><div id="figQ14"></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>反比例のグラフ上の1点がわかれば、a＝x×yで式が求まる。</div>
+    <div class="step"><span>③-1</span>点Qの座標は(4, −3)。a＝x×y＝4×(−3)＝−12。</div>
+    <div class="step"><span>③-2</span>式はy＝−<span class="frac"><span class="n">12</span><span class="d">x</span></span>。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>座標を読み違えて、xとyを逆に使ってしまう。座標は(x, y)の順。</div>
+    <div class="step"><span>⑤確かめ</span>x＝4を代入すると−12÷4＝−3でQのy座標と一致する。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−<span class="frac"><span class="n">12</span><span class="d">x</span></span></div>
+  </div>
+  <div class="gwrap" data-ids="q14"></div>
+</div>
+
+<div class="q calc" data-id="O">
+  <div class="qnum">★問15　比例の変域<span class="step-badge">S7</span></div>
+  <div class="qbody"><span class="pn">問15</span>y＝−3xについて、xの変域が−2≦x≦5のとき、yの変域を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>aが負の比例は、xが増えるとyは減る。</div>
+    <div class="step"><span>③-1</span>x＝−2のとき、y＝−3×(−2)＝6。</div>
+    <div class="step"><span>③-2</span>x＝5のとき、y＝−3×5＝−15。</div>
+    <div class="step"><span>③-3</span>aが負なのでxが増えるとyは減る。x＝−2で最大値6、x＝5で最小値−15。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>aが正のときと同じ感覚で、xが増えるとyも増えると思ってしまう。</div>
+    <div class="step"><span>⑤確かめ</span>x＝−2→y＝6、x＝5→y＝−15。6>−15で向きが合っている。</div>
+    <div class="ans-final"><span>こたえ</span>−15≦y≦6</div>
+  </div>
+  <div class="gwrap" data-ids="q15"></div>
+</div>
+
+<div class="q calc" data-id="P">
+  <div class="qnum">★問16　反比例の変域<span class="step-badge">S7</span></div>
+  <div class="qbody"><span class="pn">問16</span>y＝<span class="frac"><span class="n">6</span><span class="d">x</span></span>について、xの変域が1≦x≦3のとき、yの変域を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>反比例でaが正、xが正の範囲では、xが増えるとyは減る。</div>
+    <div class="step"><span>③-1</span>x＝1のとき、y＝6÷1＝6。</div>
+    <div class="step"><span>③-2</span>x＝3のとき、y＝6÷3＝2。</div>
+    <div class="step"><span>③-3</span>xが増えるとyは減るので、x＝1で最大値6、x＝3で最小値2。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>比例の変域と同じように、xの変域の両端をそのままyの変域の端だと決めつけて、大小を確かめない。</div>
+    <div class="step"><span>⑤確かめ</span>x＝1→y＝6、x＝3→y＝2。6>2で向きが合っている。</div>
+    <div class="ans-final"><span>こたえ</span>2≦y≦6</div>
+  </div>
+  <div class="gwrap" data-ids="q16"></div>
+</div>
+
+<div class="q calc" data-id="Q">
+  <div class="qnum">★問17　利用（この回の①の復習）<span class="step-badge">S8</span></div>
+  <div class="qbody"><span class="pn">問17</span>太さが一定の針金5mの重さは75gである。この針金2mの重さは何gか。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>①一言で言うと：</b>比例の文章題は、まず1mあたりの重さ（比例定数）を求める。</div>
+    <div class="step"><span>③-1</span>a＝75÷5＝15(g/m)。</div>
+    <div class="step"><span>③-2</span>2mの重さ＝15×2＝30。</div>
+    <div class="bx-warn"><b>④よくある間違い：</b>この場面が比例か反比例かを表で確かめずに、いきなり割り算だけしてしまう。</div>
+    <div class="step"><span>⑤確かめ</span>30÷2＝15。5mのときと同じ「1mあたり15g」になった。</div>
+    <div class="ans-final"><span>こたえ</span>30g</div>
+  </div>
+  <div class="gwrap" data-ids="q17"></div>
+</div>
+
+<div class="diag-wrap">
+  <div class="rt-lead" style="font-size:15.5px;margin-bottom:10px">10問すべてに○✕をつけたら、ここを押そう</div>
+  <button class="diag-btn" onclick="diagS9()">✅ 採点する（次にやることを決める）</button>
+  <div id="s9result"></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓F3 完了）</button>
+
+<div class="goal-box">
+  <b>次の目標</b><br>
+  文章題を見たら、まず表を作って「割ると一定か、掛けると一定か」を確かめてから式を作る。
+</div>
+
+<p class="tail">✕をつけた問題は、正しい式・答えをノートに3回書こう。<br>
+チェックで8問以上正解できたら、特訓F4（難問）に進もう。</p>
+
+</div>
+
+<script src="11月関数図.js"></script>
+<script>
+var KEY='tokkun_f11_3';
+
+/* 解説トグル */
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+/* ○✕採点 */
+function g(btn,id,v){
+  var row=btn.closest('.gq');
+  row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=row.nextElementSibling, w3=mt.nextElementSibling;
+  if(v==='x'){mt.classList.add('show');w3.classList.add('show');}
+  else{mt.classList.remove('show');w3.classList.remove('show');}
+}
+
+/* ミス型 */
+function m(btn){
+  var p=btn.parentNode;
+  p.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+p.getAttribute('data-gid')+'_type',btn.textContent);
+}
+
+/* 採点UIを生成 */
+document.querySelectorAll('.gwrap').forEach(function(w){
+  var ids=w.getAttribute('data-ids').split(',');
+  var h='';
+  ids.forEach(function(id){
+    var n=id.replace('q','').replace(/^0/,'');
+    h+='<div class="gq"><span class="gq-label">問'+n+'</span>'
+      +'<button class="o" onclick="g(this,\''+id+'\',\'o\')">○</button>'
+      +'<button class="x" onclick="g(this,\''+id+'\',\'x\')">✕</button></div>'
+      +'<div class="mt" data-gid="'+id+'"><button onclick="m(this)">計算ミス</button>'
+      +'<button onclick="m(this)">解説で分かった</button>'
+      +'<button onclick="m(this)">解説見ても分からない</button></div>'
+      +'<div class="write3">📝 正しい式・答えをノートに3回書こう</div>';
+  });
+  w.innerHTML=h;
+});
+
+/* 保存済みを復元 */
+document.querySelectorAll('.gq').forEach(function(row){
+  var btn=row.querySelector('.o');
+  var id=btn.getAttribute('onclick').match(/'(q\d+)'/)[1];
+  var v=localStorage.getItem(KEY+'_'+id);
+  if(v){row.querySelector(v==='o'?'.o':'.x').classList.add('on');
+    if(v==='x'){row.nextElementSibling.classList.add('show');
+      row.nextElementSibling.nextElementSibling.classList.add('show');}}
+  var ty=localStorage.getItem(KEY+'_'+id+'_type');
+  if(ty){row.nextElementSibling.querySelectorAll('button').forEach(function(b){
+    if(b.textContent===ty)b.classList.add('on');})}
+});
+
+/* S9 L3チェックの採点ルーティング */
+var STEP_MAP=[
+  {id:'q08',s:'S0 座標の読み方',grp:'比例のステップ（S0〜S3）'},
+  {id:'q09',s:'S1 比例の見分け方',grp:'比例のステップ（S0〜S3）'},
+  {id:'q10',s:'S2 比例の式',grp:'比例のステップ（S0〜S3）'},
+  {id:'q11',s:'S3 比例のグラフ',grp:'比例のステップ（S0〜S3）'},
+  {id:'q12',s:'S4 反比例の見分け方',grp:'反比例のステップ（S4〜S7）'},
+  {id:'q13',s:'S5 反比例の式',grp:'反比例のステップ（S4〜S7）'},
+  {id:'q14',s:'S6 反比例のグラフ',grp:'反比例のステップ（S4〜S7）'},
+  {id:'q15',s:'S7 比例の変域',grp:'反比例のステップ（S4〜S7）'},
+  {id:'q16',s:'S7 反比例の変域',grp:'反比例のステップ（S4〜S7）'},
+  {id:'q17',s:'S8 利用',grp:'このプリントの①利用'}
+];
+function diagS9(){
+  var box=document.getElementById('s9result');
+  var unanswered=[], correct=0, wrongSteps=[];
+  STEP_MAP.forEach(function(mp){
+    var v=localStorage.getItem(KEY+'_'+mp.id);
+    if(!v){unanswered.push(mp.id);}
+    else if(v==='o'){correct++;}
+    else{wrongSteps.push(mp);}
+  });
+  var html='';
+  if(unanswered.length){
+    html='<div class="bx-warn"><b>まだ○✕がついていない問題があります。</b>全10問（問8〜問17）に○か✕をつけてから、もう一度「採点する」を押してね。</div>';
+  } else if(correct>=8){
+    html='<div class="good-box"><b>'+correct+'／10問 正解！</b><br>よくできました。このあとは特訓F4（難問）に進もう。</div>';
+  } else {
+    var groups=[];
+    wrongSteps.forEach(function(mp){ if(groups.indexOf(mp.grp)===-1) groups.push(mp.grp); });
+    html='<div class="miss-box"><b>'+correct+'／10問 正解でした。</b>次の場所に戻って復習してから、もう一度この10問をやり直そう。<br>';
+    groups.forEach(function(gr){ html+='・'+gr+'<br>'; });
+    html+='とくに間違えた問題：'+wrongSteps.map(function(mp){return mp.s;}).join('、')+'</div>';
+  }
+  box.innerHTML=html;
+  box.style.display='block';
+}
+if(STEP_MAP.every(function(mp){return !!localStorage.getItem(KEY+'_'+mp.id);})){
+  diagS9();
+}
+
+/* 完了 */
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+if(localStorage.getItem(KEY+'_done')==='1'){
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+
+/* 図の描画 */
+window.addEventListener('DOMContentLoaded', function () {
+  drawPlane('figQ08', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'点Pの位置を示した座標平面',
+    points:[{x:-3,y:4,name:'P',pos:'nw'}]
+  });
+  drawPlane('figQ11', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'ある比例のグラフと点Q',
+    graphs:[{type:'prop', a:-2, color:'blue'}],
+    points:[{x:3,y:-6,name:'Q',coord:true,pos:'se'}]
+  });
+  drawPlane('figQ14', {
+    xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'ある反比例のグラフと点Q',
+    graphs:[{type:'inv', a:-12, color:'orange'}],
+    points:[{x:4,y:-3,name:'Q',coord:true,pos:'se'}]
+  });
+});
+</script>
+</body>
+</html>

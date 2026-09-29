@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓D5｜8月必修やり直し</title>
+<style>
+:root{--ink:#1b1c22;--sub:#5a5f6e;--line:#e3e5ec;--bg:#fbfbfd;--key:#1f4fd8;--key-bg:#eef2ff;
+--go:#0a7d55;--go-bg:#eaf7f1;--hot:#d92b3a;--hot-bg:#fff2f3;--warn:#b26a00;--warn-bg:#fff7e8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:14px 18px 70px}
+a.back{display:inline-block;margin:6px 0 12px;color:var(--key);font-size:15px;text-decoration:none;font-weight:700}
+
+.pg-hd{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:16px;padding:22px 22px 20px;margin:0 0 18px}
+.pg-badge{display:inline-block;background:rgba(255,255,255,.16);border-radius:7px;padding:4px 10px;
+font-size:12.5px;font-weight:700;margin:0 6px 8px 0}
+.pg-hd h1{font-size:22px;margin:6px 0 8px;line-height:1.45}
+.pg-hd p{font-size:14.5px;margin:0;opacity:.9}
+.pg-cheer{margin-top:10px !important;font-size:14px !important;opacity:.8 !important}
+
+.kind-box{background:var(--key-bg);border-radius:12px;padding:14px 18px;margin:0 0 20px;font-size:14.5px;line-height:1.9}
+.kind-box b{color:var(--key)}
+
+.unit-banner{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--key-bg);
+border-left:5px solid var(--key);border-radius:0 10px 10px 0;padding:11px 15px;margin:26px 0 12px}
+.unit-num{font-size:14px;font-weight:800;color:var(--key)}
+.unit-name{font-size:16px;font-weight:800}
+.unit-time{font-size:13px;color:var(--sub);margin-left:auto}
+
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.qnum{font-size:16px;font-weight:800;margin:0 0 10px}
+.qbody{font-size:17px;line-height:2.5}
+.qbody .pn{color:#2f5a8a;font-weight:700;margin-right:6px}
+.math{font-family:"Times New Roman",serif;font-size:19px;letter-spacing:.02em}
+.note-draw{background:var(--warn-bg);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:12px 0 0}
+
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 2px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+
+.ratetable{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+.ratetable th,.ratetable td{border:1px solid var(--line);padding:6px 8px;text-align:center}
+.ratetable th{background:var(--key-bg)}
+
+.ans-btn{display:block;width:100%;margin:12px 0 0;padding:12px;border:0;border-radius:10px;
+background:var(--key);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.ans-box{display:none;margin:12px 0 0;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ans-box.open{display:block}
+.osarai{background:var(--go-bg);border-left:4px solid var(--go);border-radius:0 8px 8px 0;
+padding:10px 14px;font-size:14.5px;margin:0 0 12px}
+.step{font-size:15.5px;margin:0 0 9px;padding:0 0 0 4px}
+.step>span:first-child{display:inline-block;min-width:44px;font-weight:800;color:var(--key)}
+.miss-box{background:var(--warn-bg);border-radius:9px;padding:11px 14px;font-size:14.5px;margin:12px 0 0}
+.miss-box b{color:var(--warn)}
+.bx-warn{background:var(--hot-bg);border:1px solid #f6ccd1;border-radius:9px;padding:11px 14px;
+font-size:14.5px;margin:12px 0 0}
+.bx-warn b{color:var(--hot)}
+.ans-final{background:var(--ink);color:#fff;border-radius:10px;padding:12px 15px;margin:13px 0 0;font-size:15.5px}
+.ans-final>span:first-child{font-weight:800;margin-right:10px}
+
+.gwrap{margin:12px 0 0;border-top:1px dashed var(--line);padding:12px 0 0}
+.gq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 7px;font-size:14px}
+.gq-label{min-width:52px;font-weight:700;color:var(--sub)}
+.gq button{border:1.5px solid var(--line);background:#fff;border-radius:7px;width:36px;height:32px;
+font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.gq button.o.on{background:var(--go);border-color:var(--go);color:#fff}
+.gq button.x.on{background:var(--hot);border-color:var(--hot);color:#fff}
+.mt{display:none;gap:6px;flex-wrap:wrap;margin:2px 0 0 52px}
+.mt.show{display:flex}
+.mt button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px;
+font-size:12.5px;cursor:pointer;font-family:inherit;width:auto;height:auto}
+.mt button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.write3{display:none;margin:6px 0 0 52px;font-size:13px;color:var(--hot);font-weight:700}
+.write3.show{display:block}
+
+.done{display:block;width:100%;margin:26px 0 0;padding:18px;border:0;border-radius:14px;
+background:var(--go);color:#fff;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit}
+.done.fin{background:var(--ink)}
+.tail{text-align:center;color:var(--sub);font-size:13.5px;margin:18px 0 0;line-height:1.9}
+
+@media print{
+ body{background:#fff}
+ a.back,.ans-btn,.ans-box,.gwrap,.done,.note-draw{display:none !important}
+ .q{break-inside:avoid;page-break-inside:avoid}
+ .pg-hd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{margin:12mm}
+}
+/*frac-guard*/.frac{display:inline-flex!important;flex-direction:column!important;min-width:0!important;width:auto!important}.frac>span{display:block!important;min-width:0!important;width:auto!important;margin:0!important;color:inherit!important;font-weight:inherit!important}.frac>.n{border-bottom:1.8px solid currentColor!important;padding:0 5px 2px!important}.frac>.d{padding:2px 5px 0!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#mock">← ダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div>
+    <span class="pg-badge">特訓D5</span>
+    <span class="pg-badge">8月必修やり直し</span>
+    <span class="pg-badge">数学8問</span>
+  </div>
+  <h1>8月必修やり直し（数学8問）</h1>
+  <p>目安: 30分　対象: 中1　全問に解説つき</p>
+  <p class="pg-cheer">ここにあるのは、8月の本番で実際に間違えた8問だけ。もう一度、自分の力で解いてみよう。</p>
+</div>
+
+<div class="kind-box">
+  <b>今回の8問、間違いの3つの型</b><br>
+  ① 最後の1手が抜けた：やり方はわかっていたのに、最後の一歩（符号・整数のたし算・わり算・合計）でこぼした（5問）<br>
+  ② 覚え方が間違っていた：単位・割合など、覚えているつもりが違う形で覚えていた（2問）<br>
+  ③ 空欄のまま出した：思いついていたのに、解答欄に書かずに終わった（1問）
+</div>
+
+<div class="unit-banner"><span class="unit-num">数学　問1〜8</span><span class="unit-name">8月必修で落とした8問</span><span class="unit-time">目安 30分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qnum">★問1　大問1(4)　正負の数の計算</div>
+  <div class="qbody">
+    <span class="pn">問1</span><span class="math">(−8)² − 54 ÷ (−3)³</span> を計算しなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>途中式をノートに書いてから答え合わせをしよう。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>累乗を計算できた時点で「解けた」と感じてしまい、そのあとのわり算をしないまま次の計算に進んでしまう。</div>
+    <div class="step"><span>①</span>かけ算・わり算が先。たし算・ひき算はいちばん最後。</div>
+    <div class="step"><span>②</span>(−8)²＝64、(−3)³＝−27。</div>
+    <div class="step"><span>③</span>54÷(−27)＝−2。</div>
+    <div class="step"><span>④</span>64−(−2)＝64＋2＝66。</div>
+    <div class="ans-final"><span>こたえ</span>66</div>
+  </div>
+  <div class="gwrap" data-ids="q01"></div>
+</div>
+
+<div class="q calc" data-id="B">
+  <div class="qnum">★問2　大問2(1)　小学校の復習（単位）</div>
+  <div class="qbody">
+    <span class="pn">問2</span>1dLは何mLか答えなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>途中式をノートに書いてから答え合わせをしよう。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>d（デシ）とc（センチ）を取りちがえて、1dL＝10mLのように答えてしまう。</div>
+    <div class="step"><span>①</span>d（デシ）＝10分の1。1dLは1Lの10分の1。</div>
+    <div class="step"><span>②</span>1L＝1000mL。</div>
+    <div class="step"><span>③</span>1000÷10＝100mL。</div>
+    <div class="osarai">あわせて覚える：1L＝10dL＝1000mL。c（センチ）＝100分の1なので1cL＝10mL、1m²＝10000cm²。</div>
+    <div class="ans-final"><span>こたえ</span>100mL</div>
+  </div>
+  <div class="gwrap" data-ids="q02"></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qnum">★問3　大問2(2)　小学校の復習（割合）</div>
+  <div class="qbody">
+    <span class="pn">問3</span>750円は3000円の何%か答えなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>途中式をノートに書いてから答え合わせをしよう。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>わる数とわられる数を逆にして3000÷750を計算し、出てきた商をそのまま%にしてしまう。</div>
+    <div class="step"><span>①</span>「AはBの何%」は、もとにする数は「の」の前にあるB。</div>
+    <div class="step"><span>②</span>750÷3000＝0.25（小さい方÷大きい方）。</div>
+    <div class="step"><span>③</span>0.25×100＝25%。</div>
+    <div class="osarai">式を書く前に「もとにするのはどっち？」と声に出すと向きを間違えにくい。</div>
+    <div class="ans-final"><span>こたえ</span>25%</div>
+  </div>
+  <div class="gwrap" data-ids="q03"></div>
+</div>
+
+<div class="q calc" data-id="D">
+  <div class="qnum">★問4　大問3(2)　正負の数の性質と利用</div>
+  <div class="qbody">
+    <span class="pn">問4</span>45にできるだけ小さい自然数をかけて、ある自然数の2乗になるようにしたい。「45に［①］をかけると、［②］の2乗になる」の①②を答えなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>途中式をノートに書いてから答え合わせをしよう。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>素因数分解の途中まで手が動いていても、答えを解答欄に書かずに終わってしまう。</div>
+    <div class="step"><span>①</span>45を素因数分解すると45＝3×3×5。</div>
+    <div class="step"><span>②</span>2乗になる＝すべての数がペアになること。3はペアだが5だけ1個余っている。</div>
+    <div class="step"><span>③</span>5をかければペアになる→①5。</div>
+    <div class="step"><span>④</span>45×5＝225＝15×15→②15。</div>
+    <div class="ans-final"><span>こたえ</span>①5／②15</div>
+  </div>
+  <div class="gwrap" data-ids="q04"></div>
+</div>
+
+<div class="q calc" data-id="E">
+  <div class="qnum">★問5　大問5(1)　文字式の計算</div>
+  <div class="qbody">
+    <span class="pn">問5</span><span class="math">7x ＋ x − 10x</span> を計算しなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>途中式をノートに書いてから答え合わせをしよう。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>xの個数を数える計算(7＋1−10)は合っていても、最後に答えを書くときマイナスの符号を付け忘れる。</div>
+    <div class="step"><span>①</span>xの前に数がないときは1が隠れている（x＝1x）。</div>
+    <div class="step"><span>②</span>xの個数を数える：7個＋1個−10個＝−2個。</div>
+    <div class="step"><span>③</span>引く数の方が大きいので答えはマイナス→−2x。答えを書く前に符号を先に決めよう。</div>
+    <div class="ans-final"><span>こたえ</span>−2x</div>
+  </div>
+  <div class="gwrap" data-ids="q05"></div>
+</div>
+
+<div class="q calc" data-id="F">
+  <div class="qnum">★問6　大問5(2)　文字式の計算</div>
+  <div class="qbody">
+    <span class="pn">問6</span><span class="math">5a − 13 − 6a ＋ 7</span> を計算しなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>途中式をノートに書いてから答え合わせをしよう。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>文字の項をまとめるところ（5a−6a＝−a）まで合っていても、−13＋7の整数のたし算でずれてしまう。</div>
+    <div class="step"><span>①</span>文字の項どうし、数の項どうしを集める：5a−6a、−13＋7。</div>
+    <div class="step"><span>②</span>5a−6a＝−a。</div>
+    <div class="step"><span>③</span>−13＋7は数直線で−13から右に7動く→−6。暗算せず数直線を頭に描こう。</div>
+    <div class="ans-final"><span>こたえ</span>−a−6</div>
+  </div>
+  <div class="gwrap" data-ids="q06"></div>
+</div>
+
+<div class="q calc" data-id="G">
+  <div class="qnum">★問7　大問5(5)　文字式の計算</div>
+  <div class="qbody">
+    <span class="pn">問7</span><span class="math"><span class="frac"><span class="n">2</span><span class="d">9</span></span>(3x ＋ 18) ＋ <span class="frac"><span class="n">5</span><span class="d">6</span></span>(2x − 18)</span> を計算しなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>途中式をノートに書いてから答え合わせをしよう。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>分母をそろえて通分してから計算を進め、最後に約分・割り戻しを忘れて数字が大きいまま止まってしまう。</div>
+    <div class="step"><span>①</span>通分の前に、かっこの中の数と分母が約分できないか先に見る。</div>
+    <div class="step"><span>②</span><span class="math"><span class="frac"><span class="n">2</span><span class="d">9</span></span>×3x＝<span class="frac"><span class="n">2</span><span class="d">3</span></span>x</span>、<span class="math"><span class="frac"><span class="n">2</span><span class="d">9</span></span>×18＝4</span>　→　<span class="math"><span class="frac"><span class="n">2</span><span class="d">3</span></span>x＋4</span></div>
+    <div class="step"><span>③</span><span class="math"><span class="frac"><span class="n">5</span><span class="d">6</span></span>×2x＝<span class="frac"><span class="n">5</span><span class="d">3</span></span>x</span>、<span class="math"><span class="frac"><span class="n">5</span><span class="d">6</span></span>×18＝15</span>　→　<span class="math"><span class="frac"><span class="n">5</span><span class="d">3</span></span>x−15</span></div>
+    <div class="step"><span>④</span>たす：<span class="math"><span class="frac"><span class="n">2</span><span class="d">3</span></span>＋<span class="frac"><span class="n">5</span><span class="d">3</span></span>＝<span class="frac"><span class="n">7</span><span class="d">3</span></span></span>、4−15＝−11。</div>
+    <div class="ans-final"><span>こたえ</span><span class="math"><span class="frac"><span class="n">7</span><span class="d">3</span></span>x − 11</span></div>
+  </div>
+  <div class="gwrap" data-ids="q07"></div>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qnum">★問8　大問6(3)　正負の数の利用</div>
+  <div class="qbody">
+    月曜日の売上個数は1200個で、前日との差は　火−58／水＋59／木＋17／金−52（この数字に誤りあり）／土＋85／日＋13　と記録されていた。金曜日の記録には誤りがあり、正しくは前日（木曜）より45個少なかった。ほかの日の前日との差は正しいものとして、この7日間の正しい売上個数の平均を求めなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>1日ずつ表に書き出してから、途中式をノートに。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>金曜を直すところまで正しく計算できていても、最後の「合計して7でわる」をせず、途中で出したどこかの日の数字をそのまま答えにしてしまう。</div>
+    <div class="step"><span>①</span>月1200から前日との差を順に足し、火〜木を求める→1142・1201・1218。</div>
+    <div class="step"><span>②</span>金曜は「前日（木）より45個少ない」→1218−45＝1173。</div>
+    <div class="step"><span>③</span>土日は金曜から積み上がる→1173＋85＝1258、1258＋13＝1271。</div>
+    <div class="step"><span>④</span>7日分の合計8463を7でわる→1209個。聞かれているのは「平均」。答えを書く前に問題文の最後の一文をもう一度読もう。</div>
+    <div class="ans-final"><span>こたえ</span>1209個</div>
+  </div>
+  <div class="gwrap" data-ids="q08"></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓D5 完了）</button>
+
+<p class="tail">✕をつけた問題は、正しい式をノートに3回書こう。<br>
+次にやるときは、この中から間違えた問題だけをもう一度やります。</p>
+
+</div>
+
+<script>
+var KEY='tokkun_d5';
+
+/* 解説トグル */
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+/* ○✕採点 */
+function g(btn,id,v){
+  var row=btn.closest('.gq');
+  row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=row.nextElementSibling, w3=mt.nextElementSibling;
+  if(v==='x'){mt.classList.add('show');w3.classList.add('show');}
+  else{mt.classList.remove('show');w3.classList.remove('show');}
+}
+
+/* ミス型 */
+function m(btn){
+  var p=btn.parentNode;
+  p.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+p.getAttribute('data-gid')+'_type',btn.textContent);
+}
+
+/* 採点UIを生成 */
+document.querySelectorAll('.gwrap').forEach(function(w){
+  var ids=w.getAttribute('data-ids').split(',');
+  var h='';
+  ids.forEach(function(id){
+    var n=id.replace('q','').replace(/^0/,'');
+    h+='<div class="gq"><span class="gq-label">問'+n+'</span>'
+      +'<button class="o" onclick="g(this,\''+id+'\',\'o\')">○</button>'
+      +'<button class="x" onclick="g(this,\''+id+'\',\'x\')">✕</button></div>'
+      +'<div class="mt" data-gid="'+id+'"><button onclick="m(this)">計算ミス</button>'
+      +'<button onclick="m(this)">解説で分かった</button>'
+      +'<button onclick="m(this)">解説見ても分からない</button></div>'
+      +'<div class="write3">📝 正しい式・答えをノートに3回書こう</div>';
+  });
+  w.innerHTML=h;
+});
+
+/* 保存済みを復元 */
+document.querySelectorAll('.gq').forEach(function(row){
+  var btn=row.querySelector('.o');
+  var id=btn.getAttribute('onclick').match(/'(q\d+)'/)[1];
+  var v=localStorage.getItem(KEY+'_'+id);
+  if(v){row.querySelector(v==='o'?'.o':'.x').classList.add('on');
+    if(v==='x'){row.nextElementSibling.classList.add('show');
+      row.nextElementSibling.nextElementSibling.classList.add('show');}}
+  var ty=localStorage.getItem(KEY+'_'+id+'_type');
+  if(ty){row.nextElementSibling.querySelectorAll('button').forEach(function(b){
+    if(b.textContent===ty)b.classList.add('on');})}
+});
+
+/* 完了 */
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+if(localStorage.getItem(KEY+'_done')==='1'){
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+</script>
+</body>
+</html>

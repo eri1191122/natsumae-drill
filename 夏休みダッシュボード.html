@@ -12,7 +12,7 @@
 <meta name="robots" content="noindex,nofollow">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>夏休み 学習ダッシュボード</title>
+<title>中1 学習ダッシュボード（11月特訓選抜）</title>
 <style>
 *{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
 body{font-family:'Hiragino Kaku Gothic ProN','Meiryo',sans-serif;background:#f6f8fb;color:#26323f;font-size:15px;line-height:1.7}
@@ -156,8 +156,8 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
 /* B16 とじたままでも「つぎにやる1枚」が見える */
 .sec-hd .nxt{width:100%;font-size:12px;font-weight:700;color:#5a6b80;margin-top:3px}
 /* 行ぜんたいをタップできる（リンク1本の行のみ・暗記カードは2本なので対象外） */
-#reviewRows .row,#mathRows .row,#kokugoRows .row,#englishRows .row,#mockRows .row{cursor:pointer}
-#reviewRows .row:active,#mathRows .row:active,#kokugoRows .row:active,#englishRows .row:active,#mockRows .row:active{background:#f3f7fc}
+#reviewRows .row,#mathRows .row,#kokugoRows .row,#englishRows .row,#mockRows .row,#redoRows .row,#novRows .row{cursor:pointer}
+#reviewRows .row:active,#mathRows .row:active,#kokugoRows .row:active,#englishRows .row:active,#mockRows .row:active,#redoRows .row:active{background:#f3f7fc}
 /* ===== 2026-07-12(2) X21=必修/余力の分割 ＋ 上部3系統を1本に統合 ===== */
 /* 進捗と教科ジャンプを1本のバーに統合 */
 .bar{align-items:center;gap:16px}
@@ -184,25 +184,25 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
 <div class="wrap">
 
 <div class="hd">
-  <h1>🌻 夏休み 学習ダッシュボード</h1>
-  <p>選ばなくて大丈夫。「この問題をはじめる」を押し、終わったらここへ戻るだけ。おすすめが自動で次へ進みます。</p>
-  <div class="note">📅 <b>暗記カードはDay01＝7/18（土）から毎日15分</b>（Day30＝8/16）。旅行で1日とんでも、次のDayから続けよう。<b>復習は一番大切</b>—最初に少しだけでも触ろう。</div>
-  <div class="note">📘 <b>9月対策130枚のあとも終わりではありません。</b> U11現在進行形・U12過去形・国語古文の先取り3枚まで、夏休み中におまかせコースが続きます。数学・国語TECも削除せず、各教科欄からいつでも開けます。</div>
+  <h1>📚 中1 学習ダッシュボード｜11月特訓選抜に向けて</h1>
+  <p>「この問題をはじめる」を押して、終わったらこのページに戻る。次にやるものは自動で出ます。</p>
+  <div class="note">📈 <b>11月特訓選抜の数学は、比例・反比例が新しく範囲に入る。</b>F1〜F4を1回15分ずつ、上から順番に進める。</div>
+  <div class="note">🩹 <b>9月のテストで落とした問題は「やり直し」欄にある。</b>夏の教材（9月対策130枚・暗記カード）も、下の各欄からいつでも開ける。</div>
 </div>
 
 <!-- 🚀 おまかせ学習コース（完了状態から次の1枚を自動推薦） -->
 <div class="today" id="today">
   <div class="t-hd">
     <h2>🚀 つづきから｜おまかせ学習コース</h2>
-    <div class="flow">できた → いまやる → その次。終わったら戻るだけで、次のおすすめに進みます。</div>
+    <div class="flow">できた → いまやる → その次。終わったら戻ると、次が自動で出ます。</div>
   </div>
   <div class="t-cta" id="tCta"></div>
   <div class="t-body" id="todayBody"></div>
-  <div class="t-foot">今日は2枚（約60分）でおしまいでOK。できる日はそのまま進めてもOK。順番は自動で決まります。🌸</div>
+  <div class="t-foot">1日の目標は1枚。F1〜F4は1回15分ずつ区切って進めてよい。できる日は続けてもよい。</div>
 </div>
 
 <!-- 🏫 学校の宿題（たたまずに常に見える場所。9/1提出があるので上に置く） -->
-<div class="hw" id="homework">
+<div class="hw" id="homework" style="display:none"><!-- 2026-09-29: 夏休みの宿題（9/1提出）は終了のため非表示。ファイルは残す -->
   <div class="hw-hd">🏫 学校の宿題（夏休み）<span class="tag">9月1日ていしゅつ</span></div>
   <div class="hw-note">下書き・調べたことはここ。<b>ノートや方眼紙に手で書きうつすときに開く</b>。</div>
   <div class="hw-a">
@@ -217,13 +217,14 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
 <!-- 進捗＋教科ジャンプを1本に統合（旧: ジャンプナビ7本＋ナビ4本＋進捗バーの3系統を1本へ） -->
 <div class="bar">
   <div class="barL"><span class="big" id="pct">0%</span>
-    <span class="lbl">できたよ　<span id="doneN">0</span> / <span id="allN">0</span> 枚</span>
+    <span class="lbl">夏の教材の進み具合　<span id="doneN">0</span> / <span id="allN">0</span> 枚</span>
     <div class="track"><div class="fill" id="fill"></div></div>
   </div>
   <div class="jump">
     <a class="j-rev" href="#review">🔴 弱点復習</a>
+    <a href="#nov">📈 11月数学</a>
+    <a href="#redo">🩹 やり直し</a>
     <a href="#qa1">⚡ 一問一答</a>
-    <a class="j-hw" href="#homework">🏫 学校の宿題</a>
     <a href="#amn">🗂️ 暗記</a>
     <a href="#math">📐 数学</a>
     <a href="#eng">🔤 英語</a>
@@ -231,6 +232,30 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
     <a href="#mock">🎯 本番</a>
   </div>
 </div>
+
+<!-- §Nov 11月特訓 数学 比例・反比例（F1〜F4・分母133には数えない／2026-09-29追加・常に開いた状態） -->
+<details class="sec" id="nov" open>
+  <summary>
+    <div class="sec-hd"><h2>📈 11月特訓 数学（比例・反比例）</h2><span class="cnt" id="cntNov">0</span><span class="tw"></span></div>
+  </summary>
+  <div class="sec-body">
+    <div class="legend"><b>比例・反比例をまだ習っていない前提で作ってある。</b>1回15分で、上から順番に。F1（比例）→F2（反比例と変域）→F3（文章題と10問チェック）→F4（難問）。F3のチェックで8問以上できたらF4へ。</div>
+    <div id="novRows"></div>
+    <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
+  </div>
+</details>
+
+<!-- §Redo テストやり直し（9月選抜D4・8月必修D5。分母133には数えない／2026-09-26追加・常に開いた状態） -->
+<details class="sec" id="redo" open>
+  <summary>
+    <div class="sec-hd"><h2>🩹 テストのやり直し（9月選抜・8月必修）</h2><span class="cnt" id="cntRedo">0</span><span class="tw"></span></div>
+  </summary>
+  <div class="sec-body">
+    <div class="legend"><b>返ってきたテストで落とした問題だけ</b>を集めたページ。1日2〜3問ずつでOK。まちがえたら、その場で「答えを見る」の解き方を読む。</div>
+    <div id="redoRows"></div>
+    <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
+  </div>
+</details>
 
 <!-- §0 弱点復習（最優先・最上部） -->
 <details class="sec" id="review">
@@ -307,7 +332,7 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
     <div class="sec-hd"><h2>🎯 本番判定・50分通し（特訓選抜そっくり模試）</h2><span class="cnt" id="cntMock">0</span><span class="tw"></span></div>
   </summary>
   <div class="sec-body">
-    <div class="legend"><b>⭐印の2枚（国語D2・数学D1）は9/12の本番までにやる直前ドリル。まずここから。</b>そのあとの8枚は本番と同じ50分・100点の通し（数学2・英語3・国語3）。まちがえた問題は、その場で「よくある間違い」を読む。ぜんぶ9月対策133枚の分母には数えません。</div>
+    <div class="legend">9月の選抜前に使った直前ドリル（国語D2・数学D1）と、本番と同じ50分・100点の通し（数学2・英語3・国語3）。まちがえた問題は、その場で「よくある間違い」を読む。ぜんぶ9月対策133枚の分母には数えません。</div>
     <div id="mockRows"></div>
     <a class="backtop" href="#today">▲ きょうやることへ戻る</a>
   </div>
@@ -357,7 +382,7 @@ a.startbtn:hover{background:linear-gradient(120deg,#276845,#37895c)}
 
 <a class="backtop center" href="#today">▲ きょうやることへ戻る</a>
 
-<div class="foot">復習 → 暗記 → 特訓の順で、1日5分からでOK。できた枚数がふえていくのを楽しもう。🌸</div>
+<div class="foot">まちがえ直し → 11月数学 → 9月のやり直し の順。1日15分からでよい。</div>
 
 </div>
 
@@ -535,11 +560,27 @@ var ENGLISH = [
    分母133（REVIEW2+AMNESIA60+MATH38+国語12+英語21）には数えない＝常にnoCount=trueで描画（reference:trueバッジは付けず「通4」と同じ見た目にする）。
    英本番①(tokkun_e_toshi01)＝ENGLISH配列の特英9と同一ファイル・同一KEY。国本番①(tokkun_jtoshi01)＝KOKUGO配列の国11と同一ファイル・同一KEY。
    どちらも既存側で分母にカウント済みのため、ここで noCount=true で再掲してもダブルカウントにはならない（数学の通4/tokkun_m12dと同型の既存登録）。 */
+/* §Nov 11月特訓 数学 比例・反比例（2026-09-29追加）＝常にnoCount=true（分母133に影響させない） */
+var NOV = [
+  {day:"1〜4回目", title:"F1 比例（座標・見分け方・式・グラフ）", k:"tokkun_f11_1", f:"プリント/夏_特訓数学プリント/特訓F1_11月_比例.html"},
+  {day:"5〜8回目", title:"F2 反比例と変域（見分け方・式・グラフ・変域）", k:"tokkun_f11_2", f:"プリント/夏_特訓数学プリント/特訓F2_11月_反比例と変域.html"},
+  {day:"9〜10回目", title:"F3 文章題と10問チェック（8問以上でF4へ）", k:"tokkun_f11_3", f:"プリント/夏_特訓数学プリント/特訓F3_11月_利用とL3チェック.html"},
+  {day:"11〜13回目", title:"F4 難問（易しい導入2問→本問）", k:"tokkun_f11_4", f:"プリント/夏_特訓数学プリント/特訓F4_11月_難問.html"}
+];
+
+/* §Redo テストやり直し（2026-09-26追加）＝常にnoCount=true（分母133に影響させない） */
+var REDO = [
+  {day:"失点考察 9月", title:"9月特訓と必修の失点考察と対策（数学全問＋英語＋国語の知識）", k:"tokkun_d7", f:"プリント/夏_特訓数学プリント/特訓D7_9月特訓と必修_失点考察と対策.html"},
+  {day:"ふりかえり 9月", title:"9月必修ふりかえり（できたこと＋やり直し14問）", k:"tokkun_d6", f:"プリント/夏_特訓数学プリント/特訓D6_9月必修ふりかえり.html"},
+  {day:"やり直し 9月", title:"9月選抜やり直し（数学11問＋英語＋国語）", k:"tokkun_d4", f:"プリント/夏_特訓数学プリント/特訓D4_9月選抜やり直し.html"},
+  {day:"やり直し 8月", title:"8月必修やり直し（数学8問・小問別）", k:"tokkun_d5", f:"プリント/夏_特訓数学プリント/特訓D5_8月必修やり直し.html"}
+];
+
 var MOCKEXAM = [
   {day:"9〜11日", title:"⭐ 直前ドリル 国語の知識（漢字・四字熟語・部首画数・文法／30分×3・90問）", k:"tokkun_d2", f:"プリント/国語プリント/特訓D2_直前_国語の知識.html",
-   urgent:true, why:"国語の知識は3日でいちばん点が動くところ。9日=漢字30問／10日=四字熟語ほか34問／11日=総仕上げ26問"},
+   why:"国語の知識は3日でいちばん点が動くところ。9日=漢字30問／10日=四字熟語ほか34問／11日=総仕上げ26問"},
   {day:"9〜10日", title:"⭐ 直前ドリル 方程式・文字式・割合（約2時間・42問）", k:"tokkun_d1", f:"プリント/夏_特訓数学プリント/特訓D1_直前_方程式と文字式と割合.html",
-   urgent:true, why:"方程式は範囲なのにテストで一度も出ていない＝練習ゼロの場所。ふつうの問題だけ集めてある"},
+   why:"方程式は範囲なのにテストで一度も出ていない＝練習ゼロの場所。ふつうの問題だけ集めてある"},
   {day:"数 通5", title:"特訓選抜そっくり本番通し⑤（50分・100点）", k:"tokkun_m12e", f:"プリント/夏_特訓数学プリント/特訓P12e_50分通し5_独立フォーム.html"},
   {day:"数 通6", title:"特訓選抜そっくり本番通し⑥（50分・100点）", k:"tokkun_m12f", f:"プリント/夏_特訓数学プリント/特訓P12f_50分通し6_独立フォーム.html"},
   {day:"英 本番①", title:"英語 特訓選抜そっくり本番通し①（50分・100点）", k:"tokkun_e_toshi01", f:"プリント/特訓選抜英語/09_本番通し01_50分.html"},
@@ -649,6 +690,15 @@ var mockH='';
 MOCKEXAM.forEach(function(r){ mockH+=rowOf(r,'ひらく',' ',true); });
 document.getElementById('mockRows').innerHTML=mockH;
 
+var novH='';
+NOV.forEach(function(r){ novH+=rowOf(r,'ひらく',' ',true); });
+document.getElementById('novRows').innerHTML=novH;
+
+/* §Redo テストやり直し：常にnoCount=true（分母133に影響させない） */
+var redoH='';
+REDO.forEach(function(r){ redoH+=rowOf(r,'ひらく',' ',true); });
+document.getElementById('redoRows').innerHTML=redoH;
+
 /* ⚡ 一問一答（すきま5分・2026-08-30追加）＝常にnoCount=true（分母133に影響させない）。
    各ページが localStorage[KEY+'_done'] を書くので、既存の done() 規約だけで✓が付く。
    新しいセットを足すときは、この配列に1行足すだけ（作り方＝運用ワークフロー/一問一答作成ワークフロー.md）。 */
@@ -683,6 +733,10 @@ var te=tally(ENGLISH.filter(function(r){return !r.reference;}));
 document.getElementById('cntE').textContent=te.done+' / '+te.all+' 枚';
 var tmock=tally(MOCKEXAM);
 document.getElementById('cntMock').textContent=tmock.done+' / '+tmock.all+' 枚';
+var tnov=tally(NOV);
+document.getElementById('cntNov').textContent=tnov.done+' / '+tnov.all+' 枚';
+var tredo=tally(REDO);
+document.getElementById('cntRedo').textContent=tredo.done+' / '+tredo.all+' 枚';
 
 /* ===== 🚀 一本道のおまかせ学習コース =====
    順番は「英語→数学→英語→暗記→数学→国語」の反復。
@@ -733,7 +787,9 @@ var ROUTE_MOCK=MOCKEXAM.map(function(r){
 });
 
 /* 6枠で英語2・数学2・暗記1・国語1。空になった教科は自動で飛ばす。 */
-var ROUTE=ROUTE_REVIEW.slice();
+/* 2026-09-29 11月モード：弱点復習の次に 11月数学F1〜F4 → 9月のやり直し（D7・D6・D4・D5）を最優先で入れる */
+var ROUTE_NOV=NOV.map(function(r){return taskOf(r,'11月数学','1回15分','比例・反比例。上から順に、1回15分ずつ進める');}).concat(REDO.map(function(r){return taskOf(r,'9月のやり直し','30分','9月のテストで実際に間違えた問題を直す');}));
+var ROUTE=ROUTE_NOV.concat(ROUTE_REVIEW);
 var streams={E:ROUTE_ENGLISH,M:ROUTE_MATH,A:ROUTE_AMNESIA,K:ROUTE_KOKUGO};
 var pos={E:0,M:0,A:0,K:0},pattern=['E','M','E','A','M','K'];
 while(pos.E<streams.E.length||pos.M<streams.M.length||pos.A<streams.A.length||pos.K<streams.K.length){
@@ -773,7 +829,7 @@ function syncActivity(){
   try{localStorage.setItem(SEEN_KEY,JSON.stringify(seen));localStorage.setItem(ACT_KEY,JSON.stringify(hist.slice(-120)));localStorage.setItem(INIT_KEY,'1');}catch(e){}
   return hist.filter(function(x){return x&&dayStamp(x.t)===dayStamp();});
 }
-var todayActivity=syncActivity(),recovery=recoveryPick(),cutover=afterCutover();
+var todayActivity=syncActivity(),recovery=recoveryPick(),cutover=false; /* 2026-09-29: 9/12仕上げモードは終了。11月モードで常にfalse */
 var main=cutover?null:unfinished(ROUTE,0),finish=null,mock=null,current=null,currentIndex=-1,coreMode=!cutover;
 if(!main&&!cutover){finish=unfinished(ROUTE_FINISH,0);coreMode=false;}
 if(!main&&!finish){mock=unfinished(ROUTE_MOCK,0);}
@@ -790,17 +846,17 @@ var mockNow=!!(current&&current.kind==='本番判定');
    これで暗記2枚（=30分）だけでは今日のぶん未達＝実質ペースが上がり、30分プリント2枚（=60分）で達成になる。 */
 function sheetWeight(x){return x&&x.kind==='暗記'?0.5:1;}
 function fmtSheets(n){return String(Math.round(n*10)/10);}
-var DAILY_GOAL_SHEETS=2;
+var DAILY_GOAL_SHEETS=1;
 var todayMinutes=todayActivity.reduce(function(sum,x){return sum+(+x.min||0);},0);
 var todayUnits=todayActivity.reduce(function(sum,x){return sum+sheetWeight(x);},0);
 var goalHit=todayUnits>=DAILY_GOAL_SHEETS;
 var remainUnits=Math.max(0,DAILY_GOAL_SHEETS-todayUnits);
-var statusH='<div class="route-status"><span class="route-chip">今日 '+fmtSheets(todayUnits)+'枚 / 2枚（約60分）</span>'
-  +'<span class="route-chip'+(goalHit?' goal':'')+'">'+(goalHit?'✓ 今日のぶんはおわり！ここでやめてOK 🌸（つづけてもいい）':'あと'+fmtSheets(remainUnits)+'枚で今日のぶん')+'</span>'
-  +'<span class="route-chip">必修 '+doneN+' / '+allN+'</span></div>';
+var statusH='<div class="route-status"><span class="route-chip">今日 '+fmtSheets(todayUnits)+'枚 / 目標1枚</span>'
+  +'<span class="route-chip'+(goalHit?' goal':'')+'">'+(goalHit?'✓ 今日の目標達成（続けてもよい）':'あと'+fmtSheets(remainUnits)+'枚で今日の目標')+'</span>'
+  +'<span class="route-chip">夏の教材 '+doneN+' / '+allN+'</span></div>';
 var recent=todayActivity.slice(-3).reverse();
-var doneText=recent.length?recent.map(function(x){return '✓ '+x.kind+'　'+x.title;}).join('<br>'):'今日はまだ0こ。最初の1問から始めよう。';
-var nextText=nextPick?'→ '+nextPick.kind+'　'+nextPick.title:'ぜんぶ終わりました。おつかれさま！';
+var doneText=recent.length?recent.map(function(x){return '✓ '+x.kind+'　'+x.title;}).join('<br>'):'今日はまだ記録なし。';
+var nextText=nextPick?'→ '+nextPick.kind+'　'+nextPick.title:'すべて終了。';
 var bodyH=statusH;
 if(current){
   var todayNo=todayActivity.length+1;
@@ -808,12 +864,12 @@ if(current){
     :(mockNow?(cutover?'🏁 仕上げモード｜本番通し '+(currentIndex+1)+' / '+ROUTE_MOCK.length:'🎉必修＋先取り完了！余力があれば｜本番判定 '+(currentIndex+1)+' / '+ROUTE_MOCK.length)
     :'今日 '+todayNo+'枚目'+(coreMode?'（全体 '+(currentIndex+1)+' / '+ROUTE.length+'）':'（先取り '+(currentIndex+1)+' / '+ROUTE_FINISH.length+'）'));
   bodyH+='<div class="route-current"><div class="eyebrow">いまやる｜'+orderText+'</div><div class="rtitle">'+current.kind+'　'+current.title+'</div><div class="rwhy">'+current.why+'</div><span class="rmeta">目安 '+current.min+'</span></div>';
-}else bodyH+='<div class="alldone">🎉 '+(cutover?'仕上げの復習も本番通しも、ぜんぶやり切ったね！あとは体調をととのえて本番へ。':'必修も先取りも本番判定も、ぜんぶやり切りました！すごい！')+'</div>';
+}else bodyH+='<div class="alldone">🎉 '+(cutover?'すべての教材が終了。':'すべての教材が終了。')+'</div>';
 bodyH+='<div class="route-seq"><div class="route-box donebox"><h3>できた</h3><p>'+doneText+'</p></div><div class="route-box"><h3>その次</h3><p>'+nextText+'</p></div></div>'
-  +'<div class="route-note">'+(cutover?'🏁 9/12がちかいよ。ここからは新しい問題より、まちがえ直しと本番通しで仕上げよう。今日も2枚（約60分）でOK。🌸':'今日は2枚（約60分）でおしまいでOK。まだできる日は、戻るたびに次が自動で出ます。🌸')+'</div>';
+  +'<div class="route-note">1日の目標は1枚。戻るたびに次が自動で出ます。</div>';
 document.getElementById('todayBody').innerHTML=bodyH;
 document.getElementById('tCta').innerHTML=current
-  ?'<div class="cta-line"><span class="cta-lab">'+(mockNow?(cutover?'仕上げに':'余力があれば'):'選ばなくてOK')+'</span><a class="startbtn" href="'+current.f+'">▶ '+(mockNow?(cutover?'🏁本番通しに挑戦':'🎯本番判定に挑戦'):(todayActivity.length?'つぎの問題をはじめる':'この問題をはじめる'))+'</a></div>'
+  ?'<div class="cta-line"><span class="cta-lab">'+(mockNow?(cutover?'仕上げに':'余力があれば'):'おすすめ')+'</span><a class="startbtn" href="'+current.f+'">▶ '+(mockNow?(cutover?'🏁本番通しに挑戦':'🎯本番判定に挑戦'):(todayActivity.length?'つぎの問題をはじめる':'この問題をはじめる'))+'</a></div>'
   :'<div class="alldone">✓ おすすめコース完了</div>';
 
 /* とじた一覧にも各教科の続きだけ表示する。 */

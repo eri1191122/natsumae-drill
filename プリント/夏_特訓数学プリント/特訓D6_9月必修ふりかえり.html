@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓D6｜9月必修ふりかえり</title>
+<style>
+:root{--ink:#1b1c22;--sub:#5a5f6e;--line:#e3e5ec;--bg:#fbfbfd;--key:#1f4fd8;--key-bg:#eef2ff;
+--go:#0a7d55;--go-bg:#eaf7f1;--hot:#d92b3a;--hot-bg:#fff2f3;--warn:#b26a00;--warn-bg:#fff7e8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:14px 18px 70px}
+a.back{display:inline-block;margin:6px 0 12px;color:var(--key);font-size:15px;text-decoration:none;font-weight:700}
+
+.pg-hd{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:16px;padding:22px 22px 20px;margin:0 0 18px}
+.pg-badge{display:inline-block;background:rgba(255,255,255,.16);border-radius:7px;padding:4px 10px;
+font-size:12.5px;font-weight:700;margin:0 6px 8px 0}
+.pg-hd h1{font-size:22px;margin:6px 0 8px;line-height:1.45}
+.pg-hd p{font-size:14.5px;margin:0;opacity:.9}
+.pg-cheer{margin-top:10px !important;font-size:14px !important;opacity:.8 !important}
+
+.kind-box{background:var(--key-bg);border-radius:12px;padding:14px 18px;margin:0 0 20px;font-size:14.5px;line-height:1.9}
+.kind-box b{color:var(--key)}
+
+.good-box{background:var(--go-bg);border-left:5px solid var(--go);border-radius:0 12px 12px 0;
+padding:15px 19px;margin:0 0 18px;font-size:14.5px;line-height:2}
+.good-box b{color:var(--go)}
+.near-box{background:var(--key-bg);border-left:5px solid var(--key);border-radius:0 12px 12px 0;
+padding:15px 19px;margin:0 0 20px;font-size:14.5px;line-height:2}
+.near-box b{color:var(--key)}
+.goal-box{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:14px;
+padding:18px 20px;margin:28px 0 0;font-size:15.5px;line-height:1.9;text-align:center}
+.goal-box b{font-size:17.5px}
+
+.unit-banner{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--key-bg);
+border-left:5px solid var(--key);border-radius:0 10px 10px 0;padding:11px 15px;margin:26px 0 12px}
+.unit-num{font-size:14px;font-weight:800;color:var(--key)}
+.unit-name{font-size:16px;font-weight:800}
+.unit-time{font-size:13px;color:var(--sub);margin-left:auto}
+
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.qnum{font-size:16px;font-weight:800;margin:0 0 10px}
+.qbody{font-size:17px;line-height:2.5}
+.qbody .pn{color:#2f5a8a;font-weight:700;margin-right:6px}
+.math{font-family:"Times New Roman",serif;font-size:19px;letter-spacing:.02em}
+.note-draw{background:var(--warn-bg);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:12px 0 0}
+
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 2px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+
+.ratetable{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+.ratetable th,.ratetable td{border:1px solid var(--line);padding:6px 8px;text-align:center}
+.ratetable th{background:var(--key-bg)}
+
+.ans-btn{display:block;width:100%;margin:12px 0 0;padding:12px;border:0;border-radius:10px;
+background:var(--key);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.ans-box{display:none;margin:12px 0 0;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ans-box.open{display:block}
+.osarai{background:var(--go-bg);border-left:4px solid var(--go);border-radius:0 8px 8px 0;
+padding:10px 14px;font-size:14.5px;margin:0 0 12px}
+.step{font-size:15.5px;margin:0 0 9px;padding:0 0 0 4px}
+.step>span:first-child{display:inline-block;min-width:44px;font-weight:800;color:var(--key)}
+.miss-box{background:var(--warn-bg);border-radius:9px;padding:11px 14px;font-size:14.5px;margin:12px 0 0}
+.miss-box b{color:var(--warn)}
+.bx-warn{background:var(--hot-bg);border:1px solid #f6ccd1;border-radius:9px;padding:11px 14px;
+font-size:14.5px;margin:12px 0 0}
+.bx-warn b{color:var(--hot)}
+.ans-final{background:var(--ink);color:#fff;border-radius:10px;padding:12px 15px;margin:13px 0 0;font-size:15.5px}
+.ans-final>span:first-child{font-weight:800;margin-right:10px}
+
+.gwrap{margin:12px 0 0;border-top:1px dashed var(--line);padding:12px 0 0}
+.gq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 7px;font-size:14px}
+.gq-label{min-width:52px;font-weight:700;color:var(--sub)}
+.gq button{border:1.5px solid var(--line);background:#fff;border-radius:7px;width:36px;height:32px;
+font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.gq button.o.on{background:var(--go);border-color:var(--go);color:#fff}
+.gq button.x.on{background:var(--hot);border-color:var(--hot);color:#fff}
+.mt{display:none;gap:6px;flex-wrap:wrap;margin:2px 0 0 52px}
+.mt.show{display:flex}
+.mt button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px;
+font-size:12.5px;cursor:pointer;font-family:inherit;width:auto;height:auto}
+.mt button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.write3{display:none;margin:6px 0 0 52px;font-size:13px;color:var(--hot);font-weight:700}
+.write3.show{display:block}
+
+.done{display:block;width:100%;margin:26px 0 0;padding:18px;border:0;border-radius:14px;
+background:var(--go);color:#fff;font-size:18px;font-weight:800;cursor:pointer;font-family:inherit}
+.done.fin{background:var(--ink)}
+.tail{text-align:center;color:var(--sub);font-size:13.5px;margin:18px 0 0;line-height:1.9}
+
+@media print{
+ body{background:#fff}
+ a.back,.ans-btn,.ans-box,.gwrap,.done,.note-draw{display:none !important}
+ .q{break-inside:avoid;page-break-inside:avoid}
+ .pg-hd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{margin:12mm}
+}
+/*frac-guard*/.frac{display:inline-flex!important;flex-direction:column!important;min-width:0!important;width:auto!important}.frac>span{display:block!important;min-width:0!important;width:auto!important;margin:0!important;color:inherit!important;font-weight:inherit!important}.frac>.n{border-bottom:1.8px solid currentColor!important;padding:0 5px 2px!important}.frac>.d{padding:2px 5px 0!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#mock">← ダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div>
+    <span class="pg-badge">特訓D6</span>
+    <span class="pg-badge">9月必修ふりかえり</span>
+    <span class="pg-badge">3科14問</span>
+  </div>
+  <h1>9月必修ふりかえり（3科14問）</h1>
+  <p>目安: 30分　対象: 中1　全問に解説つき</p>
+  <p class="pg-cheer">まず今回できていたこと・もう少しだったことをまとめました。やり直しは、本番そのままの問題ではなく、同じ型の別の問題です。</p>
+</div>
+
+<div class="good-box">
+  <b>今回できていたこと</b><br>
+  ① 数学：正負の数や文字式の基本の計算は、どれも迷わず正しくできていた。<br>
+  ② 数学：むずかしい【思考】の問題でも、式の作り方の方針は最後まで合っていた。<br>
+  ③ 英語：リスニングは全問正解。対話の受け答えや文の書きかえの問題も全問正解だった。<br>
+  ④ 英語：数字のあとの名詞を複数形にする問題（pencils, boxesなど）は毎回きちんとできていた。<br>
+  ⑤ 国語：慣用句はほぼ全問正解、漢字の読みは全問正解だった。<br>
+  ⑥ 途中式やメモをきちんと書く習慣がついている。おかげでどこで間違えたのかを正確に見つけられた。
+</div>
+
+<div class="near-box">
+  <b>もう少しで取れていた問題</b><br>
+  ① 分数の計算：通分・約分の計算はすべて正しくできていて、最後にかっこの中の数をひとつかけ忘れただけだった。あと一歩。<br>
+  ② 「噴火」を文章から書きぬく問題：正しい場所を見つける力はすでにある。「噴」という字の右側の形だけ直せば満点になる問題だった。
+</div>
+
+<div class="kind-box">
+  <b>今回のミスの正体</b><br>
+  ① マイナスを代入するときのかっこ：負の数を式に入れるとき、かっこを付けずに書くと符号を落としやすい。<br>
+  ② かっこを外すときの配り忘れ：（　）の前がマイナスや数のとき、中の全部の項に配る。一部だけに配ると答えがずれる。<br>
+  ③ 答えの写し間違い：下書きや問題用紙では合っていたのに、答案に書き写すときに違う記号・文字になってしまう。<br>
+  ④ 「噴」の右側は「賁」：上は「卉」（たて線3本）。「責」（上が横線の重なり）とは別の形。<br>
+  ⑤ be動詞と一般動詞／複数の主語なら名詞も複数：疑問文の動詞に合わせて答え方をそろえる。主語が複数ならあとの名詞も複数形。
+</div>
+
+<div class="unit-banner"><span class="unit-num">①</span><span class="unit-name">マイナスを代入するときのかっこ（数学）</span><span class="unit-time">目安 8分</span></div>
+
+<div class="q calc" data-id="A">
+  <div class="qnum">★問1　符号を落とさない代入</div>
+  <div class="qbody">
+    <span class="pn">問1</span>a＝−<span class="frac"><span class="n">3</span><span class="d">2</span></span>のとき、<span class="math">4a² ＋ 2a</span> の値を求めなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>代入する数をかっこに入れて書いてから計算しよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>大問4(1)①で a＝−<span class="frac"><span class="n">5</span><span class="d">2</span></span> を代入したとき、4a²の25は合っていたのに、2aを「2×<span class="frac"><span class="n">5</span><span class="d">2</span></span>＝5」とマイナスを落として、答えが30になった（正しくは20）。<br><b>前にも：</b>8月必修の大問5(1)でも、答えの−2xのマイナスを書き忘れて2xにしている。</div>
+    <div class="step"><span>①</span>代入する数はかっこに入れて書く：a＝(−<span class="frac"><span class="n">3</span><span class="d">2</span></span>)。</div>
+    <div class="step"><span>②</span>4a²＝4×<span class="frac"><span class="n">9</span><span class="d">4</span></span>＝9（マイナス×マイナスでプラスになる）。</div>
+    <div class="step"><span>③</span>2a＝2×(−<span class="frac"><span class="n">3</span><span class="d">2</span></span>)＝−3（かっこの中のマイナスはそのまま）。</div>
+    <div class="step"><span>④</span>9＋(−3)＝6。</div>
+    <div class="ans-final"><span>こたえ</span>6</div>
+  </div>
+  <div class="gwrap" data-ids="q01"></div>
+</div>
+
+<div class="q calc" data-id="B">
+  <div class="qnum">★問2　符号を落とさない代入</div>
+  <div class="qbody">
+    <span class="pn">問2</span>x＝−4、y＝<span class="frac"><span class="n">5</span><span class="d">8</span></span>のとき、<span class="math"><span class="frac"><span class="n">8</span><span class="d">x</span></span> ＋ 8y</span> の値を求めなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>代入する数をかっこに入れて書いてから計算しよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>大問4(1)②で x＝−1 を代入したとき、7÷xを「7」にしてマイナスが消え、答えが13になった（正しくは−1）。<br><b>前にも：</b>同じ9月の大問4(1)①と7A(2)でも、まったく同じ消え方をしている。</div>
+    <div class="step"><span>①</span><span class="frac"><span class="n">8</span><span class="d">x</span></span>にx＝(−4)を代入：8÷(−4)＝−2。</div>
+    <div class="step"><span>②</span>8y＝8×<span class="frac"><span class="n">5</span><span class="d">8</span></span>＝5。</div>
+    <div class="step"><span>③</span>−2＋5＝3。</div>
+    <div class="ans-final"><span>こたえ</span>3</div>
+  </div>
+  <div class="gwrap" data-ids="q02"></div>
+</div>
+
+<div class="q calc" data-id="C">
+  <div class="qnum">★問3　符号を落とさない代入</div>
+  <div class="qbody">
+    <span class="pn">問3</span>x＝−2のとき、<span class="math">3x² ＋ 5x − 1</span> の値を求めなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>代入する数をかっこに入れて書いてから計算しよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>大問7A(2)で x＝−3 を代入したとき、2x²の18は合っていたのに、4xを「＋12」にして答えが25になった（正しくは1）。<br><b>前にも：</b>8月必修の大問5(1)でも、マイナスの書き忘れで1問落としている。</div>
+    <div class="step"><span>①</span>x＝(−2)をかっこに入れて代入する。</div>
+    <div class="step"><span>②</span>3x²＝3×4＝12（2乗はプラスになる）。</div>
+    <div class="step"><span>③</span>5x＝5×(−2)＝−10（かっこの中のマイナスはそのまま）。</div>
+    <div class="step"><span>④</span>12＋(−10)−1＝1。</div>
+    <div class="osarai">3問とも「2乗の項は合っているのに、1乗の項で符号を落とす」が共通点。代入は必ずかっこを付けて書くと防ぎやすい。</div>
+    <div class="ans-final"><span>こたえ</span>1</div>
+  </div>
+  <div class="gwrap" data-ids="q03"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">②</span><span class="unit-name">かっこを外すときの配り忘れ（数学）</span><span class="unit-time">目安 8分</span></div>
+
+<div class="q calc" data-id="D">
+  <div class="qnum">★問4　分配のし忘れ</div>
+  <div class="qbody">
+    <span class="pn">問4</span><span class="math">3(5a ＋ 4) − (2a ＋ 9)</span> を計算しなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>かっこを外す途中式を1行ずつ書こう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>大問2(2)の 2(8a＋13)−(3a＋10) で、−10と書くところに、すぐ上の行の「16」を書いてしまい、答えが13a＋42になった（正しくは13a＋16）。</div>
+    <div class="step"><span>①</span>3(5a＋4)＝15a＋12。</div>
+    <div class="step"><span>②</span>−(2a＋9)は、( )の中の両方の項にマイナスを配る→−2a−9。</div>
+    <div class="step"><span>③</span>15a＋12−2a−9＝13a＋3。</div>
+    <div class="ans-final"><span>こたえ</span>13a＋3</div>
+  </div>
+  <div class="gwrap" data-ids="q04"></div>
+</div>
+
+<div class="q calc" data-id="E">
+  <div class="qnum">★問5　分配のし忘れ</div>
+  <div class="qbody">
+    <span class="pn">問5</span><span class="math"><span class="frac"><span class="n">8</span><span class="d">4</span></span>(x − 9) ＋ <span class="frac"><span class="n">10</span><span class="d">5</span></span>(2x − 3)</span> を計算しなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>先に約分してから、かっこの中の両方の数にかけよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>大問2(4)で、3×(5x−3) の15xは出せたのに、−3に3を掛け忘れて、答えが17x−25になった（正しくは17x−31）。</div>
+    <div class="step"><span>①</span>8÷4＝2、10÷5＝2と先に約分する。</div>
+    <div class="step"><span>②</span>2(x−9)＝2x−18（2をxにも−9にもかける）。</div>
+    <div class="step"><span>③</span>2(2x−3)＝4x−6（2を2xにも−3にもかける）。</div>
+    <div class="step"><span>④</span>2x−18＋4x−6＝6x−24。</div>
+    <div class="ans-final"><span>こたえ</span>6x−24</div>
+  </div>
+  <div class="gwrap" data-ids="q05"></div>
+</div>
+
+<div class="q calc" data-id="F">
+  <div class="qnum">★問6　分配のし忘れ</div>
+  <div class="qbody">
+    <span class="pn">問6</span><span class="math">(<span class="frac"><span class="n">5</span><span class="d">6</span></span>x ＋ <span class="frac"><span class="n">1</span><span class="d">3</span></span>) − (<span class="frac"><span class="n">7</span><span class="d">6</span></span>x − <span class="frac"><span class="n">2</span><span class="d">5</span></span>)</span> を計算しなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>かっこを外す途中式を1行ずつ書こう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>大問7A(3)②で、−(…−<span class="frac"><span class="n">2</span><span class="d">5</span></span>) のxの項はマイナスにできたのに、−<span class="frac"><span class="n">2</span><span class="d">5</span></span>を＋<span class="frac"><span class="n">2</span><span class="d">5</span></span>に変え忘れて、答えの数の部分が<span class="frac"><span class="n">1</span><span class="d">10</span></span>になった（正しくは<span class="frac"><span class="n">9</span><span class="d">10</span></span>）。</div>
+    <div class="step"><span>①</span>( )の前がマイナスなので、中の2つの項の符号を両方とも変える→−<span class="frac"><span class="n">7</span><span class="d">6</span></span>x＋<span class="frac"><span class="n">2</span><span class="d">5</span></span>。</div>
+    <div class="step"><span>②</span><span class="frac"><span class="n">5</span><span class="d">6</span></span>x−<span class="frac"><span class="n">7</span><span class="d">6</span></span>x＝−<span class="frac"><span class="n">1</span><span class="d">3</span></span>x（xの項をまとめる）。</div>
+    <div class="step"><span>③</span><span class="frac"><span class="n">1</span><span class="d">3</span></span>＋<span class="frac"><span class="n">2</span><span class="d">5</span></span>を通分：<span class="frac"><span class="n">5</span><span class="d">15</span></span>＋<span class="frac"><span class="n">6</span><span class="d">15</span></span>＝<span class="frac"><span class="n">11</span><span class="d">15</span></span>（定数項をまとめる）。</div>
+    <div class="osarai">( )の前がマイナスのときは、外す前に中の項の符号を全部書き変えてから計算すると配り忘れが減る。</div>
+    <div class="ans-final"><span>こたえ</span>−<span class="frac"><span class="n">1</span><span class="d">3</span></span>x ＋ <span class="frac"><span class="n">11</span><span class="d">15</span></span></div>
+  </div>
+  <div class="gwrap" data-ids="q06"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">③</span><span class="unit-name">答えの写し間違い（数学）</span><span class="unit-time">目安 5分</span></div>
+
+<div class="q calc" data-id="G">
+  <div class="qnum">★問7　比べた結果の書き写し</div>
+  <div class="qbody">
+    <span class="pn">問7</span>次の数のうち最も小さいものはどれか、記号で答えなさい。<br>
+    ア −<span class="frac"><span class="n">4</span><span class="d">5</span></span>　イ −<span class="frac"><span class="n">7</span><span class="d">10</span></span>　ウ −0.7²　エ −0.65
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>全部を小数にして比べ、選んだ記号をもう一度見直そう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>大問3(1)で、問題用紙ではアに丸をしていたのに、解答用紙にはイと書いた。考えは合っていた。<br><b>前にも：</b>8月必修の数学でも、失点の6割は「最後の1手」が抜けた問題だった。</div>
+    <div class="step"><span>①</span>全部を小数にする：ア−0.8　イ−0.7　ウ−0.49　エ−0.65。</div>
+    <div class="step"><span>②</span>マイナスは数字が大きいほど小さい。いちばん数字が大きいのはア(0.8)。</div>
+    <div class="step"><span>③</span>記号を書く前に、選んだ記号ともとの数字をもう一度見比べる。</div>
+    <div class="ans-final"><span>こたえ</span>ア</div>
+  </div>
+  <div class="gwrap" data-ids="q07"></div>
+</div>
+
+<div class="q calc" data-id="H">
+  <div class="qnum">★問8　文字の書き写し</div>
+  <div class="qbody">
+    <span class="pn">問8</span>2行目にある数をnで表すとき、<span class="math">4 × (n − 1) + 3</span> を最も簡単な式にしなさい。
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>式を作ったら、使う文字が問題文と同じか確認しよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>大問6(2)で、途中式は 4a−4＋2 と合っていたのに、答えの欄に 4x−2 と書いた（aをxに書き換えた）。</div>
+    <div class="step"><span>①</span>4×(n−1)＝4n−4。</div>
+    <div class="step"><span>②</span>4n−4＋3＝4n−1。</div>
+    <div class="step"><span>③</span>答えを書く前に、問題文の文字と自分の式の文字が同じか指でなぞって確認する。</div>
+    <div class="ans-final"><span>こたえ</span>4n−1</div>
+  </div>
+  <div class="gwrap" data-ids="q08"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">④</span><span class="unit-name">「噴」と「責」の書き分け（国語）</span><span class="unit-time">目安 4分</span></div>
+
+<div class="q calc" data-id="I">
+  <div class="qnum">★問9　漢字の書き取り</div>
+  <div class="qbody">
+    <span class="pn">問9</span>次のひらがなを漢字で書きなさい。「かざんが（ふんか）した。」
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>つくりの上の形を意識して、ノートに書いてから答え合わせをしよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>国語の大問1の問2「噴火です。」と問9「の噴火」で、「噴」の右側を「責」の形で書いた。答えの内容は合っていたのに、この1字で2問とも×になった。</div>
+    <div class="step"><span>①</span>「噴」の右側は「賁」。上の部分は「卉」＝たて線が3本並んだ形。</div>
+    <div class="step"><span>②</span>下は「貝」。「責」（上が横線の重なり＋下が貝）とは上の部分だけが違う。</div>
+    <div class="ans-final"><span>こたえ</span>噴火</div>
+  </div>
+  <div class="gwrap" data-ids="q09"></div>
+</div>
+
+<div class="q calc" data-id="J">
+  <div class="qnum">★問10　漢字の書き取り</div>
+  <div class="qbody">
+    <span class="pn">問10</span>次のひらがなを漢字で書きなさい。「（せきにん）を持って行動する。」
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>つくりの上の形を意識して、ノートに書いてから答え合わせをしよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>問2・問9で「噴」を「口＋責」で書いた。「責」とは右側の上の形が違う。「噴」の右上は「卉」（縦の線が3本）。</div>
+    <div class="step"><span>①</span>「責任」の「責」は、上が横線の重なり（「主」に近い形）で、「賁」とは別の字。</div>
+    <div class="step"><span>②</span>「噴・墳・憤」はつくりが「賁」、「責・積・績」はつくりが「責」とグループで覚える。</div>
+    <div class="ans-final"><span>こたえ</span>責任</div>
+  </div>
+  <div class="gwrap" data-ids="q10"></div>
+</div>
+
+<div class="q calc" data-id="K">
+  <div class="qnum">★問11　漢字の書き取り</div>
+  <div class="qbody">
+    <span class="pn">問11</span>次のひらがなを漢字で書きなさい。「かざんがガスを（ふんしゅつ）した。」
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>つくりの上の形を意識して、ノートに書いてから答え合わせをしよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>問2・問9と同じ「噴」の字。1字の覚え違いで2問落としたので、ここで直しておこう。</div>
+    <div class="step"><span>①</span>「火をふく」の意味を持つ「噴」は、右側が必ず「賁」（たて線3本＋貝）。</div>
+    <div class="step"><span>②</span>「責」を使う字（責任・面積・成績）とは形が違うグループだと意識する。</div>
+    <div class="osarai">噴・責の書き分けまとめ：噴火／噴出＝右側「賁」（上：卉）。責任／面積／成績＝つくり「責」（上：横線の重なり）。</div>
+    <div class="ans-final"><span>こたえ</span>噴出</div>
+  </div>
+  <div class="gwrap" data-ids="q11"></div>
+</div>
+
+<div class="unit-banner"><span class="unit-num">⑤</span><span class="unit-name">be動詞と一般動詞／複数の主語（英語）</span><span class="unit-time">目安 5分</span></div>
+
+<div class="q calc" data-id="L">
+  <div class="qnum">★問12　be動詞と一般動詞</div>
+  <div class="qbody">
+    <span class="pn">問12</span>次の( )に適するものを選び、記号で答えなさい。<br>
+    You (ア isn't　イ don't　ウ aren't　エ am not) play the guitar every day.
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>文の動詞が一般動詞かbe動詞かを先に確認しよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>英語の大問2(1)で、You (　) drink green tea. に aren't を選んだ（正しくは do not）。<br><b>次の日の特訓選抜でも：</b>大問3(9)で、You are not とすべきところを I am don't と書いている。</div>
+    <div class="step"><span>①</span>動詞がplay＝一般動詞の文。</div>
+    <div class="step"><span>②</span>一般動詞の否定文はdon't／doesn'tを使う。</div>
+    <div class="ans-final"><span>こたえ</span>イ（don't）</div>
+  </div>
+  <div class="gwrap" data-ids="q12"></div>
+</div>
+
+<div class="q calc" data-id="M">
+  <div class="qnum">★問13　be動詞と一般動詞</div>
+  <div class="qbody">
+    <span class="pn">問13</span>次の( )に適するものを選び、記号で答えなさい。<br>
+    A: Are you free tomorrow?　B: (ア No, I'm not.　イ No, I don't.)
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>質問の動詞に合わせて答えの動詞をそろえよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>英語の大問10問1②で、Are you on a soccer team, too? に No, I don't. と答えた（正しくは No, I'm not.）。<br><b>次の日の特訓選抜でも：</b>大問3(9)で、be動詞の文と一般動詞の文を混ぜている。</div>
+    <div class="step"><span>①</span>質問はAre you〜?（be動詞の疑問文）。</div>
+    <div class="step"><span>②</span>be動詞の疑問文にはbe動詞で答える→No, I'm not.</div>
+    <div class="ans-final"><span>こたえ</span>ア</div>
+  </div>
+  <div class="gwrap" data-ids="q13"></div>
+</div>
+
+<div class="q calc" data-id="N">
+  <div class="qnum">★問14　複数の主語と名詞</div>
+  <div class="qbody">
+    <span class="pn">問14</span>( )内の語を必要なら正しい形にかえて答えなさい。<br>
+    We are good (dancer).
+  </div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>主語が単数か複数かを先に確認しよう。</div>
+    <div class="bx-warn"><b>9月の本番でのあなたの間違い：</b>英語の大問8(4)で We are dancer、大問7(2)で Are you student と書いた（どちらも最後のsが抜けた）。<br><b>次の日の特訓選抜でも：</b>大問1(3)で、womanの複数形をwomansと書いている。</div>
+    <div class="step"><span>①</span>主語Weは複数。</div>
+    <div class="step"><span>②</span>be動詞のあとの名詞も複数形にそろえる→dancers。</div>
+    <div class="osarai">数字＋名詞（eight pencilsなど）の複数形はできていた。今回のポイントは「主語が複数→be動詞のあとの名詞も複数形」という別の場面。</div>
+    <div class="ans-final"><span>こたえ</span>dancers</div>
+  </div>
+  <div class="gwrap" data-ids="q14"></div>
+</div>
+
+<button class="done" id="doneBtn" onclick="finish()">🌸 今日できた！（特訓D6 完了）</button>
+
+<div class="goal-box">
+  <b>次の目標</b><br>
+  代入するときは、必ずかっこを付けて書く。
+</div>
+
+<p class="tail">✕をつけた問題は、正しい答えをノートに3回書こう。<br>
+次にやるときは、この中から間違えた問題だけをもう一度やります。</p>
+
+</div>
+
+<script>
+var KEY='tokkun_d6';
+
+/* 解説トグル */
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+/* ○✕採点 */
+function g(btn,id,v){
+  var row=btn.closest('.gq');
+  row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=row.nextElementSibling, w3=mt.nextElementSibling;
+  if(v==='x'){mt.classList.add('show');w3.classList.add('show');}
+  else{mt.classList.remove('show');w3.classList.remove('show');}
+}
+
+/* ミス型 */
+function m(btn){
+  var p=btn.parentNode;
+  p.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+p.getAttribute('data-gid')+'_type',btn.textContent);
+}
+
+/* 採点UIを生成 */
+document.querySelectorAll('.gwrap').forEach(function(w){
+  var ids=w.getAttribute('data-ids').split(',');
+  var h='';
+  ids.forEach(function(id){
+    var n=id.replace('q','').replace(/^0/,'');
+    h+='<div class="gq"><span class="gq-label">問'+n+'</span>'
+      +'<button class="o" onclick="g(this,\''+id+'\',\'o\')">○</button>'
+      +'<button class="x" onclick="g(this,\''+id+'\',\'x\')">✕</button></div>'
+      +'<div class="mt" data-gid="'+id+'"><button onclick="m(this)">計算ミス</button>'
+      +'<button onclick="m(this)">解説で分かった</button>'
+      +'<button onclick="m(this)">解説見ても分からない</button></div>'
+      +'<div class="write3">📝 正しい式・答えをノートに3回書こう</div>';
+  });
+  w.innerHTML=h;
+});
+
+/* 保存済みを復元 */
+document.querySelectorAll('.gq').forEach(function(row){
+  var btn=row.querySelector('.o');
+  var id=btn.getAttribute('onclick').match(/'(q\d+)'/)[1];
+  var v=localStorage.getItem(KEY+'_'+id);
+  if(v){row.querySelector(v==='o'?'.o':'.x').classList.add('on');
+    if(v==='x'){row.nextElementSibling.classList.add('show');
+      row.nextElementSibling.nextElementSibling.classList.add('show');}}
+  var ty=localStorage.getItem(KEY+'_'+id+'_type');
+  if(ty){row.nextElementSibling.querySelectorAll('button').forEach(function(b){
+    if(b.textContent===ty)b.classList.add('on');})}
+});
+
+/* 完了 */
+function finish(){
+  localStorage.setItem(KEY+'_done','1');
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+if(localStorage.getItem(KEY+'_done')==='1'){
+  var b=document.getElementById('doneBtn');
+  b.textContent='✅ 完了しました（おつかれさま）';
+  b.classList.add('fin');
+}
+</script>
+</body>
+</html>

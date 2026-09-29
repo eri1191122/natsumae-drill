@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex,nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>特訓F1｜11月比例（S0〜S3）</title>
+<style>
+:root{--ink:#1b1c22;--sub:#5a5f6e;--line:#e3e5ec;--bg:#fbfbfd;--key:#1f4fd8;--key-bg:#eef2ff;
+--go:#0a7d55;--go-bg:#eaf7f1;--hot:#d92b3a;--hot-bg:#fff2f3;--warn:#b26a00;--warn-bg:#fff7e8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);line-height:1.8;
+font-family:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,Meiryo,system-ui,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:14px 18px 70px}
+a.back{display:inline-block;margin:6px 0 12px;color:var(--key);font-size:15px;text-decoration:none;font-weight:700}
+
+.pg-hd{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:16px;padding:22px 22px 20px;margin:0 0 18px}
+.pg-badge{display:inline-block;background:rgba(255,255,255,.16);border-radius:7px;padding:4px 10px;
+font-size:12.5px;font-weight:700;margin:0 6px 8px 0}
+.pg-hd h1{font-size:22px;margin:6px 0 8px;line-height:1.45}
+.pg-hd p{font-size:14.5px;margin:0;opacity:.9}
+.pg-cheer{margin-top:10px !important;font-size:14px !important;opacity:.8 !important}
+
+.kind-box{background:var(--key-bg);border-radius:12px;padding:14px 18px;margin:0 0 20px;font-size:14.5px;line-height:1.9}
+.kind-box b{color:var(--key)}
+
+.goal-box{background:linear-gradient(160deg,#22242e,#3a3d4d);color:#fff;border-radius:14px;
+padding:18px 20px;margin:28px 0 0;font-size:15.5px;line-height:1.9;text-align:center}
+.goal-box b{font-size:17.5px}
+
+.unit-banner{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;background:var(--key-bg);
+border-left:5px solid var(--key);border-radius:0 10px 10px 0;padding:11px 15px;margin:30px 0 4px}
+.unit-num{font-size:14px;font-weight:800;color:var(--key)}
+.unit-name{font-size:16px;font-weight:800}
+.unit-time{font-size:13px;color:var(--sub);margin-left:auto}
+.unit-goal{font-size:13.5px;color:var(--sub);margin:4px 0 14px 2px}
+
+.read-box{background:#fff;border:1px solid var(--line);border-radius:14px;padding:16px 20px;margin:0 0 16px}
+.read-box h4{margin:0 0 8px;font-size:15px;color:var(--key)}
+.read-mistake{background:var(--warn-bg);border-radius:9px;padding:10px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:10px 0 0}
+.fig-wrap{display:flex;justify-content:center;margin:8px 0}
+
+.q{background:#fff;border:1px solid var(--line);border-radius:14px;padding:18px 20px;margin:0 0 14px}
+.qnum{font-size:16px;font-weight:800;margin:0 0 10px}
+.qbody{font-size:17px;line-height:2.5}
+.qbody .pn{color:#2f5a8a;font-weight:700;margin-right:6px}
+.math{font-family:"Times New Roman",serif;font-size:19px;letter-spacing:.02em}
+.note-draw{background:var(--warn-bg);border-radius:9px;padding:9px 13px;font-size:14px;color:var(--warn);
+font-weight:700;margin:12px 0 0}
+.review-tag{display:inline-block;background:var(--warn-bg);color:var(--warn);font-size:12px;font-weight:700;
+border-radius:6px;padding:2px 8px;margin-left:6px}
+
+.frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;line-height:1.05;font-size:1em;margin:0 2px}
+.frac .n{border-bottom:1.8px solid currentColor;padding:0 5px 2px}
+.frac .d{padding:2px 5px 0}
+
+.ratetable{width:100%;border-collapse:collapse;margin:10px 0;font-size:14px}
+.ratetable th,.ratetable td{border:1px solid var(--line);padding:6px 8px;text-align:center}
+.ratetable th{background:var(--key-bg)}
+
+.ans-btn{display:block;width:100%;margin:12px 0 0;padding:12px;border:0;border-radius:10px;
+background:var(--key);color:#fff;font-size:15.5px;font-weight:800;cursor:pointer;font-family:inherit}
+.ans-box{display:none;margin:12px 0 0;background:#f7f8fc;border:1px solid var(--line);border-radius:12px;padding:16px 18px}
+.ans-box.open{display:block}
+.osarai{background:var(--go-bg);border-left:4px solid var(--go);border-radius:0 8px 8px 0;
+padding:10px 14px;font-size:14.5px;margin:0 0 12px}
+.step{font-size:15.5px;margin:0 0 9px;padding:0 0 0 4px}
+.step>span:first-child{display:inline-block;min-width:44px;font-weight:800;color:var(--key)}
+.miss-box{background:var(--warn-bg);border-radius:9px;padding:11px 14px;font-size:14.5px;margin:12px 0 0}
+.miss-box b{color:var(--warn)}
+.bx-warn{background:var(--hot-bg);border:1px solid #f6ccd1;border-radius:9px;padding:11px 14px;
+font-size:14.5px;margin:12px 0 0}
+.bx-warn b{color:var(--hot)}
+.check-box{background:var(--go-bg);border-left:4px solid var(--go);border-radius:0 8px 8px 0;
+padding:8px 12px;font-size:14px;margin:10px 0 0}
+.ans-final{background:var(--ink);color:#fff;border-radius:10px;padding:12px 15px;margin:13px 0 0;font-size:15.5px}
+.ans-final>span:first-child{font-weight:800;margin-right:10px}
+
+.gwrap{margin:12px 0 0;border-top:1px dashed var(--line);padding:12px 0 0}
+.gq{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin:0 0 7px;font-size:14px}
+.gq-label{min-width:52px;font-weight:700;color:var(--sub)}
+.gq button{border:1.5px solid var(--line);background:#fff;border-radius:7px;width:36px;height:32px;
+font-size:15px;font-weight:800;cursor:pointer;font-family:inherit}
+.gq button.o.on{background:var(--go);border-color:var(--go);color:#fff}
+.gq button.x.on{background:var(--hot);border-color:var(--hot);color:#fff}
+.mt{display:none;gap:6px;flex-wrap:wrap;margin:2px 0 0 52px}
+.mt.show{display:flex}
+.mt button{border:1.5px solid var(--line);background:#fff;border-radius:7px;padding:5px 10px;
+font-size:12.5px;cursor:pointer;font-family:inherit;width:auto;height:auto}
+.mt button.on{background:var(--warn);border-color:var(--warn);color:#fff}
+.write3{display:none;margin:6px 0 0 52px;font-size:13px;color:var(--hot);font-weight:700}
+.write3.show{display:block}
+
+.done{display:block;width:100%;margin:18px 0 30px;padding:16px;border:0;border-radius:14px;
+background:var(--go);color:#fff;font-size:17px;font-weight:800;cursor:pointer;font-family:inherit}
+.done.fin{background:var(--ink)}
+.tail{text-align:center;color:var(--sub);font-size:13.5px;margin:18px 0 0;line-height:1.9}
+
+@media print{
+ body{background:#fff}
+ a.back,.ans-btn,.ans-box,.gwrap,.done,.note-draw{display:none !important}
+ .q{break-inside:avoid;page-break-inside:avoid}
+ .pg-hd{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+ @page{margin:12mm}
+}
+/*frac-guard*/.frac{display:inline-flex!important;flex-direction:column!important;min-width:0!important;width:auto!important}.frac>span{display:block!important;min-width:0!important;width:auto!important;margin:0!important;color:inherit!important;font-weight:inherit!important}.frac>.n{border-bottom:1.8px solid currentColor!important;padding:0 5px 2px!important}.frac>.d{padding:2px 5px 0!important}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<a class="back" href="../../夏休みダッシュボード.html#mock">← ダッシュボードに戻る</a>
+
+<div class="pg-hd">
+  <div>
+    <span class="pg-badge">特訓F1</span>
+    <span class="pg-badge">11月特訓 比例</span>
+    <span class="pg-badge">S0〜S3・全4回</span>
+  </div>
+  <h1>比例を0から（S0〜S3）</h1>
+  <p>目安: 1回15分×4回　対象: 中1（比例・反比例は未習の状態から始める）</p>
+  <p class="pg-cheer">1回15分。①読む→②見本→③確かめ→④練習の順で進める。全部いっぺんにやらなくていい。</p>
+</div>
+
+<div class="kind-box">
+  <b>この4回でできるようになること</b><br>
+  ① 座標平面に点をとれる・読める（4つの区画、負の数の点も）<br>
+  ② 表を見て「割ると一定」かどうか確かめ、比例かどうか判定できる<br>
+  ③ 比例の式 y＝ax を、1点の情報から作れる（aが負・分数でも）<br>
+  ④ 比例のグラフを原点ともう1点でかける。グラフから式を読める<br><br>
+  <b>この教材の考え方：</b>比例は「y÷xがいつも同じ数（＝これをaという）」。この1本の考え方だけで、見分け方も式もグラフも全部つながっている。公式を丸暗記しなくていい。<br>
+  負の数を代入するときは、必ずかっこに入れてから計算する（例：a＝(−3)×2）。
+</div>
+
+<!-- ========== S0 ========== -->
+<div class="unit-banner"><span class="unit-num">S0</span><span class="unit-name">準備：座標と負の数の確認</span><span class="unit-time">1回目・目安15分</span></div>
+<div class="unit-goal">この回でできるようになること：座標平面に点をとれる・読める。負の数のかけ算・わり算を、かっこを使って正確に計算できる。</div>
+
+<div class="read-box">
+  <h4>①読む（3分）</h4>
+  <p><b>一言で言うと：</b>座標は (x, y) の順で書く。まずxの数だけ左右に動き、次にyの数だけ上下に動く。</p>
+  <div class="fig-wrap"><div id="s0-read-fig"></div></div>
+  <div class="read-mistake"><b>よくある間違い：</b>(x, y)の順番を逆にして、縦(y)から先に数えてしまう。負の数のかけ算・わり算では「マイナス×マイナス＝プラス」を見落として、符号をまちがえる。</div>
+</div>
+
+<div class="q" data-id="s0ex">
+  <div class="qnum">★見本　点をグラフにとる</div>
+  <div class="qbody">点A(−4, 3)を図にとりなさい。</div>
+  <button class="ans-btn" data-label="解き方を見る" onclick="t(this)">解き方を見る</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>xが−4なので、原点から左へ4マス動く。</div>
+    <div class="step"><span>②</span>yが3なので、そこから上へ3マス動く。</div>
+    <div class="step"><span>③</span>その位置に点をうち、Aと書く。</div>
+    <div class="fig-wrap"><div id="s0-ex-fig"></div></div>
+    <div class="check-box"><b>確かめ：</b>図の点Aは「左に4・上に3」の位置にある。(−4, 3)と一致している。</div>
+  </div>
+</div>
+
+<div class="q" data-id="s0c1">
+  <div class="qnum">★確かめ1　座標を読む</div>
+  <div class="qbody">図の点Pの座標を答えなさい。
+  <div class="fig-wrap"><div id="s0-c1-fig"></div></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>まず原点からx方向(左右)に何マスか数え、次にy方向(上下)に何マスか数える。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>先に上下(y)を数えてしまい、(y, x)の順で書いてしまう。</div>
+    <div class="step"><span>①</span>原点から左へ2マスなので、x＝−2。</div>
+    <div class="step"><span>②</span>そこから上へ4マスなので、y＝4。</div>
+    <div class="ans-final"><span>こたえ</span>(−2, 4)</div>
+  </div>
+  <div class="gwrap" data-ids="s0c1"></div>
+</div>
+
+<div class="q" data-id="s0c2">
+  <div class="qnum">★確かめ2　点をグラフにとる</div>
+  <div class="qbody">点Q(3, −5)を図にとりなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>xが正なら右、負なら左。yが正なら上、負なら下に動く。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>yが負なのに、上に動かしてしまう。</div>
+    <div class="step"><span>①</span>xが3なので、原点から右へ3マス。</div>
+    <div class="step"><span>②</span>yが−5なので、そこから下へ5マス。</div>
+    <div class="fig-wrap"><div id="s0-c2-fig"></div></div>
+    <div class="check-box"><b>確かめ：</b>「右に3・下に5」の位置。(3, −5)と一致している。</div>
+  </div>
+  <div class="gwrap" data-ids="s0c2"></div>
+</div>
+
+<div class="q" data-id="s0c3">
+  <div class="qnum">★確かめ3　負の数のかけ算・わり算</div>
+  <div class="qbody">次の計算をしなさい。<br><span class="math">(−8) × (−3) ÷ (−4)</span></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>かけ算・わり算だけの式は、左から順に2つずつ計算する。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>マイナスの個数を数えて符号を決めた気になっていても、最後の1回の計算だけ符号を書き忘れる。</div>
+    <div class="step"><span>①</span>(−8)×(−3)＝24（マイナス×マイナス＝プラス）。</div>
+    <div class="step"><span>②</span>24÷(−4)＝−6（プラス÷マイナス＝マイナス）。</div>
+    <div class="check-box"><b>確かめ：</b>マイナスの数は(−8)(−3)(−4)の3個＝奇数個。答えはマイナスになるはず→−6で合っている。</div>
+    <div class="ans-final"><span>こたえ</span>−6</div>
+  </div>
+  <div class="gwrap" data-ids="s0c3"></div>
+</div>
+
+<div class="q" data-id="s0p1">
+  <div class="qnum">★練習1　座標を読む</div>
+  <div class="qbody">図の点Rの座標を答えなさい。
+  <div class="fig-wrap"><div id="s0-p1-fig"></div></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>原点から左へ5マスなので、x＝−5。</div>
+    <div class="step"><span>②</span>そこから下へ1マスなので、y＝−1。</div>
+    <div class="ans-final"><span>こたえ</span>(−5, −1)</div>
+  </div>
+  <div class="gwrap" data-ids="s0p1"></div>
+</div>
+
+<div class="q" data-id="s0p2">
+  <div class="qnum">★練習2　点をグラフにとる</div>
+  <div class="qbody">点S(−2, 5)を図にとりなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>xが−2なので、原点から左へ2マス。</div>
+    <div class="step"><span>②</span>yが5なので、そこから上へ5マス。</div>
+    <div class="fig-wrap"><div id="s0-p2-fig"></div></div>
+    <div class="check-box"><b>確かめ：</b>「左に2・上に5」の位置。(−2, 5)と一致している。</div>
+  </div>
+  <div class="gwrap" data-ids="s0p2"></div>
+</div>
+
+<div class="q" data-id="s0p3">
+  <div class="qnum">★練習3　負の数のかけ算・わり算</div>
+  <div class="qbody"><span class="math">(−12) ÷ (−4) × (−2)</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>(−12)÷(−4)＝3。</div>
+    <div class="step"><span>②</span>3×(−2)＝−6。</div>
+    <div class="check-box"><b>確かめ：</b>マイナスの数は3個で奇数→答えはマイナス。−6で合っている。</div>
+    <div class="ans-final"><span>こたえ</span>−6</div>
+  </div>
+  <div class="gwrap" data-ids="s0p3"></div>
+</div>
+
+<div class="q" data-id="s0p4">
+  <div class="qnum">★練習4　負の数のかけ算・わり算</div>
+  <div class="qbody"><span class="math">(−36) ÷ (−9) ÷ (−2)</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>(−36)÷(−9)＝4。</div>
+    <div class="step"><span>②</span>4÷(−2)＝−2。</div>
+    <div class="check-box"><b>確かめ：</b>マイナスの数は3個で奇数→答えはマイナス。−2で合っている。</div>
+    <div class="ans-final"><span>こたえ</span>−2</div>
+  </div>
+  <div class="gwrap" data-ids="s0p4"></div>
+</div>
+
+<button class="done" id="doneBtn-s0" data-fin="S0 完了しました（おつかれさま）" onclick="finishRound('s0')">🌸 S0 できた！</button>
+
+<!-- ========== S1 ========== -->
+<div class="unit-banner"><span class="unit-num">S1</span><span class="unit-name">関数と比例の見分け</span><span class="unit-time">2回目・目安15分</span></div>
+<div class="unit-goal">この回でできるようになること：表を見て「割ると一定」かどうかを確かめ、比例かどうかを判定できる。</div>
+
+<div class="read-box">
+  <h4>①読む（3分）</h4>
+  <p><b>一言で言うと：</b>xの値が決まると、yの値がただ1つに決まるとき、「yはxの関数」という。表の全部の組で <b>y÷x</b> を計算して、いつも同じ数になれば「比例」。その同じ数をa（比例定数）という。</p>
+  <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>3</td></tr><tr><th>y</th><td>2</td><td>4</td><td>6</td></tr><tr><th>y÷x</th><td>2</td><td>2</td><td>2</td></tr></table>
+  <div class="fig-wrap"><div id="s1-read-fig"></div></div>
+  <p style="font-size:14px;color:var(--sub);margin:4px 0 0">↑ y÷xがいつも2で一定。点をとると、原点を通る一直線に並ぶ。</p>
+  <div class="read-mistake"><b>よくある間違い：</b>y÷xではなく「yとxの差」を見て、それが一定だから比例と判定してしまう。x＝0の列で確かめようとしてしまう（0でわり算はできない）。</div>
+</div>
+
+<div class="q" data-id="s1ex">
+  <div class="qnum">★見本　比例かどうかを判定する</div>
+  <div class="qbody">下の表は比例といえるか。理由も答えなさい。
+  <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>3</td><td>5</td></tr><tr><th>y</th><td>4</td><td>8</td><td>12</td><td>20</td></tr></table></div>
+  <button class="ans-btn" data-label="解き方を見る" onclick="t(this)">解き方を見る</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>全部の組でy÷xを計算する：4÷1＝4、8÷2＝4、12÷3＝4、20÷5＝4。</div>
+    <div class="step"><span>②</span>どれも4で一定なので、比例といえる。</div>
+    <div class="step"><span>③</span>比例定数はa＝4。式はy＝4x。</div>
+    <div class="check-box"><b>確かめ：</b>x＝5をy＝4xに代入すると4×5＝20→表と一致している。</div>
+    <div class="ans-final"><span>こたえ</span>比例といえる（a＝4）</div>
+  </div>
+</div>
+
+<div class="q" data-id="s1c1">
+  <div class="qnum">★確かめ1　比例かどうかを判定する</div>
+  <div class="qbody">下の表は比例といえるか。理由も答えなさい。
+  <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>y</th><td>−2</td><td>−4</td><td>−6</td><td>−8</td></tr></table></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>yが負の数でも、やることは同じ。y÷xを全部の組で計算する。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>符号がマイナスだと「比例ではない」と思い込んでしまう。aが負の比例もある。</div>
+    <div class="step"><span>①</span>y÷xを計算：(−2)÷1＝−2、(−4)÷2＝−2、(−6)÷3＝−2、(−8)÷4＝−2。</div>
+    <div class="step"><span>②</span>どれも−2で一定なので比例。a＝−2。</div>
+    <div class="ans-final"><span>こたえ</span>比例といえる（a＝−2）</div>
+  </div>
+  <div class="gwrap" data-ids="s1c1"></div>
+</div>
+
+<div class="q" data-id="s1c2">
+  <div class="qnum">★確かめ2　比例かどうかを判定する</div>
+  <div class="qbody">下の表は比例といえるか。理由も答えなさい。
+  <table class="ratetable"><tr><th>x</th><td>2</td><td>3</td><td>4</td><td>6</td></tr><tr><th>y</th><td>10</td><td>15</td><td>18</td><td>24</td></tr></table></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>1組だけ確かめて終わりにせず、全部の組を確かめる。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>最初の2組だけ計算して同じ数になったので「比例」と決めつけてしまう。</div>
+    <div class="step"><span>①</span>y÷xを計算：10÷2＝5、15÷3＝5、18÷4＝4.5、24÷6＝4。</div>
+    <div class="step"><span>②</span>5、5、4.5、4と一定になっていない。</div>
+    <div class="ans-final"><span>こたえ</span>比例ではない</div>
+  </div>
+  <div class="gwrap" data-ids="s1c2"></div>
+</div>
+
+<div class="q" data-id="s1c3">
+  <div class="qnum">★確かめ3　比例かどうかを判定する</div>
+  <div class="qbody">下の表は比例といえるか。理由も答えなさい。
+  <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>4</td><td>5</td></tr><tr><th>y</th><td>3</td><td>6</td><td>12</td><td>15</td></tr></table></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>y÷xを計算：3÷1＝3、6÷2＝3、12÷4＝3、15÷5＝3。</div>
+    <div class="step"><span>②</span>どれも3で一定なので比例。a＝3。</div>
+    <div class="ans-final"><span>こたえ</span>比例といえる（a＝3）</div>
+  </div>
+  <div class="gwrap" data-ids="s1c3"></div>
+</div>
+
+<div class="q" data-id="s1p1">
+  <div class="qnum">★練習1　比例かどうかを判定する</div>
+  <div class="qbody">下の表は比例といえるか。理由も答えなさい。
+  <table class="ratetable"><tr><th>x</th><td>−2</td><td>−1</td><td>1</td><td>2</td></tr><tr><th>y</th><td>−6</td><td>−3</td><td>3</td><td>6</td></tr></table></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>y÷xを計算：(−6)÷(−2)＝3、(−3)÷(−1)＝3、3÷1＝3、6÷2＝3。</div>
+    <div class="step"><span>②</span>どれも3で一定なので比例。a＝3。</div>
+    <div class="ans-final"><span>こたえ</span>比例といえる（a＝3）</div>
+  </div>
+  <div class="gwrap" data-ids="s1p1"></div>
+</div>
+
+<div class="q" data-id="s1p2">
+  <div class="qnum">★練習2　比例かどうかを判定する</div>
+  <div class="qbody">下の表は比例といえるか。理由も答えなさい。
+  <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>y</th><td>5</td><td>10</td><td>20</td><td>40</td></tr></table></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>y÷xを計算：5÷1＝5、10÷2＝5、20÷3＝6.67…、40÷4＝10。</div>
+    <div class="step"><span>②</span>一定になっていない。</div>
+    <div class="ans-final"><span>こたえ</span>比例ではない</div>
+  </div>
+  <div class="gwrap" data-ids="s1p2"></div>
+</div>
+
+<div class="q" data-id="s1p3">
+  <div class="qnum">★練習3　文章から比例を見分ける</div>
+  <div class="qbody">1本80円の鉛筆をx本買うときの代金をy円とする。yはxに比例するといえるか。式も答えなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>表がなくても「1つ分の値段×本数＝代金」の形なら比例になる。</div>
+    <div class="step"><span>①</span>代金＝80×本数なので、y＝80x。</div>
+    <div class="step"><span>②</span>y÷x＝80でいつも一定なので、比例といえる。</div>
+    <div class="ans-final"><span>こたえ</span>比例といえる（y＝80x）</div>
+  </div>
+  <div class="gwrap" data-ids="s1p3"></div>
+</div>
+
+<div class="q" data-id="s1p4">
+  <div class="qnum">★練習4　負の数のかけ算・わり算<span class="review-tag">前回の復習</span></div>
+  <div class="qbody"><span class="math">(−18) ÷ (−3) × (−2)</span> を計算しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>(−18)÷(−3)＝6。</div>
+    <div class="step"><span>②</span>6×(−2)＝−12。</div>
+    <div class="check-box"><b>確かめ：</b>マイナスの数は3個で奇数→答えはマイナス。−12で合っている。</div>
+    <div class="ans-final"><span>こたえ</span>−12</div>
+  </div>
+  <div class="gwrap" data-ids="s1p4"></div>
+</div>
+
+<button class="done" id="doneBtn-s1" data-fin="S1 完了しました（おつかれさま）" onclick="finishRound('s1')">🌸 S1 できた！</button>
+
+<!-- ========== S2 ========== -->
+<div class="unit-banner"><span class="unit-num">S2</span><span class="unit-name">比例の式</span><span class="unit-time">3回目・目安15分</span></div>
+<div class="unit-goal">この回でできるようになること：1点の情報（xとyの組）から、比例の式 y＝ax を作れる（aが負・分数でも）。</div>
+
+<div class="read-box">
+  <h4>①読む（3分）</h4>
+  <p><b>一言で言うと：</b>比例の式はy＝axの形。このaを比例定数といい、a＝y÷xで求める。x、yのどちらか片方の値と、もう片方の値が1組分かれば、式が1本に決まる。</p>
+  <div class="read-mistake"><b>よくある間違い：</b>a＝x÷yのように分子と分母を逆にしてしまう。負の数を代入するときにかっこを付けずに書いて、符号を落とす。aが分数になるとき、約分をせずそのままにしてしまう。</div>
+</div>
+
+<div class="q" data-id="s2ex">
+  <div class="qnum">★見本　比例の式を求める</div>
+  <div class="qbody">yはxに比例し、x＝3のときy＝−12である。yをxの式で表しなさい。</div>
+  <button class="ans-btn" data-label="解き方を見る" onclick="t(this)">解き方を見る</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>比例だから、まずy＝axとおく。</div>
+    <div class="step"><span>②</span>a＝y÷xなので、a＝(−12)÷3＝−4。</div>
+    <div class="step"><span>③</span>y＝−4xと書く。</div>
+    <div class="check-box"><b>確かめ：</b>x＝3を代入すると、y＝−4×3＝−12→問題文と一致している。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−4x</div>
+  </div>
+</div>
+
+<div class="q" data-id="s2c1">
+  <div class="qnum">★確かめ1　比例の式を求める</div>
+  <div class="qbody">yはxに比例し、x＝4のときy＝20である。yをxの式で表しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>a＝y÷x（yをxでわる）と決めて、毎回同じ順で計算する。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>a＝4÷20のように、xとyを逆に割ってしまう。</div>
+    <div class="step"><span>①</span>a＝20÷4＝5。</div>
+    <div class="step"><span>②</span>y＝5xと書く。</div>
+    <div class="ans-final"><span>こたえ</span>y＝5x</div>
+  </div>
+  <div class="gwrap" data-ids="s2c1"></div>
+</div>
+
+<div class="q" data-id="s2c2">
+  <div class="qnum">★確かめ2　比例の式を求める</div>
+  <div class="qbody">yはxに比例し、x＝−2のときy＝8である。yをxの式で表しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>負の数はかっこに入れてから計算する：a＝8÷(−2)。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>マイナスを付け忘れて、a＝4としてしまう。</div>
+    <div class="step"><span>①</span>a＝8÷(−2)＝−4。</div>
+    <div class="step"><span>②</span>y＝−4xと書く。</div>
+    <div class="check-box"><b>確かめ：</b>x＝(−2)を代入すると、y＝−4×(−2)＝8→一致している。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−4x</div>
+  </div>
+  <div class="gwrap" data-ids="s2c2"></div>
+</div>
+
+<div class="q" data-id="s2c3">
+  <div class="qnum">★確かめ3　比例の式を求める（aが分数）</div>
+  <div class="qbody">yはxに比例し、x＝6のときy＝−9である。yをxの式で表しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>わり切れないときは分数のままにして、約分できるところまで約分する。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>−9÷6が割り切れないので、小数のまま止めてしまい約分に気づかない。</div>
+    <div class="step"><span>①</span>a＝(−9)÷6＝−<span class="frac"><span class="n">9</span><span class="d">6</span></span>。</div>
+    <div class="step"><span>②</span><span class="frac"><span class="n">9</span><span class="d">6</span></span>を約分すると<span class="frac"><span class="n">3</span><span class="d">2</span></span>。a＝−<span class="frac"><span class="n">3</span><span class="d">2</span></span>。</div>
+    <div class="step"><span>③</span>y＝−<span class="frac"><span class="n">3</span><span class="d">2</span></span>xと書く。</div>
+    <div class="check-box"><b>確かめ：</b>x＝6を代入すると、y＝−<span class="frac"><span class="n">3</span><span class="d">2</span></span>×6＝−9→一致している。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−<span class="frac"><span class="n">3</span><span class="d">2</span></span>x</div>
+  </div>
+  <div class="gwrap" data-ids="s2c3"></div>
+</div>
+
+<div class="q" data-id="s2p1">
+  <div class="qnum">★練習1　比例の式を求める</div>
+  <div class="qbody">yはxに比例し、x＝5のときy＝−15である。yをxの式で表しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>a＝(−15)÷5＝−3。</div>
+    <div class="step"><span>②</span>y＝−3xと書く。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−3x</div>
+  </div>
+  <div class="gwrap" data-ids="s2p1"></div>
+</div>
+
+<div class="q" data-id="s2p2">
+  <div class="qnum">★練習2　比例の式を求める（aが分数）</div>
+  <div class="qbody">yはxに比例し、x＝−4のときy＝−6である。yをxの式で表しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>a＝(−6)÷(−4)＝<span class="frac"><span class="n">6</span><span class="d">4</span></span>＝<span class="frac"><span class="n">3</span><span class="d">2</span></span>（マイナス÷マイナス＝プラス）。</div>
+    <div class="step"><span>②</span>y＝<span class="frac"><span class="n">3</span><span class="d">2</span></span>xと書く。</div>
+    <div class="ans-final"><span>こたえ</span>y＝<span class="frac"><span class="n">3</span><span class="d">2</span></span>x</div>
+  </div>
+  <div class="gwrap" data-ids="s2p2"></div>
+</div>
+
+<div class="q" data-id="s2p3">
+  <div class="qnum">★練習3　式を作って値を求める</div>
+  <div class="qbody">yはxに比例し、x＝−3のときy＝18である。x＝5のときのyの値を求めなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>先に式を1本作ってから、聞かれているxの値を代入する。</div>
+    <div class="step"><span>①</span>a＝18÷(−3)＝−6。式はy＝−6x。</div>
+    <div class="step"><span>②</span>x＝5を代入する：y＝−6×5＝−30。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−30</div>
+  </div>
+  <div class="gwrap" data-ids="s2p3"></div>
+</div>
+
+<div class="q" data-id="s2p4">
+  <div class="qnum">★練習4　比例かどうかを判定する<span class="review-tag">前回の復習</span></div>
+  <div class="qbody">下の表は比例といえるか。理由も答えなさい。
+  <table class="ratetable"><tr><th>x</th><td>1</td><td>2</td><td>3</td><td>4</td></tr><tr><th>y</th><td>−5</td><td>−10</td><td>−15</td><td>−20</td></tr></table></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>y÷xを計算：(−5)÷1＝−5、(−10)÷2＝−5、(−15)÷3＝−5、(−20)÷4＝−5。</div>
+    <div class="step"><span>②</span>どれも−5で一定なので比例。a＝−5。</div>
+    <div class="ans-final"><span>こたえ</span>比例といえる（a＝−5）</div>
+  </div>
+  <div class="gwrap" data-ids="s2p4"></div>
+</div>
+
+<button class="done" id="doneBtn-s2" data-fin="S2 完了しました（おつかれさま）" onclick="finishRound('s2')">🌸 S2 できた！</button>
+
+<!-- ========== S3 ========== -->
+<div class="unit-banner"><span class="unit-num">S3</span><span class="unit-name">比例のグラフ</span><span class="unit-time">4回目・目安15分</span></div>
+<div class="unit-goal">この回でできるようになること：比例のグラフを原点ともう1点でかける。グラフから式を読める。</div>
+
+<div class="read-box">
+  <h4>①読む（3分）</h4>
+  <p><b>一言で言うと：</b>比例のグラフは、必ず原点(0,0)を通る一直線になる。表からもう1点をとり、原点とその点を通る直線を引けばよい。</p>
+  <div class="fig-wrap"><div id="s3-read-fig"></div></div>
+  <div class="read-mistake"><b>よくある間違い：</b>原点を通ることを確認せず、適当な2点で線を引いてしまう。aが負なのに右上がりに書いてしまう（aが負のときは右下がり）。</div>
+</div>
+
+<div class="q" data-id="s3ex">
+  <div class="qnum">★見本　比例のグラフをかく</div>
+  <div class="qbody">y＝3xのグラフをかきなさい。</div>
+  <button class="ans-btn" data-label="解き方を見る" onclick="t(this)">解き方を見る</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>表を作る：x＝0のときy＝0、x＝2のときy＝6。</div>
+    <div class="step"><span>②</span>原点(0,0)と点(2,6)に点をうつ。</div>
+    <div class="step"><span>③</span>2つの点を定規で結んで直線を引く。</div>
+    <div class="fig-wrap"><div id="s3-ex-fig"></div></div>
+    <div class="check-box"><b>確かめ：</b>直線が原点を通っていて、右上がりになっている（a＝3は正の数だから）。</div>
+  </div>
+</div>
+
+<div class="q" data-id="s3c1">
+  <div class="qnum">★確かめ1　グラフが通るか調べる</div>
+  <div class="qbody">y＝−2xのグラフは、点(3, −6)を通るか。理由も答えなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>グラフを見なくても、x座標を式に代入してyの値が一致するか確かめればよい。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>xの値だけ見て、yの値を代入して確かめずに答えてしまう。</div>
+    <div class="step"><span>①</span>x＝3をy＝−2xに代入する：y＝−2×3＝−6。</div>
+    <div class="step"><span>②</span>計算した結果−6と、点のy座標−6が一致する。</div>
+    <div class="ans-final"><span>こたえ</span>通る</div>
+  </div>
+  <div class="gwrap" data-ids="s3c1"></div>
+</div>
+
+<div class="q" data-id="s3c2">
+  <div class="qnum">★確かめ2　グラフから式を読む</div>
+  <div class="qbody">図のように、原点を通る直線が点(2, 6)を通っている。この直線の式を求めなさい。
+  <div class="fig-wrap"><div id="s3-c2-fig"></div></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>グラフが通っている1点の座標が分かれば、a＝y÷xで求められる。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>グラフの傾き具合を目分量で決めてしまい、点の座標を使って計算しない。</div>
+    <div class="step"><span>①</span>直線は点(2, 6)を通るので、a＝6÷2＝3。</div>
+    <div class="step"><span>②</span>y＝3xと書く。</div>
+    <div class="ans-final"><span>こたえ</span>y＝3x</div>
+  </div>
+  <div class="gwrap" data-ids="s3c2"></div>
+</div>
+
+<div class="q" data-id="s3c3">
+  <div class="qnum">★確かめ3　グラフから式を読む（aが負）</div>
+  <div class="qbody">図のように、原点を通る直線が点(3, −6)を通っている。この直線の式を求めなさい。
+  <div class="fig-wrap"><div id="s3-c3-fig"></div></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>a＝(−6)÷3＝−2。</div>
+    <div class="step"><span>②</span>y＝−2xと書く。</div>
+    <div class="check-box"><b>確かめ：</b>図の直線は右下がり→aが負であることと一致している。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−2x</div>
+  </div>
+  <div class="gwrap" data-ids="s3c3"></div>
+</div>
+
+<div class="q" data-id="s3p1">
+  <div class="qnum">★練習1　グラフをかくための点をさがす</div>
+  <div class="qbody">y＝<span class="frac"><span class="n">1</span><span class="d">2</span></span>xのグラフをかくとき、原点以外にとると計算しやすい点を1つ求めなさい。理由も答えなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>aが分数のときは、分母の倍数をxに選ぶと、yが整数になって点をとりやすい。</div>
+    <div class="step"><span>①</span>分母が2なので、x＝4（2の倍数）を選ぶ。</div>
+    <div class="step"><span>②</span>y＝<span class="frac"><span class="n">1</span><span class="d">2</span></span>×4＝2。</div>
+    <div class="ans-final"><span>こたえ</span>点(4, 2)（例）</div>
+  </div>
+  <div class="gwrap" data-ids="s3p1"></div>
+</div>
+
+<div class="q" data-id="s3p2">
+  <div class="qnum">★練習2　グラフから式を読む</div>
+  <div class="qbody">図のように、原点を通る直線が点(4, −2)を通っている。この直線の式を求めなさい。
+  <div class="fig-wrap"><div id="s3-p2-fig"></div></div></div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>a＝(−2)÷4＝−<span class="frac"><span class="n">1</span><span class="d">2</span></span>。</div>
+    <div class="step"><span>②</span>y＝−<span class="frac"><span class="n">1</span><span class="d">2</span></span>xと書く。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−<span class="frac"><span class="n">1</span><span class="d">2</span></span>x</div>
+  </div>
+  <div class="gwrap" data-ids="s3p2"></div>
+</div>
+
+<div class="q" data-id="s3p3">
+  <div class="qnum">★練習3　グラフ上の点を見分ける</div>
+  <div class="qbody">y＝4xのグラフ上にある点をすべて選び、記号で答えなさい。<br>
+  ア(1, 4)　イ(2, 6)　ウ(−1, −4)</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="note-draw"><b>次からのコツ：</b>それぞれの点のx座標をy＝4xに代入し、y座標と一致するか1つずつ確かめる。</div>
+    <div class="bx-warn"><b>ありがちな間違い：</b>1つ確かめて合っていたら、残りを確かめずに答えてしまう。</div>
+    <div class="step"><span>①</span>ア：4×1＝4→点のy座標4と一致→○。</div>
+    <div class="step"><span>②</span>イ：4×2＝8→点のy座標6と不一致→✕。</div>
+    <div class="step"><span>③</span>ウ：4×(−1)＝−4→点のy座標−4と一致→○。</div>
+    <div class="fig-wrap"><div id="s3-p3-fig"></div></div>
+    <div class="ans-final"><span>こたえ</span>ア、ウ</div>
+  </div>
+  <div class="gwrap" data-ids="s3p3"></div>
+</div>
+
+<div class="q" data-id="s3p4">
+  <div class="qnum">★練習4　比例の式を求める<span class="review-tag">前回の復習</span></div>
+  <div class="qbody">yはxに比例し、x＝−4のときy＝12である。yをxの式で表しなさい。</div>
+  <button class="ans-btn" data-label="解説を読む → こたえへ" onclick="t(this)">解説を読む → こたえへ</button>
+  <div class="ans-box">
+    <div class="step"><span>①</span>a＝12÷(−4)＝−3。</div>
+    <div class="step"><span>②</span>y＝−3xと書く。</div>
+    <div class="ans-final"><span>こたえ</span>y＝−3x</div>
+  </div>
+  <div class="gwrap" data-ids="s3p4"></div>
+</div>
+
+<button class="done" id="doneBtn-s3" data-fin="S3 完了しました（おつかれさま）" onclick="finishRound('s3')">🌸 S3 できた！</button>
+
+<div class="goal-box">
+  <b>次の目標</b><br>
+  次は反比例。「割ると一定」から「掛けると一定」に頭を切り替えよう。
+</div>
+
+<p class="tail">✕をつけた問題は、正しい式をノートに3回書こう。<br>
+次のF2では反比例と変域を、同じ「表・式・グラフ」の3つの窓で学びます。</p>
+
+</div>
+
+<script src="11月関数図.js"></script>
+<script>
+var KEY='tokkun_f11_1';
+
+/* 解説トグル */
+function t(b){
+  var a=b.parentNode.querySelector('.ans-box');
+  var open=a.classList.toggle('open');
+  var closed=b.getAttribute('data-label')||'答えを見る';
+  b.textContent=open?'とじる':closed;
+}
+
+/* ○✕採点 */
+function g(btn,id,v){
+  var row=btn.closest('.gq');
+  row.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+id,v);
+  var mt=row.nextElementSibling, w3=mt.nextElementSibling;
+  if(v==='x'){mt.classList.add('show');w3.classList.add('show');}
+  else{mt.classList.remove('show');w3.classList.remove('show');}
+}
+
+/* ミス型 */
+function m(btn){
+  var p=btn.parentNode;
+  p.querySelectorAll('button').forEach(function(x){x.classList.remove('on')});
+  btn.classList.add('on');
+  localStorage.setItem(KEY+'_'+p.getAttribute('data-gid')+'_type',btn.textContent);
+}
+
+/* 採点UIを生成 */
+document.querySelectorAll('.gwrap').forEach(function(w){
+  var ids=w.getAttribute('data-ids').split(',');
+  var h='';
+  ids.forEach(function(id){
+    h+='<div class="gq"><span class="gq-label">この問題</span>'
+      +'<button class="o" onclick="g(this,\''+id+'\',\'o\')">○</button>'
+      +'<button class="x" onclick="g(this,\''+id+'\',\'x\')">✕</button></div>'
+      +'<div class="mt" data-gid="'+id+'"><button onclick="m(this)">計算ミス</button>'
+      +'<button onclick="m(this)">解説で分かった</button>'
+      +'<button onclick="m(this)">解説見ても分からない</button></div>'
+      +'<div class="write3">📝 正しい式・答えをノートに3回書こう</div>';
+  });
+  w.innerHTML=h;
+});
+
+/* 保存済みを復元 */
+document.querySelectorAll('.gq').forEach(function(row){
+  var btn=row.querySelector('.o');
+  var id=btn.getAttribute('onclick').match(/'([^']+)'/)[1];
+  var v=localStorage.getItem(KEY+'_'+id);
+  if(v){row.querySelector(v==='o'?'.o':'.x').classList.add('on');
+    if(v==='x'){row.nextElementSibling.classList.add('show');
+      row.nextElementSibling.nextElementSibling.classList.add('show');}}
+  var ty=localStorage.getItem(KEY+'_'+id+'_type');
+  if(ty){row.nextElementSibling.querySelectorAll('button').forEach(function(b){
+    if(b.textContent===ty)b.classList.add('on');})}
+});
+
+/* 回ごとの完了 */
+function finishRound(r){
+  localStorage.setItem(KEY+'_'+r+'_done','1');
+  var b=document.getElementById('doneBtn-'+r);
+  b.textContent='✅ '+b.getAttribute('data-fin');
+  b.classList.add('fin');
+}
+document.querySelectorAll('.done').forEach(function(b){
+  var r=b.id.replace('doneBtn-','');
+  if(localStorage.getItem(KEY+'_'+r+'_done')==='1'){
+    b.textContent='✅ '+b.getAttribute('data-fin');
+    b.classList.add('fin');
+  }
+});
+
+/* 図（drawPlaneはすべてこの共通関数で描く） */
+window.addEventListener('DOMContentLoaded', function () {
+
+  drawPlane('s0-read-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'4つの区画に点A〜Dをのせた座標平面',
+    points:[
+      { x:2, y:3, name:'A', pos:'ne', coord:true },
+      { x:-3, y:2, name:'B', pos:'nw', coord:true },
+      { x:-4, y:-2, name:'C', pos:'sw', coord:true },
+      { x:3, y:-3, name:'D', pos:'se', coord:true }
+    ]
+  });
+
+  drawPlane('s0-ex-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'点A(−4,3)をとった座標平面',
+    points:[ { x:-4, y:3, name:'A', pos:'ne', coord:true } ]
+  });
+
+  drawPlane('s0-c1-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'点Pの座標を読み取る問題の図',
+    points:[ { x:-2, y:4, name:'P', pos:'ne', coord:false } ]
+  });
+
+  drawPlane('s0-c2-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'点Q(3,−5)をとった座標平面',
+    points:[ { x:3, y:-5, name:'Q', pos:'se', coord:true } ]
+  });
+
+  drawPlane('s0-p1-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'点Rの座標を読み取る問題の図',
+    points:[ { x:-5, y:-1, name:'R', pos:'ne', coord:false } ]
+  });
+
+  drawPlane('s0-p2-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'点S(−2,5)をとった座標平面',
+    points:[ { x:-2, y:5, name:'S', pos:'se', coord:true } ]
+  });
+
+  drawPlane('s1-read-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'表の値をとった点が一直線に並ぶ図',
+    points:[ { x:1, y:2 }, { x:2, y:4 }, { x:3, y:6 } ]
+  });
+
+  drawPlane('s3-read-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'y=2xのグラフの見本',
+    graphs:[ { type:'prop', a:2, color:'blue', label:'y=2x' } ]
+  });
+
+  drawPlane('s3-ex-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'y=3xのグラフ。原点と点(2,6)を通る',
+    graphs:[ { type:'prop', a:3, color:'blue', label:'y=3x' } ],
+    points:[ { x:2, y:6 } ]
+  });
+
+  drawPlane('s3-c2-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'原点を通り点(2,6)を通る直線（式は問題）',
+    graphs:[ { type:'prop', a:3, color:'blue' } ],
+    points:[ { x:2, y:6, name:'(2, 6)', coord:false, pos:'ne' } ]
+  });
+
+  drawPlane('s3-c3-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'原点を通り点(3,−6)を通る直線（式は問題）',
+    graphs:[ { type:'prop', a:-2, color:'blue' } ],
+    points:[ { x:3, y:-6, name:'(3, −6)', coord:false, pos:'ne' } ]
+  });
+
+  drawPlane('s3-p2-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'原点を通り点(4,−2)を通る直線（式は問題）',
+    graphs:[ { type:'prop', a:-0.5, color:'blue' } ],
+    points:[ { x:4, y:-2, name:'(4, −2)', coord:false, pos:'se' } ]
+  });
+
+  drawPlane('s3-p3-fig', { xmin:-6, xmax:6, ymin:-6, ymax:6,
+    ariaLabel:'y=4xのグラフと点ア・イ・ウ',
+    graphs:[ { type:'prop', a:4, color:'blue', label:'y=4x' } ],
+    points:[
+      { x:1, y:4, name:'ア', pos:'se', coord:true },
+      { x:2, y:6, name:'イ', pos:'nw', coord:true },
+      { x:-1, y:-4, name:'ウ', pos:'sw', coord:true }
+    ]
+  });
+
+});
+</script>
+</body>
+</html>
